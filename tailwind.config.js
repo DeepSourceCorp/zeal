@@ -22,8 +22,9 @@ module.exports = {
       secondary: '#4568DC',
       night: {
         100: '#373C49',
-        300: '#2C303A',
-        500: '#16181D'
+        200: '#2C303A',
+        300: '#21242C',
+        400: '#16181D'
       },
       day: {
         200: '#F5F5F5',
@@ -31,6 +32,16 @@ module.exports = {
         400: '#A0A4A8',
         500: '#52575C'
       },
+
+      default: '#EEEEEE',
+      focused:  { 
+        100: '#EBFAF5',
+        200: '#33CB9A',
+      },
+      disabled: '#C0C1C3',
+      error: '#DF6145',
+      warning: '#F6D87C',
+      
       pumpkin: '#DF6145',
       cavendish: '#F6D87C',
       skyblue: '#23C4F8'
@@ -76,7 +87,7 @@ module.exports = {
     },
     borderColor: theme => ({
       ...theme("colors"),
-      default: theme("colors.gray.300", "currentColor")
+      default: theme("colors.focused-200", "currentColor")
     }),
     borderOpacity: theme => theme("opacity"),
     borderRadius: {
