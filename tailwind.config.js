@@ -92,12 +92,9 @@ module.exports = {
       8: '8px'
     },
     boxShadow: {
-      sm:
-        "1px 1px 2px rgba(0, 0, 0, 0.48)",
-      md:
-        "1px 2px 10px rgba(0, 0, 0, 0.42)",
-      lg:
-        "1px 4px 20px rgba(0, 0, 0, 0.44)"
+      sm: '1px 1px 2px rgba(0, 0, 0, 0.48)',
+      md: '1px 2px 10px rgba(0, 0, 0, 0.42)',
+      lg: '1px 4px 20px rgba(0, 0, 0, 0.44)'
     },
     container: {},
     cursor: {
