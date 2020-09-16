@@ -189,20 +189,12 @@ module.exports = {
       "8": "8px"
     },
     boxShadow: {
-      // xs: "0 0 0 1px rgba(0, 0, 0, 0.05)",
-      // sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
-      default:
-        "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+      sm:
+        "1px 1px 2px rgba(0, 0, 0, 0.48)",
       md:
-        "0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06)",
+        "1px 2px 10px rgba(0, 0, 0, 0.42)",
       lg:
-        "0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05)",
-      xl:
-        "0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04)",
-      "2xl": "0 25px 50px rgba(0, 0, 0, 0.25)",
-      inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
-      outline: "0 0 0 3px rgba(66, 153, 225, 0.5)",
-      none: "none"
+        "1px 4px 20px rgba(0, 0, 0, 0.44)"
     },
     container: {},
     cursor: {
