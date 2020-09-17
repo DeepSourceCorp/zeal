@@ -94,7 +94,10 @@ module.exports = {
     boxShadow: {
       sm: '1px 1px 2px rgba(0, 0, 0, 0.48)',
       md: '1px 2px 10px rgba(0, 0, 0, 0.42)',
-      lg: '1px 4px 20px rgba(0, 0, 0, 0.44)'
+      lg: '1px 4px 20px rgba(0, 0, 0, 0.44)',
+      inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+      outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
+      none: 'none'
     },
     container: {},
     cursor: {
