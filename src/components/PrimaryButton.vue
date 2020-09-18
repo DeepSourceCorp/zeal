@@ -1,13 +1,13 @@
 <template>
   <button class="bg-juniper text-ink-400 leading-8 font-normal py-2 px-4 rounded-sm">
-    Default button
+    {{ title }}
   </button>
 </template>
 
 <script>
 export default {
   name: 'button',
-
+  props: ['title'],
   methods: {
     onClick() {
       this.$emit('click')
