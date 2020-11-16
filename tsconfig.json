@@ -1,35 +1,30 @@
 {
   "compilerOptions": {
-    "target": "es5",                      /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. */
-    "module": "es2015",                   /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */
-    "strict": true,                       /* Enable all strict type-checking options. */
+    "target": "es5" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. */,
+    "module": "es2015" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */,
+    "strict": true /* Enable all strict type-checking options. */,
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
-    "allowJs": true,                        /* Allow javascript files to be compiled. */
+    "allowJs": true /* Allow javascript files to be compiled. */,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true,                      /* Generates corresponding '.map' file. */
-    "outDir": "./dist",                     /* Redirect output structure to the directory. */
+    "sourceMap": true /* Generates corresponding '.map' file. */,
+    "outDir": "./dist" /* Redirect output structure to the directory. */,
     "baseUrl": ".",
-    "downlevelIteration": true,             /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */
-    "noImplicitReturns": true,              /* Report error when not all code paths in function return a value. */
+    "downlevelIteration": true /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */,
+    "noImplicitReturns": true /* Report error when not all code paths in function return a value. */,
     /* Experimental Options */
-    "experimentalDecorators": true,           /* Enables experimental support for ES7 decorators. */
-    "emitDecoratorMetadata": true,             /* Enables experimental support for emitting type metadata for decorators. */
-    "types": [
-      "webpack-env",
-      "jest"
-    ],
+    "experimentalDecorators": true /* Enables experimental support for ES7 decorators. */,
+    "emitDecoratorMetadata": true /* Enables experimental support for emitting type metadata for decorators. */,
+    "types": ["webpack-env", "jest"],
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
-    "lib": [                                  /* Specify library files to be included in the compilation */
-      "es2015",
+    "lib": [
+      /* Specify library files to be included in the compilation */ "es2015",
       "es2016",
       "es2017",
       "es2018",
@@ -39,16 +34,6 @@
       "scripthost"
     ]
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
-  ],
-  "exclude": [
-    "**/*.spec.ts",
-    "**/*.spec.js",
-    "node_modules"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"],
+  "exclude": ["**/*.spec.ts", "**/*.spec.js", "node_modules"]
 }

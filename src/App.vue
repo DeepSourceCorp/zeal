@@ -1,9 +1,9 @@
 <template>
-<h1>Hello World</h1>
+  <h1>Hello World</h1>
 </template>
 
 <script lang="ts">
-import { Vue } from 'vue-class-component';
+import { Vue } from 'vue-class-component'
 
 export default class App extends Vue {}
 </script>
