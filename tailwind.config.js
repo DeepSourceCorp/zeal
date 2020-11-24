@@ -164,8 +164,8 @@ module.exports = {
       56: '14rem',
       64: '16rem'
     },
-    backgroundColor: theme => theme('colors'),
-    backgroundOpacity: theme => theme('opacity'),
+    backgroundColor: (theme) => theme('colors'),
+    backgroundOpacity: (theme) => theme('opacity'),
     backgroundPosition: {
       bottom: 'bottom',
       center: 'center',
@@ -182,11 +182,11 @@ module.exports = {
       cover: 'cover',
       contain: 'contain'
     },
-    borderColor: theme => ({
+    borderColor: (theme) => ({
       ...theme('colors'),
       DEFAULT: theme('colors.slate', 'currentColor')
     }),
-    borderOpacity: theme => theme('opacity'),
+    borderOpacity: (theme) => theme('opacity'),
     borderRadius: {
       none: '0',
       sm: '0.125rem',
@@ -223,9 +223,9 @@ module.exports = {
       move: 'move',
       'not-allowed': 'not-allowed'
     },
-    divideColor: theme => theme('borderColor'),
-    divideOpacity: theme => theme('borderOpacity'),
-    divideWidth: theme => theme('borderWidth'),
+    divideColor: (theme) => theme('borderColor'),
+    divideOpacity: (theme) => theme('borderOpacity'),
+    divideWidth: (theme) => theme('borderWidth'),
     fill: {
       current: 'currentColor'
     },
@@ -279,7 +279,7 @@ module.exports = {
       semibold: '600',
       bold: '700'
     },
-    height: theme => ({
+    height: (theme) => ({
       auto: 'auto',
       ...theme('spacing'),
       full: '100%',
@@ -388,9 +388,9 @@ module.exports = {
       11: '11',
       12: '12'
     },
-    padding: theme => theme('spacing'),
-    placeholderColor: theme => theme('colors'),
-    placeholderOpacity: theme => theme('opacity'),
+    padding: (theme) => theme('spacing'),
+    placeholderColor: (theme) => theme('colors'),
+    placeholderOpacity: (theme) => theme('opacity'),
     space: (theme, { negative }) => ({
       ...theme('spacing'),
       ...negative(theme('spacing'))
@@ -403,9 +403,9 @@ module.exports = {
       1: '1',
       2: '2'
     },
-    textColor: theme => theme('colors'),
-    textOpacity: theme => theme('opacity'),
-    width: theme => ({
+    textColor: (theme) => theme('colors'),
+    textOpacity: (theme) => theme('opacity'),
+    width: (theme) => ({
       auto: 'auto',
       ...theme('spacing'),
       '1/2': '50%',
@@ -446,7 +446,7 @@ module.exports = {
       40: '40',
       50: '50'
     },
-    gap: theme => theme('spacing'),
+    gap: (theme) => theme('spacing'),
     gridTemplateColumns: {
       none: 'none',
       1: 'repeat(1, minmax(0, 1fr))',
