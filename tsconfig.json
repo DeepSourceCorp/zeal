@@ -7,7 +7,7 @@
     "importHelpers": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
-    "allowJs": true /* Allow javascript files to be compiled. */,
+    "allowJs": false /* Allow javascript files to be compiled. */,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -21,7 +21,10 @@
     "emitDecoratorMetadata": true /* Enables experimental support for emitting type metadata for decorators. */,
     "types": ["webpack-env", "jest"],
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@/test/*": [
+        "test/*"
+      ],
     },
     "lib": [
       /* Specify library files to be included in the compilation */ "es2015",
@@ -34,6 +37,8 @@
       "scripthost"
     ]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"],
+  "include": [
+    "src/*", "src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"],
+  // "include": ["src/*"],
   "exclude": ["**/*.spec.ts", "**/*.spec.js", "node_modules"]
 }
