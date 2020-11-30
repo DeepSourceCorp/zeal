@@ -1,7 +1,7 @@
 import { action } from '@storybook/addon-actions'
 import { linkTo } from '@storybook/addon-links'
-import Vue from "vue";
-import { storiesOf } from "@storybook/vue";
+import Vue from 'vue'
+import { storiesOf } from '@storybook/vue'
 import Button from '../components/MyButton.vue'
 
 export default {

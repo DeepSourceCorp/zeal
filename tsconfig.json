@@ -22,9 +22,7 @@
     "types": ["webpack-env", "jest"],
     "paths": {
       "@/*": ["src/*"],
-      "@/test/*": [
-        "test/*"
-      ],
+      "@/test/*": ["test/*"]
     },
     "lib": [
       /* Specify library files to be included in the compilation */ "es2015",
@@ -38,7 +36,13 @@
     ]
   },
   "include": [
-    "src/*", "src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"],
+    "src/*",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
   // "include": ["src/*"],
   "exclude": ["**/*.spec.ts", "**/*.spec.js", "node_modules"]
 }
