@@ -16,10 +16,8 @@
     "vue": "^2.6.12"
   },
   "devDependencies": {
-    "vue-class-component": "^7.2.3",
     "postcss": "^7",
     "autoprefixer": "^9",
-    "vue-property-decorator": "^8.4.2",
     "@storybook/addon-essentials": "^6.0.26",
     "@storybook/addon-links": "^6.0.26",
     "@storybook/vue": "^6.0.26",
