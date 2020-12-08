@@ -1,0 +1,29 @@
+/* Text and Typography */
+
+.heading1 {
+  @apply text-4xl leading-12 font-bold;
+}
+
+.heading2 {
+  @apply text-3xl leading-11 font-bold;
+}
+
+.heading3 {
+  @apply text-2xl leading-10 font-bold;
+}
+
+.heading4 {
+  @apply text-xl leading-9 font-bold;
+}
+
+.medium {
+  @apply text-lg leading-8 font-medium;
+}
+
+.small {
+  @apply text-sm leading-5 font-medium;
+}
+
+.caption {
+  @apply text-lg leading-8;
+}
