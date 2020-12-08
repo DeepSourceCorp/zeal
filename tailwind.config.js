@@ -1,10 +1,7 @@
 module.exports = {
   purge: {
     enabled: true,
-    content: [
-     './src/**/*.vue',
-    './public/**/*.html',
-    ]
+    content: ['./src/**/*.vue', './public/**/*.html']
   },
   target: 'relaxed',
   prefix: '',
