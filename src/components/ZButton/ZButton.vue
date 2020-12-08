@@ -50,7 +50,7 @@ export default class Button extends Vue {
 }
 </script>
 
-<style scoped lang="css">
+<style lang="css" scoped>
 /* Common Button Style */
 
 .z-btn {
