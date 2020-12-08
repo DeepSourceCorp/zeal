@@ -1,5 +1,8 @@
 module.exports = {
-  purge: [],
+  purge: {
+    enabled: true,
+    content: ['./src/**/*.vue', './public/**/*.html']
+  },
   target: 'relaxed',
   prefix: '',
   important: false,
@@ -15,11 +18,13 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       juniper: '#33cb9a',
+      light_juniper: '#2EB78B',
       robin: '#4568dc',
       slate: '#52575c',
       cherry: '#df6145',
       honey: '#f6d87c',
       aqua: '#23c4f8',
+      gitlab: '#6753B5',
       vanilla: {
         100: '#ffffff',
         200: '#f5f5f5',
@@ -607,7 +612,7 @@ module.exports = {
     minWidth: ['responsive'],
     objectFit: ['responsive'],
     objectPosition: ['responsive'],
-    opacity: ['responsive', 'hover', 'focus'],
+    opacity: ['responsive', 'hover', 'focus', 'disabled'],
     order: ['responsive'],
     outline: ['responsive', 'focus'],
     overflow: ['responsive'],

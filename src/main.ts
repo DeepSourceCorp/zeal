@@ -1,24 +1,21 @@
 import Vue from 'vue'
-import * as components from './components'
+import './assets/css/tailwind.css'
+import './assets/css/typography.css'
+// import App from './App.vue';
+import { ZButton } from './components/ZButton/index'
 
-// import Button from "../packages/hello-button/index"
-// import Button from "./components/Button.vue";
+const components = [ZButton]
 
-Vue.config.productionTip = false
-
-const ComponentLibrary = {
-  install(Vue: any, options = {}) {
-    //components
-    for (const componentName in components) {
-      const component = components[componentName]
-
-      Vue.component(component.name, component)
-    }
-  }
+const install = (Vue: any) => {
+  components.forEach((component) => {
+    Vue.component(component.name, component)
+  })
 }
 
-export default ComponentLibrary
-
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(ComponentLibrary)
+  install(window.Vue)
+}
+
+export default {
+  ZButton
 }
