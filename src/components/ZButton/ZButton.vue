@@ -12,7 +12,8 @@
         'is-active': this.active !== false,
         'full-width': this.fullWidth !== false
       },
-      customClasses
+      customClasses,
+      `${!color && !customClasses ? 'z-btn--primary' : ''}`
     ]"
     :type="type"
   >
@@ -54,7 +55,7 @@ export default class Button extends Vue {
 /* Common Button Style */
 
 .z-btn {
-  @apply inline-flex items-center px-6  font-normal border-transparent h-10 rounded-sm;
+  @apply inline-flex items-center px-6 text-base font-normal border-transparent h-10 rounded-sm;
 }
 
 .is-disabled {
@@ -91,18 +92,18 @@ export default class Button extends Vue {
 
 /* Different Sizes of the Button*/
 .z-btn--small {
-  @apply h-8;
+  @apply h-8 text-xs;
 }
 
 .z-btn--medium {
-  @apply h-10;
+  @apply h-10 text-base;
 }
 
 .z-btn--large {
-  @apply h-12;
+  @apply h-12 text-lg;
 }
 
 .z-btn--xlarge {
-  @apply h-16;
+  @apply h-16 text-lg;
 }
 </style>
