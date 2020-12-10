@@ -1,0 +1,5 @@
+.z-column,
+.z-row,
+.z-flex {
+  @apply flex flex-wrap;
+}
