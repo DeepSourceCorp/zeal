@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { ZButton } from '@/components/ZButton'
+import ZButton from '@/components/ZButton'
 
 @Component({
   name: 'app',
