@@ -8,6 +8,7 @@
     <div class="heading6">Title</div>
     <div class="caption">Caption</div>
     <z-button color="secondary" fullWidth> </z-button>
+    <z-button color="link" type="link" to="/documentation" disabled> </z-button>
   </div>
 </template>
 
