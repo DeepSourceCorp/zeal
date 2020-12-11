@@ -15,7 +15,8 @@
     "lint": "vue-cli-service lint",
     "storybook:build": "vue-cli-service storybook:build -c config/storybook",
     "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook",
-    "build-storybook": "yarn storybook:build"
+    "build-storybook": "yarn storybook:build",
+    "chromatic": "npx chromatic --project-token kbbvog2zr9"
   },
   "dependencies": {
     "@types/istanbul-lib-instrument": "^1.7.4",
