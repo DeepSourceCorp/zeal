@@ -1,5 +1,6 @@
 <template>
-  <button
+  <component :is="type === 'link' ? 'a' : 'button'"
+    :href="to"
     class="z-btn"
     v-bind="$attrs"
     :disabled="disabled"
@@ -18,7 +19,7 @@
     :type="type"
   >
     <slot>Click</slot>
-  </button>
+  </component>
 </template>
 
 <script lang="ts">
@@ -44,6 +45,8 @@ export default class Button extends Vue {
   private active!: boolean
   @Prop({ default: false })
   private fullWidth!: string
+  @Prop({ default: false })
+  private to!: string
 
   public handleClick(event: any): void {
     this.$emit('click', event)
@@ -55,7 +58,7 @@ export default class Button extends Vue {
 /* Common Button Style */
 
 .z-btn {
-  @apply inline-flex items-center px-6 text-base font-normal border-transparent h-10 rounded-sm;
+  @apply inline-flex items-center px-6 text-base font-medium border-transparent h-10 rounded-sm;
 }
 
 .is-disabled {
@@ -88,6 +91,18 @@ export default class Button extends Vue {
 
 .z-btn--secondary.is-active {
   @apply bg-ink-100;
+}
+
+.z-btn--link {
+    @apply text-juniper hover:bg-ink-300;
+}
+
+.z-btn--link.is-active {
+    @apply text-juniper bg-ink-200;
+}
+
+.z-btn--link.is-disabled {
+    @apply hover:bg-transparent;
 }
 
 /* Different Sizes of the Button*/
