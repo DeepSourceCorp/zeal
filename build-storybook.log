@@ -1,0 +1,117 @@
+$ vue-cli-service storybook:build -c config/storybook --output-dir /var/folders/_b/23j2n11s0kb0hwtlkjz4p_h80000gn/T/chromatic--2914-ysCYr2Tvfugs
+info @storybook/vue v6.1.10
+info 
+info => Cleaning outputDir /var/folders/_b/23j2n11s0kb0hwtlkjz4p_h80000gn/T/chromatic--2914-ysCYr2Tvfugs
+info => Using prebuilt manager
+info => Building preview..
+info => Loading preview config..
+info => Loading presets
+info => Loading 1 config file in "config/storybook"
+info => Loading 7 other files in "config/storybook"
+info => Adding stories defined in "config/storybook/main.js"
+ WARN  A new version of sass-loader is available. Please upgrade for best experience.
+info => Using custom postcss.config.js
+info => Using default Webpack setup
+info => Compiling preview..
+Starting type checking service...
+Using 1 worker with 2048MB memory limit
+<s> [webpack.Progress] 0% compiling
+<s> [webpack.Progress] 10% building 0/0 modules 0 active 
+<s> [webpack.Progress] 10% building 0/1 modules 1 active multi /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/core/dist/server/common/polyfills.js /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/core/dist/server/preview/globals.js /Users/sanket/Code/deepsource/zeal/config/storybook/storybook-init-framework-entry.js /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/common/config.js-generated-other-entry.js /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/vue/config.js-generated-other-entry.js /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-actions/dist/preset/addDecorator.js-generated-other-entry.js /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-actions/dist/preset/addArgs.js-generated-other-entry.js /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-backgrounds/dist/preset/addDecorator.js-generated-other-entry.js /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-backgrounds/dist/preset/addParameter.js-generated-other-entry.js /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-links/dist/preset/addDecorator.js-generated-other-entry.js /Users/sanket/Code/deepsource/zeal/config/storybook/preview.ts-generated-config-entry.js /Users/sanket/Code/deepsource/zeal/config/storybook/generated-stories-entry.js
+<s> [webpack.Progress] 10% building 1/1 modules 0 active 
+<s> [webpack.Progress] 10% building 1/2 modules 1 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-backgrounds/dist/preset/addDecorator.js-generated-other-entry.js
+<s> [webpack.Progress] 10% building 1/3 modules 2 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-backgrounds/dist/preset/addParameter.js-generated-other-entry.js
+<s> [webpack.Progress] 10% building 1/4 modules 3 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-links/dist/preset/addDecorator.js-generated-other-entry.js
+<s> [webpack.Progress] 10% building 1/5 modules 4 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-actions/dist/preset/addDecorator.js-generated-other-entry.js
+<s> [webpack.Progress] 10% building 1/6 modules 5 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-actions/dist/preset/addArgs.js-generated-other-entry.js
+<s> [webpack.Progress] 10% building 1/7 modules 6 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/common/config.js-generated-other-entry.js
+<s> [webpack.Progress] 10% building 1/8 modules 7 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/vue/config.js-generated-other-entry.js
+<s> [webpack.Progress] 10% building 1/9 modules 8 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/core/dist/server/common/polyfills.js
+<s> [webpack.Progress] 10% building 1/10 modules 9 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/core/dist/server/preview/globals.js
+<s> [webpack.Progress] 10% building 2/10 modules 8 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/core/dist/server/preview/globals.js
+<s> [webpack.Progress] 10% building 3/10 modules 7 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/core/dist/server/preview/globals.js
+<s> [webpack.Progress] 10% building 4/10 modules 6 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/core/dist/server/preview/globals.js
+<s> [webpack.Progress] 10% building 5/10 modules 5 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/core/dist/server/preview/globals.js
+<s> [webpack.Progress] 10% building 6/10 modules 4 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/core/dist/server/preview/globals.js
+<s> [webpack.Progress] 10% building 7/10 modules 3 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/core/dist/server/preview/globals.js
+<s> [webpack.Progress] 10% building 8/10 modules 2 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/core/dist/server/preview/globals.js
+<s> [webpack.Progress] 10% building 8/11 modules 3 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-backgrounds/dist/preset/addDecorator.js
+<s> [webpack.Progress] 10% building 8/12 modules 4 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-backgrounds/dist/preset/addParameter.js
+<s> [webpack.Progress] 10% building 8/13 modules 5 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-links/dist/preset/addDecorator.js
+<s> [webpack.Progress] 10% building 8/14 modules 6 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-actions/dist/preset/addDecorator.js
+<s> [webpack.Progress] 10% building 8/15 modules 7 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-actions/dist/preset/addArgs.js
+<s> [webpack.Progress] 10% building 8/16 modules 8 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/common/config.js
+<s> [webpack.Progress] 10% building 8/17 modules 9 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/vue/config.js
+<s> [webpack.Progress] 11% building 9/17 modules 8 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/vue/config.js
+<s> [webpack.Progress] 11% building 10/17 modules 7 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/vue/config.js
+<s> [webpack.Progress] 11% building 11/17 modules 6 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/vue/config.js
+<s> [webpack.Progress] 11% building 12/17 modules 5 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/vue/config.js
+<s> [webpack.Progress] 11% building 13/17 modules 4 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/vue/config.js
+<s> [webpack.Progress] 11% building 14/17 modules 3 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/vue/config.js
+<s> [webpack.Progress] 11% building 15/17 modules 2 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/common/config.js
+<s> [webpack.Progress] 11% building 16/17 modules 1 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/common/config.js
+<s> [webpack.Progress] 12% building 17/17 modules 0 active 
+<s> [webpack.Progress] 12% building 17/18 modules 1 active /Users/sanket/Code/deepsource/zeal/node_modules/cache-loader/dist/cjs.js??ref--12-0!/Users/sanket/Code/deepsource/zeal/node_modules/babel-loader/lib/index.js!/Users/sanket/Code/deepsource/zeal/config/storybook/storybook-init-framework-entry.js
+<s> [webpack.Progress] 12% building 17/19 modules 2 active /Users/sanket/Code/deepsource/zeal/node_modules/cache-loader/dist/cjs.js??ref--12-0!/Users/sanket/Code/deepsource/zeal/node_modules/babel-loader/lib/index.js!/Users/sanket/Code/deepsource/zeal/config/storybook/preview.ts-generated-config-entry.js
+<s> [webpack.Progress] 12% building 17/20 modules 3 active /Users/sanket/Code/deepsource/zeal/node_modules/cache-loader/dist/cjs.js??ref--12-0!/Users/sanket/Code/deepsource/zeal/node_modules/babel-loader/lib/index.js!/Users/sanket/Code/deepsource/zeal/config/storybook/generated-stories-entry.js
+<s> [webpack.Progress] 12% building 17/21 modules 4 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-actions/dist/index.js
+<s> [webpack.Progress] 12% building 17/22 modules 5 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/vue/extractArgTypes.js
+<s> [webpack.Progress] 12% building 17/23 modules 6 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/vue/prepareForInline.js
+<s> [webpack.Progress] 12% building 17/24 modules 7 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/vue/sourceDecorator.js
+<s> [webpack.Progress] 12% building 17/25 modules 8 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-links/dist/index.js
+<s> [webpack.Progress] 12% building 17/26 modules 9 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/common/enhanceArgTypes.js
+<s> [webpack.Progress] 12% building 18/26 modules 8 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/common/enhanceArgTypes.js
+<s> [webpack.Progress] 12% building 19/26 modules 7 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/common/enhanceArgTypes.js
+<s> [webpack.Progress] 12% building 20/26 modules 6 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/common/enhanceArgTypes.js
+<s> [webpack.Progress] 12% building 21/26 modules 5 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/common/enhanceArgTypes.js
+<s> [webpack.Progress] 12% building 22/26 modules 4 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/common/enhanceArgTypes.js
+<s> [webpack.Progress] 12% building 23/26 modules 3 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/common/enhanceArgTypes.js
+<s> [webpack.Progress] 12% building 24/26 modules 2 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/common/enhanceArgTypes.js
+<s> [webpack.Progress] 13% building 25/26 modules 1 active /Users/sanket/Code/deepsource/zeal/node_modules/@storybook/addon-docs/dist/frameworks/common/enhanceArgTypes.js
+<s> [webpack.Progress] 13% building 26/26 modules 0 active 
+<s> [webpack.Progress] 13% building 26/27 modules 1 active /Users/sanket/Code/deepsource/zeal/src/components sync /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(js|jsx|ts|tsx|mdx))$/
+<s> [webpack.Progress] 70% building 26/27 modules 1 active /Users/sanket/Code/deepsource/zeal/src/components sync /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(js|jsx|ts|tsx|mdx))$/
+ERR! => Failed to build the preview
+ERR! Module not found: Error: Can't resolve '../../src/stories' in '/Users/sanket/Code/deepsource/zeal/config/storybook'
+ERR! ModuleNotFoundError: Module not found: Error: Can't resolve '../../src/stories' in '/Users/sanket/Code/deepsource/zeal/config/storybook'
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/webpack/lib/Compilation.js:925:10
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/webpack/lib/ContextModuleFactory.js:143:23
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/neo-async/async.js:2830:7
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/neo-async/async.js:6877:13
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/webpack/lib/ContextModuleFactory.js:118:26
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/enhanced-resolve/lib/Resolver.js:213:14
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/enhanced-resolve/lib/Resolver.js:285:5
+ERR!     at eval (eval at create (/Users/sanket/Code/deepsource/zeal/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:13:1)
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/enhanced-resolve/lib/UnsafeCachePlugin.js:44:7
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/enhanced-resolve/lib/Resolver.js:285:5
+ERR!     at eval (eval at create (/Users/sanket/Code/deepsource/zeal/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:13:1)
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/enhanced-resolve/lib/Resolver.js:285:5
+ERR!     at eval (eval at create (/Users/sanket/Code/deepsource/zeal/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:25:1)
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:67:43
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/enhanced-resolve/lib/Resolver.js:285:5
+ERR!     at eval (eval at create (/Users/sanket/Code/deepsource/zeal/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:14:1)
+ERR!  ModuleNotFoundError: Module not found: Error: Can't resolve '../../src/stories' in '/Users/sanket/Code/deepsource/zeal/config/storybook'
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/webpack/lib/Compilation.js:925:10
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/webpack/lib/ContextModuleFactory.js:143:23
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/neo-async/async.js:2830:7
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/neo-async/async.js:6877:13
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/webpack/lib/ContextModuleFactory.js:118:26
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/enhanced-resolve/lib/Resolver.js:213:14
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/enhanced-resolve/lib/Resolver.js:285:5
+ERR!     at eval (eval at create (/Users/sanket/Code/deepsource/zeal/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:13:1)
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/enhanced-resolve/lib/UnsafeCachePlugin.js:44:7
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/enhanced-resolve/lib/Resolver.js:285:5
+ERR!     at eval (eval at create (/Users/sanket/Code/deepsource/zeal/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:13:1)
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/enhanced-resolve/lib/Resolver.js:285:5
+ERR!     at eval (eval at create (/Users/sanket/Code/deepsource/zeal/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:25:1)
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:67:43
+ERR!     at /Users/sanket/Code/deepsource/zeal/node_modules/enhanced-resolve/lib/Resolver.js:285:5
+ERR!     at eval (eval at create (/Users/sanket/Code/deepsource/zeal/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:14:1)
+ERR! resolve '../../src/stories' in '/Users/sanket/Code/deepsource/zeal/config/storybook'
+ERR!   using description file: /Users/sanket/Code/deepsource/zeal/package.json (relative path: ./config/storybook)
+ERR!     Field 'browser' doesn't contain a valid alias configuration
+ERR!     using description file: /Users/sanket/Code/deepsource/zeal/package.json (relative path: ./src/stories)
+ERR!       as directory
+ERR!         /Users/sanket/Code/deepsource/zeal/src/stories doesn't exist
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

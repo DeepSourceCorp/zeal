@@ -3,7 +3,6 @@ module.exports = {
     enabled: true,
     content: ['./src/**/*.vue', './public/**/*.html']
   },
-  target: 'relaxed',
   prefix: '',
   important: false,
   separator: ':',

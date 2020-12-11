@@ -14,7 +14,8 @@
     "style": "tailwindcss build src/assets/styles/index.css -o tailwindcss/tailwind.css",
     "lint": "vue-cli-service lint",
     "storybook:build": "vue-cli-service storybook:build -c config/storybook",
-    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook"
+    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook",
+    "build-storybook": "yarn storybook:build"
   },
   "dependencies": {
     "@types/istanbul-lib-instrument": "^1.7.4",
