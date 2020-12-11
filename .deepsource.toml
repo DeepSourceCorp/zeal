@@ -16,6 +16,7 @@ enabled = true
     "jest"
   ]
   plugins = ["vue"]
+  dialect = "typescript"
 
 [[transformers]]
 name = "prettier"
