@@ -58,22 +58,22 @@ export const FullWidthButton = () => ({
 })
 
 export const DefaultLinkButton = () => ({
-    components: { ZButton },
-    template: `<div>
+  components: { ZButton },
+  template: `<div>
         <z-button color="link" type="link" to="https://deepsource.io/">Link Button</z-button>
     </div>`
-});
+})
 
 export const ActiveLinkButton = () => ({
-    components: { ZButton },
-    template: `<div>
+  components: { ZButton },
+  template: `<div>
         <z-button color="link" type="link" to="https://deepsource.io/" active>Link Button</z-button>
     </div>`
-});
+})
 
 export const DisabledLinkButton = () => ({
-    components: { ZButton },
-    template: `<div>
+  components: { ZButton },
+  template: `<div>
         <z-button color="link" type="link" to="https://deepsource.io/" disabled>Link Button</z-button>
     </div>`
-});
+})
