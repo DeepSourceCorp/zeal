@@ -3,7 +3,7 @@ import './assets/css/tailwind.css'
 import './assets/css/typography.css'
 import './assets/css/layout.css'
 // import App from './App.vue';
-import { ZButton } from './components/ZButton/index'
+import ZButton from './components/ZButton/index'
 
 const components = [ZButton]
 

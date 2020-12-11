@@ -1,3 +1,4 @@
 import ZButton from './ZButton.vue'
 
-export { ZButton }
+// export { ZButton }
+export default ZButton
