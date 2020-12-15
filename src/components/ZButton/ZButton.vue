@@ -1,6 +1,6 @@
 <template>
   <component
-    :is="(type === 'link' || to) ? 'a' : 'button'"
+    :is="type === 'link' || to ? 'a' : 'button'"
     :href="to"
     class="z-btn"
     v-bind="$attrs"
