@@ -95,15 +95,15 @@ export default class Button extends Vue {
 }
 
 .z-btn--link {
-  @apply text-juniper hover:bg-ink-300;
+  @apply text-vanilla-100 hover:underline;
 }
 
 .z-btn--link.is-active {
-  @apply text-juniper bg-ink-200;
+  @apply underline;
 }
 
 .z-btn--link.is-disabled {
-  @apply hover:bg-transparent;
+  @apply text-slate;
 }
 
 /* Different Sizes of the Button*/
