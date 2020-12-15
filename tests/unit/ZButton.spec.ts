@@ -116,13 +116,13 @@ describe('Button component', () => {
     expect(wrapper.classes('bg-transparent')).toBe(true)
   })
   it('button should emit a click event', () => {
-      const click = jest.fn()
-      const wrapper = mountFunction({
-          listeners: {
-              'click': click
-          }
-      });
-      wrapper.find('.z-btn').trigger('click');
-      expect(click).toHaveBeenCalledTimes(1)
+    const click = jest.fn()
+    const wrapper = mountFunction({
+      listeners: {
+        click: click
+      }
+    })
+    wrapper.find('.z-btn').trigger('click')
+    expect(click).toHaveBeenCalledTimes(1)
   })
 })
