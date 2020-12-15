@@ -5,7 +5,7 @@
     class="z-btn"
     v-bind="$attrs"
     :disabled="disabled"
-    @click="handleclick"
+    v-on="$listeners"
     :class="[
       `${color && `z-btn--${color}`}`,
       `${size && `z-btn--${size}`}`,

@@ -115,18 +115,14 @@ describe('Button component', () => {
 
     expect(wrapper.classes('bg-transparent')).toBe(true)
   })
-  // it.only('button should emit a click event', () => {
-  //     const sayHello = () => {
-  //         console.log('hello')
-  //     }
-  //     const wrapper = mountFunction({
-  //         propsData: {
-  //             onclick: sayHello()
-  //         }
-  //     });
-  //     const click = jest.fn()
-  //     wrapper.vm.$on('click', click)
-  //     wrapper.trigger('click')
-  //     expect(click.mock.calls).toHaveLength(1)
-  // })
+  it('button should emit a click event', () => {
+      const click = jest.fn()
+      const wrapper = mountFunction({
+          listeners: {
+              'click': click
+          }
+      });
+      wrapper.find('.z-btn').trigger('click');
+      expect(click).toHaveBeenCalledTimes(1)
+  })
 })
