@@ -1,12 +1,9 @@
 <template>
-    <svg 
-      :class="[
-        'z-icon',
-        `${size && `z-icon--${size}`}`,
-        `${icon && `z-icon--${icon}`}`
-      ]"
-      viewBox="0 0 24 24" 
-      v-html="getIcon(icon)"></svg>
+  <svg
+    :class="['z-icon', `${size && `z-icon--${size}`}`, `${icon && `z-icon--${icon}`}`]"
+    viewBox="0 0 24 24"
+    v-html="getIcon(icon)"
+  ></svg>
 </template>
 
 <script lang="ts">
@@ -20,7 +17,7 @@ import customIcons from '../../utils/icon-helper'
 export default class Icon extends Vue {
   @Prop({ default: '' })
   private icon!: string
-  @Prop({default: ''})
+  @Prop({ default: '' })
   private size!: string
 
   public getIcon(iconName: string): HTMLOrSVGImageElement {
@@ -28,7 +25,7 @@ export default class Icon extends Vue {
     if (feather.icons[iconName]) {
       DOM = feather.icons[iconName] && feather.icons[iconName].contents
     } else {
-      DOM = customIcons[iconName] &&  customIcons[iconName].contents;
+      DOM = customIcons[iconName] && customIcons[iconName].contents
     }
     return DOM
   }
@@ -36,11 +33,11 @@ export default class Icon extends Vue {
 </script>
 
 <style lang="css" scoped>
-  .z-icon {
-    @apply  w-6 h-6 fill-current stroke-current text-slate stroke-2;
-  }
+.z-icon {
+  @apply w-6 h-6 fill-current stroke-current text-slate stroke-2;
+}
 
-  .z-icon--small {
-    @apply w-4 h-4;
-  }
+.z-icon--small {
+  @apply w-4 h-4;
+}
 </style>

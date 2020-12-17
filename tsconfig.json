@@ -44,7 +44,9 @@
     "src/**/*.vue",
     "src/custom.d.ts",
     "tests/**/*.ts",
-    "tests/**/*.tsx", "src/utils/build-icons.js", "src/utils/icon-helper.ts"
+    "tests/**/*.tsx",
+    "src/utils/build-icons.js",
+    "src/utils/icon-helper.ts"
   ],
   // "include": ["src/*"],
   "exclude": ["**/*.spec.ts", "**/*.spec.js", "node_modules"]

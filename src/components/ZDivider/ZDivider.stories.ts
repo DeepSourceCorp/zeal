@@ -1,9 +1,9 @@
-import ZIcon from './ZIcon.vue';
+import ZIcon from './ZIcon.vue'
 
 import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'
-import ZDivider from './ZDivider.vue';
+import ZDivider from './ZDivider.vue'
 
 export default {
   title: 'Divider',
@@ -21,8 +21,8 @@ export const Horizontal = () => ({
 })
 
 export const Vertical = () => ({
-    components: { ZDivider },
-    template: `<div>
+  components: { ZDivider },
+  template: `<div>
         <span>Icons</span>
         <z-divider direction="vertical"></z-divider>
         <span>Layout</span>

@@ -1,3 +1,3 @@
-import ZDivider from "./ZDivider.vue";
+import ZDivider from './ZDivider.vue'
 
-export default ZDivider;
+export default ZDivider

@@ -1,3 +1,3 @@
-import ZIcon from "./ZIcon.vue";
+import ZIcon from './ZIcon.vue'
 
-export default ZIcon;
+export default ZIcon
