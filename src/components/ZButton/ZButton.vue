@@ -95,7 +95,7 @@ export default class Button extends Vue {
 }
 
 .z-btn--link {
-  @apply text-vanilla-100 hover:underline;
+  @apply font-normal text-juniper hover:underline;
 }
 
 .z-btn--link.is-active {
@@ -103,7 +103,7 @@ export default class Button extends Vue {
 }
 
 .z-btn--link.is-disabled {
-  @apply text-slate;
+  @apply text-slate no-underline;
 }
 
 /* Different Sizes of the Button*/
