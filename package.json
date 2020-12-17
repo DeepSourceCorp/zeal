@@ -22,9 +22,7 @@
   },
   "dependencies": {
     "@types/istanbul-lib-instrument": "^1.7.4",
-    "cheerio": "^1.0.0-rc.3",
     "core-js": "^3.6.5",
-    "html-minifier": "^4.0.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue": "^2.6.12"
   },
@@ -45,6 +43,8 @@
     "@vue/eslint-config-typescript": "^5.0.2",
     "@vue/test-utils": "^1.0.3",
     "autoprefixer": "^9",
+    "cheerio": "^1.0.0-rc.3",
+    "html-minifier": "^4.0.0",
     "babel-eslint": "^10.1.0",
     "chromatic": "^5.4.0",
     "eslint": "^6.7.2",
