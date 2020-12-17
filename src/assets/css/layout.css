@@ -4,3 +4,27 @@
 .z-flex {
   @apply flex flex-wrap;
 }
+
+.z-row > div {
+  @apply py-3 px-3;
+}
+
+.z-row > .z-col {
+  @apply w-auto min-w-0 max-w-full;
+}
+
+.z-row > .z-col-4 {
+  @apply w-2/6 h-auto;
+}
+
+.z-row > .z-col-5 {
+  @apply w-5/12 h-auto;
+}
+
+.z-row > .z-col-6 {
+  @apply w-2/4 h-auto;
+}
+
+.z-row > .z-col-8 {
+  @apply w-4/6 h-auto;
+}

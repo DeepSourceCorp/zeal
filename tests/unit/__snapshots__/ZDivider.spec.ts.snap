@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VDivider renders a vertical divider 1`] = `
+<div class="z-divider z-divider--vertical">
+  <!---->
+</div>
+`;
+
+exports[`VDivider renders the component 1`] = `
+<div class="z-divider z-divider--horizontal">
+  <div class="z-divider--content"></div>
+</div>
+`;

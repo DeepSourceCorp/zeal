@@ -10,7 +10,9 @@
     "allowJs": false /* Allow javascript files to be compiled. */,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
+    "suppressImplicitAnyIndexErrors": true,
     "sourceMap": true /* Generates corresponding '.map' file. */,
     "outDir": "./dist" /* Redirect output structure to the directory. */,
     "baseUrl": ".",
@@ -40,8 +42,9 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
+    "src/custom.d.ts",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx", "src/utils/build-icons.js", "src/utils/icon-helper.ts"
   ],
   // "include": ["src/*"],
   "exclude": ["**/*.spec.ts", "**/*.spec.js", "node_modules"]
