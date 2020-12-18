@@ -7,7 +7,7 @@
              ]"
     viewBox="0 0 24 24"
     v-html="getIcon(icon)"
-    fill = "none"
+    fill="none"
   ></svg>
 </template>
 
