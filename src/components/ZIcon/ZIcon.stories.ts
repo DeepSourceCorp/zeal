@@ -19,8 +19,8 @@ export const Default = () => ({
 })
 
 export const IconWithCustomColor = () => ({
-    components: { ZIcon },
-    template: `<div class="wrapper">
+  components: { ZIcon },
+  template: `<div class="wrapper">
         <z-icon icon="activity" custom-classes="text-juniper"></z-icon>
         <p class="icon-title">activity</p>
     </div>`

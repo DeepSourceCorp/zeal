@@ -1,10 +1,11 @@
 <template>
   <svg
-    :class="['z-icon',
-            `${size && `z-icon--${size}`}`, 
-            `${icon && `z-icon--${icon}`}`,
-             `${customClasses || 'z-icon--default'}`
-             ]"
+    :class="[
+      'z-icon',
+      `${size && `z-icon--${size}`}`,
+      `${icon && `z-icon--${icon}`}`,
+      `${customClasses || 'z-icon--default'}`
+    ]"
     viewBox="0 0 24 24"
     v-html="getIcon(icon)"
     fill="none"
@@ -24,7 +25,7 @@ export default class Icon extends Vue {
   private icon!: string
   @Prop({ default: '' })
   private size!: string
-  @Prop({default: ''})
+  @Prop({ default: '' })
   private customClasses!: string
 
   public getIcon(iconName: string): HTMLOrSVGImageElement {
@@ -45,7 +46,7 @@ export default class Icon extends Vue {
 }
 
 .z-icon--default {
-  @apply text-vanilla-400; 
+  @apply text-vanilla-400;
 }
 
 .z-icon--small {
