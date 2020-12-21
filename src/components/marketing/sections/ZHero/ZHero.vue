@@ -29,7 +29,7 @@ export default class Hero extends Vue {}
 
 /* Hero - Subtitle */
 .z-hero > h2 {
-  @apply text-xl;
+  @apply text-xl mb-4;
 }
 
 /* Hero - Illustration */
