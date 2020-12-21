@@ -33,7 +33,9 @@ export default class Hero extends Vue {}
 }
 
 /* Hero - Illustration */
-.z-hero .illustration > span, div, img{
+.z-hero .illustration > span,
+div,
+img {
   @apply mt-6 mx-auto;
 }
 </style>
