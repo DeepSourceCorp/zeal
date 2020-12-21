@@ -1,5 +1,5 @@
-import ZCarousel from './ZCarousel.vue';
-import ZSlide from './ZSlide.vue';
+import ZCarousel from './ZCarousel.vue'
+import ZSlide from './ZSlide.vue'
 import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'
@@ -12,7 +12,7 @@ export default {
 
 export const DefaultCarousel = () => ({
   components: { ZCarousel, ZSlide },
-    template: `<div class='container'>
+  template: `<div class='container'>
         <z-carousel>
            <z-slide>
             <img src="https://picsum.photos/id/237/600/350">
@@ -35,7 +35,7 @@ export const DefaultCarousel = () => ({
 
 export const CarouselWithoutControls = () => ({
   components: { ZCarousel, ZSlide },
-    template: `<div class='container'>
+  template: `<div class='container'>
         <z-carousel :showControls="false">
            <z-slide>
             <img src="https://picsum.photos/id/237/600/350">
@@ -58,7 +58,7 @@ export const CarouselWithoutControls = () => ({
 
 export const CarouselWithoutIndicators = () => ({
   components: { ZCarousel, ZSlide },
-    template: `<div class='container'>
+  template: `<div class='container'>
         <z-carousel :showIndicators="false">
            <z-slide>
             <img src="https://picsum.photos/id/237/600/350">
@@ -81,7 +81,7 @@ export const CarouselWithoutIndicators = () => ({
 
 export const CarouselWithoutAutoSlide = () => ({
   components: { ZCarousel, ZSlide },
-    template: `<div class='container'>
+  template: `<div class='container'>
         <z-carousel :autoSlide="false">
            <z-slide>
             <img src="https://picsum.photos/id/237/600/350">
@@ -104,7 +104,7 @@ export const CarouselWithoutAutoSlide = () => ({
 
 export const CarouselWithSlideTiming = () => ({
   components: { ZCarousel, ZSlide },
-    template: `<div class='container'>
+  template: `<div class='container'>
         <z-carousel :autoTiming="1000">
            <z-slide>
             <img src="https://picsum.photos/id/237/600/350">
@@ -127,7 +127,7 @@ export const CarouselWithSlideTiming = () => ({
 
 export const CarouselWithActiveSlide = () => ({
   components: { ZCarousel, ZSlide },
-    template: `<div class='container'>
+  template: `<div class='container'>
         <z-carousel :activeIndex="3">
            <z-slide>
             <img src="https://picsum.photos/id/237/600/350">
@@ -148,9 +148,9 @@ export const CarouselWithActiveSlide = () => ({
     </div>`
 })
 
-export const CarouselWithIndicatorInRight= () => ({
+export const CarouselWithIndicatorInRight = () => ({
   components: { ZCarousel, ZSlide },
-    template: `<div class='container'>
+  template: `<div class='container'>
         <z-carousel indicatorPosition="right">
            <z-slide>
             <img src="https://picsum.photos/id/237/600/350">
@@ -171,9 +171,9 @@ export const CarouselWithIndicatorInRight= () => ({
     </div>`
 })
 
-export const CarouselWithIndicatorCenter= () => ({
+export const CarouselWithIndicatorCenter = () => ({
   components: { ZCarousel, ZSlide },
-    template: `<div class='container'>
+  template: `<div class='container'>
         <z-carousel indicatorPosition="center">
            <z-slide>
             <img src="https://picsum.photos/id/237/600/350">

@@ -29,7 +29,6 @@ export default class Icon extends Vue {
   @Prop({ default: '' })
   private position!: string
 
-
   public getIcon(iconName: string): HTMLOrSVGImageElement {
     let DOM = null
     if (feather.icons[iconName]) {

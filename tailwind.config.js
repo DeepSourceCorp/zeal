@@ -536,7 +536,7 @@ module.exports = {
       'slide-left-enter-active': 'slide-left-in 0.5s ease-out',
       'slide-left-leave-active': 'slide-left-out 0.5s ease-out',
       'slide-right-enter-active': 'slide-right-in 0.5s ease-out',
-      'slide-right-leave-active': 'slide-right-out 0.5s ease-out',
+      'slide-right-leave-active': 'slide-right-out 0.5s ease-out'
     },
     keyframes: {
       spin: {
@@ -567,7 +567,7 @@ module.exports = {
         },
         to: {
           transform: 'translateX(-100%)'
-        } 
+        }
       },
       'slide-right-in': {
         from: {
@@ -575,7 +575,7 @@ module.exports = {
         },
         to: {
           transform: 'translateX(0%)'
-        } 
+        }
       },
       'slide-left-in': {
         from: {
@@ -583,7 +583,7 @@ module.exports = {
         },
         to: {
           transform: 'translateX(0%)'
-        } 
+        }
       },
       'slide-left-out': {
         from: {
@@ -591,7 +591,7 @@ module.exports = {
         },
         to: {
           transform: 'translateX(100%)'
-        } 
+        }
       }
     }
   },
