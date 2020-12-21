@@ -1,8 +1,5 @@
 module.exports = {
-  purge: {
-    enabled: true,
-    content: ['./src/**/*.vue', './public/**/*.html']
-  },
+  purge: [],
   prefix: '',
   important: false,
   separator: ':',
@@ -181,6 +178,7 @@ module.exports = {
     }),
     inset: {
       0: '0',
+      1: '0.5rem',
       auto: 'auto',
       50: '50%'
     },

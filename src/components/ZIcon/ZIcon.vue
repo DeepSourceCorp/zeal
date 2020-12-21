@@ -55,10 +55,10 @@ export default class Icon extends Vue {
 }
 
 .z-icon--left {
-  @apply absolute left-0 w-4;
+  @apply absolute left-1 w-4;
 }
 
 .z-icon--right {
-  @apply absolute right-0 w-4;
+  @apply absolute right-1 w-4;
 }
 </style>

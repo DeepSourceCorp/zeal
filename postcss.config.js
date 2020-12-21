@@ -3,6 +3,5 @@ module.exports = {
     'postcss-import': {},
     tailwindcss: {},
     autoprefixer: {},
-    'vue-cli-plugin-tailwind/purgecss': {}
   }
 }
