@@ -1,5 +1,3 @@
-import ZIcon from './ZIcon.vue'
-
 import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'

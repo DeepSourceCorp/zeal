@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ZCarousel renders the Carousel Component with Slides 1`] = `
+<div class="z-carousel__wrapper">
+  <div class="z-carousel__container">
+    <div>Some Random Content</div>
+  </div>
+  <div class="z-carousel__controls"><button class="z-carousel__control z-carousel__control--left"><svg viewBox="0 0 24 24" fill="none" class="z-icon z-icon--arrow-left z-icon--default">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg></button> <button class="z-carousel__control z-carousel__control--right"><svg viewBox="0 0 24 24" fill="none" class="z-icon z-icon--arrow-right z-icon--default">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg></button></div>
+  <ul class="z-indicators z-indicator--left"></ul>
+</div>
+`;
+
+exports[`ZCarousel renders the component 1`] = `
+<div class="z-carousel__wrapper">
+  <div class="z-carousel__container"></div>
+  <div class="z-carousel__controls"><button class="z-carousel__control z-carousel__control--left"><svg viewBox="0 0 24 24" fill="none" class="z-icon z-icon--arrow-left z-icon--default">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg></button> <button class="z-carousel__control z-carousel__control--right"><svg viewBox="0 0 24 24" fill="none" class="z-icon z-icon--arrow-right z-icon--default">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg></button></div>
+  <ul class="z-indicators z-indicator--left"></ul>
+</div>
+`;

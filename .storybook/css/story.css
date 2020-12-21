@@ -9,3 +9,7 @@
 .padded-container {
   @apply p-4;
 }
+
+.container {
+  @apply w-2/3 p-4;
+}

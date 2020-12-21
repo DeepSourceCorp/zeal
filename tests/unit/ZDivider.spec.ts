@@ -3,7 +3,7 @@ import Vue from 'vue'
 
 import { createLocalVue, mount, Wrapper } from '@vue/test-utils'
 
-describe('VDivider', () => {
+describe('ZDivider', () => {
   let mountFn: (options?: object) => Wrapper<Vue>
   let localVue: typeof Vue
 
