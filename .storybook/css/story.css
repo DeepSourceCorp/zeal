@@ -1,0 +1,11 @@
+.wrapper {
+  @apply inline-flex flex-col items-center;
+}
+
+.icon-title {
+  @apply text-sm;
+}
+
+.padded-container {
+  @apply p-4;
+}

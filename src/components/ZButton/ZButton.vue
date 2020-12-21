@@ -1,11 +1,11 @@
 <template>
   <component
-    :is="type === 'link' ? 'a' : 'button'"
+    :is="type === 'link' || to ? 'a' : 'button'"
     :href="to"
     class="z-btn"
     v-bind="$attrs"
     :disabled="disabled"
-    @click="handleclick"
+    v-on="$listeners"
     :class="[
       `${color && `z-btn--${color}`}`,
       `${size && `z-btn--${size}`}`,
@@ -95,15 +95,15 @@ export default class Button extends Vue {
 }
 
 .z-btn--link {
-  @apply text-juniper hover:bg-ink-300;
+  @apply font-normal text-juniper hover:underline;
 }
 
 .z-btn--link.is-active {
-  @apply text-juniper bg-ink-200;
+  @apply underline;
 }
 
 .z-btn--link.is-disabled {
-  @apply hover:bg-transparent;
+  @apply text-slate no-underline;
 }
 
 /* Different Sizes of the Button*/

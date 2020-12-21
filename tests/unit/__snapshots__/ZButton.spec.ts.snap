@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component renders a button tag when the component is mounted 1`] = `<button type="button" class="z-btn z-btn--primary">Click</button>`;
+
+exports[`Button component renders a button tag with the given text 1`] = `<button type="button" class="z-btn z-btn--primary">Hello World</button>`;
+
+exports[`Button component renders a button with primary color 1`] = `<button type="button" class="z-btn z-btn--primary">Primary Button</button>`;
+
+exports[`Button component renders a button with secondary color 1`] = `<button type="button" class="z-btn z-btn--secondary">Secondary Button</button>`;
+
+exports[`Button component renders a button with the given size(large) 1`] = `<button type="button" class="z-btn z-btn--large z-btn--primary">Large Button</button>`;
+
+exports[`Button component renders a disabled button when the disabled attribute is passed 1`] = `<button disabled="disabled" type="button" class="z-btn is-disabled z-btn--primary">Disabled Button</button>`;
+
+exports[`Button component renders a full-width button 1`] = `<button type="button" class="z-btn full-width z-btn--primary">Full Width Button</button>`;
+
+exports[`Button component renders a link tag when type is specified as link 1`] = `<a href="https://deepsource.io/" type="link" class="z-btn z-btn--link">Link Button</a>`;
