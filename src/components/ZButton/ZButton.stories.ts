@@ -7,7 +7,7 @@ import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'
 
 export default {
-  title: 'Button',
+  title: 'Zeal/Button',
   component: ZButton,
   excludeStories: /.*Data$/
 }
