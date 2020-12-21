@@ -6,6 +6,7 @@ import ZButton from './components/ZButton/index'
 import ZIcon from './components/ZIcon/index'
 import ZDivider from './components/ZIcon/index'
 import { ZCarousel, ZSlide } from './components/ZCarousel/index'
+import '../dist/tailwind.css';
 
 const components = [ZButton, ZIcon, ZDivider, ZCarousel, ZSlide]
 
