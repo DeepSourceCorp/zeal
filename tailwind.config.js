@@ -179,6 +179,8 @@ module.exports = {
     inset: {
       0: '0',
       1: '0.5rem',
+      px: '1px',
+      'px-5': '5px',
       auto: 'auto',
       50: '50%'
     },
