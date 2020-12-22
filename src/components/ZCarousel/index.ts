@@ -1,2 +1,3 @@
-export { default as ZCarousel } from './ZCarousel.vue'
-export { default as ZSlide } from './ZSlide.vue'
+import ZCarousel from './ZCarousel.vue'
+
+export default ZCarousel
