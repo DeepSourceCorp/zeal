@@ -22,4 +22,4 @@ if (typeof window !== 'undefined' && window.Vue) {
 export { default as ZButton } from './components/ZButton/index'
 export { default as ZIcon } from './components/ZIcon/index'
 export { default as ZDivider } from './components/ZDivider/index'
-export { default as ZContent} from './components/marketing/sections/ZContent/index'
+export { default as ZContent } from './components/marketing/sections/ZContent/index'
