@@ -59,7 +59,7 @@ export default class Button extends Vue {
 /* Common Button Style */
 
 .z-btn {
-  @apply inline-flex items-center px-6 text-base font-medium border-transparent h-10 rounded-sm;
+  @apply inline-flex items-center px-6 text-base font-medium border-transparent h-10 rounded-sm relative;
 }
 
 .is-disabled {

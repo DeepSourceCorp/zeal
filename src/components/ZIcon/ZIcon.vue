@@ -4,7 +4,8 @@
       'z-icon',
       `${size && `z-icon--${size}`}`,
       `${icon && `z-icon--${icon}`}`,
-      `${customClasses || 'z-icon--default'}`
+      'z-icon--default',
+      `${position && `z-icon--${position}`}`
     ]"
     viewBox="0 0 24 24"
     v-html="getIcon(icon)"
@@ -26,7 +27,7 @@ export default class Icon extends Vue {
   @Prop({ default: '' })
   private size!: string
   @Prop({ default: '' })
-  private customClasses!: string
+  private position!: string
 
   public getIcon(iconName: string): HTMLOrSVGImageElement {
     let DOM = null
@@ -51,5 +52,13 @@ export default class Icon extends Vue {
 
 .z-icon--small {
   @apply w-4 h-4;
+}
+
+.z-icon--left {
+  @apply absolute left-1 w-4;
+}
+
+.z-icon--right {
+  @apply absolute right-1 w-4;
 }
 </style>

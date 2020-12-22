@@ -1,8 +1,5 @@
 module.exports = {
-  purge: {
-    enabled: true,
-    content: ['./src/**/*.vue', './public/**/*.html']
-  },
+  purge: [],
   prefix: '',
   important: false,
   separator: ':',
@@ -181,7 +178,9 @@ module.exports = {
     }),
     inset: {
       0: '0',
-      auto: 'auto'
+      1: '0.5rem',
+      auto: 'auto',
+      50: '50%'
     },
     letterSpacing: {
       tighter: '-0.05em',
@@ -531,7 +530,11 @@ module.exports = {
       spin: 'spin 1s linear infinite',
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-      bounce: 'bounce 1s infinite'
+      bounce: 'bounce 1s infinite',
+      'slide-left-enter-active': 'slide-left-in 0.5s ease-out',
+      'slide-left-leave-active': 'slide-left-out 0.5s ease-out',
+      'slide-right-enter-active': 'slide-right-in 0.5s ease-out',
+      'slide-right-leave-active': 'slide-right-out 0.5s ease-out'
     },
     keyframes: {
       spin: {
@@ -554,6 +557,38 @@ module.exports = {
         '50%': {
           transform: 'translateY(0)',
           animationTimingFunction: 'cubic-bezier(0,0,0.2,1)'
+        }
+      },
+      'slide-right-out': {
+        from: {
+          transform: 'translateX(0%)'
+        },
+        to: {
+          transform: 'translateX(-100%)'
+        }
+      },
+      'slide-right-in': {
+        from: {
+          transform: 'translateX(100%)'
+        },
+        to: {
+          transform: 'translateX(0%)'
+        }
+      },
+      'slide-left-in': {
+        from: {
+          transform: 'translateX(-100%)'
+        },
+        to: {
+          transform: 'translateX(0%)'
+        }
+      },
+      'slide-left-out': {
+        from: {
+          transform: 'translateX(0%)'
+        },
+        to: {
+          transform: 'translateX(100%)'
         }
       }
     }

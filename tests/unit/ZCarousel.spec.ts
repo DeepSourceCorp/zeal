@@ -1,15 +1,15 @@
-import ZDivider from '../../src/components/ZDivider'
+import { ZCarousel, ZSlide } from '../../src/components/ZCarousel/index'
 import Vue from 'vue'
 
 import { createLocalVue, mount, Wrapper } from '@vue/test-utils'
 
-describe('ZDivider', () => {
+describe('ZCarousel', () => {
   let mountFn: (options?: object) => Wrapper<Vue>
   let localVue: typeof Vue
 
   beforeEach(() => {
     mountFn = (options = {}) => {
-      return mount(ZDivider, {
+      return mount(ZCarousel, {
         localVue,
         ...options
       })
@@ -17,19 +17,16 @@ describe('ZDivider', () => {
   })
 
   it('renders the component', () => {
-    const wrapper = mountFn()
-
+    let wrapper = mount(ZCarousel)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it.only('renders a vertical divider', () => {
+  it.only('renders the Carousel Component with Slides', () => {
     const wrapper = mountFn({
-      propsData: {
-        direction: 'vertical'
+      slots: {
+        default: '<div>Some Random Content</div>'
       }
     })
-
-    expect(wrapper.classes()).toContain('z-divider--vertical')
     expect(wrapper.html()).toMatchSnapshot()
   })
 })
