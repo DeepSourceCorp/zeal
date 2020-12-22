@@ -5,8 +5,9 @@ import './assets/css/layout.css'
 import ZButton from './components/ZButton/index'
 import ZIcon from './components/ZIcon/index'
 import ZDivider from './components/ZIcon/index'
+import ZContent from './components/marketing/sections/ZContent/index'
 
-const components = [ZButton, ZIcon, ZDivider]
+const components = [ZButton, ZIcon, ZDivider, ZContent]
 
 const install = (Vue: any) => {
   components.forEach((component) => {
@@ -21,3 +22,4 @@ if (typeof window !== 'undefined' && window.Vue) {
 export { default as ZButton } from './components/ZButton/index'
 export { default as ZIcon } from './components/ZIcon/index'
 export { default as ZDivider } from './components/ZDivider/index'
+export { default as ZContent} from './components/marketing/sections/ZContent/index'
