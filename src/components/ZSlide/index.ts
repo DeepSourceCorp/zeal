@@ -1,3 +1,3 @@
-import ZSlide from '../ZCarousel/ZSlide.vue';
+import ZSlide from '../ZCarousel/ZSlide.vue'
 
 export default ZSlide
