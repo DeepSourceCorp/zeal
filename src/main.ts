@@ -11,8 +11,10 @@ import ZCarousel from './components/ZCarousel/index'
 import ZSlide from './components/ZSlide/index'
 import ZCard from './components/ZCard/index'
 import ZCheckbox from './components/ZCheckbox/index'
+import ZContentGuide from './components/marketing/layouts/ZContentGuide/index'
+import ZPageLabel from './components/marketing/ZPageLabel/index'
 
-const components = [ZButton, ZIcon, ZDivider, ZCarousel, ZSlide, ZCard, ZCheckbox]
+const components = [ZButton, ZIcon, ZDivider, ZContentGuide, ZCarousel, ZSlide, ZCard, ZPageLabel, ZCheckbox]
 
 const install = (Vue: any) => {
   components.forEach((component) => {
@@ -41,3 +43,5 @@ export { default as ZCarousel } from './components/ZCarousel/index'
 export { default as ZSlide } from './components/ZSlide/index'
 export { default as ZCard } from './components/ZCard/index'
 export { default as ZCheckbox } from './components/ZCheckbox/index'
+export { default as ZContentGuide } from './components/marketing/layouts/ZContentGuide/index'
+export { default as ZPageLabel } from './components/marketing/ZPageLabel/index'
