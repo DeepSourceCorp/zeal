@@ -48,7 +48,7 @@ export const CheckboxGroup = () => ({
   components: { ZCheckbox },
   data() {
     return {
-      selectedValues: ["pizza", "coding"]
+      selectedValues: ['pizza', 'coding']
     }
   },
   template: `<div class="container">
@@ -56,5 +56,4 @@ export const CheckboxGroup = () => ({
     <z-checkbox label="Coding" value="coding" v-model="selectedValues"/>
     <z-checkbox label="Walk by myself to get water" value="walk" v-model="selectedValues"/>
   </div>`
-
 })

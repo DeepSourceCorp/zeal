@@ -1,3 +1,3 @@
-import ZCheckbox from './ZCheckbox.vue';
+import ZCheckbox from './ZCheckbox.vue'
 
-export default ZCheckbox;
+export default ZCheckbox

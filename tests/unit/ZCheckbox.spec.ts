@@ -20,30 +20,29 @@ describe('Checkbox Component', () => {
     const wrapper = mountFn()
 
     expect(wrapper.html()).toMatchSnapshot()
-    expect(wrapper.classes().includes('z-input__checkbox')).toBe(true);
+    expect(wrapper.classes().includes('z-input__checkbox')).toBe(true)
   })
-    
+
   it('renders a disabled checkbox component when disabled prop is passed', () => {
-      const wrapper = mountFn({
-        propsData: {
-            disabled: true
-        }
+    const wrapper = mountFn({
+      propsData: {
+        disabled: true
+      }
     })
 
     expect(wrapper.html()).toMatchSnapshot()
-    expect(wrapper.classes().includes('is-disabled')).toBe(true);
+    expect(wrapper.classes().includes('is-disabled')).toBe(true)
   })
-    
+
   it('renders a pre-selected checkbox when the value is passed as checked', () => {
-      const wrapper = mountFn({
-          propsData: {
-            value: "icecream",
-            label: "Icecreams"
-        }
+    const wrapper = mountFn({
+      propsData: {
+        value: 'icecream',
+        label: 'Icecreams'
+      }
     })
     wrapper.setData({ selectedValue: true })
-      
+
     expect(wrapper.html()).toMatchSnapshot()
   })
-
 })
