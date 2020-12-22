@@ -16,7 +16,7 @@ describe('Card Component', () => {
     }
   })
 
-  it('renders a Card component with Header, Body and Footeer named slots', () => {
+  it('renders a Card component with Header, Body and Footer named slots', () => {
     const wrapper = mountFn({
       slots: {
         header:
