@@ -1,0 +1,22 @@
+/* Gradient Backgrounds */
+
+.bg-gradient-ocean {
+  background: linear-gradient(98.66deg, #49f9ce 9.7%, #3dcded 96.6%);
+}
+
+.bg-gradient-galaxy {
+  background: radial-gradient(
+    60.53% 61.06% at 68.85% 57.59%,
+    rgba(51, 0, 255, 0.37) 0%,
+    rgba(189, 52, 201, 0.169375) 55.73%,
+    rgba(116, 95, 203, 0.01) 100%
+  );
+}
+
+.bg-gradient-dawn {
+  background: linear-gradient(98.66deg, #7a96f2 4.42%, #ce79d1 96.6%);
+}
+
+.bg-gradient-splash {
+  background: linear-gradient(98.66deg, #4568dc 4.42%, #324daa 96.6%);
+}

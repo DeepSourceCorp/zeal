@@ -7,8 +7,8 @@
       <div class="col-span-10">
         <z-page-label class="mb-2">{{ pageLabel }}</z-page-label>
         <h1 class="text-vanilla-100 mb-4 heading1">{{ title }}</h1>
-        <div class="block text-vanilla-200 mb-6">
-          <!-- TODO Component: Avatar -->
+        <div class="flex items-center text-vanilla-200 mb-6">
+          <z-avatar class="mr-2" :image="authorImage" :user-name="author"></z-avatar>
           <span>{{ author }}</span>
           <span class="text-slate mx-4">&bull;</span>
           <span>{{ date }}</span>
@@ -33,13 +33,15 @@
 import ZDivider from '@/components/ZDivider'
 import ZPageLabel from '@/components/marketing/ZPageLabel'
 import ZScrollSpy from '@/components/marketing/ZScrollSpy'
+import ZAvatar from '@/components/ZAvatar'
 
 export default {
   name: 'ZContentGuide',
   components: {
     ZDivider,
     ZPageLabel,
-    ZScrollSpy
+    ZScrollSpy,
+    ZAvatar
   },
   props: {
     title: {

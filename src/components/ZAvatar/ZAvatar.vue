@@ -1,0 +1,93 @@
+<template>
+  <component v-if="isVisible" :is="type === 'link' ? 'a' : 'span'" class="inline-block">
+    <span
+      v-if="isLoading"
+      :class="[`${SIZES[getSize].classes}`]"
+      class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full"
+    >
+      <!-- TODO: Add skeleton gradient here -->
+    </span>
+    <template v-else>
+      <img
+        v-if="this.image && !this.userName"
+        :class="[`${SIZES[getSize].classes}`]"
+        class="rounded-full"
+        :src="image"
+        :alt="userName"
+      />
+      <span
+        v-if="!this.image && this.userName"
+        :class="[`${SIZES[getSize].classes}`]"
+        class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full"
+      >
+        {{ getUserInitials }}
+      </span>
+    </template>
+  </component>
+</template>
+
+<script lang="ts">
+import Vue from 'vue'
+const SIZES = {
+  xs: { classes: 'leading-none h-4 w-4 text-xxs', text: 'xs' },
+  sm: { classes: 'leading-none h-6 w-6 text-xs', text: 'sm' },
+  md: { classes: 'leading-none h-8 w-8 text-sm', text: 'md' },
+  lg: { classes: 'leading-none h-12 w-12 text-lg', text: 'lg' },
+  xl: { classes: 'leading-none h-16 w-16 text-2xl', text: 'xl' }
+}
+
+export default Vue.extend({
+  name: 'ZAvatar',
+  props: {
+    type: {
+      type: String,
+      default: 'link'
+    },
+    loading: {
+      type: Boolean,
+      default: false
+    },
+    image: String,
+    userName: String,
+    size: {
+      type: String,
+      default: SIZES.md.text,
+      validator: size => Object.keys(SIZES).includes(size)
+    }
+  },
+  data() {
+    return {
+      isVisible: true,
+      SIZES
+    }
+  },
+  computed: {
+    isLoading(): boolean {
+      const { $options, $props } = this.$parent as Vue
+      return $options.name === 'ZAvatarGroup' ? $props.loading : this.loading
+    },
+    getSize(): string {
+      /**
+       * Returns `size` property as size of avatar if parent is not ZAvatarGroup,
+       * else it returns `size` property of parent as size of avatar.
+       */
+      const { $options, $props } = this.$parent as Vue
+      return $options.name === 'ZAvatarGroup' ? $props.size : this.size
+    },
+    getUserInitials(): string {
+      /**
+       * Returns capitalized initials of the user.
+       * (Only from the first two words of the userName)
+       */
+      return this.userName
+        ? this.userName
+            .split(' ')
+            .map(elem => elem.charAt(0))
+            .slice(0, 2)
+            .join('')
+            .toUpperCase()
+        : ''
+    }
+  }
+})
+</script>
