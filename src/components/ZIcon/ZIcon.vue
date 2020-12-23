@@ -13,32 +13,39 @@
   ></svg>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+<script>
 import feather from 'feather-icons'
 import customIcons from '../../utils/icon-helper'
 
-@Component({
-  name: 'ZIcon'
-})
-export default class Icon extends Vue {
-  @Prop({ default: '' })
-  private icon!: string
-  @Prop({ default: '' })
-  private size!: string
-  @Prop({ default: '' })
-  private position!: string
-
-  public getIcon(iconName: string): HTMLOrSVGImageElement {
-    let DOM = null
-    if (feather.icons[iconName]) {
-      DOM = feather.icons[iconName] && feather.icons[iconName].contents
-    } else {
-      DOM = customIcons[iconName] && customIcons[iconName].contents
+export default {
+  name: 'ZIcon',
+  props: {
+    icon: {
+      default: '',
+      type: String
+    },
+    size: {
+      default: '',
+      type: String
+    },
+    position: {
+      default: '',
+      type: String
     }
-    return DOM
+  },
+  methods: {
+    getIcon(iconName) {
+      let DOM = null
+      if (feather.icons[iconName]) {
+        DOM = feather.icons[iconName] && feather.icons[iconName].contents
+      } else {
+        DOM = customIcons[iconName] && customIcons[iconName].contents
+      }
+      return DOM
+    }
   }
 }
+
 </script>
 
 <style lang="css" scoped>

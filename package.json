@@ -2,7 +2,7 @@
   "name": "@deepsourcelabs/zeal",
   "version": "0.0.4",
   "repository": "https://github.com/deepsourcelabs/bifrost",
-  "main": "./dist/zeal.umd.min.js",
+  "main": "./dist/zeal.common.js",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

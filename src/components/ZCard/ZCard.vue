@@ -13,12 +13,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-
-@Component({
+export default {
   name: 'ZCard'
-})
-export default class Card extends Vue {}
+}
 </script>
 
 <style lang="css" scoped>

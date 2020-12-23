@@ -5,15 +5,17 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
 
-@Component({
-  name: 'ZDivider'
-})
-export default class Divider extends Vue {
-  @Prop({ default: 'horizontal' })
-  private direction!: string
-}
+export default {
+  name: 'ZDivider',
+  props: {
+    direction: {
+      default: 'horizontal',
+      type: String
+    }
+  }
+} 
+
 </script>
 
 <style lang="css" scoped>
