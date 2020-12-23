@@ -8,7 +8,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "build-lib": "vue-cli-service build --target lib --name zeal src/main.ts",
-    "build-lib-icons": "yarn build_icons && yarn build:css && vue-cli-service build --target lib --name zeal src/main.ts",
+    "build-lib-icons": "yarn build_icons && vue-cli-service build --target lib --name zeal src/main.ts && yarn build:css",
     "test:unit": "vue-cli-service test:unit",
     "inspect": "vue-cli-service inspect",
     "tailwindcss:build": "tailwindcss build src/assets/css/tailwind.css -o src/assets/css/index.css",
