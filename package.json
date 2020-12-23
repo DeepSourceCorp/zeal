@@ -14,11 +14,11 @@
     "tailwindcss:build": "tailwindcss build src/assets/css/tailwind.css -o src/assets/css/index.css",
     "style": "tailwindcss build src/assets/styles/index.css -o tailwindcss/tailwind.css",
     "lint": "vue-cli-service lint",
-    "storybook:build": "vue-cli-service storybook:build -c .storybook",
-    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c .storybook",
+    "storybook:build": "yarn build:css && vue-cli-service storybook:build -c .storybook",
+    "storybook:serve": "yarn build:css && vue-cli-service storybook:serve -p 6006 -c .storybook",
     "build-storybook": "yarn storybook:build",
     "chromatic": "npx chromatic --project-token kbbvog2zr9",
-    "build_icons": "node bin/build-icons.js"
+    "build:css": "postcss src/assets/css/tailwind.css -o dist/tailwind.css && postcss src/assets/css/typography.css -o dist/typography.css && postcss src/assets/css/layout.css -o dist/layout.css"
   },
   "dependencies": {
     "@types/istanbul-lib-instrument": "^1.7.4",
