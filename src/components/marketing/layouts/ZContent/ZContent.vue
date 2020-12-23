@@ -1,16 +1,16 @@
 <template>
-  <article class="z-content">
+  <article class="bg-ink-400">
     <!-- TODO Component: PageLabel -->
-    <h1 class="z-content__title heading1">{{ title }}</h1>
-    <div class="z-content__metadata">
+    <h1 class="text-vanilla-100 mb-4 heading1">{{ title }}</h1>
+    <div class="block text-vanilla-200 mb-6">
       <!-- TODO Component: Avatar -->
       <span>{{ author }}</span>
-      <span class="z-content__separator">&bull;</span>
+      <span class="text-slate mx-4">&bull;</span>
       <span>{{ date }}</span>
     </div>
-    <h2 v-if="subtitle" class="z-content__subtitle">{{ subtitle }}</h2>
+    <h2 v-if="subtitle" class="text-xl font-normal text-vanilla-400 mb-6">{{ subtitle }}</h2>
     <z-divider></z-divider>
-    <div class="z-content__main">
+    <div class="text-vanilla-100">
       <slot></slot>
     </div>
   </article>
@@ -39,24 +39,3 @@ export default class Content extends Vue {
   private date!: string
 }
 </script>
-
-<style lang="css" scoped>
-.z-content {
-  @apply bg-ink-400;
-}
-.z-content__title {
-  @apply text-vanilla-100 mb-4;
-}
-.z-content__subtitle {
-  @apply text-xl font-normal text-vanilla-400 mb-6;
-}
-.z-content__metadata {
-  @apply block text-vanilla-200 mb-6;
-}
-.z-content__main {
-  @apply text-vanilla-100;
-}
-.z-content__separator {
-  @apply text-slate mx-4;
-}
-</style>

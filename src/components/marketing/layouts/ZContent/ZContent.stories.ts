@@ -4,7 +4,7 @@ import '../../../../assets/css/layout.css'
 import ZContent from './ZContent.vue'
 
 export default {
-  title: 'Zeal/Marketing/Content Section',
+  title: 'Zeal/Marketing/Content Layout',
   component: ZContent,
   excludeStories: /.*Data$/
 }
