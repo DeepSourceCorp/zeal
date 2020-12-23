@@ -68,14 +68,14 @@ export default {
   },
   computed: {
     slidesLength() {
-      return this.slides.length;
+      return this.slides.length
     },
     reachedMaxLeft() {
-      return (this.currentIndex === 0)
+      return this.currentIndex === 0
     }
   },
   methods: {
-    showNextSlide(){
+    showNextSlide() {
       this.currentIndex++
       if (this.currentIndex >= this.slidesLength) {
         this.currentIndex = 0
@@ -104,7 +104,7 @@ export default {
   mounted() {
     this.slides = this.$children.filter((child) => child.$options.name === 'ZSlide')
     this.slides.map((slide, index) => {
-      slide.index = index;
+      slide.index = index
     })
     if (this.autoSlide) {
       this.autoInterval = setInterval(() => {

@@ -5,7 +5,6 @@
 </template>
 
 <script lang="ts">
-
 export default {
   name: 'ZDivider',
   props: {
@@ -14,8 +13,7 @@ export default {
       type: String
     }
   }
-} 
-
+}
 </script>
 
 <style lang="css" scoped>
