@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import ZDivider from '../../../ZDivider/index'
+import ZDivider from '@/components/ZDivider'
 
 export default {
   name: 'ZContent',

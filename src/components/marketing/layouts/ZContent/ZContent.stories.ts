@@ -1,6 +1,3 @@
-import '../../../../assets/css/tailwind.css'
-import '../../../../assets/css/typography.css'
-import '../../../../assets/css/layout.css'
 import ZContent from './ZContent.vue'
 
 export default {
