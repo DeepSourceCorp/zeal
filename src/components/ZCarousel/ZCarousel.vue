@@ -77,7 +77,7 @@ export default {
   methods: {
     showNextSlide(){
       this.currentIndex++
-      if (this.currentIndex >= this.slidesLength - 1) {
+      if (this.currentIndex >= this.slidesLength) {
         this.currentIndex = 0
       }
       this.slideDirection = 'slide-right'
@@ -143,11 +143,11 @@ export default {
 }
 
 .z-carousel__wrapper {
-  @apply relative;
+  @apply relative h-full;
 }
 
 .z-carousel__container {
-  @apply relative overflow-hidden h-64 z-10;
+  @apply relative overflow-hidden h-full z-10;
 }
 
 .z-carousel__control {

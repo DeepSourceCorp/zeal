@@ -20,6 +20,6 @@ export default {
 
 <style lang="css" scoped>
 .z-card {
-  @apply bg-ink-400 text-vanilla-100 rounded-md overflow-hidden transition-all shadow;
+  @apply text-vanilla-100 rounded-md overflow-hidden transition-all shadow;
 }
 </style>
