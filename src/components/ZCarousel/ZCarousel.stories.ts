@@ -105,7 +105,7 @@ export const CarouselWithoutAutoSlide = () => ({
 export const CarouselWithSlideTiming = () => ({
   components: { ZCarousel, ZSlide },
   template: `<div class='container'>
-        <z-carousel :autoTiming="1000">
+        <z-carousel autoTiming="1000">
            <z-slide>
             <img src="https://picsum.photos/id/237/600/350">
             </z-slide>

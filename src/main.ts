@@ -14,7 +14,10 @@ import ZCard from './components/ZCard/index'
 const components = [ZButton, ZIcon, ZDivider, ZCarousel, ZSlide, ZCard]
 
 const install = (Vue: any) => {
+  console.log(components)
   components.forEach((component) => {
+    console.log('Componet Name---->', component.name)
+    console.log('Componet---->', component)
     Vue.component(component.name, component)
   })
 }
@@ -22,7 +25,6 @@ const install = (Vue: any) => {
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
-
 
 export default {
   install,
@@ -32,4 +34,11 @@ export default {
   ZCarousel,
   ZSlide,
   ZCard
- }
+}
+
+export { default as ZButton } from './components/ZButton/index'
+export { default as ZIcon } from './components/ZIcon/index'
+export { default as ZDivider } from './components/ZDivider/index'
+export { default as ZCarousel } from './components/ZCarousel/index'
+export { default as ZSlide } from './components/ZSlide/index'
+export { default as ZCard } from './components/ZCard/index'

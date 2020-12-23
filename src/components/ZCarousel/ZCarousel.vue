@@ -24,83 +24,96 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+<script>
 import ZIcon from '../ZIcon'
 
-@Component({
+export default {
   name: 'ZCarousel',
   components: {
     ZIcon
-  }
-})
-export default class Carousel extends Vue {
-  @Prop({ default: 0 })
-  private activeIndex!: number
-  @Prop({ default: 'left' })
-  private indicatorPosition!: string
-  @Prop({ default: true })
-  private showIndicators!: boolean
-  @Prop({ default: 'true' })
-  private autoSlide!: string
-  @Prop({ default: '2000' })
-  private autoTiming!: string
-  @Prop({ default: true })
-  private showControls!: boolean
+  },
+  props: {
+    activeIndex: {
+      default: 0,
+      type: Number
+    },
+    indicatorPosition: {
+      default: 'left',
+      type: String
+    },
+    showIndicators: {
+      default: true,
+      type: Boolean
+    },
+    autoSlide: {
+      default: true,
+      type: Boolean
+    },
+    autoTiming: {
+      default: '2000',
+      type: String
+    },
+    showControls: {
+      default: true,
+      type: Boolean
+    }
+  },
+  data() {
+    return {
+      currentIndex: this.activeIndex || 0,
+      autoInterval: null,
+      slides: [],
+      slideDirection: ''
+    }
+  },
+  computed: {
+    slidesLength() {
+      return this.slides.length;
+    },
+    reachedMaxLeft() {
+      return (this.currentIndex === 0)
+    }
+  },
+  methods: {
+    showNextSlide(){
+      this.currentIndex++
+      if (this.currentIndex >= this.slidesLength - 1) {
+        this.currentIndex = 0
+      }
+      this.slideDirection = 'slide-right'
+    },
 
-  private currentIndex: number = this.activeIndex || 0
-  private autoInterval: any = null
-  private slides: Array<any> = []
-  private slideDirection: string = ''
+    showPrevSlide() {
+      this.currentIndex--
+      if (this.currentIndex < 0) {
+        this.currentIndex = this.slidesLength - 1
+      }
+      this.slideDirection = 'slide-left'
+    },
 
+    showSlide(slideIndex) {
+      if (slideIndex > this.currentIndex) this.slideDirection = 'slide-right'
+      else this.slideDirection = 'slide-left'
+      this.currentIndex = slideIndex
+    },
+
+    cancelAutoSlide() {
+      clearInterval(this.autoInterval)
+    }
+  },
   mounted() {
     this.slides = this.$children.filter((child) => child.$options.name === 'ZSlide')
-    if (this.autoSlide == 'true') {
+    this.slides.map((slide, index) => {
+      slide.index = index;
+    })
+    if (this.autoSlide) {
       this.autoInterval = setInterval(() => {
         this.showNextSlide()
       }, parseInt(this.autoTiming))
     }
-  }
-
+  },
   beforeDestroy() {
     this.cancelAutoSlide()
-  }
-
-  get showButtons(): boolean {
-    return true
-  }
-  get slidesLength(): number {
-    return this.slides.length
-  }
-
-  get reachedMaxLeft(): boolean {
-    return this.currentIndex === 0
-  }
-
-  public showNextSlide(): void {
-    this.currentIndex++
-    if (this.currentIndex >= this.slidesLength - 1) {
-      this.currentIndex = 0
-    }
-    this.slideDirection = 'slide-right'
-  }
-
-  public showPrevSlide(): void {
-    this.currentIndex--
-    if (this.currentIndex < 0) {
-      this.currentIndex = this.slidesLength - 1
-    }
-    this.slideDirection = 'slide-left'
-  }
-
-  public showSlide(slideIndex: number): void {
-    if (slideIndex > this.currentIndex) this.slideDirection = 'slide-right'
-    else this.slideDirection = 'slide-left'
-    this.currentIndex = slideIndex
-  }
-
-  public cancelAutoSlide(): void {
-    clearInterval(this.autoInterval)
   }
 }
 </script>
