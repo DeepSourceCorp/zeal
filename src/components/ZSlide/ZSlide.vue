@@ -37,7 +37,7 @@ export default {
 }
 
 .z-slide__content img {
-  @apply object-fill w-full h-full;
+  @apply object-fill w-full;
 }
 
 .slide-left-enter-active {
