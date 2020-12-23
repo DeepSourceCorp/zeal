@@ -21,6 +21,7 @@ module.exports = {
       honey: '#f6d87c',
       aqua: '#23c4f8',
       gitlab: '#6753B5',
+      bitbucket: '#1E54C5',
       vanilla: {
         100: '#ffffff',
         200: '#f5f5f5',
