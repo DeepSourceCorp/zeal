@@ -15,10 +15,7 @@ import ZCheckbox from './components/ZCheckbox/index'
 const components = [ZButton, ZIcon, ZDivider, ZCarousel, ZSlide, ZCard, ZCheckbox]
 
 const install = (Vue: any) => {
-  console.log(components)
   components.forEach((component) => {
-    console.log('Componet Name---->', component.name)
-    console.log('Componet---->', component)
     Vue.component(component.name, component)
   })
 }

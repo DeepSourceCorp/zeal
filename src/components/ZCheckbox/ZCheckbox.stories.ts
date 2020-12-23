@@ -21,6 +21,11 @@ export const DefaultCheckbox = () => ({
 
 export const DisabledCheckbox = () => ({
   components: { ZCheckbox },
+  data() {
+    return {
+      selectedValue: false
+    }
+  },
   template: `<z-checkbox label="I love Pastries" value="pastry" v-model="selectedValue" disabled/>`
 })
 
