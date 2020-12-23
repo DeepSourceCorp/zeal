@@ -1,5 +1,5 @@
 import ZCarousel from './ZCarousel.vue'
-import ZSlide from './ZSlide.vue'
+import ZSlide from '../ZSlide/ZSlide.vue'
 import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'
@@ -105,7 +105,7 @@ export const CarouselWithoutAutoSlide = () => ({
 export const CarouselWithSlideTiming = () => ({
   components: { ZCarousel, ZSlide },
   template: `<div class='container'>
-        <z-carousel :autoTiming="1000">
+        <z-carousel autoTiming="1000">
            <z-slide>
             <img src="https://picsum.photos/id/237/600/350">
             </z-slide>

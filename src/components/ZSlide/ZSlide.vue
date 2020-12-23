@@ -8,24 +8,21 @@
   </transition>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-
-@Component({
-  name: 'ZSlide'
-})
-export default class Slide extends Vue {
-  private index: number = 0
-
-  get visible(): boolean {
-    let $parent: any = this.$parent
-    this.index = $parent.slides.indexOf(this)
-    return this.index === $parent.currentIndex
-  }
-
-  get dir(): string {
-    let $parent: any = this.$parent
-    return $parent.slideDirection
+<script>
+export default {
+  name: 'ZSlide',
+  data() {
+    return {
+      index: 0
+    }
+  },
+  computed: {
+    visible() {
+      return this.index === this.$parent.currentIndex
+    },
+    dir() {
+      return this.$parent.slideDirection
+    }
   }
 }
 </script>
@@ -39,7 +36,7 @@ export default class Slide extends Vue {
 }
 
 .z-slide__content img {
-  @apply object-fill w-full h-full;
+  @apply object-fill w-full;
 }
 
 .slide-left-enter-active {

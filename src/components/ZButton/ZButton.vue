@@ -23,34 +23,47 @@
   </component>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
-
-@Component({
-  name: 'ZButton'
-})
-export default class Button extends Vue {
-  @Prop({ default: '' })
-  private color!: string
-  @Prop({ default: 'button' })
-  private type!: string
-  @Prop({ default: '' })
-  private customClasses!: string
-  @Prop({ default: '' })
-  private textColor!: string
-  @Prop({ default: '' })
-  private size!: string
-  @Prop({ default: false })
-  private disabled!: boolean
-  @Prop({ default: false })
-  private active!: boolean
-  @Prop({ default: false })
-  private fullWidth!: string
-  @Prop({ default: false })
-  private to!: string
-
-  public handleClick(event: any): void {
-    this.$emit('click', event)
+<script>
+export default {
+  name: 'ZButton',
+  props: {
+    color: {
+      default: '',
+      type: String
+    },
+    type: {
+      default: 'button',
+      type: String
+    },
+    customClasses: {
+      default: '',
+      type: String
+    },
+    size: {
+      default: '',
+      type: String
+    },
+    disabled: {
+      default: false,
+      type: Boolean
+    },
+    active: {
+      default: false,
+      type: Boolean
+    },
+    fullWidth: {
+      default: false,
+      type: Boolean
+    },
+    to: {
+      default: '',
+      type: String
+    }
+  },
+  methods: {
+    handleClick(event) {
+      this.$emit('click', event)
+    }
   }
 }
 </script>

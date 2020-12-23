@@ -12,12 +12,13 @@ import ZSlide from './components/ZSlide/index'
 import ZCard from './components/ZCard/index'
 import ZCheckbox from './components/ZCheckbox/index'
 
-import '../dist/tailwind.css'
-
 const components = [ZButton, ZIcon, ZDivider, ZCarousel, ZSlide, ZCard, ZCheckbox]
 
 const install = (Vue: any) => {
+  console.log(components)
   components.forEach((component) => {
+    console.log('Componet Name---->', component.name)
+    console.log('Componet---->', component)
     Vue.component(component.name, component)
   })
 }
@@ -26,10 +27,20 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 
+export default {
+  install,
+  ZButton,
+  ZIcon,
+  ZDivider,
+  ZCarousel,
+  ZSlide,
+  ZCard
+}
+
 export { default as ZButton } from './components/ZButton/index'
 export { default as ZIcon } from './components/ZIcon/index'
 export { default as ZDivider } from './components/ZDivider/index'
-export { default as ZSlide } from './components/ZSlide/index'
 export { default as ZCarousel } from './components/ZCarousel/index'
+export { default as ZSlide } from './components/ZSlide/index'
 export { default as ZCard } from './components/ZCard/index'
 export { default as ZCheckbox } from './components/ZCheckbox/index'
