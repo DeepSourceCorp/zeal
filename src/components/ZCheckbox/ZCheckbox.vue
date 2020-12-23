@@ -12,50 +12,66 @@
   </label>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue, Model } from 'vue-property-decorator'
-
-@Component({
-  name: 'ZCheckbox'
-})
-export default class Checkbox extends Vue {
-  @Model('change', { type: Boolean }) readonly modelValue!: any
-
-  @Prop({ default: '' })
-  private label!: string
-  @Prop({ default: '' })
-  private value!: string
-  @Prop({ default: true })
-  private trueValue!: boolean
-  @Prop({ default: false })
-  private falseValue!: boolean
-  @Prop({ default: false })
-  private disabled!: boolean
-
-  get isChecked(): boolean {
-    if (this.modelValue instanceof Array) {
-      return this.modelValue.includes(this.value)
+<script>
+export default {
+  name: 'ZCheckbox',
+  model: {
+    prop: 'modelValue',
+    event: 'change'
+  },
+  props: {
+    label: {
+      default: '',
+      type: String
+    },
+    value: {
+      default: '',
+      type: String
+    },
+    trueValue: {
+      default: true,
+      type: Boolean
+    },
+    falseValue: {
+      default: false,
+      type: Boolean
+    },
+    disabled: {
+      default: false,
+      type: Boolean
+    },
+    modelValue: {
+      default: ''
     }
-    return this.modelValue === this.trueValue
-  }
-
-  public updateInput(event: any): void {
-    let isChecked = event.target.checked
-
-    if (this.modelValue instanceof Array) {
-      let newValue = [...this.modelValue]
-
-      if (isChecked) {
-        newValue.push(this.value)
-      } else {
-        newValue.splice(newValue.indexOf(this.value), 1)
+  },
+  computed: {
+    isChecked() {
+      if (this.modelValue instanceof Array) {
+        return this.modelValue.includes(this.value)
       }
-      this.$emit('change', newValue)
-    } else {
-      this.$emit('change', isChecked ? this.trueValue : this.falseValue)
+      return this.modelValue === this.trueValue
+    }
+  },
+  methods: {
+    updateInput(event) {
+      let isChecked = event.target.checked
+
+      if (this.modelValue instanceof Array) {
+        let newValue = [...this.modelValue]
+
+        if (isChecked) {
+          newValue.push(this.value)
+        } else {
+          newValue.splice(newValue.indexOf(this.value), 1)
+        }
+        this.$emit('change', newValue)
+      } else {
+        this.$emit('change', isChecked ? this.trueValue : this.falseValue)
+      }
     }
   }
 }
+
 </script>
 
 <style lang="css" scoped>
