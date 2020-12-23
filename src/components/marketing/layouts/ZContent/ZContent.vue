@@ -17,25 +17,28 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
 import ZDivider from '../../../ZDivider/index'
 
-@Component({
+export default {
   name: 'ZContent',
   components: {
     ZDivider
+  },
+  props: {
+    title: {
+      required: true,
+      type: String
+    },
+    subtitle: String,
+    author: {
+      required: true,
+      type: String
+    },
+    authorImage: String,
+    date: {
+      required: true,
+      type: String
+    }
   }
-})
-export default class Content extends Vue {
-  @Prop({ required: true })
-  private title!: string
-  @Prop({})
-  private subtitle!: string
-  @Prop({ required: true })
-  private author!: string
-  @Prop({})
-  private authorImage!: string
-  @Prop({ required: true })
-  private date!: string
 }
 </script>
