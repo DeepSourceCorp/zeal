@@ -2,7 +2,7 @@
   <component
     :is="type === 'link' || to ? 'a' : 'button'"
     :href="to"
-    class="z-btn"
+    class="z-btn inline-flex items-center px-6 text-base font-medium border-transparent h-10 rounded-sm relative"
     v-bind="$attrs"
     :disabled="disabled"
     v-on="$listeners"
@@ -69,11 +69,6 @@ export default {
 </script>
 
 <style lang="css" scoped>
-/* Common Button Style */
-
-.z-btn {
-  @apply inline-flex items-center px-6 text-base font-medium border-transparent h-10 rounded-sm relative;
-}
 
 .is-disabled {
   @apply opacity-50 cursor-not-allowed;
@@ -84,7 +79,6 @@ export default {
 }
 
 /* Button - Primary Style */
-
 .z-btn--primary {
   @apply bg-juniper hover:bg-light_juniper text-ink-400;
 }

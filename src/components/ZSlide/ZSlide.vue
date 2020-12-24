@@ -1,7 +1,7 @@
 <template>
   <transition :name="dir">
-    <div class="z-slide" v-show="visible">
-      <div class="z-slide__content">
+    <div class="z-slide absolute w-full h-full top-0 left-0 bottom-0 right-0" v-show="visible">
+      <div class="z-slide__content w-full h-full">
         <slot></slot>
       </div>
     </div>
@@ -28,13 +28,6 @@ export default {
 </script>
 
 <style lang="css">
-.z-slide {
-  @apply absolute w-full h-full top-0 left-0 bottom-0 right-0;
-}
-.z-slide__content {
-  @apply w-full h-full;
-}
-
 .z-slide__content img {
   @apply object-fill w-full;
 }

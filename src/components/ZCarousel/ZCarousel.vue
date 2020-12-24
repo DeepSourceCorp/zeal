@@ -1,21 +1,22 @@
 <template>
-  <div class="z-carousel__wrapper">
-    <div class="z-carousel__container">
+  <div class="z-carousel__wrapper relative h-full">
+    <div class="z-carousel__container relative overflow-hidden h-full z-10">
       <slot></slot>
     </div>
     <div class="z-carousel__controls" v-show="showControls">
-      <button class="z-carousel__control z-carousel__control--left" @click="showPrevSlide">
+      <button class="z-carousel__control z-carousel__control--left  absolute h-12 w-12 z-20 -mt-6 flex bg-ink-100 bg-opacity-75 justify-center items-center" @click="showPrevSlide">
         <z-icon icon="arrow-left" />
       </button>
-      <button class="z-carousel__control z-carousel__control--right" @click="showNextSlide">
+      <button class="z-carousel__control z-carousel__control--right absolute h-12 w-12 z-20 -mt-6 flex bg-ink-100 bg-opacity-75 justify-center items-center" @click="showNextSlide">
         <z-icon icon="arrow-right" />
       </button>
     </div>
-    <ul class="z-indicators" v-show="showIndicators" :class="[`z-indicator--${indicatorPosition}`]">
+    <ul class="z-indicators flex absolute mt-4 -ml-2 w-full" v-show="showIndicators" :class="[`z-indicator--${indicatorPosition}`]">
       <li
         v-for="(slide, index) in slides"
         :key="index"
         @click.stop="showSlide(index)"
+        class="h-2 w-2 cursor-pointer rounded-full bg-ink-100 ml-3"
         :class="['z-indicator', { is_active: index == currentIndex }]"
       >
         <button class="z-indicator__button" />
@@ -119,13 +120,6 @@ export default {
 </script>
 
 <style lang="css">
-.z-indicators {
-  @apply flex absolute mt-4 -ml-2 w-full;
-}
-.z-indicator {
-  @apply h-2 w-2 cursor-pointer rounded-full bg-ink-100 ml-3;
-}
-
 .z-indicator.is_active {
   @apply bg-juniper;
 }
@@ -142,25 +136,11 @@ export default {
   @apply justify-end;
 }
 
-.z-carousel__wrapper {
-  @apply relative h-full;
-}
-
-.z-carousel__container {
-  @apply relative overflow-hidden h-full z-10;
-}
-
-.z-carousel__control {
-  @apply absolute h-12 w-12 z-20 -mt-6 flex bg-ink-100 bg-opacity-75 justify-center items-center;
-}
-
 .z-carousel__control--left {
-  @apply left-0;
-  top: 50%;
+  @apply left-0 top-50;
 }
 
 .z-carousel__control--right {
-  @apply right-0;
-  top: 50%;
+  @apply right-0 top-50;
 }
 </style>

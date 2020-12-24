@@ -1,5 +1,5 @@
 <template>
-  <div class="z-card">
+  <div class="z-card text-vanilla-100 rounded-md overflow-hidden transition-all shadow">
     <div class="z-card__header" v-if="$slots.header">
       <slot name="header"></slot>
     </div>
@@ -17,9 +17,3 @@ export default {
   name: 'ZCard'
 }
 </script>
-
-<style lang="css" scoped>
-.z-card {
-  @apply text-vanilla-100 rounded-md overflow-hidden transition-all shadow;
-}
-</style>

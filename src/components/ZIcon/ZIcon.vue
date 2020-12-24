@@ -1,11 +1,11 @@
 <template>
   <svg
+    class="stroke-current stroke-2 text-vanilla-400"
     :class="[
       'z-icon',
-      `${size && `z-icon--${size}`}`,
+      `${getSizeStyle}`,
       `${icon && `z-icon--${icon}`}`,
-      'z-icon--default',
-      `${position && `z-icon--${position}`}`
+      `${position && `${getPositionStyle}`}`
     ]"
     viewBox="0 0 24 24"
     v-html="getIcon(icon)"
@@ -33,6 +33,22 @@ export default {
       type: String
     }
   },
+  computed: {
+    getSizeStyle() {
+      if(this.size === 'small') {
+        return 'w-4 h-4';
+      }
+      return 'w-6 h-6';
+    },
+    getPositionStyle() {
+      if(this.position === 'left') {
+        return 'absolute left-1 w-4';
+      } else if(this.position === 'right') {
+        return 'absolute right-1 w-4';
+      }
+      return '';
+    }
+  },
   methods: {
     getIcon(iconName) {
       let DOM = null
@@ -46,25 +62,3 @@ export default {
   }
 }
 </script>
-
-<style lang="css" scoped>
-.z-icon {
-  @apply w-6 h-6 stroke-current stroke-2;
-}
-
-.z-icon--default {
-  @apply text-vanilla-400;
-}
-
-.z-icon--small {
-  @apply w-4 h-4;
-}
-
-.z-icon--left {
-  @apply absolute left-1 w-4;
-}
-
-.z-icon--right {
-  @apply absolute right-1 w-4;
-}
-</style>

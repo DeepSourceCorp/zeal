@@ -13,3 +13,8 @@
 .container {
   @apply w-2/3 p-4;
 }
+
+.carousel-container {
+  height: 400px;
+  width: 700px;
+}
