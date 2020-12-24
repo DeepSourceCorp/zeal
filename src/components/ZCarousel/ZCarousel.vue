@@ -4,14 +4,24 @@
       <slot></slot>
     </div>
     <div class="z-carousel__controls" v-show="showControls">
-      <button class="z-carousel__control z-carousel__control--left  absolute h-12 w-12 z-20 -mt-6 flex bg-ink-100 bg-opacity-75 justify-center items-center" @click="showPrevSlide">
+      <button
+        class="z-carousel__control z-carousel__control--left absolute h-12 w-12 z-20 -mt-6 flex bg-ink-100 bg-opacity-75 justify-center items-center"
+        @click="showPrevSlide"
+      >
         <z-icon icon="arrow-left" />
       </button>
-      <button class="z-carousel__control z-carousel__control--right absolute h-12 w-12 z-20 -mt-6 flex bg-ink-100 bg-opacity-75 justify-center items-center" @click="showNextSlide">
+      <button
+        class="z-carousel__control z-carousel__control--right absolute h-12 w-12 z-20 -mt-6 flex bg-ink-100 bg-opacity-75 justify-center items-center"
+        @click="showNextSlide"
+      >
         <z-icon icon="arrow-right" />
       </button>
     </div>
-    <ul class="z-indicators flex absolute mt-4 -ml-2 w-full" v-show="showIndicators" :class="[`z-indicator--${indicatorPosition}`]">
+    <ul
+      class="z-indicators flex absolute mt-4 -ml-2 w-full"
+      v-show="showIndicators"
+      :class="[`z-indicator--${indicatorPosition}`]"
+    >
       <li
         v-for="(slide, index) in slides"
         :key="index"

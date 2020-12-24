@@ -1,6 +1,8 @@
 <template>
-  <div :class="['z-divider', `z-divider--${direction}`]"
-        class="relative block h-px w-full my-6 mx-0 bg-ink-100">
+  <div
+    :class="['z-divider', `z-divider--${direction}`]"
+    class="relative block h-px w-full my-6 mx-0 bg-ink-100"
+  >
     <div class="z-divider--content" v-if="direction !== 'vertical'"><slot></slot></div>
   </div>
 </template>

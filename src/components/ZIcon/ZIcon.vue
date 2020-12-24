@@ -35,18 +35,18 @@ export default {
   },
   computed: {
     getSizeStyle() {
-      if(this.size === 'small') {
-        return 'w-4 h-4';
+      if (this.size === 'small') {
+        return 'w-4 h-4'
       }
-      return 'w-6 h-6';
+      return 'w-6 h-6'
     },
     getPositionStyle() {
-      if(this.position === 'left') {
-        return 'absolute left-1 w-4';
-      } else if(this.position === 'right') {
-        return 'absolute right-1 w-4';
+      if (this.position === 'left') {
+        return 'absolute left-1 w-4'
+      } else if (this.position === 'right') {
+        return 'absolute right-1 w-4'
       }
-      return '';
+      return ''
     }
   },
   methods: {

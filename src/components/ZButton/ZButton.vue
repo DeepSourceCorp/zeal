@@ -69,7 +69,6 @@ export default {
 </script>
 
 <style lang="css" scoped>
-
 .is-disabled {
   @apply opacity-50 cursor-not-allowed;
 }
