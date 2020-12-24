@@ -21,7 +21,7 @@ import ZDivider from '@/components/ZDivider'
 import ZPageLabel from '@/components/marketing/ZPageLabel'
 
 export default {
-  name: 'ZContent',
+  name: 'ZContentGuide',
   components: {
     ZDivider,
     ZPageLabel
