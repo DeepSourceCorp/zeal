@@ -16,6 +16,6 @@ export const DefaultWithoutText = () => ({
 export const PageLabelWithText = () => ({
   components: { ZPageLabel },
   template: `<div class='padded-container'>
-      <z-page-label>Page</z-page-label>
+      <z-page-label class="bg-green">Page</z-page-label>
     </div>`
 })

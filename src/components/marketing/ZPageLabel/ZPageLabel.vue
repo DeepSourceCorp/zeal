@@ -1,8 +1,10 @@
 <template>
-  <span 
+  <span
+    ref="page-label"
     :class="[`${color && `z-gradient--${color}`}`]"
     class="inline-block px-2 text-sm text-vanilla-100 uppercase rounded-sm"
   >
+    {{ labelHasClass }}
     <slot>Page Label</slot>
   </span>
 </template>
@@ -14,6 +16,12 @@ export default {
     color: {
       type: String,
       default: 'alpha'
+    }
+  },
+  computed: {
+    labelHasClass: function(): boolean {
+      console.log(this.$refs)
+      return true
     }
   }
 }
