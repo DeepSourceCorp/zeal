@@ -1,9 +1,8 @@
 <template>
-  <label class="z-input z-input__checkbox block relative pl-6 mb-1 text-base" 
-        :class="[
-          `${disabled && `cursor-not-allowed`}`,
-          { 'is-disabled': this.disabled !== false }
-        ]">
+  <label
+    class="z-input z-input__checkbox block relative pl-6 mb-1 text-base"
+    :class="[`${disabled && `cursor-not-allowed`}`, { 'is-disabled': this.disabled !== false }]"
+  >
     <input
       type="checkbox"
       :checked="isChecked"
@@ -12,14 +11,11 @@
       :disabled="this.disabled"
       class="absolute opacity-0 h-0 w-0"
     />
-    <span class="z-input__checkbox--checkmark grid place-items-center absolute left-0 h-5 w-5 rounded-sm border border-slate border-solid bg-transparent cursor-pointer top-50"
-          :class="[
-            `${disabled && `cursor-not-allowed`}`
-          ]"></span>
-    <span class="z-input__checkbox--text ml-2"
-          :class="[
-            `${disabled && `text-slate`}`
-          ]">
+    <span
+      class="z-input__checkbox--checkmark grid place-items-center absolute left-0 h-5 w-5 rounded-sm border border-slate border-solid bg-transparent cursor-pointer top-50"
+      :class="[`${disabled && `cursor-not-allowed`}`]"
+    ></span>
+    <span class="z-input__checkbox--text ml-2" :class="[`${disabled && `text-slate`}`]">
       {{ label }}
     </span>
   </label>
@@ -104,7 +100,6 @@ export default {
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .z-input__checkbox--checkmark:after {
-   
   @apply absolute hidden;
 }
 
@@ -115,7 +110,7 @@ export default {
 
 /* Style the checkmark/indicator */
 .z-input__checkbox .z-input__checkbox--checkmark:after {
-  content: "\2713";
+  content: '\2713';
   @apply text-vanilla-100 text-center text-lg;
 }
 
@@ -132,5 +127,4 @@ export default {
 .z-input__checkbox.is-disabled input:checked ~ .z-input__checkbox--checkmark:after {
   @apply text-ink-300;
 }
-
 </style>
