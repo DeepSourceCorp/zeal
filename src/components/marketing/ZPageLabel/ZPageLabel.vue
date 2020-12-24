@@ -1,10 +1,11 @@
 <template>
   <span
-    ref="page-label"
-    :class="[`${color && `z-gradient--${color}`}`]"
-    class="inline-block px-2 text-sm text-vanilla-100 uppercase rounded-sm"
+    :class="[
+      `${backgroundColor && `bg-${backgroundColor}`}`,
+      `${textColor && `text-${textColor}`}`
+    ]"
+    class="inline-block px-2 text-sm uppercase rounded-sm"
   >
-    {{ labelHasClass }}
     <slot>Page Label</slot>
   </span>
 </template>
@@ -13,23 +14,14 @@
 export default {
   name: 'ZPageLabel',
   props: {
-    color: {
-      type: String,
-      default: 'alpha'
-    }
-  },
-  computed: {
-    labelHasClass: function(): boolean {
-      console.log(this.$refs)
-      return true
+    backgroundColor: {
+      default: 'gradient-dawn',
+      type: String
+    },
+    textColor: {
+      default: 'vanilla-100',
+      type: String
     }
   }
 }
 </script>
-
-<style lang="css" scoped>
-/* Gradient - Alpha */
-.z-gradient--alpha {
-  @apply bg-gradient-to-br from-alpha-begin to-alpha-end;
-}
-</style>

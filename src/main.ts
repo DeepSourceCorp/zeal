@@ -3,6 +3,7 @@ import Vue from 'vue'
 import './assets/css/tailwind.css'
 import './assets/css/typography.css'
 import './assets/css/layout.css'
+import './assets/css/gradient.css'
 
 import ZButton from './components/ZButton/index'
 import ZIcon from './components/ZIcon/index'
