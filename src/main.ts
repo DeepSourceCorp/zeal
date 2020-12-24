@@ -11,9 +11,9 @@ import ZCarousel from './components/ZCarousel/index'
 import ZSlide from './components/ZSlide/index'
 import ZCard from './components/ZIcon/index'
 import ZContent from './components/marketing/layouts/ZContent/index'
-import '../dist/tailwind.css'
+import ZPageLabel from './components/marketing/ZPageLabel/index'
 
-const components = [ZButton, ZIcon, ZDivider, ZContent, ZCarousel, ZSlide, ZCard]
+const components = [ZButton, ZIcon, ZDivider, ZContent, ZCarousel, ZSlide, ZCard, ZPageLabel]
 
 const install = (Vue: any) => {
   components.forEach((component) => {
@@ -32,3 +32,4 @@ export { default as ZCarousel } from './components/ZCarousel/index'
 export { default as ZSlide } from './components/ZSlide/index'
 export { default as ZCard } from './components/ZCard/index'
 export { default as ZContent } from './components/marketing/layouts/ZContent/index'
+export { default as ZPageLabel } from './components/marketing/ZPageLabel/index'

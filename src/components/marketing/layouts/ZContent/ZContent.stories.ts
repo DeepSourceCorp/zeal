@@ -1,7 +1,7 @@
 import ZContent from './ZContent.vue'
 
 export default {
-  title: 'Zeal/Marketing/Content Layout',
+  title: 'Zeal Marketing/Content Layout',
   component: ZContent,
   excludeStories: /.*Data$/
 }
@@ -12,6 +12,7 @@ export const Basic = () => ({
       <z-content
         title="Ornare id libero vel leo tincidunt semper."
         subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices consequat id mauris condimentum libero. Ipsum feugiat gravida ultrices proin purus accumsan ac."
+        page-label="Guide"
         author="John Doe Williams"
         date="February 29, 2020"
       >
