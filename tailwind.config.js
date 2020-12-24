@@ -10,13 +10,6 @@ module.exports = {
       lg: '1024px',
       xl: '1280px'
     },
-    gradientColorStops: (theme) => ({
-      ...theme('colors'),
-      alpha: {
-        begin: '#4568DC',
-        end: '#B06AB3'
-      }
-    }),
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
