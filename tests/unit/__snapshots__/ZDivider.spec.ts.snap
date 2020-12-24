@@ -11,3 +11,9 @@ exports[`VDivider renders the component 1`] = `
   <div class="z-divider--content"></div>
 </div>
 `;
+
+exports[`ZDivider renders a vertical divider 1`] = `
+<div class="z-divider z-divider--vertical">
+  <!---->
+</div>
+`;
