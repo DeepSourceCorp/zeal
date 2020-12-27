@@ -1,3 +1,3 @@
-import ZPageLabel from './ZPageLabel.vue'
+import ZScrollSpy from './ZScrollSpy.vue'
 
-export default ZPageLabel
+export default ZScrollSpy

@@ -1,5 +1,8 @@
 <template>
-  <ul class="sticky top-50 self-start">
+  <ul 
+    class="sticky top-50 self-start"
+    :class="[`text-${align}`]"
+  >
     <li
       v-for="heading in headings"
       :key="heading.text"
@@ -7,7 +10,7 @@
     >
       <!-- TODO: Add href with id of headings to scroll to.
       To be done, after markdown compilation setup. -->
-      <a class="whitespace-nowrap" href="">{{ heading.text }}</a>
+      <a class="whitespace-nowrap text-xs" href="">{{ heading.text }}</a>
     </li>
   </ul>
 </template>
@@ -24,6 +27,10 @@ export default {
     rootId: {
       type: String,
       required: true
+    },
+    align: {
+      type: String,
+      default: 'right'
     }
   },
   data() {
@@ -49,7 +56,7 @@ export default {
   mounted() {
     this.headingElements.forEach((elem) => {
       if (elem.textContent) {
-        this.initializeHeading(elem.textContent)
+        this.addHeading(elem.textContent)
         this.observer.observe(elem)
       }
     })
@@ -66,7 +73,7 @@ export default {
         }
       })
     },
-    initializeHeading(heading: string) {
+    addHeading(heading: string) {
       this.$set(this.headings, heading, {})
       this.$set(this.headings[heading], 'text', heading)
       this.$set(this.headings[heading], 'active', false)
