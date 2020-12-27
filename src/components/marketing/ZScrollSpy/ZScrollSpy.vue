@@ -1,8 +1,5 @@
 <template>
-  <ul 
-    class="sticky top-50 self-start"
-    :class="[`text-${align}`]"
-  >
+  <ul class="sticky top-50 self-start" :class="[`text-${align}`]">
     <li
       v-for="heading in headings"
       :key="heading.text"
