@@ -1,16 +1,23 @@
 <template>
   <ul class="sticky top-50 self-start">
     <li
-      v-for="heading in headingsMap"
+      v-for="heading in headings"
       :key="heading.text"
       :class="[`${heading.active ? 'text-vanilla-100' : 'text-slate'}`]"
     >
-      <a class="whitespace-nowrap" href="">{{ heading }}</a>
+      <!-- TODO: Add href with id of headings to scroll to.
+      To be done, after markdown compilation setup. -->
+      <a class="whitespace-nowrap" href="">{{ heading.text }}</a>
     </li>
   </ul>
 </template>
 
 <script lang="ts">
+interface Heading {
+  text: string
+  active: boolean
+}
+
 export default {
   name: 'ZScrollSpy',
   props: {
@@ -22,40 +29,47 @@ export default {
   data() {
     return {
       observer: {} as IntersectionObserver,
-      headingsMap: {},
-      activeHeading: '' as string | null
+      headings: {} as Record<string, Heading>
+    }
+  },
+  computed: {
+    rootElement(): Element | null {
+      return document.querySelector(`#${this.rootId}`)
+    },
+    headingElements(): NodeListOf<Element> {
+      return document.querySelectorAll(`#${this.rootId} h1`)
     }
   },
   created() {
     this.observer = new IntersectionObserver(this.onElementObserved, {
-      root: document.querySelector(`#${this.rootId}`),
+      root: this.rootElement,
       threshold: 1.0
     })
   },
   mounted() {
-    let headings = document.querySelectorAll(`#${this.rootId} h1`)
-    headings.forEach(heading => {
-      if (heading.textContent) {
-        this.$set(this.headingsMap, heading.textContent, {})
-        this.$set(this.headingsMap[heading.textContent], 'text', heading.textContent)
-        this.$set(this.headingsMap[heading.textContent], 'active', false)
+    this.headingElements.forEach(elem => {
+      if (elem.textContent) {
+        this.initializeHeading(elem.textContent)
+        this.observer.observe(elem)
       }
-    })
-    headings.forEach(heading => {
-      this.observer.observe(heading)
     })
   },
   methods: {
     onElementObserved(entries: IntersectionObserverEntry[]) {
-      entries.forEach((entry: IntersectionObserverEntry) => {
-        if(entry.target.textContent) {
-          if (entry.isIntersecting) {
-            this.headingsMap[entry.target.textContent].active = true
+      entries.forEach(({ target, isIntersecting }: IntersectionObserverEntry) => {
+        if (target.textContent) {
+          if (isIntersecting) {
+            this.headings[target.textContent].active = true
           } else {
-            this.headingsMap[entry.target.textContent].active = false
+            this.headings[target.textContent].active = false
           }
         }
       })
+    },
+    initializeHeading(heading: string) {
+      this.$set(this.headings, heading, {})
+      this.$set(this.headings[heading], 'text', heading)
+      this.$set(this.headings[heading], 'active', false)
     }
   }
 }
