@@ -1,9 +1,9 @@
 <template>
   <ul class="sticky top-50 self-start">
     <li
-      v-for="heading in getHeadingsText"
-      :key="heading"
-      :class="[`${heading === activeHeading && 'active'}`]"
+      v-for="heading in headingsMap"
+      :key="heading.text"
+      :class="[`${heading.active ? 'text-vanilla-100' : 'text-slate'}`]"
     >
       <a class="whitespace-nowrap" href="">{{ heading }}</a>
     </li>
@@ -14,7 +14,7 @@
 export default {
   name: 'ZScrollSpy',
   props: {
-    targetId: {
+    rootId: {
       type: String,
       required: true
     }
@@ -22,48 +22,41 @@ export default {
   data() {
     return {
       observer: {} as IntersectionObserver,
-      headings: {} as NodeListOf<Element>,
+      headingsMap: {},
       activeHeading: '' as string | null
     }
   },
   created() {
     this.observer = new IntersectionObserver(this.onElementObserved, {
-      root: document.querySelector(`#${this.targetId}`),
+      root: document.querySelector(`#${this.rootId}`),
       threshold: 1.0
     })
   },
   mounted() {
-    this.headings = document.querySelectorAll(`#${this.targetId} h1`)
-    this.headings.forEach(heading => {
+    let headings = document.querySelectorAll(`#${this.rootId} h1`)
+    headings.forEach(heading => {
+      if (heading.textContent) {
+        this.$set(this.headingsMap, heading.textContent, {})
+        this.$set(this.headingsMap[heading.textContent], 'text', heading.textContent)
+        this.$set(this.headingsMap[heading.textContent], 'active', false)
+      }
+    })
+    headings.forEach(heading => {
       this.observer.observe(heading)
     })
-  },
-  computed: {
-    getHeadingsText: function(): Array<string> {
-      let headingsArr = new Array()
-      if (this.headings.length) {
-        this.headings.forEach(elem => {
-          headingsArr.push(elem.textContent)
-        })
-      }
-      return headingsArr
-    }
   },
   methods: {
     onElementObserved(entries: IntersectionObserverEntry[]) {
       entries.forEach((entry: IntersectionObserverEntry) => {
-        if (entry.intersectionRatio > 0) {
-          this.activeHeading = entry.target.textContent
+        if(entry.target.textContent) {
+          if (entry.isIntersecting) {
+            this.headingsMap[entry.target.textContent].active = true
+          } else {
+            this.headingsMap[entry.target.textContent].active = false
+          }
         }
-        console.log(entry.intersectionRatio)
       })
     }
   }
 }
 </script>
-
-<style lang="css" scoped>
-.active {
-  @apply text-juniper;
-}
-</style>
