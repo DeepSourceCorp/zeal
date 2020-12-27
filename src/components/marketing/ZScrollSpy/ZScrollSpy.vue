@@ -47,7 +47,7 @@ export default {
     })
   },
   mounted() {
-    this.headingElements.forEach(elem => {
+    this.headingElements.forEach((elem) => {
       if (elem.textContent) {
         this.initializeHeading(elem.textContent)
         this.observer.observe(elem)

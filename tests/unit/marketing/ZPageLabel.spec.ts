@@ -24,7 +24,7 @@ describe('Page Label component', () => {
       slots: {
         default: 'Guide'
       }
-    });
+    })
     expect(mountedInstance.html()).toMatchSnapshot()
     expect(mountedInstance.text()).toContain('Guide')
   })
@@ -34,7 +34,7 @@ describe('Page Label component', () => {
       slots: {
         default: 'Guide'
       }
-    });
+    })
     expect(mountedInstance.html()).toMatchSnapshot()
     expect(mountedInstance.classes()).toContain('bg-gradient-dawn')
   })
@@ -46,7 +46,7 @@ describe('Page Label component', () => {
       slots: {
         default: 'Guide'
       }
-    });
+    })
     expect(mountedInstance.html()).toMatchSnapshot()
     expect(mountedInstance.classes()).toContain('bg-ink-400')
   })
@@ -56,7 +56,7 @@ describe('Page Label component', () => {
       slots: {
         default: 'Guide'
       }
-    });
+    })
     expect(mountedInstance.html()).toMatchSnapshot()
     expect(mountedInstance.classes()).toContain('text-vanilla-100')
   })
@@ -68,7 +68,7 @@ describe('Page Label component', () => {
       slots: {
         default: 'Guide'
       }
-    });
+    })
     expect(mountedInstance.html()).toMatchSnapshot()
     expect(mountedInstance.classes()).toContain('text-slate')
   })
