@@ -6,7 +6,7 @@ export default {
   excludeStories: /.*Data$/
 }
 
-export const DefaultWithoutText = () => ({
+export const Basic = () => ({
   components: { ZScrollSpy },
   template: `<div class='bg-dark padded-container flex text-vanilla-100'>
       <z-scroll-spy root-id="content"></z-scroll-spy>
