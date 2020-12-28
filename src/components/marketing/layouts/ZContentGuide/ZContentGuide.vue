@@ -4,7 +4,7 @@
       <a class="text-vanilla-400" :href="previousPageLink">&larr; {{ previousPageText }}</a>
       <z-scroll-spy root-id="content"></z-scroll-spy>
     </div>
-    <div class="ml-6">
+    <div class="ml-12">
       <z-page-label class="mb-2">{{ pageLabel }}</z-page-label>
       <h1 class="text-vanilla-100 mb-4 heading1">{{ title }}</h1>
       <div class="block text-vanilla-200 mb-6">
