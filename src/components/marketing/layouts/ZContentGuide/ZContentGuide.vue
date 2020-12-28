@@ -1,21 +1,25 @@
 <template>
-  <article class="bg-ink-400 flex">
-    <div class="text-right">
-      <a class="text-vanilla-400" :href="previousPageLink">&larr; {{ previousPageText }}</a>
-      <z-scroll-spy root-id="content"></z-scroll-spy>
-    </div>
-    <div class="ml-12">
-      <z-page-label class="mb-2">{{ pageLabel }}</z-page-label>
-      <h1 class="text-vanilla-100 mb-4 heading1">{{ title }}</h1>
-      <div class="block text-vanilla-200 mb-6">
-        <!-- TODO Component: Avatar -->
-        <span>{{ author }}</span>
-        <span class="text-slate mx-4">&bull;</span>
-        <span>{{ date }}</span>
+  <article class="bg-ink-400">
+    <div class="grid grid-cols-12">
+      <div class="col-span-2">
+        <a class="text-vanilla-400" :href="previousPageLink">&larr; {{ previousPageText }}</a>
       </div>
-      <h2 v-if="subtitle" class="text-xl font-normal text-vanilla-400 mb-6">{{ subtitle }}</h2>
-      <z-divider></z-divider>
-      <div id="content" class="text-vanilla-100">
+      <div class="col-span-10">
+        <z-page-label class="mb-2">{{ pageLabel }}</z-page-label>
+        <h1 class="text-vanilla-100 mb-4 heading1">{{ title }}</h1>
+        <div class="block text-vanilla-200 mb-6">
+          <!-- TODO Component: Avatar -->
+          <span>{{ author }}</span>
+          <span class="text-slate mx-4">&bull;</span>
+          <span>{{ date }}</span>
+        </div>
+        <h2 v-if="subtitle" class="text-xl font-normal text-vanilla-400 mb-6">{{ subtitle }}</h2>
+        <z-divider></z-divider>
+      </div>
+    </div>
+    <div class="grid grid-cols-12">
+      <z-scroll-spy class="col-span-2 sticky top-1 self-start" root-id="content"></z-scroll-spy>
+      <div id="content" class="col-span-10 text-vanilla-100">
         <slot></slot>
       </div>
     </div>

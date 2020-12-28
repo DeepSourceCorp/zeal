@@ -11,7 +11,7 @@ export const Guide = () => ({
   template: `<div class='padded-container bg-dark'>
       <z-content-guide
         title="Ornare id libero vel leo tincidunt semper."
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices consequat id mauris condimentum libero. Ipsum feugiat gravida ultrices proin purus accumsan ac."
+        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices consequat id mauris condimentum libero. Ipsum feugiat gravida ultrices proin purus accumsan ac. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices consequat id mauris condimentum libero. Ipsum feugiat gravida ultrices proin purus accumsan ac."
         page-label="Guide"
         author="John Doe Williams"
         date="February 29, 2020"
