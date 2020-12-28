@@ -1,8 +1,9 @@
 <template>
-  <label
-    class="z-input z-input__checkbox block relative pl-6 mb-1 text-base"
-    :class="[`${disabled && `cursor-not-allowed`}`, { 'is-disabled': this.disabled !== false }]"
-  >
+  <label class="z-input z-input__checkbox block relative pl-6 mb-1 text-base flex items-center" 
+        :class="[
+          `${disabled && `cursor-not-allowed`}`,
+          { 'is-disabled': this.disabled !== false }
+        ]">
     <input
       type="checkbox"
       :checked="isChecked"
@@ -11,11 +12,14 @@
       :disabled="this.disabled"
       class="absolute opacity-0 h-0 w-0"
     />
-    <span
-      class="z-input__checkbox--checkmark grid place-items-center absolute left-0 h-5 w-5 rounded-sm border border-slate border-solid bg-transparent cursor-pointer top-50"
-      :class="[`${disabled && `cursor-not-allowed`}`]"
-    ></span>
-    <span class="z-input__checkbox--text ml-2" :class="[`${disabled && `text-slate`}`]">
+    <span class="z-input__checkbox--checkmark grid place-items-center absolute left-0 h-5 w-5 rounded-sm border border-slate border-solid bg-transparent cursor-pointer"
+          :class="[
+            `${disabled && `cursor-not-allowed`}`
+          ]"></span>
+    <span class="z-input__checkbox--text ml-2"
+          :class="[
+            `${disabled && `text-slate`}`
+          ]">
       {{ label }}
     </span>
   </label>
@@ -83,11 +87,6 @@ export default {
 </script>
 
 <style lang="css" scoped>
-/* Create a custom checkbox */
-.z-input__checkbox--checkmark {
-  transform: translateY(-50%);
-}
-
 /* On mouse-over, add a grey background color */
 .z-input__checkbox:hover input ~ .z-input__checkbox--checkmark {
   @apply border border-solid border-juniper;
