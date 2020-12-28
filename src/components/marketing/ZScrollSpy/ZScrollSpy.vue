@@ -7,7 +7,7 @@
     >
       <!-- TODO: Add href with id of headings to scroll to.
       To be done, after markdown compilation setup. -->
-      <a class="text-xs" href="">{{ heading.text }}</a>
+      <a class="text-sm" href="">{{ heading.text }}</a>
     </li>
   </ul>
 </template>
