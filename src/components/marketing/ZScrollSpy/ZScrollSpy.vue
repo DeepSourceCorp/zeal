@@ -23,13 +23,13 @@ class Heading {
   text: string | null
   tagName: string
   section: Heading['id']
-  parentHeadings: Array<Heading['id']>
-  constructor(heading: Element, section: string, parentHeadings: Array<Heading['id']>) {
+  headingTree: Array<Heading['id']>
+  constructor(heading: Element, section: string, headingTree: Array<Heading['id']>) {
     this.id = heading.id
     this.text = heading.textContent
     this.tagName = heading.tagName.toLowerCase()
     this.section = section
-    this.parentHeadings = parentHeadings
+    this.headingTree = headingTree
   }
 }
 const HEADING_STATE_CLASSES = {
@@ -45,7 +45,11 @@ const HEADING_INDENT_SPACES = {
   h2: 4,
   h3: 8
 }
-const PRIMARY_HEADING = 'h1'
+const HEADINGS = {
+  primary: 'h1',
+  secondary: 'h2',
+  tertiary: 'h3'
+}
 
 export default {
   name: 'ZScrollSpy',
@@ -84,25 +88,52 @@ export default {
     })
   },
   mounted() {
-    this.headingElements.forEach((headingElement) => {
+    this.headingElements.forEach(headingElement => {
       this.addAsHeadingToHeadingsMap(headingElement)
       this.observer.observe(headingElement)
     })
     this.breakDownHeadingsIntoSections()
+    this.assignParentHeadingIdsToAllHeadings()
   },
   methods: {
+    assignParentHeadingIdsToAllHeadings() {
+      let parentForPrimaryHeadings = [] as Heading['headingTree']
+      let parentForSecondaryHeadings = [] as Heading['headingTree']
+      let parentForTertiaryHeadings = [] as Heading['headingTree']
+      this.headingElements.forEach((headingElement: Element) => {
+        let heading = new Heading(headingElement, '', [])
+        if (heading.id) {
+          if (heading.tagName === HEADINGS.primary) {
+            parentForPrimaryHeadings = []
+            parentForPrimaryHeadings.push(heading.id)
+            this.headingsMap[heading.id].headingTree.push(heading.id)
+          } else if (heading.tagName === HEADINGS.secondary) {
+            parentForSecondaryHeadings = []
+            parentForSecondaryHeadings.push(heading.id, ...parentForPrimaryHeadings)
+            this.headingsMap[heading.id].headingTree.push(...parentForSecondaryHeadings)
+          } else if (heading.tagName === HEADINGS.tertiary) {
+            parentForTertiaryHeadings = []
+            parentForTertiaryHeadings.push(heading.id, ...parentForSecondaryHeadings)
+            this.headingsMap[heading.id].headingTree.push(...parentForTertiaryHeadings)
+          }
+        }
+      })
+    },
     onElementObserved(entries: IntersectionObserverEntry[]) {
       entries.forEach(({ target, isIntersecting }: IntersectionObserverEntry) => {
-        if (isIntersecting) {
-          this.activeHeading = new Heading(target, '', [])
+        let headingId = target.getAttribute('id')
+        if (headingId && isIntersecting) {
+          this.activeHeading = this.headingsMap[headingId]
         }
       })
     },
     isHeadingActive(heading: Heading) {
-      return this.activeHeading.id === heading.id
+      return this.activeHeading.headingTree
+        ? this.activeHeading.headingTree.includes(heading.id)
+        : false
     },
     isHeadingVisible(heading: Heading) {
-      if (heading.tagName === PRIMARY_HEADING) {
+      if (heading.tagName === HEADINGS.primary) {
         return true
       }
       return this.activeHeading.id
@@ -116,14 +147,14 @@ export default {
       }
     },
     breakDownHeadingsIntoSections() {
-      this.headingElements.forEach((headingElement) => {
+      this.headingElements.forEach((headingElement: Element) => {
         let heading = new Heading(headingElement, '', [])
         this.assignSectionValueToPrimaryHeadings(heading)
       })
       this.assignSectionValueToAllOtherHeadings()
     },
     assignSectionValueToPrimaryHeadings(heading: Heading) {
-      if (heading.id && heading.tagName === PRIMARY_HEADING) {
+      if (heading.id && heading.tagName === HEADINGS.primary) {
         this.headingsMap[heading.id].section = heading.id
       }
     },
