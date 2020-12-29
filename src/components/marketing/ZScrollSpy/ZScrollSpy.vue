@@ -4,7 +4,9 @@
       v-for="heading in headingsMap"
       :key="heading.id"
       :class="[
-        `${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`,
+        `${
+          isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive
+        }`,
         `${HEADING_ALIGNMENT_CLASSES[align]}-${HEADING_INDENT_SPACES[heading.tagName]}`
       ]"
     >
@@ -55,7 +57,8 @@ export default {
     align: {
       type: String,
       default: 'left',
-      validator: val => Object.keys(HEADING_ALIGNMENT_CLASSES).some(alignment => alignment === val)
+      validator: (val) =>
+        Object.keys(HEADING_ALIGNMENT_CLASSES).some((alignment) => alignment === val)
     }
   },
   data() {
@@ -126,7 +129,7 @@ export default {
     },
     assignSectionValueToAllOtherHeadings() {
       let section = '' as Heading['id']
-      Object.keys(this.headingsMap).forEach(headingId => {
+      Object.keys(this.headingsMap).forEach((headingId) => {
         let heading = this.headingsMap[headingId] as Heading
         if (heading.section) {
           section = heading.section
