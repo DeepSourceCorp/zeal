@@ -1,18 +1,18 @@
 <template>
   <component
     :is="type === 'link' || to ? 'a' : 'button'"
-    :href="to"
-    class="z-btn inline-flex items-center px-6 text-base font-medium border-transparent h-10 rounded-sm relative"
+    :href="to || '#'"
+    class="z-btn inline-flex items-center px-6 font-medium border-transparent rounded-sm relative justify-center"
     v-bind="$attrs"
     :disabled="disabled"
     v-on="$listeners"
     :class="[
       `${color && `z-btn--${color}`}`,
-      `${size && `z-btn--${size}`}`,
+      getSizeClasses,
+      `${this.fullWidth !== false && 'w-full inline-block'}`,
       {
         'is-disabled': this.disabled !== false,
-        'is-active': this.active !== false,
-        'full-width': this.fullWidth !== false
+        'is-active': this.active !== false
       },
       customClasses,
       `${!color && !customClasses ? 'z-btn--primary' : ''}`
@@ -60,6 +60,17 @@ export default {
       type: String
     }
   },
+  computed: {
+    getSizeClasses() {
+      let sizes = {
+        'small': 'h-8 text-xs',
+        'medium': 'h-10 text-base',
+        'large': 'h-12 text-lg',
+        'xlarge': 'h-16 text-lg'
+      }
+      return sizes[this.size] || sizes["medium"];
+    }
+  },
   methods: {
     handleClick(event) {
       this.$emit('click', event)
@@ -72,11 +83,6 @@ export default {
 .is-disabled {
   @apply opacity-50 cursor-not-allowed;
 }
-
-.full-width {
-  @apply w-full inline-block;
-}
-
 /* Button - Primary Style */
 .z-btn--primary {
   @apply bg-juniper hover:bg-light_juniper text-ink-400;
@@ -110,22 +116,5 @@ export default {
 
 .z-btn--link.is-disabled {
   @apply text-slate no-underline;
-}
-
-/* Different Sizes of the Button*/
-.z-btn--small {
-  @apply h-8 text-xs;
-}
-
-.z-btn--medium {
-  @apply h-10 text-base;
-}
-
-.z-btn--large {
-  @apply h-12 text-lg;
-}
-
-.z-btn--xlarge {
-  @apply h-16 text-lg;
 }
 </style>

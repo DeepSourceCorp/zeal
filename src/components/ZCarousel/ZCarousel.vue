@@ -5,13 +5,13 @@
     </div>
     <div class="z-carousel__controls" v-show="showControls">
       <button
-        class="z-carousel__control z-carousel__control--left absolute h-12 w-12 z-20 -mt-6 flex bg-ink-100 bg-opacity-75 justify-center items-center"
+        class="z-carousel__control z-carousel__control--left left-0 top-50 absolute h-12 w-12 z-20 -mt-6 flex bg-ink-100 bg-opacity-75 justify-center items-center"
         @click="showPrevSlide"
       >
         <z-icon icon="arrow-left" />
       </button>
       <button
-        class="z-carousel__control z-carousel__control--right absolute h-12 w-12 z-20 -mt-6 flex bg-ink-100 bg-opacity-75 justify-center items-center"
+        class="z-carousel__control z-carousel__control--right right-0 top-50 absolute h-12 w-12 z-20 -mt-6 flex bg-ink-100 bg-opacity-75 justify-center items-center"
         @click="showNextSlide"
       >
         <z-icon icon="arrow-right" />
@@ -20,14 +20,16 @@
     <ul
       class="z-indicators flex absolute mt-4 -ml-2 w-full"
       v-show="showIndicators"
-      :class="[`z-indicator--${indicatorPosition}`]"
+      :class="[getIndicatorPositionClass]"
     >
       <li
         v-for="(slide, index) in slides"
         :key="index"
         @click.stop="showSlide(index)"
-        class="h-2 w-2 cursor-pointer rounded-full bg-ink-100 ml-3"
-        :class="['z-indicator', { is_active: index == currentIndex }]"
+        class="h-2 w-2 cursor-pointer rounded-full ml-3"
+        :class="['z-indicator', 
+                `${index == currentIndex ?  'bg-juniper' : 'bg-ink-100'}` 
+                ]"
       >
         <button class="z-indicator__button" />
       </li>
@@ -83,6 +85,14 @@ export default {
     },
     reachedMaxLeft() {
       return this.currentIndex === 0
+    },
+    getIndicatorPositionClass() {
+      let positions = {
+        'left': 'justify-start',
+        'right': 'justify-end',
+        'center': 'justify-center'
+      }
+      return positions[this.indicatorPosition] || positions['left']
     }
   },
   methods: {
@@ -129,28 +139,3 @@ export default {
 }
 </script>
 
-<style lang="css">
-.z-indicator.is_active {
-  @apply bg-juniper;
-}
-
-.z-indicator--left {
-  @apply justify-start;
-}
-
-.z-indicator--center {
-  @apply justify-center;
-}
-
-.z-indicator--right {
-  @apply justify-end;
-}
-
-.z-carousel__control--left {
-  @apply left-0 top-50;
-}
-
-.z-carousel__control--right {
-  @apply right-0 top-50;
-}
-</style>
