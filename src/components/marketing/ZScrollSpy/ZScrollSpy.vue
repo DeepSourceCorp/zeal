@@ -88,7 +88,7 @@ export default {
     })
   },
   mounted() {
-    this.headingElements.forEach(headingElement => {
+    this.headingElements.forEach((headingElement) => {
       this.addAsHeadingToHeadingsMap(headingElement)
       this.observer.observe(headingElement)
     })
