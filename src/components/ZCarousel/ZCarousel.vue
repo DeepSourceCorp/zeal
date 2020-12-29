@@ -27,9 +27,7 @@
         :key="index"
         @click.stop="showSlide(index)"
         class="h-2 w-2 cursor-pointer rounded-full ml-3"
-        :class="['z-indicator', 
-                `${index == currentIndex ?  'bg-juniper' : 'bg-ink-100'}` 
-                ]"
+        :class="['z-indicator', `${index == currentIndex ? 'bg-juniper' : 'bg-ink-100'}`]"
       >
         <button class="z-indicator__button" />
       </li>
@@ -88,9 +86,9 @@ export default {
     },
     getIndicatorPositionClass() {
       let positions = {
-        'left': 'justify-start',
-        'right': 'justify-end',
-        'center': 'justify-center'
+        left: 'justify-start',
+        right: 'justify-end',
+        center: 'justify-center'
       }
       return positions[this.indicatorPosition] || positions['left']
     }
@@ -138,4 +136,3 @@ export default {
   }
 }
 </script>
-

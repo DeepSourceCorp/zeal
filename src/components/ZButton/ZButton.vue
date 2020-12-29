@@ -63,12 +63,12 @@ export default {
   computed: {
     getSizeClasses() {
       let sizes = {
-        'small': 'h-8 text-xs',
-        'medium': 'h-10 text-base',
-        'large': 'h-12 text-lg',
-        'xlarge': 'h-16 text-lg'
+        small: 'h-8 text-xs',
+        medium: 'h-10 text-base',
+        large: 'h-12 text-lg',
+        xlarge: 'h-16 text-lg'
       }
-      return sizes[this.size] || sizes["medium"];
+      return sizes[this.size] || sizes['medium']
     }
   },
   methods: {
