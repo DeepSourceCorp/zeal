@@ -47,7 +47,7 @@ export default {
     align: {
       type: String,
       default: 'left',
-      validator: val => ['left', 'right'].includes(val)
+      validator: (val) => ['left', 'right'].includes(val)
     }
   },
   data() {
@@ -71,7 +71,7 @@ export default {
     })
   },
   mounted() {
-    this.headingElements.forEach(headingElement => {
+    this.headingElements.forEach((headingElement) => {
       this.addAsHeadingToHeadingsMap(headingElement)
       this.observer.observe(headingElement)
     })
@@ -103,7 +103,7 @@ export default {
       }
     },
     breakDownHeadingsIntoSections() {
-      this.headingElements.forEach(headingElement => {
+      this.headingElements.forEach((headingElement) => {
         let heading = new Heading(headingElement, '', [])
         this.assignSectionValueToPrimaryHeadings(heading)
       })
@@ -116,7 +116,7 @@ export default {
     },
     assignSectionValueToAllOtherHeadings() {
       let section = '' as Heading['id']
-      Object.keys(this.headingsMap).forEach(headingId => {
+      Object.keys(this.headingsMap).forEach((headingId) => {
         if (this.headingsMap[headingId].section) {
           section = this.headingsMap[headingId].section
         } else {
