@@ -61,8 +61,7 @@ export default {
     align: {
       type: String,
       default: 'left',
-      validator: (val) =>
-        Object.keys(HEADING_ALIGNMENT_CLASSES).some((alignment) => alignment === val)
+      validator: val => Object.keys(HEADING_ALIGNMENT_CLASSES).some(alignment => alignment === val)
     }
   },
   data() {
@@ -93,10 +92,10 @@ export default {
       this.observer.observe(headingElement)
     })
     this.breakDownHeadingsIntoSections()
-    this.assignParentHeadingIdsToAllHeadings()
+    this.assignHeadingTreeToAllHeadings()
   },
   methods: {
-    assignParentHeadingIdsToAllHeadings() {
+    assignHeadingTreeToAllHeadings() {
       let parentForPrimaryHeadings = [] as Heading['headingTree']
       let parentForSecondaryHeadings = [] as Heading['headingTree']
       let parentForTertiaryHeadings = [] as Heading['headingTree']
@@ -147,25 +146,15 @@ export default {
       }
     },
     breakDownHeadingsIntoSections() {
+      let section = '' as Heading['section']
       this.headingElements.forEach((headingElement: Element) => {
         let heading = new Heading(headingElement, '', [])
-        this.assignSectionValueToPrimaryHeadings(heading)
-      })
-      this.assignSectionValueToAllOtherHeadings()
-    },
-    assignSectionValueToPrimaryHeadings(heading: Heading) {
-      if (heading.id && heading.tagName === HEADINGS.primary) {
-        this.headingsMap[heading.id].section = heading.id
-      }
-    },
-    assignSectionValueToAllOtherHeadings() {
-      let section = '' as Heading['id']
-      Object.keys(this.headingsMap).forEach((headingId) => {
-        let heading = this.headingsMap[headingId] as Heading
-        if (heading.section) {
-          section = heading.section
-        } else {
-          heading.section = section
+        if (heading.id) {
+          if (heading.tagName === HEADINGS.primary) {
+            section = heading.id
+          }
+          this.headingsMap[heading.id].section =
+            heading.tagName === HEADINGS.primary ? heading.id : section
         }
       })
     }
