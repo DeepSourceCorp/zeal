@@ -4,8 +4,8 @@
       v-for="heading in headingsMap"
       :key="heading.id"
       :class="[
-        `${isHeadingActive(heading) ? 'text-vanilla-100' : 'text-slate'}`,
-        `${align === 'left' ? 'ml' : 'mr'}-${HEADING_INDENT_SPACES[heading.tagName]}`
+        `${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`,
+        `${HEADING_ALIGNMENT_CLASSES[align]}-${HEADING_INDENT_SPACES[heading.tagName]}`
       ]"
     >
       <a v-if="isHeadingVisible(heading)" class="text-sm" :href="`#${heading.id}`">
@@ -30,12 +30,20 @@ class Heading {
     this.parentHeadings = parentHeadings
   }
 }
-
+const HEADING_STATE_CLASSES = {
+  active: 'text-vanilla-100',
+  inactive: 'text-slate'
+}
+const HEADING_ALIGNMENT_CLASSES = {
+  left: 'ml',
+  right: 'mr'
+}
 const HEADING_INDENT_SPACES = {
   h1: 0,
   h2: 4,
   h3: 8
 }
+const PRIMARY_HEADING = 'h1'
 
 export default {
   name: 'ZScrollSpy',
@@ -47,7 +55,7 @@ export default {
     align: {
       type: String,
       default: 'left',
-      validator: (val) => ['left', 'right'].includes(val)
+      validator: val => Object.keys(HEADING_ALIGNMENT_CLASSES).some(alignment => alignment === val)
     }
   },
   data() {
@@ -55,7 +63,9 @@ export default {
       observer: {} as IntersectionObserver,
       activeHeading: {} as Heading,
       headingsMap: {} as Record<string, Heading>,
-      HEADING_INDENT_SPACES
+      HEADING_INDENT_SPACES,
+      HEADING_ALIGNMENT_CLASSES,
+      HEADING_STATE_CLASSES
     }
   },
   computed: {
@@ -89,7 +99,7 @@ export default {
       return this.activeHeading.id === heading.id
     },
     isHeadingVisible(heading: Heading) {
-      if (heading.tagName === 'h1') {
+      if (heading.tagName === PRIMARY_HEADING) {
         return true
       }
       return this.activeHeading.id
@@ -110,17 +120,18 @@ export default {
       this.assignSectionValueToAllOtherHeadings()
     },
     assignSectionValueToPrimaryHeadings(heading: Heading) {
-      if (heading.id && heading.tagName === 'h1') {
+      if (heading.id && heading.tagName === PRIMARY_HEADING) {
         this.headingsMap[heading.id].section = heading.id
       }
     },
     assignSectionValueToAllOtherHeadings() {
       let section = '' as Heading['id']
-      Object.keys(this.headingsMap).forEach((headingId) => {
-        if (this.headingsMap[headingId].section) {
-          section = this.headingsMap[headingId].section
+      Object.keys(this.headingsMap).forEach(headingId => {
+        let heading = this.headingsMap[headingId] as Heading
+        if (heading.section) {
+          section = heading.section
         } else {
-          this.headingsMap[headingId].section = section
+          heading.section = section
         }
       })
     }
