@@ -12,16 +12,19 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    "@typescript-eslint/member-delimiter-style": ["error", {
-      multiline: {
-        delimiter: 'none',    // 'none' or 'semi' or 'comma'
-        requireLast: true,
-      },
-      singleline: {
-        delimiter: 'semi',    // 'semi' or 'comma'
-        requireLast: false,
+    '@typescript-eslint/member-delimiter-style': [
+      'error',
+      {
+        multiline: {
+          delimiter: 'none', // 'none' or 'semi' or 'comma'
+          requireLast: true
+        },
+        singleline: {
+          delimiter: 'semi', // 'semi' or 'comma'
+          requireLast: false
+        }
       }
-    }]
+    ]
   },
 
   overrides: [
@@ -33,5 +36,10 @@ module.exports = {
     }
   ],
 
-  extends: ['plugin:vue/essential', 'eslint:recommended', '@vue/prettier', '@vue/typescript/recommended']
+  extends: [
+    'plugin:vue/essential',
+    'eslint:recommended',
+    '@vue/prettier',
+    '@vue/typescript/recommended'
+  ]
 }
