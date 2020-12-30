@@ -7,7 +7,7 @@
         `${
           isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive
         }`,
-        `${HEADING_ALIGNMENT_CLASSES[align]}-${HEADING_INDENT_SPACES[heading.tagName]}`
+        `${HEADING_ALIGNMENT_CLASSES[align]}-${HEADINGS[heading.tagName].indentSpace}`
       ]"
     >
       <a v-if="isHeadingVisible(heading)" class="text-sm" :href="`#${heading.id}`">
@@ -18,19 +18,12 @@
 </template>
 
 <script lang="ts">
-class Heading {
+interface Heading {
   id: string | null
   text: string | null
   tagName: string
   section: Heading['id']
-  headingTree: Array<Heading['id']>
-  constructor(heading: Element, section: string, headingTree: Array<Heading['id']>) {
-    this.id = heading.id
-    this.text = heading.textContent
-    this.tagName = heading.tagName.toLowerCase()
-    this.section = section
-    this.headingTree = headingTree
-  }
+  headingsToActivate: Array<Heading['id']>
 }
 const HEADING_STATE_CLASSES = {
   active: 'text-vanilla-100',
@@ -40,15 +33,19 @@ const HEADING_ALIGNMENT_CLASSES = {
   left: 'ml',
   right: 'mr'
 }
-const HEADING_INDENT_SPACES = {
-  h1: 0,
-  h2: 4,
-  h3: 8
-}
 const HEADINGS = {
-  primary: 'h1',
-  secondary: 'h2',
-  tertiary: 'h3'
+  h1: {
+    tag: 'h1',
+    indentSpace: 0
+  },
+  h2: {
+    tag: 'h2',
+    indentSpace: 4
+  },
+  h3: {
+    tag: 'h3',
+    indentSpace: 8
+  }
 }
 
 export default {
@@ -70,7 +67,7 @@ export default {
       observer: {} as IntersectionObserver,
       activeHeading: {} as Heading,
       headingsMap: {} as Record<string, Heading>,
-      HEADING_INDENT_SPACES,
+      HEADINGS,
       HEADING_ALIGNMENT_CLASSES,
       HEADING_STATE_CLASSES
     }
@@ -88,60 +85,16 @@ export default {
     })
   },
   mounted() {
-    this.headingElements.forEach((headingElement) => {
+    this.headingElements.forEach(headingElement => {
       this.addAsHeadingToHeadingsMap(headingElement)
       this.observer.observe(headingElement)
     })
     this.breakDownHeadingsIntoSections()
-    this.assignHeadingTreeToAllHeadings()
+    this.assignHeadingsToActivateOnIntersection()
   },
   methods: {
-    assignHeadingTreeToAllHeadings() {
-      let parentForPrimaryHeadings = [] as Heading['headingTree']
-      let parentForSecondaryHeadings = [] as Heading['headingTree']
-      let parentForTertiaryHeadings = [] as Heading['headingTree']
-      this.headingElements.forEach((headingElement: Element) => {
-        let heading = new Heading(headingElement, '', [])
-        if (heading.id) {
-          if (heading.tagName === HEADINGS.primary) {
-            parentForPrimaryHeadings = []
-            parentForPrimaryHeadings.push(heading.id)
-            this.headingsMap[heading.id].headingTree.push(heading.id)
-          } else if (heading.tagName === HEADINGS.secondary) {
-            parentForSecondaryHeadings = []
-            parentForSecondaryHeadings.push(heading.id, ...parentForPrimaryHeadings)
-            this.headingsMap[heading.id].headingTree.push(...parentForSecondaryHeadings)
-          } else if (heading.tagName === HEADINGS.tertiary) {
-            parentForTertiaryHeadings = []
-            parentForTertiaryHeadings.push(heading.id, ...parentForSecondaryHeadings)
-            this.headingsMap[heading.id].headingTree.push(...parentForTertiaryHeadings)
-          }
-        }
-      })
-    },
-    onElementObserved(entries: IntersectionObserverEntry[]) {
-      entries.forEach(({ target, isIntersecting }: IntersectionObserverEntry) => {
-        let headingId = target.getAttribute('id')
-        if (headingId && isIntersecting) {
-          this.activeHeading = this.headingsMap[headingId]
-        }
-      })
-    },
-    isHeadingActive(heading: Heading) {
-      return this.activeHeading.headingTree
-        ? this.activeHeading.headingTree.includes(heading.id)
-        : false
-    },
-    isHeadingVisible(heading: Heading) {
-      if (heading.tagName === HEADINGS.primary) {
-        return true
-      }
-      return this.activeHeading.id
-        ? this.headingsMap[this.activeHeading.id].section === heading.section
-        : false
-    },
     addAsHeadingToHeadingsMap(headingElement: Element) {
-      let heading = new Heading(headingElement, '', [])
+      let heading = this.getHeading(headingElement)
       if (heading.id) {
         this.$set(this.headingsMap, heading.id, heading)
       }
@@ -149,15 +102,65 @@ export default {
     breakDownHeadingsIntoSections() {
       let section = '' as Heading['section']
       this.headingElements.forEach((headingElement: Element) => {
-        let heading = new Heading(headingElement, '', [])
-        if (heading.id) {
-          if (heading.tagName === HEADINGS.primary) {
-            section = heading.id
+        let { id, tagName } = this.getHeading(headingElement)
+        if (id) {
+          if (tagName === HEADINGS.h1.tag) {
+            section = id
           }
-          this.headingsMap[heading.id].section =
-            heading.tagName === HEADINGS.primary ? heading.id : section
+          this.headingsMap[id].section = section
         }
       })
+    },
+    assignHeadingsToActivateOnIntersection() {
+      let headingStack = [] as Heading['headingsToActivate']
+      let previousLevel = 0
+      this.headingElements.forEach((headingElement: Element) => {
+        let { id, tagName } = this.getHeading(headingElement)
+        if (id) {
+          let currentLevel = this.getHeadingLevel(tagName)
+          if (previousLevel >= currentLevel) {
+            for (let i = 0; i <= previousLevel - currentLevel; i++) {
+              headingStack.pop()
+            }
+          }
+          headingStack.push(id)
+          previousLevel = this.getHeadingLevel(tagName)
+          this.headingsMap[id].headingsToActivate.push(id, ...headingStack)
+        }
+      })
+    },
+    onElementObserved(entries: IntersectionObserverEntry[]) {
+      entries.forEach(({ target, isIntersecting }: IntersectionObserverEntry) => {
+        let { id } = this.getHeading(target)
+        if (id && isIntersecting) {
+          this.activeHeading = this.headingsMap[id]
+        }
+      })
+    },
+    getHeading(headingElement: Element): Heading {
+      return {
+        id: headingElement.getAttribute('id'),
+        text: headingElement.textContent,
+        tagName: headingElement.tagName.toLowerCase(),
+        section: '',
+        headingsToActivate: []
+      }
+    },
+    getHeadingLevel(tagName: Heading['tagName']): number {
+      return parseInt(tagName.charAt(tagName.length - 1))
+    },
+    isHeadingActive({ id }: Heading): boolean {
+      return this.activeHeading.headingsToActivate
+        ? this.activeHeading.headingsToActivate.includes(id)
+        : false
+    },
+    isHeadingVisible({ tagName, section }: Heading): boolean {
+      if (tagName === HEADINGS.h1.tag) {
+        return true
+      }
+      return this.activeHeading.id
+        ? this.headingsMap[this.activeHeading.id].section === section
+        : false
     }
   }
 }
