@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox Component renders a disabled checkbox component when disabled prop is passed 1`] = `<label class="z-input z-input__checkbox is-disabled"><input type="checkbox" disabled="disabled" value=""> <span class="z-input__checkbox--checkmark"></span> <span class="z-input__checkbox--text"></span></label>`;
+
+exports[`Checkbox Component renders a pre-selected checkbox when the value is passed as checked 1`] = `<label class="z-input z-input__checkbox"><input type="checkbox" value="icecream"> <span class="z-input__checkbox--checkmark"></span> <span class="z-input__checkbox--text">Icecreams</span></label>`;
+
+exports[`Checkbox Component renders the checkbox component 1`] = `<label class="z-input z-input__checkbox"><input type="checkbox" value=""> <span class="z-input__checkbox--checkmark"></span> <span class="z-input__checkbox--text"></span></label>`;

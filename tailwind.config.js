@@ -1,3 +1,4 @@
+const plugin = require('tailwindcss/plugin')
 module.exports = {
   purge: [],
   prefix: '',
@@ -180,6 +181,7 @@ module.exports = {
     inset: {
       0: '0',
       1: '0.5rem',
+      px: '1px',
       auto: 'auto',
       50: '50%'
     },
@@ -601,13 +603,13 @@ module.exports = {
     alignSelf: ['responsive'],
     appearance: ['responsive'],
     backgroundAttachment: ['responsive'],
-    backgroundColor: ['responsive', 'hover', 'focus'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'sibling-checked'],
     backgroundOpacity: ['responsive', 'hover', 'focus'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: ['responsive'],
-    borderColor: ['responsive', 'hover', 'focus'],
+    borderColor: ['responsive', 'hover', 'focus', 'group-hover', 'sibling-checked'],
     borderOpacity: ['responsive', 'hover', 'focus'],
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
@@ -617,7 +619,7 @@ module.exports = {
     container: ['responsive'],
     cursor: ['responsive'],
     display: ['responsive'],
-    divideColor: ['responsive'],
+    divideColor: ['responsive', 'group-hover'],
     divideOpacity: ['responsive'],
     divideWidth: ['responsive'],
     fill: ['responsive'],
@@ -663,7 +665,7 @@ module.exports = {
     strokeWidth: ['responsive'],
     tableLayout: ['responsive'],
     textAlign: ['responsive'],
-    textColor: ['responsive', 'hover', 'focus'],
+    textColor: ['responsive', 'hover', 'focus', 'sibling-checked'],
     textOpacity: ['responsive', 'hover', 'focus'],
     textDecoration: ['responsive', 'hover', 'focus'],
     textTransform: ['responsive'],
@@ -698,5 +700,42 @@ module.exports = {
     animation: ['responsive']
   },
   corePlugins: {},
-  plugins: []
+  plugins: [
+    plugin(function ({ addVariant }) {
+      addVariant('sibling-checked', ({ container }) => {
+        container.walkRules((rule) => {
+          rule.selector = `:checked ~ .sibling-checked\\:${rule.selector.slice(1)}`
+        })
+      })
+    }),
+    plugin(({ addVariant, e }) => {
+      addVariant('before', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `.${e(`before${separator}${className}`)}::before`
+        })
+      })
+      addVariant('after', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `.${e(`after${separator}${className}`)}::after`
+        })
+      })
+    }),
+    plugin(({ addUtilities }) => {
+      const contentUtilities = {
+        '.content': {
+          content: 'attr(data-content)',
+          position: 'absolute'
+        },
+        '.content-before': {
+          content: 'attr(data-before)',
+          position: 'absolute'
+        },
+        '.content-after': {
+          content: 'attr(data-after)',
+          position: 'absolute'
+        }
+      }
+      addUtilities(contentUtilities, ['before', 'after'])
+    })
+  ]
 }
