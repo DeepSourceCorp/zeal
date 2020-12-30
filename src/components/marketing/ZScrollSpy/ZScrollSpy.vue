@@ -23,7 +23,6 @@ interface Heading {
   text: string | null
   tagName: string
   block: Heading['id']
-  headingsToActivate: Array<Heading['id']>
 }
 const HEADING_STATE_CLASSES = {
   active: 'text-vanilla-100',
@@ -58,8 +57,7 @@ export default {
     align: {
       type: String,
       default: 'left',
-      validator: (val) =>
-        Object.keys(HEADING_ALIGNMENT_CLASSES).some((alignment) => alignment === val)
+      validator: val => Object.keys(HEADING_ALIGNMENT_CLASSES).some(alignment => alignment === val)
     }
   },
   data() {
@@ -85,12 +83,11 @@ export default {
     })
   },
   mounted() {
-    this.headingElements.forEach((headingElement) => {
+    this.headingElements.forEach(headingElement => {
       this.addAsHeadingToHeadingsMap(headingElement)
       this.observer.observe(headingElement)
     })
     this.breakDownHeadingsIntoBlocks()
-    this.assignHeadingsToActivateOnIntersection()
   },
   methods: {
     addAsHeadingToHeadingsMap(headingElement: Element) {
@@ -119,39 +116,6 @@ export default {
         }
       })
     },
-    assignHeadingsToActivateOnIntersection() {
-      /**
-       * Assigns Heading Ids to activate, to all the heading objects in the map.
-       * Each heading object holds a list of heading Ids
-       * which needs to be activated, once that particular heading comes into view.
-       */
-      let headingStack = [] as Heading['headingsToActivate']
-      let level = 0
-      this.headingElements.forEach((headingElement: Element) => {
-        let { id, tagName } = this.getHeading(headingElement)
-        if (id) {
-          this.onHeadingLevelDecrease(level, tagName, () => {
-            headingStack.pop()
-          })
-          headingStack.push(id)
-          this.headingsMap[id].headingsToActivate.push(id, ...headingStack)
-          level = this.getHeadingLevel(tagName)
-        }
-      })
-    },
-    onHeadingLevelDecrease(previousLevel: number, tagName: Heading['tagName'], fn: Function) {
-      /**
-       * While adding headingsToActivate,
-       * if level of a heading is lower than in the previous iteration,
-       * then action provided in parameter is performed.
-       */
-      let currentLevel = this.getHeadingLevel(tagName)
-      if (previousLevel >= currentLevel) {
-        for (let i = 0; i <= previousLevel - currentLevel; i++) {
-          fn()
-        }
-      }
-    },
     onElementObserved(entries: IntersectionObserverEntry[]) {
       /**
        * Callback for Intersection Observer.
@@ -168,8 +132,7 @@ export default {
         id: headingElement.getAttribute('id'),
         text: headingElement.textContent,
         tagName: headingElement.tagName.toLowerCase(),
-        block: '',
-        headingsToActivate: []
+        block: ''
       }
     },
     getHeadingLevel(tagName: Heading['tagName']): number {
@@ -181,12 +144,10 @@ export default {
     },
     isHeadingActive({ id }: Heading): boolean {
       /**
-       * Allows to activate all other headings which are in headingsToActivate array
-       * of the activeHeading.
+       * Returns true if heading passed has the same id
+       * as the `activeHeading`
        */
-      return this.activeHeading.headingsToActivate
-        ? this.activeHeading.headingsToActivate.includes(id)
-        : false
+      return this.activeHeading.id ? this.activeHeading.id === id : false
     },
     isHeadingVisible({ tagName, block }: Heading): boolean {
       /**
