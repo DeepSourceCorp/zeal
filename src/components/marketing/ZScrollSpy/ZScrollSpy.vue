@@ -58,8 +58,7 @@ export default {
     align: {
       type: String,
       default: 'left',
-      validator: (val) =>
-        Object.keys(HEADING_ALIGNMENT_CLASSES).some((alignment) => alignment === val)
+      validator: val => Object.keys(HEADING_ALIGNMENT_CLASSES).some(alignment => alignment === val)
     }
   },
   data() {
@@ -113,21 +112,26 @@ export default {
     },
     assignHeadingsToActivateOnIntersection() {
       let headingStack = [] as Heading['headingsToActivate']
-      let previousLevel = 0
+      let level = 0
       this.headingElements.forEach((headingElement: Element) => {
         let { id, tagName } = this.getHeading(headingElement)
         if (id) {
-          let currentLevel = this.getHeadingLevel(tagName)
-          if (previousLevel >= currentLevel) {
-            for (let i = 0; i <= previousLevel - currentLevel; i++) {
-              headingStack.pop()
-            }
-          }
+          this.onHeadingLevelDecrease(level, tagName, () => {
+            headingStack.pop()
+          })
           headingStack.push(id)
-          previousLevel = this.getHeadingLevel(tagName)
           this.headingsMap[id].headingsToActivate.push(id, ...headingStack)
+          level = this.getHeadingLevel(tagName)
         }
       })
+    },
+    onHeadingLevelDecrease(previousLevel: number, tagName: Heading['tagName'], fn: Function) {
+      let currentLevel = this.getHeadingLevel(tagName)
+      if (previousLevel >= currentLevel) {
+        for (let i = 0; i <= previousLevel - currentLevel; i++) {
+          fn()
+        }
+      }
     },
     onElementObserved(entries: IntersectionObserverEntry[]) {
       entries.forEach(({ target, isIntersecting }: IntersectionObserverEntry) => {
