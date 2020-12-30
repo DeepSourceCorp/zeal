@@ -96,7 +96,7 @@ export default {
     addAsHeadingToHeadingsMap(headingElement: Element) {
       /**
        * Converts a headingElement to a Heading type object and
-       * adds it to headingsMap
+       * adds it to headingsMap.
        */
       let heading = this.getHeading(headingElement)
       if (heading.id) {
@@ -106,7 +106,7 @@ export default {
     breakDownHeadingsIntoBlocks() {
       /**
        * Breaks down all the headings in block categories.
-       * A block is named after it's primary heading's id, i.e, h1.
+       * A block is named after it's primary heading's (i.e, h1) id.
        */
       let block = '' as Heading['block']
       this.headingElements.forEach((headingElement: Element) => {
@@ -154,7 +154,7 @@ export default {
     },
     onElementObserved(entries: IntersectionObserverEntry[]) {
       /**
-       * Callback for Intersection Observer
+       * Callback for Intersection Observer.
        */
       entries.forEach(({ target, isIntersecting }: IntersectionObserverEntry) => {
         let { id } = this.getHeading(target)
