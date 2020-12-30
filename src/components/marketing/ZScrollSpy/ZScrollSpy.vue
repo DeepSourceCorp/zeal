@@ -22,7 +22,7 @@ interface Heading {
   id: string | null
   text: string | null
   tagName: string
-  section: Heading['id']
+  block: Heading['id']
   headingsToActivate: Array<Heading['id']>
 }
 const HEADING_STATE_CLASSES = {
@@ -85,33 +85,46 @@ export default {
     })
   },
   mounted() {
-    this.headingElements.forEach((headingElement) => {
+    this.headingElements.forEach(headingElement => {
       this.addAsHeadingToHeadingsMap(headingElement)
       this.observer.observe(headingElement)
     })
-    this.breakDownHeadingsIntoSections()
+    this.breakDownHeadingsIntoBlocks()
     this.assignHeadingsToActivateOnIntersection()
   },
   methods: {
     addAsHeadingToHeadingsMap(headingElement: Element) {
+      /**
+       * Converts a headingElement to a Heading type object and
+       * adds it to headingsMap
+       */
       let heading = this.getHeading(headingElement)
       if (heading.id) {
         this.$set(this.headingsMap, heading.id, heading)
       }
     },
-    breakDownHeadingsIntoSections() {
-      let section = '' as Heading['section']
+    breakDownHeadingsIntoBlocks() {
+      /**
+       * Breaks down all the headings in block categories.
+       * A block is named after it's primary heading's id, i.e, h1.
+       */
+      let block = '' as Heading['block']
       this.headingElements.forEach((headingElement: Element) => {
         let { id, tagName } = this.getHeading(headingElement)
         if (id) {
           if (tagName === HEADINGS.h1.tag) {
-            section = id
+            block = id
           }
-          this.headingsMap[id].section = section
+          this.headingsMap[id].block = block
         }
       })
     },
     assignHeadingsToActivateOnIntersection() {
+      /**
+       * Assigns Heading Ids to activate, to all the heading objects in the map.
+       * Each heading object holds a list of heading Ids
+       * which needs to be activated, once that particular heading comes into view.
+       */
       let headingStack = [] as Heading['headingsToActivate']
       let level = 0
       this.headingElements.forEach((headingElement: Element) => {
@@ -127,6 +140,11 @@ export default {
       })
     },
     onHeadingLevelDecrease(previousLevel: number, tagName: Heading['tagName'], fn: Function) {
+      /**
+       * While adding headingsToActivate, 
+       * if level of a heading is lower than in the previous iteration,
+       * then action provided in parameter is performed.
+       */
       let currentLevel = this.getHeadingLevel(tagName)
       if (previousLevel >= currentLevel) {
         for (let i = 0; i <= previousLevel - currentLevel; i++) {
@@ -135,6 +153,9 @@ export default {
       }
     },
     onElementObserved(entries: IntersectionObserverEntry[]) {
+      /**
+       * Callback for Intersection Observer
+       */
       entries.forEach(({ target, isIntersecting }: IntersectionObserverEntry) => {
         let { id } = this.getHeading(target)
         if (id && isIntersecting) {
@@ -147,24 +168,35 @@ export default {
         id: headingElement.getAttribute('id'),
         text: headingElement.textContent,
         tagName: headingElement.tagName.toLowerCase(),
-        section: '',
+        block: '',
         headingsToActivate: []
       }
     },
     getHeadingLevel(tagName: Heading['tagName']): number {
+      /**
+       * Level of a heading is formed using it's tagName.
+       * For e.g, level of `h1` is 1, and level of `h2` is 2
+       */
       return parseInt(tagName.charAt(tagName.length - 1))
     },
     isHeadingActive({ id }: Heading): boolean {
+      /**
+       * Allows to activate all other headings which are in headingsToActivate array
+       * of the activeHeading.
+       */
       return this.activeHeading.headingsToActivate
         ? this.activeHeading.headingsToActivate.includes(id)
         : false
     },
-    isHeadingVisible({ tagName, section }: Heading): boolean {
+    isHeadingVisible({ tagName, block }: Heading): boolean {
+      /**
+       * Allows to show headings if their block is currently active.
+       */
       if (tagName === HEADINGS.h1.tag) {
         return true
       }
       return this.activeHeading.id
-        ? this.headingsMap[this.activeHeading.id].section === section
+        ? this.headingsMap[this.activeHeading.id].block === block
         : false
     }
   }

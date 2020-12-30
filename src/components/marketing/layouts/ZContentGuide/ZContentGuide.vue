@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="grid grid-cols-12">
-      <z-scroll-spy class="col-span-2 sticky top-1 self-start" root-id="content"></z-scroll-spy>
+      <z-scroll-spy class="col-span-2 sticky top-6 self-start mr-6" root-id="content"></z-scroll-spy>
       <div id="content" class="col-span-10 text-vanilla-100">
         <slot></slot>
       </div>
