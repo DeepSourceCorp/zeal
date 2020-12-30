@@ -26,7 +26,7 @@ interface Heading {
   block: Heading['id']
 }
 enum HEADING_STATE_CLASSES {
-  active = 'text-vanilla-100',
+  active = 'text-vanilla-100 font-semibold',
   inactive = 'text-slate'
 }
 enum HEADING_ALIGNMENT_CLASSES {
