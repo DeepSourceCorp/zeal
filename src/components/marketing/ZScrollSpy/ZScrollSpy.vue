@@ -18,19 +18,20 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
 interface Heading {
   id: string | null
   text: string | null
   tagName: string
   block: Heading['id']
 }
-const HEADING_STATE_CLASSES = {
-  active: 'text-vanilla-100',
-  inactive: 'text-slate'
+enum HEADING_STATE_CLASSES {
+  active = 'text-vanilla-100',
+  inactive = 'text-slate'
 }
-const HEADING_ALIGNMENT_CLASSES = {
-  left: 'ml',
-  right: 'mr'
+enum HEADING_ALIGNMENT_CLASSES {
+  left = 'ml',
+  right = 'mr'
 }
 const HEADINGS = {
   h1: {
@@ -47,7 +48,7 @@ const HEADINGS = {
   }
 }
 
-export default {
+export default Vue.extend({
   name: 'ZScrollSpy',
   props: {
     rootId: {
@@ -57,8 +58,8 @@ export default {
     align: {
       type: String,
       default: 'left',
-      validator: (val) =>
-        Object.keys(HEADING_ALIGNMENT_CLASSES).some((alignment) => alignment === val)
+      validator: (val: string) =>
+        Object.keys(HEADING_ALIGNMENT_CLASSES).some(alignment => alignment === val)
     }
   },
   data() {
@@ -96,7 +97,7 @@ export default {
        * Converts a headingElement to a Heading type object and
        * adds it to headingsMap.
        */
-      let heading = this.getHeading(headingElement)
+      const heading = this.getHeading(headingElement)
       if (heading.id) {
         this.$set(this.headingsMap, heading.id, heading)
       }
@@ -108,7 +109,7 @@ export default {
        */
       let block = '' as Heading['block']
       this.headingElements.forEach((headingElement: Element) => {
-        let { id, tagName } = this.getHeading(headingElement)
+        const { id, tagName } = this.getHeading(headingElement)
         if (id) {
           if (tagName === HEADINGS.h1.tag) {
             block = id
@@ -122,7 +123,7 @@ export default {
        * Callback for Intersection Observer.
        */
       entries.forEach(({ target, isIntersecting }: IntersectionObserverEntry) => {
-        let { id } = this.getHeading(target)
+        const { id } = this.getHeading(target)
         if (id && isIntersecting) {
           this.activeHeading = this.headingsMap[id]
         }
@@ -160,5 +161,5 @@ export default {
       return this.activeHeading.id ? this.headingsMap[this.activeHeading.id].block === block : false
     }
   }
-}
+})
 </script>
