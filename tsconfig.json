@@ -6,7 +6,6 @@
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
-    "experimentalDecorators": true,
     "allowJs": false /* Allow javascript files to be compiled. */,
     "skipLibCheck": true,
     "esModuleInterop": true,
