@@ -58,7 +58,8 @@ export default {
     align: {
       type: String,
       default: 'left',
-      validator: val => Object.keys(HEADING_ALIGNMENT_CLASSES).some(alignment => alignment === val)
+      validator: (val) =>
+        Object.keys(HEADING_ALIGNMENT_CLASSES).some((alignment) => alignment === val)
     }
   },
   data() {
