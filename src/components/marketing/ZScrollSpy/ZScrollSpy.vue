@@ -85,7 +85,7 @@ export default {
     })
   },
   mounted() {
-    this.headingElements.forEach(headingElement => {
+    this.headingElements.forEach((headingElement) => {
       this.addAsHeadingToHeadingsMap(headingElement)
       this.observer.observe(headingElement)
     })
@@ -141,7 +141,7 @@ export default {
     },
     onHeadingLevelDecrease(previousLevel: number, tagName: Heading['tagName'], fn: Function) {
       /**
-       * While adding headingsToActivate, 
+       * While adding headingsToActivate,
        * if level of a heading is lower than in the previous iteration,
        * then action provided in parameter is performed.
        */
@@ -195,9 +195,7 @@ export default {
       if (tagName === HEADINGS.h1.tag) {
         return true
       }
-      return this.activeHeading.id
-        ? this.headingsMap[this.activeHeading.id].block === block
-        : false
+      return this.activeHeading.id ? this.headingsMap[this.activeHeading.id].block === block : false
     }
   }
 }
