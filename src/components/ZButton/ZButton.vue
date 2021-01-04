@@ -8,14 +8,11 @@
     v-on="$listeners"
     :class="[
       `${color && `z-btn--${color}`}`,
-      getSizeClasses,
       `${this.fullWidth !== false && 'w-full inline-block'}`,
-      {
-        'is-disabled': this.disabled !== false,
-        'is-active': this.active !== false
-      },
+      `${this.isButtonDisabled && 'opacity-50 cursor-not-allowed'}`,
+      getSizeClasses,
       customClasses,
-      `${!color && !customClasses ? 'z-btn--primary' : ''}`
+      `${getStyleBasedOnType}`
     ]"
     :type="type"
   >
@@ -61,6 +58,20 @@ export default {
     }
   },
   computed: {
+    isButtonDisabled() {
+      return this.disabled !== false;
+    },
+    isButtonActive() {
+      return this.active !== false;
+    },
+    getStyleBasedOnType() {
+      const colors = {
+        'link': `font-normal text-juniper ${this.isButtonActive && 'underline'} ${this.isButtonDisabled && 'text-slate no-underline' || 'hover:underline'}`,
+        'primary': `bg-juniper text-ink-400 ${this.isButtonDisabled && 'hover:bg-juniper' || 'hover:bg-light_juniper'}`,
+        'secondary': `bg-ink-300 text-vanilla-100 border border-slate ${this.isButtonDisabled && 'hover:bg-ink-300' || 'hover:bg-ink-200'} ${this.isButtonActive && 'bg-ink-100'}`
+      }
+      return colors[this.color] || colors['primary'];
+    },
     getSizeClasses() {
       const sizes = {
         small: 'h-8 text-xs',
@@ -79,42 +90,3 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
-.is-disabled {
-  @apply opacity-50 cursor-not-allowed;
-}
-/* Button - Primary Style */
-.z-btn--primary {
-  @apply bg-juniper hover:bg-light_juniper text-ink-400;
-}
-
-.z-btn--primary.is-disabled {
-  @apply hover:bg-juniper;
-}
-
-/* Button - Secondary Style */
-
-.z-btn--secondary {
-  @apply bg-ink-300 hover:bg-ink-200 text-vanilla-100 border border-slate;
-}
-
-.z-btn--secondary.is-disabled {
-  @apply hover:bg-ink-300;
-}
-
-.z-btn--secondary.is-active {
-  @apply bg-ink-100;
-}
-
-.z-btn--link {
-  @apply font-normal text-juniper hover:underline;
-}
-
-.z-btn--link.is-active {
-  @apply underline;
-}
-
-.z-btn--link.is-disabled {
-  @apply text-slate no-underline;
-}
-</style>
