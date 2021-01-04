@@ -59,18 +59,24 @@ export default {
   },
   computed: {
     isButtonDisabled() {
-      return this.disabled !== false;
+      return this.disabled !== false
     },
     isButtonActive() {
-      return this.active !== false;
+      return this.active !== false
     },
     getStyleBasedOnType() {
       const colors = {
-        'link': `font-normal text-juniper ${this.isButtonActive && 'underline'} ${this.isButtonDisabled && 'text-slate no-underline' || 'hover:underline'}`,
-        'primary': `bg-juniper text-ink-400 ${this.isButtonDisabled && 'hover:bg-juniper' || 'hover:bg-light_juniper'}`,
-        'secondary': `bg-ink-300 text-vanilla-100 border border-slate ${this.isButtonDisabled && 'hover:bg-ink-300' || 'hover:bg-ink-200'} ${this.isButtonActive && 'bg-ink-100'}`
+        link: `font-normal text-juniper ${this.isButtonActive && 'underline'} ${
+          (this.isButtonDisabled && 'text-slate no-underline') || 'hover:underline'
+        }`,
+        primary: `bg-juniper text-ink-400 ${
+          (this.isButtonDisabled && 'hover:bg-juniper') || 'hover:bg-light_juniper'
+        }`,
+        secondary: `bg-ink-300 text-vanilla-100 border border-slate ${
+          (this.isButtonDisabled && 'hover:bg-ink-300') || 'hover:bg-ink-200'
+        } ${this.isButtonActive && 'bg-ink-100'}`
       }
-      return colors[this.color] || colors['primary'];
+      return colors[this.color] || colors['primary']
     },
     getSizeClasses() {
       const sizes = {
@@ -89,4 +95,3 @@ export default {
   }
 }
 </script>
-
