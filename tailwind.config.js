@@ -22,6 +22,8 @@ module.exports = {
       aqua: '#23c4f8',
       gitlab: '#6753B5',
       bitbucket: '#1E54C5',
+      lavendar: '#7A97FA',
+      pink: '#F977FF',
       vanilla: {
         100: '#ffffff',
         200: '#f5f5f5',

@@ -18,3 +18,7 @@
   height: 400px;
   width: 700px;
 }
+
+.carousel-container img {
+  @apply object-fill w-full;
+}
