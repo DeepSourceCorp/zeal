@@ -47,5 +47,4 @@ export default {
 .slide-right-leave-active {
   @apply animate-slide-right-leave-active;
 }
-
 </style>
