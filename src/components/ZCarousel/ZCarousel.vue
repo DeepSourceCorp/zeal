@@ -119,7 +119,7 @@ export default {
       if (slideIndex > this.currentIndex) this.slideDirection = 'slide-right'
       else this.slideDirection = 'slide-left'
       this.currentIndex = slideIndex
-      if(this.autoSlide) this.resetAutoSlide()
+      if (this.autoSlide) this.resetAutoSlide()
     },
 
     setSlideInterval() {
