@@ -76,7 +76,7 @@ export default {
           (this.isButtonDisabled && 'hover:bg-ink-300') || 'hover:bg-ink-200'
         } ${this.isButtonActive && 'bg-ink-100'}`
       }
-      return colors[this.color] || colors['primary']
+      return colors[this.color] || ''
     },
     getSizeClasses() {
       const sizes = {
