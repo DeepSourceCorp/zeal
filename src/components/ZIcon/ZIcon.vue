@@ -1,11 +1,12 @@
 <template>
   <svg
-    class="stroke-current stroke-2 text-vanilla-400"
+    class="stroke-2 text-vanilla-400"
     :class="[
       'z-icon',
       `${getSizeStyle}`,
       `${icon && `z-icon--${icon}`}`,
-      `${position && `${getPositionStyle}`}`
+      `${position && `${getPositionStyle}`}`,
+      `${customStyle}`
     ]"
     viewBox="0 0 24 24"
     v-html="getIcon(icon)"
@@ -33,6 +34,11 @@ export default {
       type: String
     }
   },
+  data() {
+    return {
+      customStyle: ''
+    }
+  },
   computed: {
     getSizeStyle() {
       if (this.size === 'small') {
@@ -52,10 +58,12 @@ export default {
   methods: {
     getIcon(iconName) {
       let DOM = null
-      if (feather.icons[iconName]) {
-        DOM = feather.icons[iconName] && feather.icons[iconName].contents
-      } else {
+      if (customIcons[iconName]) {
         DOM = customIcons[iconName] && customIcons[iconName].contents
+      } else {
+        DOM = feather.icons[iconName] && feather.icons[iconName].contents
+        // For feathericons, stroke has to be added, while for custom icons it has to be none
+        this.customStyle = 'stroke-current'
       }
       return DOM
     }

@@ -61,7 +61,7 @@ export default {
       type: Boolean
     },
     autoTiming: {
-      default: '2000',
+      default: '3000',
       type: String
     },
     showControls: {
@@ -85,7 +85,7 @@ export default {
       return this.currentIndex === 0
     },
     getIndicatorPositionClass() {
-      let positions = {
+      const positions = {
         left: 'justify-start',
         right: 'justify-end',
         center: 'justify-center'
@@ -94,6 +94,11 @@ export default {
     }
   },
   methods: {
+    resetAutoSlide() {
+      this.cancelAutoSlide()
+      this.setSlideInterval()
+    },
+
     showNextSlide() {
       this.currentIndex++
       if (this.currentIndex >= this.slidesLength) {
@@ -114,6 +119,13 @@ export default {
       if (slideIndex > this.currentIndex) this.slideDirection = 'slide-right'
       else this.slideDirection = 'slide-left'
       this.currentIndex = slideIndex
+      this.resetAutoSlide()
+    },
+
+    setSlideInterval() {
+      this.autoInterval = setInterval(() => {
+        this.showNextSlide()
+      }, parseInt(this.autoTiming))
     },
 
     cancelAutoSlide() {
@@ -121,14 +133,12 @@ export default {
     }
   },
   mounted() {
-    this.slides = this.$children.filter((child) => child.$options.name === 'ZSlide')
+    this.slides = this.$children.filter(child => child.$options.name === 'ZSlide')
     this.slides.map((slide, index) => {
       slide.index = index
     })
-    if (this.autoSlide) {
-      this.autoInterval = setInterval(() => {
-        this.showNextSlide()
-      }, parseInt(this.autoTiming))
+    if(this.autoSlide) {
+      this.setSlideInterval();
     }
   },
   beforeDestroy() {

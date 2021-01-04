@@ -1,5 +1,5 @@
 <template>
-  <div :class="['z-divider', getDirectionClasses]" class="relative bg-ink-100">
+  <div :class="['z-divider', getDirectionClasses]" class="relative bg-ink-200">
     <div class="z-divider--content" v-if="direction !== 'vertical'"><slot></slot></div>
   </div>
 </template>

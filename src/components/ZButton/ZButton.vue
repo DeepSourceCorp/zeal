@@ -62,7 +62,7 @@ export default {
   },
   computed: {
     getSizeClasses() {
-      let sizes = {
+      const sizes = {
         small: 'h-8 text-xs',
         medium: 'h-10 text-base',
         large: 'h-12 text-lg',
