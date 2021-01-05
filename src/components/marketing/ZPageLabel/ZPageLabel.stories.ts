@@ -28,6 +28,7 @@ export const PageLabelWithCustomColoredBackgrounds = () => ({
       <z-page-label background-color="slate">Page</z-page-label>
       <z-page-label background-color="juniper">Page</z-page-label>
       <z-page-label background-color="gradient-dawn">Page</z-page-label>
+      <z-page-label background-color="gradient-galaxy">Page</z-page-label>
       <z-page-label background-color="gradient-splash">Page</z-page-label>
     </div>`
 })

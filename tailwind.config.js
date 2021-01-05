@@ -757,10 +757,8 @@ module.exports = {
     plugin(({ addUtilities, e, theme, variants }) => {
       const utilities = Object.keys(theme('gradients')).map((name) => {
         const gradient = theme('gradients')[name]
-        const isGradientAnArray = Array.isArray(gradient)
-        const type =
-          !isGradientAnArray && gradient.hasOwnProperty('type') ? gradient.type : 'linear'
-        const colors = !isGradientAnArray ? gradient.colors || [] : gradient
+        const type = gradient.hasOwnProperty('type') ? gradient.type : 'linear'
+        const colors = gradient.hasOwnProperty('colors') ? gradient.colors : gradient
 
         return {
           [`.bg-gradient-${e(name)}`]: {
