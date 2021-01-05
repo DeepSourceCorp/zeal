@@ -14,10 +14,7 @@ export const Guide = () => ({
         subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices consequat id mauris condimentum libero. Ipsum feugiat gravida ultrices proin purus accumsan ac. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices consequat id mauris condimentum libero. Ipsum feugiat gravida ultrices proin purus accumsan ac."
         page-label="Guide"
         author="John Doe Williams"
-<<<<<<< HEAD
-=======
         author-image="https://randomuser.me/api/portraits/men/35.jpg"
->>>>>>> Format code with prettier
         date="February 29, 2020"
         previous-page-text="Back to all guides"
         previous-page-link="https://google.com"
