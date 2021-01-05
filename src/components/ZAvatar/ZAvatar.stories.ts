@@ -33,7 +33,6 @@ export const InLoadingState = () => ({
     `
 })
 
-
 export const WithUserName = () => ({
   components: { ZAvatar },
   template: `
