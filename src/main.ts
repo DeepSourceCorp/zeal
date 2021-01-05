@@ -14,7 +14,17 @@ import ZCheckbox from './components/ZCheckbox/index'
 import ZContentGuide from './components/marketing/layouts/ZContentGuide/index'
 import ZPageLabel from './components/marketing/ZPageLabel/index'
 
-const components = [ZButton, ZIcon, ZDivider, ZContentGuide, ZCarousel, ZSlide, ZCard, ZPageLabel, ZCheckbox]
+const components = [
+  ZButton,
+  ZIcon,
+  ZDivider,
+  ZContentGuide,
+  ZCarousel,
+  ZSlide,
+  ZCard,
+  ZPageLabel,
+  ZCheckbox
+]
 
 const install = (Vue: any) => {
   components.forEach((component) => {
