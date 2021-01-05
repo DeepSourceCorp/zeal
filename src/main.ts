@@ -1,5 +1,3 @@
-import Vue from 'vue'
-
 import './assets/css/tailwind.css'
 import './assets/css/typography.css'
 import './assets/css/layout.css'
@@ -11,8 +9,11 @@ import ZCarousel from './components/ZCarousel/index'
 import ZSlide from './components/ZSlide/index'
 import ZCard from './components/ZCard/index'
 import ZCheckbox from './components/ZCheckbox/index'
+import ZStepper from './components/ZStepper/index'
+import ZStep from './components/ZStep/index'
 
-const components = [ZButton, ZIcon, ZDivider, ZCarousel, ZSlide, ZCard, ZCheckbox]
+
+const components = [ZButton, ZIcon, ZDivider, ZCarousel, ZSlide, ZCard, ZCheckbox, ZStepper, ZStep]
 
 const install = (Vue: any) => {
   components.forEach((component) => {
@@ -31,7 +32,9 @@ export default {
   ZDivider,
   ZCarousel,
   ZSlide,
-  ZCard
+  ZCard,
+  ZStepper,
+  ZStep
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -41,3 +44,6 @@ export { default as ZCarousel } from './components/ZCarousel/index'
 export { default as ZSlide } from './components/ZSlide/index'
 export { default as ZCard } from './components/ZCard/index'
 export { default as ZCheckbox } from './components/ZCheckbox/index'
+export { default as ZStepper } from './components/ZStepper/index'
+export { default as ZStep } from './components/ZStep/index'
+
