@@ -765,9 +765,6 @@ module.exports = {
         return {
           [`.bg-gradient-${e(name)}`]: {
             backgroundImage: `${type}-gradient(${colors.join(', ')})`
-          },
-          [`.text-gradient-${e(name)}`]: {
-            background: `${type}-gradient(${colors.join(', ')})`
           }
         }
       })
