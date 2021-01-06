@@ -12,7 +12,6 @@ import ZCheckbox from './components/ZCheckbox/index'
 import ZStepper from './components/ZStepper/index'
 import ZStep from './components/ZStep/index'
 
-
 const components = [ZButton, ZIcon, ZDivider, ZCarousel, ZSlide, ZCard, ZCheckbox, ZStepper, ZStep]
 
 const install = (Vue: any) => {
@@ -46,4 +45,3 @@ export { default as ZCard } from './components/ZCard/index'
 export { default as ZCheckbox } from './components/ZCheckbox/index'
 export { default as ZStepper } from './components/ZStepper/index'
 export { default as ZStep } from './components/ZStep/index'
-

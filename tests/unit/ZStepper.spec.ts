@@ -4,27 +4,27 @@ import Vue from 'vue'
 
 import { createLocalVue, mount, Wrapper } from '@vue/test-utils'
 
-let id = 0;
+let id = 0
 
-const createElm = function() {
-  const elm = document.createElement('div');
+const createElm = function () {
+  const elm = document.createElement('div')
 
-  elm.id = 'app' + ++id;
-  document.body.appendChild(elm);
+  elm.id = 'app' + ++id
+  document.body.appendChild(elm)
 
-  return elm;
-};
+  return elm
+}
 
-export const createVue = function(Compo: any) {
-  return new Vue({ template: Compo }).$mount(createElm());
-};
+export const createVue = function (Compo: any) {
+  return new Vue({ template: Compo }).$mount(createElm())
+}
 
 const div = document.createElement('div')
 div.id = 'root'
 document.body.appendChild(div)
 
 const Stepper = {
-    template: `<el-steps>
+  template: `<el-steps>
         <el-step title="step1"></el-step>
         <el-step title="step2"></el-step>
         <el-step title="step3"></el-step>
@@ -45,10 +45,10 @@ describe('ZStepper', () => {
   })
 
   it('renders a default stepper component', () => {
-      let wrapper = mountFn({
-        attachTo: '#root'
+    let wrapper = mountFn({
+      attachTo: '#root'
     })
-      expect(wrapper.vm.$el.querySelectorAll('.z-step')).toHaveLength(3);
-      wrapper.destroy()
+    expect(wrapper.vm.$el.querySelectorAll('.z-step')).toHaveLength(3)
+    wrapper.destroy()
   })
 })

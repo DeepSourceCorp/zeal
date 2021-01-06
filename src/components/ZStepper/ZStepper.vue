@@ -1,6 +1,5 @@
 <template>
-  <div 
-    class="z-stepper flex">
+  <div class="z-stepper flex">
     <slot></slot>
   </div>
 </template>
@@ -24,9 +23,9 @@ export default {
     steps(steps) {
       steps.forEach((step, index) => {
         step.index = index
-        if(index === this.active) {
-          step.internalStatus = 'active';
-        } else if(index < this.active) {
+        if (index === this.active) {
+          step.internalStatus = 'active'
+        } else if (index < this.active) {
           step.internalStatus = 'completed'
         }
       })
@@ -34,4 +33,3 @@ export default {
   }
 }
 </script>
-
