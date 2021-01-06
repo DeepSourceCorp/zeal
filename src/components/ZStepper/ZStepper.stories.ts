@@ -3,7 +3,7 @@ import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'
 import ZStepper from './ZStepper.vue'
 import ZStep from './ZStep.vue'
-import ZButton from '../ZButton/ZButton.vue';
+import ZButton from '../ZButton/ZButton.vue'
 
 export default {
   title: 'Stepper',
@@ -13,7 +13,7 @@ export default {
 
 export const DefaultStepper = () => ({
   components: { ZStepper, ZStep },
-    template: `<div class="container">
+  template: `<div class="container">
         <z-stepper>
             <z-step title="Step 1" description="Some description"></z-step>
             <z-step title="Step 2" description="Some description"></z-step>
@@ -24,7 +24,7 @@ export const DefaultStepper = () => ({
 
 export const StepperWithDirectStatus = () => ({
   components: { ZStepper, ZStep },
-    template: `<div class="container">
+  template: `<div class="container">
         <z-stepper>
             <z-step title="Step 1" description="Some description" status="completed"></z-step>
             <z-step title="Step 2" description="Some description" status="active"></z-step>
