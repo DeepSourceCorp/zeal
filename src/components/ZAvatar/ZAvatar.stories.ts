@@ -1,3 +1,4 @@
+import { Component } from 'vue'
 import ZAvatar from './ZAvatar.vue'
 
 export default {
@@ -6,7 +7,7 @@ export default {
   excludeStories: /.*Data$/
 }
 
-export const AsALink = () => ({
+export const AsALink = (): Component => ({
   components: { ZAvatar },
   template: `
     <div class='padded-container'>
@@ -19,7 +20,7 @@ export const AsALink = () => ({
     `
 })
 
-export const InLoadingState = () => ({
+export const InLoadingState = (): Component => ({
   components: { ZAvatar },
   template: `
     <div class='padded-container'>
@@ -33,7 +34,7 @@ export const InLoadingState = () => ({
     `
 })
 
-export const WithUserName = () => ({
+export const WithUserName = (): Component => ({
   components: { ZAvatar },
   template: `
     <div class='padded-container'>
@@ -44,7 +45,7 @@ export const WithUserName = () => ({
     `
 })
 
-export const WithImageAndUserName = () => ({
+export const WithImageAndUserName = (): Component => ({
   components: { ZAvatar },
   template: `<div class='padded-container'>
       <z-avatar
@@ -53,7 +54,7 @@ export const WithImageAndUserName = () => ({
     </div>`
 })
 
-export const WithSizes = () => ({
+export const WithSizes = (): Component => ({
   components: { ZAvatar },
   template: `
     <div class='bg-dark padded-container'>

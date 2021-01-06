@@ -1,5 +1,6 @@
 import ZAvatarGroup from './ZAvatarGroup.vue'
 import ZAvatar from '../ZAvatar/index'
+import { Component } from 'vue'
 
 export default {
   title: 'Avatar Group',
@@ -7,7 +8,7 @@ export default {
   excludeStories: /.*Data$/
 }
 
-export const Default = () => ({
+export const Default = (): Component => ({
   components: { ZAvatarGroup, ZAvatar },
   template: `<div class='padded-container'>
       <z-avatar-group>
@@ -27,7 +28,7 @@ export const Default = () => ({
     </div>`
 })
 
-export const InLoadingState = () => ({
+export const InLoadingState = (): Component => ({
   components: { ZAvatarGroup, ZAvatar },
   template: `
     <div class='padded-container'>
@@ -49,7 +50,7 @@ export const InLoadingState = () => ({
     `
 })
 
-export const WithSize = () => ({
+export const WithSize = (): Component => ({
   components: { ZAvatarGroup, ZAvatar },
   template: `<div class='padded-container'>
       <z-avatar-group size="xl">
@@ -69,7 +70,7 @@ export const WithSize = () => ({
     </div>`
 })
 
-export const WithLimit = () => ({
+export const WithLimit = (): Component => ({
   components: { ZAvatarGroup, ZAvatar },
   template: `
     <div class='padded-container'>
@@ -123,7 +124,7 @@ export const WithLimit = () => ({
   `
 })
 
-export const WithUserNameOrImageOrSize = () => ({
+export const WithUserNameOrImageOrSize = (): Component => ({
   components: { ZAvatarGroup, ZAvatar },
   template: `
     <div class='padded-container'>
