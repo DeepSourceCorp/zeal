@@ -40,7 +40,6 @@ const StepperWithStatusFromParent = {
 }
 
 describe('ZStepper', () => {
-
   it('renders a default stepper component', () => {
     let wrapper = mount(Stepper)
     expect(wrapper.html()).toMatchSnapshot()

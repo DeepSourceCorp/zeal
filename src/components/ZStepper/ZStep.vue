@@ -36,8 +36,6 @@ const bgColors = {
   default: 'bg-ink-200'
 }
 
-
-
 export default Vue.extend({
   name: 'ZStep',
   props: {
@@ -79,7 +77,8 @@ export default Vue.extend({
     parent.steps.push(this)
   },
   beforeDestroy() {
-    const parent: any = this.$parent, steps = parent.steps
+    const parent: any = this.$parent,
+      steps = parent.steps
     const index = steps.indexOf(this)
     if (index >= 0) {
       steps.slice(index, 1)
