@@ -52,16 +52,14 @@ export default {
     getIconStyle() {
       const bgColors = {
         completed: 'bg-juniper',
-        active: 'bg-robin'
+        active: 'bg-robin',
+        default: 'bg-ink-200'
       };
-      return bgColors[this.currentStatus] || 'bg-ink-200'
+      return bgColors[this.currentStatus] || bgColors['default']
     },
     getTextStyle() {
-      const colors = {
-        completed: 'text-vanilla-200',
-        active: 'text-vanilla-200'
-      }
-      return colors[this.currentStatus] || 'text-vanilla-400'
+      const activeColor = 'text-vanilla-200', defaultColor = 'text-vanilla-400';
+      return this.currentStatus && activeColor || defaultColor
     },
     isLast() {
       const parent = this.$parent;
