@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar Group component renders an avatar group when the component is mounted 1`] = `
+<div class="flex items-center">
+  <!---->
+</div>
+`;
+
+exports[`Avatar Group component renders avatar group 1`] = `
+<div class="flex items-center"><a class="inline-block">
+    <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-8 w-8 text-sm">
+      AP
+    </span>
+  </a><a class="inline-block -ml-3">
+    <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-8 w-8 text-sm">
+      AP
+    </span>
+  </a><a class="inline-block -ml-3">
+    <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-8 w-8 text-sm">
+      AP
+    </span>
+  </a><a class="inline-block -ml-3">
+    <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-8 w-8 text-sm">
+      AP
+    </span>
+  </a>
+  <!---->
+</div>
+`;
+
+exports[`Avatar Group component renders avatar group with size 1`] = `
+<div class="flex items-center"><a class="inline-block">
+    <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-6 w-6 text-xs">
+      AP
+    </span>
+  </a> <a class="inline-block -ml-3">
+    <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-6 w-6 text-xs">
+      SD
+    </span>
+  </a> <a class="inline-block -ml-3">
+    <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-6 w-6 text-xs">
+      AP
+    </span>
+  </a> <a class="inline-block -ml-3">
+    <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-6 w-6 text-xs">
+      AP
+    </span>
+  </a> <a class="inline-block -ml-3">
+    <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-6 w-6 text-xs">
+      AP
+    </span>
+  </a>
+  <!---->
+</div>
+`;

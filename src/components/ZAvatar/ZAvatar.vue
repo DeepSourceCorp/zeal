@@ -1,5 +1,5 @@
 <template>
-  <component v-if="isVisible" :is="type === 'link' ? 'a' : 'span'" class="inline-block">
+  <component v-if="isVisible" :is="TYPES[type]" class="inline-block">
     <span
       v-if="isLoading"
       :class="[`${SIZES[getSize].classes}`]"
@@ -8,7 +8,7 @@
     </span>
     <template v-else>
       <img
-        v-if="this.image && !this.userName"
+        v-if="this.image"
         :class="[`${SIZES[getSize].classes}`]"
         class="rounded-full"
         :src="image"
@@ -35,29 +35,40 @@ const SIZES = {
   xl: { classes: 'leading-none h-16 w-16 text-2xl', text: 'xl' }
 }
 
+const TYPES = {
+  link: 'a',
+  div: 'div',
+  span: 'span'
+}
+
 export default Vue.extend({
   name: 'ZAvatar',
   props: {
     type: {
       type: String,
-      default: 'link'
+      default: 'link',
+      validator: type => Object.keys(TYPES).includes(type)
     },
     loading: {
       type: Boolean,
       default: false
     },
     image: String,
-    userName: String,
+    userName: {
+      type: String,
+      required: true
+    },
     size: {
       type: String,
       default: SIZES.md.text,
-      validator: (size) => Object.keys(SIZES).includes(size)
+      validator: size => Object.keys(SIZES).includes(size)
     }
   },
   data() {
     return {
       isVisible: true,
-      SIZES
+      SIZES,
+      TYPES
     }
   },
   computed: {
@@ -81,7 +92,7 @@ export default Vue.extend({
       return this.userName
         ? this.userName
             .split(' ')
-            .map((elem) => elem.charAt(0))
+            .map(elem => elem.charAt(0))
             .slice(0, 2)
             .join('')
             .toUpperCase()
