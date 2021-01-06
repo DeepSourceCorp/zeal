@@ -4,7 +4,7 @@ import { createLocalVue, mount, Wrapper, shallowMount } from '@vue/test-utils'
 import ZButton from '../../src/components/ZButton'
 
 describe('Button component', () => {
-  let mountFunction: (options?: object) => Wrapper<Vue>
+  let mountFunction: (options?: Record<string, unknown>) => Wrapper<Vue>
   let localVue: typeof Vue
   beforeEach(() => {
     localVue = createLocalVue()

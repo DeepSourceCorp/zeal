@@ -4,7 +4,7 @@ import Vue from 'vue'
 import { createLocalVue, mount, Wrapper } from '@vue/test-utils'
 
 describe('Checkbox Component', () => {
-  let mountFn: (options?: object) => Wrapper<Vue>
+  let mountFn: (options?: Record<string, unknown>) => Wrapper<Vue>
   let localVue: typeof Vue
 
   beforeEach(() => {

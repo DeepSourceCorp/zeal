@@ -4,7 +4,7 @@ import Vue from 'vue'
 import { mount, Wrapper } from '@vue/test-utils'
 
 describe('ZCarousel', () => {
-  let mountFn: (options?: any) => Wrapper<Vue>
+  let mountFn: (options?: Record<string, unknown>) => Wrapper<Vue>
   let localVue: typeof Vue
 
   beforeEach(() => {
