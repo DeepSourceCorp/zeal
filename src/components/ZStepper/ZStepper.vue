@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 export default {
   name: 'ZStepper',
   props: {
@@ -20,8 +20,8 @@ export default {
     }
   },
   watch: {
-    steps(steps: any) {
-      steps.forEach((step: any, index: number) => {
+    steps(steps) {
+      steps.forEach((step, index) => {
         step.index = index
         if (index === this.active) {
           step.internalStatus = 'active'
