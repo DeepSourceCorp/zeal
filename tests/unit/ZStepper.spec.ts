@@ -2,33 +2,42 @@ import ZStepper from '../../src/components/ZStepper'
 import ZStep from '../../src/components/ZStep'
 import Vue from 'vue'
 
-import { createLocalVue, mount, Wrapper } from '@vue/test-utils'
-
-let id = 0
-
-const createElm = function () {
-  const elm = document.createElement('div')
-
-  elm.id = 'app' + ++id
-  document.body.appendChild(elm)
-
-  return elm
-}
-
-export const createVue = function (Compo: any) {
-  return new Vue({ template: Compo }).$mount(createElm())
-}
-
-const div = document.createElement('div')
-div.id = 'root'
-document.body.appendChild(div)
+import { mount, Wrapper } from '@vue/test-utils'
 
 const Stepper = {
-  template: `<el-steps>
-        <el-step title="step1"></el-step>
-        <el-step title="step2"></el-step>
-        <el-step title="step3"></el-step>
-      </el-steps>`
+  template: `<z-stepper>
+        <z-step title="step1"></z-step>
+        <z-step title="step2"></z-step>
+        <z-step title="step3"></z-step>
+      </z-stepper>`,
+    components: {
+        ZStepper,
+        ZStep
+    }
+}
+
+const StepperWithDirectStatus = {
+    template: `<z-stepper>
+            <z-step title="Step 1" description="Some description" status="completed"></z-step>
+            <z-step title="Step 2" description="Some description" status="active"></z-step>
+            <z-step title="Step 3" description="Some description"></z-step>
+        </z-stepper>`,
+    components: {
+        ZStepper,
+        ZStep
+    }
+}
+
+const StepperWithStatusFromParent = {
+    template: `<z-stepper :active="2">
+          <z-step title="Step 1" description="Some description"></z-step>
+          <z-step title="Step 2" description="Some description"></z-step>
+          <z-step title="Step 3" description="Some description"></z-step>
+      </z-stepper>`,
+    components: {
+        ZStepper,
+        ZStep
+    }
 }
 
 describe('ZStepper', () => {
@@ -45,10 +54,16 @@ describe('ZStepper', () => {
   })
 
   it('renders a default stepper component', () => {
-    let wrapper = mountFn({
-      attachTo: '#root'
-    })
-    expect(wrapper.vm.$el.querySelectorAll('.z-step')).toHaveLength(3)
-    wrapper.destroy()
+      let wrapper = mountFn();
+      expect(wrapper.html()).toMatchSnapshot()
+      expect(wrapper.findAll('.z-step').length).toEqual(3);
+  })
+  it('renders a stepper component with status from the Step', () => {
+    let wrapper = mount(StepperWithDirectStatus);
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+  it('renders a stepper component with status passed from the Parent Component', () => {
+    let wrapper = mount(StepperWithStatusFromParent);
+    expect(wrapper.html()).toMatchSnapshot()
   })
 })
