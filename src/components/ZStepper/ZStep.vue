@@ -56,12 +56,13 @@ export default {
         completed: 'bg-juniper',
         active: 'bg-robin',
         default: 'bg-ink-200'
-      };
+      }
       return bgColors[this.currentStatus] || bgColors['default']
     },
     getTextStyle() {
-      const activeColor = 'text-vanilla-200', defaultColor = 'text-vanilla-400';
-      return this.currentStatus && activeColor || defaultColor
+      const activeColor = 'text-vanilla-200',
+        defaultColor = 'text-vanilla-400'
+      return (this.currentStatus && activeColor) || defaultColor
     },
     isLast() {
       const parent = this.$parent
