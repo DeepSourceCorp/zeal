@@ -14,7 +14,7 @@ export default {
 
 export const DefaultWithoutText = () => ({
   components: { ZButton },
-  template: '<z-button></z-button>'
+  template: '<z-button color="primary"></z-button>'
 })
 
 export const ButtonWithText = () => ({
@@ -33,18 +33,18 @@ export const Colors = () => ({
 export const Sizes = () => ({
   components: { ZButton },
   template: `<div>
-        <z-button size="small">Small Button</z-button>
-        <z-button size="medium">Medium Button</z-button>
-        <z-button size="large">Large Button</z-button>
-        <z-button size="xlarge">Extra Large Button</z-button>
+        <z-button color="primary" size="small">Small Button</z-button>
+        <z-button color="primary" size="medium">Medium Button</z-button>
+        <z-button color="primary" size="large">Large Button</z-button>
+        <z-button color="primary" size="xlarge">Extra Large Button</z-button>
     </div>`
 })
 
 export const States = () => ({
   components: { ZButton },
   template: `<div>
-        <z-button active>Active Button</z-button>
-        <z-button disabled>Disabled Button</z-button>
+        <z-button color="primary" active>Active Button</z-button>
+        <z-button color="primary" disabled>Disabled Button</z-button>
         <z-button color="secondary" active>Active Secondary Button</z-button>
         <z-button color="secondary" disabled>Disabled Secondary Button</z-button>
     </div>`
@@ -53,7 +53,7 @@ export const States = () => ({
 export const FullWidthButton = () => ({
   components: { ZButton },
   template: `<div>
-        <z-button full-width>Full Width Button</z-button>
+        <z-button color="primary" full-width>Full Width Button</z-button>
     </div>`
 })
 

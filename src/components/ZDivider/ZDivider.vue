@@ -1,10 +1,10 @@
 <template>
-  <div :class="['z-divider', `z-divider--${direction}`]">
+  <div :class="['z-divider', getDirectionClasses]" class="relative bg-ink-200">
     <div class="z-divider--content" v-if="direction !== 'vertical'"><slot></slot></div>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 export default {
   name: 'ZDivider',
   props: {
@@ -12,15 +12,13 @@ export default {
       default: 'horizontal',
       type: String
     }
+  },
+  computed: {
+    getDirectionClasses() {
+      return this.direction === 'vertical'
+        ? 'inline-block w-px h-4 my-0 mx-2 align-middle'
+        : 'block h-px w-full my-6 mx-0'
+    }
   }
 }
 </script>
-
-<style lang="css" scoped>
-.z-divider {
-  @apply relative block h-px w-full my-6 mx-0 bg-ink-100;
-}
-.z-divider--vertical {
-  @apply inline-block w-px h-4 my-0 mx-2 align-middle;
-}
-</style>

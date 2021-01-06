@@ -23,6 +23,8 @@ module.exports = {
       aqua: '#23c4f8',
       gitlab: '#6753B5',
       bitbucket: '#1E54C5',
+      lavender: '#7A97FA',
+      pink: '#F977FF',
       vanilla: {
         100: '#ffffff',
         200: '#f5f5f5',
@@ -36,6 +38,20 @@ module.exports = {
         400: '#16181d'
       }
     },
+    gradients: (theme) => ({
+      ocean: ['98.66deg', '#49f9ce 9.7%', '#3dcded 96.6%'],
+      galaxy: {
+        type: 'radial',
+        colors: [
+          '60.53% 61.06% at 68.85% 57.59%',
+          'rgba(51, 0, 255, 0.37) 0%',
+          'rgba(189, 52, 201, 0.169375) 55.73%',
+          'rgba(116, 95, 203, 0.01) 100%'
+        ]
+      },
+      dawn: ['98.66deg', '#7a96f2 4.42%', '#ce79d1 96.6%'],
+      splash: ['98.66deg', '#4568dc 4.42%', '#324daa 96.6%']
+    }),
     spacing: {
       px: '1px',
       0: '0',
@@ -186,6 +202,7 @@ module.exports = {
       2.5: '0.625rem',
       8: '2rem',
       px: '1px',
+      6: '1.5rem',
       auto: 'auto',
       50: '50%'
     },
@@ -740,6 +757,21 @@ module.exports = {
         }
       }
       addUtilities(contentUtilities, ['before', 'after'])
+    }),
+    plugin(({ addUtilities, e, theme, variants }) => {
+      const utilities = Object.keys(theme('gradients')).map((name) => {
+        const gradient = theme('gradients')[name]
+        const type = gradient.hasOwnProperty('type') ? gradient.type : 'linear'
+        const colors = gradient.hasOwnProperty('colors') ? gradient.colors : gradient
+
+        return {
+          [`.bg-gradient-${e(name)}`]: {
+            backgroundImage: `${type}-gradient(${colors.join(', ')})`
+          }
+        }
+      })
+
+      addUtilities(utilities, variants('gradients', []))
     })
   ]
 }

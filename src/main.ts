@@ -11,8 +11,22 @@ import ZCard from './components/ZCard/index'
 import ZCheckbox from './components/ZCheckbox/index'
 import ZStepper from './components/ZStepper/index'
 import ZStep from './components/ZStep/index'
+import ZContentGuide from './components/marketing/layouts/ZContentGuide/index'
+import ZPageLabel from './components/marketing/ZPageLabel/index'
 
-const components = [ZButton, ZIcon, ZDivider, ZCarousel, ZSlide, ZCard, ZCheckbox, ZStepper, ZStep]
+const components = [
+  ZButton,
+  ZIcon,
+  ZDivider,
+  ZContentGuide,
+  ZCarousel,
+  ZSlide,
+  ZCard,
+  ZPageLabel,
+  ZCheckbox,
+  ZStepper,
+  ZStep
+]
 
 const install = (Vue: any) => {
   components.forEach((component) => {
@@ -45,3 +59,5 @@ export { default as ZCard } from './components/ZCard/index'
 export { default as ZCheckbox } from './components/ZCheckbox/index'
 export { default as ZStepper } from './components/ZStepper/index'
 export { default as ZStep } from './components/ZStep/index'
+export { default as ZContentGuide } from './components/marketing/layouts/ZContentGuide/index'
+export { default as ZPageLabel } from './components/marketing/ZPageLabel/index'
