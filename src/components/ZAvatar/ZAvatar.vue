@@ -47,7 +47,7 @@ export default Vue.extend({
     type: {
       type: String,
       default: 'link',
-      validator: type => Object.keys(TYPES).includes(type)
+      validator: (type) => Object.keys(TYPES).includes(type)
     },
     loading: {
       type: Boolean,
@@ -61,7 +61,7 @@ export default Vue.extend({
     size: {
       type: String,
       default: SIZES.md.text,
-      validator: size => Object.keys(SIZES).includes(size)
+      validator: (size) => Object.keys(SIZES).includes(size)
     }
   },
   data() {
@@ -92,7 +92,7 @@ export default Vue.extend({
       return this.userName
         ? this.userName
             .split(' ')
-            .map(elem => elem.charAt(0))
+            .map((elem) => elem.charAt(0))
             .slice(0, 2)
             .join('')
             .toUpperCase()

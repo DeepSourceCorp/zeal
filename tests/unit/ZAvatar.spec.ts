@@ -16,11 +16,13 @@ describe('Avatar component', () => {
     }
   })
   it('renders an avatar when the component is mounted', () => {
-    expect(mountFunction({
-      propsData: {
-        userName: 'John Doe'
-      }
-    }).html()).toMatchSnapshot()
+    expect(
+      mountFunction({
+        propsData: {
+          userName: 'John Doe'
+        }
+      }).html()
+    ).toMatchSnapshot()
   })
 
   it('renders root element as a link for avatar with no props', () => {
