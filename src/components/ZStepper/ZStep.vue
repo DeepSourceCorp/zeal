@@ -2,7 +2,7 @@
   <div class="z-step w-1/2 mr-0" :class="[isLast && 'w-1/3 flex-shrink-0 flex-grow-0']">
     <div class="z-step__head relative w-full" :class="[`${currentStatus}`]">
       <div
-        class="z-step__line absolute h-0.5 r-0 w-10/12 left-8 top-2.5"
+        class="z-step__line absolute h-0.5 top-2.5 rounded-sm w-auto left-7 right-1"
         :class="[(currentStatus == 'completed' && 'bg-juniper') || 'bg-ink-200']"
         v-if="!isLast"
       ></div>
@@ -16,7 +16,7 @@
     </div>
     <div class="z-step__main">
       <div
-        class="z-step__title text-xs uppercase text-slate font-medium mt-4 tracking-wider leading-snug"
+        class="z-step__title uppercase text-slate font-medium mt-4 tracking-wider leading-snug text-sm"
       >
         <slot name="title">{{ title }}</slot>
       </div>
@@ -27,8 +27,18 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+const bgColors = {
+  completed: 'bg-juniper',
+  active: 'bg-robin',
+  default: 'bg-ink-200'
+}
+
+
+
+export default Vue.extend({
   name: 'ZStep',
   props: {
     title: {
@@ -48,36 +58,32 @@ export default {
     }
   },
   computed: {
-    currentStatus() {
+    currentStatus(): any {
       return this.status || this.internalStatus
     },
-    getIconStyle() {
-      const bgColors = {
-        completed: 'bg-juniper',
-        active: 'bg-robin',
-        default: 'bg-ink-200'
-      }
+    getIconStyle(): string {
       return bgColors[this.currentStatus] || bgColors['default']
     },
-    getTextStyle() {
+    getTextStyle(): string {
       const activeColor = 'text-vanilla-200',
         defaultColor = 'text-vanilla-400'
       return (this.currentStatus && activeColor) || defaultColor
     },
-    isLast() {
-      const parent = this.$parent
+    isLast(): boolean {
+      const parent: any = this.$parent
       return parent.steps[parent.steps.length - 1] === this
     }
   },
   beforeCreate() {
-    this.$parent.steps.push(this)
+    const parent: any = this.$parent
+    parent.steps.push(this)
   },
   beforeDestroy() {
-    const steps = this.$parent.steps
+    const parent: any = this.$parent, steps = parent.steps
     const index = steps.indexOf(this)
     if (index >= 0) {
       steps.slice(index, 1)
     }
   }
-}
+})
 </script>

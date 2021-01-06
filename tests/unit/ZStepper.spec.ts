@@ -1,8 +1,7 @@
 import ZStepper from '../../src/components/ZStepper'
 import ZStep from '../../src/components/ZStep'
-import Vue from 'vue'
 
-import { mount, Wrapper } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 
 const Stepper = {
   template: `<z-stepper>
@@ -41,20 +40,9 @@ const StepperWithStatusFromParent = {
 }
 
 describe('ZStepper', () => {
-  let mountFn: (options?: object) => Wrapper<Vue>
-  let localVue: typeof Vue
-
-  beforeEach(() => {
-    mountFn = (options = {}) => {
-      return mount(Stepper, {
-        localVue,
-        ...options
-      })
-    }
-  })
 
   it('renders a default stepper component', () => {
-    let wrapper = mountFn()
+    let wrapper = mount(Stepper)
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.findAll('.z-step').length).toEqual(3)
   })

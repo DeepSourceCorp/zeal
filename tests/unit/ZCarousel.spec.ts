@@ -1,11 +1,10 @@
 import ZCarousel from '../../src/components/ZCarousel/index'
-import ZSlide from '../../src/components/ZSlide/index'
 import Vue from 'vue'
 
-import { createLocalVue, mount, Wrapper } from '@vue/test-utils'
+import { mount, Wrapper } from '@vue/test-utils'
 
 describe('ZCarousel', () => {
-  let mountFn: (options?: object) => Wrapper<Vue>
+  let mountFn: (options?: any) => Wrapper<Vue>
   let localVue: typeof Vue
 
   beforeEach(() => {
