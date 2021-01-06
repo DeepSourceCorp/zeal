@@ -3,9 +3,8 @@
     <span
       v-if="isLoading"
       :class="[`${SIZES[getSize].classes}`]"
-      class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full"
+      class="flex items-center justify-center bg-gradient-skeleton text-vanilla-300 text-center rounded-full"
     >
-      <!-- TODO: Add skeleton gradient here -->
     </span>
     <template v-else>
       <img
