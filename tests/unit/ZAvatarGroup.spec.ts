@@ -5,7 +5,7 @@ import ZAvatarGroup from '../../src/components/ZAvatarGroup'
 import ZAvatar from '../../src/components/ZAvatar'
 
 describe('Avatar Group component', () => {
-  let mountFunction: (options?: Record<string, string | object>) => Wrapper<Vue>
+  let mountFunction: (options?: Record<string, unknown>) => Wrapper<Vue>
   let localVue: typeof Vue
   beforeEach(() => {
     localVue = createLocalVue()

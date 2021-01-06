@@ -4,7 +4,7 @@ import { createLocalVue, mount, Wrapper } from '@vue/test-utils'
 import ZAvatar from '../../src/components/ZAvatar'
 
 describe('Avatar component', () => {
-  let mountFunction: (options?: Record<string, string | object>) => Wrapper<Vue>
+  let mountFunction: (options?: Record<string, unknown>) => Wrapper<Vue>
   let localVue: typeof Vue
   beforeEach(() => {
     localVue = createLocalVue()
