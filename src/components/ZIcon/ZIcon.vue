@@ -1,12 +1,13 @@
 <template>
   <svg
-    class="stroke-2 text-vanilla-400"
+    class="stroke-2"
     :class="[
       'z-icon',
       `${getSizeStyle}`,
       `${icon && `z-icon--${icon}`}`,
       `${position && `${getPositionStyle}`}`,
-      `${customStyle}`
+      `${customStyle}`,
+      `text-${color}`
     ]"
     viewBox="0 0 24 24"
     v-html="getIcon(icon)"
@@ -32,6 +33,10 @@ export default {
     position: {
       default: '',
       type: String
+    },
+    color: {
+      type: String,
+      default: 'vanilla-400'
     }
   },
   data() {
