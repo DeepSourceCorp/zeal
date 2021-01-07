@@ -21,7 +21,7 @@ export default Vue.extend({
     size: {
       type: String,
       default: SIZES.md.text,
-      validator: size => Object.keys(SIZES).includes(size)
+      validator: (size) => Object.keys(SIZES).includes(size)
     },
     loading: {
       type: Boolean,
