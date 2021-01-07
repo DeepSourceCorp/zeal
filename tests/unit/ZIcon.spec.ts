@@ -19,7 +19,7 @@ describe('ZIcon', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it.only('renders a small icon when size prop is passed', () => {
+  it('renders a small icon when size prop is passed', () => {
     const wrapper = shallowMount(ZIcon, {
       propsData: {
         size: 'small',

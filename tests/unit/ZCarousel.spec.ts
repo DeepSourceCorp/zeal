@@ -21,7 +21,7 @@ describe('ZCarousel', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it.only('renders the Carousel Component with Slides', () => {
+  it('renders the Carousel Component with Slides', () => {
     const wrapper = mountFn({
       slots: {
         default: '<div>Some Random Content</div>'

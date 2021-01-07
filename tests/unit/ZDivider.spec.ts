@@ -22,7 +22,7 @@ describe('ZDivider', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it.only('renders a vertical divider', () => {
+  it('renders a vertical divider', () => {
     const wrapper = mountFn({
       propsData: {
         direction: 'vertical'
