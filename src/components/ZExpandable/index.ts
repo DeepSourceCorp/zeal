@@ -1,3 +1,3 @@
-import ZExpandable from './ZExpandable.vue';
+import ZExpandable from './ZExpandable.vue'
 
-export default ZExpandable;
+export default ZExpandable
