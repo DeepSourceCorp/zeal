@@ -59,7 +59,7 @@ export default Vue.extend({
       type: String,
       default: 'left',
       validator: (val: string) =>
-        Object.keys(HEADING_ALIGNMENT_CLASSES).some((alignment) => alignment === val)
+        Object.keys(HEADING_ALIGNMENT_CLASSES).some(alignment => alignment === val)
     }
   },
   data() {
@@ -85,7 +85,7 @@ export default Vue.extend({
     })
   },
   mounted() {
-    this.headingElements.forEach((headingElement) => {
+    this.headingElements.forEach(headingElement => {
       this.addAsHeadingToHeadingsMap(headingElement)
       this.observer.observe(headingElement)
     })
@@ -105,13 +105,13 @@ export default Vue.extend({
     breakDownHeadingsIntoBlocks() {
       /**
        * Breaks down all the headings in block categories.
-       * A block is named after it's primary heading's (i.e, h1) id.
+       * A block is named after the primary heading's (i.e, if h1 is present then h1 else h2) id.
        */
       let block = '' as Heading['block']
       this.headingElements.forEach((headingElement: Element) => {
         const { id, tagName } = this.getHeading(headingElement)
         if (id) {
-          if (tagName === HEADINGS.h1.tag) {
+          if (tagName === this.getPrimaryHeadingTagName()) {
             block = id
           }
           this.headingsMap[id].block = block
@@ -137,13 +137,6 @@ export default Vue.extend({
         block: ''
       }
     },
-    getHeadingLevel(tagName: Heading['tagName']): number {
-      /**
-       * Level of a heading is formed using it's tagName.
-       * For e.g, level of `h1` is 1, and level of `h2` is 2
-       */
-      return parseInt(tagName.charAt(tagName.length - 1))
-    },
     isHeadingActive({ id }: Heading): boolean {
       /**
        * Returns true if heading passed has the same id
@@ -155,10 +148,28 @@ export default Vue.extend({
       /**
        * Allows to show headings if their block is currently active.
        */
-      if (tagName === HEADINGS.h1.tag) {
+      if (tagName === this.getPrimaryHeadingTagName()) {
         return true
       }
       return this.activeHeading.id ? this.headingsMap[this.activeHeading.id].block === block : false
+    },
+    getPrimaryHeadingTagName() {
+      /**
+       * Returns the primary heading tagName.
+       * Primary heading is the one which is present on the highest level.
+       * For e.g, if `h1` is present in all headings, then `h1` is primary else `h2`.
+       */
+      return this.headingTagNameExists(HEADINGS.h1.tag) ? HEADINGS.h1.tag : HEADINGS.h2.tag
+    },
+    headingTagNameExists(tagName: Heading['tagName']) {
+      /**
+       * Returns true if a tagName exists in all the headings.
+       */
+      let tagNameFound = false as boolean
+      this.headingElements.forEach((headingElement: Element) => {
+        if (headingElement.tagName === tagName) tagNameFound = true
+      })
+      return tagNameFound
     }
   }
 })
