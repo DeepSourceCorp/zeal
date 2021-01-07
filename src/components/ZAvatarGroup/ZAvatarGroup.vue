@@ -8,11 +8,11 @@
 <script lang="ts">
 import Vue from 'vue'
 const SIZES = {
-  xs: { text: 'xs', classes: '-ml-3' },
-  sm: { text: 'sm', classes: '-ml-3' },
-  md: { text: 'md', classes: '-ml-3' },
-  lg: { text: 'lg', classes: '-ml-3' },
-  xl: { text: 'xl', classes: '-ml-3' }
+  xs: { text: 'xs', margins: '-ml-3' },
+  sm: { text: 'sm', margins: '-ml-3' },
+  md: { text: 'md', margins: '-ml-3' },
+  lg: { text: 'lg', margins: '-ml-3' },
+  xl: { text: 'xl', margins: '-ml-3' }
 }
 
 export default Vue.extend({
@@ -21,7 +21,7 @@ export default Vue.extend({
     size: {
       type: String,
       default: SIZES.md.text,
-      validator: (size) => Object.keys(SIZES).includes(size)
+      validator: size => Object.keys(SIZES).includes(size)
     },
     loading: {
       type: Boolean,
@@ -46,7 +46,7 @@ export default Vue.extend({
   mounted() {
     this.acquireAvatarsFromChildren()
     this.onlyShowAvatarsUnderLimit()
-    this.assignStylingClassesToAvatars()
+    this.assignNegativeMarginToAvatars()
   },
   methods: {
     acquireAvatarsFromChildren() {
@@ -63,17 +63,17 @@ export default Vue.extend({
        */
       this.avatars.map(({ $data }, index) => {
         const isLimitExceeded = index > this.limit - 1
-        $data.isVisible = !(this.limit && isLimitExceeded)
+        $data.isVisible = !isLimitExceeded
       })
     },
-    assignStylingClassesToAvatars() {
+    assignNegativeMarginToAvatars() {
       /**
-       * Assigns custom styling classes
-       * to all the avatars.
+       * Assigns negative margins to all the avatars (except the first one),
+       * for overlapping look of the groups.
        */
       this.avatars.map(({ $el }, index) => {
         if (index > 0) {
-          $el.classList.add(SIZES[this.size].classes)
+          $el.classList.add(SIZES[this.size].margins)
         }
       })
     }
