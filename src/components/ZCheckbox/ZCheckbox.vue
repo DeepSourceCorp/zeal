@@ -69,10 +69,10 @@ export default {
   },
   methods: {
     updateInput(event) {
-      let isChecked = event.target.checked
+      const isChecked = event.target.checked
 
       if (this.modelValue instanceof Array) {
-        let newValue = [...this.modelValue]
+        const newValue = [...this.modelValue]
 
         if (isChecked) {
           newValue.push(this.value)

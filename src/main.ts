@@ -1,5 +1,3 @@
-import Vue from 'vue'
-
 import './assets/css/tailwind.css'
 import './assets/css/typography.css'
 import './assets/css/layout.css'
@@ -11,6 +9,8 @@ import ZCarousel from './components/ZCarousel/index'
 import ZSlide from './components/ZSlide/index'
 import ZCard from './components/ZCard/index'
 import ZCheckbox from './components/ZCheckbox/index'
+import ZStepper from './components/ZStepper/index'
+import ZStep from './components/ZStep/index'
 import ZContentGuide from './components/marketing/layouts/ZContentGuide/index'
 import ZPageLabel from './components/marketing/ZPageLabel/index'
 
@@ -23,7 +23,9 @@ const components = [
   ZSlide,
   ZCard,
   ZPageLabel,
-  ZCheckbox
+  ZCheckbox,
+  ZStepper,
+  ZStep
 ]
 
 const install = (Vue: any) => {
@@ -43,7 +45,9 @@ export default {
   ZDivider,
   ZCarousel,
   ZSlide,
-  ZCard
+  ZCard,
+  ZStepper,
+  ZStep
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -53,5 +57,7 @@ export { default as ZCarousel } from './components/ZCarousel/index'
 export { default as ZSlide } from './components/ZSlide/index'
 export { default as ZCard } from './components/ZCard/index'
 export { default as ZCheckbox } from './components/ZCheckbox/index'
+export { default as ZStepper } from './components/ZStepper/index'
+export { default as ZStep } from './components/ZStep/index'
 export { default as ZContentGuide } from './components/marketing/layouts/ZContentGuide/index'
 export { default as ZPageLabel } from './components/marketing/ZPageLabel/index'

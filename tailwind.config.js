@@ -50,11 +50,13 @@ module.exports = {
         ]
       },
       dawn: ['98.66deg', '#7a96f2 4.42%', '#ce79d1 96.6%'],
-      splash: ['98.66deg', '#4568dc 4.42%', '#324daa 96.6%']
+      splash: ['98.66deg', '#4568dc 4.42%', '#324daa 96.6%'],
+      skeleton: ['104.58deg', '#21242B 0%', `${theme('colors.ink.200')} 40.08%`, '#21242B 60.32%']
     }),
     spacing: {
       px: '1px',
       0: '0',
+      0.5: '0.125rem',
       1: '0.25rem',
       2: '0.5rem',
       3: '0.75rem',
@@ -173,6 +175,7 @@ module.exports = {
       mono: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace']
     },
     fontSize: {
+      xxs: '0.5rem',
       xs: '0.75rem',
       sm: '0.875rem',
       base: '1rem',
@@ -196,9 +199,13 @@ module.exports = {
     }),
     inset: {
       0: '0',
-      1: '0.5rem',
+      1: '0.25rem',
+      2: '0.5rem',
+      2.5: '0.625rem',
       px: '1px',
       6: '1.5rem',
+      7: '1.75rem',
+      8: '2rem',
       auto: 'auto',
       50: '50%'
     },
