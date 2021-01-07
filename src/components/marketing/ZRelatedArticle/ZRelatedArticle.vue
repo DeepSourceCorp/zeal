@@ -11,12 +11,13 @@
 </template>
 
 <script lang="ts">
-import { VNode } from 'vue'
+import Vue from 'vue'
 import ZIcon from '../../ZIcon'
-export default {
+
+export default Vue.extend({
   name: 'ZRelatedArticle',
   components: {
     ZIcon
   }
-}
+})
 </script>
