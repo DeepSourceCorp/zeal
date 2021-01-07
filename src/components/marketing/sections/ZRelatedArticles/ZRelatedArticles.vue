@@ -10,6 +10,9 @@
 <script lang="ts">
 import Vue from 'vue'
 
+const SECONDARY_ARTICLE_CLASSES = ['pl-4', 'border-l']
+const COMMON_ARTICLE_CLASSES = ['col-span-6']
+
 export default Vue.extend({
   name: 'ZRelatedArticles',
   props: {
@@ -21,20 +24,29 @@ export default Vue.extend({
     }
   },
   mounted() {
-    this.acquireArticlesFromChildren()
-    this.assignStylingClassesToTheArticles()
+    this.acquireFirstTwoArticlesFromChildren()
+    this.assignStylesToSecondaryArticles()
   },
   methods: {
-    acquireArticlesFromChildren() {
+    acquireFirstTwoArticlesFromChildren() {
+      /**
+       * Acquires all the child components that are Related Article components,
+       * and stores the first two of them.
+       */
       this.articles = this.$children
         .filter(({ $options }) => $options.name === 'ZRelatedArticle')
         .slice(0, 2)
     },
-    assignStylingClassesToTheArticles() {
+    assignStylesToSecondaryArticles() {
+      /**
+       * Assigns custom styling classes to the
+       * articles except from the first one.
+       */
       this.articles.map(({ $el }, index) => {
         if (index > 0) {
-          $el.classList.add('pl-4', 'border-l')
+          $el.classList.add(...SECONDARY_ARTICLE_CLASSES)
         }
+        $el.classList.add(...COMMON_ARTICLE_CLASSES)
       })
     }
   }
