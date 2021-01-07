@@ -1,7 +1,7 @@
 import ZCheckbox from '../../src/components/ZCheckbox'
 import Vue from 'vue'
 
-import { createLocalVue, mount, Wrapper } from '@vue/test-utils'
+import { mount, Wrapper } from '@vue/test-utils'
 
 describe('Checkbox Component', () => {
   let mountFn: (options?: Record<string, unknown>) => Wrapper<Vue>

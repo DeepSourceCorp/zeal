@@ -1,7 +1,7 @@
 import ZCard from '../../src/components/ZCard'
 import Vue from 'vue'
 
-import { createLocalVue, mount, Wrapper } from '@vue/test-utils'
+import { mount, Wrapper } from '@vue/test-utils'
 
 describe('Card Component', () => {
   let mountFn: (options?: Record<string, unknown>) => Wrapper<Vue>
