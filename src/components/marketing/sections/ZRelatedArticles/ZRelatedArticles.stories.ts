@@ -27,7 +27,7 @@ export const WithBothArticles = () => ({
       <z-related-articles header="Keep reading" class="col-span-8">
         <z-related-article v-for="article in articles" :key="article.slug">
           <span slot="heading">{{ article.title }}</span>
-          <a :href="'/'+slug" slot="link">Read More</a>
+          <a :href="'/'+article.slug" slot="link">Read More</a>
         </z-related-article>
       </z-related-articles>
     </div>`
