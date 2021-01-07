@@ -11,7 +11,7 @@ export default {
 
 export const DefaultExpandable = () => ({
   components: { ZExpandable },
-    template: `
+  template: `
     <div class="expandable-container">
         <z-expandable>
             <template slot="header">
@@ -38,7 +38,7 @@ export const DefaultExpandable = () => ({
 
 export const OpenedExpandable = () => ({
   components: { ZExpandable },
-    template: `
+  template: `
     <div class="expandable-container">
         <z-expandable :open="true" :key="1">
             <template slot="header">
