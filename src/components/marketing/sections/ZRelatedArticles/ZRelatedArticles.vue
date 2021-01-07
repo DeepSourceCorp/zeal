@@ -26,6 +26,7 @@ export default Vue.extend({
   mounted() {
     this.acquireFirstTwoArticlesFromChildren()
     this.assignStylesToSecondaryArticles()
+    this.assignCommonStylesToAllArticles()
   },
   methods: {
     acquireFirstTwoArticlesFromChildren() {
@@ -39,13 +40,20 @@ export default Vue.extend({
     },
     assignStylesToSecondaryArticles() {
       /**
-       * Assigns custom styling classes to the
-       * articles except from the first one.
+       * Assigns custom secondary tyling classes, to the secondary articles
+       * (articles except the first one).
        */
       this.articles.map(({ $el }, index) => {
         if (index > 0) {
           $el.classList.add(...SECONDARY_ARTICLE_CLASSES)
         }
+      })
+    },
+    assignCommonStylesToAllArticles() {
+      /**
+       * Assigns custom common styling classes to all the articles.
+       */
+      this.articles.map(({ $el }, index) => {
         $el.classList.add(...COMMON_ARTICLE_CLASSES)
       })
     }
