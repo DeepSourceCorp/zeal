@@ -53,7 +53,7 @@ export default Vue.extend({
       /**
        * Assigns custom common styling classes to all the articles.
        */
-      this.articles.map(({ $el }, index) => {
+      this.articles.map(({ $el }) => {
         $el.classList.add(...COMMON_ARTICLE_CLASSES)
       })
     }
