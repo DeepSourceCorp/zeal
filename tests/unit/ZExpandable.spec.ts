@@ -18,12 +18,12 @@ describe('ZExpandable', () => {
 
   it('renders the default expandable component', () => {
     const wrapper = mountFn({
-        slots: {
-            header: '<p>Non-iterable value used in an iterating context</p>',
-            content: ` <p>
+      slots: {
+        header: '<p>Non-iterable value used in an iterating context</p>',
+        content: ` <p>
                     Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.
                 </p>`
-        }
+      }
     })
 
     expect(wrapper.html()).toMatchSnapshot()
@@ -34,13 +34,13 @@ describe('ZExpandable', () => {
     const wrapper = mountFn({
       propsData: {
         open: true
-        },
-        slots: {
-            header: '<p>Non-iterable value used in an iterating context</p>',
-            content: ` <p>
+      },
+      slots: {
+        header: '<p>Non-iterable value used in an iterating context</p>',
+        content: ` <p>
                     Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.
                 </p>`
-        }
+      }
     })
     expect(wrapper.html()).toMatchSnapshot()
   })
