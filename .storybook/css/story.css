@@ -26,3 +26,7 @@
 .bg-dark {
   @apply bg-ink-400;
 }
+
+.expandable-container {
+  width: 440px;
+}
