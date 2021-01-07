@@ -38,7 +38,7 @@ describe('Page Label component', () => {
           `<z-related-article>
             <span slot="heading">Odio amet tincidunt metus dictum dapibus cum nibh sed</span>
             <a href="/somethign" slot="link">Read More</a>
-          </z-related-article>`,
+          </z-related-article>`
         ]
       }
     })
