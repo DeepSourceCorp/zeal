@@ -1,6 +1,6 @@
 import ZIcon from '../../src/components/ZIcon'
 
-import { createLocalVue, mount, Wrapper, shallowMount } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 
 describe('ZIcon', () => {
   it('renders an empty icon', () => {
