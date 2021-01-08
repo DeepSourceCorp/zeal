@@ -66,6 +66,7 @@ export default Vue.extend({
     return {
       observer: {} as IntersectionObserver,
       activeHeading: {} as Heading,
+      primaryHeadingTagName: '' as Heading['tagName'],
       headingsMap: {} as Record<string, Heading>,
       HEADINGS,
       HEADING_ALIGNMENT_CLASSES,
@@ -89,6 +90,7 @@ export default Vue.extend({
       this.addAsHeadingToHeadingsMap(headingElement)
       this.observer.observe(headingElement)
     })
+    this.setPrimaryHeadingTagName()
     this.breakDownHeadingsIntoBlocks()
   },
   methods: {
@@ -111,7 +113,7 @@ export default Vue.extend({
       this.headingElements.forEach((headingElement: Element) => {
         const { id, tagName } = this.getHeading(headingElement)
         if (id) {
-          if (tagName === this.getPrimaryHeadingTagName()) {
+          if (tagName === this.primaryHeadingTagName) {
             block = id
           }
           this.headingsMap[id].block = block
@@ -148,18 +150,20 @@ export default Vue.extend({
       /**
        * Allows to show headings if their block is currently active.
        */
-      if (tagName === this.getPrimaryHeadingTagName()) {
+      if (tagName === this.primaryHeadingTagName) {
         return true
       }
       return this.activeHeading.id ? this.headingsMap[this.activeHeading.id].block === block : false
     },
-    getPrimaryHeadingTagName() {
+    setPrimaryHeadingTagName() {
       /**
-       * Returns the primary heading tagName.
+       * Sets the primary heading tagName.
        * Primary heading is the one which is present on the highest level.
        * For e.g, if `h1` is present in all headings, then `h1` is primary else `h2`.
        */
-      return this.headingTagNameExists(HEADINGS.h1.tag) ? HEADINGS.h1.tag : HEADINGS.h2.tag
+      this.primaryHeadingTagName = this.headingTagNameExists(HEADINGS.h1.tag)
+        ? HEADINGS.h1.tag
+        : HEADINGS.h2.tag
     },
     headingTagNameExists(tagName: Heading['tagName']) {
       /**
@@ -167,7 +171,9 @@ export default Vue.extend({
        */
       let tagNameFound = false as boolean
       this.headingElements.forEach((headingElement: Element) => {
-        if (headingElement.tagName === tagName) tagNameFound = true
+        if (headingElement.tagName.toLowerCase() === tagName) {
+          tagNameFound = true
+        }
       })
       return tagNameFound
     }
