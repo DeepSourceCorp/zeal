@@ -22,7 +22,7 @@
         class="col-span-2 sticky top-6 self-start mr-6"
         root-id="content"
       ></z-scroll-spy>
-      <div id="content" class="col-span-10 text-vanilla-100">
+      <div id="content" class="col-span-10 text-vanilla-100 prose prose-md max-w-none">
         <slot></slot>
       </div>
     </div>
