@@ -38,7 +38,7 @@ module.exports = {
         400: '#16181d'
       }
     },
-    gradients: (theme) => ({
+    gradients: theme => ({
       ocean: ['98.66deg', '#49f9ce 9.7%', '#3dcded 96.6%'],
       galaxy: {
         type: 'radial',
@@ -77,8 +77,8 @@ module.exports = {
       56: '14rem',
       64: '16rem'
     },
-    backgroundColor: (theme) => theme('colors'),
-    backgroundOpacity: (theme) => theme('opacity'),
+    backgroundColor: theme => theme('colors'),
+    backgroundOpacity: theme => theme('opacity'),
     backgroundPosition: {
       bottom: 'bottom',
       center: 'center',
@@ -95,11 +95,11 @@ module.exports = {
       cover: 'cover',
       contain: 'contain'
     },
-    borderColor: (theme) => ({
+    borderColor: theme => ({
       ...theme('colors'),
       DEFAULT: theme('colors.slate', 'currentColor')
     }),
-    borderOpacity: (theme) => theme('opacity'),
+    borderOpacity: theme => theme('opacity'),
     borderRadius: {
       none: '0',
       sm: '0.125rem',
@@ -136,9 +136,9 @@ module.exports = {
       move: 'move',
       'not-allowed': 'not-allowed'
     },
-    divideColor: (theme) => theme('borderColor'),
-    divideOpacity: (theme) => theme('borderOpacity'),
-    divideWidth: (theme) => theme('borderWidth'),
+    divideColor: theme => theme('borderColor'),
+    divideOpacity: theme => theme('borderOpacity'),
+    divideWidth: theme => theme('borderWidth'),
     fill: {
       current: 'currentColor'
     },
@@ -193,7 +193,7 @@ module.exports = {
       semibold: '600',
       bold: '700'
     },
-    height: (theme) => ({
+    height: theme => ({
       auto: 'auto',
       ...theme('spacing'),
       full: '100%',
@@ -311,9 +311,9 @@ module.exports = {
       11: '11',
       12: '12'
     },
-    padding: (theme) => theme('spacing'),
-    placeholderColor: (theme) => theme('colors'),
-    placeholderOpacity: (theme) => theme('opacity'),
+    padding: theme => theme('spacing'),
+    placeholderColor: theme => theme('colors'),
+    placeholderOpacity: theme => theme('opacity'),
     space: (theme, { negative }) => ({
       ...theme('spacing'),
       ...negative(theme('spacing'))
@@ -326,9 +326,9 @@ module.exports = {
       1: '1',
       2: '2'
     },
-    textColor: (theme) => theme('colors'),
-    textOpacity: (theme) => theme('opacity'),
-    width: (theme) => ({
+    textColor: theme => theme('colors'),
+    textOpacity: theme => theme('opacity'),
+    width: theme => ({
       auto: 'auto',
       ...theme('spacing'),
       '1/2': '50%',
@@ -369,7 +369,7 @@ module.exports = {
       40: '40',
       50: '50'
     },
-    gap: (theme) => theme('spacing'),
+    gap: theme => theme('spacing'),
     gridTemplateColumns: {
       none: 'none',
       1: 'repeat(1, minmax(0, 1fr))',
@@ -623,32 +623,153 @@ module.exports = {
       }
     },
     extend: {
-      typography: (theme) => ({
+      typography: theme => ({
         DEFAULT: {
           css: {
-            h1: {
-              color: theme('colors.vanilla.100')
-            },
-            h2: {
-              color: theme('colors.vanilla.100')
-            },
-            h3: {
-              color: theme('colors.vanilla.100')
-            },
-            h4: {
-              color: theme('colors.vanilla.100')
-            },
-            h5: {
-              color: theme('colors.vanilla.100')
+            '[class~="lead"]': {
+              color: theme('colors.vanilla.400')
             },
             a: {
-              color: theme('colors.juniper')
-            },
-            code: {
-              color: theme('colors.slate')
+              color: theme('colors.juniper'),
+              textDecoration: 'underline',
+              fontWeight: theme('fontWeight.medium')
             },
             strong: {
-              color: theme('colors.vanilla.100')
+              color: theme('colors.vanilla.100'),
+              fontWeight: theme('fontWeight.semibold')
+            },
+            'ol > li': {
+              position: 'relative'
+            },
+            'ol > li::before': {
+              content: 'counter(list-item) "."',
+              position: 'absolute',
+              fontWeight: theme('fontWeight.normal'),
+              color: theme('colors.vanilla.400')
+            },
+            ul: {
+              listStyleType: 'none',
+              listStyle: 'none'
+            },
+            'ul > li': {
+              position: 'relative'
+            },
+            'ul > li::before': {
+              content: '"—"',
+              marginRight: theme('spacing.2'),
+              width: '0 !important',
+              top: '0 !important',
+              left: '0 !important',
+              height: '0 !important',
+              position: 'absolute',
+              color: theme('colors.juniper')
+            },
+            hr: {
+              borderColor: theme('colors.ink.100'),
+              borderTopWidth: 1
+            },
+            blockquote: {
+              fontWeight: theme('fontWeight.medium'),
+              lineHeight: theme('lineHeight.normal'),
+              fontSize: theme('fontSize.lg'),
+              fontStyle: 'normal',
+              color: 'inherit',
+              borderLeftWidth: '0.25rem',
+              borderLeftColor: theme('colors.juniper'),
+              quotes: '"\\201C""\\201D""\\2018""\\2019"'
+            },
+            'blockquote p:first-of-type::before': {
+              content: 'open-quote'
+            },
+            'blockquote p:last-of-type::after': {
+              content: 'close-quote'
+            },
+            h1: {
+              color: theme('colors.vanilla.100'),
+              fontWeight: theme('fontWeight.bold')
+            },
+            'h1::before, h2::before, h3::before, h4::before, h5::before': {
+              content: '"#"',
+              marginRight: theme('spacing.2'),
+              color: theme('colors.slate')
+            },
+            h2: {
+              color: theme('colors.vanilla.100'),
+              fontWeight: theme('fontWeight.semibold')
+            },
+            h3: {
+              color: theme('colors.vanilla.100'),
+              fontWeight: theme('fontWeight.medium')
+            },
+            h4: {
+              color: theme('colors.vanilla.100'),
+              fontWeight: theme('fontWeight.medium')
+            },
+            h5: {
+              color: theme('colors.vanilla.100'),
+              fontWeight: theme('fontWeight.medium')
+            },
+            'figure figcaption': {
+              color: theme('colors.vanilla.400')
+            },
+            code: {
+              color: theme('colors.vanilla.300'),
+              fontWeight: theme('fontWeight.semibold')
+            },
+            'code::before': {
+              content: '"`"'
+            },
+            'code::after': {
+              content: '"`"'
+            },
+            'a code': {
+              color: theme('colors.juniper')
+            },
+            pre: {
+              color: theme('colors.vanilla.400'),
+              backgroundColor: theme('colors.ink.200'),
+              overflowX: 'auto'
+            },
+            'pre code': {
+              backgroundColor: 'transparent',
+              borderWidth: '0',
+              borderRadius: '0',
+              padding: '0',
+              fontWeight: theme('fontWeight.normal'),
+              color: 'inherit',
+              fontSize: 'inherit',
+              fontFamily: 'inherit',
+              lineHeight: 'inherit'
+            },
+            'pre code::before': {
+              content: '""'
+            },
+            'pre code::after': {
+              content: '""'
+            },
+            table: {
+              width: '100%',
+              tableLayout: 'auto',
+              textAlign: 'left'
+            },
+            thead: {
+              color: theme('colors.vanilla.400'),
+              borderBottomWidth: theme('spacing.px'),
+              borderBottomColor: theme('colors.ink.100')
+            },
+            'thead th': {
+              fontWeight: theme('fontWeight.medium'),
+              verticalAlign: 'bottom'
+            },
+            'tbody tr': {
+              borderBottomWidth: theme('spacing.px'),
+              borderBottomColor: theme('colors.ink.100')
+            },
+            'tbody tr:last-child': {
+              borderBottomWidth: '0'
+            },
+            'tbody td': {
+              verticalAlign: 'top'
             }
           }
         }
@@ -761,9 +882,9 @@ module.exports = {
   corePlugins: {},
   plugins: [
     require('@tailwindcss/typography'),
-    plugin(function ({ addVariant }) {
+    plugin(function({ addVariant }) {
       addVariant('sibling-checked', ({ container }) => {
-        container.walkRules((rule) => {
+        container.walkRules(rule => {
           rule.selector = `:checked ~ .sibling-checked\\:${rule.selector.slice(1)}`
         })
       })
@@ -798,7 +919,7 @@ module.exports = {
       addUtilities(contentUtilities, ['before', 'after'])
     }),
     plugin(({ addUtilities, e, theme, variants }) => {
-      const utilities = Object.keys(theme('gradients')).map((name) => {
+      const utilities = Object.keys(theme('gradients')).map(name => {
         const gradient = theme('gradients')[name]
         const type = gradient.hasOwnProperty('type') ? gradient.type : 'linear'
         const colors = gradient.hasOwnProperty('colors') ? gradient.colors : gradient
