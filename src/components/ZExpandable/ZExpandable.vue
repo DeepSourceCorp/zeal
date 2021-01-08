@@ -1,10 +1,10 @@
 <template>
-  <div class="z-expandable mt-2">
+  <div class="z-expandable mt-2"
+      @mouseover.stop.prevent="toggleExpandable(true)"
+      @mouseleave.stop.prevent="toggleExpandable(false)">
     <div
       class="z-expandable__header bg-ink-300 p-2.5 font-semibold text-sm leading-6 cursor-pointer transition-all duration-300 ease-in-out"
       :class="openTextStyle"
-      @mouseover.stop.prevent="toggleExpandable(true)"
-      @mouseleave.stop.prevent="toggleExpandable(false)"
       v-if="$slots.header"
     >
       <slot name="header"></slot>

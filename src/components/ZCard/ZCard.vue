@@ -1,6 +1,6 @@
 <template>
   <div
-    class="z-card text-vanilla-100 rounded-md overflow-hidden transition-all shadow flex flex-col h-full"
+    class="z-card text-vanilla-100 rounded-md overflow-hidden transition-all flex flex-col h-full"
   >
     <div class="z-card__header" v-if="$slots.header">
       <slot name="header"></slot>
