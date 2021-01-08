@@ -16,27 +16,19 @@
     </div>
     <div class="z-step__main">
       <div
-        class="z-step__title uppercase text-slate font-medium mt-4 tracking-wider leading-snug text-sm"
+        class="z-step__title uppercase text-slate font-medium mt-4 tracking-wider leading-snug text-xs"
       >
         <slot name="title">{{ title }}</slot>
       </div>
-      <div class="z-step__description font-bold leading-6 mt-1" :class="[getTextStyle]">
+      <div class="z-step__description font-bold leading-6 mt-1 text-sm" :class="[getTextStyle]">
         <slot name="description">{{ description }}</slot>
       </div>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-const bgColors = {
-  completed: 'bg-juniper',
-  active: 'bg-robin',
-  default: 'bg-ink-200'
-}
-
-export default Vue.extend({
+<script>
+export default {
   name: 'ZStep',
   props: {
     title: {
@@ -56,33 +48,40 @@ export default Vue.extend({
     }
   },
   computed: {
-    currentStatus(): any {
+    currentStatus() {
       return this.status || this.internalStatus
     },
-    getIconStyle(): string {
+    getIconStyle() {
+      const bgColors = {
+        completed: 'bg-juniper',
+        active: 'bg-robin',
+        default: 'bg-ink-200'
+      }
       return bgColors[this.currentStatus] || bgColors['default']
     },
-    getTextStyle(): string {
+    getTextStyle() {
       const activeColor = 'text-vanilla-200',
         defaultColor = 'text-vanilla-400'
       return (this.currentStatus && activeColor) || defaultColor
     },
-    isLast(): boolean {
-      const parent: any = this.$parent
+    isLast() {
+      const parent = this.$parent
+      console.log('Parent Steps', parent.steps)
+      console.log('THis el', this)
       return parent.steps[parent.steps.length - 1] === this
     }
   },
   beforeCreate() {
-    const parent: any = this.$parent
+    const parent = this.$parent
     parent.steps.push(this)
   },
   beforeDestroy() {
-    const parent: any = this.$parent,
+    const parent = this.$parent,
       steps = parent.steps
     const index = steps.indexOf(this)
     if (index >= 0) {
       steps.slice(index, 1)
     }
   }
-})
+}
 </script>

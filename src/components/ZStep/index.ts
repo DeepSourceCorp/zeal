@@ -1,3 +1,3 @@
-import ZStep from '../ZStepper/ZStep.vue'
+import ZStep from './ZStep.vue'
 
 export default ZStep

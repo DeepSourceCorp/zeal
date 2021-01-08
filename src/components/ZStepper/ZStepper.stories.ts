@@ -2,7 +2,7 @@ import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'
 import ZStepper from './ZStepper.vue'
-import ZStep from './ZStep.vue'
+import ZStep from '../ZStep/ZStep.vue'
 import ZButton from '../ZButton/ZButton.vue'
 
 export default {

@@ -13,6 +13,8 @@ import ZStepper from './components/ZStepper/index'
 import ZStep from './components/ZStep/index'
 import ZContentGuide from './components/marketing/layouts/ZContentGuide/index'
 import ZPageLabel from './components/marketing/ZPageLabel/index'
+import ZExpandable from './components/ZExpandable/index'
+
 
 const components = [
   ZButton,
@@ -25,7 +27,8 @@ const components = [
   ZPageLabel,
   ZCheckbox,
   ZStepper,
-  ZStep
+  ZStep,
+  ZExpandable
 ]
 
 const install = (Vue: any) => {
@@ -47,7 +50,8 @@ export default {
   ZSlide,
   ZCard,
   ZStepper,
-  ZStep
+  ZStep,
+  ZExpandable
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -61,3 +65,4 @@ export { default as ZStepper } from './components/ZStepper/index'
 export { default as ZStep } from './components/ZStep/index'
 export { default as ZContentGuide } from './components/marketing/layouts/ZContentGuide/index'
 export { default as ZPageLabel } from './components/marketing/ZPageLabel/index'
+export { default as ZExpandable } from './components/ZExpandable/index'
