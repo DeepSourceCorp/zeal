@@ -59,7 +59,7 @@ export default Vue.extend({
       type: String,
       default: 'left',
       validator: (val: string) =>
-        Object.keys(HEADING_ALIGNMENT_CLASSES).some((alignment) => alignment === val)
+        Object.keys(HEADING_ALIGNMENT_CLASSES).some(alignment => alignment === val)
     }
   },
   data() {
@@ -75,7 +75,7 @@ export default Vue.extend({
   },
   computed: {
     headingElements(): NodeListOf<Element> {
-      return document.querySelectorAll(`#${this.rootId} h1, h2, h3`)
+      return document.querySelectorAll(`#${this.rootId} h1, #${this.rootId} h2, #${this.rootId} h3`)
     }
   },
   created() {
@@ -161,9 +161,10 @@ export default Vue.extend({
        * Primary heading is the one which is present on the highest level.
        * For e.g, if `h1` is present in all headings, then `h1` is primary else `h2`.
        */
-      this.primaryHeadingTagName = this.headingTagNameExists(HEADINGS.h1.tag)
-        ? HEADINGS.h1.tag
-        : HEADINGS.h2.tag
+      this.primaryHeadingTagName =
+        (this.headingTagNameExists(HEADINGS.h1.tag) && HEADINGS.h1.tag) ||
+        (this.headingTagNameExists(HEADINGS.h2.tag) && HEADINGS.h2.tag) ||
+        HEADINGS.h3.tag
     },
     headingTagNameExists(tagName: Heading['tagName']) {
       /**
