@@ -19,267 +19,197 @@ export const Guide = () => ({
         previous-page-text="Back to all guides"
         previous-page-link="https://google.com"
       >
-      <p>When writing code, it’s hardly sometimes that our code executes successfully in the first run. And then, after every execution failure of the code, we dive into the error log to find where the bug resides. Unfortunately, we end up spending more time on resolving bugs than what is actually needed. And this has been really common in the case of JavaScript.</p>
-      <p>As developers, we ensure code quality with the help of unit and functional testing. We can complement these test plans with <a href="https://deepsource.io/glossary/static-analysis/" target="_blank">static analysis</a> through which we can now check the code before its execution to assess its quality and its adherence to coding standards. Static analysis helps us find the issues in our code that we humans can’t always spot by ourselves and thus, ensures code quality throughout the project along with maintaining developer efficiency.</p>
-      <p>Today, we are really excited to launch continuous static analysis for JavaScript, detecting 470+ issues, like bug risks, anti-patterns, performance and style issues.</p>
-      <h2 id="supported-frameworks-and-language-standards">Supported Frameworks and Language Standards</h2>
+      <h1 id="this-is-main">Just to show off main heading</h1>
+      <p class="lead">Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.</p>
+      <p>By default, Tailwind removes all of the default browser styling from paragraphs, headings, lists and more. This ends up being really useful for building application UIs because you spend less time undoing user-agent styles, but when you <em>really are</em> just trying to style some content that came from a rich-text editor in a CMS or a markdown file, it can be surprising and unintuitive.</p>
+      <p>We get lots of complaints about it actually, with people regularly asking us things like:</p>
+      <blockquote>
+        <p>Why is Tailwind removing the default styles on my <code>h1</code> elements? How do I disable this? What do you mean I lose all the other base styles too?</p>
+      </blockquote>
+      <p>We hear you, but we're not convinced that simply disabling our base styles is what you really want. You don't want to have to remove annoying margins every time you use a <code>p</code> element in a piece of your dashboard UI. And I doubt you really want your blog posts to use the user-agent styles either — you want them to look <em>awesome</em>, not awful.</p>
+      <p>The <code>@tailwindcss/typography</code> plugin is our attempt to give you what you <em>actually</em> want, without any of the downsides of doing something stupid like disabling our base styles.</p>
+      <p>It adds a new <code>prose</code> class that you can slap on any block of vanilla HTML content and turn it into a beautiful, well-formatted document:</p>
+      <pre><code class="language-html">&lt;article class="prose"&gt;
+  &lt;h1&gt;Garlic bread with cheese: What the science tells us&lt;/h1&gt;
+  &lt;p&gt;
+    For years parents have espoused the health benefits of eating garlic bread with cheese to their
+    children, with the food earning such an iconic status in our culture that kids will often dress
+    up as warm, cheesy loaf for Halloween.
+  &lt;/p&gt;
+  &lt;p&gt;
+    But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases
+    springing up around the country.
+  &lt;/p&gt;
+  &lt;!-- ... --&gt;
+&lt;/article&gt;</code></pre>
+      <p>For more information about how to use the plugin and the features it includes, <a href="https://github.com/tailwindcss/typography/blob/master/README.md">read the documentation</a>.</p>
+      <hr>
+      <h2 id="what-to-expect-from-here">What to expect from here on out</h2>
+      <p>What follows from here is just a bunch of absolute nonsense I've written to dogfood the plugin itself. It includes every sensible typographic element I could think of, like <strong>bold text</strong>, unordered lists, ordered lists, code blocks, block quotes, <em>and even italics</em>.</p>
+      <p>It's important to cover all of these use cases for a few reasons:</p>
+      <ol>
+        <li>We want everything to look good out of the box.</li>
+        <li>Really just the first reason, that's the whole point of the plugin.</li>
+        <li>Here's a third pretend reason though a list with three items looks more realistic than a list with two items.</li>
+      </ol>
+      <p>Now we're going to try out another header style.</p>
+      <h3 id="typography-should-be-easy">Typography should be easy</h3>
+      <p>So that's a header for you — with any luck if we've done our job correctly that will look pretty reasonable.</p>
+      <p>Something a wise person once told me about typography is:</p>
+      <blockquote>
+        <p>Typography is pretty important if you don't want your stuff to look like trash. Make it good then it won't be bad.</p>
+      </blockquote>
+      <p>It's probably important that images look okay here by default as well:</p>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="">  
+        <figcaption>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</figcaption>
+      </figure>
+      <p>Now I'm going to show you an example of an unordered list to make sure that looks good, too:</p>
       <ul>
-        <li>All the versions of ECMAScript (ES3, ES5, ES2015 - ES2020)</li>
-        <li>React JSX</li>
-        <li>TypeScript</li>
-        <li>All major module systems ( CommonJS, ES modules and AMD)</li>
-        <li>Popular JavaScript style guides (<a href="https://github.com/airbnb/javascript" target="_blank">Airbnb</a>, <a href="https://google.github.io/styleguide/jsguide.html" target="_blank">Google</a> and <a href="https://github.com/standard/standard" target="_blank">Standard</a>)</li>
+        <li>So here is the first item in this list.</li>
+        <li>In this example we're keeping the items short.</li>
+        <li>Later, we'll use longer, more complex list items.</li>
       </ul>
-      <h2 id="eslint-rules--plugins">ESLint Rules &amp; Plugins</h2>
-      <p>DeepSource JavaScript analyzer fully supports all the ESLint core JavaScript rules and is 100% ESLint compatible. Along with that, it currently supports the following ESLint plugins :</p>
+      <p>And that's the end of this section.</p>
+      <h2 id="what-if-we-stack-headings">What if we stack headings?</h2>
+      <h3 id="we-should-make-sure">We should make sure that looks good, too.</h3>
+      <p>Sometimes you have headings directly underneath each other. In those cases you often have to undo the top margin on the second heading because it usually looks better for the headings to be closer together than a paragraph followed by a heading should be.</p>
+      <h3 id="when-heading-comes-after-paragraph">When a heading comes after a paragraph …</h3>
+      <p>When a heading comes after a paragraph, we need a bit more space, like I already mentioned above. Now let's see what a more complex list would look like.</p>
       <ul>
-        <li><strong>Node.js</strong>
+        <li>
+          <p><strong>I often do this thing where list items have headings.</strong></p>
+          <p>For some reason I think this looks cool which is unfortunate because it's pretty annoying to get the styles right.</p>
+          <p>I often have two or three paragraphs in these list items, too, so the hard part is getting the spacing between the paragraphs, list item heading, and separate list items to all make sense. Pretty tough honestly, you could make a strong argument that you just shouldn't write this way.</p>
+        </li>
+        <li>
+          <p><strong>Since this is a list, I need at least two items.</strong></p>
+          <p>I explained what I'm doing already in the previous list item, but a list wouldn't be a list if it only had one item, and we really want this to look realistic. That's why I've added this second list item so I actually have something to look at when writing the styles.</p>
+        </li>
+        <li>
+          <p><strong>It's not a bad idea to add a third item either.</strong></p>
+          <p>I think it probably would've been fine to just use two items but three is definitely not worse, and since I seem to be having no trouble making up arbitrary things to type, I might as well include it.</p>
+        </li>
+      </ul>
+      <p>After this sort of list I usually have a closing statement or paragraph, because it kinda looks weird jumping right to a heading.</p>
+      <hr>
+      <h1 id="here-is-another-h1">Here is another h1 out of nowhere</h1>
+      <h2 id="code-should-look-okay">Code should look okay by default.</h2>
+      <p>I think most people are going to use <a href="https://highlightjs.org/">highlight.js</a> or <a href="https://prismjs.com/">Prism</a> or something if they want to style their code blocks but it wouldn't hurt to make them look <em>okay</em> out of the box, even with no syntax highlighting.</p>
+      <p>Here's what a default <code>tailwind.config.js</code> file looks like at the time of writing:</p>
+      <pre><code class="language-js">module.exports = {
+  purge: [],
+  theme: {
+    extend: {},
+  },
+  variants: {},
+  plugins: [],
+}</code></pre>
+      <p>Hopefully that looks good enough to you.</p>
+      <h3 id="what-about-nested-lists">What about nested lists?</h3>
+      <p>Nested lists basically always look bad which is why editors like Medium don't even let you do it, but I guess since some of you goofballs are going to do it we have to carry the burden of at least making it work.</p>
+      <ol>
+        <li><strong>Nested lists are rarely a good idea.</strong>
           <ul>
-            <li><a href="https://github.com/mysticatea/eslint-plugin-node" target="_blank">eslint-plugin-node</a></li>
+            <li>You might feel like you are being really "organized" or something but you are just creating a gross shape on the screen that is hard to read.</li>
+            <li>Nested navigation in UIs is a bad idea too, keep things as flat as possible.</li>
+            <li>Nesting tons of folders in your source code is also not helpful.</li>
           </ul>
         </li>
-        <li><strong>TypeScript</strong>
+        <li><strong>Since we need to have more items, here's another one.</strong>
           <ul>
-            <li><a href="https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin" target="_blank">@typescript-eslint/eslint-plugin</a></li>
+            <li>I'm not sure if we'll bother styling more than two levels deep.</li>
+            <li>Two is already too much, three is guaranteed to be a bad idea.</li>
+            <li>If you nest four levels deep you belong in prison.</li>
           </ul>
         </li>
-        <li><strong>React</strong>
+        <li><strong>Two items isn't really a list, three is good though.</strong>
           <ul>
-            <li><a href="https://github.com/yannickcr/eslint-plugin-react" target="_blank">eslint-plugin-react</a></li>
+            <li>Again please don't nest lists if you want people to actually read your content.</li>
+            <li>Nobody wants to look at this.</li>
+            <li>I'm upset that we even have to bother styling this.</li>
           </ul>
         </li>
-      </ul>
-      <p>We are working to add support for more plugins in order to improve the analysis further.</p>
-      <h2 id="using-the-javascript-analyzer">Using the JavaScript analyzer</h2>
-      <p>To start analyzing your JavaScript code, <a href="https://deepsource.io/docs/quickstart/create-account.html" target="_blank">create an account on DeepSource</a>, enable the <code>javascript</code> analyzer in your <code>.deepsource.toml</code> file, and activate analysis.</p>
-      <h3 id="sample-configuration-deepsourcetoml">Sample Configuration (.deepsource.toml)</h3>
-      <div class="highlight">
-        <pre class="chroma"><code class="language-toml" data-lang="toml"><span class="nx">version</span> <span class="p">=</span> <span class="mi">1</span>
-    
-    <span class="nx">test_patterns</span> <span class="p">=</span> <span class="p">[</span><span class="s2">"*/test/**"</span><span class="p">]</span>
-    
-    <span class="nx">exclude_patterns</span> <span class="p">=</span> <span class="p">[</span>
-        <span class="s2">"public/**,"</span><span class="p">,</span>
-        <span class="s2">"dist/**"</span>
-    <span class="p">]</span>
-    
-    <span class="p">[[</span><span class="nx">analyzers</span><span class="p">]]</span>
-    <span class="nx">name</span> <span class="p">=</span> <span class="s2">"javascript"</span>
-    <span class="nx">enabled</span> <span class="p">=</span> <span class="kc">true</span>
-    
-      <span class="p">[</span><span class="nx">analyzers</span><span class="p">.</span><span class="nx">meta</span><span class="p">]</span>
-      <span class="nx">ecma_version</span> <span class="p">=</span> <span class="s2">"2016"</span>
-      <span class="nx">module_system</span> <span class="p">=</span> <span class="s2">"commonjs"</span>
-      <span class="nx">environment</span> <span class="p">=</span> <span class="p">[</span>
-        <span class="s2">"nodejs"</span><span class="p">,</span>
-        <span class="s2">"browser"</span><span class="p">,</span>
-        <span class="s2">"jest"</span><span class="p">,</span>
-      <span class="p">]</span>
-    
-      <span class="nx">plugins</span> <span class="p">=</span> <span class="p">[</span><span class="s2">"react"</span><span class="p">]</span>
-      <span class="nx">style_guide</span> <span class="p">=</span> <span class="s2">"airbnb"</span>
-      <span class="nx">dialect</span> <span class="p">=</span> <span class="s2">"typescript"</span>
-    </code></pre>
-      </div>
-      <p>Here’s a few issues detected by the analyzer:</p>
-      <h3 id="bug-risks">Bug-risks</h3>
-      <ol>
-        <li>
-          <p><strong>Debugger should not be used in production code</strong></p>
-          <p>The <code>debugger</code> statement is used to tell the executing JavaScript environment to stop execution and start up a debugger at the current point in the code. Having</p>
-          <p>it in the production code can stop the browser from executing code and opens an appropriate debugger.</p>
-          <p>Example :</p>
-          <div class="highlight">
-            <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">isTruthy</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kr">debugger</span><span class="p">;</span>
-        <span class="k">return</span> <span class="nb">Boolean</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
-    <span class="p">}</span>
-    </code></pre>
-          </div>
-        </li>
-        <li>
-          <p><strong>Prevent reassigning function declarations</strong></p>
-          <p>Overwriting/Reassigning a function is often indicative of a mistake or issue. It can cause bugs in the code at runtime.</p>
-          <p>Example :</p>
-          <div class="highlight">
-            <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{}</span>
-    <span class="nx">foo</span> <span class="o">=</span> <span class="nx">bar</span><span class="p">;</span>
-    
-    <span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">foo</span> <span class="o">=</span> <span class="nx">bar</span><span class="p">;</span>
-    <span class="p">}</span>
-    </code></pre>
-          </div>
-        </li>
-        <li>
-          <p><strong>Using constant condition in conditional statements</strong></p>
-          <p>A constant expression (for example, a literal) as a test condition might be a typo or development trigger for a specific behavior. It may break the code during the runtime.</p>
-          <p>Example :</p>
-          <div class="highlight">
-            <pre class="chroma"><code class="language-js" data-lang="js"><span class="k">if</span> <span class="p">(</span><span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">doSomethingUnfinished</span><span class="p">();</span>
-    <span class="p">}</span>
-    
-    <span class="k">if</span> <span class="p">(</span><span class="k">void</span> <span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">doSomethingUnfinished</span><span class="p">();</span>
-    <span class="p">}</span>
-    
-    <span class="k">do</span> <span class="p">{</span>
-        <span class="nx">doSomethingForever</span><span class="p">();</span>
-    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-    </code></pre>
-          </div>
-        </li>
       </ol>
-      <h3 id="anti-patterns">Anti-patterns</h3>
-      <ol>
-        <li>
-          <p><strong>Prefer the usage of <code>===</code> and <code>!==</code> instead of <code>==</code> and <code>!=</code></strong></p>
-          <p>It is considered good practice to use the type-safe equality operators <code>===</code> and <code>!==</code> instead of their regular counterparts <code>==</code> and <code>!=</code>. For instance, these statements which ideally should be false are</p>
-          <p>considered true :</p>
-          <div class="highlight">
-            <pre class="chroma"><code class="language-js" data-lang="js"><span class="p">[]</span> <span class="o">==</span> <span class="kc">false</span>
-    <span class="p">[]</span> <span class="o">==</span> <span class="o">!</span><span class="p">[]</span>
-    <span class="mi">3</span> <span class="o">==</span> <span class="s2">"03"</span>
-    </code></pre>
-          </div>
-        </li>
-        <li>
-          <p><strong>Prevent the usage of <code>alert</code></strong></p>
-          <p>JavaScript’s <code>alert</code>, <code>confirm</code>, and <code>prompt</code> functions are widely considered to be obtrusive as UI elements and should not be used in production code. They should be replaced by a custom implementation.</p>
-          <p>Example :</p>
-          <div class="highlight">
-            <pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">alert</span><span class="p">(</span><span class="s2">"here!"</span><span class="p">);</span>
-    
-    <span class="nx">confirm</span><span class="p">(</span><span class="s2">"Are you sure?"</span><span class="p">);</span>
-    
-    <span class="nx">prompt</span><span class="p">(</span><span class="s2">"What's your name?"</span><span class="p">,</span> <span class="s2">"John Doe"</span><span class="p">);</span>
-    
-    <span class="nx">should</span> <span class="nx">be</span> <span class="nx">replaced</span> <span class="nx">by</span> <span class="o">-</span>
-    
-    <span class="nx">customalert</span><span class="p">(</span><span class="s2">"here!"</span><span class="p">)</span>
-    
-    <span class="nx">customconfirm</span><span class="p">(</span><span class="s2">"Are you sure?"</span><span class="p">)</span>
-    
-    <span class="nx">customprompt</span><span class="p">(</span><span class="s2">"What's your name?"</span><span class="p">,</span> <span class="s2">"John Doe"</span><span class="p">)</span>
-    </code></pre>
-          </div>
-        </li>
-        <li>
-          <p><strong>Prevent the usage of <code>new</code> for Side Effects</strong></p>
-          <p>We use <code>new</code> with a constructor to create an object of a particular type and store that object in a variable, such as:</p>
-          <p><code>var car = new Car();</code></p>
-          <p>It is of no use to use <code>new</code> like this :</p>
-          <p><code>new Car();</code></p>
-          <p>In this case, the created object is thrown away because its reference isn’t stored anywhere</p>
-        </li>
-      </ol>
-      <h3 id="security">Security</h3>
-      <ol>
-        <li>
-          <p><strong>Prevent the usage of <code>eval</code></strong></p>
-          <p>JavaScript’s <code>eval()</code> function is potentially dangerous and is often misused. Using <code>eval()</code> on untrusted code can open a program up to several different injection attacks. The use of <code>eval()</code> in most contexts can be substituted for a better, alternative approach to a problem.</p>
-          <p>Example :</p>
-          <div class="highlight">
-            <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="s2">"foo"</span> <span class="p">},</span>
-        <span class="nx">key</span> <span class="o">=</span> <span class="s2">"x"</span><span class="p">,</span>
-        <span class="nx">value</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s2">"obj."</span> <span class="o">+</span> <span class="nx">key</span><span class="p">);</span>
-    </code></pre>
-          </div>
-        </li>
-        <li>
-          <p><strong>Prevent the usage of Script URLs</strong></p>
-          <p>Using javascript: URLs is considered by some as a form of <code>eval</code>. Code passed in javascript: URLs has to be parsed and evaluated by the browser in the same way that <code>eval</code> is processed. Also, assembling javascript: URLs (or other strings that contain source code) is a tricky task which is prone to XSS vulnerabilities.</p>
-          <p>Example :</p>
-          <div class="highlight">
-            <pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="s2">"javascript:void(0)"</span><span class="p">;</span>
-    </code></pre>
-          </div>
-        </li>
-        <li>
-          <p><strong>Prevent the usage of <code>implied-eval</code></strong></p>
-          <p>Try to eliminate implied <code>eval()</code> through the use of <code>setTimeout()</code>, <code>setInterval()</code> or <code>execScript()</code>. As such, it will warn when either function is used with a string as the first argument.</p>
-          <p>Example :</p>
-          <div class="highlight">
-            <pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">setTimeout</span><span class="p">(</span><span class="s2">"alert('Hi!');"</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
-    
-    <span class="nx">setInterval</span><span class="p">(</span><span class="s2">"alert('Hi!');"</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
-    
-    <span class="nx">execScript</span><span class="p">(</span><span class="s2">"alert('Hi!')"</span><span class="p">);</span>
-    
-    <span class="nx">can</span> <span class="nx">be</span> <span class="nx">replaced</span> <span class="nx">by</span> <span class="o">:</span>
-    
-    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="s2">"Hi!"</span><span class="p">);</span>
-    <span class="p">},</span> <span class="mi">100</span><span class="p">);</span>
-    
-    <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="s2">"Hi!"</span><span class="p">);</span>
-    <span class="p">},</span> <span class="mi">100</span><span class="p">);</span>
-    </code></pre>
-          </div>
-        </li>
-      </ol>
-      <h3 id="performance">Performance</h3>
-      <ol>
-        <li>
-          <p><strong>Detect unreachable code after <code>return</code>, <code>throw</code>, <code>continue</code>, and <code>break</code> statements</strong></p>
-          <p>Because the <code>return</code>, <code>throw</code>, <code>break</code>, and <code>continue</code> statements unconditionally exit a block of code, any statements after
-            them cannot be executed. Detecting and removing them helps to improve the performance of the code.</p>
-          <div class="highlight">
-            <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">hello</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">3</span>
-        <span class="k">return</span> <span class="nx">x</span>
-        <span class="nx">x</span> <span class="o">=</span> <span class="mf">5.</span>&nbsp;          <span class="c1">// Never executed
-    </span><span class="c1"></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">).</span>&nbsp; <span class="c1">// Never executed
-    </span><span class="c1"></span><span class="p">}</span>
-    
-    </code></pre>
-          </div>
-        </li>
-        <li>
-          <p><strong>Detect the unused variables</strong></p>
-          <p>Variables that are declared and not used anywhere in the code are most likely an error due to incomplete refactoring. Such variables take up space in the code and cause confusion.</p>
-          <p>Example :</p>
-          <div class="highlight">
-            <pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// x is declared but is never used
-    </span><span class="c1"></span><span class="kd">var</span> <span class="nx">x</span><span class="p">;</span>
-    <span class="kd">var</span> <span class="nx">i</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;=</span><span class="mi">100</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">);</span>
-    <span class="p">}</span>
-    </code></pre>
-          </div>
-        </li>
-        <li>
-          <p><strong>Detect empty function declarations and block statements</strong></p>
-          <p>Empty functions can reduce readability and also end up taking up space which is of no use.
-            Empty block statements, while not technically errors, usually occur due to refactoring that wasn’t completed. They can cause confusion when reading code and can affect the performance too.</p>
-          <p>Example :</p>
-          <div class="highlight">
-            <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{}</span>
-    
-    <span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{};</span>
-    
-    <span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{};</span>
-    
-    <span class="k">if</span> <span class="p">(</span><span class="nx">foo</span><span class="p">)</span> <span class="p">{</span>
-    <span class="p">}</span>
-    
-    <span class="k">while</span> <span class="p">(</span><span class="nx">foo</span><span class="p">)</span> <span class="p">{</span>
-    <span class="p">}</span>
-    </code></pre>
-          </div>
-        </li>
-      </ol>
-      <h2 id="upcoming-releases">Upcoming releases</h2>
-      <p>We’re continuously improving the analyzer and here’s a near future roadmap:</p>
+      <p>The most annoying thing about lists in Markdown is that <code>&lt;li&gt;</code> elements aren't given a child <code>&lt;p&gt;</code> tag unless there are multiple paragraphs in the list item. That means I have to worry about styling that annoying situation too.</p>
       <ul>
-        <li>Add support for Angular, Flow, Vue and other popular frameworks.</li>
-        <li><a href="https://deepsource.io/blog/autofix-future-of-code-reviews/" target="_blank">Autofix</a> support for commonly occurred issues.</li>
-        <li><a href="https://deepsource.io/blog/code-formatting-on-autopilot/" target="_blank">Automated code formatting</a> support for Prettier and Standard JS.</li>
+        <li>
+          <p><strong>For example, here's another nested list.</strong></p>
+          <p>But this time with a second paragraph.</p>
+          <ul>
+            <li>These list items won't have <code>&lt;p&gt;</code> tags</li>
+            <li>Because they are only one line each</li>
+          </ul>
+        </li>
+        <li>
+          <p><strong>But in this second top-level list item, they will.</strong></p>
+          <p>This is especially annoying because of the spacing on this paragraph.</p>
+          <ul>
+            <li>
+              <p>As you can see here, because I've added a second line, this list item now has a <code>&lt;p&gt;</code> tag.</p>
+              <p>This is the second line I'm talking about by the way.</p>
+            </li>
+            <li>
+              <p>Finally here's another list item so it's more like a list.</p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>A closing list item, but with no nested list, because why not?</p>
+        </li>
       </ul>
-      <p>We’re very excited about this release, and hope that this will help you prevent issues in your code, and make writing JavaScript even more fun! Head over to the <a href="https://deepsource.io/docs/analyzer/javascript.html" target="_blank">docs</a> or tell us what you think; Feedback/suggestions/bugs - <a href="https://discuss.deepsource.io/" target="_blank">discuss.deepsource.io</a></p>
+      <p>And finally a sentence to close off this section.</p>
+      <h2 id="there-are-other-elements">There are other elements we need to style</h2>
+      <p>I almost forgot to mention links, like <a href="https://tailwindcss.com">this link to the Tailwind CSS website</a>. We almost made them blue but that's so yesterday, so we went with dark gray, feels edgier.</p>
+      <p>We even included table styles, check it out:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Wrestler</th>
+            <th>Origin</th>
+            <th>Finisher</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bret "The Hitman" Hart</td>
+            <td>Calgary, AB</td>
+            <td>Sharpshooter</td>
+          </tr>
+          <tr>
+            <td>Stone Cold Steve Austin</td>
+            <td>Austin, TX</td>
+            <td>Stone Cold Stunner</td>
+          </tr>
+          <tr>
+            <td>Randy Savage</td>
+            <td>Sarasota, FL</td>
+            <td>Elbow Drop</td>
+          </tr>
+          <tr>
+            <td>Vader</td>
+            <td>Boulder, CO</td>
+            <td>Vader Bomb</td>
+          </tr>
+          <tr>
+            <td>Razor Ramon</td>
+            <td>Chuluota, FL</td>
+            <td>Razor's Edge</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>We also need to make sure inline code looks good, like if I wanted to talk about <code>&lt;span&gt;</code> elements or tell you the good news about <code>@tailwindcss/typography</code>.</p>
+      <h3 id="sometimes-i-even-use">Sometimes I even use <code>code</code> in headings</h3>
+      <p>Even though it's probably a bad idea, and historically I've had a hard time making it look good. This <em>"wrap the code blocks in backticks"</em> trick works pretty well though really.</p>
+      <p>Another thing I've done in the past is put a <code>code</code> tag inside of a link, like if I wanted to tell you about the <a href="https://github.com/tailwindcss/docs"><code>tailwindcss/docs</code></a> repository. I don't love that there is an underline below the backticks but it is absolutely not worth the madness it would require to avoid it.</p>
+      <h4>We haven't used an <code>h4</code> yet</h4>
+      <p>But now we have. Please don't use <code>h5</code> or <code>h6</code> in your content, Medium only supports two heading levels for a reason, you animals. I honestly considered using a <code>before</code> pseudo-element to scream at you if you use an <code>h5</code> or <code>h6</code>.</p>
+      <p>We don't style them at all out of the box because <code>h4</code> elements are already so small that they are the same size as the body copy. What are we supposed to do with an <code>h5</code>, make it <em>smaller</em> than the body copy? No thanks.</p>
+      <h3 id="we-still-need-to-think">We still need to think about stacked headings though.</h3>
+      <h4>Let's make sure we don't screw that up with <code>h4</code> elements, either.</h4>
+      <p>Phew, with any luck we have styled the headings above this text and they look pretty good.</p>
+      <p>Let's add a closing paragraph here so things end with a decently sized block of text. I can't explain why I want things to end that way but I have to assume it's because I think things will look weird or unbalanced if there is a heading too close to the end of the document.</p>
+      <p>What I've written here is probably long enough, but adding this final sentence can't hurt.</p>
       </z-content-guide>
     </div>`
 })
