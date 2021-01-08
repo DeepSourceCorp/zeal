@@ -1,7 +1,7 @@
 <template>
   <div>
     <span class="block mb-3 text-sm font-medium uppercase text-vanilla-400">{{ header }}</span>
-    <div class="border-t border-b border-slate grid grid-cols-12">
+    <div class="border-t border-b border-slate md:grid grid-cols-12">
       <slot></slot>
     </div>
   </div>
@@ -10,7 +10,7 @@
 <script lang="ts">
 import Vue from 'vue'
 
-const SECONDARY_ARTICLE_CLASSES = ['pl-4', 'border-l']
+const SECONDARY_ARTICLE_CLASSES = ['md:pl-4', 'md:border-l', 'md:border-t-0', 'border-t']
 const COMMON_ARTICLE_CLASSES = ['col-span-6']
 
 export default Vue.extend({

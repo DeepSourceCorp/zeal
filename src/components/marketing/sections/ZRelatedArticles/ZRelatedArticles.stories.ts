@@ -23,7 +23,7 @@ export const WithBothArticles = () => ({
       ]
     }
   },
-  template: `<div class='padded-container bg-ink-400 text-vanilla-400 grid grid-cols-12'>
+  template: `<div class='padded-container bg-ink-400 text-vanilla-400 md:grid grid-cols-12'>
       <z-related-articles header="Keep reading" class="col-span-8">
         <z-related-article v-for="article in articles" :key="article.slug">
           <span slot="heading">{{ article.title }}</span>
@@ -35,7 +35,7 @@ export const WithBothArticles = () => ({
 
 export const WithOnlyFirstArticle = () => ({
   components: { ZRelatedArticles, ZRelatedArticle },
-  template: `<div class='padded-container bg-ink-400 text-vanilla-400 grid grid-cols-12'>
+  template: `<div class='padded-container bg-ink-400 text-vanilla-400 md:grid grid-cols-12'>
       <z-related-articles header="Keep reading" class="col-span-8">
         <z-related-article>
           <span slot="heading">Odio amet tincidunt metus dictum dapibus cum nibh sed</span>
