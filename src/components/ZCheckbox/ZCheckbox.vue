@@ -22,7 +22,11 @@
         }`
       ]"
     ></span>
-    <span v-if="label" class="z-input__checkbox--text ml-2" :class="[`${disabled && `text-slate`}`]">
+    <span
+      v-if="label"
+      class="z-input__checkbox--text ml-2"
+      :class="[`${disabled && `text-slate`}`]"
+    >
       {{ label }}
     </span>
   </label>
