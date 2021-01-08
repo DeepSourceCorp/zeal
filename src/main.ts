@@ -15,7 +15,6 @@ import ZContentGuide from './components/marketing/layouts/ZContentGuide/index'
 import ZPageLabel from './components/marketing/ZPageLabel/index'
 import ZExpandable from './components/ZExpandable/index'
 
-
 const components = [
   ZButton,
   ZIcon,
