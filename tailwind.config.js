@@ -650,9 +650,9 @@ module.exports = {
             strong: {
               color: theme('colors.vanilla.100')
             }
-          },
-        },
-      }),
+          }
+        }
+      })
     }
   },
   variants: {

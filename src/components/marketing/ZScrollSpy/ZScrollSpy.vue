@@ -59,7 +59,7 @@ export default Vue.extend({
       type: String,
       default: 'left',
       validator: (val: string) =>
-        Object.keys(HEADING_ALIGNMENT_CLASSES).some(alignment => alignment === val)
+        Object.keys(HEADING_ALIGNMENT_CLASSES).some((alignment) => alignment === val)
     }
   },
   data() {
@@ -86,7 +86,7 @@ export default Vue.extend({
     })
   },
   mounted() {
-    this.headingElements.forEach(headingElement => {
+    this.headingElements.forEach((headingElement) => {
       this.addAsHeadingToHeadingsMap(headingElement)
       this.observer.observe(headingElement)
     })
