@@ -621,6 +621,38 @@ module.exports = {
           transform: 'translateX(100%)'
         }
       }
+    },
+    extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            h1: {
+              color: theme('colors.vanilla.100')
+            },
+            h2: {
+              color: theme('colors.vanilla.100')
+            },
+            h3: {
+              color: theme('colors.vanilla.100')
+            },
+            h4: {
+              color: theme('colors.vanilla.100')
+            },
+            h5: {
+              color: theme('colors.vanilla.100')
+            },
+            a: {
+              color: theme('colors.juniper')
+            },
+            code: {
+              color: theme('colors.slate')
+            },
+            strong: {
+              color: theme('colors.vanilla.100')
+            }
+          },
+        },
+      }),
     }
   },
   variants: {
@@ -728,6 +760,7 @@ module.exports = {
   },
   corePlugins: {},
   plugins: [
+    require('@tailwindcss/typography'),
     plugin(function ({ addVariant }) {
       addVariant('sibling-checked', ({ container }) => {
         container.walkRules((rule) => {
