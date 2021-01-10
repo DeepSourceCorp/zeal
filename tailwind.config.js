@@ -6,6 +6,7 @@ module.exports = {
   separator: ':',
   theme: {
     screens: {
+      xs: '320px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
@@ -623,12 +624,13 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            color: theme('colors.vanilla.100'),
             '[class~="lead"]': {
               color: theme('colors.vanilla.400')
             },
             a: {
               color: theme('colors.juniper'),
-              textDecoration: 'underline',
+              textDecoration: 'none',
               fontWeight: theme('fontWeight.medium')
             },
             strong: {
