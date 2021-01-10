@@ -6,17 +6,33 @@
       </div>
       <div class="col-span-10">
         <z-page-label class="mb-2">{{ pageLabel }}</z-page-label>
-        <h1 class="text-vanilla-100 mb-4 text-3xl lg:text-4xl leading-11 lg:leading-12 font-bold">{{ title }}</h1>
+        <h1 class="text-vanilla-100 mb-4 text-3xl lg:text-4xl leading-11 lg:leading-12 font-bold">
+          {{ title }}
+        </h1>
         <div class="flex items-center text-vanilla-200 mb-6">
-          <z-avatar class="mr-2 hidden sm:block" :image="authorImage" :user-name="author"></z-avatar>
-          <z-avatar size="sm" class="w-8 block sm:hidden" :image="authorImage" :user-name="author"></z-avatar>
+          <z-avatar
+            class="mr-2 hidden sm:block"
+            :image="authorImage"
+            :user-name="author"
+          ></z-avatar>
+          <z-avatar
+            size="sm"
+            class="w-8 block sm:hidden"
+            :image="authorImage"
+            :user-name="author"
+          ></z-avatar>
           <span class="text-sm lg:text-md">
             <span>{{ author }}</span>
             <span class="text-slate mx-2 lg:mx-4">&bull;</span>
             <span>{{ date }}</span>
           </span>
         </div>
-        <h2 v-if="subtitle" class="text-lg lg:text-xl leading-9 lg:leading-normal font-normal text-vanilla-400 mb-6">{{ subtitle }}</h2>
+        <h2
+          v-if="subtitle"
+          class="text-lg lg:text-xl leading-9 lg:leading-normal font-normal text-vanilla-400 mb-6"
+        >
+          {{ subtitle }}
+        </h2>
         <z-divider class="bg-ink-100"></z-divider>
       </div>
     </div>

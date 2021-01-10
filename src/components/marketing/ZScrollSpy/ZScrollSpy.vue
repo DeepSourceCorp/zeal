@@ -59,7 +59,7 @@ export default Vue.extend({
       type: String,
       default: 'left',
       validator: (val: string) =>
-        Object.keys(HEADING_ALIGNMENT_CLASSES).some(alignment => alignment === val)
+        Object.keys(HEADING_ALIGNMENT_CLASSES).some((alignment) => alignment === val)
     }
   },
   data() {
