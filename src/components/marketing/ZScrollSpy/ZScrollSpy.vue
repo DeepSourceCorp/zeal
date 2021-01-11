@@ -24,6 +24,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import smoothscroll from 'smoothscroll-polyfill';
+
 interface Heading {
   id: string | null
   text: string | null
@@ -87,7 +89,7 @@ export default Vue.extend({
     this.observer = new IntersectionObserver(this.onElementObserved, {
       root: document.querySelector(`#${this.rootId}`),
       threshold: 1.0,
-      rootMargin: '0px 0px -50% 0px'
+      rootMargin: '10px 0px -50% 0px'
     })
   },
   mounted() {
@@ -185,6 +187,7 @@ export default Vue.extend({
     },
     scrollSmoothlyTo(headingId: Heading['id']) {
       const elem = headingId && document.getElementById(headingId)
+      smoothscroll.polyfill()
       if (elem) {
         elem.scrollIntoView({
           behavior: 'smooth'
