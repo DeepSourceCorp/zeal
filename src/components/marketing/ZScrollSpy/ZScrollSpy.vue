@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import smoothscroll from 'smoothscroll-polyfill';
+import smoothscroll from 'smoothscroll-polyfill'
 
 interface Heading {
   id: string | null
