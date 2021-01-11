@@ -12,7 +12,7 @@
       <slot name="header"></slot>
     </div>
     <div
-      class="z-expandable__content bg-ink-200 text-vanilla-100 overflow-scroll transition-all duration-300 ease-in-out text-sm leading-6"
+      class="z-expandable__content bg-ink-200 text-vanilla-100 overflow-scroll transition-all duration-700 ease-in-out text-sm leading-6"
       v-if="$slots.content"
       :class="openHeightStyle"
     >
@@ -49,3 +49,4 @@ export default {
   }
 }
 </script>
+
