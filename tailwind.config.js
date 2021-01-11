@@ -359,7 +359,8 @@ module.exports = {
       '10/12': '83.333333%',
       '11/12': '91.666667%',
       full: '100%',
-      screen: '100vw'
+      screen: '100vw',
+      halfScreen: '50vw'
     }),
     zIndex: {
       auto: 'auto',
@@ -712,7 +713,31 @@ module.exports = {
               fontWeight: theme('fontWeight.medium')
             },
             'figure figcaption': {
-              color: theme('colors.vanilla.400')
+              color: theme('colors.vanilla.400'),
+              textAlign: 'center',
+              [`@media (min-width: ${theme('screens.sm')})`]: {
+                textAlign: 'left'
+              }
+            },
+            'figure img': {
+              marginLeft: `-${theme('width.halfScreen')}`,
+              marginRight: `-${theme('width.halfScreen')}`,
+              left: theme('width.2/4'),
+              maxWidth: theme('width.screen'),
+              position: 'relative',
+              right: theme('width.2/4'),
+              width: theme('width.screen'),
+              [`@media (min-width: ${theme('screens.sm')})`]: {
+                marginLeft: 'unset',
+                marginRight: 'unset',
+                left: 'unset',
+                maxWidth: theme('width.full'),
+                height: 'auto',
+                position: 'unset',
+                right: 'unset',
+                width: 'unset',
+                borderRadius: `${theme('spacing.1')} !important`
+              }
             },
             code: {
               color: theme('colors.vanilla.300'),
@@ -730,7 +755,26 @@ module.exports = {
             pre: {
               color: theme('colors.vanilla.400'),
               backgroundColor: theme('colors.ink.200'),
-              overflowX: 'auto'
+              overflowX: 'auto',
+              marginLeft: `-${theme('width.halfScreen')}`,
+              marginRight: `-${theme('width.halfScreen')}`,
+              left: theme('width.2/4'),
+              maxWidth: theme('width.screen'),
+              position: 'relative',
+              right: theme('width.2/4'),
+              width: theme('width.screen'),
+              borderRadius: '0 !important',
+              [`@media (min-width: ${theme('screens.sm')})`]: {
+                marginLeft: 'unset',
+                marginRight: 'unset',
+                left: 'unset',
+                maxWidth: theme('width.full'),
+                height: 'auto',
+                position: 'unset',
+                right: 'unset',
+                width: 'unset',
+                borderRadius: `${theme('spacing.1')} !important`
+              }
             },
             'pre code': {
               backgroundColor: 'transparent',
