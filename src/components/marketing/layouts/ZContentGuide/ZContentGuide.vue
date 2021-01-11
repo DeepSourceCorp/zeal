@@ -17,7 +17,7 @@
           ></z-avatar>
           <z-avatar
             size="sm"
-            class="w-8 block sm:hidden"
+            class="w-8 block sm:hidden mr-1"
             :image="authorImage"
             :user-name="author"
           ></z-avatar>
