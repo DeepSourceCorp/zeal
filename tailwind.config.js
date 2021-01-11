@@ -631,7 +631,7 @@ module.exports = {
             },
             a: {
               color: theme('colors.juniper'),
-              textDecoration: 'none',
+              textDecoration: 'underline',
               fontWeight: theme('fontWeight.medium')
             },
             strong: {
