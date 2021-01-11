@@ -836,6 +836,84 @@ module.exports = {
               width: theme('width.screen')
             }
           }
+        },
+        xl: {
+          css: {
+            'ul > li::before': {
+              content: '"—"',
+              marginRight: theme('spacing.2'),
+              width: '0',
+              top: '0',
+              left: '0',
+              height: '0',
+              position: 'absolute',
+              color: theme('colors.juniper')
+            },
+            pre: {
+              color: theme('colors.vanilla.400'),
+              backgroundColor: theme('colors.ink.200'),
+              overflowX: 'auto',
+              marginLeft: 'unset',
+              marginRight: 'unset',
+              left: 'unset',
+              maxWidth: theme('width.full'),
+              height: 'auto',
+              position: 'unset',
+              right: 'unset',
+              width: 'unset',
+              borderRadius: `${theme('spacing.1')}`
+            },
+            'figure img': {
+              marginLeft: 'unset',
+              marginRight: 'unset',
+              left: 'unset',
+              maxWidth: theme('width.full'),
+              height: 'auto',
+              position: 'unset',
+              right: 'unset',
+              width: 'unset',
+              borderRadius: `${theme('spacing.1')}`
+            }
+          }
+        },
+        '2xl': {
+          css: {
+            'ul > li::before': {
+              content: '"—"',
+              marginRight: theme('spacing.2'),
+              width: '0',
+              top: '0',
+              left: '0',
+              height: '0',
+              position: 'absolute',
+              color: theme('colors.juniper')
+            },
+            pre: {
+              color: theme('colors.vanilla.400'),
+              backgroundColor: theme('colors.ink.200'),
+              overflowX: 'auto',
+              marginLeft: 'unset',
+              marginRight: 'unset',
+              left: 'unset',
+              maxWidth: theme('width.full'),
+              height: 'auto',
+              position: 'unset',
+              right: 'unset',
+              width: 'unset',
+              borderRadius: `${theme('spacing.1')}`
+            },
+            'figure img': {
+              marginLeft: 'unset',
+              marginRight: 'unset',
+              left: 'unset',
+              maxWidth: theme('width.full'),
+              height: 'auto',
+              position: 'unset',
+              right: 'unset',
+              width: 'unset',
+              borderRadius: `${theme('spacing.1')}`
+            }
+          }
         }
       })
     }
