@@ -6,7 +6,7 @@
       </div>
       <div class="col-span-10">
         <z-page-label class="mb-2">{{ pageLabel }}</z-page-label>
-        <h1 class="text-vanilla-100 mb-4 text-3xl lg:text-4xl leading-11 lg:leading-12 font-bold">
+        <h1 class="text-vanilla-100 mb-6 text-3xl lg:text-4xl leading-11 lg:leading-12 font-bold">
           {{ title }}
         </h1>
         <div class="flex items-center text-vanilla-200 mb-6">
