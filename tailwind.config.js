@@ -830,7 +830,7 @@ module.exports = {
               position: 'relative',
               right: theme('width.2/4'),
               width: theme('width.screen')
-            },
+            }
           }
         }
       })
