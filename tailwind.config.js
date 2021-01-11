@@ -660,10 +660,10 @@ module.exports = {
             'ul > li::before': {
               content: '"—"',
               marginRight: theme('spacing.2'),
-              width: '0 !important',
-              top: '0 !important',
-              left: '0 !important',
-              height: '0 !important',
+              width: '0',
+              top: '0',
+              left: '0',
+              height: '0',
               position: 'absolute',
               color: theme('colors.juniper')
             },
@@ -720,24 +720,15 @@ module.exports = {
               }
             },
             'figure img': {
-              marginLeft: `-${theme('width.halfScreen')}`,
-              marginRight: `-${theme('width.halfScreen')}`,
-              left: theme('width.2/4'),
-              maxWidth: theme('width.screen'),
-              position: 'relative',
-              right: theme('width.2/4'),
-              width: theme('width.screen'),
-              [`@media (min-width: ${theme('screens.sm')})`]: {
-                marginLeft: 'unset',
-                marginRight: 'unset',
-                left: 'unset',
-                maxWidth: theme('width.full'),
-                height: 'auto',
-                position: 'unset',
-                right: 'unset',
-                width: 'unset',
-                borderRadius: `${theme('spacing.1')} !important`
-              }
+              marginLeft: 'unset',
+              marginRight: 'unset',
+              left: 'unset',
+              maxWidth: theme('width.full'),
+              height: 'auto',
+              position: 'unset',
+              right: 'unset',
+              width: 'unset',
+              borderRadius: `${theme('spacing.1')}`
             },
             code: {
               color: theme('colors.vanilla.300'),
@@ -756,25 +747,15 @@ module.exports = {
               color: theme('colors.vanilla.400'),
               backgroundColor: theme('colors.ink.200'),
               overflowX: 'auto',
-              marginLeft: `-${theme('width.halfScreen')}`,
-              marginRight: `-${theme('width.halfScreen')}`,
-              left: theme('width.2/4'),
-              maxWidth: theme('width.screen'),
-              position: 'relative',
-              right: theme('width.2/4'),
-              width: theme('width.screen'),
-              borderRadius: '0 !important',
-              [`@media (min-width: ${theme('screens.sm')})`]: {
-                marginLeft: 'unset',
-                marginRight: 'unset',
-                left: 'unset',
-                maxWidth: theme('width.full'),
-                height: 'auto',
-                position: 'unset',
-                right: 'unset',
-                width: 'unset',
-                borderRadius: `${theme('spacing.1')} !important`
-              }
+              marginLeft: 'unset',
+              marginRight: 'unset',
+              left: 'unset',
+              maxWidth: theme('width.full'),
+              height: 'auto',
+              position: 'unset',
+              right: 'unset',
+              width: 'unset',
+              borderRadius: `${theme('spacing.1')}`
             },
             'pre code': {
               backgroundColor: 'transparent',
@@ -817,6 +798,42 @@ module.exports = {
             'tbody td': {
               verticalAlign: 'top'
             }
+          }
+        },
+        sm: {
+          css: {
+            'ul > li::before': {
+              content: '"—"',
+              marginRight: theme('spacing.2'),
+              width: '0',
+              top: '0',
+              left: '0',
+              height: '0',
+              position: 'absolute',
+              color: theme('colors.juniper')
+            },
+            pre: {
+              color: theme('colors.vanilla.400'),
+              backgroundColor: theme('colors.ink.200'),
+              overflowX: 'auto',
+              marginLeft: `-${theme('width.halfScreen')}`,
+              marginRight: `-${theme('width.halfScreen')}`,
+              left: theme('width.2/4'),
+              maxWidth: theme('width.screen'),
+              position: 'relative',
+              right: theme('width.2/4'),
+              width: theme('width.screen'),
+              borderRadius: '0'
+            },
+            'figure img': {
+              marginLeft: `-${theme('width.halfScreen')}`,
+              marginRight: `-${theme('width.halfScreen')}`,
+              left: theme('width.2/4'),
+              maxWidth: theme('width.screen'),
+              position: 'relative',
+              right: theme('width.2/4'),
+              width: theme('width.screen')
+            },
           }
         }
       })
