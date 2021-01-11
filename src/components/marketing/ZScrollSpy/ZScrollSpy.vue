@@ -10,7 +10,12 @@
         `${HEADING_ALIGNMENT_CLASSES[align]}-${HEADINGS[heading.tagName].indentSpace}`
       ]"
     >
-      <a v-if="isHeadingVisible(heading)" class="text-sm" :href="`#${heading.id}`">
+      <a
+        @click.prevent="scrollSmoothlyTo(heading.id)"
+        v-if="isHeadingVisible(heading)"
+        class="text-sm"
+        :href="`#${heading.id}`"
+      >
         {{ heading.text }}
       </a>
     </li>
@@ -59,7 +64,7 @@ export default Vue.extend({
       type: String,
       default: 'left',
       validator: (val: string) =>
-        Object.keys(HEADING_ALIGNMENT_CLASSES).some((alignment) => alignment === val)
+        Object.keys(HEADING_ALIGNMENT_CLASSES).some(alignment => alignment === val)
     }
   },
   data() {
@@ -86,7 +91,7 @@ export default Vue.extend({
     })
   },
   mounted() {
-    this.headingElements.forEach((headingElement) => {
+    this.headingElements.forEach(headingElement => {
       this.addAsHeadingToHeadingsMap(headingElement)
       this.observer.observe(headingElement)
     })
@@ -177,6 +182,14 @@ export default Vue.extend({
         }
       })
       return tagNameFound
+    },
+    scrollSmoothlyTo(headingId: Heading['id']) {
+      const elem = headingId && document.getElementById(headingId)
+      if (elem) {
+        elem.scrollIntoView({
+          behavior: 'smooth'
+        })
+      }
     }
   }
 })
