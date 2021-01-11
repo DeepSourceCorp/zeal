@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="rounded-xl overflow-hidden transition-all shadow flex flex-col h-full px-10 py-8"
-  >
+  <div class="rounded-xl overflow-hidden transition-all shadow flex flex-col h-full px-10 py-8">
     <div class="text-vanilla-100 text-xl flex-1 mb-6 pr-2" v-if="$slots.body">
       <slot name="body"> </slot>
     </div>
@@ -16,8 +14,7 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'ZTestimonial',
-  props: {
-  },
+  props: {},
   data() {
     return {}
   }
