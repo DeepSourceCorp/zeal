@@ -30,3 +30,7 @@
 .expandable-container {
   width: 440px;
 }
+
+.input-container {
+  @apply w-4/12;
+}
