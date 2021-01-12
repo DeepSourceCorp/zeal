@@ -58,7 +58,7 @@ export const Basic = () => ({
     }
   },
   template: `<div class='padded-container'>
-      <z-testimonials :testimonials="testimonials">
+      <z-testimonials :testimonials="testimonials" :timing="1000">
         <h2 slot="heading">What developers say</h2>
       </z-testimonials>
     </div>`
