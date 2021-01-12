@@ -63,6 +63,10 @@ export default Vue.extend({
     testimonials: {
       required: true,
       type: Array
+    },
+    timing: {
+      default: 5000,
+      type: Number
     }
   },
   data() {
@@ -80,7 +84,7 @@ export default Vue.extend({
     setTestimonialInterval() {
       this.interval = setInterval(() => {
         this.showNextTestimonial()
-      }, 2000)
+      }, this.timing)
     },
     resetInterval() {
       clearInterval(this.interval)
