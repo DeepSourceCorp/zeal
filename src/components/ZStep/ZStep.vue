@@ -66,8 +66,6 @@ export default {
     },
     isLast() {
       const parent = this.$parent
-      console.log('Parent Steps', parent.steps)
-      console.log('THis el', this)
       return parent.steps[parent.steps.length - 1] === this
     }
   },

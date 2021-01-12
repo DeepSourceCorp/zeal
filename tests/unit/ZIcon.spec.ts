@@ -15,7 +15,6 @@ describe('ZIcon', () => {
         icon: 'github'
       }
     })
-    expect(wrapper.classes()).toContain(`z-icon--github`)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
@@ -26,7 +25,7 @@ describe('ZIcon', () => {
         icon: 'github'
       }
     })
-    expect(wrapper.classes()).toContain(`z-icon--small`)
+    expect(wrapper.classes()).toContain(`w-4`)
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

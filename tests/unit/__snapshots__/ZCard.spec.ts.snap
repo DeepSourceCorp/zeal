@@ -1,21 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card Component renders a Card component with Header, Body and Footeer named slots 1`] = `
-<div class="z-card">
-  <div class="z-card__header"><img src="https://www.kindpng.com/picc/m/4-46830_chris-evans-png-transparent-png.png" class="w-full block object-fill"></div>
-  <div class="z-card__body">
-    <p>"DeepSource has made the code base <span class="text-juniper">much more stable and dependable</span>. It allowed us to identify many more areas for improvement."</p>
-  </div>
-  <div class="z-card__footer">
-    <p class="font-medium block">Chris Evans</p>
-  </div>
-</div>
-`;
-
 exports[`Card Component renders a Card component with Header, Body and Footer named slots 1`] = `
-<div class="z-card">
+<div class="z-card text-vanilla-100 rounded-md overflow-hidden transition-all flex flex-col h-full">
   <div class="z-card__header"><img src="https://www.kindpng.com/picc/m/4-46830_chris-evans-png-transparent-png.png" class="w-full block object-fill"></div>
-  <div class="z-card__body">
+  <div class="z-card__body flex-1">
     <p>"DeepSource has made the code base <span class="text-juniper">much more stable and dependable</span>. It allowed us to identify many more areas for improvement."</p>
   </div>
   <div class="z-card__footer">
