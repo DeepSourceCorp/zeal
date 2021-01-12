@@ -983,32 +983,33 @@ module.exports = {
       addUtilities(contentUtilities, ['before', 'after'])
     }),
     plugin(({ addUtilities, e, theme }) => {
-      const colors = theme('colors');
-      const caretColors = Object.keys(colors)
-        .reduce((acc, key) => {
-          if (typeof colors[key] === 'string') {
-            return {
-              ...acc,
-              [`.caret-${e(key)}`]: {
-                'caret-color': colors[key]
-              },
-            };
-          }
-
-          const variants = Object.keys(colors[key]);
-
+      const colors = theme('colors')
+      const caretColors = Object.keys(colors).reduce((acc, key) => {
+        if (typeof colors[key] === 'string') {
           return {
             ...acc,
-            ...variants.reduce((a, variant) => ({
+            [`.caret-${e(key)}`]: {
+              'caret-color': colors[key]
+            }
+          }
+        }
+
+        const variants = Object.keys(colors[key])
+
+        return {
+          ...acc,
+          ...variants.reduce(
+            (a, variant) => ({
               ...a,
               [`.caret-${e(key)}-${variant}`]: {
                 'caret-color': colors[key][variant]
-              },
-            }), {}),
-          };
-
-          }, {});
-      addUtilities(caretColors);
+              }
+            }),
+            {}
+          )
+        }
+      }, {})
+      addUtilities(caretColors)
     }),
     plugin(({ addUtilities, e, theme, variants }) => {
       const utilities = Object.keys(theme('gradients')).map((name) => {
@@ -1028,7 +1029,6 @@ module.exports = {
       })
 
       addUtilities(utilities, variants('gradients', []))
-    }),
+    })
   ]
 }
-

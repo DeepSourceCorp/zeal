@@ -35,9 +35,8 @@
 </template>
 
 <script lang="ts">
-
 import Vue from 'vue'
-import ZIcon from '../ZIcon/ZIcon.vue';
+import ZIcon from '../ZIcon/ZIcon.vue'
 
 export default Vue.extend({
   name: 'ZInput',
@@ -84,7 +83,7 @@ export default Vue.extend({
   },
   methods: {
     updateSelf(name: string): void {
-        this.$emit("input", name);
+      this.$emit('input', name)
     }
   }
 })
