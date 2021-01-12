@@ -1,5 +1,9 @@
 const plugin = require('tailwindcss/plugin')
-const { FULL_WIDTH_ACTIVE, FULL_WIDTH_INACTIVE, HEADINGS } = require('./src/utils/tailwind.mixins.js')
+const {
+  FULL_WIDTH_ACTIVE,
+  FULL_WIDTH_INACTIVE,
+  HEADINGS
+} = require('./src/utils/tailwind.mixins.js')
 module.exports = {
   purge: [],
   prefix: '',
