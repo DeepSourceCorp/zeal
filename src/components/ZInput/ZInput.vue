@@ -25,7 +25,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import ZIcon from '../ZIcon/ZIcon.vue';
 
 export default {
@@ -72,7 +72,7 @@ export default {
       }
   },
   methods: {
-      updateSelf(name) {
+      updateSelf(name: String) {
           this.$emit("input", name);
       }
   }
