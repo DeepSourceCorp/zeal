@@ -2,7 +2,7 @@ const plugin = require('tailwindcss/plugin')
 const {
   FULL_WIDTH_ACTIVE,
   FULL_WIDTH_INACTIVE,
-  HEADINGS
+  BEFORE_LIST_ITEM
 } = require('./src/utils/tailwind.mixins.js')
 module.exports = {
   purge: [],
@@ -664,7 +664,7 @@ module.exports = {
               position: 'relative'
             },
             'ul > li::before': {
-              ...HEADINGS(theme)
+              ...BEFORE_LIST_ITEM(theme)
             },
             hr: {
               borderColor: theme('colors.ink.100'),
@@ -686,29 +686,21 @@ module.exports = {
             'blockquote p:last-of-type::after': {
               content: 'close-quote'
             },
-            h1: {
+            'h1, h2, h3, h4, h5': {
               color: theme('colors.vanilla.100'),
-              fontWeight: theme('fontWeight.bold')
             },
             'h1::before, h2::before, h3::before, h4::before, h5::before': {
               content: '"#"',
               marginRight: theme('spacing.2'),
               color: theme('colors.slate')
             },
+            h1: {
+              fontWeight: theme('fontWeight.bold')
+            },
             h2: {
-              color: theme('colors.vanilla.100'),
               fontWeight: theme('fontWeight.semibold')
             },
-            h3: {
-              color: theme('colors.vanilla.100'),
-              fontWeight: theme('fontWeight.medium')
-            },
-            h4: {
-              color: theme('colors.vanilla.100'),
-              fontWeight: theme('fontWeight.medium')
-            },
-            h5: {
-              color: theme('colors.vanilla.100'),
+            'h3, h4, h5': {
               fontWeight: theme('fontWeight.medium')
             },
             'figure figcaption': {
@@ -718,18 +710,17 @@ module.exports = {
                 textAlign: 'left'
               }
             },
-            'figure img': {
-              borderRadius: `${theme('spacing.1')}`,
+            'pre, figure img': {
               ...FULL_WIDTH_INACTIVE(theme)
+            },
+            'figure img': {
+              borderRadius: `${theme('spacing.1')}`
             },
             code: {
               color: theme('colors.vanilla.300'),
               fontWeight: theme('fontWeight.semibold')
             },
-            'code::before': {
-              content: '"`"'
-            },
-            'code::after': {
+            'code::before, code::after': {
               content: '"`"'
             },
             'a code': {
@@ -739,8 +730,7 @@ module.exports = {
               color: theme('colors.vanilla.400'),
               backgroundColor: theme('colors.ink.200'),
               overflowX: 'auto',
-              borderRadius: `${theme('spacing.1')}`,
-              ...FULL_WIDTH_INACTIVE(theme)
+              borderRadius: `${theme('spacing.1')}`
             },
             'pre code': {
               backgroundColor: 'transparent',
@@ -753,10 +743,7 @@ module.exports = {
               fontFamily: 'inherit',
               lineHeight: 'inherit'
             },
-            'pre code::before': {
-              content: '""'
-            },
-            'pre code::after': {
+            'pre code::before, pre code::after': {
               content: '""'
             },
             table: {
@@ -765,15 +752,13 @@ module.exports = {
               textAlign: 'left'
             },
             thead: {
-              color: theme('colors.vanilla.400'),
-              borderBottomWidth: theme('spacing.px'),
-              borderBottomColor: theme('colors.ink.100')
+              color: theme('colors.vanilla.400')
             },
             'thead th': {
               fontWeight: theme('fontWeight.medium'),
               verticalAlign: 'bottom'
             },
-            'tbody tr': {
+            'thead, tbody tr': {
               borderBottomWidth: theme('spacing.px'),
               borderBottomColor: theme('colors.ink.100')
             },
@@ -788,53 +773,54 @@ module.exports = {
         sm: {
           css: {
             'ul > li::before': {
-              ...HEADINGS(theme)
+              ...BEFORE_LIST_ITEM(theme)
+            },
+            'pre, figure img': {
+              ...FULL_WIDTH_ACTIVE(theme)
             },
             pre: {
               color: theme('colors.vanilla.400'),
               backgroundColor: theme('colors.ink.200'),
               overflowX: 'auto',
-              borderRadius: '0',
-              ...FULL_WIDTH_ACTIVE(theme)
-            },
-            'figure img': {
-              ...FULL_WIDTH_ACTIVE(theme)
+              borderRadius: '0'
             }
           }
         },
         xl: {
           css: {
             'ul > li::before': {
-              ...HEADINGS(theme)
+              ...BEFORE_LIST_ITEM(theme)
+            },
+            'pre, figure img': {
+              ...FULL_WIDTH_INACTIVE(theme)
             },
             pre: {
               color: theme('colors.vanilla.400'),
               backgroundColor: theme('colors.ink.200'),
               overflowX: 'auto',
-              borderRadius: `${theme('spacing.1')}`,
-              ...FULL_WIDTH_INACTIVE(theme)
+              borderRadius: `${theme('spacing.1')}`
             },
             'figure img': {
-              borderRadius: `${theme('spacing.1')}`,
-              ...FULL_WIDTH_INACTIVE(theme)
+              borderRadius: `${theme('spacing.1')}`
             }
           }
         },
         '2xl': {
           css: {
             'ul > li::before': {
-              ...HEADINGS(theme)
+              ...BEFORE_LIST_ITEM(theme)
+            },
+            'pre, figure img': {
+              ...FULL_WIDTH_INACTIVE(theme)
             },
             pre: {
               color: theme('colors.vanilla.400'),
               backgroundColor: theme('colors.ink.200'),
               overflowX: 'auto',
-              borderRadius: `${theme('spacing.1')}`,
-              ...FULL_WIDTH_INACTIVE(theme)
+              borderRadius: `${theme('spacing.1')}`
             },
             'figure img': {
-              borderRadius: `${theme('spacing.1')}`,
-              ...FULL_WIDTH_INACTIVE(theme)
+              borderRadius: `${theme('spacing.1')}`
             }
           }
         }

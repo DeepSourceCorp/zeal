@@ -22,7 +22,7 @@ module.exports = {
       width: 'unset'
     }
   },
-  HEADINGS: function (theme) {
+  BEFORE_LIST_ITEM: function (theme) {
     return {
       content: '"—"',
       marginRight: theme('spacing.2'),
