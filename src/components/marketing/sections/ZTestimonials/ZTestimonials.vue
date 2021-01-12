@@ -5,21 +5,27 @@
         <slot name="heading"></slot>
       </span>
       <span class="grid grid-cols-3 mt-16">
-        <span v-for="testimonial in testimonials" :key="testimonial.customer" class="my-4">
-          <img class="object-contain" :src="testimonial.image" :alt="testimonial.customer" />
+        <span
+          v-for="(testimonial, index) in testimonials"
+          :key="testimonial.customer"
+          class="my-4"
+          @click="setCurrentIndexTo(index)"
+        >
+          <img
+            :class="[`${index === currentIndex ? 'bg-juniper' : ''}`]"
+            class="object-contain"
+            :src="testimonial.image"
+            :alt="testimonial.customer"
+          />
         </span>
       </span>
     </div>
     <div>
       <z-testimonial
-        v-for="testimonial in testimonials"
+        v-for="(testimonial, index) in testimonials"
         :key="testimonial.customer"
         class="bg-ink-300"
-        :class="[
-          `${
-            testimonial.customer === activeTestimonial.customer ? ACTIVE_CLASSES : INACTIVE_CLASSES
-          }`
-        ]"
+        :class="[`${index === currentIndex ? ACTIVE_CLASSES : INACTIVE_CLASSES}`]"
       >
         <template slot="body">
           <img class="object-contain mb-20" :src="testimonial.image" :alt="testimonial.customer" />
@@ -45,7 +51,7 @@ interface Testimonial {
   url: string
 }
 
-const ACTIVE_CLASSES = 'block'
+const ACTIVE_CLASSES = 'block animate-fadeIn'
 const INACTIVE_CLASSES = 'hidden'
 
 export default Vue.extend({
@@ -61,11 +67,34 @@ export default Vue.extend({
   },
   data() {
     return {
-      activeTestimonial: {
-        customer: 'Qubole'
-      } as Testimonial,
+      currentIndex: 0,
+      interval: 0,
       ACTIVE_CLASSES,
       INACTIVE_CLASSES
+    }
+  },
+  mounted() {
+    this.setTestimonialInterval()
+  },
+  methods: {
+    setTestimonialInterval() {
+      this.interval = setInterval(() => {
+        this.showNextTestimonial()
+      }, 2000)
+    },
+    resetInterval() {
+      clearInterval(this.interval)
+      this.setTestimonialInterval()
+    },
+    showNextTestimonial() {
+      this.currentIndex++
+      if (this.currentIndex >= this.testimonials.length) {
+        this.currentIndex = 0
+      }
+    },
+    setCurrentIndexTo(index: number) {
+      this.currentIndex = index
+      this.resetInterval()
     }
   }
 })
