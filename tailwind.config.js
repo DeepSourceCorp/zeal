@@ -6,6 +6,7 @@ module.exports = {
   separator: ':',
   theme: {
     screens: {
+      xs: '320px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
@@ -359,7 +360,8 @@ module.exports = {
       '10/12': '83.333333%',
       '11/12': '91.666667%',
       full: '100%',
-      screen: '100vw'
+      screen: '100vw',
+      halfScreen: '50vw'
     }),
     zIndex: {
       auto: 'auto',
@@ -622,6 +624,220 @@ module.exports = {
           transform: 'translateX(100%)'
         }
       }
+    },
+    extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.vanilla.100'),
+            '[class~="lead"]': {
+              color: theme('colors.vanilla.400')
+            },
+            a: {
+              color: theme('colors.juniper'),
+              textDecoration: 'underline',
+              fontWeight: theme('fontWeight.medium')
+            },
+            strong: {
+              color: theme('colors.vanilla.100'),
+              fontWeight: theme('fontWeight.semibold')
+            },
+            'ol > li': {
+              position: 'relative'
+            },
+            'ol > li::before': {
+              content: 'counter(list-item) "."',
+              position: 'absolute',
+              fontWeight: theme('fontWeight.normal'),
+              color: theme('colors.vanilla.400')
+            },
+            ul: {
+              listStyleType: 'none',
+              listStyle: 'none'
+            },
+            'ul > li': {
+              position: 'relative'
+            },
+            'ul > li::before': {
+              content: '"—"',
+              marginRight: theme('spacing.2'),
+              width: '0',
+              top: '0',
+              left: '0',
+              height: '0',
+              position: 'absolute',
+              color: theme('colors.juniper')
+            },
+            hr: {
+              borderColor: theme('colors.ink.100'),
+              borderTopWidth: 1
+            },
+            blockquote: {
+              fontWeight: theme('fontWeight.medium'),
+              lineHeight: theme('lineHeight.normal'),
+              fontSize: theme('fontSize.lg'),
+              fontStyle: 'normal',
+              color: 'inherit',
+              borderLeftWidth: '0.25rem',
+              borderLeftColor: theme('colors.juniper'),
+              quotes: '"\\201C""\\201D""\\2018""\\2019"'
+            },
+            'blockquote p:first-of-type::before': {
+              content: 'open-quote'
+            },
+            'blockquote p:last-of-type::after': {
+              content: 'close-quote'
+            },
+            h1: {
+              color: theme('colors.vanilla.100'),
+              fontWeight: theme('fontWeight.bold')
+            },
+            'h1::before, h2::before, h3::before, h4::before, h5::before': {
+              content: '"#"',
+              marginRight: theme('spacing.2'),
+              color: theme('colors.slate')
+            },
+            h2: {
+              color: theme('colors.vanilla.100'),
+              fontWeight: theme('fontWeight.semibold')
+            },
+            h3: {
+              color: theme('colors.vanilla.100'),
+              fontWeight: theme('fontWeight.medium')
+            },
+            h4: {
+              color: theme('colors.vanilla.100'),
+              fontWeight: theme('fontWeight.medium')
+            },
+            h5: {
+              color: theme('colors.vanilla.100'),
+              fontWeight: theme('fontWeight.medium')
+            },
+            'figure figcaption': {
+              color: theme('colors.vanilla.400'),
+              textAlign: 'center',
+              [`@media (min-width: ${theme('screens.sm')})`]: {
+                textAlign: 'left'
+              }
+            },
+            'figure img': {
+              marginLeft: 'unset',
+              marginRight: 'unset',
+              left: 'unset',
+              maxWidth: theme('width.full'),
+              height: 'auto',
+              position: 'unset',
+              right: 'unset',
+              width: 'unset',
+              borderRadius: `${theme('spacing.1')}`
+            },
+            code: {
+              color: theme('colors.vanilla.300'),
+              fontWeight: theme('fontWeight.semibold')
+            },
+            'code::before': {
+              content: '"`"'
+            },
+            'code::after': {
+              content: '"`"'
+            },
+            'a code': {
+              color: theme('colors.juniper')
+            },
+            pre: {
+              color: theme('colors.vanilla.400'),
+              backgroundColor: theme('colors.ink.200'),
+              overflowX: 'auto',
+              marginLeft: 'unset',
+              marginRight: 'unset',
+              left: 'unset',
+              maxWidth: theme('width.full'),
+              height: 'auto',
+              position: 'unset',
+              right: 'unset',
+              width: 'unset',
+              borderRadius: `${theme('spacing.1')}`
+            },
+            'pre code': {
+              backgroundColor: 'transparent',
+              borderWidth: '0',
+              borderRadius: '0',
+              padding: '0',
+              fontWeight: theme('fontWeight.normal'),
+              color: 'inherit',
+              fontSize: 'inherit',
+              fontFamily: 'inherit',
+              lineHeight: 'inherit'
+            },
+            'pre code::before': {
+              content: '""'
+            },
+            'pre code::after': {
+              content: '""'
+            },
+            table: {
+              width: '100%',
+              tableLayout: 'auto',
+              textAlign: 'left'
+            },
+            thead: {
+              color: theme('colors.vanilla.400'),
+              borderBottomWidth: theme('spacing.px'),
+              borderBottomColor: theme('colors.ink.100')
+            },
+            'thead th': {
+              fontWeight: theme('fontWeight.medium'),
+              verticalAlign: 'bottom'
+            },
+            'tbody tr': {
+              borderBottomWidth: theme('spacing.px'),
+              borderBottomColor: theme('colors.ink.100')
+            },
+            'tbody tr:last-child': {
+              borderBottomWidth: '0'
+            },
+            'tbody td': {
+              verticalAlign: 'top'
+            }
+          }
+        },
+        sm: {
+          css: {
+            'ul > li::before': {
+              content: '"—"',
+              marginRight: theme('spacing.2'),
+              width: '0',
+              top: '0',
+              left: '0',
+              height: '0',
+              position: 'absolute',
+              color: theme('colors.juniper')
+            },
+            pre: {
+              color: theme('colors.vanilla.400'),
+              backgroundColor: theme('colors.ink.200'),
+              overflowX: 'auto',
+              marginLeft: `-${theme('width.halfScreen')}`,
+              marginRight: `-${theme('width.halfScreen')}`,
+              left: theme('width.2/4'),
+              maxWidth: theme('width.screen'),
+              position: 'relative',
+              right: theme('width.2/4'),
+              width: theme('width.screen'),
+              borderRadius: '0'
+            },
+            'figure img': {
+              marginLeft: `-${theme('width.halfScreen')}`,
+              marginRight: `-${theme('width.halfScreen')}`,
+              left: theme('width.2/4'),
+              maxWidth: theme('width.screen'),
+              position: 'relative',
+              right: theme('width.2/4'),
+              width: theme('width.screen')
+            }
+          }
+        }
+      })
     }
   },
   variants: {
@@ -693,7 +909,7 @@ module.exports = {
     strokeWidth: ['responsive'],
     tableLayout: ['responsive'],
     textAlign: ['responsive'],
-    textColor: ['responsive', 'hover', 'focus', 'sibling-checked'],
+    textColor: ['responsive', 'group-hover', 'hover', 'focus', 'sibling-checked'],
     textOpacity: ['responsive', 'hover', 'focus'],
     textDecoration: ['responsive', 'hover', 'focus'],
     textTransform: ['responsive'],
@@ -729,6 +945,7 @@ module.exports = {
   },
   corePlugins: {},
   plugins: [
+    require('@tailwindcss/typography'),
     plugin(function ({ addVariant }) {
       addVariant('sibling-checked', ({ container }) => {
         container.walkRules((rule) => {
@@ -768,8 +985,12 @@ module.exports = {
     plugin(({ addUtilities, e, theme, variants }) => {
       const utilities = Object.keys(theme('gradients')).map((name) => {
         const gradient = theme('gradients')[name]
-        const type = gradient.hasOwnProperty('type') ? gradient.type : 'linear'
-        const colors = gradient.hasOwnProperty('colors') ? gradient.colors : gradient
+        const type = Object.prototype.hasOwnProperty.call(gradient, 'type')
+          ? gradient.type
+          : 'linear'
+        const colors = Object.prototype.hasOwnProperty.call(gradient, 'colors')
+          ? gradient.colors
+          : gradient
 
         return {
           [`.bg-gradient-${e(name)}`]: {
