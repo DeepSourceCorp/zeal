@@ -3,7 +3,7 @@ const {
   FULL_WIDTH_ACTIVE,
   FULL_WIDTH_INACTIVE,
   BEFORE_LIST_ITEM
-} = require('./src/utils/tailwind.mixins.js')
+} = require('./src/helpers/tailwind/typography.js')
 module.exports = {
   purge: [],
   prefix: '',
