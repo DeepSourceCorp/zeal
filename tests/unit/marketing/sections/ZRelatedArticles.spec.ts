@@ -65,7 +65,9 @@ describe('Related Articles section', () => {
       }
     })
     expect(mountedInstance.html()).toMatchSnapshot()
-    expect(mountedInstance.vm.$data.articles[1].$el.className.includes('md:pl-4 md:border-l')).toBe(true)
+    expect(mountedInstance.vm.$data.articles[1].$el.className.includes('md:pl-4 md:border-l')).toBe(
+      true
+    )
   })
 
   it('render no vertical border when only one article is available', () => {
@@ -83,6 +85,8 @@ describe('Related Articles section', () => {
       }
     })
     expect(mountedInstance.html()).toMatchSnapshot()
-    expect(mountedInstance.vm.$data.articles[0].$el.className.includes('md:pl-4 md:border-l')).toBe(false)
+    expect(mountedInstance.vm.$data.articles[0].$el.className.includes('md:pl-4 md:border-l')).toBe(
+      false
+    )
   })
 })
