@@ -566,6 +566,7 @@ module.exports = {
     },
     animation: {
       none: 'none',
+      fadeIn: 'fadeIn 1s',
       spin: 'spin 1s linear infinite',
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -576,6 +577,10 @@ module.exports = {
       'slide-right-leave-active': 'slide-right-out 0.5s ease-out'
     },
     keyframes: {
+      fadeIn: {
+        '0%': { opacity: '0' },
+        '100%': { opacity: '1' }
+      },
       spin: {
         from: { transform: 'rotate(0deg)' },
         to: { transform: 'rotate(360deg)' }
