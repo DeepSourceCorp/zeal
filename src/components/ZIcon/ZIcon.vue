@@ -17,7 +17,7 @@
 
 <script>
 import feather from 'feather-icons'
-import customIcons from '../../utils/icon-helper'
+import customIcons from '../../helpers/components/icon'
 
 export default {
   name: 'ZIcon',
