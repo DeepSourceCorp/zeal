@@ -1,4 +1,5 @@
 const plugin = require('tailwindcss/plugin')
+const { FULL_WIDTH_ACTIVE, FULL_WIDTH_INACTIVE, HEADINGS } = require('./src/utils/tailwind.mixins.js')
 module.exports = {
   purge: [],
   prefix: '',
@@ -659,14 +660,7 @@ module.exports = {
               position: 'relative'
             },
             'ul > li::before': {
-              content: '"—"',
-              marginRight: theme('spacing.2'),
-              width: '0',
-              top: '0',
-              left: '0',
-              height: '0',
-              position: 'absolute',
-              color: theme('colors.juniper')
+              ...HEADINGS(theme)
             },
             hr: {
               borderColor: theme('colors.ink.100'),
@@ -721,15 +715,8 @@ module.exports = {
               }
             },
             'figure img': {
-              marginLeft: 'unset',
-              marginRight: 'unset',
-              left: 'unset',
-              maxWidth: theme('width.full'),
-              height: 'auto',
-              position: 'unset',
-              right: 'unset',
-              width: 'unset',
-              borderRadius: `${theme('spacing.1')}`
+              borderRadius: `${theme('spacing.1')}`,
+              ...FULL_WIDTH_INACTIVE(theme)
             },
             code: {
               color: theme('colors.vanilla.300'),
@@ -748,15 +735,8 @@ module.exports = {
               color: theme('colors.vanilla.400'),
               backgroundColor: theme('colors.ink.200'),
               overflowX: 'auto',
-              marginLeft: 'unset',
-              marginRight: 'unset',
-              left: 'unset',
-              maxWidth: theme('width.full'),
-              height: 'auto',
-              position: 'unset',
-              right: 'unset',
-              width: 'unset',
-              borderRadius: `${theme('spacing.1')}`
+              borderRadius: `${theme('spacing.1')}`,
+              ...FULL_WIDTH_INACTIVE(theme)
             },
             'pre code': {
               backgroundColor: 'transparent',
@@ -804,114 +784,53 @@ module.exports = {
         sm: {
           css: {
             'ul > li::before': {
-              content: '"—"',
-              marginRight: theme('spacing.2'),
-              width: '0',
-              top: '0',
-              left: '0',
-              height: '0',
-              position: 'absolute',
-              color: theme('colors.juniper')
+              ...HEADINGS(theme)
             },
             pre: {
               color: theme('colors.vanilla.400'),
               backgroundColor: theme('colors.ink.200'),
               overflowX: 'auto',
-              marginLeft: `-${theme('width.halfScreen')}`,
-              marginRight: `-${theme('width.halfScreen')}`,
-              left: theme('width.2/4'),
-              maxWidth: theme('width.screen'),
-              position: 'relative',
-              right: theme('width.2/4'),
-              width: theme('width.screen'),
-              borderRadius: '0'
+              borderRadius: '0',
+              ...FULL_WIDTH_ACTIVE(theme)
             },
             'figure img': {
-              marginLeft: `-${theme('width.halfScreen')}`,
-              marginRight: `-${theme('width.halfScreen')}`,
-              left: theme('width.2/4'),
-              maxWidth: theme('width.screen'),
-              position: 'relative',
-              right: theme('width.2/4'),
-              width: theme('width.screen')
+              ...FULL_WIDTH_ACTIVE(theme)
             }
           }
         },
         xl: {
           css: {
             'ul > li::before': {
-              content: '"—"',
-              marginRight: theme('spacing.2'),
-              width: '0',
-              top: '0',
-              left: '0',
-              height: '0',
-              position: 'absolute',
-              color: theme('colors.juniper')
+              ...HEADINGS(theme)
             },
             pre: {
               color: theme('colors.vanilla.400'),
               backgroundColor: theme('colors.ink.200'),
               overflowX: 'auto',
-              marginLeft: 'unset',
-              marginRight: 'unset',
-              left: 'unset',
-              maxWidth: theme('width.full'),
-              height: 'auto',
-              position: 'unset',
-              right: 'unset',
-              width: 'unset',
-              borderRadius: `${theme('spacing.1')}`
+              borderRadius: `${theme('spacing.1')}`,
+              ...FULL_WIDTH_INACTIVE(theme)
             },
             'figure img': {
-              marginLeft: 'unset',
-              marginRight: 'unset',
-              left: 'unset',
-              maxWidth: theme('width.full'),
-              height: 'auto',
-              position: 'unset',
-              right: 'unset',
-              width: 'unset',
-              borderRadius: `${theme('spacing.1')}`
+              borderRadius: `${theme('spacing.1')}`,
+              ...FULL_WIDTH_INACTIVE(theme)
             }
           }
         },
         '2xl': {
           css: {
             'ul > li::before': {
-              content: '"—"',
-              marginRight: theme('spacing.2'),
-              width: '0',
-              top: '0',
-              left: '0',
-              height: '0',
-              position: 'absolute',
-              color: theme('colors.juniper')
+              ...HEADINGS(theme)
             },
             pre: {
               color: theme('colors.vanilla.400'),
               backgroundColor: theme('colors.ink.200'),
               overflowX: 'auto',
-              marginLeft: 'unset',
-              marginRight: 'unset',
-              left: 'unset',
-              maxWidth: theme('width.full'),
-              height: 'auto',
-              position: 'unset',
-              right: 'unset',
-              width: 'unset',
-              borderRadius: `${theme('spacing.1')}`
+              borderRadius: `${theme('spacing.1')}`,
+              ...FULL_WIDTH_INACTIVE(theme)
             },
             'figure img': {
-              marginLeft: 'unset',
-              marginRight: 'unset',
-              left: 'unset',
-              maxWidth: theme('width.full'),
-              height: 'auto',
-              position: 'unset',
-              right: 'unset',
-              width: 'unset',
-              borderRadius: `${theme('spacing.1')}`
+              borderRadius: `${theme('spacing.1')}`,
+              ...FULL_WIDTH_INACTIVE(theme)
             }
           }
         }
