@@ -16,47 +16,47 @@ describe('Input Component', () => {
     }
   })
 
-    it('renders the default input component', () => {
-        const wrapper = mountFn()
+  it('renders the default input component', () => {
+    const wrapper = mountFn()
 
-        expect(wrapper.html()).toMatchSnapshot()
-        expect(wrapper.findAll('input').length).toEqual(1)
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.findAll('input').length).toEqual(1)
+  })
+  it('renders the input with custom placeholder', () => {
+    const wrapper = mountFn({
+      propsData: {
+        placeholder: 'captain@marvel.com'
+      }
     })
-    it('renders the input with custom placeholder', () => {
-        const wrapper = mountFn({
-            propsData: {
-                placeholder: "captain@marvel.com"
-            }
-        })
-        expect(wrapper.html()).toMatchSnapshot()
-        expect(wrapper.find('input').attributes('placeholder')).toMatch("captain@marvel.com")
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.find('input').attributes('placeholder')).toMatch('captain@marvel.com')
+  })
+  it('renders a disabled input', () => {
+    const wrapper = mountFn({
+      propsData: {
+        disabled: true
+      }
     })
-    it('renders a disabled input', () => {
-        const wrapper = mountFn({
-            propsData: {
-                disabled: true
-            }
-        })
-        expect(wrapper.html()).toMatchSnapshot()
-        expect(wrapper.find('input').attributes('disabled')).toMatch("disabled")
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.find('input').attributes('disabled')).toMatch('disabled')
+  })
+  it('renders an input with clearable', () => {
+    const wrapper = mountFn({
+      propsData: {
+        clearable: true
+      }
     })
-    it('renders an input with clearable', () => {
-        const wrapper = mountFn({
-            propsData: {
-                clearable: true
-            }
-        })
-        expect(wrapper.html()).toMatchSnapshot()
-        expect(wrapper.findAll('.z-icon--x').length).toEqual(1);
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.findAll('.z-icon--x').length).toEqual(1)
+  })
+  it('renders an input with an icon', () => {
+    const wrapper = mountFn({
+      propsData: {
+        icon: 'search',
+        iconPosition: 'left'
+      }
     })
-    it('renders an input with an icon', () => {
-        const wrapper = mountFn({
-            propsData: {
-                icon: "search",
-                iconPosition: "left"
-            }
-        })
-        expect(wrapper.html()).toMatchSnapshot()
-        expect(wrapper.findAll('.z-icon--search').length).toEqual(1);
-    })
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.findAll('.z-icon--search').length).toEqual(1)
+  })
 })
