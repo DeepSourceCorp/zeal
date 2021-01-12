@@ -8,7 +8,7 @@
     </span>
     <input
       type="text"
-      class="input w-full pt-2.5 text-sm bg-ink-400 focus:shadow-white focus:border-vanilla-400 border border-solid border-bg-ink-100 rounded-sm outline-none h-10"
+      class="input w-full pt-2.5 text-sm caret-juniper bg-ink-400 focus:shadow-white focus:border-vanilla-400 border border-solid border-bg-ink-100 rounded-sm outline-none h-10"
       :class="[
         `${(disabled && 'text-slate cursor-not-allowed') || 'text-vanilla-300'}`,
         getIconBasedStyle
@@ -36,9 +36,10 @@
 
 <script lang="ts">
 
+import Vue from 'vue'
 import ZIcon from '../ZIcon/ZIcon.vue';
 
-export default {
+export default Vue.extend({
   name: 'ZInput',
   components: {
     ZIcon
@@ -72,7 +73,7 @@ export default {
     event: 'input'
   },
   computed: {
-    getIconBasedStyle() {
+    getIconBasedStyle(): string {
       const iconPositions = {
         left: 'pl-8 p-3',
         right: 'pr-8 p-3',
@@ -82,9 +83,9 @@ export default {
     }
   },
   methods: {
-      updateSelf(name: String) {
+      updateSelf(name: string): void {
           this.$emit("input", name);
       }
   }
-}
+})
 </script>

@@ -15,7 +15,6 @@ export const DefaultInput = () => ({
         <div class="input-container">
             <z-input v-model="name"></z-input>
         </div>
-        <p class="text-vanilla-100 mt-2">{{name}}</p>
     </div>`
 })
 
@@ -26,7 +25,6 @@ export const InputWithCustomPlaceholder = () => ({
             <z-input v-model="name"
                     placeholder="captainmarvel@marvel.com"></z-input>
         </div>
-        <p class="text-vanilla-100 mt-2">{{name}}</p>
     </div>`
 })
 
@@ -42,7 +40,6 @@ export const DisabledInput = () => ({
             <z-input v-model="name" 
                     :disabled="true"></z-input>
         </div>
-        <p class="text-vanilla-100 mt-2">{{name}}</p>
     </div>`
 })
 
@@ -58,7 +55,6 @@ export const InputWithClearable = () => ({
             <z-input v-model="name"
                     :clearable="true"></z-input>
         </div>
-        <p class="text-vanilla-100 mt-2">{{name}}</p>
     </div>`
 })
 
@@ -75,7 +71,6 @@ export const InputWithIconOnLeft = () => ({
                     icon="search"
                     iconPosition="left"></z-input>
         </div>
-        <p class="text-vanilla-100 mt-2">{{name}}</p>
     </div>`
 })
 
@@ -92,6 +87,5 @@ export const InputWithIconOnRight = () => ({
                     icon="search"
                     iconPosition="right"></z-input>
         </div>
-        <p class="text-vanilla-100 mt-2">{{name}}</p>
     </div>`
 })
