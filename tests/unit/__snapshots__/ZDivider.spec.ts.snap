@@ -1,19 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`VDivider renders a vertical divider 1`] = `
-<div class="z-divider z-divider--vertical">
-  <!---->
-</div>
-`;
-
-exports[`VDivider renders the component 1`] = `
-<div class="z-divider z-divider--horizontal">
-  <div class="z-divider--content"></div>
-</div>
-`;
-
 exports[`ZDivider renders a vertical divider 1`] = `
-<div class="z-divider z-divider--vertical">
+<div class="relative bg-ink-200 z-divider inline-block w-px h-4 my-0 mx-2 align-middle">
   <!---->
+</div>
+`;
+
+exports[`ZDivider renders the component 1`] = `
+<div class="relative bg-ink-200 z-divider block h-px w-full my-6 mx-0">
+  <div class="z-divider--content"></div>
 </div>
 `;

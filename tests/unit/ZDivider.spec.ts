@@ -29,7 +29,7 @@ describe('ZDivider', () => {
       }
     })
 
-    expect(wrapper.classes()).toContain('z-divider--vertical')
+    expect(wrapper.classes()).toContain('h-4')
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

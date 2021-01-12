@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button component renders a button tag when the component is mounted 1`] = `<button type="button" class="z-btn z-btn--primary">Click</button>`;
+exports[`Button component renders a button tag when the component is mounted 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center px-6 font-medium border-transparent rounded-sm relative justify-center false false h-10 text-base">Click</button>`;
 
-exports[`Button component renders a button tag with the given text 1`] = `<button type="button" class="z-btn z-btn--primary">Hello World</button>`;
+exports[`Button component renders a button tag with the given text 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center px-6 font-medium border-transparent rounded-sm relative justify-center false false h-10 text-base">Hello World</button>`;
 
-exports[`Button component renders a button with primary color 1`] = `<button type="button" class="z-btn z-btn--primary">Primary Button</button>`;
+exports[`Button component renders a button with primary color 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center px-6 font-medium border-transparent rounded-sm relative justify-center z-btn--primary false false h-10 text-base bg-juniper text-ink-400 hover:bg-light_juniper">Primary Button</button>`;
 
-exports[`Button component renders a button with secondary color 1`] = `<button type="button" class="z-btn z-btn--secondary">Secondary Button</button>`;
+exports[`Button component renders a button with secondary color 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center px-6 font-medium border-transparent rounded-sm relative justify-center z-btn--secondary false false h-10 text-base bg-ink-300 text-vanilla-100 border border-slate hover:bg-ink-200 false">Secondary Button</button>`;
 
-exports[`Button component renders a button with the given size(large) 1`] = `<button type="button" class="z-btn z-btn--large z-btn--primary">Large Button</button>`;
+exports[`Button component renders a button with the given size(large) 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center px-6 font-medium border-transparent rounded-sm relative justify-center false false h-12 text-lg">Large Button</button>`;
 
-exports[`Button component renders a disabled button when the disabled attribute is passed 1`] = `<button disabled="disabled" type="button" class="z-btn is-disabled z-btn--primary">Disabled Button</button>`;
+exports[`Button component renders a disabled button when the disabled attribute is passed 1`] = `<button href="#" disabled="disabled" type="button" class="z-btn inline-flex items-center px-6 font-medium border-transparent rounded-sm relative justify-center false opacity-50 cursor-not-allowed h-10 text-base">Disabled Button</button>`;
 
-exports[`Button component renders a full-width button 1`] = `<button type="button" class="z-btn full-width z-btn--primary">Full Width Button</button>`;
+exports[`Button component renders a full-width button 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center px-6 font-medium border-transparent rounded-sm relative justify-center w-full inline-block false h-10 text-base">Full Width Button</button>`;
 
-exports[`Button component renders a link tag when type is specified as link 1`] = `<a href="https://deepsource.io/" type="link" class="z-btn z-btn--link">Link Button</a>`;
+exports[`Button component renders a link tag when type is specified as link 1`] = `<a href="https://deepsource.io/" type="link" class="z-btn inline-flex items-center px-6 font-medium border-transparent rounded-sm relative justify-center z-btn--link false false h-10 text-base font-normal text-juniper false hover:underline">Link Button</a>`;

@@ -26,9 +26,11 @@
     "@tailwindcss/typography": "^0.3.1",
     "core-js": "^3.6.5",
     "postcss-cli": "7.1.2",
-    "smoothscroll-polyfill": "^0.4.4",
+    "vue": "^2.6.12",
+    "@tailwindcss/postcss7-compat": "^2.0.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "vue": "^2.6.12"
+    "postcss": "^7",
+    "smoothscroll-polyfill": "^0.4.4"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^6.0.26",
@@ -59,7 +61,6 @@
     "html-minifier": "^4.0.0",
     "node-sass": "^4.12.0",
     "path": "^0.12.7",
-    "postcss": "^7",
     "postcss-import": "12.0.1",
     "postcss-loader": "4.0.1",
     "prettier": "^1.19.1",

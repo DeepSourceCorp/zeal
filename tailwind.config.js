@@ -125,7 +125,8 @@ module.exports = {
       '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
       inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
       outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
-      none: 'none'
+      none: 'none',
+      white: '0px 0px 2px 0px rgba(255,255,255,1)'
     },
     container: {},
     cursor: {
@@ -980,6 +981,35 @@ module.exports = {
         }
       }
       addUtilities(contentUtilities, ['before', 'after'])
+    }),
+    plugin(({ addUtilities, e, theme }) => {
+      const colors = theme('colors')
+      const caretColors = Object.keys(colors).reduce((acc, key) => {
+        if (typeof colors[key] === 'string') {
+          return {
+            ...acc,
+            [`.caret-${e(key)}`]: {
+              'caret-color': colors[key]
+            }
+          }
+        }
+
+        const variants = Object.keys(colors[key])
+
+        return {
+          ...acc,
+          ...variants.reduce(
+            (a, variant) => ({
+              ...a,
+              [`.caret-${e(key)}-${variant}`]: {
+                'caret-color': colors[key][variant]
+              }
+            }),
+            {}
+          )
+        }
+      }, {})
+      addUtilities(caretColors)
     }),
     plugin(({ addUtilities, e, theme, variants }) => {
       const utilities = Object.keys(theme('gradients')).map((name) => {
