@@ -1,34 +1,60 @@
 import ZTestimonials from './ZTestimonials.vue'
 import ZTestimonial from '../../ZTestimonial'
 
+const testimonials = [
+  {
+    customer: 'Slack',
+    text: 'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
+    author: 'Piero Molino, Senior Technology Officer',
+    image: 'https://i.imgur.com/Cf5BpLU.png',
+    url: ''
+  },
+  {
+    customer: 'Dgraph',
+    text: 'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
+    author: 'Piero Molino, Senior Technology Officer',
+    image: 'https://i.imgur.com/gTQDOHe.png',
+    url: ''
+  },
+  {
+    customer: 'Okteto',
+    text: 'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
+    author: 'Piero Molino, Senior Technology Officer',
+    image: 'https://i.imgur.com/4tgH69m.png',
+    url: ''
+  },
+  {
+    customer: 'Qubole',
+    text: 'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
+    author: 'Piero Molino, Senior Technology Officer',
+    image: 'https://i.imgur.com/Sh6rAta.png',
+    url: ''
+  },
+  {
+    customer: 'Intel',
+    text: 'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
+    author: 'Piero Molino, Senior Technology Officer',
+    image: 'https://i.imgur.com/uvfWLnd.png',
+    url: ''
+  }
+]
+
 export default {
   title: 'Zeal Marketing/Testimonials Section',
   component: ZTestimonials,
   excludeStories: /.*Data$/
 }
 
-export const WithBothArticles = () => ({
+export const Basic = () => ({
   components: { ZTestimonials, ZTestimonial },
   data() {
     return {
-      articles: [
-        {
-          title: 'Odio amet tincidunt metus dictum dapibus cum nibh sed',
-          slug: 'first-article'
-        },
-        {
-          title: 'Odio amet tincidunt metus dictum dapibus cum nibh sed.',
-          slug: 'second-article'
-        }
-      ]
+      testimonials
     }
   },
-  template: `<div class='padded-container bg-ink-400 text-vanilla-400 md:grid grid-cols-12'>
-      <z-related-articles header="Keep reading" class="col-span-8">
-        <z-related-article v-for="article in articles" :key="article.slug">
-          <span slot="heading">{{ article.title }}</span>
-          <a :href="'/'+article.slug" slot="link">Read More</a>
-        </z-related-article>
-      </z-related-articles>
+  template: `<div class='padded-container'>
+      <z-testimonials :testimonials="testimonials">
+        <h2 slot="heading">What developers say</h2>
+      </z-testimonials>
     </div>`
 })
