@@ -83,9 +83,9 @@ export default Vue.extend({
     }
   },
   methods: {
-      updateSelf(name: string): void {
-          this.$emit("input", name);
-      }
+    updateSelf(name: string): void {
+        this.$emit("input", name);
+    }
   }
 })
 </script>
