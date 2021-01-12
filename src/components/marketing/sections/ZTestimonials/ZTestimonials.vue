@@ -1,16 +1,16 @@
 <template>
-  <section class="grid grid-cols-12 gap-20">
-    <div class="col-span-6">
+  <section class="grid grid-cols-2 gap-20">
+    <div class="flex flex-col justify-around relative">
       <span class="text-vanilla-100 font-bold text-4xl leading-12">
         <slot name="heading"></slot>
       </span>
-      <span class="grid grid-cols-12">
-        <span v-for="testimonial in testimonials" :key="testimonial.customer" class="col-span-2">
-          <img class="h-8 w-auto" :src="testimonial.image" :alt="testimonial.customer" />
+      <span class="grid grid-cols-3 mt-16">
+        <span v-for="testimonial in testimonials" :key="testimonial.customer" class="my-4">
+          <img class="object-contain" :src="testimonial.image" :alt="testimonial.customer" />
         </span>
       </span>
     </div>
-    <div class="col-span-6">
+    <div>
       <z-testimonial
         v-for="testimonial in testimonials"
         :key="testimonial.customer"
@@ -22,7 +22,7 @@
         ]"
       >
         <template slot="body">
-          <img class="h-8 w-auto" :src="testimonial.image" :alt="testimonial.customer" />
+          <img class="object-contain mb-20" :src="testimonial.image" :alt="testimonial.customer" />
           {{ testimonial.text }}
         </template>
         <template slot="footer">
@@ -67,7 +67,6 @@ export default Vue.extend({
       ACTIVE_CLASSES,
       INACTIVE_CLASSES
     }
-  },
-  methods: {}
+  }
 })
 </script>
