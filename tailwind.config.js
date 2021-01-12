@@ -687,7 +687,7 @@ module.exports = {
               content: 'close-quote'
             },
             'h1, h2, h3, h4, h5': {
-              color: theme('colors.vanilla.100'),
+              color: theme('colors.vanilla.100')
             },
             'h1::before, h2::before, h3::before, h4::before, h5::before': {
               content: '"#"',
