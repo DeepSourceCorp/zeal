@@ -1,4 +1,4 @@
-import Icons from '../icons/icons.json'
+import Icons from '../../icons/icons.json'
 
 interface Icons {
   [key: string]: any
