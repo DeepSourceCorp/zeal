@@ -4,7 +4,7 @@ import '../../assets/css/layout.css'
 import ZInput from './ZInput.vue'
 
 export default {
-  title: 'Form Controls: Input',
+  title: 'Form Inputs and Controls: Input',
   component: ZInput,
   excludeStories: /.*Data$/
 }
