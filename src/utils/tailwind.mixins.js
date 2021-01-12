@@ -1,5 +1,5 @@
 module.exports = {
-  FULL_WIDTH_ACTIVE: function(theme) {
+  FULL_WIDTH_ACTIVE: function (theme) {
     return {
       marginLeft: `-${theme('width.halfScreen')}`,
       marginRight: `-${theme('width.halfScreen')}`,
@@ -10,7 +10,7 @@ module.exports = {
       width: theme('width.screen')
     }
   },
-  FULL_WIDTH_INACTIVE: function(theme) {
+  FULL_WIDTH_INACTIVE: function (theme) {
     return {
       marginLeft: 'unset',
       marginRight: 'unset',
@@ -22,7 +22,7 @@ module.exports = {
       width: 'unset'
     }
   },
-  HEADINGS: function(theme) {
+  HEADINGS: function (theme) {
     return {
       content: '"—"',
       marginRight: theme('spacing.2'),
