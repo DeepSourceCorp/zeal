@@ -10,8 +10,8 @@ export default {
 }
 
 export const DefaultInput = () => ({
-    components: { ZInput },
-    template: `<div class='padded-container'>
+  components: { ZInput },
+  template: `<div class='padded-container'>
         <div class="input-container">
             <z-input v-model="name"></z-input>
         </div>
@@ -20,8 +20,8 @@ export const DefaultInput = () => ({
 })
 
 export const InputWithCustomPlaceholder = () => ({
-    components: { ZInput },
-    template: `<div class='padded-container'>
+  components: { ZInput },
+  template: `<div class='padded-container'>
         <div class="input-container">
             <z-input v-model="name"
                     placeholder="captainmarvel@marvel.com"></z-input>
@@ -31,13 +31,13 @@ export const InputWithCustomPlaceholder = () => ({
 })
 
 export const DisabledInput = () => ({
-    components: { ZInput },
-    data() {
-        return {
-            name: "Hello World"
-        }
-    },
-    template: `<div class='padded-container'>
+  components: { ZInput },
+  data() {
+    return {
+      name: 'Hello World'
+    }
+  },
+  template: `<div class='padded-container'>
         <div class="input-container">
             <z-input v-model="name" 
                     :disabled="true"></z-input>
@@ -47,13 +47,13 @@ export const DisabledInput = () => ({
 })
 
 export const InputWithClearable = () => ({
-    components: { ZInput },
-    data() {
-        return {
-            name: "Hello World"
-        }
-    },
-    template: `<div class='padded-container'>
+  components: { ZInput },
+  data() {
+    return {
+      name: 'Hello World'
+    }
+  },
+  template: `<div class='padded-container'>
         <div class="input-container">
             <z-input v-model="name"
                     :clearable="true"></z-input>
@@ -63,13 +63,13 @@ export const InputWithClearable = () => ({
 })
 
 export const InputWithIconOnLeft = () => ({
-    components: { ZInput },
-    data() {
-        return {
-            name: "Hello World"
-        }
-    },
-    template: `<div class='padded-container'>
+  components: { ZInput },
+  data() {
+    return {
+      name: 'Hello World'
+    }
+  },
+  template: `<div class='padded-container'>
         <div class="input-container">
             <z-input v-model="name"
                     icon="search"
@@ -79,14 +79,14 @@ export const InputWithIconOnLeft = () => ({
     </div>`
 })
 
-export const InputWithIconOnRight= () => ({
-    components: { ZInput },
-    data() {
-        return {
-            name: "Hello World"
-        }
-    },
-    template: `<div class='padded-container'>
+export const InputWithIconOnRight = () => ({
+  components: { ZInput },
+  data() {
+    return {
+      name: 'Hello World'
+    }
+  },
+  template: `<div class='padded-container'>
         <div class="input-container">
             <z-input v-model="name"
                     icon="search"
