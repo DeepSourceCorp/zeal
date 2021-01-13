@@ -1,18 +1,18 @@
 <template>
-  <section class="grid grid-cols-2 gap-20">
+  <section class="grid grid-cols-2">
     <div class="flex flex-col justify-around relative">
-      <span class="text-vanilla-100 font-bold text-4xl leading-12">
+      <span class="text-vanilla-100 font-bold text-4xl leading-12 mr-12">
         <slot name="heading"></slot>
       </span>
-      <span class="grid grid-cols-3 mt-16">
+      <span class="grid grid-cols-3 mt-6 mb-4">
         <span
           v-for="(testimonial, index) in testimonials"
           :key="testimonial.customer"
-          class="my-4"
+          class="flex items-center mt-12 cursor-pointer"
           @click="setCurrentIndexTo(index)"
         >
           <img
-            :class="[`${index === currentIndex ? 'bg-juniper' : ''}`]"
+            :class="[`${index === currentIndex ? '' : 'opacity-60'}`]"
             class="object-contain"
             :src="testimonial.image"
             :alt="testimonial.customer"
@@ -27,8 +27,10 @@
         class="bg-ink-300"
         :class="[`${index === currentIndex ? ACTIVE_CLASSES : INACTIVE_CLASSES}`]"
       >
+        <template slot="image">
+          <img class="object-contain" :src="testimonial.image" :alt="testimonial.customer" />
+        </template>
         <template slot="body">
-          <img class="object-contain mb-20" :src="testimonial.image" :alt="testimonial.customer" />
           {{ testimonial.text }}
         </template>
         <template slot="footer">

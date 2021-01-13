@@ -3,35 +3,11 @@ import ZTestimonial from '../../ZTestimonial'
 
 const testimonials = [
   {
-    customer: 'Slack',
-    text:
-      'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
-    author: 'Piero Molino, Senior Technology Officer',
-    image: 'https://i.imgur.com/Cf5BpLU.png',
-    url: ''
-  },
-  {
     customer: 'Dgraph',
     text:
       'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
     author: 'Piero Molino, Senior Technology Officer',
-    image: 'https://i.imgur.com/gTQDOHe.png',
-    url: ''
-  },
-  {
-    customer: 'Okteto',
-    text:
-      'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
-    author: 'Piero Molino, Senior Technology Officer',
-    image: 'https://i.imgur.com/4tgH69m.png',
-    url: ''
-  },
-  {
-    customer: 'Qubole',
-    text:
-      'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
-    author: 'Piero Molino, Senior Technology Officer',
-    image: 'https://i.imgur.com/Sh6rAta.png',
+    image: 'https://i.imgur.com/ISsHpNY.png',
     url: ''
   },
   {
@@ -39,9 +15,33 @@ const testimonials = [
     text:
       'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
     author: 'Piero Molino, Senior Technology Officer',
-    image: 'https://i.imgur.com/uvfWLnd.png',
+    image: 'https://i.imgur.com/PYEc7bZ.png',
     url: ''
-  }
+  },
+  {
+    customer: 'Qubole',
+    text:
+      'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
+    author: 'Piero Molino, Senior Technology Officer',
+    image: 'https://i.imgur.com/GQjbpeq.png',
+    url: ''
+  },
+  {
+    customer: 'Okteto',
+    text:
+      'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
+    author: 'Piero Molino, Senior Technology Officer',
+    image: 'https://i.imgur.com/oqlV3mB.png',
+    url: ''
+  },
+  {
+    customer: 'Slack',
+    text:
+      'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
+    author: 'Piero Molino, Senior Technology Officer',
+    image: 'https://i.imgur.com/ifq7pvm.png',
+    url: ''
+  },
 ]
 
 export default {
@@ -57,8 +57,8 @@ export const Basic = () => ({
       testimonials
     }
   },
-  template: `<div class='padded-container'>
-      <z-testimonials :testimonials="testimonials" :timing="1000">
+  template: `<div class='p-32'>
+      <z-testimonials :testimonials="testimonials" :timing="10000">
         <h2 slot="heading">What developers say</h2>
       </z-testimonials>
     </div>`
