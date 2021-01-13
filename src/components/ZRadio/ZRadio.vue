@@ -44,10 +44,10 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'ZRadio',
-//   model: {
-//     prop: 'modelValue',
-//     event: 'change'
-//   },
+  //   model: {
+  //     prop: 'modelValue',
+  //     event: 'change'
+  //   },
   props: {
     modelValue: {
       type: String,
@@ -67,20 +67,20 @@ export default Vue.extend({
   },
   computed: {
     modelData(): string {
-        const $parent: any = this.$parent;
-        return $parent && $parent.modelValue || this.modelValue 
+      const $parent: any = this.$parent
+      return ($parent && $parent.modelValue) || this.modelValue
     },
     isChecked(): boolean {
       return this.modelData === this.value
     },
     isDisabled(): boolean {
-        const $parent: any = this.$parent;
-        return $parent && $parent.disabled || this.disabled 
+      const $parent: any = this.$parent
+      return ($parent && $parent.disabled) || this.disabled
     }
   },
   methods: {
     updateInput(): void {
-      const $parent: any = this.$parent;
+      const $parent: any = this.$parent
       debugger
       $parent.updateInput(this.value)
     }

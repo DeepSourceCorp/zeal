@@ -1,3 +1,3 @@
-import ZRadioGroup from './ZRadioGroup.vue';
+import ZRadioGroup from './ZRadioGroup.vue'
 
-export default ZRadioGroup;
+export default ZRadioGroup
