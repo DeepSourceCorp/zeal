@@ -20,10 +20,6 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'ZTestimonial',
-  props: {},
-  data() {
-    return {}
-  }
+  name: 'ZTestimonial'
 })
 </script>
