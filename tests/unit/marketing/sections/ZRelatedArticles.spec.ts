@@ -4,7 +4,7 @@ import { createLocalVue, mount, Wrapper } from '@vue/test-utils'
 import ZRelatedArticles from '../../../../src/components/marketing/sections/ZRelatedArticles'
 import ZRelatedArticle from '../../../../src/components/marketing/ZRelatedArticle'
 
-describe('Page Label component', () => {
+describe('Related Articles section', () => {
   let mountFunction: (options?: Record<string, unknown>) => Wrapper<Vue>
   let localVue: typeof Vue
   beforeEach(() => {
@@ -65,7 +65,9 @@ describe('Page Label component', () => {
       }
     })
     expect(mountedInstance.html()).toMatchSnapshot()
-    expect(mountedInstance.vm.$data.articles[1].$el.className.includes('pl-4 border-l')).toBe(true)
+    expect(mountedInstance.vm.$data.articles[1].$el.className.includes('md:pl-4 md:border-l')).toBe(
+      true
+    )
   })
 
   it('render no vertical border when only one article is available', () => {
@@ -83,6 +85,8 @@ describe('Page Label component', () => {
       }
     })
     expect(mountedInstance.html()).toMatchSnapshot()
-    expect(mountedInstance.vm.$data.articles[0].$el.className.includes('pl-4 border-l')).toBe(false)
+    expect(mountedInstance.vm.$data.articles[0].$el.className.includes('md:pl-4 md:border-l')).toBe(
+      false
+    )
   })
 })
