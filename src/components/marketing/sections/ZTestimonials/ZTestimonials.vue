@@ -47,7 +47,7 @@
       </z-testimonial>
 
       <ul class="flex mx-auto mt-4 justify-between lg:hidden">
-        <span @click="showPreviousTestimonial()"><z-icon color="slate" icon="arrow-left"/></span>
+        <span @click="showPreviousTestimonial()"><z-icon color="slate" icon="arrow-left" /></span>
         <span class="flex items-center">
           <li
             v-for="(testimonial, index) in testimonials"
@@ -59,7 +59,7 @@
             <button />
           </li>
         </span>
-        <span @click="showNextTestimonial()"><z-icon color="slate" icon="arrow-right"/></span>
+        <span @click="showNextTestimonial()"><z-icon color="slate" icon="arrow-right" /></span>
       </ul>
     </div>
   </section>
@@ -87,7 +87,7 @@ export default Vue.extend({
     testimonials: {
       required: true,
       type: Array,
-      validator: arr => arr.length <= MAX_TESTIMONIALS
+      validator: (arr) => arr.length <= MAX_TESTIMONIALS
     },
     timing: {
       default: DEFAULT_INTERVAL,
