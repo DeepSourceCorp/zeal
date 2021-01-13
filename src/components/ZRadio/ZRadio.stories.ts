@@ -63,7 +63,7 @@ export const DisabledCheckedRadioButton = () => ({
   },
   template: `<div class='padded-container'>
             <div class="input-container">
-                <z-radio value="female" v-model="modelValue" label="Female"></z-radio>
+                <z-radio value="female" v-model="modelValue" label="Female" :disabled="true"></z-radio>
                 <z-radio value="male" v-model="modelValue" label="Male"></z-radio>
             </div>
         </div>`
