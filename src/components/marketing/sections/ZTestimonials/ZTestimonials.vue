@@ -49,14 +49,6 @@
 import Vue from 'vue'
 import ZTestimonial from '@/components/marketing/ZTestimonial'
 
-interface Testimonial {
-  customer: string
-  text: string
-  author: string
-  image: string
-  url: string
-}
-
 const ACTIVE_CLASSES = 'block animate-fadeIn'
 const INACTIVE_CLASSES = 'hidden'
 
