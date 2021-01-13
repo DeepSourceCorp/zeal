@@ -1,7 +1,9 @@
 <template>
   <section class="lg:flex">
     <div class="flex flex-col justify-around relative">
-      <span class="text-vanilla-100 font-bold text-4xl leading-12 mr-20">
+      <span
+        class="text-vanilla-100 font-bold text-3xl lg:text-4xl leading-11 lg:leading-12 md:mr-20"
+      >
         <slot name="heading"></slot>
       </span>
       <span
@@ -10,7 +12,7 @@
         <span
           v-for="(testimonial, index) in testimonials"
           :key="testimonial.customer"
-          class="z-testimonials__logo flex-shrink-0 flex items-center mt-12 cursor-pointer mr-8"
+          class="z-testimonials__logo flex-shrink-0 flex items-center mt-8 lg:mt-12 cursor-pointer mr-8 w-24 md:w-auto"
           @click="setCurrentIndexTo(index)"
         >
           <img
@@ -26,12 +28,12 @@
       <z-testimonial
         v-for="(testimonial, index) in testimonials"
         :key="testimonial.customer"
-        class="bg-ink-300"
+        class="bg-ink-300 my-4 lg:my-0"
         :class="[`${index === currentIndex ? VISIBLE_CARD : INVISIBLE_CARD}`]"
       >
         <template slot="image">
           <img
-            class="object-contain h-12"
+            class="object-contain h-12 hidden lg:block mb-6"
             :src="testimonial.image.color"
             :alt="testimonial.customer"
           />
@@ -43,6 +45,21 @@
           {{ testimonial.author }}
         </template>
       </z-testimonial>
+
+      <ul class="flex mx-auto mt-4 justify-between lg:hidden">
+        <z-icon color="slate" icon="arrow-left" />
+        <span class="flex items-center">
+          <li
+            v-for="(testimonial, index) in testimonials"
+            :key="index"
+            class="h-2 w-2 cursor-pointer rounded-full mx-1"
+            :class="[`${index == currentIndex ? 'bg-juniper' : 'bg-ink-100'}`]"
+          >
+            <button />
+          </li>
+        </span>
+        <z-icon color="slate" icon="arrow-right" />
+      </ul>
     </div>
   </section>
 </template>
@@ -50,6 +67,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import ZTestimonial from '@/components/marketing/ZTestimonial'
+import ZIcon from '@/components/ZIcon'
 
 const VISIBLE_CARD = 'block animate-fadeIn'
 const INVISIBLE_CARD = 'hidden'
@@ -61,7 +79,8 @@ const DEFAULT_INTERVAL = 5000
 export default Vue.extend({
   name: 'ZTestimonials',
   components: {
-    ZTestimonial
+    ZTestimonial,
+    ZIcon
   },
   props: {
     testimonials: {
