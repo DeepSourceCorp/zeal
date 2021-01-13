@@ -1023,6 +1023,18 @@ module.exports = {
       })
 
       addUtilities(utilities, variants('gradients', []))
+    }),
+    plugin(({ addUtilities, theme }) => {
+      const utilities = {
+        '.w-full-screen': {
+          ...FULL_WIDTH_ACTIVE(theme)
+        },
+        '.w-full-screen-none': {
+          ...FULL_WIDTH_INACTIVE(theme)
+        }
+      }
+
+      addUtilities(utilities, ['responsive'])
     })
   ]
 }

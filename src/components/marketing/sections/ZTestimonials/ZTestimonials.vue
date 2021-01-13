@@ -7,7 +7,7 @@
         <slot name="heading"></slot>
       </span>
       <span
-        class="z-testimonials__logos flex lg:grid grid-cols-3 mt-6 mb-2 overflow-x-hidden flex-nowrap"
+        class="z-testimonials__logos flex lg:grid grid-cols-3 px-8 sm:px-0 mt-6 mb-2 overflow-x-hidden flex-nowrap w-full-screen sm:w-full-screen-none"
       >
         <span
           v-for="(testimonial, index) in testimonials"
@@ -140,7 +140,7 @@ export default Vue.extend({
       const elem = document.getElementsByClassName('z-testimonials__logo')[
         this.currentIndex
       ] as HTMLElement
-      container.scrollTo({ left: elem.offsetLeft, behavior: 'smooth' })
+      container.scrollTo({ left: elem.offsetLeft - 30, behavior: 'smooth' })
     }
   }
 })
