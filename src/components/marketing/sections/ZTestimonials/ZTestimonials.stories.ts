@@ -67,7 +67,7 @@ export const Basic = () => ({
   },
   template: `<div class='md:py-32 p-2 sm:px-20'>
       <z-testimonials :testimonials="testimonials">
-        <h2 slot="heading">What developers say</h2>
+        <h2 slot="heading">What <span class="bg-gradient-ocean bg-clip-text text-transparent">developers say</span></h2>
       </z-testimonials>
     </div>`
 })
