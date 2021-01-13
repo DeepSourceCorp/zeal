@@ -12,7 +12,7 @@
           @click="setCurrentIndexTo(index)"
         >
           <img
-            :class="[`${index === currentIndex ? '' : 'opacity-60'}`]"
+            :class="[`${index === currentIndex ? '' : INACTIVE_TESTIMONIAL}`]"
             class="object-contain"
             :src="testimonial.image.bnw"
             :alt="testimonial.customer"
@@ -25,7 +25,7 @@
         v-for="(testimonial, index) in testimonials"
         :key="testimonial.customer"
         class="bg-ink-300"
-        :class="[`${index === currentIndex ? ACTIVE_CLASSES : INACTIVE_CLASSES}`]"
+        :class="[`${index === currentIndex ? VISIBLE_CARD : INVISIBLE_CARD}`]"
       >
         <template slot="image">
           <img
@@ -49,8 +49,12 @@
 import Vue from 'vue'
 import ZTestimonial from '@/components/marketing/ZTestimonial'
 
-const ACTIVE_CLASSES = 'block animate-fadeIn'
-const INACTIVE_CLASSES = 'hidden'
+const VISIBLE_CARD = 'block animate-fadeIn'
+const INVISIBLE_CARD = 'hidden'
+const INACTIVE_TESTIMONIAL = 'opacity-60'
+
+const MAX_TESTIMONIALS = 6
+const DEFAULT_INTERVAL = 5000
 
 export default Vue.extend({
   name: 'ZTestimonials',
@@ -61,10 +65,10 @@ export default Vue.extend({
     testimonials: {
       required: true,
       type: Array,
-      validator: (arr) => arr.length <= 6
+      validator: (arr) => arr.length <= MAX_TESTIMONIALS
     },
     timing: {
-      default: 5000,
+      default: DEFAULT_INTERVAL,
       type: Number
     }
   },
@@ -72,8 +76,9 @@ export default Vue.extend({
     return {
       currentIndex: 0,
       interval: 0,
-      ACTIVE_CLASSES,
-      INACTIVE_CLASSES
+      VISIBLE_CARD,
+      INVISIBLE_CARD,
+      INACTIVE_TESTIMONIAL
     }
   },
   mounted() {
