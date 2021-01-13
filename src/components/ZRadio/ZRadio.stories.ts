@@ -1,4 +1,3 @@
-
 import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'
@@ -11,8 +10,8 @@ export default {
 }
 
 export const DefaultRadio = () => ({
-    components: { ZRadio },
-    template: `<div class='padded-container'>
+  components: { ZRadio },
+  template: `<div class='padded-container'>
             <div class="input-container">
                 <z-radio value="female" v-model="modelValue" label="Female"></z-radio>
                 <z-radio value="male" v-model="modelValue" label="Male"></z-radio>
@@ -21,13 +20,13 @@ export const DefaultRadio = () => ({
 })
 
 export const CheckedRadioButton = () => ({
-    components: { ZRadio },
-    data() {
-        return {
-            modelValue: "female"
-        }
-    },
-    template: `<div class='padded-container'>
+  components: { ZRadio },
+  data() {
+    return {
+      modelValue: 'female'
+    }
+  },
+  template: `<div class='padded-container'>
             <div class="input-container">
                 <z-radio value="female" v-model="modelValue" label="Female"></z-radio>
                 <z-radio value="male" v-model="modelValue" label="Male"></z-radio>
@@ -36,13 +35,13 @@ export const CheckedRadioButton = () => ({
 })
 
 export const DisabledRadioButton = () => ({
-    components: { ZRadio },
-    data() {
-        return {
-            modelValue: "female"
-        }
-    },
-    template: `<div class='padded-container'>
+  components: { ZRadio },
+  data() {
+    return {
+      modelValue: 'female'
+    }
+  },
+  template: `<div class='padded-container'>
             <div class="input-container">
                 <z-radio value="female" v-model="modelValue" label="Female"></z-radio>
                 <z-radio value="male" v-model="modelValue" label="Male" :disabled="true"></z-radio>
@@ -51,13 +50,13 @@ export const DisabledRadioButton = () => ({
 })
 
 export const DisabledCheckedRadioButton = () => ({
-    components: { ZRadio },
-    data() {
-        return {
-            modelValue: "female"
-        }
-    },
-    template: `<div class='padded-container'>
+  components: { ZRadio },
+  data() {
+    return {
+      modelValue: 'female'
+    }
+  },
+  template: `<div class='padded-container'>
             <div class="input-container">
                 <z-radio value="female" v-model="modelValue" label="Female"></z-radio>
                 <z-radio value="male" v-model="modelValue" label="Male"></z-radio>
