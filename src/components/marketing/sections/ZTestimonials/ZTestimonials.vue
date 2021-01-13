@@ -13,7 +13,7 @@
         >
           <img
             :class="[`${index === currentIndex ? '' : INACTIVE_TESTIMONIAL}`]"
-            class="object-contain"
+            class="object-contain hover:opacity-100"
             :src="testimonial.image.bnw"
             :alt="testimonial.customer"
           />
