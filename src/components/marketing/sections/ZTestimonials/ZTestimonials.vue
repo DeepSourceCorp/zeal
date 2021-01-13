@@ -1,14 +1,16 @@
 <template>
-  <section class="flex">
+  <section class="lg:flex">
     <div class="flex flex-col justify-around relative">
       <span class="text-vanilla-100 font-bold text-4xl leading-12 mr-20">
         <slot name="heading"></slot>
       </span>
-      <span class="grid grid-cols-3 mt-6 mb-4">
+      <span
+        class="z-testimonials__logos flex lg:grid grid-cols-3 mt-6 mb-4 overflow-x-auto flex-nowrap"
+      >
         <span
           v-for="(testimonial, index) in testimonials"
           :key="testimonial.customer"
-          class="flex items-center mt-12 cursor-pointer"
+          class="z-testimonials__logo flex-shrink-0 flex items-center mt-12 cursor-pointer mr-8"
           @click="setCurrentIndexTo(index)"
         >
           <img
@@ -20,7 +22,7 @@
         </span>
       </span>
     </div>
-    <div class="w-4/6">
+    <div class="lg:w-4/6">
       <z-testimonial
         v-for="(testimonial, index) in testimonials"
         :key="testimonial.customer"
@@ -65,7 +67,7 @@ export default Vue.extend({
     testimonials: {
       required: true,
       type: Array,
-      validator: (arr) => arr.length <= MAX_TESTIMONIALS
+      validator: arr => arr.length <= MAX_TESTIMONIALS
     },
     timing: {
       default: DEFAULT_INTERVAL,
@@ -99,10 +101,27 @@ export default Vue.extend({
       if (this.currentIndex >= this.testimonials.length) {
         this.currentIndex = 0
       }
+      this.scrollElementIntoView()
+    },
+    scrollElementIntoView() {
+      const container = document.getElementsByClassName('z-testimonials__logos')[0] as HTMLElement
+      const elem = document.getElementsByClassName('z-testimonials__logo')[
+        this.currentIndex
+      ] as HTMLElement
+      container.scrollTo({ left: elem.offsetLeft, behavior: 'smooth' })
     },
     setCurrentIndexTo(index: number) {
       this.currentIndex = index
       this.resetInterval()
+    },
+    isInViewport(element: Element) {
+      const rect = element.getBoundingClientRect()
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      )
     }
   }
 })
