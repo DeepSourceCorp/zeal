@@ -41,7 +41,7 @@ const testimonials = [
     author: 'Piero Molino, Senior Technology Officer',
     image: 'https://i.imgur.com/ifq7pvm.png',
     url: ''
-  },
+  }
 ]
 
 export default {

@@ -1,5 +1,7 @@
 <template>
-  <div class="rounded-xl overflow-hidden transition-all shadow flex flex-col justify-around h-full px-10 py-8">
+  <div
+    class="rounded-xl overflow-hidden transition-all shadow flex flex-col justify-around h-full px-10 py-8"
+  >
     <div class="flex-1" v-if="$slots.image">
       <slot name="image"> </slot>
     </div>
