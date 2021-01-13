@@ -35,7 +35,7 @@ const testimonials = [
     url: ''
   },
   {
-    customer: 'Slack',
+    customer: 'Slack1',
     text:
       'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
     author: 'Piero Molino, Senior Technology Officer',
@@ -43,7 +43,7 @@ const testimonials = [
     url: ''
   },
   {
-    customer: 'Slack',
+    customer: 'Slack2',
     text:
       'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
     author: 'Piero Molino, Senior Technology Officer',

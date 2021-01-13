@@ -68,7 +68,8 @@ export default Vue.extend({
   props: {
     testimonials: {
       required: true,
-      type: Array
+      type: Array,
+      validator: arr => arr.length <= 6
     },
     timing: {
       default: 5000,
