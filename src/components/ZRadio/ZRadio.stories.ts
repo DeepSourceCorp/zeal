@@ -10,13 +10,13 @@ export default {
 }
 
 export const DefaultRadio = () => ({
-    components: { ZRadio },
-    data() {
-        return {
-            modelValue: ''
-        }
-    },
-    template: `<div class='padded-container'>
+  components: { ZRadio },
+  data() {
+    return {
+      modelValue: ''
+    }
+  },
+  template: `<div class='padded-container'>
             <div class="input-container">
                 <z-radio value="female" v-model="modelValue" label="Female"></z-radio>
                 <z-radio value="male" v-model="modelValue" label="Male"></z-radio>
