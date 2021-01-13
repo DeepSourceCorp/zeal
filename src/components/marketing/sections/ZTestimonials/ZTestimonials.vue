@@ -28,7 +28,11 @@
         :class="[`${index === currentIndex ? ACTIVE_CLASSES : INACTIVE_CLASSES}`]"
       >
         <template slot="image">
-          <img class="object-contain h-12" :src="testimonial.image.color" :alt="testimonial.customer" />
+          <img
+            class="object-contain h-12"
+            :src="testimonial.image.color"
+            :alt="testimonial.customer"
+          />
         </template>
         <template slot="body">
           {{ testimonial.text }}
