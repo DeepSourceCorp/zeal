@@ -2,18 +2,18 @@
   <section class="lg:flex">
     <div class="flex flex-col justify-around relative">
       <span
-        class="text-vanilla-100 font-bold text-3xl lg:text-4xl leading-11 lg:leading-12 md:mr-20"
+        class="text-vanilla-100 font-bold text-3xl md:text-4xl leading-11 lg:leading-12 md:mr-20"
       >
         <slot name="heading"></slot>
       </span>
       <span
-        class="z-testimonials__logos flex lg:grid grid-cols-3 mt-6 mb-4 overflow-x-auto flex-nowrap"
+        class="z-testimonials__logos flex lg:grid grid-cols-3 mt-6 mb-2 overflow-x-hidden flex-nowrap"
       >
         <span
           v-for="(testimonial, index) in testimonials"
           :key="testimonial.customer"
           class="z-testimonials__logo flex-shrink-0 flex items-center mt-8 lg:mt-12 cursor-pointer mr-8 w-24 md:w-auto"
-          @click="setCurrentIndexTo(index)"
+          @click="showTestimonial(index)"
         >
           <img
             :class="[`${index === currentIndex ? '' : INACTIVE_TESTIMONIAL}`]"
@@ -47,18 +47,19 @@
       </z-testimonial>
 
       <ul class="flex mx-auto mt-4 justify-between lg:hidden">
-        <z-icon color="slate" icon="arrow-left" />
+        <span @click="showPreviousTestimonial()"><z-icon color="slate" icon="arrow-left"/></span>
         <span class="flex items-center">
           <li
             v-for="(testimonial, index) in testimonials"
             :key="index"
-            class="h-2 w-2 cursor-pointer rounded-full mx-1"
+            @click.stop="showTestimonial(index)"
+            class="h-2 w-2 cursor-pointer rounded-full mx-2"
             :class="[`${index == currentIndex ? 'bg-juniper' : 'bg-ink-100'}`]"
           >
             <button />
           </li>
         </span>
-        <z-icon color="slate" icon="arrow-right" />
+        <span @click="showNextTestimonial()"><z-icon color="slate" icon="arrow-right"/></span>
       </ul>
     </div>
   </section>
@@ -86,7 +87,7 @@ export default Vue.extend({
     testimonials: {
       required: true,
       type: Array,
-      validator: (arr) => arr.length <= MAX_TESTIMONIALS
+      validator: arr => arr.length <= MAX_TESTIMONIALS
     },
     timing: {
       default: DEFAULT_INTERVAL,
@@ -120,27 +121,26 @@ export default Vue.extend({
       if (this.currentIndex >= this.testimonials.length) {
         this.currentIndex = 0
       }
-      this.scrollElementIntoView()
+      this.scrollActiveTestimonialIntoView()
     },
-    scrollElementIntoView() {
+    showPreviousTestimonial() {
+      this.currentIndex--
+      if (this.currentIndex < 0) {
+        this.currentIndex = this.testimonials.length - 1
+      }
+      this.scrollActiveTestimonialIntoView()
+    },
+    showTestimonial(index: number) {
+      this.currentIndex = index
+      this.resetInterval()
+      this.scrollActiveTestimonialIntoView()
+    },
+    scrollActiveTestimonialIntoView() {
       const container = document.getElementsByClassName('z-testimonials__logos')[0] as HTMLElement
       const elem = document.getElementsByClassName('z-testimonials__logo')[
         this.currentIndex
       ] as HTMLElement
       container.scrollTo({ left: elem.offsetLeft, behavior: 'smooth' })
-    },
-    setCurrentIndexTo(index: number) {
-      this.currentIndex = index
-      this.resetInterval()
-    },
-    isInViewport(element: Element) {
-      const rect = element.getBoundingClientRect()
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      )
     }
   }
 })
