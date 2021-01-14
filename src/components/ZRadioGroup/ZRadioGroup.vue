@@ -28,9 +28,9 @@ export default Vue.extend({
     event: 'change'
   },
   watch: {
-    value: function(newValue, oldValue) {
+    value: function (newValue, oldValue) {
       this.$emit('change', newValue)
-    } 
+    }
   }
 })
 </script>
