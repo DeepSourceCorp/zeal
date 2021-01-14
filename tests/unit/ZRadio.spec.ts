@@ -18,7 +18,7 @@ const defaultRadio = {
     return {
       modelValue: ''
     }
-  },
+  }
 }
 
 const CheckedRadio = {
@@ -36,7 +36,7 @@ const CheckedRadio = {
     return {
       modelValue: 'female'
     }
-  },
+  }
 }
 
 const DisabledRadioButton = {
