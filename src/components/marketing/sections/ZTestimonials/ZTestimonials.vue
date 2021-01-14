@@ -23,13 +23,11 @@
           />
         </span>
       </span>
-      <span class="flex justify-between -mt-16 w-full-screen lg:w-full-screen-none lg:hidden pointer-events-none">
-        <span
-          class="w-40 bg-gradient-to-r from-ink-400 via-transparent to-transparent h-16"
-        ></span>
-        <span
-          class="w-40 bg-gradient-to-r from-transparent via-transparent to-ink-400 h-16"
-        ></span>
+      <span
+        class="flex justify-between -mt-16 w-full-screen lg:w-full-screen-none lg:hidden pointer-events-none"
+      >
+        <span class="w-40 bg-gradient-to-r from-ink-400 via-transparent to-transparent h-16"></span>
+        <span class="w-40 bg-gradient-to-r from-transparent via-transparent to-ink-400 h-16"></span>
       </span>
     </div>
     <div class="lg:w-4/6">
