@@ -23,12 +23,12 @@
           />
         </span>
       </span>
-      <span class="grid grid-cols-8 -mt-16 w-full-screen lg:w-full-screen-none lg:hidden">
+      <span class="flex justify-between -mt-16 w-full-screen lg:w-full-screen-none lg:hidden pointer-events-none">
         <span
-          class="col-span-1 bg-gradient-to-r from-ink-400 via-transparent to-transparent h-16"
+          class="w-40 bg-gradient-to-r from-ink-400 via-transparent to-transparent h-16"
         ></span>
         <span
-          class="col-span-7 bg-gradient-to-r from-transparent via-transparent to-ink-400 h-16"
+          class="w-40 bg-gradient-to-r from-transparent via-transparent to-ink-400 h-16"
         ></span>
       </span>
     </div>
