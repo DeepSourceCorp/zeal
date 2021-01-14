@@ -142,6 +142,7 @@ export default Vue.extend({
       if (this.currentIndex >= this.testimonials.length) {
         this.currentIndex = 0
       }
+      this.resetInterval()
       this.scrollActiveTestimonialLogoIntoView()
     },
     showPreviousTestimonial() {
@@ -149,6 +150,7 @@ export default Vue.extend({
       if (this.currentIndex < 0) {
         this.currentIndex = this.testimonials.length - 1
       }
+      this.resetInterval()
       this.scrollActiveTestimonialLogoIntoView()
     },
     scrollActiveTestimonialLogoIntoView() {
