@@ -30,7 +30,7 @@ export default Vue.extend({
   watch: {
     value: function(newValue) {
       this.$emit('change', newValue)
-    } 
+    }
   }
 })
 </script>
