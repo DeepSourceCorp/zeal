@@ -7,7 +7,7 @@
         <slot name="heading"></slot>
       </span>
       <span
-        class="z-testimonials__logos flex lg:grid grid-cols-3 px-8 sm:px-0 mt-6 mb-2 overflow-x-hidden flex-nowrap w-full-screen sm:w-full-screen-none"
+        class="z-testimonials__logos flex lg:grid grid-cols-3 px-8 sm:px-0 mt-6 mb-2 overflow-x-hidden flex-nowrap w-full-screen lg:w-full-screen-none"
       >
         <span
           v-for="(testimonial, index) in testimonials"
@@ -22,6 +22,10 @@
             :alt="testimonial.customer"
           />
         </span>
+      </span>
+      <span class="grid grid-cols-8 -mt-16 w-full-screen lg:w-full-screen-none lg:hidden">
+        <span class="col-span-1 bg-gradient-to-r from-ink-400 via-transparent to-transparent h-16"></span>
+        <span class="col-span-7 bg-gradient-to-r from-transparent via-transparent to-ink-400 h-16"></span>
       </span>
     </div>
     <div class="lg:w-4/6">
@@ -47,7 +51,7 @@
       </z-testimonial>
 
       <ul class="flex mx-auto mt-4 justify-between lg:hidden">
-        <span @click="showPreviousTestimonial()"><z-icon color="slate" icon="arrow-left" /></span>
+        <span class="cursor-pointer" @click="showPreviousTestimonial()"><z-icon color="slate" icon="arrow-left" /></span>
         <span class="flex items-center">
           <li
             v-for="(testimonial, index) in testimonials"
@@ -59,7 +63,7 @@
             <button />
           </li>
         </span>
-        <span @click="showNextTestimonial()"><z-icon color="slate" icon="arrow-right" /></span>
+        <span class="cursor-pointer" @click="showNextTestimonial()"><z-icon color="slate" icon="arrow-right" /></span>
       </ul>
     </div>
   </section>
