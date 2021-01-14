@@ -44,10 +44,6 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'ZRadio',
-  //   model: {
-  //     prop: 'modelValue',
-  //     event: 'change'
-  //   },
   props: {
     modelValue: {
       type: String,
@@ -81,8 +77,7 @@ export default Vue.extend({
   methods: {
     updateInput(): void {
       const $parent: any = this.$parent
-      debugger
-      $parent.updateInput(this.value)
+      $parent.value = this.value
     }
   }
 })

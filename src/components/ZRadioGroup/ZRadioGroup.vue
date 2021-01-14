@@ -1,5 +1,5 @@
 <template>
-  <div class="z-radio-group" role="radiogroup">
+  <div class="z-radio-group flex flex-col gap-2" role="radiogroup">
     <slot></slot>
   </div>
 </template>
@@ -18,14 +18,19 @@ export default Vue.extend({
       default: false
     }
   },
+  data() {
+    return {
+      value: ''
+    }
+  },
   model: {
     prop: 'modelValue',
     event: 'change'
   },
-  methods: {
-    updateInput(value: string): void {
-      this.$emit('change', value)
-    }
+  watch: {
+    value: function(newValue, oldValue) {
+      this.$emit('change', newValue)
+    } 
   }
 })
 </script>
