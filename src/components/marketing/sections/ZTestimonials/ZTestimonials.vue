@@ -16,7 +16,7 @@
           @click="showTestimonial(index)"
         >
           <img
-            :class="[`${index === currentIndex ? '' : INACTIVE_TESTIMONIAL}`]"
+            :class="[`${index === currentIndex ? LOGO.ACTIVE : LOGO.INACTIVE}`]"
             class="object-contain hover:opacity-100"
             :src="testimonial.image.bnw"
             :alt="testimonial.customer"
@@ -29,7 +29,7 @@
         v-for="(testimonial, index) in testimonials"
         :key="testimonial.customer"
         class="bg-ink-300 my-4 lg:my-0"
-        :class="[`${index === currentIndex ? VISIBLE_CARD : INVISIBLE_CARD}`]"
+        :class="[`${index === currentIndex ? CARD.ACTIVE : CARD.INACTIVE}`]"
       >
         <template slot="image">
           <img
@@ -47,7 +47,7 @@
       </z-testimonial>
 
       <ul class="flex mx-auto mt-4 justify-between lg:hidden">
-        <span @click="showPreviousTestimonial()"><z-icon color="slate" icon="arrow-left" /></span>
+        <span @click="showPreviousTestimonial()"><z-icon color="slate" icon="arrow-left"/></span>
         <span class="flex items-center">
           <li
             v-for="(testimonial, index) in testimonials"
@@ -59,7 +59,7 @@
             <button />
           </li>
         </span>
-        <span @click="showNextTestimonial()"><z-icon color="slate" icon="arrow-right" /></span>
+        <span @click="showNextTestimonial()"><z-icon color="slate" icon="arrow-right"/></span>
       </ul>
     </div>
   </section>
@@ -70,9 +70,14 @@ import Vue from 'vue'
 import ZTestimonial from '@/components/marketing/ZTestimonial'
 import ZIcon from '@/components/ZIcon'
 
-const VISIBLE_CARD = 'block animate-fadeIn'
-const INVISIBLE_CARD = 'hidden'
-const INACTIVE_TESTIMONIAL = 'opacity-60'
+const CARD = {
+  ACTIVE: 'block animate-fadeIn',
+  INACTIVE: 'hidden'
+}
+const LOGO = {
+  ACTIVE: '',
+  INACTIVE: 'opacity-60'
+}
 
 const MAX_TESTIMONIALS = 6
 const DEFAULT_INTERVAL = 5000
@@ -98,9 +103,8 @@ export default Vue.extend({
     return {
       currentIndex: 0,
       interval: 0,
-      VISIBLE_CARD,
-      INVISIBLE_CARD,
-      INACTIVE_TESTIMONIAL
+      CARD,
+      LOGO
     }
   },
   mounted() {
@@ -116,31 +120,31 @@ export default Vue.extend({
       clearInterval(this.interval)
       this.setTestimonialInterval()
     },
+    showTestimonial(index: number) {
+      this.currentIndex = index
+      this.resetInterval()
+      this.scrollActiveTestimonialLogoIntoView()
+    },
     showNextTestimonial() {
       this.currentIndex++
       if (this.currentIndex >= this.testimonials.length) {
         this.currentIndex = 0
       }
-      this.scrollActiveTestimonialIntoView()
+      this.scrollActiveTestimonialLogoIntoView()
     },
     showPreviousTestimonial() {
       this.currentIndex--
       if (this.currentIndex < 0) {
         this.currentIndex = this.testimonials.length - 1
       }
-      this.scrollActiveTestimonialIntoView()
+      this.scrollActiveTestimonialLogoIntoView()
     },
-    showTestimonial(index: number) {
-      this.currentIndex = index
-      this.resetInterval()
-      this.scrollActiveTestimonialIntoView()
-    },
-    scrollActiveTestimonialIntoView() {
-      const container = document.getElementsByClassName('z-testimonials__logos')[0] as HTMLElement
-      const elem = document.getElementsByClassName('z-testimonials__logo')[
+    scrollActiveTestimonialLogoIntoView() {
+      const logos = document.getElementsByClassName('z-testimonials__logos')[0] as HTMLElement
+      const logo = document.getElementsByClassName('z-testimonials__logo')[
         this.currentIndex
       ] as HTMLElement
-      container.scrollTo({ left: elem.offsetLeft - 30, behavior: 'smooth' })
+      logos.scrollTo({ left: logo.offsetLeft - 30, behavior: 'smooth' })
     }
   }
 })
