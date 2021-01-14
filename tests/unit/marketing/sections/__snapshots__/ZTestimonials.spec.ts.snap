@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testimonials section renders six testimonial logos 1`] = `
+<section class="lg:flex">
+  <div class="flex flex-col justify-around relative"><span class="text-vanilla-100 font-bold text-3xl md:text-4xl leading-11 lg:leading-12 md:mr-20"></span> <span class="z-testimonials__logos flex lg:grid grid-cols-3 px-8 sm:px-0 mt-6 mb-2 overflow-x-hidden flex-nowrap w-full-screen sm:w-full-screen-none"><span class="z-testimonials__logo flex-shrink-0 flex items-center mt-8 lg:mt-12 cursor-pointer mr-8 w-24 md:w-auto"><img src="https://i.imgur.com/ISsHpNY.png" alt="Dgraph" class="object-contain hover:opacity-100"></span><span class="z-testimonials__logo flex-shrink-0 flex items-center mt-8 lg:mt-12 cursor-pointer mr-8 w-24 md:w-auto"><img src="https://i.imgur.com/oqlV3mB.png" alt="Intel" class="object-contain hover:opacity-100 opacity-60"></span><span class="z-testimonials__logo flex-shrink-0 flex items-center mt-8 lg:mt-12 cursor-pointer mr-8 w-24 md:w-auto"><img src="https://i.imgur.com/ISsHpNY.png" alt="Qubole" class="object-contain hover:opacity-100 opacity-60"></span><span class="z-testimonials__logo flex-shrink-0 flex items-center mt-8 lg:mt-12 cursor-pointer mr-8 w-24 md:w-auto"><img src="https://i.imgur.com/oqlV3mB.png" alt="Okteto" class="object-contain hover:opacity-100 opacity-60"></span><span class="z-testimonials__logo flex-shrink-0 flex items-center mt-8 lg:mt-12 cursor-pointer mr-8 w-24 md:w-auto"><img src="https://i.imgur.com/ifq7pvm.png" alt="Slack1" class="object-contain hover:opacity-100 opacity-60"></span><span class="z-testimonials__logo flex-shrink-0 flex items-center mt-8 lg:mt-12 cursor-pointer mr-8 w-24 md:w-auto"><img src="https://i.imgur.com/ifq7pvm.png" alt="Slack2" class="object-contain hover:opacity-100 opacity-60"></span></span></div>
+  <div class="lg:w-4/6">
+    <div class="rounded-xl overflow-hidden transition-all shadow flex flex-col justify-around h-full px-5 py-4 md:px-10 md:py-8 bg-ink-300 my-4 lg:my-0 block animate-fadeIn">
+      <div class="flex-1"><img src="https://i.imgur.com/ISsHpNY.png" alt="Dgraph" class="object-contain h-12 hidden lg:block mb-6"></div> <span class="flex-1"><div class="text-vanilla-100 text-md md:text-xl mb-6 pr-2">
+        DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.
+      </div> <div class="text-vanilla-400 text-md md:text-lg">
+        Piero Molino, Senior Technology Officer
+      </div></span>
+    </div>
+    <div class="rounded-xl overflow-hidden transition-all shadow flex flex-col justify-around h-full px-5 py-4 md:px-10 md:py-8 bg-ink-300 my-4 lg:my-0 hidden">
+      <div class="flex-1"><img src="https://i.imgur.com/oqlV3mB.png" alt="Intel" class="object-contain h-12 hidden lg:block mb-6"></div> <span class="flex-1"><div class="text-vanilla-100 text-md md:text-xl mb-6 pr-2">
+        DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.
+      </div> <div class="text-vanilla-400 text-md md:text-lg">
+        Piero Molino, Senior Technology Officer
+      </div></span>
+    </div>
+    <div class="rounded-xl overflow-hidden transition-all shadow flex flex-col justify-around h-full px-5 py-4 md:px-10 md:py-8 bg-ink-300 my-4 lg:my-0 hidden">
+      <div class="flex-1"><img src="https://i.imgur.com/ISsHpNY.png" alt="Qubole" class="object-contain h-12 hidden lg:block mb-6"></div> <span class="flex-1"><div class="text-vanilla-100 text-md md:text-xl mb-6 pr-2">
+        DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.
+      </div> <div class="text-vanilla-400 text-md md:text-lg">
+        Piero Molino, Senior Technology Officer
+      </div></span>
+    </div>
+    <div class="rounded-xl overflow-hidden transition-all shadow flex flex-col justify-around h-full px-5 py-4 md:px-10 md:py-8 bg-ink-300 my-4 lg:my-0 hidden">
+      <div class="flex-1"><img src="https://i.imgur.com/oqlV3mB.png" alt="Okteto" class="object-contain h-12 hidden lg:block mb-6"></div> <span class="flex-1"><div class="text-vanilla-100 text-md md:text-xl mb-6 pr-2">
+        DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.
+      </div> <div class="text-vanilla-400 text-md md:text-lg">
+        Piero Molino, Senior Technology Officer
+      </div></span>
+    </div>
+    <div class="rounded-xl overflow-hidden transition-all shadow flex flex-col justify-around h-full px-5 py-4 md:px-10 md:py-8 bg-ink-300 my-4 lg:my-0 hidden">
+      <div class="flex-1"><img src="https://i.imgur.com/ifq7pvm.png" alt="Slack1" class="object-contain h-12 hidden lg:block mb-6"></div> <span class="flex-1"><div class="text-vanilla-100 text-md md:text-xl mb-6 pr-2">
+        DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.
+      </div> <div class="text-vanilla-400 text-md md:text-lg">
+        Piero Molino, Senior Technology Officer
+      </div></span>
+    </div>
+    <div class="rounded-xl overflow-hidden transition-all shadow flex flex-col justify-around h-full px-5 py-4 md:px-10 md:py-8 bg-ink-300 my-4 lg:my-0 hidden">
+      <div class="flex-1"><img src="https://i.imgur.com/ifq7pvm.png" alt="Slack2" class="object-contain h-12 hidden lg:block mb-6"></div> <span class="flex-1"><div class="text-vanilla-100 text-md md:text-xl mb-6 pr-2">
+        DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.
+      </div> <div class="text-vanilla-400 text-md md:text-lg">
+        Piero Molino, Senior Technology Officer
+      </div></span>
+    </div>
+    <ul class="flex mx-auto mt-4 justify-between lg:hidden"><span><svg viewBox="0 0 24 24" fill="none" class="stroke-2 z-icon w-6 h-6 z-icon--arrow-left text-slate"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></span> <span class="flex items-center"><li class="h-2 w-2 cursor-pointer rounded-full mx-2 bg-juniper"><button></button></li><li class="h-2 w-2 cursor-pointer rounded-full mx-2 bg-ink-100"><button></button></li><li class="h-2 w-2 cursor-pointer rounded-full mx-2 bg-ink-100"><button></button></li><li class="h-2 w-2 cursor-pointer rounded-full mx-2 bg-ink-100"><button></button></li><li class="h-2 w-2 cursor-pointer rounded-full mx-2 bg-ink-100"><button></button></li><li class="h-2 w-2 cursor-pointer rounded-full mx-2 bg-ink-100"><button></button></li></span> <span><svg viewBox="0 0 24 24" fill="none" class="stroke-2 z-icon w-6 h-6 z-icon--arrow-right text-slate"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></ul>
+  </div>
+</section>
+`;
+
+exports[`Testimonials section renders testimonials section when the component is mounted 1`] = `
+<section class="lg:flex">
+  <div class="flex flex-col justify-around relative"><span class="text-vanilla-100 font-bold text-3xl md:text-4xl leading-11 lg:leading-12 md:mr-20"></span> <span class="z-testimonials__logos flex lg:grid grid-cols-3 px-8 sm:px-0 mt-6 mb-2 overflow-x-hidden flex-nowrap w-full-screen sm:w-full-screen-none"><span class="z-testimonials__logo flex-shrink-0 flex items-center mt-8 lg:mt-12 cursor-pointer mr-8 w-24 md:w-auto"><img src="https://i.imgur.com/ISsHpNY.png" alt="Dgraph" class="object-contain hover:opacity-100"></span><span class="z-testimonials__logo flex-shrink-0 flex items-center mt-8 lg:mt-12 cursor-pointer mr-8 w-24 md:w-auto"><img src="https://i.imgur.com/oqlV3mB.png" alt="Intel" class="object-contain hover:opacity-100 opacity-60"></span><span class="z-testimonials__logo flex-shrink-0 flex items-center mt-8 lg:mt-12 cursor-pointer mr-8 w-24 md:w-auto"><img src="https://i.imgur.com/ISsHpNY.png" alt="Qubole" class="object-contain hover:opacity-100 opacity-60"></span><span class="z-testimonials__logo flex-shrink-0 flex items-center mt-8 lg:mt-12 cursor-pointer mr-8 w-24 md:w-auto"><img src="https://i.imgur.com/oqlV3mB.png" alt="Okteto" class="object-contain hover:opacity-100 opacity-60"></span><span class="z-testimonials__logo flex-shrink-0 flex items-center mt-8 lg:mt-12 cursor-pointer mr-8 w-24 md:w-auto"><img src="https://i.imgur.com/ifq7pvm.png" alt="Slack1" class="object-contain hover:opacity-100 opacity-60"></span><span class="z-testimonials__logo flex-shrink-0 flex items-center mt-8 lg:mt-12 cursor-pointer mr-8 w-24 md:w-auto"><img src="https://i.imgur.com/ifq7pvm.png" alt="Slack2" class="object-contain hover:opacity-100 opacity-60"></span></span></div>
+  <div class="lg:w-4/6">
+    <div class="rounded-xl overflow-hidden transition-all shadow flex flex-col justify-around h-full px-5 py-4 md:px-10 md:py-8 bg-ink-300 my-4 lg:my-0 block animate-fadeIn">
+      <div class="flex-1"><img src="https://i.imgur.com/ISsHpNY.png" alt="Dgraph" class="object-contain h-12 hidden lg:block mb-6"></div> <span class="flex-1"><div class="text-vanilla-100 text-md md:text-xl mb-6 pr-2">
+        DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.
+      </div> <div class="text-vanilla-400 text-md md:text-lg">
+        Piero Molino, Senior Technology Officer
+      </div></span>
+    </div>
+    <div class="rounded-xl overflow-hidden transition-all shadow flex flex-col justify-around h-full px-5 py-4 md:px-10 md:py-8 bg-ink-300 my-4 lg:my-0 hidden">
+      <div class="flex-1"><img src="https://i.imgur.com/oqlV3mB.png" alt="Intel" class="object-contain h-12 hidden lg:block mb-6"></div> <span class="flex-1"><div class="text-vanilla-100 text-md md:text-xl mb-6 pr-2">
+        DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.
+      </div> <div class="text-vanilla-400 text-md md:text-lg">
+        Piero Molino, Senior Technology Officer
+      </div></span>
+    </div>
+    <div class="rounded-xl overflow-hidden transition-all shadow flex flex-col justify-around h-full px-5 py-4 md:px-10 md:py-8 bg-ink-300 my-4 lg:my-0 hidden">
+      <div class="flex-1"><img src="https://i.imgur.com/ISsHpNY.png" alt="Qubole" class="object-contain h-12 hidden lg:block mb-6"></div> <span class="flex-1"><div class="text-vanilla-100 text-md md:text-xl mb-6 pr-2">
+        DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.
+      </div> <div class="text-vanilla-400 text-md md:text-lg">
+        Piero Molino, Senior Technology Officer
+      </div></span>
+    </div>
+    <div class="rounded-xl overflow-hidden transition-all shadow flex flex-col justify-around h-full px-5 py-4 md:px-10 md:py-8 bg-ink-300 my-4 lg:my-0 hidden">
+      <div class="flex-1"><img src="https://i.imgur.com/oqlV3mB.png" alt="Okteto" class="object-contain h-12 hidden lg:block mb-6"></div> <span class="flex-1"><div class="text-vanilla-100 text-md md:text-xl mb-6 pr-2">
+        DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.
+      </div> <div class="text-vanilla-400 text-md md:text-lg">
+        Piero Molino, Senior Technology Officer
+      </div></span>
+    </div>
+    <div class="rounded-xl overflow-hidden transition-all shadow flex flex-col justify-around h-full px-5 py-4 md:px-10 md:py-8 bg-ink-300 my-4 lg:my-0 hidden">
+      <div class="flex-1"><img src="https://i.imgur.com/ifq7pvm.png" alt="Slack1" class="object-contain h-12 hidden lg:block mb-6"></div> <span class="flex-1"><div class="text-vanilla-100 text-md md:text-xl mb-6 pr-2">
+        DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.
+      </div> <div class="text-vanilla-400 text-md md:text-lg">
+        Piero Molino, Senior Technology Officer
+      </div></span>
+    </div>
+    <div class="rounded-xl overflow-hidden transition-all shadow flex flex-col justify-around h-full px-5 py-4 md:px-10 md:py-8 bg-ink-300 my-4 lg:my-0 hidden">
+      <div class="flex-1"><img src="https://i.imgur.com/ifq7pvm.png" alt="Slack2" class="object-contain h-12 hidden lg:block mb-6"></div> <span class="flex-1"><div class="text-vanilla-100 text-md md:text-xl mb-6 pr-2">
+        DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.
+      </div> <div class="text-vanilla-400 text-md md:text-lg">
+        Piero Molino, Senior Technology Officer
+      </div></span>
+    </div>
+    <ul class="flex mx-auto mt-4 justify-between lg:hidden"><span><svg viewBox="0 0 24 24" fill="none" class="stroke-2 z-icon w-6 h-6 z-icon--arrow-left text-slate"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></span> <span class="flex items-center"><li class="h-2 w-2 cursor-pointer rounded-full mx-2 bg-juniper"><button></button></li><li class="h-2 w-2 cursor-pointer rounded-full mx-2 bg-ink-100"><button></button></li><li class="h-2 w-2 cursor-pointer rounded-full mx-2 bg-ink-100"><button></button></li><li class="h-2 w-2 cursor-pointer rounded-full mx-2 bg-ink-100"><button></button></li><li class="h-2 w-2 cursor-pointer rounded-full mx-2 bg-ink-100"><button></button></li><li class="h-2 w-2 cursor-pointer rounded-full mx-2 bg-ink-100"><button></button></li></span> <span><svg viewBox="0 0 24 24" fill="none" class="stroke-2 z-icon w-6 h-6 z-icon--arrow-right text-slate"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></ul>
+  </div>
+</section>
+`;
