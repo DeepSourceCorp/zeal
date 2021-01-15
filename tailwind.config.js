@@ -60,6 +60,10 @@ module.exports = {
       splash: ['98.66deg', '#4568dc 4.42%', '#324daa 96.6%'],
       skeleton: ['104.58deg', '#21242B 0%', `${theme('colors.ink.200')} 40.08%`, '#21242B 60.32%']
     }),
+    backdropFilter: theme => ({
+      none: 'none',
+      blur: 'blur(20px)'
+    }),
     spacing: {
       px: '1px',
       0: '0',
@@ -947,7 +951,8 @@ module.exports = {
     transitionTimingFunction: ['responsive'],
     transitionDuration: ['responsive'],
     transitionDelay: ['responsive'],
-    animation: ['responsive']
+    animation: ['responsive'],
+    backdropFilter: ['responsive']
   },
   corePlugins: {},
   plugins: [
@@ -1047,6 +1052,19 @@ module.exports = {
       }
 
       addUtilities(utilities, ['responsive'])
+    }),
+    plugin(({ theme, variants, e, addUtilities }) => {
+      const backdropFilterUtilities = Object.keys(theme('backdropFilter')).map(type => {
+        const backdropFilter = theme('backdropFilter')[type]
+        return {
+          [`.backdrop-${e(type)}`]: {
+            backdropFilter: backdropFilter
+          }
+        }
+      })
+      console.log(backdropFilterUtilities)
+
+      addUtilities(backdropFilterUtilities, variants('backdropFilter'))
     })
   ]
 }
