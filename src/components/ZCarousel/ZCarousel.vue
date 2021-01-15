@@ -18,7 +18,7 @@
       </button>
     </div>
     <ul
-      class="z-indicators flex absolute mt-4 -ml-2 w-full"
+      class="z-indicators flex absolute mt-4 w-full gap-x-1 md:gap-x-1.5"
       v-show="showIndicators"
       :class="[getIndicatorPositionClass]"
     >
@@ -26,7 +26,7 @@
         v-for="(slide, index) in slides"
         :key="index"
         @click.stop="showSlide(index)"
-        class="h-2 w-2 cursor-pointer rounded-full ml-3"
+        class="h-2 w-2 cursor-pointer rounded-full"
         :class="['z-indicator', `${index == currentIndex ? 'bg-juniper' : 'bg-ink-100'}`]"
       >
         <button class="z-indicator__button" />
