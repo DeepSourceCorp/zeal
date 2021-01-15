@@ -34,3 +34,8 @@
 .input-container {
   @apply w-4/12;
 }
+
+.select-container {
+  width: 300px;
+  height: 40px;
+}

@@ -14,6 +14,12 @@ import ZStep from './components/ZStep/index'
 import ZContentGuide from './components/marketing/layouts/ZContentGuide/index'
 import ZPageLabel from './components/marketing/ZPageLabel/index'
 import ZExpandable from './components/ZExpandable/index'
+import ZInput from './components/ZInput/index'
+import ZRadio from './components/ZRadio/index'
+import ZRadioGroup from './components/ZRadioGroup/index'
+import ZSelect from './components/ZSelect/index'
+import ZOption from './components/ZOption/index'
+
 
 const components = [
   ZButton,
@@ -25,9 +31,14 @@ const components = [
   ZCard,
   ZPageLabel,
   ZCheckbox,
-  ZStepper,
+  ZStepper, 
   ZStep,
-  ZExpandable
+  ZExpandable,
+  ZRadio,
+  ZRadioGroup,
+  ZInput,
+  ZSelect,
+  ZOption
 ]
 
 const install = (Vue: any) => {
@@ -50,7 +61,12 @@ export default {
   ZCard,
   ZStepper,
   ZStep,
-  ZExpandable
+  ZExpandable,
+  ZRadio,
+  ZRadioGroup,
+  ZInput,
+  ZSelect,
+  ZOption
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -65,3 +81,10 @@ export { default as ZStep } from './components/ZStep/index'
 export { default as ZContentGuide } from './components/marketing/layouts/ZContentGuide/index'
 export { default as ZPageLabel } from './components/marketing/ZPageLabel/index'
 export { default as ZExpandable } from './components/ZExpandable/index'
+export { default as ZInput } from './components/ZInput/index'
+export { default as ZRadio } from './components/ZRadio/index'
+export { default as ZRadioGroup } from './components/ZRadioGroup/index'
+export { default as ZSelect } from './components/ZSelect/index'
+export { default as ZOption } from './components/ZOption/index'
+
+
