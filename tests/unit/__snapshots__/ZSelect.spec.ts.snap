@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select Component renders a select component with custom options template 1`] = `
+<div tabindex="0" class="custom-select relative w-full text-left outline-none h-full leading-8" value="">
+  <div class="selected h-full relative bg-ink-400 rounded-sm border border-solid text-vanilla-300 cursor-pointer  border-slate">
+    <div class="flex items-center bg-transparent w-10/12 pl-4 outline-none cursor-pointer h-full text-slate text-xs">Choose a framework</div>
+    <!----> <span class="absolute top-50 right-2 transform -translate-y-1/2"><svg viewBox="0 0 24 24" fill="none" class="stroke-2 transform transition-all duration-300 z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+  </div>
+  <div class="options shadow-black border border-solid border-ink-100 text-vanilla-300 rounded-sm overflow-hidden absolute bg-ink-300 left-0 right-0 z-10 transition-all duration-300 hidden">
+    <div class="z-option p-2 cursor-pointer text-vanilla-300 hover:bg-ink-200 text-xs">
+      <div class="flex items-center"><svg viewBox="0 0 24 24" fill="none" class="stroke-2 -mt-1 mr-2 z-icon w-4 h-4 z-icon--github text-vanilla-400">
+          <g clip-path="url(#clip0)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M14 4.375C8.20245 4.375 3.5 8.99489 3.5 14.6906C3.5 19.2472 6.52761 23.1077 10.6503 24.5C11.1656 24.5633 11.3589 24.2469 11.3589 23.9937C11.3589 23.7406 11.3589 23.1077 11.3589 22.2217C8.46012 22.8546 7.81595 20.8294 7.81595 20.8294C7.36503 19.627 6.65644 19.3105 6.65644 19.3105C5.69018 18.6777 6.72086 18.6777 6.72086 18.6777C7.75153 18.741 8.33129 19.7535 8.33129 19.7535C9.29755 21.3357 10.7791 20.8927 11.3589 20.6395C11.4233 19.9434 11.7454 19.5004 12.0031 19.2472C9.68405 18.9941 7.2362 18.1081 7.2362 14.1211C7.2362 12.9819 7.6227 12.0959 8.33129 11.3365C8.26687 11.1466 7.88037 10.0708 8.46012 8.67846C8.46012 8.67846 9.36196 8.42531 11.3589 9.75432C12.1963 9.50118 13.0982 9.43789 14 9.43789C14.9018 9.43789 15.8037 9.56447 16.6411 9.75432C18.638 8.42531 19.5399 8.67846 19.5399 8.67846C20.1196 10.0708 19.7331 11.1466 19.6687 11.3998C20.3129 12.0959 20.7638 13.0452 20.7638 14.1844C20.7638 18.1714 18.316 18.9941 15.9969 19.2472C16.3834 19.5637 16.7055 20.1965 16.7055 21.1458C16.7055 22.5381 16.7055 23.614 16.7055 23.9937C16.7055 24.2469 16.8988 24.5633 17.4141 24.5C21.6012 23.1077 24.5644 19.2472 24.5644 14.6906C24.5 8.99489 19.7975 4.375 14 4.375Z" fill="white"></path>
+          </g>
+          <defs>
+            <clipPath id="clip0">
+              <rect width="21" height="20.125" fill="white" transform="translate(3.5 4.375)"></rect>
+            </clipPath>
+          </defs>
+        </svg> <span class="flex-1">Option 1</span></div>
+    </div>
+    <div class="z-option p-2 cursor-pointer text-vanilla-300 hover:bg-ink-200 text-xs">
+      <div class="flex items-center"><svg viewBox="0 0 24 24" fill="none" class="stroke-2 -mt-1 mr-2 z-icon w-4 h-4 z-icon--github text-vanilla-400">
+          <g clip-path="url(#clip0)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M14 4.375C8.20245 4.375 3.5 8.99489 3.5 14.6906C3.5 19.2472 6.52761 23.1077 10.6503 24.5C11.1656 24.5633 11.3589 24.2469 11.3589 23.9937C11.3589 23.7406 11.3589 23.1077 11.3589 22.2217C8.46012 22.8546 7.81595 20.8294 7.81595 20.8294C7.36503 19.627 6.65644 19.3105 6.65644 19.3105C5.69018 18.6777 6.72086 18.6777 6.72086 18.6777C7.75153 18.741 8.33129 19.7535 8.33129 19.7535C9.29755 21.3357 10.7791 20.8927 11.3589 20.6395C11.4233 19.9434 11.7454 19.5004 12.0031 19.2472C9.68405 18.9941 7.2362 18.1081 7.2362 14.1211C7.2362 12.9819 7.6227 12.0959 8.33129 11.3365C8.26687 11.1466 7.88037 10.0708 8.46012 8.67846C8.46012 8.67846 9.36196 8.42531 11.3589 9.75432C12.1963 9.50118 13.0982 9.43789 14 9.43789C14.9018 9.43789 15.8037 9.56447 16.6411 9.75432C18.638 8.42531 19.5399 8.67846 19.5399 8.67846C20.1196 10.0708 19.7331 11.1466 19.6687 11.3998C20.3129 12.0959 20.7638 13.0452 20.7638 14.1844C20.7638 18.1714 18.316 18.9941 15.9969 19.2472C16.3834 19.5637 16.7055 20.1965 16.7055 21.1458C16.7055 22.5381 16.7055 23.614 16.7055 23.9937C16.7055 24.2469 16.8988 24.5633 17.4141 24.5C21.6012 23.1077 24.5644 19.2472 24.5644 14.6906C24.5 8.99489 19.7975 4.375 14 4.375Z" fill="white"></path>
+          </g>
+          <defs>
+            <clipPath id="clip0">
+              <rect width="21" height="20.125" fill="white" transform="translate(3.5 4.375)"></rect>
+            </clipPath>
+          </defs>
+        </svg> <span class="flex-1">Option 2</span></div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select Component renders the default select component 1`] = `
+<div tabindex="0" class="custom-select relative w-full text-left outline-none h-full leading-8" value="">
+  <div class="selected h-full relative bg-ink-400 rounded-sm border border-solid text-vanilla-300 cursor-pointer  border-slate">
+    <div class="flex items-center bg-transparent w-10/12 pl-4 outline-none cursor-pointer h-full text-slate text-xs">Select an Option</div>
+    <!----> <span class="absolute top-50 right-2 transform -translate-y-1/2"><svg viewBox="0 0 24 24" fill="none" class="stroke-2 transform transition-all duration-300 z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+  </div>
+  <div class="options shadow-black border border-solid border-ink-100 text-vanilla-300 rounded-sm overflow-hidden absolute bg-ink-300 left-0 right-0 z-10 transition-all duration-300 hidden">
+    <div class="z-option p-2 cursor-pointer text-vanilla-300 hover:bg-ink-200 text-xs">Option 1</div>
+    <div class="z-option p-2 cursor-pointer text-vanilla-300 hover:bg-ink-200 text-xs">Option 2</div>
+  </div>
+</div>
+`;
+
+exports[`Select Component renders the select component with clearables 1`] = `
+<div tabindex="0" class="custom-select relative w-full text-left outline-none h-full leading-8" value="">
+  <div class="selected h-full relative bg-ink-400 rounded-sm border border-solid text-vanilla-300 cursor-pointer  border-slate">
+    <div class="selected-option flex items-center bg-transparent w-10/12 pl-4 outline-none cursor-pointer h-full text-xs">
+      Option 1
+    </div> <span class="absolute right-6 top-50 transform -translate-y-1/2"><svg viewBox="0 0 24 24" fill="none" class="stroke-2 z-icon w-4 h-4 z-icon--x text-vanilla-400"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span> <span class="absolute top-50 right-2 transform -translate-y-1/2"><svg viewBox="0 0 24 24" fill="none" class="stroke-2 transform transition-all duration-300 z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+  </div>
+  <div class="options shadow-black border border-solid border-ink-100 text-vanilla-300 rounded-sm overflow-hidden absolute bg-ink-300 left-0 right-0 z-10 transition-all duration-300 hidden">
+    <div class="z-option p-2 cursor-pointer text-vanilla-300 hover:bg-ink-200 text-xs is-selected bg-ink-200">Option 1</div>
+    <div class="z-option p-2 cursor-pointer text-vanilla-300 hover:bg-ink-200 text-xs">Option 2</div>
+  </div>
+</div>
+`;
+
+exports[`Select Component renders the select with a custom placeholder 1`] = `
+<div tabindex="0" class="custom-select relative w-full text-left outline-none h-full leading-8" value="">
+  <div class="selected h-full relative bg-ink-400 rounded-sm border border-solid text-vanilla-300 cursor-pointer  border-slate">
+    <div class="flex items-center bg-transparent w-10/12 pl-4 outline-none cursor-pointer h-full text-slate text-xs">Choose a framework</div>
+    <!----> <span class="absolute top-50 right-2 transform -translate-y-1/2"><svg viewBox="0 0 24 24" fill="none" class="stroke-2 transform transition-all duration-300 z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+  </div>
+  <div class="options shadow-black border border-solid border-ink-100 text-vanilla-300 rounded-sm overflow-hidden absolute bg-ink-300 left-0 right-0 z-10 transition-all duration-300 hidden">
+    <div class="z-option p-2 cursor-pointer text-vanilla-300 hover:bg-ink-200 text-xs">Option 1</div>
+    <div class="z-option p-2 cursor-pointer text-vanilla-300 hover:bg-ink-200 text-xs">Option 2</div>
+  </div>
+</div>
+`;
