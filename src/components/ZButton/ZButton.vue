@@ -10,7 +10,7 @@
       `${color && `z-btn--${color}`}`,
       `${this.fullWidth !== false && 'w-full inline-block'}`,
       `${this.isButtonDisabled && 'opacity-50 cursor-not-allowed'}`,
-      isTypeLink && 'p-0' || 'px-6',
+      (isTypeLink && 'p-0') || 'px-6',
       getSizeClasses,
       customClasses,
       `${getStyleBasedOnType}`
@@ -80,7 +80,7 @@ export default {
       return colors[this.color] || ''
     },
     isTypeLink() {
-      return this.type === 'link' || this.to;
+      return this.type === 'link' || this.to
     },
     getSizeClasses() {
       const sizes = {
