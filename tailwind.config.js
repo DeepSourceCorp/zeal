@@ -82,7 +82,10 @@ module.exports = {
       48: '12rem',
       52: '13rem',
       56: '14rem',
-      64: '16rem'
+      64: '16rem',
+      80: '20rem',
+      96: '24rem',
+      102: '32rem'
     },
     backgroundColor: (theme) => theme('colors'),
     backgroundOpacity: (theme) => theme('opacity'),
