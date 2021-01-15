@@ -11,34 +11,36 @@ export default {
   excludeStories: /.*Data$/
 }
 
-export const DefaultSelect= () => ({
-    components: { ZSelect, ZOption, ZIcon },
-    data() {
-        return {
-            value: '',
-            options: [{
-                value: 'Option 1',
-                label: 'Option 1'
-            },
-            {
-                value: 'Option 2',
-                label: 'Option 2'
-            },
-            {
-                value: 'Option 3',
-                label: 'Option 3'
-            },
-            {
-                value: 'Option 4',
-                label: 'Option 4'
-            },
-            {
-                value: 'Option 5',
-                label: 'Option 5'
-            }]
+export const DefaultSelect = () => ({
+  components: { ZSelect, ZOption, ZIcon },
+  data() {
+    return {
+      value: '',
+      options: [
+        {
+          value: 'Option 1',
+          label: 'Option 1'
+        },
+        {
+          value: 'Option 2',
+          label: 'Option 2'
+        },
+        {
+          value: 'Option 3',
+          label: 'Option 3'
+        },
+        {
+          value: 'Option 4',
+          label: 'Option 4'
+        },
+        {
+          value: 'Option 5',
+          label: 'Option 5'
         }
-    },
-    template: `<div class='padded-container'>
+      ]
+    }
+  },
+  template: `<div class='padded-container'>
             <div class="select-container">
                 <z-select v-model="value">
                     <z-option
@@ -52,34 +54,36 @@ export const DefaultSelect= () => ({
         </div>`
 })
 
-export const SelectWithCustomPlaceholder= () => ({
-    components: { ZSelect, ZOption, ZIcon },
-    data() {
-        return {
-            value: '',
-            options: [{
-                value: 'Option 1',
-                label: 'Option 1'
-            },
-            {
-                value: 'Option 2',
-                label: 'Option 2'
-            },
-            {
-                value: 'Option 3',
-                label: 'Option 3'
-            },
-            {
-                value: 'Option 4',
-                label: 'Option 4'
-            },
-            {
-                value: 'Option 5',
-                label: 'Option 5'
-            }]
+export const SelectWithCustomPlaceholder = () => ({
+  components: { ZSelect, ZOption, ZIcon },
+  data() {
+    return {
+      value: '',
+      options: [
+        {
+          value: 'Option 1',
+          label: 'Option 1'
+        },
+        {
+          value: 'Option 2',
+          label: 'Option 2'
+        },
+        {
+          value: 'Option 3',
+          label: 'Option 3'
+        },
+        {
+          value: 'Option 4',
+          label: 'Option 4'
+        },
+        {
+          value: 'Option 5',
+          label: 'Option 5'
         }
-    },
-    template: `<div class='padded-container'>
+      ]
+    }
+  },
+  template: `<div class='padded-container'>
             <div class="select-container">
                 <z-select v-model="value" placeholder="Choose a framework">
                     <z-option
@@ -93,34 +97,36 @@ export const SelectWithCustomPlaceholder= () => ({
         </div>`
 })
 
-export const SelectWithClearables= () => ({
-    components: { ZSelect, ZOption, ZIcon },
-    data() {
-        return {
-            value: '',
-            options: [{
-                value: 'Option 1',
-                label: 'Option 1'
-            },
-            {
-                value: 'Option 2',
-                label: 'Option 2'
-            },
-            {
-                value: 'Option 3',
-                label: 'Option 3'
-            },
-            {
-                value: 'Option 4',
-                label: 'Option 4'
-            },
-            {
-                value: 'Option 5',
-                label: 'Option 5'
-            }]
+export const SelectWithClearables = () => ({
+  components: { ZSelect, ZOption, ZIcon },
+  data() {
+    return {
+      value: '',
+      options: [
+        {
+          value: 'Option 1',
+          label: 'Option 1'
+        },
+        {
+          value: 'Option 2',
+          label: 'Option 2'
+        },
+        {
+          value: 'Option 3',
+          label: 'Option 3'
+        },
+        {
+          value: 'Option 4',
+          label: 'Option 4'
+        },
+        {
+          value: 'Option 5',
+          label: 'Option 5'
         }
-    },
-    template: `<div class='padded-container'>
+      ]
+    }
+  },
+  template: `<div class='padded-container'>
             <div class="select-container">
                 <z-select v-model="value" placeholder="Choose a framework" :clearable="true">
                     <z-option
@@ -134,34 +140,36 @@ export const SelectWithClearables= () => ({
         </div>`
 })
 
-export const SelectWithCustomOptionsTemplate= () => ({
-    components: { ZSelect, ZOption, ZIcon },
-    data() {
-        return {
-            value: '',
-            options: [{
-                value: 'Option 1',
-                label: 'Option 1'
-            },
-            {
-                value: 'Option 2',
-                label: 'Option 2'
-            },
-            {
-                value: 'Option 3',
-                label: 'Option 3'
-            },
-            {
-                value: 'Option 4',
-                label: 'Option 4'
-            },
-            {
-                value: 'Option 5',
-                label: 'Option 5'
-            }]
+export const SelectWithCustomOptionsTemplate = () => ({
+  components: { ZSelect, ZOption, ZIcon },
+  data() {
+    return {
+      value: '',
+      options: [
+        {
+          value: 'Option 1',
+          label: 'Option 1'
+        },
+        {
+          value: 'Option 2',
+          label: 'Option 2'
+        },
+        {
+          value: 'Option 3',
+          label: 'Option 3'
+        },
+        {
+          value: 'Option 4',
+          label: 'Option 4'
+        },
+        {
+          value: 'Option 5',
+          label: 'Option 5'
         }
-    },
-    template: `<div class='padded-container'>
+      ]
+    }
+  },
+  template: `<div class='padded-container'>
             <div class="select-container">
                 <z-select v-model="value" placeholder="Choose a framework" :clearable="true">
                     <z-option
@@ -179,34 +187,36 @@ export const SelectWithCustomOptionsTemplate= () => ({
         </div>`
 })
 
-export const SelectWithPreselectedOption= () => ({
-    components: { ZSelect, ZOption, ZIcon },
-    data() {
-        return {
-            value: '',
-            options: [{
-                value: 'Option 1',
-                label: 'Option 1'
-            },
-            {
-                value: 'Option 2',
-                label: 'Option 2'
-            },
-            {
-                value: 'Option 3',
-                label: 'Option 3'
-            },
-            {
-                value: 'Option 4',
-                label: 'Option 4'
-            },
-            {
-                value: 'Option 5',
-                label: 'Option 5'
-            }]
+export const SelectWithPreselectedOption = () => ({
+  components: { ZSelect, ZOption, ZIcon },
+  data() {
+    return {
+      value: '',
+      options: [
+        {
+          value: 'Option 1',
+          label: 'Option 1'
+        },
+        {
+          value: 'Option 2',
+          label: 'Option 2'
+        },
+        {
+          value: 'Option 3',
+          label: 'Option 3'
+        },
+        {
+          value: 'Option 4',
+          label: 'Option 4'
+        },
+        {
+          value: 'Option 5',
+          label: 'Option 5'
         }
-    },
-    template: `<div class='padded-container'>
+      ]
+    }
+  },
+  template: `<div class='padded-container'>
             <div class="select-container">
                 <z-select v-model="value" placeholder="Choose a framework" :clearable="true" selected="Option 5">
                     <z-option

@@ -2,7 +2,6 @@ import ZSelect from '../../src/components/ZSelect'
 import ZOption from '../../src/components/ZOption'
 import ZIcon from '../../src/components/ZIcon'
 
-
 import { mount } from '@vue/test-utils'
 
 const defaultSelect = {
@@ -20,16 +19,18 @@ const defaultSelect = {
   },
   data() {
     return {
-            value: '',
-            options: [{
-                value: 'Option 1',
-                label: 'Option 1'
-            },
-            {
-                value: 'Option 2',
-                label: 'Option 2'
-            }]
+      value: '',
+      options: [
+        {
+          value: 'Option 1',
+          label: 'Option 1'
+        },
+        {
+          value: 'Option 2',
+          label: 'Option 2'
         }
+      ]
+    }
   }
 }
 
@@ -48,16 +49,18 @@ const SelectWithCustomPlaceholder = {
   },
   data() {
     return {
-            value: '',
-            options: [{
-                value: 'Option 1',
-                label: 'Option 1'
-            },
-            {
-                value: 'Option 2',
-                label: 'Option 2'
-            }]
+      value: '',
+      options: [
+        {
+          value: 'Option 1',
+          label: 'Option 1'
+        },
+        {
+          value: 'Option 2',
+          label: 'Option 2'
         }
+      ]
+    }
   }
 }
 
@@ -76,19 +79,21 @@ const SelectWithClearables = {
   },
   data() {
     return {
-            value: '',
-            options: [{
-                value: 'Option 1',
-                label: 'Option 1'
-            },
-            {
-                value: 'Option 2',
-                label: 'Option 2'
-            }]
+      value: '',
+      options: [
+        {
+          value: 'Option 1',
+          label: 'Option 1'
+        },
+        {
+          value: 'Option 2',
+          label: 'Option 2'
         }
+      ]
+    }
   }
 }
-    
+
 const SelectWithCustomOptionsTemplate = {
   template: `<z-select v-model="value" placeholder="Choose a framework" :clearable="true">
                     <z-option
@@ -109,19 +114,20 @@ const SelectWithCustomOptionsTemplate = {
   },
   data() {
     return {
-            value: '',
-            options: [{
-                value: 'Option 1',
-                label: 'Option 1'
-            },
-            {
-                value: 'Option 2',
-                label: 'Option 2'
-            }]
+      value: '',
+      options: [
+        {
+          value: 'Option 1',
+          label: 'Option 1'
+        },
+        {
+          value: 'Option 2',
+          label: 'Option 2'
         }
+      ]
+    }
   }
 }
-
 
 describe('Select Component', () => {
   it('renders the default select component', () => {
@@ -132,8 +138,8 @@ describe('Select Component', () => {
 
   it('renders the select with a custom placeholder', () => {
     const wrapper = mount(SelectWithCustomPlaceholder)
-      expect(wrapper.html()).toMatchSnapshot()
-      console.log(wrapper.find('.selected div'))
+    expect(wrapper.html()).toMatchSnapshot()
+    console.log(wrapper.find('.selected div'))
   })
   it('renders the select component with clearables', () => {
     const wrapper = mount(SelectWithClearables)
