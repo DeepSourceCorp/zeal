@@ -85,7 +85,7 @@ export default {
     getSizeClasses() {
       const sizes = {
         small: 'h-8 text-xs',
-        medium: 'h-10 text-base',
+        medium: 'h-8 text-xs sm:h-10 sm:text-base',
         large: 'h-12 text-lg',
         xlarge: 'h-16 text-lg'
       }
