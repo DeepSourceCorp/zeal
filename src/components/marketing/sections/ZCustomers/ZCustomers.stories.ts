@@ -1,7 +1,7 @@
 import ZCustomers from './ZCustomers.vue'
 
 export default {
-  title: 'Zeal Marketing/Customers',
+  title: 'Zeal Marketing/Customers section',
   component: ZCustomers,
   excludeStories: /.*Data$/
 }
