@@ -59,7 +59,7 @@ module.exports = {
       splash: ['98.66deg', '#4568dc 4.42%', '#324daa 96.6%'],
       skeleton: ['104.58deg', '#21242B 0%', `${theme('colors.ink.200')} 40.08%`, '#21242B 60.32%']
     }),
-    backdropFilter: theme => ({
+    backdropFilter: (theme) => ({
       none: 'none',
       blur: 'blur(20px)'
     }),
@@ -1048,7 +1048,7 @@ module.exports = {
       addUtilities(utilities, ['responsive'])
     }),
     plugin(({ theme, variants, e, addUtilities }) => {
-      const backdropFilterUtilities = Object.keys(theme('backdropFilter')).map(type => {
+      const backdropFilterUtilities = Object.keys(theme('backdropFilter')).map((type) => {
         const backdropFilter = theme('backdropFilter')[type]
         return {
           [`.backdrop-${e(type)}`]: {
