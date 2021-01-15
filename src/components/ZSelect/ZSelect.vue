@@ -28,7 +28,7 @@
       >
         <z-icon icon="x" size="small"></z-icon>
       </span>
-      <span class="absolute top-50 right-2 transform -translate-y-1/2">
+      <span v-else class="absolute top-50 right-2 transform -translate-y-1/2">
         <z-icon
           icon="chevron-down"
           size="small"

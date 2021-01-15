@@ -1,8 +1,8 @@
 <template>
   <component
-    :is="type === 'link' || to ? 'a' : 'button'"
+    :is="isTypeLink ? 'a' : 'button'"
     :href="to || '#'"
-    class="z-btn inline-flex items-center px-6 font-medium border-transparent rounded-sm relative justify-center"
+    class="z-btn inline-flex items-center font-medium border-transparent rounded-sm relative justify-center"
     v-bind="$attrs"
     :disabled="disabled"
     v-on="$listeners"
@@ -10,6 +10,7 @@
       `${color && `z-btn--${color}`}`,
       `${this.fullWidth !== false && 'w-full inline-block'}`,
       `${this.isButtonDisabled && 'opacity-50 cursor-not-allowed'}`,
+      isTypeLink && 'p-0' || 'px-6',
       getSizeClasses,
       customClasses,
       `${getStyleBasedOnType}`
@@ -77,6 +78,9 @@ export default {
         } ${this.isButtonActive && 'bg-ink-100'}`
       }
       return colors[this.color] || ''
+    },
+    isTypeLink() {
+      return this.type === 'link' || this.to;
     },
     getSizeClasses() {
       const sizes = {
