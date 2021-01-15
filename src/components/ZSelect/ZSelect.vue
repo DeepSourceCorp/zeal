@@ -17,7 +17,7 @@
       </div>
       <div
         v-else
-        class="flex items-center bg-transparent w-10/12 pl-4 outline-none cursor-pointer h-full text-slate text-xs"
+        class="flex items-center bg-transparent w-10/12 pl-4 outline-none cursor-pointer h-full text-vanilla-400 opacity-70 text-xs"
       >
         {{ placeholder }}
       </div>
