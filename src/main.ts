@@ -20,7 +20,6 @@ import ZRadioGroup from './components/ZRadioGroup/index'
 import ZSelect from './components/ZSelect/index'
 import ZOption from './components/ZOption/index'
 
-
 const components = [
   ZButton,
   ZIcon,
@@ -31,7 +30,7 @@ const components = [
   ZCard,
   ZPageLabel,
   ZCheckbox,
-  ZStepper, 
+  ZStepper,
   ZStep,
   ZExpandable,
   ZRadio,
@@ -86,5 +85,3 @@ export { default as ZRadio } from './components/ZRadio/index'
 export { default as ZRadioGroup } from './components/ZRadioGroup/index'
 export { default as ZSelect } from './components/ZSelect/index'
 export { default as ZOption } from './components/ZOption/index'
-
-
