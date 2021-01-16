@@ -143,7 +143,15 @@ module.exports = {
       white: '0px 0px 2px 0px rgba(255,255,255,1)',
       black: '1px 4px 20px rgba(0, 0, 0, 0.44)'
     },
-    container: {},
+    container: {
+      padding: {
+        DEFAULT: '0rem',
+        sm: '1rem',
+        lg: '2rem',
+        xl: '4rem',
+        '2xl': '5rem'
+      }
+    },
     cursor: {
       auto: 'auto',
       DEFAULT: 'default',
@@ -1056,7 +1064,6 @@ module.exports = {
           }
         }
       })
-      console.log(backdropFilterUtilities)
 
       addUtilities(backdropFilterUtilities, variants('backdropFilter'))
     })
