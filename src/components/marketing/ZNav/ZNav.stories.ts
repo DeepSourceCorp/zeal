@@ -1,4 +1,5 @@
 import ZNav from './ZNav.vue'
+import ZButton from '../../ZButton'
 
 export default {
   title: 'Zeal Marketing/Nav',
@@ -10,10 +11,21 @@ export default {
 }
 
 export const Basic = () => ({
-  components: { ZNav },
+  components: { ZNav, ZButton },
   template: `<div class='bg-gradient-skeleton'>
-      <z-nav></z-nav>
-      <div class="prose prose-sm sm:prose sm:max-w-none mx-auto px-10">
+      <z-nav>
+        <img slot="logo" src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
+        <ul class="flex" slot="menu">
+          <li class="mx-2">Link</li>
+          <li class="mx-2">Link</li>
+          <li class="mx-2">Link</li>
+        </ul>
+        <span class="flex whitespace-nowrap" slot="cta">
+        <z-button color="link" type="link" to="https://deepsource.io/">Login</z-button>
+          <z-button color="primary">Sign up</z-button>
+        </span>
+      </z-nav>
+      <div class="prose prose-sm sm:prose sm:max-w-none mx-auto px-10 py-10">
       <h1 id="this-is-main">Just to show off main heading</h1>
       <p class="lead">Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.</p>
       <p>By default, Tailwind removes all of the default browser styling from paragraphs, headings, lists and more. This ends up being really useful for building application UIs because you spend less time undoing user-agent styles, but when you <em>really are</em> just trying to style some content that came from a rich-text editor in a CMS or a markdown file, it can be surprising and unintuitive.</p>
