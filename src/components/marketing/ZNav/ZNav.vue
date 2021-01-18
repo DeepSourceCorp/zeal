@@ -6,7 +6,10 @@
       <div v-if="$slots.logo" class="flex items-center">
         <slot name="logo"></slot>
       </div>
-      <span class="absolute lg:static lg:flex items-center lg:w-full" :class="[`${showHamburderMenu ? '' : 'hidden'}`]">
+      <span
+        class="absolute lg:static lg:flex items-center lg:w-full"
+        :class="[`${showHamburderMenu ? '' : 'hidden'}`]"
+      >
         <div
           v-if="$slots.menu"
           class="lg:flex flex-1 items-center mx-4"
