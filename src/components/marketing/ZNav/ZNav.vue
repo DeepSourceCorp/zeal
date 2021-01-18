@@ -41,12 +41,12 @@ export default Vue.extend({
     container: {
       type: String,
       default: CONTAINERS.md.text,
-      validator: container => Object.keys(CONTAINERS).includes(container)
+      validator: (container) => Object.keys(CONTAINERS).includes(container)
     },
     menuItemsAlign: {
       type: String,
       default: MENU_ITEMS_ALIGNMENT.center.text,
-      validator: align => Object.keys(MENU_ITEMS_ALIGNMENT).includes(align)
+      validator: (align) => Object.keys(MENU_ITEMS_ALIGNMENT).includes(align)
     }
   },
   data() {
