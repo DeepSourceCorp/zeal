@@ -1,32 +1,39 @@
 <template>
   <nav
-    class="sticky z-1000 top-0 backdrop-blur bg-ink-400 bg-opacity-25 text-vanilla-100 h-16 flex items-center"
+    class="sticky z-1000 top-0 lg:backdrop-blur bg-ink-400 lg:bg-opacity-25 text-vanilla-100 h-16 flex items-center"
   >
     <div class="flex items-center w-screen mx-auto" :class="[`${CONTAINERS[container].classes}`]">
-      <div v-if="$slots.logo" class="h-10">
+      <div v-if="$slots.logo" class="flex items-center">
         <slot name="logo"></slot>
       </div>
-      <div
-        v-if="$slots.menu"
-        class="flex flex-1 items-center mx-4"
-        :class="[`${MENU_ITEMS_ALIGNMENT[menuItemsAlign].classes}`]"
-      >
-        <slot name="menu"></slot>
-      </div>
-      <div v-if="$slots.cta" class="flex items-center">
-        <slot name="cta"></slot>
-      </div>
+      <span class="absolute lg:static lg:flex items-center lg:w-full" :class="[`${showHamburderMenu ? '' : 'hidden'}`]">
+        <div
+          v-if="$slots.menu"
+          class="lg:flex flex-1 items-center mx-4"
+          :class="[`${MENU_ITEMS_ALIGNMENT[menuItemsAlign].classes}`]"
+        >
+          <slot name="menu"></slot>
+        </div>
+        <div v-if="$slots.cta" class="lg:flex items-center">
+          <slot name="cta"></slot>
+        </div>
+      </span>
+
+      <span @click="toggleHamburgerMenu()" class="lg:hidden ml-auto cursor-pointer">
+        <z-icon icon="menu"></z-icon>
+      </span>
     </div>
   </nav>
 </template>
 
 <script lang="ts">
+import ZIcon from '@/components/ZIcon/ZIcon.vue'
 import Vue from 'vue'
 
 const CONTAINERS = {
-  sm: { text: 'sm', classes: 'max-w-5xl' },
-  md: { text: 'md', classes: 'max-w-6xl' },
-  lg: { text: 'lg', classes: 'max-w-7xl' }
+  sm: { text: 'sm', classes: 'px-4 lg:px-0 lg:max-w-5xl' },
+  md: { text: 'md', classes: 'px-4 lg:px-0 lg:max-w-6xl' },
+  lg: { text: 'lg', classes: 'px-4 lg:px-0 lg:max-w-7xl' }
 }
 
 const MENU_ITEMS_ALIGNMENT = {
@@ -36,6 +43,7 @@ const MENU_ITEMS_ALIGNMENT = {
 }
 
 export default Vue.extend({
+  components: { ZIcon },
   name: 'ZNav',
   props: {
     container: {
@@ -51,8 +59,14 @@ export default Vue.extend({
   },
   data() {
     return {
+      showHamburderMenu: false,
       CONTAINERS,
       MENU_ITEMS_ALIGNMENT
+    }
+  },
+  methods: {
+    toggleHamburgerMenu() {
+      this.showHamburderMenu = !this.showHamburderMenu
     }
   }
 })

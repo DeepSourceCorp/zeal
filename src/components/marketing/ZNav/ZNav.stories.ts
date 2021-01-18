@@ -13,6 +13,7 @@ export default {
 export const Basic = () => ({
   components: { ZNav, ZButton },
   template: `<div class='bg-gradient-skeleton'>
+  
       <z-nav>
         <img slot="logo" src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
         <ul class="flex" slot="menu">
@@ -20,11 +21,12 @@ export const Basic = () => ({
           <li class="mx-2">Link</li>
           <li class="mx-2">Link</li>
         </ul>
-        <span class="flex whitespace-nowrap" slot="cta">
-        <z-button color="link" type="link" to="https://deepsource.io/">Login</z-button>
+        <template slot="cta">
+          <z-button color="link" type="link" to="https://deepsource.io/">Login</z-button>
           <z-button color="primary">Sign up</z-button>
-        </span>
+        </template>
       </z-nav>
+
       <div class="prose prose-sm sm:prose sm:max-w-none mx-auto px-10 py-10">
       <h1 id="this-is-main">Just to show off main heading</h1>
       <p class="lead">Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.</p>
