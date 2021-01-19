@@ -1,16 +1,21 @@
 <template>
   <nav
-    class="sticky z-1000 top-0 lg:backdrop-blur bg-ink-400 lg:bg-opacity-25 text-vanilla-100 h-16 flex items-center"
+    class="z-1000 sticky flex items-center bg-ink-400 lg:bg-opacity-25 text-vanilla-100 top-0 border-b lg:border-0 border-slate lg:backdrop-blur h-16"
   >
-    <div class="flex items-center w-screen mx-auto" :class="[`${CONTAINERS[container].classes}`]">
-      <div v-if="$slots.brand" class="flex items-center">
+    <div
+      class="flex items-center w-screen lg:mx-auto"
+      :class="[`${CONTAINERS[container].classes}`]"
+    >
+      <div v-if="$slots.brand" class="flex items-center w-1/2 sm:w-1/3 md:w-1/4 lg:w-auto h-full">
         <slot name="brand"></slot>
       </div>
-      <span class="lg:static hidden lg:flex items-center lg:w-full">
+
+      <!-- Desktop Menu and CTA -->
+      <span class="hidden lg:static lg:flex items-center lg:w-full">
         <div
           v-if="$slots['desktop-menu']"
           class="lg:flex flex-1 items-center mx-4"
-          :class="[`${MENU_ITEMS_ALIGNMENT[menuItemsAlign].classes}`]"
+          :class="[`${MENU_ALIGNMENT[menuAlign].classes}`]"
         >
           <slot name="desktop-menu"></slot>
         </div>
@@ -18,27 +23,32 @@
           <slot name="desktop-cta"></slot>
         </div>
       </span>
-      <span @click="toggleHamburgerMenu()" class="lg:hidden ml-auto cursor-pointer">
+
+      <!-- Hamburger Button -->
+      <span @click="toggleDrawer()" class="lg:hidden ml-auto cursor-pointer">
         <z-icon icon="menu"></z-icon>
       </span>
     </div>
+
+    <!-- Mobile Drawer Menu -->
     <aside
-      class="lg:hidden bg-ink-400 transform top-0 right-0 w-full fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30"
-      :class="[`${isHamburgerMenuVisible ? 'translate-x-0' : 'translate-x-full'}`]"
+      class="fixed lg:hidden bg-ink-300 transform top-0 right-0 w-full h-full overflow-auto ease-in-out transition-all duration-300 z-30"
+      :class="[`${isDrawerOpen ? 'translate-x-0' : 'translate-x-full'}`]"
     >
-      <span class="flex items-center justify-end px-4 h-16 border-b">
-        <span @click="toggleHamburgerMenu()" class="cursor-pointer">
+      <!-- Cross Button -->
+      <span class="flex items-center justify-end border-b border-ink-200 h-16 px-4">
+        <span @click="toggleDrawer()" class="cursor-pointer">
           <z-icon icon="x"></z-icon>
         </span>
       </span>
-      <div
-        v-if="$slots['mobile-menu']"
-        class="lg:flex flex-1 items-center mx-4"
-        :class="[`${MENU_ITEMS_ALIGNMENT[menuItemsAlign].classes}`]"
-      >
+
+      <!-- Menu -->
+      <div v-if="$slots['mobile-menu']" class="border-b border-ink-200 p-4">
         <slot name="mobile-menu"></slot>
       </div>
-      <div v-if="$slots['mobile-cta']" class="lg:flex items-center">
+
+      <!-- CTA -->
+      <div v-if="$slots['mobile-cta']" class="flex flex-col p-4">
         <slot name="mobile-cta"></slot>
       </div>
     </aside>
@@ -50,12 +60,12 @@ import ZIcon from '@/components/ZIcon/ZIcon.vue'
 import Vue from 'vue'
 
 const CONTAINERS = {
-  sm: { text: 'sm', classes: 'px-4 lg:px-0 lg:max-w-5xl' },
-  md: { text: 'md', classes: 'px-4 lg:px-0 lg:max-w-6xl' },
-  lg: { text: 'lg', classes: 'px-4 lg:px-0 lg:max-w-7xl' }
+  sm: { text: 'sm', classes: 'px-4 lg:max-w-5xl' },
+  md: { text: 'md', classes: 'px-4 lg:max-w-6xl' },
+  lg: { text: 'lg', classes: 'px-4 lg:max-w-7xl' }
 }
 
-const MENU_ITEMS_ALIGNMENT = {
+const MENU_ALIGNMENT = {
   left: { text: 'left', classes: 'justify-start' },
   center: { text: 'center', classes: 'justify-center' },
   right: { text: 'right', classes: 'justify-end' }
@@ -68,24 +78,24 @@ export default Vue.extend({
     container: {
       type: String,
       default: CONTAINERS.md.text,
-      validator: (container) => Object.keys(CONTAINERS).includes(container)
+      validator: (size) => Object.keys(CONTAINERS).includes(size)
     },
-    menuItemsAlign: {
+    menuAlign: {
       type: String,
-      default: MENU_ITEMS_ALIGNMENT.center.text,
-      validator: (align) => Object.keys(MENU_ITEMS_ALIGNMENT).includes(align)
+      default: MENU_ALIGNMENT.center.text,
+      validator: (alignment) => Object.keys(MENU_ALIGNMENT).includes(alignment)
     }
   },
   data() {
     return {
-      isHamburgerMenuVisible: false,
+      isDrawerOpen: false,
       CONTAINERS,
-      MENU_ITEMS_ALIGNMENT
+      MENU_ALIGNMENT
     }
   },
   methods: {
-    toggleHamburgerMenu() {
-      this.isHamburgerMenuVisible = !this.isHamburgerMenuVisible
+    toggleDrawer() {
+      this.isDrawerOpen = !this.isDrawerOpen
     }
   }
 })
