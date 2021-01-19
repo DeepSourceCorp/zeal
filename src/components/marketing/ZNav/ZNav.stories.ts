@@ -15,17 +15,35 @@ export const Basic = () => ({
   template: `<div class='bg-gradient-skeleton'>
   
       <z-nav>
-        <img slot="logo" src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
-        <ul class="flex" slot="menu">
-          <li class="mx-2">Link</li>
-          <li class="mx-2">Link</li>
-          <li class="mx-2">Link</li>
-        </ul>
-        <template slot="cta">
+        <template slot="brand">
+          <img src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
+        </template>
+        <template slot="desktop-menu">
+          <ul class="flex">
+            <li class="mx-2">Link</li>
+            <li class="mx-2">Link</li>
+            <li class="mx-2">Link</li>
+          </ul>
+        </template>
+        <template slot="desktop-cta">
+          <z-button color="link" type="link" to="https://deepsource.io/">Login</z-button>
+          <z-button color="primary">Sign up</z-button>
+        </template>
+
+        <template slot="mobile-menu">
+          <ul class="flex">
+            <li class="mx-2">Link</li>
+            <li class="mx-2">Link</li>
+            <li class="mx-2">Link</li>
+          </ul>
+        </template>
+        <template slot="mobile-cta">
           <z-button color="link" type="link" to="https://deepsource.io/">Login</z-button>
           <z-button color="primary">Sign up</z-button>
         </template>
       </z-nav>
+
+
 
       <div class="prose prose-sm sm:prose sm:max-w-none mx-auto px-10 py-10">
       <h1 id="this-is-main">Just to show off main heading</h1>
