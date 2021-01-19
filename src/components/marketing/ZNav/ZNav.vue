@@ -1,7 +1,7 @@
 <template>
   <nav
     class="z-1000 sticky flex items-center bg-ink-400 lg:bg-opacity-25 text-vanilla-100 top-0 border-b lg:backdrop-blur h-16"
-    :class="[`${ yScrollValue > MAX_Y_SCROLL_VALUE ? 'border-slate': 'lg:border-0'}`]"
+    :class="[`${yScrollValue > MAX_Y_SCROLL_VALUE ? 'border-slate' : 'lg:border-0'}`]"
   >
     <div
       class="flex items-center w-screen lg:mx-auto"
@@ -82,12 +82,12 @@ export default Vue.extend({
     container: {
       type: String,
       default: CONTAINERS.md.text,
-      validator: size => Object.keys(CONTAINERS).includes(size)
+      validator: (size) => Object.keys(CONTAINERS).includes(size)
     },
     menuAlign: {
       type: String,
       default: MENU_ALIGNMENT.center.text,
-      validator: alignment => Object.keys(MENU_ALIGNMENT).includes(alignment)
+      validator: (alignment) => Object.keys(MENU_ALIGNMENT).includes(alignment)
     }
   },
   data() {
