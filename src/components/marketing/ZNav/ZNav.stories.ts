@@ -31,15 +31,15 @@ export const Basic = () => ({
         </template>
 
         <template slot="mobile-menu">
-          <ul class="flex">
+          <ul>
             <li class="mx-2">Link</li>
             <li class="mx-2">Link</li>
             <li class="mx-2">Link</li>
           </ul>
         </template>
         <template slot="mobile-cta">
-          <z-button color="link" type="link" to="https://deepsource.io/">Login</z-button>
-          <z-button color="primary">Sign up</z-button>
+          <z-button class="mb-4" color="primary">Sign up</z-button>
+          <z-button class="mb-4" color="secondary" type="link" to="https://deepsource.io/">Login</z-button>
         </template>
       </z-nav>
 
