@@ -18,7 +18,7 @@ export default {
     }
   },
   data() {
-    return { currentIndex: 0 }
+    return { activeIndex: 0 }
   },
   provide() {
     // to be injected to child components
@@ -30,17 +30,16 @@ export default {
   computed: {
     getActiveIndex(): number {
       // Return the current active tab index
-      return this.active >= 0 ? this.active : this.currentIndex
+      return this.active >= 0 ? this.active : this.activeIndex
     }
   },
   mounted() {
-    this.currentIndex = this.defaultActive
+    this.activeIndex = this.defaultActive
   },
   methods: {
     updateActiveIndex(index: number): void {
-      console.log('CHANGING TO INDEX: ', index)
-      const previous = this.currentIndex
-      this.currentIndex = index
+      const previous = this.activeIndex
+      this.activeIndex = index
       this.$emit('onTabChange', { index, previous })
     }
   }
