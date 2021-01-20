@@ -26,7 +26,7 @@ export const Basic = () => ({
           </ul>
         </template>
         <template slot="desktop-cta">
-          <z-button color="link" type="link" to="https://deepsource.io/">Login</z-button>
+          <z-button color="link" type="link" to="https://deepsource.io/">Log in</z-button>
           <z-button color="primary">Sign up</z-button>
         </template>
 
@@ -39,7 +39,7 @@ export const Basic = () => ({
         </template>
         <template slot="mobile-cta">
           <z-button class="mb-4" color="primary">Sign up</z-button>
-          <z-button class="mb-4" color="secondary" type="link" to="https://deepsource.io/">Login</z-button>
+          <z-button class="mb-4" color="secondary" type="link" to="https://deepsource.io/">Log in</z-button>
         </template>
       </z-nav>
 

@@ -1,7 +1,6 @@
 <template>
   <nav
-    class="z-1000 sticky flex items-center bg-ink-400 lg:bg-opacity-25 text-vanilla-100 top-0 border-b lg:backdrop-blur h-16"
-    :class="[`${yScrollValue > MAX_Y_SCROLL_VALUE ? 'border-slate' : 'lg:border-0'}`]"
+    class="z-1000 sticky flex items-center bg-ink-400 lg:bg-opacity-25 text-vanilla-100 top-0 border-b border-slate lg:border-0 lg:backdrop-blur h-16"
   >
     <div
       class="flex items-center w-screen lg:mx-auto"
@@ -13,15 +12,15 @@
       </div>
 
       <!-- Desktop Menu and CTA -->
-      <span class="hidden lg:static lg:flex items-center lg:w-full">
+      <span class="hidden lg:flex items-center w-full">
         <div
           v-if="$slots['desktop-menu']"
-          class="lg:flex flex-1 items-center mx-4"
+          class="flex flex-1 items-center mx-4"
           :class="[`${MENU_ALIGNMENT[menuAlign].classes}`]"
         >
           <slot name="desktop-menu"></slot>
         </div>
-        <div v-if="$slots['desktop-cta']" class="lg:flex items-center">
+        <div v-if="$slots['desktop-cta']" class="flex items-center">
           <slot name="desktop-cta"></slot>
         </div>
       </span>
@@ -73,8 +72,6 @@ const MENU_ALIGNMENT = {
   right: { text: 'right', classes: 'justify-end' }
 }
 
-const MAX_Y_SCROLL_VALUE = 50
-
 export default Vue.extend({
   components: { ZIcon },
   name: 'ZNav',
@@ -93,15 +90,8 @@ export default Vue.extend({
   data() {
     return {
       isDrawerOpen: false,
-      yScrollValue: 0,
       CONTAINERS,
-      MENU_ALIGNMENT,
-      MAX_Y_SCROLL_VALUE
-    }
-  },
-  mounted() {
-    window.onscroll = () => {
-      this.yScrollValue = window.scrollY
+      MENU_ALIGNMENT
     }
   },
   methods: {
