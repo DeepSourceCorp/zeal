@@ -13,7 +13,7 @@ export default Vue.extend({
           tabindex: 0
         }
       },
-      [this.$slots.default?.[this.tabs.currentIndex]]
+      [this.$slots.default?.[this.tabs.activeIndex]] // activeIndex in reactive
     )
   }
 })

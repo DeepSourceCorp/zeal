@@ -1,7 +1,16 @@
-<script lang="ts">
-import Vue, { VNode, CreateElement } from 'vue'
+<template>
+  <button
+    role="tab"
+    :tabindex="ariaAttrs.tabindex"
+    :aria-selected="ariaAttrs.selected"
+    v-on:click="clickHandler"
+  >
+    <slot></slot>
+  </button>
+</template>
 
-export default Vue.extend({
+<script lang="ts">
+export default {
   name: 'ZTab',
   props: {
     disabled: {
@@ -16,42 +25,23 @@ export default Vue.extend({
     }
   },
   inject: ['tabs'],
-  render(h: CreateElement): VNode {
-    let children
-    const isScoped = this.$scopedSlots.default
-
-    const isActive = this.index === this.tabs.currentIndex
-
-    const attrs: {} = {
-      role: 'tab',
-      tabindex: isActive ? 0 : -1,
-      'aria-selected': String(isActive)
+  computed: {
+    isActive(): boolean {
+      return this.index === this.tabs.activeIndex
+    },
+    ariaAttrs(): {} {
+      return {
+        tabindex: this.isActive ? 0 : -1,
+        selected: String(this.isActive)
+      }
     }
-
-    if (isScoped) {
-      children = this.$scopedSlots.default?.({
-        aria: attrs,
-        index: this.index,
-        updateActiveIndex: this.updateActiveIndex
-      })
-    } else {
-      children = this.$slots.default
+  },
+  methods: {
+    clickHandler(): void {
+      if (!this.disabled) {
+        this.updateActiveIndex()
+      }
     }
-
-    return h(
-      'button',
-      {
-        attrs: attrs,
-        on: {
-          click: () => {
-            if (!this.disabled) {
-              this.updateActiveIndex()
-            }
-          }
-        }
-      },
-      children
-    )
   }
-})
+}
 </script>

@@ -1,19 +1,17 @@
-<script lang="ts">
-import Vue, { VNode, CreateElement } from 'vue'
+<template>
+  <div
+    :key="
+      Math.random()
+        .toString(36)
+        .substring(7)
+    "
+  >
+    <slot></slot>
+  </div>
+</template>
 
-export default Vue.extend({
-  name: 'ZTabItem',
-  inject: ['tabs'], // tabs from ZTabs
-  render(h: CreateElement): VNode {
-    return h(
-      'div',
-      {
-        key: Math.random()
-          .toString(36)
-          .substring(7)
-      },
-      this.$slots.default
-    )
-  }
-})
+<script lang="ts">
+export default {
+  name: 'ZTabItem'
+}
 </script>
