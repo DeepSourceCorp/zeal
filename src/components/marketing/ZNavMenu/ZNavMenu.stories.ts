@@ -4,14 +4,11 @@ export default {
   title: 'Zeal Marketing/Nav Menu',
   component: ZNavMenu,
   excludeStories: /.*Data$/,
-  parameters: {
-    layout: 'fullscreen'
-  }
 }
 
 export const Basic = () => ({
   components: { ZNavMenu },
-  template: `<div class='bg-gradient-skeleton'>
+  template: `<div class='bg-padded-container px-40'>
       <z-nav-menu></z-nav-menu>
     </div>`
 })
