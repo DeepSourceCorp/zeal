@@ -8,6 +8,7 @@ export default Vue.extend({
     return h(
       'div',
       {
+        class: 'outline-none focus:outline-none',
         attrs: {
           role: 'tabpanel',
           tabindex: 0

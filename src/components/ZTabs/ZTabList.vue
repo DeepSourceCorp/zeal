@@ -32,7 +32,7 @@ export default Vue.extend({
       return child
     })
 
-    return h('div', children)
+    return h('div', { class: '-mx-3' }, children)
   }
 })
 </script>
