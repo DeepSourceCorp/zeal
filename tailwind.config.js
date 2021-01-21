@@ -573,7 +573,8 @@ module.exports = {
       colors: 'background-color, border-color, color, fill, stroke',
       opacity: 'opacity',
       shadow: 'box-shadow',
-      transform: 'transform'
+      transform: 'transform',
+      'max-height': 'max-height'
     },
     transitionTimingFunction: {
       linear: 'linear',
@@ -604,7 +605,10 @@ module.exports = {
     animation: {
       none: 'none',
       fadeIn: 'fadeIn 1s',
+      expand: 'expand 1s',
       spin: 'spin 1s linear infinite',
+      'first-half-spin': 'first-half-spin 0.5s',
+      'reverse-half-spin': 'reverse-half-spin 0.5s',
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
@@ -614,6 +618,14 @@ module.exports = {
       'slide-right-leave-active': 'slide-right-out 0.5s ease-out'
     },
     keyframes: {
+      expand: {
+        from: {
+          height: '0px'
+        },
+        to: {
+          height: 'auto'
+        }
+      },
       fadeIn: {
         '0%': { opacity: '0' },
         '100%': { opacity: '1' }
@@ -621,6 +633,14 @@ module.exports = {
       spin: {
         from: { transform: 'rotate(0deg)' },
         to: { transform: 'rotate(360deg)' }
+      },
+      'first-half-spin': {
+        from: {transform: 'rotate(0deg)'},
+        to: {transform: 'rotate(180deg)'}
+      },
+      'reverse-half-spin': {
+        from: {transform: 'rotate(180deg)'},
+        to: {transform: 'rotate(0deg)'}
       },
       ping: {
         '0%': { transform: 'scale(1)', opacity: '1' },
