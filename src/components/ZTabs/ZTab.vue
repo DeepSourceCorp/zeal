@@ -11,13 +11,24 @@
       'cursor-auto': disabled
     }"
   >
+    <z-icon
+      v-if="icon"
+      :icon="icon"
+      size="small"
+      :color="isActive ? 'vanilla-100' : 'vanilla-400'"
+    ></z-icon>
     <slot></slot>
   </button>
 </template>
 
 <script lang="ts">
+import ZIcon from '../ZIcon/ZIcon.vue'
+
 export default {
   name: 'ZTab',
+  components: {
+    ZIcon
+  },
   props: {
     disabled: {
       type: Boolean,
@@ -28,6 +39,9 @@ export default {
     },
     updateActiveIndex: {
       type: Function
+    },
+    icon: {
+      type: String
     }
   },
   inject: ['tabs'],

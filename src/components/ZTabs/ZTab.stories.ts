@@ -6,7 +6,6 @@ import ZTab from './ZTab.vue'
 import ZTabList from './ZTabList.vue'
 import ZTabItems from './ZTabItems.vue'
 import ZTabItem from './ZTabItem.vue'
-import ZIcon from '../ZIcon/ZIcon.vue'
 
 export default {
   title: 'Tabs',
@@ -55,24 +54,20 @@ export const DisabledTabs = () => ({
 })
 
 export const TabsWithIcons = () => ({
-  components: { ZTabs, ZTabList, ZTab, ZTabItems, ZTabItem, ZIcon },
+  components: { ZTabs, ZTabList, ZTab, ZTabItems, ZTabItem },
   template: `<div class='padded-container'>
               <z-tabs>
                 <z-tab-list class="bg-ink-300 p-4 pb-0">
-                  <z-tab>
-                    <z-icon icon="activity" size="small"></z-icon>
+                  <z-tab icon="activity">
                     Overview
                   </z-tab>
-                  <z-tab>
-                    <z-icon icon="code" size="small"></z-icon>
+                  <z-tab icon="code">
                     Issues
                   </z-tab>
-                  <z-tab>
-                    <z-icon icon="bar-chart" size="small"></z-icon>
+                  <z-tab icon="bar-chart">
                     Metrics
                   </z-tab>
-                  <z-tab>
-                  <z-icon icon="settings" size="small"></z-icon>
+                  <z-tab icon="settings">
                     Settings
                   </z-tab>
                 </z-tab-list>
