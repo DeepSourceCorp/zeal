@@ -14,8 +14,8 @@ export default Vue.extend({
           tabindex: 0
         }
       },
-      [this.$slots.default?.[this.tabs.activeIndex]] // activeIndex in reactive
-    )
+      [this.$slots.default?.[this.tabs.activeIndex]] // activeIndex is reactive
+    ) // Render the pane for the active tabs
   }
 })
 </script>
