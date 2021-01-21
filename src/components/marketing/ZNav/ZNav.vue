@@ -44,7 +44,7 @@
       </span>
 
       <!-- Menu -->
-      <div v-if="$slots['mobile-menu']" class="border-b border-ink-200 p-4">
+      <div v-if="$slots['mobile-menu']" class="border-b border-ink-200">
         <slot name="mobile-menu"></slot>
       </div>
 
