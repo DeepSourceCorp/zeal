@@ -4,11 +4,12 @@
     :tabindex="ariaAttrs.tabindex"
     :aria-selected="ariaAttrs.selected"
     @click="clickHandler"
-    class="inline-flex items-end gap-2 pb-3 mx-3 text-sm leading-none outline-none z-tab focus:outline-none"
+    class="inline-flex items-end gap-2 pb-3 mx-3 text-sm leading-none outline-none z-tab focus:outline-none border-b-2"
     :disabled="disabled"
     v-bind:class="{
-      'text-vanilla-100 border-b-2 border-juniper': isActive && !disabled,
-      'cursor-auto': disabled
+      'text-vanilla-100 border-juniper': isActive && !disabled,
+      'border-transparent': !isActive,
+      'cursor-auto border-transparent': disabled
     }"
   >
     <z-icon
