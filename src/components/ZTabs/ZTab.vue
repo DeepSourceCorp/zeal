@@ -5,7 +5,11 @@
     :aria-selected="ariaAttrs.selected"
     v-on:click="clickHandler"
     class="inline-flex items-end gap-2 pb-3 mx-3 text-sm leading-none outline-none focus:outline-none"
-    v-bind:class="{ 'text-vanilla-100 border-b-2 border-juniper': isActive }"
+    v-bind:class="{
+      'text-vanilla-100 border-b-2 border-juniper': isActive,
+      'cursor-pointer': !disabled,
+      'cursor-auto': disabled
+    }"
   >
     <slot></slot>
   </button>

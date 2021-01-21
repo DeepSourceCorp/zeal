@@ -34,6 +34,26 @@ export const BasicTabs = () => ({
       </div>`
 })
 
+export const DisabledTabs = () => ({
+  components: { ZTabs, ZTabList, ZTab, ZTabItems, ZTabItem },
+  template: `<div class='padded-container'>
+              <z-tabs>
+                <z-tab-list>
+                  <z-tab>Overview</z-tab>
+                  <z-tab>Issues</z-tab>
+                  <z-tab disabled=true>Metrics (Disabled)</z-tab>
+                  <z-tab disabled=true>Autofix (Disabled)</z-tab>
+                </z-tab-list>
+                <z-tab-items>
+                  <z-tab-item>Overview of the code.</z-tab-item>
+                  <z-tab-item>There are the list of issues.</z-tab-item>
+                  <z-tab-item>This are metrics.</z-tab-item>
+                  <z-tab-item>Works like magic</z-tab-item>
+                </z-tab-items>
+              </z-tabs>
+      </div>`
+})
+
 export const TabsWithIcons = () => ({
   components: { ZTabs, ZTabList, ZTab, ZTabItems, ZTabItem, ZIcon },
   template: `<div class='padded-container'>
