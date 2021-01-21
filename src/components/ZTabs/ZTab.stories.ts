@@ -40,8 +40,8 @@ export const DisabledTabs = () => ({
                 <z-tab-list>
                   <z-tab>Overview</z-tab>
                   <z-tab>Issues</z-tab>
-                  <z-tab disabled=true>Metrics (Disabled)</z-tab>
-                  <z-tab disabled=true>Autofix (Disabled)</z-tab>
+                  <z-tab :disabled="true">Metrics (Disabled)</z-tab>
+                  <z-tab :disabled="true">Autofix (Disabled)</z-tab>
                 </z-tab-list>
                 <z-tab-items>
                   <z-tab-item>Overview of the code.</z-tab-item>
@@ -89,13 +89,13 @@ export const MixedTabs = () => ({
                   <z-tab icon="activity">
                     With Icon
                   </z-tab>
-                  <z-tab disabled=true icon="bar-chart">
+                  <z-tab :disabled="true" icon="bar-chart">
                     With Icon Disabled
                   </z-tab>
                   <z-tab>
                     Without Icon
                   </z-tab>
-                  <z-tab disabled=true>
+                  <z-tab :disabled="true">
                     Without Icon Disabled
                   </z-tab>
                 </z-tab-list>
