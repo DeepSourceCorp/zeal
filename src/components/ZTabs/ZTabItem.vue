@@ -1,5 +1,6 @@
 <template>
   <div
+    class="z-tab-item"
     :key="
       Math.random()
         .toString(36)

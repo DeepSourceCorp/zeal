@@ -1,5 +1,5 @@
 <template>
-  <div class="text-vanilla-400">
+  <div class="z-tabs text-vanilla-400">
     <slot :active="getActiveIndex" :updateActiveIndex="updateActiveIndex"></slot>
   </div>
 </template>

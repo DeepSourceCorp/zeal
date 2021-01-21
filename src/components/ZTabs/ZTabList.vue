@@ -32,7 +32,7 @@ export default Vue.extend({
       return child
     })
 
-    return h('div', { class: '-mx-3' }, children)
+    return h('div', { class: 'z-tab-list -mx-3' }, children)
   }
 })
 </script>
