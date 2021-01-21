@@ -3,11 +3,11 @@
     role="tab"
     :tabindex="ariaAttrs.tabindex"
     :aria-selected="ariaAttrs.selected"
-    v-on:click="clickHandler"
-    class="inline-flex items-end gap-2 pb-3 mx-3 text-sm leading-none outline-none focus:outline-none"
+    @click="clickHandler"
+    class="inline-flex items-end gap-2 pb-3 mx-3 text-sm leading-none outline-none z-tab focus:outline-none"
+    :disabled="disabled"
     v-bind:class="{
       'text-vanilla-100 border-b-2 border-juniper': isActive && !disabled,
-      'cursor-pointer': !disabled,
       'cursor-auto': disabled
     }"
   >
