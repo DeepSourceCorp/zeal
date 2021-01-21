@@ -311,13 +311,13 @@ module.exports = {
       full: '100%',
       screen: '100vh'
     },
-    minWidth: {
+    minWidth: theme => ({
       0: '0',
-      '1/4': '25%',
-      '1/2': '50%',
-      '3/4': '75%',
-      full: '100%'
-    },
+      full: '100%',
+      min: 'min-content',
+      max: 'max-content',
+      ...theme('spacing')
+    }),
     objectPosition: {
       bottom: 'bottom',
       center: 'center',
@@ -883,11 +883,11 @@ module.exports = {
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: ['responsive'],
-    borderColor: ['responsive', 'hover', 'focus', 'group-hover', 'sibling-checked', 'before', 'after'],
-    borderOpacity: ['responsive', 'hover', 'focus', 'before', 'after'],
-    borderRadius: ['responsive', 'before', 'after'],
-    borderStyle: ['responsive', 'before', 'after'],
-    borderWidth: ['responsive', 'even', 'before', 'after'],
+    borderColor: ['responsive', 'hover', 'focus', 'group-hover', 'sibling-checked'],
+    borderOpacity: ['responsive', 'hover', 'focus'],
+    borderRadius: ['responsive'],
+    borderStyle: ['responsive'],
+    borderWidth: ['responsive', 'even'],
     boxShadow: ['responsive', 'hover', 'focus'],
     boxSizing: ['responsive'],
     container: ['responsive'],
@@ -910,13 +910,13 @@ module.exports = {
     fontStyle: ['responsive'],
     fontWeight: ['responsive', 'hover', 'focus'],
     height: ['responsive'],
-    inset: ['responsive', 'before', 'after'],
+    inset: ['responsive'],
     justifyContent: ['responsive'],
     letterSpacing: ['responsive'],
     lineHeight: ['responsive'],
     listStylePosition: ['responsive'],
     listStyleType: ['responsive'],
-    margin: ['responsive', 'before', 'after'],
+    margin: ['responsive'],
     maxHeight: ['responsive'],
     maxWidth: ['responsive'],
     minHeight: ['responsive'],
@@ -1084,35 +1084,6 @@ module.exports = {
       })
 
       addUtilities(backdropFilterUtilities, variants('backdropFilter'))
-    }),
-    plugin(({ addUtilities, theme }) => {
-      const individualBorderColors = []
-      const traverseObject = (obj, prevKey) => {
-        Object.keys(obj).forEach(key => {
-          let colorName = `${prevKey}${prevKey && '-'}${key}`
-          individualBorderColors.push({
-            [`.border-b-${colorName}`]: {
-              borderBottomColor: obj[key]
-            },
-            [`.border-t-${colorName}`]: {
-              borderTopColor:  obj[key]
-            },
-            [`.border-l-${colorName}`]: {
-              borderLeftColor:  obj[key]
-            },
-            [`.border-r-${colorName}`]: {
-              borderRightColor:  obj[key]
-            }
-          })
-          
-          if (typeof obj[key] === 'object') {
-            traverseObject(obj[key], key)
-          }
-        })
-      }
-      traverseObject(theme('colors'), "")
-
-      addUtilities(individualBorderColors, ['responsive', 'before', 'after']);
-    }),
+    })
   ]
 }
