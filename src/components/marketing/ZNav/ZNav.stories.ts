@@ -1,5 +1,6 @@
 import ZNav from './ZNav.vue'
 import ZButton from '../../ZButton'
+import ZNavMenu from '../ZNavMenu'
 
 export default {
   title: 'Zeal Marketing/Nav',
@@ -11,7 +12,7 @@ export default {
 }
 
 export const Basic = () => ({
-  components: { ZNav, ZButton },
+  components: { ZNav, ZButton, ZNavMenu },
   template: `<div class='bg-gradient-skeleton'>
   
       <z-nav>
@@ -249,10 +250,25 @@ export const HideMenuOnScroll = () => ({
           <img class="h-8 max-w-none" src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
         </template>
         <template slot="desktop-menu">
-          <ul class="flex">
-            <li class="mx-2">Link</li>
-            <li class="mx-2">Link</li>
-            <li class="mx-2">Link</li>
+          <ul class="flex items-center">
+            <li>
+              <z-nav-menu title="Jobs">
+                <ul>
+                  <li class="p-2">Link</li>
+                  <li class="p-2">Link</li>
+                  <li class="p-2">Link</li>
+                </ul>
+              </z-nav-menu>
+            </li>
+            <li>
+              <z-nav-menu title="Resources">
+                <ul>
+                  <li class="p-2">Link</li>
+                  <li class="p-2">Link</li>
+                  <li class="p-2">Link</li>
+                </ul>
+              </z-nav-menu>
+            </li>
           </ul>
         </template>
         <template slot="desktop-cta">
@@ -491,10 +507,25 @@ export const RightAligned = () => ({
         </template>
 
         <template slot="mobile-menu">
-          <ul>
-            <li class="mx-2">Link</li>
-            <li class="mx-2">Link</li>
-            <li class="mx-2">Link</li>
+          <ul class="divide-y divide-ink-200">
+            <li>
+              <z-nav-menu type="accordion" title="Jobs">
+                <ul>
+                  <li class="p-2">Link</li>
+                  <li class="p-2">Link</li>
+                  <li class="p-2">Link</li>
+                </ul>
+              </z-nav-menu>
+            </li>
+            <li>
+              <z-nav-menu type="accordion" title="Resources">
+                <ul>
+                  <li class="p-2">Link</li>
+                  <li class="p-2">Link</li>
+                  <li class="p-2">Link</li>
+                </ul>
+              </z-nav-menu>
+            </li>
           </ul>
         </template>
         <template slot="mobile-cta">
