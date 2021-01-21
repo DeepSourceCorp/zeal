@@ -6,7 +6,7 @@
     v-on:click="clickHandler"
     class="inline-flex items-end gap-2 pb-3 mx-3 text-sm leading-none outline-none focus:outline-none"
     v-bind:class="{
-      'text-vanilla-100 border-b-2 border-juniper': isActive,
+      'text-vanilla-100 border-b-2 border-juniper': isActive && !disabled,
       'cursor-pointer': !disabled,
       'cursor-auto': disabled
     }"
@@ -15,16 +15,17 @@
       v-if="icon"
       :icon="icon"
       size="small"
-      :color="isActive ? 'vanilla-100' : 'vanilla-400'"
+      :color="isActive && !disabled ? 'vanilla-100' : 'vanilla-400'"
     ></z-icon>
     <slot></slot>
   </button>
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
 import ZIcon from '../ZIcon/ZIcon.vue'
 
-export default {
+export default Vue.extend({
   name: 'ZTab',
   components: {
     ZIcon
@@ -63,5 +64,5 @@ export default {
       }
     }
   }
-}
+})
 </script>
