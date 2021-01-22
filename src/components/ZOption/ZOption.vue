@@ -12,7 +12,7 @@
 <script lang="ts">
 import Vue from 'vue'
 
-interface ZSelect extends Vue {
+interface ZSelectT extends Vue {
   selectedOpt: string
   open: boolean
 }
@@ -29,13 +29,13 @@ export default Vue.extend({
   },
   computed: {
     selected(): boolean {
-      const $parent = this.$parent as ZSelect
+      const $parent = this.$parent as ZSelectT
       return this.value === $parent.selectedOpt
     }
   },
   methods: {
     selectOption(): void {
-      const $parent = this.$parent as ZSelect
+      const $parent = this.$parent as ZSelectT
       $parent.selectedOpt = this.value
       $parent.open = false
     }
