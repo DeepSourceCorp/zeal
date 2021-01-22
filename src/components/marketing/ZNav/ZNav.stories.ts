@@ -252,7 +252,7 @@ export const HideMenuOnScroll = () => ({
         <template slot="desktop-menu">
           <ul class="flex items-center">
             <li>
-              <z-nav-menu title="Jobs">
+              <z-nav-menu type="dropdown" title="Jobs">
                 <ul>
                   <li class="p-2">Link</li>
                   <li class="p-2">Link</li>
@@ -261,7 +261,7 @@ export const HideMenuOnScroll = () => ({
               </z-nav-menu>
             </li>
             <li>
-              <z-nav-menu title="Resources">
+              <z-nav-menu type="dropdown" title="Resources">
                 <ul>
                   <li class="p-2">Link</li>
                   <li class="p-2">Link</li>
