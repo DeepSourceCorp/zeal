@@ -12,9 +12,9 @@
 <script lang="ts">
 import Vue from 'vue'
 
-interface ZSelect extends Vue{
-  selectedOpt: string;
-  open: boolean;
+interface ZSelect extends Vue {
+  selectedOpt: string
+  open: boolean
 }
 
 export default Vue.extend({
