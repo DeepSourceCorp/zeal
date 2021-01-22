@@ -311,7 +311,7 @@ module.exports = {
       full: '100%',
       screen: '100vh'
     },
-    minWidth: theme => ({
+    minWidth: (theme) => ({
       0: '0',
       full: '100%',
       min: 'min-content',
@@ -635,12 +635,12 @@ module.exports = {
         to: { transform: 'rotate(360deg)' }
       },
       'first-half-spin': {
-        from: {transform: 'rotate(0deg)'},
-        to: {transform: 'rotate(180deg)'}
+        from: { transform: 'rotate(0deg)' },
+        to: { transform: 'rotate(180deg)' }
       },
       'reverse-half-spin': {
-        from: {transform: 'rotate(180deg)'},
-        to: {transform: 'rotate(0deg)'}
+        from: { transform: 'rotate(180deg)' },
+        to: { transform: 'rotate(0deg)' }
       },
       ping: {
         '0%': { transform: 'scale(1)', opacity: '1' },

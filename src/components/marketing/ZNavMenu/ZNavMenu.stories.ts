@@ -3,7 +3,7 @@ import ZNavMenu from './ZNavMenu.vue'
 export default {
   title: 'Zeal Marketing/Nav Menu',
   component: ZNavMenu,
-  excludeStories: /.*Data$/,
+  excludeStories: /.*Data$/
 }
 
 export const Dropdown = () => ({
