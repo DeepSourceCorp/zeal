@@ -13,16 +13,16 @@
         </z-button>
         <span
           class="absolute -ml-2 mt-1 left-1/2 block h-3 w-3 bg-ink-300 transform rotate-45"
-          :class="[`${isDropdownOpen ? 'animate-fadeIn' : 'hidden'}`]"
+          :class="[dropdownAnimations]"
         ></span>
       </div>
       <div
         v-if="$slots.default"
-        :class="[`${isDropdownOpen ? 'animate-fadeIn' : 'hidden'}`]"
+        :class="[dropdownAnimations]"
         @mouseover="toggleDropdown(true)"
         @mouseleave="toggleDropdown(false)"
         data-before=""
-        class="absolute -left-6 origin-top-right bg-ink-300 min-w-64 rounded-md shadow-lg p-4"
+        class="absolute -left-6 origin-top-right bg-ink-300 min-w-64 rounded-md shadow-lg"
       >
         <slot></slot>
       </div>
@@ -32,24 +32,26 @@
     <span v-if="type === TYPES.accordion">
       <span
         @click="toggleAccordion()"
-        class="flex items-center cursor-pointer px-5 py-3 bg-ink-300 inline-block hover:opacity-75 select-none w-full"
+        class="flex items-center cursor-pointer px-4 py-3 bg-ink-300 inline-block hover:opacity-75 select-none font-semibold w-full"
       >
-        <span class="flex flex-1">
-          {{ title }}
-        </span>
-        <z-icon
-          icon="chevron-down"
-          class="transform"
-          :class="[`${isAccordionOpen ? 'rotate-180' : 'rotate-0'}`, chevronAnimation]"
-        ></z-icon>
+        <span class="flex flex-1">{{ title }}</span>
+        <z-icon icon="chevron-down" class="transform" :class="[accordionHeaderAnimations]"></z-icon>
       </span>
       <span
         class="block bg-ink-300 overflow-scroll transition-max-height duration-500 ease-in-out"
-        :class="[openHeightStyle]"
+        :class="[accordionBodyAnimations]"
       >
-        <span class="border-t border-ink-200 block p-4">
+        <span class="border-t border-ink-200 block text-sm md:text-md">
           <slot></slot>
         </span>
+      </span>
+    </span>
+
+    <!-- None -->
+    <span v-if="type === TYPES.none">
+      <span class="inline-block font-semibold">{{ title }}</span>
+      <span class="block text-sm md:text-md">
+        <slot></slot>
       </span>
     </span>
   </span>
@@ -62,7 +64,8 @@ import ZIcon from '@/components/ZIcon'
 
 const TYPES = {
   accordion: 'accordion',
-  dropdown: 'dropdown'
+  dropdown: 'dropdown',
+  none: 'none'
 }
 
 export default Vue.extend({
@@ -75,7 +78,7 @@ export default Vue.extend({
     },
     type: {
       type: String,
-      default: TYPES.dropdown,
+      default: TYPES.none,
       validator: type => Object.keys(TYPES).includes(type)
     }
   },
@@ -83,12 +86,15 @@ export default Vue.extend({
     return {
       isAccordionOpen: false,
       isDropdownOpen: false,
-      chevronAnimation: '',
+      accordionHeaderAnimations: '',
       TYPES
     }
   },
   computed: {
-    openHeightStyle(): string {
+    dropdownAnimations(): string {
+      return this.isDropdownOpen ? 'animate-fadeIn' : 'hidden'
+    },
+    accordionBodyAnimations(): string {
       return this.isAccordionOpen ? 'max-h-64' : 'max-h-0'
     }
   },
@@ -98,9 +104,9 @@ export default Vue.extend({
     },
     toggleAccordion() {
       this.isAccordionOpen = !this.isAccordionOpen
-      this.chevronAnimation = this.isAccordionOpen
-        ? 'animate-first-half-spin'
-        : 'animate-reverse-half-spin'
+      this.accordionHeaderAnimations = this.isAccordionOpen
+        ? 'animate-first-half-spin rotate-180'
+        : 'animate-reverse-half-spin rotate-0'
     }
   }
 })
