@@ -1,6 +1,6 @@
 <template>
   <div class="z-tabs text-vanilla-400">
-    <slot :active="getActiveIndex" :updateActiveIndex="updateActiveIndex"></slot>
+    <slot></slot>
   </div>
 </template>
 
@@ -21,13 +21,6 @@ export default Vue.extend({
   },
   data() {
     return { activeIndex: 0 }
-  },
-  provide() {
-    // to be injected to child components
-    return {
-      tabs: this,
-      updateActiveIndex: this.updateActiveIndex
-    }
   },
   computed: {
     getActiveIndex(): number {

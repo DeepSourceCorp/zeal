@@ -4,8 +4,12 @@ import ZTab from './ZTab.vue'
 
 export default Vue.extend({
   name: 'ZTabList',
-  // inject provided updateActiveIndex from ZTabs
-  inject: ['updateActiveIndex'],
+  computed: {
+    getActiveIndex(): number {
+      const $parent: any = this.$parent
+      return $parent.activeIndex
+    }
+  },
   render(h: CreateElement): VNode {
     const children = this.$slots.default?.map((child: VNode, index: number) => {
       const options = child.componentOptions
@@ -13,8 +17,8 @@ export default Vue.extend({
         const props = {
           index,
           updateActiveIndex: () => {
-            // call injected function
-            this.updateActiveIndex(index)
+            const $parent: any = this.$parent
+            $parent.updateActiveIndex(index)
           },
           ...options.propsData
         }
@@ -32,7 +36,7 @@ export default Vue.extend({
       return child
     })
 
-    return h('div', { class: 'z-tab-list -mx-3 overflow-x-scroll flex flex-nowrap' }, children)
+    return h('div', { class: 'z-tab-list -mx-3 overflow-auto flex flex-nowrap' }, children)
   }
 })
 </script>
