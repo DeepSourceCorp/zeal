@@ -1,5 +1,5 @@
 <script lang="ts">
-import Vue, { VNode, CreateElement } from 'vue'
+import Vue, { VNode, CreateElement, VNodeChildren } from 'vue'
 import ZTab from './ZTab.vue'
 
 export default Vue.extend({
@@ -7,7 +7,7 @@ export default Vue.extend({
   // inject provided updateActiveIndex from ZTabs
   inject: ['updateActiveIndex'],
   render(h: CreateElement): VNode {
-    const children = this.$slots.default?.map((child, index) => {
+    const children = this.$slots.default?.map((child: VNode, index: number) => {
       const options = child.componentOptions
       if (options && options.tag === 'z-tab') {
         const props = {
