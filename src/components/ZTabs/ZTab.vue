@@ -6,7 +6,7 @@
     @click="clickHandler"
     class="inline-flex items-end gap-2 pb-3 mx-3 text-sm leading-none outline-none z-tab focus:outline-none border-b-2"
     :disabled="disabled"
-    v-bind:class="{
+   :class="{
       'text-vanilla-100 border-juniper': isActive && !disabled,
       'border-transparent': !isActive,
       'cursor-auto border-transparent': disabled
