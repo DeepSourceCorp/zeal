@@ -1,7 +1,6 @@
 <template>
   <button
     role="tab"
-    :tabindex="tabindex"
     :aria-selected="selected"
     @click="clickHandler"
     class="inline-flex items-end gap-2 pb-3 mx-3 text-sm leading-none outline-none z-tab focus:outline-none border-b-2"
@@ -46,13 +45,13 @@ export default Vue.extend({
       type: String
     }
   },
-  inject: ['tabs'],
   computed: {
-    isActive(): boolean {
-      return this.index === this.tabs.activeIndex
+    activeIndex(): number {
+      const $parent: any = this.$parent
+      return $parent.getActiveIndex
     },
-    tabIndex(): number {
-      return this.isActive ? 0 : -1
+    isActive(): boolean {
+      return this.index === this.activeIndex
     },
     selected(): string {
       return String(this.isActive)
