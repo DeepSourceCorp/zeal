@@ -1,8 +1,8 @@
 <template>
   <button
     role="tab"
-    :tabindex="ariaAttrs.tabindex"
-    :aria-selected="ariaAttrs.selected"
+    :tabindex="tabindex"
+    :aria-selected="selected"
     @click="clickHandler"
     class="inline-flex items-end gap-2 pb-3 mx-3 text-sm leading-none outline-none z-tab focus:outline-none border-b-2"
     :disabled="disabled"
@@ -51,11 +51,11 @@ export default Vue.extend({
     isActive(): boolean {
       return this.index === this.tabs.activeIndex
     },
-    ariaAttrs(): {} {
-      return {
-        tabindex: this.isActive ? 0 : -1,
-        selected: String(this.isActive)
-      }
+    tabIndex(): number {
+      return this.isActive ? 0 : -1
+    },
+    selected(): string {
+      return String(this.isActive)
     }
   },
   methods: {
