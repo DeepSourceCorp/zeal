@@ -1,5 +1,5 @@
 <script lang="ts">
-import Vue, { VNode, CreateElement, VNodeChildren } from 'vue'
+import Vue, { VNode, CreateElement } from 'vue'
 import ZTab from './ZTab.vue'
 
 export default Vue.extend({
