@@ -19,6 +19,7 @@ import ZRadio from './components/ZRadio/index'
 import ZRadioGroup from './components/ZRadioGroup/index'
 import ZSelect from './components/ZSelect/index'
 import ZOption from './components/ZOption/index'
+import { ZTabs, ZTabList, ZTab, ZTabItems, ZTabItem } from './components/ZTabs'
 
 const components = [
   ZButton,
@@ -37,11 +38,16 @@ const components = [
   ZRadioGroup,
   ZInput,
   ZSelect,
-  ZOption
+  ZOption,
+  ZTabs,
+  ZTabList,
+  ZTab,
+  ZTabItems,
+  ZTabItem
 ]
 
 const install = (Vue: any) => {
-  components.forEach((component) => {
+  components.forEach(component => {
     Vue.component(component.name, component)
   })
 }
@@ -65,7 +71,12 @@ export default {
   ZRadioGroup,
   ZInput,
   ZSelect,
-  ZOption
+  ZOption,
+  ZTabs,
+  ZTabList,
+  ZTab,
+  ZTabItems,
+  ZTabItem
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -85,3 +96,8 @@ export { default as ZRadio } from './components/ZRadio/index'
 export { default as ZRadioGroup } from './components/ZRadioGroup/index'
 export { default as ZSelect } from './components/ZSelect/index'
 export { default as ZOption } from './components/ZOption/index'
+export { default as ZTabs } from './components/ZTabs/index'
+export { default as ZTabList } from './components/ZTabs/index'
+export { default as ZTab } from './components/ZTabs/index'
+export { default as ZTabItems } from './components/ZTabs/index'
+export { default as ZTabItem } from './components/ZTabs/index'
