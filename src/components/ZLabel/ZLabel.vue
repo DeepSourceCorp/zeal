@@ -10,7 +10,7 @@
 
 <script>
 import ZIcon from '../ZIcon/ZIcon.vue'
-import Vue from 'Vue'
+import Vue from 'vue'
 
 export default Vue.extend({
   name: 'ZLabel',
