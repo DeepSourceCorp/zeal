@@ -64,7 +64,7 @@ export const Basic = () => ({
         </template>
 
         <template slot="desktop-cta">
-          <z-button class="px-4" color="link" type="link" to="https://deepsource.io/">Log in</z-button>
+          <z-button class="px-6" color="link" type="link" to="https://deepsource.io/">Log in</z-button>
           <z-button color="primary">Sign up</z-button>
         </template>
 
@@ -345,7 +345,7 @@ export const HideMenuOnScroll = () => ({
           </ul>
         </template>
         <template slot="desktop-cta">
-          <z-button class="px-4" color="link" type="link" to="https://deepsource.io/">Log in</z-button>
+          <z-button class="px-6" color="link" type="link" to="https://deepsource.io/">Log in</z-button>
           <z-button color="primary">Sign up</z-button>
         </template>
 
@@ -575,7 +575,7 @@ export const RightAligned = () => ({
           </ul>
         </template>
         <template slot="desktop-cta">
-          <z-button class="px-4" color="link" type="link" to="https://deepsource.io/">Log in</z-button>
+          <z-button class="px-6" color="link" type="link" to="https://deepsource.io/">Log in</z-button>
           <z-button color="primary">Sign up</z-button>
         </template>
 
