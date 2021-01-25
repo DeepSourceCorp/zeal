@@ -1,6 +1,6 @@
 <template>
   <ul :class="[SLOT_PADDING]">
-    <li v-if="$slots.heading" class="px-4 pt-4 pb-3 uppercase text-vanilla-400">
+    <li v-if="$slots.heading" class="px-4 pt-2 pb-4 uppercase text-sm text-vanilla-400">
       <slot name="heading"></slot>
     </li>
     <span :class="[ARRANGEMENT[arrange].classes]">

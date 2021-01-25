@@ -22,7 +22,7 @@
         @mouseover="toggleDropdown(true)"
         @mouseleave="toggleDropdown(false)"
         data-before=""
-        class="absolute -left-6 origin-top-right bg-ink-300 rounded-md shadow-lg"
+        class="absolute -left-12 origin-top-right bg-ink-300 rounded-md shadow-lg"
       >
         <slot></slot>
       </div>
@@ -48,12 +48,12 @@
     </template>
 
     <!-- None -->
-    <template v-if="type === TYPES.none">
-      <span class="px-4 py-2 inline-block font-semibold">{{ title }}</span>
-      <span class="block text-sm md:text-md">
+    <span v-if="type === TYPES.none" class="block py-4">
+      <span class="block font-semibold px-4">{{ title }}</span>
+      <span class="block text-sm md:text-md -mb-2 -mx-1">
         <slot></slot>
       </span>
-    </template>
+    </span>
   </span>
 </template>
 

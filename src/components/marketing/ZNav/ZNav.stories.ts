@@ -28,26 +28,26 @@ export const Basic = () => ({
             <z-nav-list class="w-48 border-r border-ink-200">
               <template slot="heading">Integrations</template>
               <z-nav-list-item>
-                <z-icon class="flex mr-2" icon="coverage"></z-icon>GitHub
+                <z-icon class="mr-3" icon="coverage"></z-icon>GitHub
               </z-nav-list-item>
               <z-nav-list-item>
-                <z-icon class="flex mr-2" icon="coverage"></z-icon>GitLab
+                <z-icon class="mr-3" icon="coverage"></z-icon>GitLab
               </z-nav-list-item>
               <z-nav-list-item>
-                <z-icon class="flex mr-2" icon="coverage"></z-icon>Bitbucket
+                <z-icon class="mr-3" icon="coverage"></z-icon>Bitbucket
               </z-nav-list-item>
             </z-nav-list>
             <z-nav-list arrange="horizontal" class="w-102">
               <template slot="heading">Languages</template>
-              <z-nav-list-item><img class="h-10" src="https://i.imgur.com/6r5cdUd.png"></z-nav-list-item>
-              <z-nav-list-item><img class="h-10" src="https://i.imgur.com/6r5cdUd.png"></z-nav-list-item>
-              <z-nav-list-item><img class="h-10" src="https://i.imgur.com/6r5cdUd.png"></z-nav-list-item>
-              <z-nav-list-item><img class="h-10" src="https://i.imgur.com/6r5cdUd.png"></z-nav-list-item>
-              <z-nav-list-item><img class="h-10" src="https://i.imgur.com/6r5cdUd.png"></z-nav-list-item>
-              <z-nav-list-item><img class="h-10" src="https://i.imgur.com/6r5cdUd.png"></z-nav-list-item>
-              <z-nav-list-item><img class="h-10" src="https://i.imgur.com/6r5cdUd.png"></z-nav-list-item>
-              <z-nav-list-item><img class="h-10" src="https://i.imgur.com/6r5cdUd.png"></z-nav-list-item>
-              <z-nav-list-item><img class="h-10" src="https://i.imgur.com/6r5cdUd.png"></z-nav-list-item>
+              <z-nav-list-item><img class="h-10 my-1" src="https://i.imgur.com/6r5cdUd.png"></z-nav-list-item>
+              <z-nav-list-item><img class="h-10 my-1" src="https://i.imgur.com/6r5cdUd.png"></z-nav-list-item>
+              <z-nav-list-item><img class="h-10 my-1" src="https://i.imgur.com/6r5cdUd.png"></z-nav-list-item>
+              <z-nav-list-item><img class="h-10 my-1" src="https://i.imgur.com/6r5cdUd.png"></z-nav-list-item>
+              <z-nav-list-item><img class="h-10 my-1" src="https://i.imgur.com/6r5cdUd.png"></z-nav-list-item>
+              <z-nav-list-item><img class="h-10 my-1" src="https://i.imgur.com/6r5cdUd.png"></z-nav-list-item>
+              <z-nav-list-item><img class="h-10 my-1" src="https://i.imgur.com/6r5cdUd.png"></z-nav-list-item>
+              <z-nav-list-item><img class="h-10 my-1" src="https://i.imgur.com/6r5cdUd.png"></z-nav-list-item>
+              <z-nav-list-item><img class="h-10 my-1" src="https://i.imgur.com/6r5cdUd.png"></z-nav-list-item>
             </z-nav-list>
           </z-nav-menu>
           <z-nav-menu type="dropdown" title="Resources">
@@ -72,27 +72,27 @@ export const Basic = () => ({
           <z-nav-menu type="none" title="Integrations">
             <z-nav-list>
               <z-nav-list-item>
-                <z-icon class="flex mr-2" icon="coverage"></z-icon>GitHub
+                <z-icon class="mr-3" icon="coverage"></z-icon>GitHub
               </z-nav-list-item>
               <z-nav-list-item>
-                <z-icon class="flex mr-2" icon="coverage"></z-icon>GitLab
+                <z-icon class="mr-3" icon="coverage"></z-icon>GitLab
               </z-nav-list-item>
               <z-nav-list-item>
-                <z-icon class="flex mr-2" icon="coverage"></z-icon>Bitbucket
+                <z-icon class="mr-3" icon="coverage"></z-icon>Bitbucket
               </z-nav-list-item>
             </z-nav-list>
           </z-nav-menu>
           <z-nav-menu class="block border-t border-ink-200" type="none" title="Languages">
             <z-nav-list arrange="horizontal">
-              <z-nav-list-item><img class="h-4 mr-3" src="https://i.imgur.com/6r5cdUd.png">Python</z-nav-list-item>
-              <z-nav-list-item><img class="h-4 mr-3" src="https://i.imgur.com/6r5cdUd.png">Python</z-nav-list-item>
-              <z-nav-list-item><img class="h-4 mr-3" src="https://i.imgur.com/6r5cdUd.png">Python</z-nav-list-item>
-              <z-nav-list-item><img class="h-4 mr-3" src="https://i.imgur.com/6r5cdUd.png">Python</z-nav-list-item>
-              <z-nav-list-item><img class="h-4 mr-3" src="https://i.imgur.com/6r5cdUd.png">Python</z-nav-list-item>
-              <z-nav-list-item><img class="h-4 mr-3" src="https://i.imgur.com/6r5cdUd.png">Python</z-nav-list-item>
-              <z-nav-list-item><img class="h-4 mr-3" src="https://i.imgur.com/6r5cdUd.png">Python</z-nav-list-item>
-              <z-nav-list-item><img class="h-4 mr-3" src="https://i.imgur.com/6r5cdUd.png">Python</z-nav-list-item>
-              <z-nav-list-item><img class="h-4 mr-3" src="https://i.imgur.com/6r5cdUd.png">Python</z-nav-list-item>
+              <z-nav-list-item class="w-1/2 sm:w-1/3"><img class="h-4 mr-3" src="https://i.imgur.com/6r5cdUd.png">Python</z-nav-list-item>
+              <z-nav-list-item class="w-1/2 sm:w-1/3"><img class="h-4 mr-3" src="https://i.imgur.com/6r5cdUd.png">Python</z-nav-list-item>
+              <z-nav-list-item class="w-1/2 sm:w-1/3"><img class="h-4 mr-3" src="https://i.imgur.com/6r5cdUd.png">Python</z-nav-list-item>
+              <z-nav-list-item class="w-1/2 sm:w-1/3"><img class="h-4 mr-3" src="https://i.imgur.com/6r5cdUd.png">Python</z-nav-list-item>
+              <z-nav-list-item class="w-1/2 sm:w-1/3"><img class="h-4 mr-3" src="https://i.imgur.com/6r5cdUd.png">Python</z-nav-list-item>
+              <z-nav-list-item class="w-1/2 sm:w-1/3"><img class="h-4 mr-3" src="https://i.imgur.com/6r5cdUd.png">Python</z-nav-list-item>
+              <z-nav-list-item class="w-1/2 sm:w-1/3"><img class="h-4 mr-3" src="https://i.imgur.com/6r5cdUd.png">Python</z-nav-list-item>
+              <z-nav-list-item class="w-1/2 sm:w-1/3"><img class="h-4 mr-3" src="https://i.imgur.com/6r5cdUd.png">Python</z-nav-list-item>
+              <z-nav-list-item class="w-1/2 sm:w-1/3"><img class="h-4 mr-3" src="https://i.imgur.com/6r5cdUd.png">Python</z-nav-list-item>
             </z-nav-list>
           </z-nav-menu>
           <z-nav-menu class="block border-t border-ink-200" type="accordion" title="Resources">
