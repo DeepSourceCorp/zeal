@@ -24,7 +24,7 @@ export const Basic = () => ({
         </template>
 
         <template slot="desktop-menu">
-          <z-nav-menu arrange="horizontal" type="dropdown" title="Product">
+          <z-nav-menu class="mx-1" arrange="horizontal" type="dropdown" title="Product">
             <z-nav-list class="w-48 border-r border-ink-200">
               <template slot="heading">Integrations</template>
               <z-nav-list-item>
@@ -50,7 +50,7 @@ export const Basic = () => ({
               <z-nav-list-item><img class="h-10 my-1" src="https://i.imgur.com/6r5cdUd.png"></z-nav-list-item>
             </z-nav-list>
           </z-nav-menu>
-          <z-nav-menu type="dropdown" title="Resources">
+          <z-nav-menu class="mx-1" type="dropdown" title="Resources">
             <z-nav-list class="w-48">
               <z-nav-list-item>Documentation</z-nav-list-item>
               <z-nav-list-item>Discourse forum</z-nav-list-item>
@@ -59,8 +59,8 @@ export const Basic = () => ({
               <z-nav-list-item>Slack User Group</z-nav-list-item>
             </z-nav-list>
           </z-nav-menu>
-          <z-nav-item to="https://deepsource.io/">Enterprise</z-nav-item>
-          <z-nav-item to="https://deepsource.io/pricing">Pricing</z-nav-item>
+          <z-nav-item class="mx-1" to="https://deepsource.io/">Enterprise</z-nav-item>
+          <z-nav-item class="mx-1" to="https://deepsource.io/pricing">Pricing</z-nav-item>
         </template>
 
         <template slot="desktop-cta">
