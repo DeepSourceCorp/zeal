@@ -10,11 +10,18 @@ export default Vue.extend({
       return $parent.activeIndex
     }
   },
+  methods: {
+    toPascal(word: string): string {
+      return word.replace(/\w+/g, function(w) {
+        return w[0].toUpperCase() + w.slice(1).toLowerCase()
+      })
+    }
+  },
   render(h: CreateElement): VNode {
     const children = this.$slots.default?.map(
       (child: VNode, index: number): VNode => {
         const options = child.componentOptions
-        if (options && options.tag === 'z-tab') {
+        if (options && this.toPascal(options.tag || '') === 'ZTab') {
           const props = {
             index,
             updateActiveIndex: () => {
