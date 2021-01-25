@@ -49,8 +49,7 @@ export default Vue.extend({
       return 'rounded-sm text-sm px-2'
     },
     iconSize() {
-      if (this.size === 'large') return ''
-      else return 'small'
+      return this.size === 'large' ? '' : 'small'
     }
   }
 })
