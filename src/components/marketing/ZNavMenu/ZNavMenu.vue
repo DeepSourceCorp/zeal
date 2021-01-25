@@ -8,7 +8,7 @@
         @click.stop.prevent
         class="relative py-2 h-full"
       >
-        <z-button class="px-6" type="link" :class="[`${isDropdownOpen ? 'bg-ink-300' : ''}`]">
+        <z-button class="px-4" type="link" :class="[`${isDropdownOpen ? 'bg-ink-300' : ''}`]">
           {{ title }}
         </z-button>
         <span
@@ -18,7 +18,7 @@
       </div>
       <div
         v-if="$slots.default"
-        :class="[dropdownAnimations]"
+        :class="[dropdownAnimations, ARRANGEMENT[arrange].classes]"
         @mouseover="toggleDropdown(true)"
         @mouseleave="toggleDropdown(false)"
         data-before=""
@@ -49,7 +49,7 @@
 
     <!-- None -->
     <template v-if="type === TYPES.none">
-      <span class="inline-block font-semibold">{{ title }}</span>
+      <span class="px-4 py-2 inline-block font-semibold">{{ title }}</span>
       <span class="block text-sm md:text-md">
         <slot></slot>
       </span>
@@ -68,6 +68,17 @@ const TYPES = {
   none: 'none'
 }
 
+const ARRANGEMENT = {
+  vertical: {
+    text: 'vertical',
+    classes: ''
+  },
+  horizontal: {
+    text: 'horizontal',
+    classes: 'flex'
+  }
+}
+
 export default Vue.extend({
   components: { ZButton, ZIcon },
   name: 'ZNavMenu',
@@ -80,6 +91,11 @@ export default Vue.extend({
       type: String,
       default: TYPES.none,
       validator: (type) => Object.keys(TYPES).includes(type)
+    },
+    arrange: {
+      type: String,
+      default: ARRANGEMENT.vertical.text,
+      validator: (arrange) => Object.keys(ARRANGEMENT).includes(arrange)
     }
   },
   data() {
@@ -87,7 +103,8 @@ export default Vue.extend({
       isAccordionOpen: false,
       isDropdownOpen: false,
       accordionHeaderAnimations: '',
-      TYPES
+      TYPES,
+      ARRANGEMENT
     }
   },
   computed: {
@@ -95,7 +112,7 @@ export default Vue.extend({
       return this.isDropdownOpen ? 'animate-fadeIn' : 'hidden'
     },
     accordionBodyAnimations(): string {
-      return this.isAccordionOpen ? 'max-h-64' : 'max-h-0'
+      return this.isAccordionOpen ? 'max-h-102' : 'max-h-0'
     }
   },
   methods: {

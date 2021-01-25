@@ -1,7 +1,9 @@
 <template>
-  <z-button class="px-6 hover:bg-ink-300" :to="to" type="link">
-    <slot></slot>
-  </z-button>
+  <span class="text-vanilla-100">
+    <z-button class="px-4 hover:bg-ink-300" :to="to" type="link">
+      <slot></slot>
+    </z-button>
+  </span>
 </template>
 
 <script lang="ts">
