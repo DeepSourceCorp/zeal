@@ -605,6 +605,7 @@ module.exports = {
     animation: {
       none: 'none',
       fadeIn: 'fadeIn 1s',
+      fadeInFast: 'fadeIn 0.5s',
       expand: 'expand 1s',
       spin: 'spin 1s linear infinite',
       'first-half-spin': 'first-half-spin 0.5s',
@@ -1104,6 +1105,35 @@ module.exports = {
       })
 
       addUtilities(backdropFilterUtilities, variants('backdropFilter'))
-    })
+    }),
+    plugin(({ addUtilities, theme }) => {
+      const individualBorderColors = []
+      const traverseObject = (obj, prevKey) => {
+        Object.keys(obj).forEach(key => {
+          let colorName = `${prevKey}${prevKey && '-'}${key}`
+          individualBorderColors.push({
+            [`.border-b-${colorName}`]: {
+              borderBottomColor: obj[key]
+            },
+            [`.border-t-${colorName}`]: {
+              borderTopColor:  obj[key]
+            },
+            [`.border-l-${colorName}`]: {
+              borderLeftColor:  obj[key]
+            },
+            [`.border-r-${colorName}`]: {
+              borderRightColor:  obj[key]
+            }
+          })
+          
+          if (typeof obj[key] === 'object') {
+            traverseObject(obj[key], key)
+          }
+        })
+      }
+      traverseObject(theme('colors'), "")
+
+      addUtilities(individualBorderColors, ['responsive', 'before', 'after']);
+    }),
   ]
 }

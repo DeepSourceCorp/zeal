@@ -12,7 +12,7 @@
           {{ title }}
         </z-button>
         <span
-          class="absolute -ml-2 mt-1 left-1/2 block h-3 w-3 bg-ink-300 transform rotate-45"
+          class="absolute -ml-2 mt-1 left-1/2 block w-0 h-0 border-t-0 border-r-8 border-l-8 border-b-8 border-l-transparent border-r-transparent border-b-ink-300"
           :class="[dropdownAnimations]"
         ></span>
       </div>
@@ -22,7 +22,7 @@
         @mouseover="toggleDropdown(true)"
         @mouseleave="toggleDropdown(false)"
         data-before=""
-        class="absolute -left-12 origin-top-right bg-ink-300 rounded-md shadow-lg"
+        class="absolute -left-12 mt-1 origin-top-right bg-ink-300 rounded-md shadow-lg"
       >
         <slot></slot>
       </div>
@@ -109,7 +109,7 @@ export default Vue.extend({
   },
   computed: {
     dropdownAnimations(): string {
-      return this.isDropdownOpen ? 'animate-fadeIn' : 'hidden'
+      return this.isDropdownOpen ? 'animate-fadeInFast' : 'hidden'
     },
     accordionBodyAnimations(): string {
       return this.isAccordionOpen ? 'max-h-102' : 'max-h-0'
