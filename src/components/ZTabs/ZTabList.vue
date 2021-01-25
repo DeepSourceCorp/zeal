@@ -17,9 +17,16 @@ export default Vue.extend({
   },
   methods: {
     toPascal(word: string): string {
-      return word.replace(/\w+/g, function(w) {
-        return w[0].toUpperCase() + w.slice(1).toLowerCase()
-      })
+      // https://stackoverflow.com/a/53952925
+      return `${word}`
+        .replace(new RegExp(/[-_]+/, 'g'), ' ')
+        .replace(new RegExp(/[^\w\s]/, 'g'), '')
+        .replace(
+          new RegExp(/\s+(.)(\w+)/, 'g'),
+          ($1, $2, $3) => `${$2.toUpperCase() + $3.toLowerCase()}`
+        )
+        .replace(new RegExp(/\s/, 'g'), '')
+        .replace(new RegExp(/\w/), s => s.toUpperCase())
     }
   },
   render(h: CreateElement): VNode {
