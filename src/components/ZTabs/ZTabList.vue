@@ -2,11 +2,16 @@
 import Vue, { VNode, CreateElement } from 'vue'
 import ZTab from './ZTab.vue'
 
+interface ZTabsT extends Vue {
+  updateActiveIndex: Function
+  activeIndex: number
+}
+
 export default Vue.extend({
   name: 'ZTabList',
   computed: {
     getActiveIndex(): number {
-      const $parent: any = this.$parent
+      const $parent = this.$parent as ZTabsT
       return $parent.activeIndex
     }
   },
@@ -25,7 +30,7 @@ export default Vue.extend({
           const props = {
             index,
             updateActiveIndex: () => {
-              const $parent: any = this.$parent
+              const $parent = this.$parent as ZTabsT
               $parent.updateActiveIndex(index)
             },
             ...options.propsData
