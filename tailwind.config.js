@@ -1109,31 +1109,31 @@ module.exports = {
     plugin(({ addUtilities, theme }) => {
       const individualBorderColors = []
       const traverseObject = (obj, prevKey) => {
-        Object.keys(obj).forEach(key => {
+        Object.keys(obj).forEach((key) => {
           let colorName = `${prevKey}${prevKey && '-'}${key}`
           individualBorderColors.push({
             [`.border-b-${colorName}`]: {
               borderBottomColor: obj[key]
             },
             [`.border-t-${colorName}`]: {
-              borderTopColor:  obj[key]
+              borderTopColor: obj[key]
             },
             [`.border-l-${colorName}`]: {
-              borderLeftColor:  obj[key]
+              borderLeftColor: obj[key]
             },
             [`.border-r-${colorName}`]: {
-              borderRightColor:  obj[key]
+              borderRightColor: obj[key]
             }
           })
-          
+
           if (typeof obj[key] === 'object') {
             traverseObject(obj[key], key)
           }
         })
       }
-      traverseObject(theme('colors'), "")
+      traverseObject(theme('colors'), '')
 
-      addUtilities(individualBorderColors, ['responsive', 'before', 'after']);
-    }),
+      addUtilities(individualBorderColors, ['responsive', 'before', 'after'])
+    })
   ]
 }
