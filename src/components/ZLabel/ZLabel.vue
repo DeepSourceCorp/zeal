@@ -1,7 +1,7 @@
 <template>
   <span
     :class="`text-${baseColor} border-${baseColor} bg-${baseColor} ${sizeClass}`"
-    class="inline-flex items-center gap-2 py-1 border bg-opacity-25"
+    class="inline-flex items-center gap-2 py-1 border bg-opacity-5"
   >
     <z-icon v-if="icon" :icon="icon" :size="iconSize" :color="`text-${baseColor}`"></z-icon>
     <slot></slot>
@@ -24,14 +24,14 @@ export default Vue.extend({
     state: {
       type: String,
       default: 'default',
-      validator: function (value) {
+      validator: function(value) {
         return ['success', 'error', 'warning', 'default'].includes(value)
       }
     },
     size: {
       type: String,
       default: 'base',
-      validator: function (value) {
+      validator: function(value) {
         return ['small', 'base', 'large'].includes(value)
       }
     }
