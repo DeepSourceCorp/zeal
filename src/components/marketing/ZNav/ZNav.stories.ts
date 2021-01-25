@@ -16,7 +16,7 @@ export const Basic = () => ({
   
       <z-nav>
         <template slot="brand">
-          <img src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
+          <img class="h-8 max-w-none" src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
         </template>
         <template slot="desktop-menu">
           <ul class="flex">
@@ -26,7 +26,7 @@ export const Basic = () => ({
           </ul>
         </template>
         <template slot="desktop-cta">
-          <z-button color="link" type="link" to="https://deepsource.io/">Log in</z-button>
+          <z-button class="px-6" color="link" type="link" to="https://deepsource.io/">Log in</z-button>
           <z-button color="primary">Sign up</z-button>
         </template>
 
@@ -246,7 +246,7 @@ export const RightAligned = () => ({
   
       <z-nav menu-align="right">
         <template slot="brand">
-          <img src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
+          <img class="h-8 max-w-none" src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
         </template>
         <template slot="desktop-menu">
           <ul class="flex">
@@ -256,7 +256,7 @@ export const RightAligned = () => ({
           </ul>
         </template>
         <template slot="desktop-cta">
-          <z-button color="link" type="link" to="https://deepsource.io/">Log in</z-button>
+          <z-button class="px-6" color="link" type="link" to="https://deepsource.io/">Log in</z-button>
           <z-button color="primary">Sign up</z-button>
         </template>
 
@@ -476,7 +476,7 @@ export const LeftAligned = () => ({
   
       <z-nav menu-align="left">
         <template slot="brand">
-          <img src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
+          <img class="h-8 max-w-none" src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
         </template>
         <template slot="desktop-menu">
           <ul class="flex">
@@ -486,7 +486,7 @@ export const LeftAligned = () => ({
           </ul>
         </template>
         <template slot="desktop-cta">
-          <z-button color="link" type="link" to="https://deepsource.io/">Log in</z-button>
+          <z-button class="px-6" color="link" type="link" to="https://deepsource.io/">Log in</z-button>
           <z-button color="primary">Sign up</z-button>
         </template>
 

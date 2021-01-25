@@ -7,7 +7,7 @@
       :class="[`${CONTAINERS[container].classes}`]"
     >
       <!-- Brand -->
-      <div v-if="$slots.brand" class="flex items-center w-1/2 sm:w-1/3 md:w-1/4 lg:w-auto h-full">
+      <div v-if="$slots.brand" class="flex items-center">
         <slot name="brand"></slot>
       </div>
 
