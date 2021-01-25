@@ -240,7 +240,6 @@ export const Basic = () => ({
     </div>`
 })
 
-
 export const RightAligned = () => ({
   components: { ZNav, ZButton },
   template: `<div class='bg-gradient-skeleton'>
@@ -470,7 +469,6 @@ export const RightAligned = () => ({
       </div>
     </div>`
 })
-
 
 export const LeftAligned = () => ({
   components: { ZNav, ZButton },
