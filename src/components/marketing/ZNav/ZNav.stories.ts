@@ -1,6 +1,7 @@
 import ZNav from './ZNav.vue'
 import ZButton from '../../ZButton'
 import ZNavMenu from '../ZNavMenu'
+import ZNavItem from '../ZNavItem'
 
 export default {
   title: 'Zeal Marketing/Nav',
@@ -12,32 +13,76 @@ export default {
 }
 
 export const Basic = () => ({
-  components: { ZNav, ZButton, ZNavMenu },
-  template: `<div class='bg-gradient-skeleton'>
+  components: { ZNav, ZButton, ZNavMenu, ZNavItem },
+  template: `<div class='bg-gradient-galaxy'>
   
       <z-nav>
         <template slot="brand">
           <img class="h-7 max-w-none" src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
         </template>
+
         <template slot="desktop-menu">
-          <ul class="flex">
-            <li class="mx-2">Link</li>
-            <li class="mx-2">Link</li>
-            <li class="mx-2">Link</li>
-          </ul>
+          <z-nav-menu type="dropdown" title="Product">
+            <span class="flex">
+              <ul class="w-48 border-r border-ink-200">
+                <li class="px-6 pt-4 pb-3 uppercase text-vanilla-400">Integrations</li>
+                <li class="flex items-center px-6 py-2 cursor-pointer hover:text-juniper"><img class="mr-2" src="https://i.imgur.com/NHiAHA5.png">GitHub</li>
+                <li class="flex items-center px-6 py-2 cursor-pointer hover:text-juniper"><img class="mr-2" src="https://i.imgur.com/NHiAHA5.png">GitLab</li>
+                <li class="flex items-center px-6 py-2 cursor-pointer hover:text-juniper"><img class="mr-2" src="https://i.imgur.com/NHiAHA5.png">Bitbucket</li>
+              </ul>
+              <ul class="w-102">
+                <li class="px-6 pt-4 pb-3 uppercase text-vanilla-400">Languages</li>
+                <span class="flex flex-wrap">
+                  <li class="px-5 py-4 cursor-pointer hover:text-juniper"><img class="h-10" src="https://i.imgur.com/6r5cdUd.png"></li>
+                  <li class="px-5 py-4 cursor-pointer hover:text-juniper"><img class="h-10" src="https://i.imgur.com/6r5cdUd.png"></li>
+                  <li class="px-5 py-4 cursor-pointer hover:text-juniper"><img class="h-10" src="https://i.imgur.com/6r5cdUd.png"></li>
+                  <li class="px-5 py-4 cursor-pointer hover:text-juniper"><img class="h-10" src="https://i.imgur.com/6r5cdUd.png"></li>
+                  <li class="px-5 py-4 cursor-pointer hover:text-juniper"><img class="h-10" src="https://i.imgur.com/6r5cdUd.png"></li>
+                  <li class="px-5 py-4 cursor-pointer hover:text-juniper"><img class="h-10" src="https://i.imgur.com/6r5cdUd.png"></li>
+                  <li class="px-5 py-4 cursor-pointer hover:text-juniper"><img class="h-10" src="https://i.imgur.com/6r5cdUd.png"></li>
+                  <li class="px-5 py-4 cursor-pointer hover:text-juniper"><img class="h-10" src="https://i.imgur.com/6r5cdUd.png"></li>
+                  <li class="px-5 py-4 cursor-pointer hover:text-juniper"><img class="h-10" src="https://i.imgur.com/6r5cdUd.png"></li>
+                </span>
+              </ul>
+            </span>
+          </z-nav-menu>
+          <z-nav-menu type="dropdown" title="Resources">
+            <ul class="w-48">
+              <li class="flex items-center px-6 py-3 cursor-pointer hover:text-juniper">Documentation</li>
+              <li class="flex items-center px-6 py-3 cursor-pointer hover:text-juniper">Discourse forum</li>
+              <li class="flex items-center px-6 py-3 cursor-pointer hover:text-juniper">Learning Center</li>
+              <li class="flex items-center px-6 py-3 cursor-pointer hover:text-juniper">Blog</li>
+              <li class="flex items-center px-6 py-3 cursor-pointer hover:text-juniper">Slack User Group</li>
+            </ul>
+          </z-nav-menu>
+          <z-nav-item to="https://deepsource.io/">Enterprise</z-nav-item>
+          <z-nav-item to="https://deepsource.io/pricing">Pricing</z-nav-item>
         </template>
+
         <template slot="desktop-cta">
           <z-button class="px-6" color="link" type="link" to="https://deepsource.io/">Log in</z-button>
           <z-button color="primary">Sign up</z-button>
         </template>
 
         <template slot="mobile-menu">
-          <ul>
-            <li class="mx-2">Link</li>
-            <li class="mx-2">Link</li>
-            <li class="mx-2">Link</li>
-          </ul>
+          <z-nav-menu type="accordion" title="Product">
+            <ul>
+              <li class="px-4 py-2 cursor-pointer hover:text-juniper">Link</li>
+              <li class="px-4 py-2 cursor-pointer hover:text-juniper">Link</li>
+              <li class="px-4 py-2 cursor-pointer hover:text-juniper">Link</li>
+            </ul>
+          </z-nav-menu>
+          <span class="block border-t border-ink-200">
+            <z-nav-menu type="accordion" title="Resources">
+              <ul>
+                <li class="px-4 py-2 cursor-pointer hover:text-juniper">Link</li>
+                <li class="px-4 py-2 cursor-pointer hover:text-juniper">Link</li>
+                <li class="px-4 py-2 cursor-pointer hover:text-juniper">Link</li>
+              </ul>
+            </z-nav-menu>
+          </span>
         </template>
+
         <template slot="mobile-cta">
           <z-button class="mb-4" color="primary">Sign up</z-button>
           <z-button class="mb-4" color="secondary" type="link" to="https://deepsource.io/">Log in</z-button>
@@ -509,7 +554,7 @@ export const RightAligned = () => ({
         <template slot="mobile-menu">
           <ul class="divide-y divide-ink-200">
             <li>
-              <z-nav-menu type="accordion" title="Jobs">
+              <z-nav-menu type="accordion" title="Product">
                 <ul>
                   <li class="p-2">Link</li>
                   <li class="p-2">Link</li>

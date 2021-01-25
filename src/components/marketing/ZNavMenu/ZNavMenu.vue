@@ -22,14 +22,14 @@
         @mouseover="toggleDropdown(true)"
         @mouseleave="toggleDropdown(false)"
         data-before=""
-        class="absolute -left-6 origin-top-right bg-ink-300 min-w-64 rounded-md shadow-lg"
+        class="absolute -left-6 origin-top-right bg-ink-300 rounded-md shadow-lg"
       >
         <slot></slot>
       </div>
     </span>
 
     <!-- Accordion -->
-    <span v-if="type === TYPES.accordion">
+    <template v-if="type === TYPES.accordion">
       <span
         @click="toggleAccordion()"
         class="flex items-center cursor-pointer px-4 py-3 bg-ink-300 inline-block hover:opacity-75 select-none font-semibold w-full"
@@ -45,15 +45,15 @@
           <slot></slot>
         </span>
       </span>
-    </span>
+    </template>
 
     <!-- None -->
-    <span v-if="type === TYPES.none">
+    <template v-if="type === TYPES.none">
       <span class="inline-block font-semibold">{{ title }}</span>
       <span class="block text-sm md:text-md">
         <slot></slot>
       </span>
-    </span>
+    </template>
   </span>
 </template>
 
