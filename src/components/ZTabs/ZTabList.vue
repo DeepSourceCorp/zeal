@@ -3,7 +3,7 @@ import Vue, { VNode, CreateElement } from 'vue'
 import ZTab from './ZTab.vue'
 
 interface ZTabsT extends Vue {
-  updateActiveIndex: Function
+  updateActiveIndex: (index: number) => void
   activeIndex: number
 }
 
