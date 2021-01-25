@@ -1,11 +1,15 @@
 <script lang="ts">
 import Vue, { VNode, CreateElement } from 'vue'
 
+interface ZTabsT extends Vue {
+  activeIndex: number
+}
+
 export default Vue.extend({
   name: 'TabItems',
   computed: {
     activeIndex(): number {
-      const $parent: any = this.$parent
+      const $parent = this.$parent as ZTabsT
       return $parent.activeIndex
     }
   },

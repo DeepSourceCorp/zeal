@@ -25,6 +25,10 @@
 import Vue from 'vue'
 import ZIcon from '../ZIcon/ZIcon.vue'
 
+interface ZTabListT extends Vue {
+  getActiveIndex: number
+}
+
 export default Vue.extend({
   name: 'ZTab',
   components: {
@@ -47,7 +51,7 @@ export default Vue.extend({
   },
   computed: {
     activeIndex(): number {
-      const $parent: any = this.$parent
+      const $parent = this.$parent as ZTabListT
       return $parent.getActiveIndex
     },
     isActive(): boolean {
