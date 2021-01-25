@@ -9,7 +9,7 @@ export default {
   excludeStories: /.*Data$/
 }
 
-export const BasicLabels = () => ({
+export const BasicPulse = () => ({
   components: { ZPulse },
   template: `<div>
       <z-pulse></z-pulse>
