@@ -1,7 +1,7 @@
 {
   "name": "@deepsourcelabs/zeal",
   "version": "0.2.2",
-  "repository": "https://github.com/deepsourcelabs/zeal",
+  "repository": "https://github.com/deepsourcelabs/bifrost",
   "main": "./dist/zeal.common.js",
   "private": true,
   "scripts": {
