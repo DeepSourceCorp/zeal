@@ -24,14 +24,14 @@ export default Vue.extend({
     state: {
       type: String,
       default: 'default',
-      validator: function(value: string): boolean {
+      validator: function (value: string): boolean {
         return ['success', 'error', 'warning', 'default'].includes(value)
       }
     },
     size: {
       type: String,
       default: 'base',
-      validator: function(value: string): boolean {
+      validator: function (value: string): boolean {
         return ['small', 'base', 'large'].includes(value)
       }
     }
