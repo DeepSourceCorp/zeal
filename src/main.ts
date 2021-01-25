@@ -49,7 +49,7 @@ const components = [
 ]
 
 const install = (Vue: any) => {
-  components.forEach((component) => {
+  components.forEach(component => {
     Vue.component(component.name, component)
   })
 }
@@ -99,9 +99,9 @@ export { default as ZRadio } from './components/ZRadio/index'
 export { default as ZRadioGroup } from './components/ZRadioGroup/index'
 export { default as ZSelect } from './components/ZSelect/index'
 export { default as ZOption } from './components/ZOption/index'
-export { default as ZTabs } from './components/ZTabs/index'
-export { default as ZTabList } from './components/ZTabs/index'
-export { default as ZTab } from './components/ZTabs/index'
-export { default as ZTabItems } from './components/ZTabs/index'
-export { default as ZTabItem } from './components/ZTabs/index'
 export { default as ZLabel } from './components/ZLabel/index'
+export { ZTabs } from './components/ZTabs/index'
+export { ZTabList } from './components/ZTabs/index'
+export { ZTab } from './components/ZTabs/index'
+export { ZTabItems } from './components/ZTabs/index'
+export { ZTabItem } from './components/ZTabs/index'
