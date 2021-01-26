@@ -22,7 +22,7 @@
         @mouseover="toggleDropdown(true)"
         @mouseleave="toggleDropdown(false)"
         data-before=""
-        class="absolute -left-12 origin-top-right bg-ink-300 rounded-md shadow-lg"
+        class="absolute -left-12 origin-top-right bg-ink-300 rounded-md shadow-lg min-w-52"
       >
         <slot></slot>
       </div>
