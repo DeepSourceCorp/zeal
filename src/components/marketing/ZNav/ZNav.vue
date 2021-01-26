@@ -3,7 +3,7 @@
     class="z-1000 sticky flex items-center bg-ink-400 lg:bg-opacity-25 text-vanilla-100 top-0 border-b border-slate lg:border-0 lg:backdrop-blur h-16"
   >
     <div
-      class="flex items-center w-screen lg:mx-auto"
+      class="flex items-center w-screen lg:mx-auto px-4"
       :class="[`${CONTAINERS[container].classes}`]"
     >
       <!-- Brand -->
@@ -49,7 +49,7 @@
       </div>
 
       <!-- CTA -->
-      <div v-if="$slots['mobile-cta']" class="flex flex-col p-4">
+      <div v-if="$slots['mobile-cta']" class="flex flex-col px-4 py-3">
         <slot name="mobile-cta"></slot>
       </div>
     </aside>
@@ -61,9 +61,9 @@ import ZIcon from '@/components/ZIcon/ZIcon.vue'
 import Vue from 'vue'
 
 const CONTAINERS = {
-  sm: { text: 'sm', classes: 'px-4 lg:max-w-5xl' },
-  md: { text: 'md', classes: 'px-4 lg:max-w-6xl' },
-  lg: { text: 'lg', classes: 'px-4 lg:max-w-7xl' }
+  sm: { text: 'sm', classes: 'lg:max-w-5xl' },
+  md: { text: 'md', classes: 'lg:max-w-6xl' },
+  lg: { text: 'lg', classes: 'lg:max-w-7xl' }
 }
 
 const MENU_ALIGNMENT = {
