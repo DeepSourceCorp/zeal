@@ -1,7 +1,7 @@
 <template>
   <nav
     class="z-1000 sticky flex items-center bg-ink-400 text-vanilla-100 top-0 lg:border-0 border-b border-slate h-16"
-    :class="[`${isScrolling || isUserOnTop ? 'lg:backdrop-blur lg:bg-opacity-25': ''}`]"
+    :class="[`${isScrolling || isUserOnTop ? 'lg:backdrop-blur lg:bg-opacity-25' : ''}`]"
   >
     <div
       class="flex items-center w-screen lg:mx-auto px-4"
@@ -91,7 +91,7 @@ export default Vue.extend({
     },
     hideMenuOnScroll: {
       type: Boolean,
-      default: false,
+      default: false
     }
   },
   data() {
