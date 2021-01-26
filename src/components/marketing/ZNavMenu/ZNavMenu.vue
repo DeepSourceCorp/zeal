@@ -6,7 +6,7 @@
         @mouseover.stop.prevent="toggleDropdown(true)"
         @mouseleave.stop.prevent="toggleDropdown(false)"
         @click.stop.prevent
-        class="relative py-2 h-full"
+        class="relative py-3 h-full"
       >
         <z-button class="px-4" type="link" :class="[`${isDropdownOpen ? 'bg-ink-300' : ''}`]">
           {{ title }}
@@ -22,7 +22,7 @@
         @mouseover="toggleDropdown(true)"
         @mouseleave="toggleDropdown(false)"
         data-before=""
-        class="absolute -left-12 mt-1 origin-top-right bg-ink-300 rounded-md shadow-lg"
+        class="absolute -left-12 origin-top-right bg-ink-300 rounded-md shadow-lg"
       >
         <slot></slot>
       </div>
