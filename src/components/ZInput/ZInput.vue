@@ -8,10 +8,11 @@
     </span>
     <input
       type="text"
-      class="input w-full pt-2.5 text-sm caret-juniper bg-ink-400 focus:shadow-white focus:border-vanilla-400 border border-solid border-bg-ink-100 rounded-sm outline-none h-10"
+      class="input w-full pt-2.5 caret-juniper bg-ink-400 focus:shadow-white focus:border-vanilla-400 border border-solid border-bg-ink-100 rounded-sm outline-none"
       :class="[
         `${(disabled && 'text-slate cursor-not-allowed') || 'text-vanilla-300'}`,
-        getIconBasedStyle
+        getIconBasedStyle,
+        `text-${textSize}`
       ]"
       :value="name"
       :placeholder="placeholder"
@@ -65,6 +66,10 @@ export default Vue.extend({
     iconPosition: {
       type: String,
       default: 'left'
+    },
+    textSize: {
+      type: String,
+      default: 'sm'
     }
   },
   model: {

@@ -15,7 +15,8 @@ module.exports = {
       sm: '640px',
       md: '768px',
       lg: '1024px',
-      xl: '1280px'
+      xl: '1280px',
+      '2xl': '1536px' 
     },
     colors: {
       transparent: 'transparent',
@@ -83,6 +84,7 @@ module.exports = {
       52: '13rem',
       56: '14rem',
       64: '16rem',
+      72: '18rem',
       80: '20rem',
       96: '24rem',
       102: '32rem'
@@ -282,11 +284,15 @@ module.exports = {
     }),
     minHeight: {
       0: '0',
+      '1/2': '50%',
       full: '100%',
       screen: '100vh'
     },
     minWidth: {
       0: '0',
+      '1/4': '25%',
+      '1/2': '50%',
+      '3/4': '75%',
       full: '100%'
     },
     objectPosition: {

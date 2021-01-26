@@ -50,6 +50,25 @@ export const States = () => ({
     </div>`
 })
 
+export const IconButton = () => ({
+  components: { ZButton },
+  template: `<div>
+        <z-button color="primary" 
+                  icon="plus"
+                  iconColor="ink-400"></z-button>
+    </div>`
+})
+
+export const SmallIconButton = () => ({
+  components: { ZButton },
+  template: `<div>
+        <z-button color="primary" 
+                  icon="plus"
+                  iconColor="ink-400"
+                  iconSize="small"></z-button>
+    </div>`
+})
+
 export const FullWidthButton = () => ({
   components: { ZButton },
   template: `<div>

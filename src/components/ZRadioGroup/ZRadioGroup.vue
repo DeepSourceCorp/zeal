@@ -1,12 +1,12 @@
 <template>
-  <div class="z-radio-group flex flex-col gap-2" role="radiogroup">
+  <div class="z-radio-group" role="radiogroup">
     <slot></slot>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
-export default Vue.extend({
+export default {
   name: 'ZRadioGroup',
   props: {
     modelValue: {
@@ -32,5 +32,5 @@ export default Vue.extend({
       this.$emit('change', newValue)
     }
   }
-})
+}
 </script>
