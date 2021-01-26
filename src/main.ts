@@ -19,6 +19,7 @@ import ZRadio from './components/ZRadio/index'
 import ZRadioGroup from './components/ZRadioGroup/index'
 import ZSelect from './components/ZSelect/index'
 import ZOption from './components/ZOption/index'
+import ZAvatar from './components/ZAvatar/index'
 import { ZTabs, ZTabList, ZTab, ZTabItems, ZTabItem } from './components/ZTabs'
 import ZLabel from './components/ZLabel/index'
 
@@ -45,7 +46,8 @@ const components = [
   ZTab,
   ZTabItems,
   ZTabItem,
-  ZLabel
+  ZLabel,
+  ZAvatar
 ]
 
 const install = (Vue: any) => {
@@ -79,7 +81,8 @@ export default {
   ZTab,
   ZTabItems,
   ZTabItem,
-  ZLabel
+  ZLabel,
+  ZAvatar
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -100,6 +103,7 @@ export { default as ZRadioGroup } from './components/ZRadioGroup/index'
 export { default as ZSelect } from './components/ZSelect/index'
 export { default as ZOption } from './components/ZOption/index'
 export { default as ZLabel } from './components/ZLabel/index'
+export { default as ZAvatar } from './components/ZAvatar/index'
 export { ZTabs } from './components/ZTabs/index'
 export { ZTabList } from './components/ZTabs/index'
 export { ZTab } from './components/ZTabs/index'

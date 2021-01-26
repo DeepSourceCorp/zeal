@@ -2,6 +2,7 @@
   <label
     class="z-radio text-vanilla-100 flex items-center"
     :class="`${(isDisabled && 'cursor-not-allowed') || 'cursor-pointer'}`"
+    @click="updateInput"
   >
     <span
       class="z-radio--inner rounded-full w-4 h-4 relative cursor-pointer inline-block box-border border-solid border-2"
@@ -39,10 +40,10 @@
   </label>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 
-export default Vue.extend({
+export default {
   name: 'ZRadio',
   props: {
     modelValue: {
@@ -62,23 +63,23 @@ export default Vue.extend({
     }
   },
   computed: {
-    modelData(): string {
-      const $parent: any = this.$parent
+    modelData() {
+      const $parent = this.$parent
       return ($parent && $parent.modelValue) || this.modelValue
     },
-    isChecked(): boolean {
+    isChecked() {
       return this.modelData === this.value
     },
-    isDisabled(): boolean {
-      const $parent: any = this.$parent
+    isDisabled() {
+      const $parent = this.$parent
       return ($parent && $parent.disabled) || this.disabled
     }
   },
   methods: {
-    updateInput(): void {
-      const $parent: any = this.$parent
+    updateInput() {
+      const $parent = this.$parent
       $parent.value = this.value
     }
   }
-})
+}
 </script>

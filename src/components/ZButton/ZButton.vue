@@ -2,28 +2,34 @@
   <component
     :is="isLink ? 'a' : 'button'"
     :href="to || '#'"
-    class="z-btn inline-flex items-center font-medium border-transparent rounded-sm relative justify-center"
     v-bind="$attrs"
     :disabled="disabled"
     v-on="$listeners"
+    @click="handleClick"
     :class="[
+      customClasses,
+      icon ? '' : defaultClasses,
       `${color && `z-btn--${color}`}`,
       `${this.fullWidth !== false && 'w-full inline-block'}`,
       `${this.isButtonDisabled && 'opacity-50 cursor-not-allowed'}`,
-      (isLink && 'p-0') || 'px-6',
-      getSizeClasses,
-      customClasses,
+      (isLink|| icon) && 'p-0' || 'px-6',
+      (isLink|| icon) ? '' : getSizeClasses,
       `${getStyleBasedOnType}`
     ]"
     :type="type"
   >
-    <slot>Click</slot>
+    <z-icon v-if="icon" :icon="icon" :color="iconColor" :size="iconSize"></z-icon>
+    <slot v-else>Click</slot>
   </component>
 </template>
 
 <script>
+import ZIcon from '@/components/ZIcon/ZIcon.vue'
 export default {
   name: 'ZButton',
+  components: {
+    ZIcon
+  },
   props: {
     color: {
       default: '',
@@ -56,6 +62,20 @@ export default {
     to: {
       default: '',
       type: String
+    },
+    icon: {
+      type: String
+    },
+    iconColor: {
+      type: String
+    },
+    iconSize: {
+      type: String
+    }
+  },
+  data() {
+    return {
+      defaultClasses: 'inline-flex items-center font-medium border-transparent rounded-sm relative justify-center'
     }
   },
   computed: {
@@ -87,7 +107,7 @@ export default {
         small: 'h-8 text-xs',
         medium: 'h-8 text-xs sm:h-10 sm:text-base',
         large: 'h-12 text-lg',
-        xlarge: 'h-16 text-lg'
+        xlarge: 'h-16 text-lg',
       }
       return sizes[this.size] || sizes['medium']
     }

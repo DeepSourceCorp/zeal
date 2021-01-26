@@ -5,14 +5,14 @@
     @mouseleave.stop.prevent="toggleExpandable(false)"
   >
     <div
-      class="z-expandable__header bg-ink-300 p-2.5 font-semibold text-sm leading-6 cursor-pointer transition-all duration-300 ease-in-out"
+      class="z-expandable__header p-2.5 font-semibold text-sm leading-6 cursor-pointer transition-all duration-300 ease-in-out"
       :class="openTextStyle"
       v-if="$slots.header"
     >
       <slot name="header"></slot>
     </div>
     <div
-      class="z-expandable__content bg-ink-200 text-vanilla-100 overflow-scroll transition-all duration-700 ease-in-out text-sm leading-6"
+      class="z-expandable__content bg-ink-400 text-vanilla-100 overflow-scroll transition-all duration-700 ease-in-out text-sm leading-6 border border-solid border-ink-300"
       v-if="$slots.content"
       :class="openHeightStyle"
     >
@@ -39,7 +39,7 @@ export default {
       return this.isOpen ? 'max-h-52' : 'max-h-0'
     },
     openTextStyle() {
-      return this.isOpen ? 'text-vanilla-100' : 'text-vanilla-400'
+      return this.isOpen ? 'text-vanilla-100 bg-ink-400 border-b-0 border border-solid border-ink-300' : 'text-vanilla-400 bg-ink-300 border border-solid border-transparent'
     }
   },
   methods: {

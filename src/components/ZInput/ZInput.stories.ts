@@ -89,3 +89,12 @@ export const InputWithIconOnRight = () => ({
         </div>
     </div>`
 })
+
+export const DefaultInputWithSmallSizeText = () => ({
+  components: { ZInput },
+  template: `<div class='padded-container'>
+        <div class="input-container">
+            <z-input v-model="name" textSize="xs"></z-input>
+        </div>
+    </div>`
+})

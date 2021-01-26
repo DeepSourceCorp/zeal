@@ -36,7 +36,7 @@ export const CheckedRadioButton = () => ({
   },
   template: `<div class='padded-container'>
             <div class="input-container">
-                <z-radio-group v-model="modelValue">
+                <z-radio-group v-model="modelValue" class="flex flex-col gap-2">
                     <z-radio value="female" label="Female"></z-radio>
                     <z-radio value="male" label="Male"></z-radio>
                 </z-radio-group>
@@ -53,7 +53,7 @@ export const DisabledRadioButton = () => ({
   },
   template: `<div class='padded-container'>
             <div class="input-container">
-                <z-radio-group v-model="modelValue" :disabled="true">
+                <z-radio-group v-model="modelValue" :disabled="true" class="flex flex-col gap-2">
                     <z-radio value="female" label="Female"></z-radio>
                     <z-radio value="male" label="Male"></z-radio>
                 </z-radio-group>
@@ -70,7 +70,7 @@ export const DisabledCheckedRadioButton = () => ({
   },
   template: `<div class='padded-container'>
             <div class="input-container">
-                <z-radio-group v-model="modelValue" :disabled="true">
+                <z-radio-group v-model="modelValue" :disabled="true" class="flex space-x-4">
                     <z-radio value="female" label="Female"></z-radio>
                     <z-radio value="male" label="Male"></z-radio>
                 </z-radio-group>
