@@ -1,6 +1,7 @@
 <template>
   <nav
-    class="z-1000 sticky flex items-center bg-ink-400 lg:bg-opacity-25 text-vanilla-100 top-0 border-b border-slate lg:border-0 lg:backdrop-blur h-16"
+    class="z-1000 sticky flex items-center bg-ink-400 text-vanilla-100 top-0 lg:border-0 border-b border-slate h-16"
+    :class="[`${isScrolling || isUserOnTop ? 'lg:backdrop-blur lg:bg-opacity-25': ''}`]"
   >
     <div
       class="flex items-center w-screen lg:mx-auto px-4"
@@ -18,7 +19,9 @@
           class="flex flex-1 items-center mx-4"
           :class="[`${MENU_ALIGNMENT[menuAlign].classes}`]"
         >
-          <slot name="desktop-menu"></slot>
+          <span :class="[`${hideMenuOnScroll && !isUserOnTop ? 'hidden' : ''}`]">
+            <slot name="desktop-menu"></slot>
+          </span>
         </div>
         <div v-if="$slots['desktop-cta']" class="flex items-center">
           <slot name="desktop-cta"></slot>
@@ -85,13 +88,33 @@ export default Vue.extend({
       type: String,
       default: MENU_ALIGNMENT.center.text,
       validator: (alignment) => Object.keys(MENU_ALIGNMENT).includes(alignment)
+    },
+    hideMenuOnScroll: {
+      type: Boolean,
+      default: false,
     }
   },
   data() {
     return {
       isDrawerOpen: false,
+      isScrolling: false,
+      isUserOnTop: true,
+      scrollTimer: 0,
       CONTAINERS,
       MENU_ALIGNMENT
+    }
+  },
+  mounted() {
+    window.onscroll = (e: Event) => {
+      this.isScrolling = true
+      this.isUserOnTop = Boolean(!(window.scrollY > 50))
+    }
+  },
+  watch: {
+    isScrolling() {
+      this.scrollTimer = setTimeout(() => {
+        this.isScrolling = false
+      }, 1500)
     }
   },
   methods: {
