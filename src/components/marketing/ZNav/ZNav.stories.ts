@@ -51,7 +51,7 @@ export const Basic = () => ({
             </z-nav-list>
           </z-nav-menu>
           <z-nav-menu class="mx-1" type="dropdown" title="Resources">
-            <z-nav-list class="w-48">
+            <z-nav-list class="w-52">
               <z-nav-list-item>Documentation</z-nav-list-item>
               <z-nav-list-item>Discourse forum</z-nav-list-item>
               <z-nav-list-item>Learning Center</z-nav-list-item>
