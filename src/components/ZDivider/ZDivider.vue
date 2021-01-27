@@ -11,13 +11,16 @@ export default {
     direction: {
       default: 'horizontal',
       type: String
+    },
+    margin: {
+      type: String
     }
   },
   computed: {
     getDirectionClasses() {
       return this.direction === 'vertical'
-        ? 'inline-block w-px h-4 my-0 mx-2 align-middle'
-        : 'block h-px w-full my-6 mx-0'
+        ? `inline-block w-px h-4 ${this.margin || 'my-0 mx-2'} align-middle`
+        : `block h-px w-full ${this.margin || 'my-6 mx-0'}`
     }
   }
 }
