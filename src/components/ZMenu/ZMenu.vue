@@ -5,7 +5,7 @@
     </button>
     <div
       v-if="isOpen"
-      class="absolute left-0 w-64 py-2 mt-2 rounded-sm text-vanilla-200 bg-ink-300"
+      class="absolute left-0 w-64 py-2 mt-2 rounded-sm text-vanilla-200 bg-ink-200"
     >
       <slot name="body"></slot>
     </div>

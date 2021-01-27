@@ -7,7 +7,7 @@
       {{ title }}
     </h6>
     <slot></slot>
-    <z-divider v-if="divider" margin="my-2 mx-0"></z-divider>
+    <z-divider v-if="divider" color="ink-100" margin="my-2 mx-0"></z-divider>
   </div>
 </template>
 
