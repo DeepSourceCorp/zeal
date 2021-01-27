@@ -57,6 +57,17 @@ export const WithImageAndUserName = (): Component => ({
     </div>`
 })
 
+export const WithState = (): Component => ({
+  components: { ZAvatar },
+  template: `<div class='padded-container'>
+      <z-avatar
+        image="https://randomuser.me/api/portraits/women/24.jpg"
+        user-name="Akshay Paliwal"
+        state="online"
+      ></z-avatar>
+    </div>`
+})
+
 export const WithSizes = (): Component => ({
   components: { ZAvatar },
   template: `

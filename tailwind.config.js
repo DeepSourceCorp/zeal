@@ -215,6 +215,7 @@ module.exports = {
     inset: {
       0: '0',
       1: '0.25rem',
+      '-1': '-0.25rem',
       2: '0.5rem',
       2.5: '0.625rem',
       px: '1px',

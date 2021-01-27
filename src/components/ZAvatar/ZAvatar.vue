@@ -1,5 +1,5 @@
 <template>
-  <component v-if="isVisible" :is="TYPES[type]" class="inline-block">
+  <component v-if="isVisible" :is="TYPES[type]" class="inline-block relative">
     <span
       v-if="isLoading"
       :class="[`${SIZES[getSize].classes}`]"
@@ -7,6 +7,7 @@
     >
     </span>
     <template v-else>
+      <span class="inline-block p-2 bg-cherry absolute rounded-full -right-1 -top-1"></span>
       <img
         v-if="this.image"
         :class="[`${SIZES[getSize].classes}`]"
@@ -33,6 +34,10 @@ const SIZES = {
   md: { classes: 'leading-none h-8 w-8 text-sm', text: 'md' },
   lg: { classes: 'leading-none h-12 w-12 text-lg', text: 'lg' },
   xl: { classes: 'leading-none h-16 w-16 text-2xl', text: 'xl' }
+}
+
+const STATES = {
+  online: { classes: '', text: 'online'}
 }
 
 const TYPES = {
@@ -62,6 +67,11 @@ export default Vue.extend({
       type: String,
       default: SIZES.md.text,
       validator: (size) => Object.keys(SIZES).includes(size)
+    },
+    state: {
+      type: String,
+      default: STATES.online.text,
+      validator: (state) => Object.keys(STATES).includes(state)
     }
   },
   data() {
