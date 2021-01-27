@@ -19,7 +19,7 @@ const outsideClickDirective: DirectiveOptions = {
     el.dataset.outsideClickIndex = String(instances.length)
 
     const fn = binding.value
-    const click = function(event: Event) {
+    const click = function (event: Event) {
       onDocumentClick(event, el, fn)
     }
 
