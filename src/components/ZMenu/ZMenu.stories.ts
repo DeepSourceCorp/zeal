@@ -1,11 +1,13 @@
 import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'
+
+import ZDivider from '../ZDivider/ZDivider.vue'
+import ZAvatar from '../ZAvatar/ZAvatar.vue'
+
 import ZMenu from './ZMenu.vue'
 import ZMenuItem from './ZMenuItem.vue'
 import ZMenuSection from './ZMenuSection.vue'
-import ZDivider from '../ZDivider/ZDivider.vue'
-import ZAvatar from '../ZAvatar/ZAvatar.vue'
 
 export default {
   title: 'Menu',

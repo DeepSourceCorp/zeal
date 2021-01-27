@@ -20,10 +20,11 @@ import ZRadioGroup from './components/ZRadioGroup/index'
 import ZSelect from './components/ZSelect/index'
 import ZOption from './components/ZOption/index'
 import ZAvatar from './components/ZAvatar/index'
-import { ZTabs, ZTabList, ZTab, ZTabItems, ZTabItem } from './components/ZTabs'
-import ZLabel from './components/ZLabel/index'
 import ZTag from './components/ZTag/index'
 import ZPulse from './components/ZPulse/index'
+import ZLabel from './components/ZLabel/index'
+import { ZTabs, ZTabList, ZTab, ZTabItems, ZTabItem } from './components/ZTabs'
+import { ZMenu, ZMenuSection, ZMenuItem } from './components/ZMenu'
 
 const components = [
   ZButton,
@@ -51,11 +52,14 @@ const components = [
   ZLabel,
   ZAvatar,
   ZTag,
-  ZPulse
+  ZPulse,
+  ZMenu,
+  ZMenuSection,
+  ZMenuItem
 ]
 
 const install = (Vue: any) => {
-  components.forEach((component) => {
+  components.forEach(component => {
     Vue.component(component.name, component)
   })
 }
@@ -88,7 +92,10 @@ export default {
   ZLabel,
   ZAvatar,
   ZTag,
-  ZPulse
+  ZPulse,
+  ZMenu,
+  ZMenuSection,
+  ZMenuItem
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -117,3 +124,6 @@ export { ZTabItems } from './components/ZTabs/index'
 export { ZTabItem } from './components/ZTabs/index'
 export { default as ZTag } from './components/ZTag/index'
 export { default as ZPulse } from './components/ZLabel/index'
+export { ZMenu } from './components/ZMenu/index'
+export { ZMenuSection } from './components/ZMenu/index'
+export { ZMenuItem } from './components/ZMenu/index'
