@@ -1,20 +1,55 @@
 <template>
-  <ul :class="[SLOT_PADDING]">
-    <li
-      v-if="$slots.heading"
-      class="leading-3 font-semibold pb-8 uppercase text-sm text-vanilla-400"
-    >
-      <slot name="heading"></slot>
-    </li>
-    <span class="text-vanilla-300" :class="[ARRANGEMENT[arrange].classes]">
-      <slot></slot>
-    </span>
+  <ul :class="[CONTAINER_PADDING]">
+    <!-- Accordion -->
+    <template v-if="type === TYPES.accordion">
+      <span
+        v-if="$slots.heading"
+        @click="toggleAccordion()"
+        class="flex items-center cursor-pointer inline-block hover:opacity-75 select-none font-semibold w-full leading-3 font-semibold py-4 lg:pb-8 lg:pt-0 uppercase text-sm text-vanilla-400"
+      >
+        <span class="flex flex-1">
+          <slot name="heading"></slot>
+        </span>
+        <z-icon
+          size="large"
+          icon="chevron-right"
+          class="transform"
+          :class="[accordionHeaderAnimations]"
+        ></z-icon>
+      </span>
+      <span
+        class="block overflow-scroll transition-max-height duration-500 ease-in-out"
+        :class="[accordionBodyAnimations]"
+      >
+        <span class="block text-sm md:text-md mx-1" :class="[ARRANGEMENT[arrange].classes]">
+          <slot></slot>
+        </span>
+      </span>
+    </template>
+
+    <!-- None -->
+    <template v-if="type === TYPES.none">
+      <span class="block">
+        <li
+          v-if="$slots.heading"
+          class="leading-3 font-semibold py-4 lg:pb-8 lg:pt-0 uppercase text-sm text-vanilla-400"
+        >
+          <slot name="heading"></slot>
+        </li>
+        <span class="text-vanilla-300" :class="[ARRANGEMENT[arrange].classes]">
+          <slot></slot>
+        </span>
+      </span>
+    </template>
   </ul>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-const SLOT_PADDING = 'px-6'
+import ZIcon from '@/components/ZIcon'
+
+const CONTAINER_PADDING = 'px-6'
+
 const ARRANGEMENT = {
   vertical: {
     text: 'vertical',
@@ -25,19 +60,47 @@ const ARRANGEMENT = {
     classes: 'flex flex-wrap'
   }
 }
+
+const TYPES = {
+  accordion: 'accordion',
+  none: 'none'
+}
+
 export default Vue.extend({
+  components: { ZIcon },
   name: 'ZFooterList',
-  data() {
-    return {
-      ARRANGEMENT,
-      SLOT_PADDING
-    }
-  },
   props: {
     arrange: {
       type: String,
       default: ARRANGEMENT.vertical.text,
-      validator: (arrange) => Object.keys(ARRANGEMENT).includes(arrange)
+      validator: arrange => Object.keys(ARRANGEMENT).includes(arrange)
+    },
+    type: {
+      type: String,
+      default: TYPES.none,
+      validator: type => Object.keys(TYPES).includes(type)
+    }
+  },
+  data() {
+    return {
+      isAccordionOpen: false,
+      accordionHeaderAnimations: '',
+      TYPES,
+      ARRANGEMENT,
+      CONTAINER_PADDING
+    }
+  },
+  computed: {
+    accordionBodyAnimations(): string {
+      return this.isAccordionOpen ? 'max-h-102' : 'max-h-0'
+    }
+  },
+  methods: {
+    toggleAccordion() {
+      this.isAccordionOpen = !this.isAccordionOpen
+      this.accordionHeaderAnimations = this.isAccordionOpen
+        ? 'animate-first-quarter-spin rotate-90'
+        : 'animate-reverse-quarter-spin rotate-0'
     }
   }
 })
