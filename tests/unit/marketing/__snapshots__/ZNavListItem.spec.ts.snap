@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ZNavListItem component renders a ZNavListItem when the component is mounted 1`] = `<li class="flex items-center px-4 py-2 cursor-pointer hover:text-juniper"></li>`;
