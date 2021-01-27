@@ -16,7 +16,7 @@ export const Basic = () => ({
   
       <z-nav>
         <template slot="brand">
-          <img class="h-8 max-w-none" src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
+          <img class="h-7 max-w-none" src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
         </template>
         <template slot="desktop-menu">
           <ul class="flex">
