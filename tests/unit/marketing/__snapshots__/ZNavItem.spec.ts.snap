@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavItem component renders a ZNavItem when the component is mounted 1`] = `<span class="text-vanilla-100"><a href="#" type="link" class="z-btn inline-flex items-center font-medium border-transparent rounded-sm relative justify-center px-4 hover:bg-ink-300 false false p-0 h-8 text-xs sm:h-10 sm:text-base">Click</a></span>`;
