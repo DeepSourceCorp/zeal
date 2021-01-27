@@ -34,7 +34,7 @@ export default Vue.extend({
     type: {
       type: String,
       default: TYPES.none,
-      validator: type => Object.keys(TYPES).includes(type)
+      validator: (type) => Object.keys(TYPES).includes(type)
     }
   },
   data() {
