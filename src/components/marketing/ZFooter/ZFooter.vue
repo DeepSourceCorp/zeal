@@ -28,7 +28,6 @@
           <slot name="mobile-cta"></slot>
         </div>
       </span>
-
     </div>
     <div
       class="flex items-center justify-between w-screen lg:mx-auto px-4 text-vanilla-400 text-sm"
@@ -59,7 +58,7 @@ export default Vue.extend({
     container: {
       type: String,
       default: CONTAINERS.md.text,
-      validator: size => Object.keys(CONTAINERS).includes(size)
+      validator: (size) => Object.keys(CONTAINERS).includes(size)
     }
   },
   data() {
