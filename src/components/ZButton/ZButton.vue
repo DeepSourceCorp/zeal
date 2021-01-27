@@ -12,8 +12,8 @@
       `${color && `z-btn--${color}`}`,
       `${this.fullWidth !== false && 'w-full inline-block'}`,
       `${this.isButtonDisabled && 'opacity-50 cursor-not-allowed'}`,
-      (isLink|| icon) && 'p-0' || 'px-6',
-      (isLink|| icon) ? '' : getSizeClasses,
+      ((isLink || icon) && 'p-0') || 'px-6',
+      isLink || icon ? '' : getSizeClasses,
       `${getStyleBasedOnType}`
     ]"
     :type="type"
@@ -75,7 +75,8 @@ export default {
   },
   data() {
     return {
-      defaultClasses: 'inline-flex items-center font-medium border-transparent rounded-sm relative justify-center'
+      defaultClasses:
+        'inline-flex items-center font-medium border-transparent rounded-sm relative justify-center'
     }
   },
   computed: {
@@ -107,7 +108,7 @@ export default {
         small: 'h-8 text-xs',
         medium: 'h-8 text-xs sm:h-10 sm:text-base',
         large: 'h-12 text-lg',
-        xlarge: 'h-16 text-lg',
+        xlarge: 'h-16 text-lg'
       }
       return sizes[this.size] || sizes['medium']
     }
