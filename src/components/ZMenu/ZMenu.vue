@@ -1,10 +1,6 @@
 <template>
   <div class="relative z-menu">
-    <button
-      v-on:click="toggle"
-      v-outside-click="close"
-      class="bg-ink-100 text-vanilla-100 p-2 px-4 rounded-lg shadow-sm"
-    >
+    <button v-on:click="toggle" v-outside-click="close" class="outline-none focus:outline-none">
       <slot name="trigger"></slot>
     </button>
     <div
