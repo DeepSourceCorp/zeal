@@ -23,6 +23,7 @@ import ZAvatar from './components/ZAvatar/index'
 import { ZTabs, ZTabList, ZTab, ZTabItems, ZTabItem } from './components/ZTabs'
 import ZLabel from './components/ZLabel/index'
 import ZTag from './components/ZTag/index'
+import ZPulse from './components/ZPulse/index'
 
 const components = [
   ZButton,
@@ -49,11 +50,12 @@ const components = [
   ZTabItem,
   ZLabel,
   ZAvatar,
-  ZTag
+  ZTag,
+  ZPulse
 ]
 
 const install = (Vue: any) => {
-  components.forEach((component) => {
+  components.forEach(component => {
     Vue.component(component.name, component)
   })
 }
@@ -85,7 +87,8 @@ export default {
   ZTabItem,
   ZLabel,
   ZAvatar,
-  ZTag
+  ZTag,
+  ZPulse
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -113,3 +116,4 @@ export { ZTab } from './components/ZTabs/index'
 export { ZTabItems } from './components/ZTabs/index'
 export { ZTabItem } from './components/ZTabs/index'
 export { default as ZTag } from './components/ZTag/index'
+export { default as ZPulse } from './components/ZLabel/index'
