@@ -22,6 +22,8 @@ import ZOption from './components/ZOption/index'
 import ZAvatar from './components/ZAvatar/index'
 import { ZTabs, ZTabList, ZTab, ZTabItems, ZTabItem } from './components/ZTabs'
 import ZLabel from './components/ZLabel/index'
+import ZTag from './components/ZTag/index'
+
 
 const components = [
   ZButton,
@@ -47,7 +49,8 @@ const components = [
   ZTabItems,
   ZTabItem,
   ZLabel,
-  ZAvatar
+  ZAvatar,
+  ZTag
 ]
 
 const install = (Vue: any) => {
@@ -82,7 +85,8 @@ export default {
   ZTabItems,
   ZTabItem,
   ZLabel,
-  ZAvatar
+  ZAvatar,
+  ZTag
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -109,3 +113,4 @@ export { ZTabList } from './components/ZTabs/index'
 export { ZTab } from './components/ZTabs/index'
 export { ZTabItems } from './components/ZTabs/index'
 export { ZTabItem } from './components/ZTabs/index'
+export { default as ZTag } from './components/ZTag/index'
