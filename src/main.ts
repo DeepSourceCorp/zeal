@@ -24,7 +24,6 @@ import { ZTabs, ZTabList, ZTab, ZTabItems, ZTabItem } from './components/ZTabs'
 import ZLabel from './components/ZLabel/index'
 import ZTag from './components/ZTag/index'
 
-
 const components = [
   ZButton,
   ZIcon,

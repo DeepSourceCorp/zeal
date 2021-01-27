@@ -39,7 +39,9 @@ export default {
       return this.isOpen ? 'max-h-52' : 'max-h-0'
     },
     openTextStyle() {
-      return this.isOpen ? 'text-vanilla-100 bg-ink-400 border-b-0 border border-solid border-ink-300' : 'text-vanilla-400 bg-ink-300 border border-solid border-transparent'
+      return this.isOpen
+        ? 'text-vanilla-100 bg-ink-400 border-b-0 border border-solid border-ink-300'
+        : 'text-vanilla-400 bg-ink-300 border border-solid border-transparent'
     }
   },
   methods: {
