@@ -2,7 +2,7 @@
   <div :class="`flex flex-shrink-0 h-${pulseSize} w-${pulseSize} items-center justify-center`">
     <span
       :class="
-        `animate-pulse absolute inline-flex h-${pulseSize} w-${pulseSize} rounded-full bg-${color} bg-opacity-75`
+        `animate-ping absolute inline-flex h-${pulseSize} w-${pulseSize} rounded-full border-2 border-${color} bg-opacity-75`
       "
     ></span>
     <span :class="`relative inline-flex rounded-full h-${dotSize} w-${dotSize} bg-${color}`"></span>
@@ -29,9 +29,9 @@ export default Vue.extend({
   },
   computed: {
     pulseSize(): string {
-      if (this.size === 'small') return '3'
-      else if (this.size === 'large') return '6'
-      return '4'
+      if (this.size === 'small') return '2'
+      else if (this.size === 'large') return '5'
+      return '3'
     },
     dotSize(): string {
       if (this.size === 'small') return '1'
