@@ -12,25 +12,34 @@ export default {
   excludeStories: /.*Data$/
 }
 
-export const Example = () => ({
+export const BasicExample = () => ({
   components: { ZMenu, ZMenuItem, ZMenuSection, ZDivider },
   template: `
-    <div class="padded-container">
+    <div class="container">
         <z-menu>
           <template slot="trigger">
-            <button class="bg-ink-100 text-vanilla-100 p-2 px-4 rounded-lg shadow-sm">Hello World</button>
+            Menu
           </template>
-          <div slot="body" class="bg-ink-300 flex flex-col my-2 rounded-sm">
-            <z-menu-section title="Account Actions">
-              <z-menu-item>Account Settings</z-menu-item>
-              <z-menu-item>Contact Support</z-menu-item>
-              <z-menu-item>Give Feedback</z-menu-item>
+          <template slot="body">
+            <z-menu-section title="Logged In As">
+              <z-menu-item>evan@deepsource.io</z-menu-item>
+            </z-menu-section>
+            <z-menu-section title="Actions">
+              <z-menu-item :action="goToSettings">Account Settings</z-menu-item>
+              <z-menu-item :action="goToSettings" :disabled="true">Autofix (Coming Soon)</z-menu-item>
+              <z-menu-item :action="goToSettings">Contact Support</z-menu-item>
+              <z-menu-item :action="goToSettings">Give Feedback</z-menu-item>
             </z-menu-section>
             <z-menu-section :divider="false">
-              <z-menu-item>Switch User</z-menu-item>
-              <z-menu-item>Sign out</z-menu-item>
+              <z-menu-item :action="goToSettings">Switch User</z-menu-item>
+              <z-menu-item :action="goToSettings">Sign out</z-menu-item>
             </z-menu-section>
           </template>
         </z-menu>
-    </div>`
+    </div>`,
+  methods: {
+    goToSettings() {
+      alert('Action Triggered')
+    }
+  }
 })
