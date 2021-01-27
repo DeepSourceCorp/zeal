@@ -18,7 +18,7 @@ export const BasicExample = () => ({
     <div class="container">
         <z-menu>
           <template slot="trigger">
-            Menu
+            <span class="bg-ink-100 text-vanilla-100 p-2 px-4 rounded-lg shadow-sm outline-none focus:outline-none">Menu</span>
           </template>
           <template slot="body">
             <z-menu-section title="Logged In As">
