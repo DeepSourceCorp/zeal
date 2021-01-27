@@ -73,12 +73,12 @@ export default Vue.extend({
     arrange: {
       type: String,
       default: ARRANGEMENT.vertical.text,
-      validator: arrange => Object.keys(ARRANGEMENT).includes(arrange)
+      validator: (arrange) => Object.keys(ARRANGEMENT).includes(arrange)
     },
     type: {
       type: String,
       default: TYPES.none,
-      validator: type => Object.keys(TYPES).includes(type)
+      validator: (type) => Object.keys(TYPES).includes(type)
     }
   },
   data() {
