@@ -1,7 +1,7 @@
 <template>
   <div
-    class="bg-ink-300 inline-flex items-center justify-evenly text-vanilla-100 rounded-full space-x-2"
-    :class="[getSizeBasedClasses, getBaseColor]"
+    class="inline-flex items-center justify-evenly text-vanilla-100 rounded-full space-x-2"
+    :class="[getSizeBasedClasses, getBaseColor, `bg-${bgColor}`]"
   >
     <z-icon v-if="iconLeft" :icon="iconLeft" :size="size"></z-icon>
     <div><slot></slot></div>
@@ -38,6 +38,10 @@ export default Vue.extend({
       validator: function (value: string): boolean {
         return ['small', 'large'].includes(value)
       }
+    },
+    bgColor: {
+      default: 'ink-300',
+      type: String
     }
   },
   computed: {
