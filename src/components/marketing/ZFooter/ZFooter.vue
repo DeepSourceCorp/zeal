@@ -1,13 +1,13 @@
 <template>
   <footer
-    class="absolute bottom-0 w-screen flex flex-col justify-between bg-transparent text-vanilla-100 border-t border-slate min-h-96 py-10"
+    class="absolute bottom-0 w-screen flex flex-col justify-between bg-transparent text-vanilla-100 border-t border-slate min-h-102 py-10"
   >
     <div
       class="flex items-start w-screen lg:mx-auto px-4"
       :class="[`${CONTAINERS[container].classes}`]"
     >
       <!-- Brand -->
-      <div v-if="$slots.brand" class="">
+      <div v-if="$slots.brand" class="flex w-20">
         <slot name="brand"></slot>
       </div>
 
