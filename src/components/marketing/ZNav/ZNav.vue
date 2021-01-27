@@ -1,7 +1,7 @@
 <template>
   <nav
-    class="z-1000 sticky flex items-center bg-ink-400 text-vanilla-100 top-0 lg:border-0 border-b border-slate h-16"
-    :class="[`${isScrolling || isUserOnTop ? 'lg:backdrop-blur lg:bg-opacity-25' : ''}`]"
+    class="z-1000 sticky flex items-center bg-ink-400 text-vanilla-100 top-0 border-b border-slate h-16"
+    :class="[`${isScrolling || isUserOnTop ? 'lg:backdrop-blur lg:bg-opacity-25' : ''}`, `${isUserOnTop && 'lg:border-0'}`]"
   >
     <div
       class="flex items-center w-screen lg:mx-auto px-4"
@@ -30,7 +30,7 @@
 
       <!-- Hamburger Button -->
       <span @click="toggleDrawer()" class="lg:hidden ml-auto cursor-pointer">
-        <z-icon icon="menu"></z-icon>
+        <z-icon size="medium" icon="menu"></z-icon>
       </span>
     </div>
 
@@ -42,7 +42,7 @@
       <!-- Cross Button -->
       <span class="flex items-center justify-end border-b border-ink-200 h-16 px-4">
         <span @click="toggleDrawer()" class="cursor-pointer">
-          <z-icon icon="x"></z-icon>
+          <z-icon size="medium" icon="x"></z-icon>
         </span>
       </span>
 

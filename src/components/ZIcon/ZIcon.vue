@@ -49,6 +49,9 @@ export default {
       if (this.size === 'small') {
         return 'w-4 h-4'
       }
+      if (this.size === 'medium') {
+        return 'w-6 h-6'
+      }
       return 'w-4 h-4 sm:w-6 sm:h-6'
     },
     getPositionStyle() {
