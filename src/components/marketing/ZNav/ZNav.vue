@@ -105,7 +105,7 @@ export default Vue.extend({
     }
   },
   mounted() {
-    window.onscroll = (e: Event) => {
+    window.onscroll = () => {
       this.isScrolling = true
       this.isUserOnTop = Boolean(!(window.scrollY > 50))
     }
