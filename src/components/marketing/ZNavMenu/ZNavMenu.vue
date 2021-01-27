@@ -41,7 +41,7 @@
         class="block bg-ink-300 overflow-scroll transition-max-height duration-500 ease-in-out"
         :class="[accordionBodyAnimations]"
       >
-        <span class="border-t border-ink-200 block text-sm md:text-md">
+        <span class="-mt-2 -mx-1 block text-sm md:text-md">
           <slot></slot>
         </span>
       </span>

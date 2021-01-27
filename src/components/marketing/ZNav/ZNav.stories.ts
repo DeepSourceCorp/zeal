@@ -112,8 +112,8 @@ export const Basic = () => ({
         </template>
 
         <template slot="mobile-cta">
-          <z-button class="mb-4" color="primary">Sign up</z-button>
-          <z-button class="mb-4" color="secondary" type="link" to="https://deepsource.io/">Log in</z-button>
+          <z-button class="mb-3" color="primary">Sign up</z-button>
+          <z-button color="secondary" type="link" to="https://deepsource.io/">Log in</z-button>
         </template>
       </z-nav>
 
