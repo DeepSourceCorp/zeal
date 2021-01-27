@@ -1,7 +1,5 @@
 import ZButton from './ZButton.vue'
 
-import { action } from '@storybook/addon-actions'
-
 import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'

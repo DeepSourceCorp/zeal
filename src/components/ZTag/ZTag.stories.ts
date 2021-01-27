@@ -18,7 +18,8 @@ export const DefaultTag = () => ({
 
 export const ColoredTag = () => ({
   components: { ZTag },
-  template: `<div class='padded-container'>
+    template: `<div class='padded-container'>
+        <z-tag>Tag</z-tag>
         <z-tag state="success">Tag</z-tag>
         <z-tag state="warning">Tag</z-tag>
         <z-tag state="error">Tag</z-tag>
@@ -44,6 +45,23 @@ export const TagsWithBothIcons = () => ({
   components: { ZTag },
   template: `<div class='padded-container'>
         <z-tag state="success" icon-left="star" icon-right="star">Tag</z-tag>
+    </div>`
+})
+
+export const TagsWithIcons = () => ({
+  components: { ZTag },
+    template: `<div class='padded-container flex items-center space-x-2'>
+        <z-tag state="warning" icon-left="star">Tag</z-tag>
+        <z-tag state="warning" icon-right="star">Tag</z-tag>
+        <z-tag state="warning" icon-left="star" icon-right="star">Tag</z-tag>
+    </div>`
+})
+
+export const TagsWithSizes = () => ({
+  components: { ZTag },
+    template: `<div class='padded-container'>
+        <z-tag state="success" size="small">Tag</z-tag>
+        <z-tag state="success" size="large">Tag</z-tag>
     </div>`
 })
 
