@@ -10,6 +10,12 @@
 <script lang="ts">
 import Vue from 'vue'
 
+const SIZEMAP = {
+  small: { pulse: 2, dot: 1 },
+  base: { pulse: 3, dot: 2 },
+  large: { pulse: 5, dot: 3 }
+}
+
 export default Vue.extend({
   name: 'ZPulse',
   props: {
@@ -27,14 +33,10 @@ export default Vue.extend({
   },
   computed: {
     pulseSize(): string {
-      if (this.size === 'small') return '2'
-      else if (this.size === 'large') return '5'
-      return '3'
+      return SIZEMAP[this.size || 'base'].pulse
     },
     dotSize(): string {
-      if (this.size === 'small') return '1'
-      else if (this.size === 'large') return '3'
-      return '2'
+      return SIZEMAP[this.size || 'base'].dot
     }
   }
 })
