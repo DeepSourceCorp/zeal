@@ -27,10 +27,10 @@ describe('ZNavMenu component', () => {
     let mountedInstance = mountFunction({
       propsData: {
         title: 'Dummy title',
-        type: 'dropdown',
+        type: 'dropdown'
       },
       slots: {
-        default: ["Something"]
+        default: ['Something']
       }
     })
     expect(mountedInstance.html()).toMatchSnapshot()
@@ -41,10 +41,10 @@ describe('ZNavMenu component', () => {
     let mountedInstance = mountFunction({
       propsData: {
         title: 'Dummy title',
-        type: 'accordion',
+        type: 'accordion'
       },
       slots: {
-        default: ["Something"]
+        default: ['Something']
       }
     })
     expect(mountedInstance.html()).toMatchSnapshot()
@@ -54,10 +54,10 @@ describe('ZNavMenu component', () => {
   it('when type is none', () => {
     let mountedInstance = mountFunction({
       propsData: {
-        title: 'Dummy title',
+        title: 'Dummy title'
       },
       slots: {
-        default: ["Something"]
+        default: ['Something']
       }
     })
     expect(mountedInstance.html()).toMatchSnapshot()
