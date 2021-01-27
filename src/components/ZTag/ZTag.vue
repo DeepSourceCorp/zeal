@@ -10,8 +10,10 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
 import ZIcon from '@/components/ZIcon'
-export default {
+
+export default Vue.extend({
   name: 'ZTag',
   components: {
     ZIcon
@@ -40,14 +42,14 @@ export default {
   },
   computed: {
     getSizeBasedClasses(): string {
-      const sizes = {
+      const sizes: Record<string, string> = {
         small: 'py-1 px-4 text-sm',
         large: 'py-1 px-4 text-lg'
       }
       return sizes[this.size]
     },
     getBaseColor(): string {
-      const states = {
+      const states: Record<string, string> = {
         success: 'border-2 border-solid border-juniper',
         default: '',
         info: 'border-2 border-solid border-aqua',
@@ -57,5 +59,5 @@ export default {
       return states[this.state]
     }
   }
-}
+})
 </script>
