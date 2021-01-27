@@ -5,7 +5,7 @@ exports[`ZNavMenu component renders a ZNavMenu when the component is mounted 1`]
 exports[`ZNavMenu component when type is accordion 1`] = `
 <span class="text-vanilla-100"><!----> <span class="flex items-center cursor-pointer px-4 py-3 bg-ink-300 inline-block hover:opacity-75 select-none font-semibold w-full"><span class="flex flex-1">Dummy title</span> <svg viewBox="0 0 24 24" fill="none" class="stroke-2 transform z-icon w-4 h-4 sm:w-6 sm:h-6 z-icon--chevron-down text-vanilla-400">
   <polyline points="6 9 12 15 18 9"></polyline>
-</svg></span> <span class="block bg-ink-300 overflow-scroll transition-max-height duration-500 ease-in-out max-h-0"><span class="border-t border-ink-200 block text-sm md:text-md">Something</span></span>
+</svg></span> <span class="block bg-ink-300 overflow-scroll transition-max-height duration-500 ease-in-out max-h-0"><span class="-mt-2 -mx-1 block text-sm md:text-md">Something</span></span>
 <!----></span>
 `;
 
