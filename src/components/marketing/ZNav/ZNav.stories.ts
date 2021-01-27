@@ -59,8 +59,8 @@ export const Basic = () => ({
               <z-nav-list-item>Slack User Group</z-nav-list-item>
             </z-nav-list>
           </z-nav-menu>
-          <z-nav-item class="mx-1" to="https://deepsource.io/">Enterprise</z-nav-item>
-          <z-nav-item class="mx-1" to="https://deepsource.io/pricing">Pricing</z-nav-item>
+          <z-nav-item class="mx-1" to="https://deepsource.io/" type="button">Enterprise</z-nav-item>
+          <z-nav-item class="mx-1" to="https://deepsource.io/pricing" type="button">Pricing</z-nav-item>
         </template>
 
         <template slot="desktop-cta">
@@ -109,6 +109,8 @@ export const Basic = () => ({
               <z-nav-list-item>Slack User Group</z-nav-list-item>
             </z-nav-list>
           </z-nav-menu>
+          <z-nav-item class="block border-t border-ink-200" to="https://deepsource.io/">Enterprise</z-nav-item>
+          <z-nav-item class="block border-t border-ink-200" to="https://deepsource.io/pricing">Pricing</z-nav-item>
         </template>
 
         <template slot="mobile-cta">
