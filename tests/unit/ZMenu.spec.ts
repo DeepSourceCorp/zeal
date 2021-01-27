@@ -1,7 +1,5 @@
 import { ZMenu, ZMenuItem, ZMenuSection } from '../../src/components/ZMenu'
-import Vue from 'vue'
-
-import { mount, Wrapper } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 
 const BasicTab = {
   template: `<z-menu>
