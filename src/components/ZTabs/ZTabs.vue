@@ -4,10 +4,10 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
+// import Vue from 'vue'
 
-export default Vue.extend({
+export default {
   name: 'ZTabs',
   props: {
     defaultActive: {
@@ -23,7 +23,7 @@ export default Vue.extend({
     return { activeIndex: 0 }
   },
   computed: {
-    getActiveIndex(): number {
+    getActiveIndex() {
       // Return the current active tab index
       return this.active >= 0 ? this.active : this.activeIndex
     }
@@ -32,11 +32,11 @@ export default Vue.extend({
     this.activeIndex = this.defaultActive
   },
   methods: {
-    updateActiveIndex(index: number): void {
+    updateActiveIndex(index) {
       const previous = this.activeIndex
       this.activeIndex = index
       this.$emit('onTabChange', { index, previous })
     }
   }
-})
+}
 </script>

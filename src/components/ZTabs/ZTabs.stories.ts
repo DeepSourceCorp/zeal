@@ -61,7 +61,7 @@ export const TabsWithIcons = () => ({
                   <z-tab icon="activity">
                     Overview
                   </z-tab>
-                  <z-tab icon="code">
+                  <z-tab icon="autofix">
                     Issues
                   </z-tab>
                   <z-tab icon="bar-chart">
