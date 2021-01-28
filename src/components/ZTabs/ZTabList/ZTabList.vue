@@ -1,22 +1,22 @@
-<script lang="ts">
-import Vue, { VNode, CreateElement } from 'vue'
+<script>
+// import Vue, { VNode, CreateElement } from 'vue'
 import ZTab from '../ZTab'
 
-interface ZTabsT extends Vue {
-  updateActiveIndex: (index: number) => void
-  activeIndex: number
-}
+// interface ZTabsT extends Vue {
+//   updateActiveIndex: (index: number) => void
+//   activeIndex: number
+// }
 
-export default Vue.extend({
+export default {
   name: 'ZTabList',
   computed: {
-    getActiveIndex(): number {
-      const $parent = this.$parent as ZTabsT
+    getActiveIndex() {
+      const $parent = this.$parent
       return $parent.activeIndex
     }
   },
   methods: {
-    toPascal(word: string): string {
+    toPascal(word) {
       // https://stackoverflow.com/a/53952925
       return `${word}`
         .replace(new RegExp(/[-_]+/, 'g'), ' ')
@@ -29,35 +29,33 @@ export default Vue.extend({
         .replace(new RegExp(/\w/), s => s.toUpperCase())
     }
   },
-  render(h: CreateElement): VNode {
-    const children = this.$slots.default?.map(
-      (child: VNode, index: number): VNode => {
-        const options = child.componentOptions
-        if (options && this.toPascal(options.tag || '') === 'ZTab') {
-          const props = {
-            index,
-            updateActiveIndex: () => {
-              const $parent = this.$parent as ZTabsT
-              $parent.updateActiveIndex(index)
-            },
-            ...options.propsData
-          }
-          return h(
-            ZTab,
-            {
-              ...child.data,
-              props: {
-                ...props
-              }
-            },
-            options.children
-          )
+  render(h) {
+    const children = this.$slots.default?.map((child, index) => {
+      const options = child.componentOptions
+      if (options && this.toPascal(options.tag || '') === 'ZTab') {
+        const props = {
+          index,
+          updateActiveIndex: () => {
+            const $parent = this.$parent
+            $parent.updateActiveIndex(index)
+          },
+          ...options.propsData
         }
-        return child
+        return h(
+          ZTab,
+          {
+            ...child.data,
+            props: {
+              ...props
+            }
+          },
+          options.children
+        )
       }
-    )
+      return child
+    })
 
     return h('div', { class: 'z-tab-list -mx-3 overflow-auto flex flex-nowrap' }, children)
   }
-})
+}
 </script>
