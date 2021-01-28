@@ -1,6 +1,6 @@
 <script lang="ts">
 import Vue, { VNode, CreateElement } from 'vue'
-import ZTab from './ZTab.vue'
+import ZTab from '../ZTab'
 
 interface ZTabsT extends Vue {
   updateActiveIndex: (index: number) => void
@@ -26,7 +26,7 @@ export default Vue.extend({
           ($1, $2, $3) => `${$2.toUpperCase() + $3.toLowerCase()}`
         )
         .replace(new RegExp(/\s/, 'g'), '')
-        .replace(new RegExp(/\w/), (s) => s.toUpperCase())
+        .replace(new RegExp(/\w/), s => s.toUpperCase())
     }
   },
   render(h: CreateElement): VNode {
