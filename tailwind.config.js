@@ -635,7 +635,7 @@ module.exports = {
       'reverse-half-spin': 'reverse-half-spin 0.5s',
       'first-quarter-spin': 'first-quarter-spin 0.5s',
       'reverse-quarter-spin': 'reverse-quarter-spin 0.5s',
-      gradient: 'gradient 60s ease infinite',
+      gradient: 'gradient 30s ease infinite',
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
