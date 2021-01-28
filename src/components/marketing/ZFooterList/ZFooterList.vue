@@ -11,7 +11,7 @@
           <slot name="heading"></slot>
         </span>
         <z-icon
-          size="large"
+          size="medium"
           icon="chevron-right"
           class="transform"
           :class="[accordionHeaderAnimations]"
