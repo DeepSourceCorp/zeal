@@ -1,5 +1,5 @@
 <template>
-  <ul :class="[CONTAINER_PADDING]">
+  <ul :class="[X_PADDING]">
     <!-- Accordion -->
     <template v-if="type === TYPES.accordion">
       <span
@@ -48,7 +48,7 @@
 import Vue from 'vue'
 import ZIcon from '@/components/ZIcon'
 
-const CONTAINER_PADDING = 'px-6 md:px-4 lg:px-6'
+const X_PADDING = 'px-6 md:px-4 lg:px-6'
 
 const ARRANGEMENT = {
   vertical: {
@@ -87,7 +87,7 @@ export default Vue.extend({
       accordionHeaderAnimations: '',
       TYPES,
       ARRANGEMENT,
-      CONTAINER_PADDING
+      X_PADDING
     }
   },
   computed: {
