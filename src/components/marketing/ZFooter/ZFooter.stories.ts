@@ -111,13 +111,13 @@ export const Basic = () => ({
           </z-footer-list-item>
           <span class="flex mt-1">
             <z-footer-list-item class="mr-8">
-              <z-icon icon="facebook"></z-icon>
+              <z-icon icon="z-facebook"></z-icon>
             </z-footer-list-item>
             <z-footer-list-item class="mr-8">
-              <z-icon icon="linkedin"></z-icon>
+              <z-icon icon="z-linkedin"></z-icon>
             </z-footer-list-item>
             <z-footer-list-item>
-              <z-icon icon="mail"></z-icon>
+              <z-icon icon="z-google"></z-icon>
             </z-footer-list-item>
           </span>
         </z-footer-list>
@@ -208,13 +208,13 @@ export const Basic = () => ({
           </template>
           <span class="flex mt-1">
             <z-footer-list-item class="mr-8">
-              <z-icon icon="facebook"></z-icon>
+              <z-icon icon="z-facebook"></z-icon>
             </z-footer-list-item>
             <z-footer-list-item class="mr-8">
-              <z-icon icon="linkedin"></z-icon>
+              <z-icon icon="z-linkedin"></z-icon>
             </z-footer-list-item>
             <z-footer-list-item>
-              <z-icon icon="mail"></z-icon>
+              <z-icon icon="z-google"></z-icon>
             </z-footer-list-item>
           </span>
         </z-footer-list>
