@@ -19,12 +19,14 @@ export const Basic = () => ({
     <div class="prose prose-md max-w-none p-20">
       <h1 id="this-is-main">Some random heading to grab attention</h1>
       <p class="lead">I dont' have any money, but what I do have is a specific set of skills. Skills that can be nightmare to people like you...</p>
+      <h1 id="this-is-main">Some random heading to grab attention</h1>
+      <p class="lead">I dont' have any money, but what I do have is a specific set of skills. Skills that can be nightmare to people like you...</p>
     </div>
 
-    <z-footer class="bg-gradient-to-b from-ink-100 to-transparent" container="lg">
+    <z-footer class="bg-gradient-dawn animate-gradient bg-400%" container="lg">
       <template slot="brand">
         <span class="flex w-20 mb-12 lg:mb-0">
-          <img class="max-w-none" src="https://i.imgur.com/zKLLWIr.png"/>
+          <img class="max-w-none h-8" src="https://i.imgur.com/zKLLWIr.png"/>
         </span>
       </template>
 

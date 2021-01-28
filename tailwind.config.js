@@ -110,7 +110,8 @@ module.exports = {
     backgroundSize: {
       auto: 'auto',
       cover: 'cover',
-      contain: 'contain'
+      contain: 'contain',
+      '400%': '400%'
     },
     borderColor: (theme) => ({
       ...theme('colors'),
@@ -613,6 +614,7 @@ module.exports = {
       'reverse-half-spin': 'reverse-half-spin 0.5s',
       'first-quarter-spin': 'first-quarter-spin 0.5s',
       'reverse-quarter-spin': 'reverse-quarter-spin 0.5s',
+      gradient: 'gradient 60s ease infinite',
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
@@ -634,6 +636,10 @@ module.exports = {
         '0%': { opacity: '0' },
         '100%': { opacity: '1' }
       },
+      spin: {
+        from: { transform: 'rotate(0deg)' },
+        to: { transform: 'rotate(360deg)' }
+      },
       'first-quarter-spin': {
         from: { transform: 'rotate(0deg)' },
         to: { transform: 'rotate(90deg)' }
@@ -642,9 +648,16 @@ module.exports = {
         from: { transform: 'rotate(90deg)' },
         to: { transform: 'rotate(0deg)' }
       },
-      spin: {
-        from: { transform: 'rotate(0deg)' },
-        to: { transform: 'rotate(360deg)' }
+      gradient: {
+        '0%': {
+          'background-position': '0% 50%'
+        },
+        '50%': {
+          'background-position': '100% 50%'
+        },
+        '100%': {
+          'background-position': '0% 50%'
+        }
       },
       'first-half-spin': {
         from: { transform: 'rotate(0deg)' },
