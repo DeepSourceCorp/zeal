@@ -12,4 +12,3 @@ export const Basic = () => ({
       <z-input-cta class="w-1/3" placeholder="Enter email address" v-model="name"></z-input-cta>
     </div>`
 })
-
