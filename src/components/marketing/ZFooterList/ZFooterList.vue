@@ -29,7 +29,7 @@
 
     <!-- None -->
     <template v-if="type === TYPES.none">
-      <span class="block pb-8 w-24 lg:w-auto">
+      <span class="block">
         <li
           v-if="$slots.heading"
           class="leading-3 font-medium tracking-wider py-4 md:pb-8 md:pt-0 uppercase text-sm text-vanilla-400"
