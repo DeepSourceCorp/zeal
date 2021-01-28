@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import ZDivider from '../ZDivider/ZDivider.vue'
+import ZDivider from '../../ZDivider/ZDivider.vue'
 
 export default {
   name: 'ZMenuItem',

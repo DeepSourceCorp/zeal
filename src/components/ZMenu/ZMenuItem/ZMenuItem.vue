@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import ZIcon from '../ZIcon/ZIcon.vue'
+import ZIcon from '../../ZIcon/ZIcon.vue'
 
 export default {
   name: 'ZMenuItem',

@@ -24,7 +24,9 @@ import ZTag from './components/ZTag/index'
 import ZPulse from './components/ZPulse/index'
 import ZLabel from './components/ZLabel/index'
 import { ZTabs, ZTabList, ZTab, ZTabItems, ZTabItem } from './components/ZTabs'
-import { ZMenu, ZMenuSection, ZMenuItem } from './components/ZMenu'
+import ZMenu from './components/ZMenu'
+import ZMenuSection from './components/ZMenu/ZMenuSection'
+import ZMenuItem from './components/ZMenu/ZMenuItem'
 
 const components = [
   ZButton,
@@ -59,7 +61,7 @@ const components = [
 ]
 
 const install = (Vue: any) => {
-  components.forEach((component) => {
+  components.forEach(component => {
     Vue.component(component.name, component)
   })
 }
@@ -124,6 +126,6 @@ export { ZTabItems } from './components/ZTabs/index'
 export { ZTabItem } from './components/ZTabs/index'
 export { default as ZTag } from './components/ZTag/index'
 export { default as ZPulse } from './components/ZLabel/index'
-export { ZMenu } from './components/ZMenu/index'
-export { ZMenuSection } from './components/ZMenu/index'
-export { ZMenuItem } from './components/ZMenu/index'
+export { default as ZMenu } from './components/ZMenu/index'
+export { default as ZMenuSection } from './components/ZMenu/ZMenuSection/index'
+export { default as ZMenuItem } from './components/ZMenu/ZMenuItem/index'

@@ -5,9 +5,9 @@ import '../../assets/css/layout.css'
 import ZDivider from '../ZDivider/ZDivider.vue'
 import ZAvatar from '../ZAvatar/ZAvatar.vue'
 
-import ZMenu from './ZMenu.vue'
-import ZMenuItem from './ZMenuItem.vue'
-import ZMenuSection from './ZMenuSection.vue'
+import ZMenu from '.'
+import ZMenuItem from './ZMenuItem'
+import ZMenuSection from './ZMenuSection'
 
 export default {
   title: 'Menu',
