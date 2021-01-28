@@ -1,5 +1,18 @@
 <template>
-  <section class="hero-container w-full relative">
+  <section class="z-hero__section w-full relative text-center">
+    <h1 class="text-vanilla-100 mb-4 text-3xl lg:text-4xl leading-11 lg:leading-12 font-bold">
+      Some random heading to fill up the space.
+    </h1>
+    <h2 class="text-lg lg:text-xl leading-9 lg:leading-normal font-normal text-vanilla-400 mb-6">
+      <p>
+        By default, Tailwind removes all of the default browser styling from paragraphs, headings,
+        lists and more.
+      </p>
+      <p>
+        We get lots of complaints about it actually, with people regularly asking us things like:
+      </p>
+    </h2>
+
     <div class="video-content absolute">
       <!-- 
       From:
@@ -25,8 +38,10 @@
             transform: none;
             border-radius: calc(0.0183333 * 1 * var(--reference)) / calc(0.0183333 * 1 * var(--reference)); 
           -->
-          <video class="video" autoplay="" muted="" loop="" playsinline="" preload="metadata">
-            <!-- From:
+          <!-- <img src='https://images.unsplash.com/photo-1556740758-90de374c12ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80' alt=""> -->
+          <video class="video-item" autoplay="" muted="" loop="" playsinline="" preload="metadata">
+            <!-- 
+            From:
               transform: scaleX(1.77778) translateZ(0px);
             To:
               transform: none; -->
@@ -42,21 +57,20 @@
 </template>
 
 <style lang="css" scoped>
-.video-container {
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  max-width: 1200px;
-  height: 84.375%;
-  max-height: 675px;
-  perspective: calc(1.3 * var(--reference));
-  z-index: 4; */
+.z-hero__section {
+  padding-bottom: 100vh;
 }
 </style>
 
 <script lang="ts">
 import Vue from 'vue'
+
+const MIN_SCALE = 0.7
+const MAX_SCALE = 1
+const MIN_Y = 10
+const MAX_Y = 20
+const MIN_ROTATION_ANGLE = 0
+const MAX_ROTATION_ANGLE = 20
 
 export default Vue.extend({
   name: 'ZHero',
@@ -65,31 +79,50 @@ export default Vue.extend({
     return {}
   },
   mounted() {
-    const videoContent = document.getElementsByClassName('video-content')[0] as HTMLElement
+    const heroSection = document.getElementsByClassName('z-hero__section')[0] as HTMLElement
     const videoContainer = document.getElementsByClassName('video-container')[0] as HTMLElement
+    const videoContent = document.getElementsByClassName('video-content')[0] as HTMLElement
     const videoMask = document.getElementsByClassName('video-mask')[0]
-    const video = document.getElementsByClassName('video')[0]
-    videoContent.style.transform = `translateX(0px) translateY(-${window.scrollY -10}%) scale(0.36) translateZ(0px)`
+    // const video = document.getElementsByClassName('video-item')[0] as HTMLElement
+
+    //const heroSectionTop = window.scrollY - heroSection.getBoundingClientRect().top - screen.height
+    videoContent.style.transform = `
+      translateX(0px) 
+      translateY(${this.getTranslateYValue(window.scrollY)}%) 
+      scale(${this.getScaleValue(window.scrollY)}) translateZ(0px)`
+
+    videoContainer.style.transform = `
+      perspective(800px) 
+      rotateX(${this.getRotationValue(window.scrollY)}deg) 
+      translateZ(0px)`
 
     window.onscroll = () => {
       const scrollY = window.scrollY
-      console.log(this.getRotationValue(scrollY))
-      videoContent.style.transform = `translateX(0px) translateY(-10%) scale(${this.getScaleValue(scrollY)}) translateZ(0px)`
-      videoContainer.style.transform = `perspective(800px) rotateX(${this.getRotationValue(scrollY)}deg) translateZ(0px)`
+      console.log(window.innerWidth)
+
+      videoContent.style.transform = `
+        translateX(0px) 
+        translateY(${this.getTranslateYValue(scrollY)}%) 
+        scale(${this.getScaleValue(scrollY)}) translateZ(0px)`
+
+      videoContainer.style.transform = `
+        perspective(800px) 
+        rotateX(${this.getRotationValue(scrollY)}deg) 
+        translateZ(0px)`
     }
   },
   methods: {
     getScaleValue(scrollY: number): number {
-      if(scrollY/100 < 1) {
-        return scrollY/100
-      }
-      return 1
+      const calc = MIN_SCALE + (scrollY * 0.1) / 100
+      return calc < MAX_SCALE ? calc : MAX_SCALE
+    },
+    getTranslateYValue(scrollY: number): number {
+      const calc = MAX_Y - (scrollY * 0.5) / 10
+      return calc > MIN_Y ? calc : MIN_Y
     },
     getRotationValue(scrollY: number): number {
-      if(scrollY/10 < 20) {
-        return 20 - scrollY/10
-      }
-      return 0
+      const calc = MAX_ROTATION_ANGLE - scrollY / 10
+      return calc > 0 ? calc : MIN_ROTATION_ANGLE
     }
   }
 })
