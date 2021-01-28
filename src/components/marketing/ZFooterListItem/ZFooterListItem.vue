@@ -1,6 +1,6 @@
 <template>
   <li
-    class="flex items-center py-2 text-sm"
+    class="flex items-center pt-2 pb-1 text-sm whitespace-nowrap"
     :class="[`${hoverColor && `hover:text-${hoverColor}`}`, `${cursorPointer && 'cursor-pointer'}`]"
   >
     <slot></slot>
