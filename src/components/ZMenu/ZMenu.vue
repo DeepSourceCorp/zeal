@@ -33,15 +33,5 @@ export default Vue.extend({
       this.isOpen = false
     }
   }
-  // mounted() {
-  //   document.addEventListener('click', (): void => {
-  //     this.isOpen = false
-  //   })
-  // },
-  // beforeDestroy() {
-  //   document.removeEventListener('click', (): void => {
-  //     this.isOpen = false
-  //   })
-  // }
 })
 </script>
