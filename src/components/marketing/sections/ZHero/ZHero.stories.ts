@@ -9,6 +9,14 @@ export default {
 export const Basic = () => ({
   components: { ZHero },
   template: `<div class='padded-container'>
+
+      <div class="prose prose-sm sm:prose sm:max-w-none mx-auto px-10 py-10">
+        <h1 id="this-is-main">Just to show off main heading</h1>
+        <p class="lead">Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.</p>
+        <p>By default, Tailwind removes all of the default browser styling from paragraphs, headings, lists and more. This ends up being really useful for building application UIs because you spend less time undoing user-agent styles, but when you <em>really are</em> just trying to style some content that came from a rich-text editor in a CMS or a markdown file, it can be surprising and unintuitive.</p>
+        <p>We get lots of complaints about it actually, with people regularly asking us things like:</p>
+      </div>
+
       <z-hero>
       </z-hero>
 
