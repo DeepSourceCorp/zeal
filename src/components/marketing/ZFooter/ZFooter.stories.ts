@@ -23,7 +23,7 @@ export const Basic = () => ({
       <p class="lead">I dont' have any money, but what I do have is a specific set of skills. Skills that can be nightmare to people like you...</p>
     </div>
 
-    <z-footer class="bg-gradient-dawn animate-gradient bg-400%" container="lg">
+    <z-footer class="bg-gradient-skeleton animate-gradient bg-400%" container="lg">
       <template slot="brand">
         <span class="flex w-20 md:w-10 xl:w-20 mb-12 md:mb-0">
           <img class="max-w-none h-8" src="https://i.imgur.com/zKLLWIr.png"/>
@@ -31,7 +31,7 @@ export const Basic = () => ({
       </template>
 
       <template slot="desktop-menu">
-        <z-footer-list>
+        <z-footer-list class="pb-8 w-32 lg:w-auto">
           <template slot="heading">Product</template>
           <z-footer-list-item>
             Autofix
@@ -47,7 +47,7 @@ export const Basic = () => ({
           </z-footer-list-item>
         </z-footer-list>
 
-        <z-footer-list>
+        <z-footer-list class="pb-8 w-32 lg:w-auto">
           <template slot="heading">Languages</template>
           <z-footer-list-item>
             For Python
@@ -63,7 +63,7 @@ export const Basic = () => ({
           </z-footer-list-item>
         </z-footer-list>
 
-        <z-footer-list>
+        <z-footer-list class="pb-8 w-32 lg:w-auto">
           <template slot="heading">Resources</template>
           <z-footer-list-item>
             Documentation
@@ -79,7 +79,7 @@ export const Basic = () => ({
           </z-footer-list-item>
         </z-footer-list>
 
-        <z-footer-list>
+        <z-footer-list class="pb-8 w-32 lg:w-auto">
           <template slot="heading">Company</template>
           <z-footer-list-item>
             About
@@ -104,7 +104,7 @@ export const Basic = () => ({
           </z-footer-list-item>
         </z-footer-list>
 
-        <z-footer-list class="w-64">
+        <z-footer-list class="pb-8 w-64 lg:w-auto">
           <template slot="heading">Social media</template>
           <z-footer-list-item class="whitespace-nowrap lg:whitespace-normal" hover-color="" :cursor-pointer="false">
             Follow us on social media to stay updated.
