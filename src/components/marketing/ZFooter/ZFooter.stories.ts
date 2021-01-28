@@ -25,7 +25,7 @@ export const Basic = () => ({
 
     <z-footer class="bg-gradient-dawn animate-gradient bg-400%" container="lg">
       <template slot="brand">
-        <span class="flex w-20 mb-12 lg:mb-0">
+        <span class="flex w-20 md:w-10 xl:w-20 mb-12 md:mb-0">
           <img class="max-w-none h-8" src="https://i.imgur.com/zKLLWIr.png"/>
         </span>
       </template>
@@ -106,7 +106,7 @@ export const Basic = () => ({
 
         <z-footer-list class="w-64">
           <template slot="heading">Social media</template>
-          <z-footer-list-item hover-color="" :cursor-pointer="false">
+          <z-footer-list-item class="whitespace-nowrap lg:whitespace-normal" hover-color="" :cursor-pointer="false">
             Follow us on social media to stay updated.
           </z-footer-list-item>
           <span class="flex mt-1">
@@ -123,9 +123,17 @@ export const Basic = () => ({
         </z-footer-list>
       </template>
       
-      <template slot="desktop-cta">
-        <img class="max-w-none" src="https://i.imgur.com/3wHn03E.png"/>
-        <img class="max-w-none" src="https://i.imgur.com/3wHn03E.png"/>
+      <template slot="desktop-extras">
+        <span class="block flex flex-col text-sm text-center p-2 bg-ink-300 rounded-lg mr-2 mb-2">
+          <img class="max-w-none mb-2" src="https://i.imgur.com/JBKMaq5.png"/>
+          <span>GDPR</span>
+          <span class="text-vanilla-400">compliant</span>
+        </span>
+        <span class="block flex flex-col text-sm text-center p-2 bg-ink-300 rounded-lg mb-2">
+          <img class="max-w-none mb-2" src="https://i.imgur.com/JBKMaq5.png"/>
+          <span>GDPR</span>
+          <span class="text-vanilla-400">compliant</span>
+        </span>
       </template>
       
       <template slot="mobile-menu">
@@ -220,10 +228,18 @@ export const Basic = () => ({
         </z-footer-list>
       </template>
       
-      <template slot="mobile-cta">
+      <template slot="mobile-extras">
         <span class="flex justify-center py-8">
-          <img class="w-20" src="https://i.imgur.com/3wHn03E.png"/>
-          <img class="w-20" src="https://i.imgur.com/3wHn03E.png"/>
+          <span class="block flex flex-col text-sm text-center p-2 bg-ink-300 rounded-lg mr-2">
+            <img class="max-w-none mb-2" src="https://i.imgur.com/JBKMaq5.png"/>
+            <span>GDPR</span>
+            <span class="text-vanilla-400">compliant</span>
+          </span>
+          <span class="block flex flex-col text-sm text-center p-2 bg-ink-300 rounded-lg">
+            <img class="max-w-none mb-2" src="https://i.imgur.com/JBKMaq5.png"/>
+            <span>GDPR</span>
+            <span class="text-vanilla-400">compliant</span>
+          </span>
         </span>
       </template>
 
@@ -233,8 +249,8 @@ export const Basic = () => ({
         </span>
       </template>
 
-      <template slot="additional-info">
-        <span class="flex items-center mb-8 lg:mb-0">
+      <template slot="company">
+        <span class="flex items-center mb-8 md:mb-0">
           Backed by 
           <img class="ml-3 max-w-none" src="https://i.imgur.com/lnlRvjx.png"/>
         </span>
