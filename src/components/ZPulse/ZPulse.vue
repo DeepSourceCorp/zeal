@@ -31,7 +31,7 @@ export default Vue.extend({
       const sizes: Record<string, number> = {
         small: 2,
         base: 3,
-        large: 5
+        large: 4
       }
 
       return sizes[this.size || 'base']
