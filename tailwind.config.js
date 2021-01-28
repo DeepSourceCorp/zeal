@@ -31,6 +31,8 @@ module.exports = {
       gitlab: '#6753B5',
       bitbucket: '#1E54C5',
       lavender: '#7A97FA',
+      lilac: '#C97BD4',
+      sea_glass: '#49F9CF',
       pink: '#F977FF',
       vanilla: {
         100: '#ffffff',
@@ -46,19 +48,28 @@ module.exports = {
       }
     },
     gradients: (theme) => ({
-      ocean: ['98.66deg', '#49f9ce 9.7%', '#3dcded 96.6%'],
+      ocean: ['98.66deg', `${theme('colors.sea_glass')} 9.7%`, `${theme('colors.aqua')} 96.6%`],
       galaxy: {
         type: 'radial',
         colors: [
           '60.53% 61.06% at 68.85% 57.59%',
-          'rgba(51, 0, 255, 0.37) 0%',
-          'rgba(189, 52, 201, 0.169375) 55.73%',
-          'rgba(116, 95, 203, 0.01) 100%'
+          `${theme('colors.robin')}75 0%`,
+          `${theme('colors.lilac')}29 55.73%`,
+          `${theme('colors.vanilla.100')}00 100%`
         ]
       },
-      dawn: ['98.66deg', '#7a96f2 4.42%', '#ce79d1 96.6%'],
-      splash: ['98.66deg', '#4568dc 4.42%', '#324daa 96.6%'],
-      skeleton: ['104.58deg', '#21242B 0%', `${theme('colors.ink.200')} 40.08%`, '#21242B 60.32%']
+      dawn: ['98.66deg', `${theme('colors.robin')} 4.42%`, `${theme('colors.lilac')} 96.6%`],
+      dark_dawn: {
+        custom: `linear-gradient(180deg, ${theme('colors.ink.400')} 0%, rgba(22, 24, 29, 0.7) 100%), 
+          linear-gradient(98.66deg, ${theme('colors.robin')} 4.42%, ${theme('colors.lilac')} 96.6%)`
+      },
+      splash: ['98.66deg', `${theme('colors.robin')} 4.42%`, '#3450AF 96.6%'],
+      skeleton: [
+        '104.58deg',
+        `${theme('colors.ink.300')} 0%`,
+        `${theme('colors.ink.200')} 40.08%`,
+        `${theme('colors.ink.300')} 60.32%`
+      ]
     }),
     backdropFilter: (theme) => ({
       none: 'none',
@@ -1098,16 +1109,22 @@ module.exports = {
     plugin(({ addUtilities, e, theme, variants }) => {
       const utilities = Object.keys(theme('gradients')).map((name) => {
         const gradient = theme('gradients')[name]
-        const type = Object.prototype.hasOwnProperty.call(gradient, 'type')
-          ? gradient.type
-          : 'linear'
-        const colors = Object.prototype.hasOwnProperty.call(gradient, 'colors')
-          ? gradient.colors
-          : gradient
+        let background = ''
+        if (Object.prototype.hasOwnProperty.call(gradient, 'custom')) {
+          background = gradient.custom
+        } else {
+          const type = Object.prototype.hasOwnProperty.call(gradient, 'type')
+            ? gradient.type
+            : 'linear'
+          const colors = Object.prototype.hasOwnProperty.call(gradient, 'colors')
+            ? gradient.colors
+            : gradient
+          background = `${type}-gradient(${colors.join(', ')})`
+        }
 
         return {
           [`.bg-gradient-${e(name)}`]: {
-            backgroundImage: `${type}-gradient(${colors.join(', ')})`
+            backgroundImage: background
           }
         }
       })

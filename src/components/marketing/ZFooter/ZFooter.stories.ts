@@ -23,7 +23,7 @@ export const Basic = () => ({
       <p class="lead">I dont' have any money, but what I do have is a specific set of skills. Skills that can be nightmare to people like you...</p>
     </div>
 
-    <z-footer class="bg-gradient-skeleton animate-gradient bg-400%" container="lg">
+    <z-footer class="bg-gradient-dark_dawn animate-gradient bg-400%" container="lg">
       <template slot="brand">
         <span class="flex w-20 md:w-10 xl:w-20 mb-12 md:mb-0">
           <img class="max-w-none h-8" src="https://i.imgur.com/zKLLWIr.png"/>
@@ -111,13 +111,13 @@ export const Basic = () => ({
           </z-footer-list-item>
           <span class="flex mt-1">
             <z-footer-list-item class="mr-8">
-              <z-icon icon="z-facebook"></z-icon>
+              <z-icon size="medium" icon="z-facebook"></z-icon>
             </z-footer-list-item>
             <z-footer-list-item class="mr-8">
-              <z-icon icon="z-linkedin"></z-icon>
+              <z-icon size="medium" icon="z-linkedin"></z-icon>
             </z-footer-list-item>
             <z-footer-list-item>
-              <z-icon icon="z-google"></z-icon>
+              <z-icon size="medium" icon="z-google"></z-icon>
             </z-footer-list-item>
           </span>
         </z-footer-list>
@@ -216,13 +216,13 @@ export const Basic = () => ({
           </template>
           <span class="flex mt-1">
             <z-footer-list-item class="mr-8">
-              <z-icon icon="z-facebook"></z-icon>
+              <z-icon size="medium" icon="z-facebook"></z-icon>
             </z-footer-list-item>
             <z-footer-list-item class="mr-8">
-              <z-icon icon="z-linkedin"></z-icon>
+              <z-icon size="medium" icon="z-linkedin"></z-icon>
             </z-footer-list-item>
             <z-footer-list-item>
-              <z-icon icon="z-google"></z-icon>
+              <z-icon size="medium" icon="z-google"></z-icon>
             </z-footer-list-item>
           </span>
         </z-footer-list>

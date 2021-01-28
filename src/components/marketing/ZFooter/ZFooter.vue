@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="w-screen flex flex-col justify-between bg-transparent text-vanilla-100 border-t border-slate min-h-102 pb-10 pt-20"
+    class="w-full-screen flex flex-col justify-between bg-transparent text-vanilla-100 border-t border-ink-200 min-h-102 pb-10 pt-20"
   >
     <div
       class="md:flex items-start w-screen lg:mx-auto"
