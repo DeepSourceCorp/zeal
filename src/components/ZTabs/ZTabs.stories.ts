@@ -2,10 +2,10 @@ import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'
 import ZTabs from './ZTabs.vue'
-import ZTab from './ZTab.vue'
-import ZTabList from './ZTabList.vue'
-import ZTabItems from './ZTabItems.vue'
-import ZTabItem from './ZTabItem.vue'
+import ZTab from './ZTab'
+import ZTabList from './ZTabList'
+import ZTabItems from './ZTabItems'
+import ZTabItem from './ZTabItem'
 
 export default {
   title: 'Tabs',

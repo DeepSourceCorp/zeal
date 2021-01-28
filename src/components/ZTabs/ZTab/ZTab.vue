@@ -23,7 +23,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import ZIcon from '../ZIcon/ZIcon.vue'
+import ZIcon from '../../ZIcon/ZIcon.vue'
 
 interface ZTabListT extends Vue {
   getActiveIndex: number
