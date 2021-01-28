@@ -1,19 +1,13 @@
-<script lang="ts">
-import Vue, { VNode, CreateElement } from 'vue'
-
-interface ZTabsT extends Vue {
-  activeIndex: number
-}
-
-export default Vue.extend({
+<script>
+export default {
   name: 'TabItems',
   computed: {
-    activeIndex(): number {
-      const $parent = this.$parent as ZTabsT
+    activeIndex() {
+      const $parent = this.$parent
       return $parent.activeIndex
     }
   },
-  render(h: CreateElement): VNode {
+  render(h) {
     return h(
       'div',
       {
@@ -26,5 +20,5 @@ export default Vue.extend({
       [this.$slots.default?.[this.activeIndex]] // activeIndex is reactive
     ) // Render the pane for the active tabs
   }
-})
+}
 </script>

@@ -21,15 +21,11 @@
   </button>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
+// import Vue from 'vue'
 import ZIcon from '../../ZIcon/ZIcon.vue'
 
-interface ZTabListT extends Vue {
-  getActiveIndex: number
-}
-
-export default Vue.extend({
+export default {
   name: 'ZTab',
   components: {
     ZIcon
@@ -50,23 +46,23 @@ export default Vue.extend({
     }
   },
   computed: {
-    activeIndex(): number {
-      const $parent = this.$parent as ZTabListT
+    activeIndex() {
+      const $parent = this.$parent
       return $parent.getActiveIndex
     },
-    isActive(): boolean {
+    isActive() {
       return this.index === this.activeIndex
     },
-    selected(): string {
+    selected() {
       return String(this.isActive)
     }
   },
   methods: {
-    clickHandler(): void {
+    clickHandler() {
       if (!this.disabled) {
         this.updateActiveIndex()
       }
     }
   }
-})
+}
 </script>
