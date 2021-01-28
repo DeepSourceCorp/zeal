@@ -5,7 +5,7 @@
       <span
         v-if="$slots.heading"
         @click="toggleAccordion()"
-        class="flex items-center cursor-pointer inline-block hover:opacity-75 select-none font-medium tracking-wider w-full leading-3 py-4 lg:pb-8 lg:pt-0 uppercase text-sm text-vanilla-400"
+        class="flex items-center cursor-pointer inline-block hover:opacity-75 select-none font-medium tracking-wider w-full leading-3 py-4 md:pb-8 md:pt-0 uppercase text-sm text-vanilla-400"
       >
         <span class="flex flex-1">
           <slot name="heading"></slot>
@@ -29,10 +29,10 @@
 
     <!-- None -->
     <template v-if="type === TYPES.none">
-      <span class="block">
+      <span class="block pb-8 w-24 lg:w-auto">
         <li
           v-if="$slots.heading"
-          class="leading-3 font-medium tracking-wider py-4 lg:pb-8 lg:pt-0 uppercase text-sm text-vanilla-400"
+          class="leading-3 font-medium tracking-wider py-4 md:pb-8 md:pt-0 uppercase text-sm text-vanilla-400"
         >
           <slot name="heading"></slot>
         </li>
@@ -48,7 +48,7 @@
 import Vue from 'vue'
 import ZIcon from '@/components/ZIcon'
 
-const CONTAINER_PADDING = 'px-6'
+const CONTAINER_PADDING = 'px-6 md:px-4 lg:px-6'
 
 const ARRANGEMENT = {
   vertical: {
