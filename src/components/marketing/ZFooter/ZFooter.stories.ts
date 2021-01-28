@@ -2,6 +2,7 @@ import ZFooter from './ZFooter.vue'
 import ZFooterList from '../ZFooterList'
 import ZFooterListItem from '../ZFooterListItem'
 import ZIcon from '../../ZIcon'
+import ZInputCta from '../ZInputCta'
 
 export default {
   title: 'Zeal Marketing/Footer',
@@ -13,7 +14,7 @@ export default {
 }
 
 export const Basic = () => ({
-  components: { ZFooter, ZFooterList, ZFooterListItem, ZIcon },
+  components: { ZFooter, ZFooterList, ZFooterListItem, ZIcon, ZInputCta },
   template: `<div class='h-screen'>
 
     <div class="prose prose-md max-w-none p-20">
@@ -120,6 +121,12 @@ export const Basic = () => ({
               <z-icon size="medium" icon="z-google"></z-icon>
             </z-footer-list-item>
           </span>
+          <z-footer-list-item class="mt-8" hover-color="" :cursor-pointer="false">
+            <span class="block text-xs text-vanilla-400 uppercase">Sign up for the newsletter</span>
+          </z-footer-list-item>
+          <z-footer-list-item class="flex text-left" hover-color="" :cursor-pointer="false">
+            <z-input-cta class="flex" placeholder="Enter email address"></z-input-cta>
+          </z-footer-list-item>
         </z-footer-list>
       </template>
       
@@ -214,7 +221,10 @@ export const Basic = () => ({
           <template slot="heading">
             Sign up for the newsletter
           </template>
-          <span class="flex mt-1">
+          <z-footer-list-item class="-mt-2 flex text-left" hover-color="" :cursor-pointer="false">
+            <z-input-cta class="w-full" placeholder="Enter email address"></z-input-cta>
+          </z-footer-list-item>
+          <span class="flex justify-center mt-4">
             <z-footer-list-item class="mr-8">
               <z-icon size="medium" icon="z-facebook"></z-icon>
             </z-footer-list-item>
