@@ -1,15 +1,16 @@
 <template>
-  <div class="relative z-menu">
+  <span class="relative z-menu">
     <button v-on:click="toggle" v-outside-click="close" class="outline-none focus:outline-none">
       <slot name="trigger"></slot>
     </button>
     <div
       v-if="isOpen"
-      class="absolute left-0 w-64 py-2 mt-2 rounded-sm text-vanilla-200 bg-ink-200"
+      class="absolute w-64 py-2 mt-2 rounded-sm text-vanilla-200 bg-ink-200"
+      :class="directionClass"
     >
       <slot name="body"></slot>
     </div>
-  </div>
+  </span>
 </template>
 
 <script lang="ts">
@@ -20,6 +21,15 @@ Vue.directive('outside-click', outsideClickDirective)
 
 export default Vue.extend({
   name: 'ZMenu',
+  props: {
+    direction: {
+      type: String,
+      default: 'right',
+      validator: function(value: string): boolean {
+        return ['left', 'right'].includes(value)
+      }
+    }
+  },
   data() {
     return {
       isOpen: false
@@ -31,6 +41,11 @@ export default Vue.extend({
     },
     close(): void {
       this.isOpen = false
+    }
+  },
+  computed: {
+    directionClass(): string {
+      return this.direction == 'right' ? 'left-0 origin-top-left' : 'right-0 origin-top-right'
     }
   }
 })
