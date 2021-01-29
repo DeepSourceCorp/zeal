@@ -2,11 +2,16 @@
   <div
     class="h-full w-1/6 flex flex-col border border-l-0 border-solid border-ink-200 text-vanilla-100"
 <<<<<<< HEAD
+<<<<<<< HEAD
     :class="[`bg-${bgColor}`]"
   >
 =======
     :class="[`bg-${bgColor}`]">
 >>>>>>> Add Sidebar section and component
+=======
+    :class="[`bg-${bgColor}`]"
+  >
+>>>>>>> Format code with prettier
     <div class="w-full h-12 border-b border-solid border-ink-200 p-2" v-if="$slots.header">
       <slot name="header"></slot>
     </div>
@@ -23,6 +28,7 @@
 export default {
   name: 'ZSidebar',
 <<<<<<< HEAD
+<<<<<<< HEAD
   components: {},
   props: {
     bgColor: {
@@ -38,6 +44,14 @@ export default {
           default: 'transparent'
       }
 >>>>>>> Add Sidebar section and component
+=======
+  components: {},
+  props: {
+    bgColor: {
+      type: String,
+      default: 'transparent'
+    }
+>>>>>>> Format code with prettier
   }
 }
 </script>

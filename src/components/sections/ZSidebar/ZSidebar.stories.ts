@@ -15,10 +15,14 @@ export default {
 export const DefaultSidebar = () => ({
   components: { ZSidebar, ZAvatar, ZIcon, ZButton },
 <<<<<<< HEAD
+<<<<<<< HEAD
   template: `<div class="w-full-screen h-screen min-h-full -mt-3">
 =======
     template: `<div class="w-full-screen h-screen min-h-full -mt-3">
 >>>>>>> Add Sidebar section and component
+=======
+  template: `<div class="w-full-screen h-screen min-h-full -mt-3">
+>>>>>>> Format code with prettier
         <z-sidebar>
             <div slot="header" class="h-full flex items-center p-1">
                 <div class="flex-1 items-center flex space-x-1 text-base font-normal">
