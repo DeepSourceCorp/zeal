@@ -76,11 +76,13 @@ export default {
       return directionStyle[this.direction]
     },
     getArrow() {
-        if(this.direction == "left" && !this.isCollapsed || 
-            this.direction == "right" && this.isCollapsed) {
-            return `chevron-left`;
-        }
-        return `chevron-right`;
+      if (
+        (this.direction == 'left' && !this.isCollapsed) ||
+        (this.direction == 'right' && this.isCollapsed)
+      ) {
+        return `chevron-left`
+      }
+      return `chevron-right`
     }
   },
   methods: {
