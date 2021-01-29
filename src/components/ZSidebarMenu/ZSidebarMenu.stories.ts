@@ -18,38 +18,110 @@ export const DefaultSidebarMenu = () => ({
   template: `
   <div class="w-80">  
     <z-sidebar-menu>
-      <div slot="header" class="h-full flex flex-col sm:flex-row items-center p-1 justify-between">
+      <div class="h-full flex flex-col lg:flex-row items-center p-1 justify-between" slot="header">
         <div class="flex space-x-1 items-center">
           <z-icon icon="globe" size="small"></z-icon>
-          <span class="hidden sm:block">MediaCorp</span>
+          <span class="hidden lg:block">MediaCorp</span>
         </div>
-        <div class="flex sm:space-x-1 items-center">
+        <div class="flex lg:space-x-1 items-center">
           <z-avatar
             image="https://randomuser.me/api/portraits/women/24.jpg"
             user-name="Akshay Paliwal"
             size="sm"
-            class="hidden sm:block"
+            class="hidden lg:block"
           ></z-avatar>
           <z-avatar
             image="https://randomuser.me/api/portraits/women/24.jpg"
             user-name="Akshay Paliwal"
             size="xs"
-            class="block sm:hidden"
+            class="block lg:hidden"
           ></z-avatar>
-          <z-icon icon="chevron-down" size="small" class="hidden sm:block"></z-icon>
+          <z-icon icon="chevron-down" size="small" class="hidden lg:block"></z-icon>
         </div>
       </div>
-      <z-sidebar-item icon="columns">My dashboard</z-sidebar-item>
-      <z-sidebar-item icon="home">Team home</z-sidebar-item>
-      <z-sidebar-item icon="activity">
-        <span class="flex-1">Actively Analyzing</span>
-        <z-button color="primary" 
-            icon="plus" 
-            iconColor="ink-400" 
-            iconSize="small">
-        </z-button>
-      </z-sidebar-item>
-      <z-sidebar-item icon="archive">All repositories</z-sidebar-item>
+      <template slot-scope="{ isCollapsed }">
+        <z-sidebar-item icon="columns">My dashboard</z-sidebar-item>
+        <z-sidebar-item icon="home">Team home</z-sidebar-item>
+        <z-sidebar-item icon="activity" :active="true">
+          <span class="flex-1">Actively Analyzing</span>
+          <z-button color="primary" 
+              icon="plus" 
+              iconColor="ink-400" 
+              iconSize="small">
+          </z-button>
+        </z-sidebar-item>
+        <div class="ml-5 text-vanilla-400"
+              :class="isCollapsed ? 'hidden' : 'hidden lg:block'">
+          <z-sidebar-item icon="refresh-ccw" icon-color="juniper">org-activity-archive</z-sidebar-item>
+          <z-sidebar-item icon="globe">marvin</z-sidebar-item>
+          <z-sidebar-item icon="git-merge">asgard-office</z-sidebar-item>
+          <z-sidebar-item icon="globe">first-release-with-a...</z-sidebar-item>
+          <z-sidebar-item icon="globe">asgard</z-sidebar-item>
+          <z-sidebar-item icon="git-merge">asgard-office</z-sidebar-item>
+          <z-sidebar-item icon="git-merge">second-release</z-sidebar-item>
+          <z-sidebar-item icon="git-merge">another-release</z-sidebar-item>
+        </div>
+        <z-sidebar-item icon="archive">All repositories</z-sidebar-item>
+      </template>
+      <div slot="footer" class="h-full flex flex-col justify-evenly">
+        <z-sidebar-item icon="users">My team</z-sidebar-item>
+        <z-sidebar-item icon="settings">Team settings</z-sidebar-item>
+        <z-sidebar-item icon="star" icon-color="juniper">Upgrade to Pro</z-sidebar-item>
+      </div>
+    </z-sidebar-menu>
+  </div>`
+})
+
+export const RightSidebarMenu = () => ({
+  components: { ZSidebarMenu, ZSidebarItem, ZIcon, ZAvatar, ZButton },
+  template: `
+  <div class="w-80">  
+    <z-sidebar-menu direction="right">
+      <div class="h-full flex flex-col lg:flex-row items-center p-1 justify-between" slot="header">
+        <div class="flex space-x-1 items-center">
+          <z-icon icon="globe" size="small"></z-icon>
+          <span class="hidden lg:block">MediaCorp</span>
+        </div>
+        <div class="flex lg:space-x-1 items-center">
+          <z-avatar
+            image="https://randomuser.me/api/portraits/women/24.jpg"
+            user-name="Akshay Paliwal"
+            size="sm"
+            class="hidden lg:block"
+          ></z-avatar>
+          <z-avatar
+            image="https://randomuser.me/api/portraits/women/24.jpg"
+            user-name="Akshay Paliwal"
+            size="xs"
+            class="block lg:hidden"
+          ></z-avatar>
+          <z-icon icon="chevron-down" size="small" class="hidden lg:block"></z-icon>
+        </div>
+      </div>
+      <template slot-scope="{ isCollapsed }">
+        <z-sidebar-item icon="columns">My dashboard</z-sidebar-item>
+        <z-sidebar-item icon="home">Team home</z-sidebar-item>
+        <z-sidebar-item icon="activity" :active="true">
+          <span class="flex-1">Actively Analyzing</span>
+          <z-button color="primary" 
+              icon="plus" 
+              iconColor="ink-400" 
+              iconSize="small">
+          </z-button>
+        </z-sidebar-item>
+        <div class="ml-5 text-vanilla-400"
+              :class="isCollapsed ? 'hidden' : 'hidden lg:block'">
+          <z-sidebar-item icon="refresh-ccw" icon-color="juniper">org-activity-archive</z-sidebar-item>
+          <z-sidebar-item icon="globe">marvin</z-sidebar-item>
+          <z-sidebar-item icon="git-merge">asgard-office</z-sidebar-item>
+          <z-sidebar-item icon="globe">first-release-with-a...</z-sidebar-item>
+          <z-sidebar-item icon="globe">asgard</z-sidebar-item>
+          <z-sidebar-item icon="git-merge">asgard-office</z-sidebar-item>
+          <z-sidebar-item icon="git-merge">second-release</z-sidebar-item>
+          <z-sidebar-item icon="git-merge">another-release</z-sidebar-item>
+        </div>
+        <z-sidebar-item icon="archive">All repositories</z-sidebar-item>
+      </template>
       <div slot="footer" class="h-full flex flex-col justify-evenly">
         <z-sidebar-item icon="users">My team</z-sidebar-item>
         <z-sidebar-item icon="settings">Team settings</z-sidebar-item>
