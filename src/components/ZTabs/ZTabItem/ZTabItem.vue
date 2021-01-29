@@ -1,11 +1,50 @@
 <template>
-  <div class="z-tab-item" :key="Math.random().toString(36).substring(7)">
+  <z-tab :icon="icon" :action="clickHandler" :isActive="isActive" :disabled="disabled">
     <slot></slot>
-  </div>
+  </z-tab>
 </template>
 
 <script>
+import ZTab from '@/components/ZTab'
+
 export default {
-  name: 'ZTabItem'
+  name: 'ZTabItem',
+  components: {
+    ZTab
+  },
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    index: {
+      type: Number
+    },
+    updateActiveIndex: {
+      type: Function
+    },
+    icon: {
+      type: String
+    }
+  },
+  computed: {
+    activeIndex() {
+      const $parent = this.$parent
+      return $parent.getActiveIndex
+    },
+    isActive() {
+      return this.index === this.activeIndex
+    },
+    selected() {
+      return String(this.isActive)
+    }
+  },
+  methods: {
+    clickHandler() {
+      if (!this.disabled) {
+        this.updateActiveIndex()
+      }
+    }
+  }
 }
 </script>

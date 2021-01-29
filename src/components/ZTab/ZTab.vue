@@ -2,7 +2,7 @@
   <button
     role="tab"
     :aria-selected="selected"
-    @click="clickHandler"
+    @click="action && action()"
     class="inline-flex items-end gap-2 pb-3 px-1 text-sm leading-none outline-none z-nav-item focus:outline-none border-b-2"
     :disabled="disabled"
     :class="{
@@ -26,7 +26,7 @@ import Vue from 'vue'
 import ZIcon from '../ZIcon/ZIcon.vue'
 
 export default Vue.extend({
-  name: 'ZNavItem',
+  name: 'ZTab',
   components: {
     ZIcon
   },
@@ -41,6 +41,9 @@ export default Vue.extend({
     },
     icon: {
       type: String
+    },
+    action: {
+      type: Function
     }
   },
   computed: {

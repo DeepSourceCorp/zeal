@@ -2,10 +2,10 @@ import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'
 import ZTabs from './ZTabs.vue'
-import ZTab from './ZTab'
-import ZTabList from './ZTabList'
-import ZTabItems from './ZTabItems'
 import ZTabItem from './ZTabItem'
+import ZTabList from './ZTabList'
+import ZTabPanes from './ZTabPanes'
+import ZTabPane from './ZTabPane'
 
 export default {
   title: 'Tabs',
@@ -14,97 +14,97 @@ export default {
 }
 
 export const BasicTabs = () => ({
-  components: { ZTabs, ZTabList, ZTab, ZTabItems, ZTabItem },
+  components: { ZTabs, ZTabList, ZTabItem, ZTabPanes, ZTabPane },
   template: `<div class='padded-container'>
               <z-tabs>
                 <z-tab-list>
-                  <z-tab>Overview</z-tab>
-                  <z-tab>Issues</z-tab>
-                  <z-tab>Metrics</z-tab>
-                  <z-tab>Autofix</z-tab>
+                  <z-tab-item>Overview</z-tab-item>
+                  <z-tab-item>Issues</z-tab-item>
+                  <z-tab-item>Metrics</z-tab-item>
+                  <z-tab-item>Autofix</z-tab-item>
                 </z-tab-list>
-                <z-tab-items>
-                  <z-tab-item>Overview of the code.</z-tab-item>
-                  <z-tab-item>There are the list of issues.</z-tab-item>
-                  <z-tab-item>This are metrics.</z-tab-item>
-                  <z-tab-item>Works like magic</z-tab-item>
-                </z-tab-items>
+                <z-tab-panes>
+                  <z-tab-pane>Overview of the code.</z-tab-pane>
+                  <z-tab-pane>There are the list of issues.</z-tab-pane>
+                  <z-tab-pane>This are metrics.</z-tab-pane>
+                  <z-tab-pane>Works like magic</z-tab-pane>
+                </z-tab-panes>
               </z-tabs>
       </div>`
 })
 
 export const DisabledTabs = () => ({
-  components: { ZTabs, ZTabList, ZTab, ZTabItems, ZTabItem },
+  components: { ZTabs, ZTabList, ZTabItem, ZTabPanes, ZTabPane },
   template: `<div class='padded-container'>
               <z-tabs>
                 <z-tab-list>
-                  <z-tab>Overview</z-tab>
-                  <z-tab>Issues</z-tab>
-                  <z-tab :disabled="true">Metrics (Disabled)</z-tab>
-                  <z-tab :disabled="true">Autofix (Disabled)</z-tab>
+                  <z-tab-item>Overview</z-tab-item>
+                  <z-tab-item>Issues</z-tab-item>
+                  <z-tab-item :disabled="true">Metrics (Disabled)</z-tab-item>
+                  <z-tab-item :disabled="true">Autofix (Disabled)</z-tab-item>
                 </z-tab-list>
-                <z-tab-items>
-                  <z-tab-item>Overview of the code.</z-tab-item>
-                  <z-tab-item>There are the list of issues.</z-tab-item>
-                  <z-tab-item>This are metrics.</z-tab-item>
-                  <z-tab-item>Works like magic</z-tab-item>
-                </z-tab-items>
+                <z-tab-panes>
+                  <z-tab-pane>Overview of the code.</z-tab-pane>
+                  <z-tab-pane>There are the list of issues.</z-tab-pane>
+                  <z-tab-pane>This are metrics.</z-tab-pane>
+                  <z-tab-pane>Works like magic</z-tab-pane>
+                </z-tab-panes>
               </z-tabs>
       </div>`
 })
 
 export const TabsWithIcons = () => ({
-  components: { ZTabs, ZTabList, ZTab, ZTabItems, ZTabItem },
+  components: { ZTabs, ZTabList, ZTabItem, ZTabPanes, ZTabPane },
   template: `<div class='padded-container'>
               <z-tabs>
                 <z-tab-list class="bg-ink-300 p-4 pb-0">
-                  <z-tab icon="activity">
+                  <z-tab-item icon="activity">
                     Overview
-                  </z-tab>
-                  <z-tab icon="autofix">
+                  </z-tab-item>
+                  <z-tab-item icon="autofix">
                     Issues
-                  </z-tab>
-                  <z-tab icon="bar-chart">
+                  </z-tab-item>
+                  <z-tab-item icon="bar-chart">
                     Metrics
-                  </z-tab>
-                  <z-tab icon="settings">
+                  </z-tab-item>
+                  <z-tab-item icon="settings">
                     Settings
-                  </z-tab>
+                  </z-tab-item>
                 </z-tab-list>
-                <z-tab-items class="p-4">
-                  <z-tab-item>Overview of the code.</z-tab-item>
-                  <z-tab-item>There are the list of issues.</z-tab-item>
-                  <z-tab-item>This are metrics.</z-tab-item>
-                  <z-tab-item>Works like magic</z-tab-item>
-                </z-tab-items>
+                <z-tab-panes class="p-4">
+                  <z-tab-pane>Overview of the code.</z-tab-pane>
+                  <z-tab-pane>There are the list of issues.</z-tab-pane>
+                  <z-tab-pane>This are metrics.</z-tab-pane>
+                  <z-tab-pane>Works like magic</z-tab-pane>
+                </z-tab-panes>
               </z-tabs>
       </div>`
 })
 
 export const MixedTabs = () => ({
-  components: { ZTabs, ZTabList, ZTab, ZTabItems, ZTabItem },
+  components: { ZTabs, ZTabList, ZTabItem, ZTabPanes, ZTabPane },
   template: `<div class='padded-container'>
               <z-tabs>
                 <z-tab-list class="bg-ink-300 p-4 pb-0">
-                  <z-tab icon="activity">
+                  <z-tab-item icon="activity">
                     With Icon
-                  </z-tab>
-                  <z-tab :disabled="true" icon="bar-chart">
+                  </z-tab-item>
+                  <z-tab-item :disabled="true" icon="bar-chart">
                     With Icon Disabled
-                  </z-tab>
-                  <z-tab>
+                  </z-tab-item>
+                  <z-tab-item>
                     Without Icon
-                  </z-tab>
-                  <z-tab :disabled="true">
+                  </z-tab-item>
+                  <z-tab-item :disabled="true">
                     Without Icon Disabled
-                  </z-tab>
+                  </z-tab-item>
                 </z-tab-list>
-                <z-tab-items class="p-4">
-                  <z-tab-item>This is a tab with an icon</z-tab-item>
-                  <z-tab-item>This is a disabled tab with icon.</z-tab-item>
-                  <z-tab-item>This is a tab without icon.</z-tab-item>
-                  <z-tab-item>This is a disabled tab without icon </z-tab-item>
-                </z-tab-items>
+                <z-tab-panes class="p-4">
+                  <z-tab-pane>This is a tab with an icon</z-tab-pane>
+                  <z-tab-pane>This is a disabled tab with icon.</z-tab-pane>
+                  <z-tab-pane>This is a tab without icon.</z-tab-pane>
+                  <z-tab-pane>This is a disabled tab without icon </z-tab-pane>
+                </z-tab-panes>
               </z-tabs>
       </div>`
 })

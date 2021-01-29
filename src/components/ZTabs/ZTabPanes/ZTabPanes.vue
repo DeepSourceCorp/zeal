@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'TabItems',
+  name: 'ZTabPanes',
   computed: {
     activeIndex() {
       const $parent = this.$parent
