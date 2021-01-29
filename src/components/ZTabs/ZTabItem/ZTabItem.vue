@@ -36,7 +36,7 @@ export default {
   computed: {
     activeIndex() {
       const $parent = this.$parent
-      return $parent.getActiveIndex
+      return this.$parent.getActiveIndex
     },
     isActive() {
       return this.index === this.activeIndex
