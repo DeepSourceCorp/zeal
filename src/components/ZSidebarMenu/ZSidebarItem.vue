@@ -1,12 +1,15 @@
 <template>
   <div
     class="sidebar-item flex space-x-2 px-2 py-2 items-center cursor-pointer hover:bg-ink-300 text-sm transition-all duration-300 ease-in-out"
-    :class="{'bg-ink-300': active}">
+    :class="{ 'bg-ink-300': active }"
+  >
     <z-icon v-if="icon" :icon="icon" size="small" :color="iconColor"></z-icon>
-    <div class="items-center space-x-1 w-full text-xs sm:text-sm"
-          :class="[isCollapsed ? 'hidden' : 'hidden lg:flex']">
-        <slot></slot>
-      </div>
+    <div
+      class="items-center space-x-1 w-full text-xs sm:text-sm"
+      :class="[isCollapsed ? 'hidden' : 'hidden lg:flex']"
+    >
+      <slot></slot>
+    </div>
   </div>
 </template>
 

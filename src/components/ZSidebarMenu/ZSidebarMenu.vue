@@ -1,8 +1,7 @@
 <template>
   <div
     class="group absolute sidebar-menu h-screen flex flex-col border-ink-200 text-vanilla-100 top-0 hover:border-2 lg:hover:border-juniper cursor-pointer transition-all duration-300 ease-in-out"
-    :class="[isCollapsed ? 'w-12' : 'w-12 lg:w-64',
-            getDirectionClasses]"
+    :class="[isCollapsed ? 'w-12' : 'w-12 lg:w-64', getDirectionClasses]"
   >
     <header
       class="w-full border-b border-solid border-ink-200 p-2"
@@ -17,13 +16,14 @@
     <footer class="w-full border-t border-solid border-ink-200 px-2 py-4" v-if="$slots.footer">
       <slot name="footer" :isCollapsed="isCollapsed"></slot>
     </footer>
-    <div class="lg:group-hover:block hidden bg-juniper p-1 rounded-full relative lg:absolute top-3"
-        @click.stop="collapseSidebar()"
-        :class="getHoverStyle">
+    <div
+      class="lg:group-hover:block hidden bg-juniper p-1 rounded-full relative lg:absolute top-3"
+      @click.stop="collapseSidebar()"
+      :class="getHoverStyle"
+    >
       <z-icon :icon="getArrow" size="small" color="ink-400"></z-icon>
     </div>
   </div>
-  
 </template>
 
 <script>
@@ -35,20 +35,20 @@ export default {
   },
   props: {
     width: {
-        type: String,
-        default: '64'
+      type: String,
+      default: '64'
     },
     collapsed: {
-        type: Boolean,
-        default: false
+      type: Boolean,
+      default: false
     },
     widthCollapsed: {
-        type: String,
-        default: '16'
+      type: String,
+      default: '16'
     },
     direction: {
-        type: String,
-        default: 'left'
+      type: String,
+      default: 'left'
     }
   },
   data() {
@@ -61,18 +61,18 @@ export default {
       return this.isCollapsed ? this.widthCollapsed : this.width
     },
     getDirectionClasses() {
-        const directionStyle = {
-            left: 'left-0 border-r',
-            right: 'right-0 border-l'
-        }
-        return directionStyle[this.direction]
+      const directionStyle = {
+        left: 'left-0 border-r',
+        right: 'right-0 border-l'
+      }
+      return directionStyle[this.direction]
     },
     getHoverStyle() {
-        const directionStyle = {
-            left: '-right-3',
-            right: '-left-3'
-        }
-        return directionStyle[this.direction]
+      const directionStyle = {
+        left: '-right-3',
+        right: '-left-3'
+      }
+      return directionStyle[this.direction]
     },
     getArrow() {
         if(this.direction == "left" && !this.isCollapsed || 
@@ -84,9 +84,8 @@ export default {
   },
   methods: {
     collapseSidebar() {
-        this.isCollapsed = !this.isCollapsed
+      this.isCollapsed = !this.isCollapsed
     }
   }
 }
 </script>
-
