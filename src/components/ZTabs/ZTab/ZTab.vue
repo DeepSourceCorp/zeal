@@ -22,8 +22,7 @@
 </template>
 
 <script>
-// import Vue from 'vue'
-import ZIcon from '../../ZIcon/ZIcon.vue'
+import ZIcon from '@/components/ZIcon'
 
 export default {
   name: 'ZTab',
