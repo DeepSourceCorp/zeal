@@ -1,9 +1,8 @@
 <template>
-  <div class="sidebar-item flex space-x-2 px-2 py-2 items-center cursor-pointer hover:bg-ink-300 text-sm">
-    <z-icon v-if="icon" 
-            :icon="icon" 
-            size="small"
-            :color="iconColor"></z-icon>
+  <div
+    class="sidebar-item flex space-x-2 px-2 py-2 items-center cursor-pointer hover:bg-ink-300 text-sm"
+  >
+    <z-icon v-if="icon" :icon="icon" size="small" :color="iconColor"></z-icon>
     <div class="items-center space-x-1 w-full hidden sm:flex"><slot></slot></div>
   </div>
 </template>
@@ -17,7 +16,7 @@ export default {
   },
   props: {
     icon: {
-      type: String,
+      type: String
     },
     iconColor: {
       type: String
