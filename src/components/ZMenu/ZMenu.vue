@@ -5,8 +5,8 @@
     </button>
     <div
       v-if="isOpen"
-      class="absolute w-64 py-2 mt-2 rounded-sm text-vanilla-200 bg-ink-200"
-      :class="directionClass"
+      class="absolute rounded-sm text-vanilla-200 bg-ink-200"
+      :class="`${directionClass} ${sizeClass}`"
     >
       <slot name="body"></slot>
     </div>
@@ -28,6 +28,13 @@ export default Vue.extend({
       validator: function(value: string): boolean {
         return ['left', 'right'].includes(value)
       }
+    },
+    size: {
+      type: String,
+      default: 'base',
+      validator: function(value: string): boolean {
+        return ['small', 'base', 'large'].includes(value)
+      }
     }
   },
   data() {
@@ -46,6 +53,15 @@ export default Vue.extend({
   computed: {
     directionClass(): string {
       return this.direction == 'right' ? 'left-0 origin-top-left' : 'right-0 origin-top-right'
+    },
+    sizeClass(): string {
+      const sizes: Record<string, string> = {
+        small: 'py-1 text-xs w-52 mt-2',
+        base: 'py-1 text-sm w-64 mt-2',
+        large: 'py-2 text-base w-72 mt-4'
+      }
+
+      return sizes[this.size || 'base']
     }
   }
 })
