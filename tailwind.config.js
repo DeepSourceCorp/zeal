@@ -121,7 +121,12 @@ module.exports = {
       72: '18rem',
       80: '20rem',
       96: '24rem',
-      102: '32rem'
+      102: '32rem',
+      'vh-1/6': '16.666667vh',
+      'vh-2/6': '33.333333vh',
+      'vh-3/6': '50vh',
+      'vh-4/6': '66.666667vh',
+      'vh-5/6': '83.333333vh'
     },
     backgroundColor: (theme) => theme('colors'),
     backgroundOpacity: (theme) => theme('opacity'),

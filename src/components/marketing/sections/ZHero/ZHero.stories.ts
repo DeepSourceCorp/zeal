@@ -20,7 +20,7 @@ export const Basic = () => ({
   components: { ZHero, ZNav, ZIcon, ZButton, ZNavMenu, ZNavItem, ZNavList, ZNavListItem },
   template: `<div>
 
-      <z-nav>
+      <z-nav class="mb-12">
         <template slot="brand">
           <img class="h-7 max-w-none" src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
         </template>
@@ -122,7 +122,49 @@ export const Basic = () => ({
       </z-nav>
 
       <div class="padded-container">
+
         <z-hero>
+          <template slot="heading">
+            Automate code reviews with static analysis
+          </template>
+
+          <template slot="subheading">
+            Identify and fix bug risks, anti-patterns, performance issues, and security flaws on every
+            commit and pull request.
+          </template>
+
+          <template slot="cta">
+            <h3 class="text-sm uppercase tracking-widest-lg font-bold mb-6">Integrate with</h3>
+            <span class="flex items-center justify-center">
+              <z-button class="bg-github w-40">
+                <span class="flex items-center">
+                  <z-icon class="text-normal mr-3 -mt-1" size="medium" icon="github"></z-icon>
+                  GitHub
+                </span>
+              </z-button>
+              <z-button class="bg-gitlab w-40 mx-6">
+                <span class="flex items-center">
+                  <z-icon class="text-normal mr-3 -mt-1" size="medium" icon="gitlab"></z-icon>
+                  GitLab
+                </span>
+              </z-button>
+              <z-button class="bg-bitbucket w-40">
+                <span class="flex items-center">
+                  <z-icon class="text-normal mr-3 -mt-1" size="medium" icon="bitbucket"></z-icon>
+                  Bitbucket
+                </span>
+              </z-button>
+            </span>
+          </template>
+
+          <template slot="illustration">
+            <video autoplay="" muted="" loop="" playsinline="" preload="metadata">
+              <source
+                src="https://assets.deepsource.io/879e7a0/videos/autofix-workflow.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </template>
         </z-hero>
 
         <div class="prose prose-sm sm:prose sm:max-w-none mx-auto px-10 py-10">
