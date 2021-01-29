@@ -1,5 +1,11 @@
 <template>
-  <z-tab :icon="icon" :action="clickHandler" :isActive="isActive" :disabled="disabled">
+  <z-tab
+    class="z-tab-item"
+    :icon="icon"
+    :action="clickHandler"
+    :isActive="isActive"
+    :disabled="disabled"
+  >
     <slot></slot>
   </z-tab>
 </template>
