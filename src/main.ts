@@ -67,7 +67,7 @@ const components = [
 ]
 
 const install = (Vue: any) => {
-  components.forEach((component) => {
+  components.forEach(component => {
     Vue.component(component.name, component)
   })
 }
@@ -129,7 +129,7 @@ export { default as ZPulse } from './components/ZPulse/index'
 export { default as ZMenu } from './components/ZMenu/index'
 export { default as ZMenuSection } from './components/ZMenu/ZMenuSection/index'
 export { default as ZMenuItem } from './components/ZMenu/ZMenuItem/index'
-export { default as ZTab } from './components/Ztab/index'
+export { default as ZTab } from './components/ZTab/index'
 export { default as ZTabs } from './components/ZTabs/index'
 export { default as ZTabList } from './components/ZTabs/ZTabList'
 export { default as ZTabItem } from './components/ZTabs/ZTabItem'
