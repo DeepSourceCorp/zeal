@@ -44,7 +44,6 @@
       :class="{ 'absolute w-full h-screen bg-ink-400 opacity-50 left-0 top-0 z-20': isOpen }"
     ></div>
   </div>
-  
 </template>
 
 <script>
@@ -61,12 +60,12 @@ export default {
   },
   props: {
     width: {
-        type: String,
-        default: '64'
+      type: String,
+      default: '64'
     },
     collapsed: {
-        type: Boolean,
-        default: false
+      type: Boolean,
+      default: false
     },
     widthCollapsed: {
       type: String,
