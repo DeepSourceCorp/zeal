@@ -1,4 +1,6 @@
-import { ZMenu, ZMenuItem, ZMenuSection } from '../../src/components/ZMenu'
+import ZMenu from '../../src/components/ZMenu'
+import ZMenuSection from '../../src/components/ZMenu/ZMenuSection'
+import ZMenuItem from '../../src/components/ZMenu/ZMenuItem'
 import { mount } from '@vue/test-utils'
 
 const BasicTab = {
