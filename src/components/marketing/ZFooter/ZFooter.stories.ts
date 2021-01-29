@@ -111,14 +111,20 @@ export const Basic = () => ({
             Follow us on social media to stay updated.
           </z-footer-list-item>
           <span class="flex mt-1">
-            <z-footer-list-item class="mr-8">
+            <z-footer-list-item class="mr-4">
+              <z-icon size="medium" icon="z-twitter"></z-icon>
+            </z-footer-list-item>
+            <z-footer-list-item class="mr-4">
               <z-icon size="medium" icon="z-facebook"></z-icon>
             </z-footer-list-item>
-            <z-footer-list-item class="mr-8">
+            <z-footer-list-item class="mr-4">
               <z-icon size="medium" icon="z-linkedin"></z-icon>
             </z-footer-list-item>
+            <z-footer-list-item class="mr-4">
+              <z-icon size="medium" icon="z-youtube"></z-icon>
+            </z-footer-list-item>
             <z-footer-list-item>
-              <z-icon size="medium" icon="z-google"></z-icon>
+              <z-icon size="medium" icon="z-instagram"></z-icon>
             </z-footer-list-item>
           </span>
           <z-footer-list-item class="mt-8" hover-color="" :cursor-pointer="false">
@@ -225,14 +231,20 @@ export const Basic = () => ({
             <z-input-cta class="w-full" placeholder="Enter email address"></z-input-cta>
           </z-footer-list-item>
           <span class="flex justify-center mt-4">
-            <z-footer-list-item class="mr-8">
+            <z-footer-list-item class="mr-4">
+              <z-icon size="medium" icon="z-twitter"></z-icon>
+            </z-footer-list-item>
+            <z-footer-list-item class="mr-4">
               <z-icon size="medium" icon="z-facebook"></z-icon>
             </z-footer-list-item>
-            <z-footer-list-item class="mr-8">
+            <z-footer-list-item class="mr-4">
               <z-icon size="medium" icon="z-linkedin"></z-icon>
             </z-footer-list-item>
+            <z-footer-list-item class="mr-4">
+              <z-icon size="medium" icon="z-youtube"></z-icon>
+            </z-footer-list-item>
             <z-footer-list-item>
-              <z-icon size="medium" icon="z-google"></z-icon>
+              <z-icon size="medium" icon="z-instagram"></z-icon>
             </z-footer-list-item>
           </span>
         </z-footer-list>
