@@ -30,6 +30,7 @@ module.exports = {
       cherry: '#df6145',
       honey: '#f6d87c',
       aqua: '#23c4f8',
+      github: '#414141',
       gitlab: '#6753B5',
       bitbucket: '#1E54C5',
       lavender: '#7A97FA',
@@ -242,7 +243,10 @@ module.exports = {
       xl: '1.375rem',
       '2xl': '1.75rem',
       '3xl': '2.75rem',
-      '4xl': '4rem'
+      '4xl': '4rem',
+      '5xl': ['4.5rem', { lineHeight: '1' }],
+      '6xl': ['6rem', { lineHeight: '1' }],
+      '7xl': ['8rem', { lineHeight: '1' }]
     },
     fontWeight: {
       normal: '400',
@@ -287,7 +291,8 @@ module.exports = {
       normal: '0',
       wide: '0.025em',
       wider: '0.05em',
-      widest: '0.1em'
+      widest: '0.1em',
+      'widest-lg': '0.15em'
     },
     lineHeight: {
       none: '1',

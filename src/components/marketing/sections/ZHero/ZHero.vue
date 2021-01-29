@@ -1,17 +1,39 @@
 <template>
-  <section class="z-hero__section w-full relative text-center">
-    <h1 class="text-vanilla-100 mb-4 text-3xl lg:text-4xl leading-11 lg:leading-12 font-bold">
-      Some random heading to fill up the space.
+  <section class="z-hero__section w-full relative text-vanilla-100 text-center">
+    <h1
+      class="text-vanilla-100 mb-6 text-3xl lg:text-5xl leading-11 lg:leading-12 w-auto lg:w-4/5 font-bold mx-auto"
+    >
+      Automate code reviews with static analysis
     </h1>
-    <h2 class="text-lg lg:text-xl leading-9 lg:leading-normal font-normal text-vanilla-400 mb-6">
-      <p>
-        By default, Tailwind removes all of the default browser styling from paragraphs, headings,
-        lists and more.
-      </p>
-      <p>
-        We get lots of complaints about it actually, with people regularly asking us things like:
-      </p>
+    <h2
+      class="text-lg lg:text-lg leading-9 lg:leading-normal w-auto lg:w-1/2 font-normal text-vanilla-200 mb-12 mx-auto"
+    >
+      Identify and fix bug risks, anti-patterns, performance issues, and security flaws on every
+      commit and pull request.
     </h2>
+
+    <h3 class="text-sm uppercase tracking-widest-lg font-bold mb-6">Integrate with</h3>
+
+    <span>
+      <z-button class="bg-github w-40">
+        <span class="flex items-center object-fit">
+          <z-icon class="text-normal mr-3 -mt-1" size="medium" icon="github"></z-icon>
+          GitHub
+        </span>
+      </z-button>
+      <z-button class="bg-gitlab w-40 mx-6">
+        <span class="flex items-center object-fit">
+          <z-icon class="text-normal mr-3 -mt-1" size="medium" icon="gitlab"></z-icon>
+          GitLab
+        </span>
+      </z-button>
+      <z-button class="bg-bitbucket w-40">
+        <span class="flex items-center object-fit">
+          <z-icon class="text-normal mr-3 -mt-1" size="medium" icon="bitbucket"></z-icon>
+          Bitbucket
+        </span>
+      </z-button>
+    </span>
 
     <div class="video-content absolute">
       <!-- 
@@ -64,6 +86,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import ZButton from '@/components/ZButton'
+import ZIcon from '@/components/ZIcon'
 
 const MIN_SCALE = 0.7
 const MAX_SCALE = 1
@@ -73,33 +97,29 @@ const MIN_ROTATION_ANGLE = 0
 const MAX_ROTATION_ANGLE = 20
 
 export default Vue.extend({
+  components: {
+    ZButton,
+    ZIcon
+  },
   name: 'ZHero',
   props: {},
   data() {
     return {}
   },
   mounted() {
-    const heroSection = document.getElementsByClassName('z-hero__section')[0] as HTMLElement
-    const videoContainer = document.getElementsByClassName('video-container')[0] as HTMLElement
-    const videoContent = document.getElementsByClassName('video-content')[0] as HTMLElement
-    const videoMask = document.getElementsByClassName('video-mask')[0]
-    // const video = document.getElementsByClassName('video-item')[0] as HTMLElement
+    this.handleScroll()
+    document.addEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll() {
+      const heroSection = document.getElementsByClassName('z-hero__section')[0] as HTMLElement
+      const videoContainer = document.getElementsByClassName('video-container')[0] as HTMLElement
+      const videoContent = document.getElementsByClassName('video-content')[0] as HTMLElement
+      const videoMask = document.getElementsByClassName('video-mask')[0]
+      // const video = document.getElementsByClassName('video-item')[0] as HTMLElement
 
-    //const heroSectionTop = window.scrollY - heroSection.getBoundingClientRect().top - screen.height
-    videoContent.style.transform = `
-      translateX(0px) 
-      translateY(${this.getTranslateYValue(window.scrollY)}%) 
-      scale(${this.getScaleValue(window.scrollY)}) translateZ(0px)`
-
-    videoContainer.style.transform = `
-      perspective(800px) 
-      rotateX(${this.getRotationValue(window.scrollY)}deg) 
-      translateZ(0px)`
-
-    window.onscroll = () => {
+      //const heroSectionTop = window.scrollY - heroSection.getBoundingClientRect().top - screen.height
       const scrollY = window.scrollY
-      console.log(window.innerWidth)
-
       videoContent.style.transform = `
         translateX(0px) 
         translateY(${this.getTranslateYValue(scrollY)}%) 
@@ -109,9 +129,7 @@ export default Vue.extend({
         perspective(800px) 
         rotateX(${this.getRotationValue(scrollY)}deg) 
         translateZ(0px)`
-    }
-  },
-  methods: {
+    },
     getScaleValue(scrollY: number): number {
       const calc = MIN_SCALE + (scrollY * 0.1) / 100
       return calc < MAX_SCALE ? calc : MAX_SCALE
