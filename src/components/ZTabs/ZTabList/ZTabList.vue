@@ -49,7 +49,7 @@ export default {
       return child
     })
 
-    return h('div', { class: 'z-tab-list gap-5 overflow-auto flex flex-nowrap' }, children)
+    return h('div', { class: 'z-tab-list space-x-5 overflow-auto flex flex-nowrap' }, children)
   }
 }
 </script>
