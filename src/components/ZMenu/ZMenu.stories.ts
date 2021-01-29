@@ -47,6 +47,48 @@ export const BasicMenu = () => ({
   }
 })
 
+export const MultipleSizes = () => ({
+  components: { ZMenu, ZMenuItem, ZMenuSection, ZDivider },
+  template: `
+    <div class="container flex align-top gap-5">
+        <z-menu size="large">
+          <template slot="trigger">
+            <span class="bg-ink-100 text-vanilla-100 p-3 px-5 text-sm rounded-lg shadow-sm outline-none focus:outline-none">Menu</span>
+          </template>
+          <template slot="body">
+            <z-menu-item :action="goToSettings">Account Settings</z-menu-item>
+            <z-menu-item :action="goToSettings">Contact Support</z-menu-item>
+            <z-menu-item :action="goToSettings">Give Feedback</z-menu-item>
+          </template>
+        </z-menu>
+        <z-menu size="base">
+          <template slot="trigger">
+            <span class="bg-ink-100 text-vanilla-100 p-2 px-4 text-sm rounded-lg shadow-sm outline-none focus:outline-none">Menu</span>
+          </template>
+          <template slot="body">
+            <z-menu-item :action="goToSettings">Account Settings</z-menu-item>
+            <z-menu-item :action="goToSettings">Contact Support</z-menu-item>
+            <z-menu-item :action="goToSettings">Give Feedback</z-menu-item>
+          </template>
+        </z-menu>
+        <z-menu size="small">
+          <template slot="trigger">
+            <span class="bg-ink-100 text-vanilla-100 p-1 px-2 text-sm rounded-lg shadow-sm outline-none focus:outline-none">Menu</span>
+          </template>
+          <template slot="body">
+            <z-menu-item :action="goToSettings">Account Settings</z-menu-item>
+            <z-menu-item :action="goToSettings">Contact Support</z-menu-item>
+            <z-menu-item :action="goToSettings">Give Feedback</z-menu-item>
+          </template>
+        </z-menu>
+    </div>`,
+  methods: {
+    goToSettings() {
+      alert('Action Triggered')
+    }
+  }
+})
+
 export const MenuWithIcons = () => ({
   components: { ZMenu, ZMenuItem, ZMenuSection, ZDivider },
   template: `
