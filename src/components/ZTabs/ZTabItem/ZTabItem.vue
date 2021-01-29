@@ -40,9 +40,6 @@ export default {
     },
     isActive() {
       return this.index === this.activeIndex
-    },
-    selected() {
-      return String(this.isActive)
     }
   },
   methods: {
