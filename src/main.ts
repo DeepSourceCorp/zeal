@@ -65,7 +65,7 @@ const components = [
 ]
 
 const install = (Vue: any) => {
-  components.forEach((component) => {
+  components.forEach(component => {
     Vue.component(component.name, component)
   })
 }
@@ -124,7 +124,7 @@ export { default as ZOption } from './components/ZOption/index'
 export { default as ZLabel } from './components/ZLabel/index'
 export { default as ZAvatar } from './components/ZAvatar/index'
 export { default as ZTag } from './components/ZTag/index'
-export { default as ZPulse } from './components/ZLabel/index'
+export { default as ZPulse } from './components/ZPulse/index'
 export { default as ZMenu } from './components/ZMenu/index'
 export { default as ZMenuSection } from './components/ZMenu/ZMenuSection/index'
 export { default as ZMenuItem } from './components/ZMenu/ZMenuItem/index'
