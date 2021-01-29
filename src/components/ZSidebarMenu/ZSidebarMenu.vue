@@ -78,9 +78,8 @@ export default {
         if(this.direction == "left" && !this.isCollapsed || 
             this.direction == "right" && this.isCollapsed) {
             return `chevron-left`;
-        } else {
-            return `chevron-right`;
         }
+        return `chevron-right`;
     }
   },
   methods: {
