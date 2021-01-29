@@ -1,24 +1,29 @@
 <template>
   <div
-    class="group fixed sidebar-menu h-screen flex flex-col border-r border-ink-200 text-vanilla-100 top-0 left-0 w-12 sm:w-64 hover:border-2 hover:border-juniper cursor-pointer"
-    :class="[`max-w-${this.width}`]"
+    class="group absolute sidebar-menu h-screen flex flex-col border-ink-200 text-vanilla-100 top-0 hover:border-2 lg:hover:border-juniper cursor-pointer transition-all duration-300 ease-in-out"
+    :class="[isCollapsed ? 'w-12' : 'w-12 lg:w-64',
+            getDirectionClasses]"
   >
     <header
-      class="w-full h-20 sm:h-12 border-b border-solid border-ink-200 p-2"
+      class="w-full border-b border-solid border-ink-200 p-2"
       v-if="$slots.header"
+      :class="[isCollapsed ? 'h-20' : 'h-20 lg:h-12']"
     >
-      <slot name="header"></slot>
+      <slot name="header" :isCollapsed="isCollapsed"></slot>
     </header>
     <div class="sidebar-items w-full flex-1 p-2 overflow-scroll">
-      <slot></slot>
+      <slot :isCollapsed="isCollapsed"></slot>
     </div>
     <footer class="w-full border-t border-solid border-ink-200 px-2 py-4" v-if="$slots.footer">
-      <slot name="footer"></slot>
+      <slot name="footer" :isCollapsed="isCollapsed"></slot>
     </footer>
-    <div class="bg-juniper p-1 rounded-full absolute top-2 right-0">
-      <z-icon icon="chevron-left" size="small" color="ink-400"></z-icon>
+    <div class="lg:group-hover:block hidden bg-juniper p-1 rounded-full relative lg:absolute top-3"
+        @click.stop="collapseSidebar()"
+        :class="getHoverStyle">
+      <z-icon :icon="getArrow" size="small" color="ink-400"></z-icon>
     </div>
   </div>
+  
 </template>
 
 <script>
@@ -30,16 +35,20 @@ export default {
   },
   props: {
     width: {
-      type: String,
-      default: '64'
+        type: String,
+        default: '64'
     },
     collapsed: {
-      type: Boolean,
-      default: false
+        type: Boolean,
+        default: false
     },
     widthCollapsed: {
-      type: String,
-      default: '16'
+        type: String,
+        default: '16'
+    },
+    direction: {
+        type: String,
+        default: 'left'
     }
   },
   data() {
@@ -50,12 +59,35 @@ export default {
   computed: {
     sidebarWidth() {
       return this.isCollapsed ? this.widthCollapsed : this.width
+    },
+    getDirectionClasses() {
+        const directionStyle = {
+            left: 'left-0 border-r',
+            right: 'right-0 border-l'
+        }
+        return directionStyle[this.direction]
+    },
+    getHoverStyle() {
+        const directionStyle = {
+            left: '-right-3',
+            right: '-left-3'
+        }
+        return directionStyle[this.direction]
+    },
+    getArrow() {
+        if(this.direction == "left" && !this.isCollapsed || 
+            this.direction == "right" && this.isCollapsed) {
+            return `chevron-left`;
+        } else {
+            return `chevron-right`;
+        }
+    }
+  },
+  methods: {
+    collapseSidebar() {
+        this.isCollapsed = !this.isCollapsed
     }
   }
 }
 </script>
-<style scoped>
-.sidebar-menu {
-  transition: 0.3s all ease;
-}
-</style>
+
