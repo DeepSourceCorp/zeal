@@ -8,7 +8,7 @@
     :class="{
       'text-vanilla-100 border-juniper': isActive && !disabled,
       'text-vanilla-400 border-transparent': !isActive,
-      'cursor-auto border-transparent': disabled
+      'cursor-not-allowed border-transparent': disabled
     }"
   >
     <z-icon
