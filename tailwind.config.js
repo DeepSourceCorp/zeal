@@ -334,7 +334,7 @@ module.exports = {
       screen: '100vh',
       ...theme('spacing')
     }),
-    minWidth: {
+    minWidth: (theme) => ({
       0: '0',
       full: '100%',
       min: 'min-content',
