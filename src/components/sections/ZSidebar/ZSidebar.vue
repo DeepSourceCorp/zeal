@@ -1,7 +1,8 @@
 <template>
   <div
     class="h-full w-1/6 flex flex-col border border-l-0 border-solid border-ink-200 text-vanilla-100"
-    :class="[`bg-${bgColor}`]">
+    :class="[`bg-${bgColor}`]"
+  >
     <div class="w-full h-12 border-b border-solid border-ink-200 p-2" v-if="$slots.header">
       <slot name="header"></slot>
     </div>
@@ -17,13 +18,12 @@
 <script lang="ts">
 export default {
   name: 'ZSidebar',
-  components: {
-  },
+  components: {},
   props: {
-      bgColor: {
-          type: String,
-          default: 'transparent'
-      }
+    bgColor: {
+      type: String,
+      default: 'transparent'
+    }
   }
 }
 </script>
