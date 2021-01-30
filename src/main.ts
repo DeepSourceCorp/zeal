@@ -35,7 +35,6 @@ import ZMenuItem from './components/ZMenu/ZMenuItem'
 import ZSidebarMenu from './components/ZSidebarMenu/index'
 import ZSidebarItem from './components/ZSidebarItem/index'
 
-
 const components = [
   ZButton,
   ZIcon,
@@ -144,4 +143,3 @@ export { default as ZTabPanes } from './components/ZTabs/ZTabPanes'
 export { default as ZTabPane } from './components/ZTabs/ZTabPane'
 export { default as ZSidebarMenu } from './components/ZSidebarMenu/index'
 export { default as ZSidebarItem } from './components/ZSidebarItem/index'
-
