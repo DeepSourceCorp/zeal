@@ -1,6 +1,6 @@
 <template>
   <span class="text-vanilla-100">
-    <z-button v-if="type === TYPES.button" class="px-4 hover:bg-ink-300" :to="to" type="link">
+    <z-button v-if="type === TYPES.button" class="px-4 py-2 hover:bg-ink-300" :to="to" type="link">
       <slot></slot>
     </z-button>
     <span
