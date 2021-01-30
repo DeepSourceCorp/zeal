@@ -32,6 +32,9 @@ import ZPulse from './components/ZPulse/index'
 import ZMenu from './components/ZMenu'
 import ZMenuSection from './components/ZMenu/ZMenuSection'
 import ZMenuItem from './components/ZMenu/ZMenuItem'
+import ZSidebarMenu from './components/ZSidebarMenu/index'
+import ZSidebarItem from './components/ZSidebarItem/index'
+
 
 const components = [
   ZButton,
@@ -63,7 +66,9 @@ const components = [
   ZTabList,
   ZTabItem,
   ZTabPanes,
-  ZTabPane
+  ZTabPane,
+  ZSidebarMenu,
+  ZSidebarItem
 ]
 
 const install = (Vue: any) => {
@@ -102,7 +107,9 @@ export default {
   ZPulse,
   ZMenu,
   ZMenuSection,
-  ZMenuItem
+  ZMenuItem,
+  ZSidebarMenu,
+  ZSidebarItem
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -135,3 +142,6 @@ export { default as ZTabList } from './components/ZTabs/ZTabList'
 export { default as ZTabItem } from './components/ZTabs/ZTabItem'
 export { default as ZTabPanes } from './components/ZTabs/ZTabPanes'
 export { default as ZTabPane } from './components/ZTabs/ZTabPane'
+export { default as ZSidebarMenu } from './components/ZSidebarMenu/index'
+export { default as ZSidebarItem } from './components/ZSidebarItem/index'
+
