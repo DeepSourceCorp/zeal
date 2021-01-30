@@ -34,6 +34,10 @@ import ZMenuSection from './components/ZMenu/ZMenuSection'
 import ZMenuItem from './components/ZMenu/ZMenuItem'
 import ZSidebarMenu from './components/ZSidebarMenu/index'
 import ZSidebarItem from './components/ZSidebarItem/index'
+<<<<<<< HEAD
+=======
+
+>>>>>>> Add sidebar item in main.ts
 
 const components = [
   ZButton,
