@@ -1,11 +1,12 @@
 <template>
   <div
     class="group absolute sidebar-menu h-screen flex flex-col border-ink-200 text-vanilla-100 top-0 hover:border-2 lg:hover:border-juniper cursor-pointer transition-all duration-300 ease-in-out"
-    :class="[isCollapsed ? 'w-12' : 'w-12 lg:w-64', getDirectionClasses]"
+    :class="[isCollapsed ? `w-${widthCollapsed}` : `w-${widthCollapsed} lg:w-${width}`, 
+            getDirectionClasses]"
   >
     <header
       class="w-full border-b border-solid border-ink-200 p-2"
-      v-if="$slots.header"
+      v-if="$scopedSlots.header"
       :class="[isCollapsed ? 'h-20' : 'h-20 lg:h-12']"
     >
       <slot name="header" :isCollapsed="isCollapsed"></slot>
@@ -13,7 +14,7 @@
     <div class="sidebar-items w-full flex-1 p-2 overflow-scroll">
       <slot :isCollapsed="isCollapsed"></slot>
     </div>
-    <footer class="w-full border-t border-solid border-ink-200 px-2 py-4" v-if="$slots.footer">
+    <footer class="w-full border-t border-solid border-ink-200 px-2 py-4" v-if="$scopedSlots.footer">
       <slot name="footer" :isCollapsed="isCollapsed"></slot>
     </footer>
     <div
@@ -44,7 +45,7 @@ export default {
     },
     widthCollapsed: {
       type: String,
-      default: '16'
+      default: '12'
     },
     direction: {
       type: String,
