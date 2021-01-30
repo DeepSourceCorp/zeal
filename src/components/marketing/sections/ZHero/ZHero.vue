@@ -18,9 +18,9 @@
     </span>
 
     <div class="z-hero-illustration__content absolute">
-      <!-- This div is for scaling from x (x < 1) to y (x< y <= 1) -->
+      <!-- This div is for scaling from a (a < 1) to b (a < b <= 1) -->
       <div class="z-hero-illustration__container">
-        <!-- This div for rotating from `x`deg (x > 0deg) to `y`dev ( 0deg <= y < x) -->
+        <!-- This div for rotating from `a`deg (a > 0deg) to `b`deg ( 0deg <= b < a) -->
         <slot name="illustration"></slot>
       </div>
     </div>
