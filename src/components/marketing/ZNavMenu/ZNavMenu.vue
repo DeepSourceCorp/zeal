@@ -8,7 +8,7 @@
         @click.stop.prevent
         class="relative py-3 h-full"
       >
-        <z-button class="px-4" type="link" :class="[`${isDropdownOpen ? 'bg-ink-300' : ''}`]">
+        <z-button class="px-4 py-2" type="link" :class="[`${isDropdownOpen ? 'bg-ink-300' : ''}`]">
           {{ title }}
         </z-button>
         <span
