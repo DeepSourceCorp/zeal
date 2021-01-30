@@ -108,10 +108,10 @@ export default Vue.extend({
     }
   },
   mounted() {
-    window.onscroll = () => {
-      this.isScrolling = true
-      this.isUserOnTop = Boolean(!(window.scrollY > 50))
-    }
+    document.addEventListener('scroll', this.handleScroll)
+  },
+  beforeDestroy() {
+    document.removeEventListener('scroll', this.handleScroll)
   },
   watch: {
     isScrolling() {
@@ -123,6 +123,10 @@ export default Vue.extend({
   methods: {
     toggleDrawer() {
       this.isDrawerOpen = !this.isDrawerOpen
+    },
+    handleScroll() {
+      this.isScrolling = true
+      this.isUserOnTop = Boolean(!(window.scrollY > 50))
     }
   }
 })

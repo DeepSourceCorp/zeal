@@ -2,13 +2,13 @@
   <button
     role="tab"
     :aria-selected="selected"
-    @click="clickHandler"
-    class="inline-flex items-end gap-2 pb-3 mx-3 text-sm leading-none outline-none z-tab focus:outline-none border-b-2"
+    @click="action && action()"
+    class="inline-flex items-end gap-2 pb-3 px-1 text-sm leading-none outline-none z-nav-item focus:outline-none border-b-2"
     :disabled="disabled"
     :class="{
       'text-vanilla-100 border-juniper': isActive && !disabled,
-      'border-transparent': !isActive,
-      'cursor-auto border-transparent': disabled
+      'text-vanilla-400 border-transparent': !isActive,
+      'cursor-not-allowed border-transparent': disabled
     }"
   >
     <z-icon
@@ -25,10 +25,6 @@
 import Vue from 'vue'
 import ZIcon from '../ZIcon/ZIcon.vue'
 
-interface ZTabListT extends Vue {
-  getActiveIndex: number
-}
-
 export default Vue.extend({
   name: 'ZTab',
   components: {
@@ -39,33 +35,20 @@ export default Vue.extend({
       type: Boolean,
       default: false
     },
-    index: {
-      type: Number
-    },
-    updateActiveIndex: {
-      type: Function
+    isActive: {
+      type: Boolean,
+      default: false
     },
     icon: {
       type: String
+    },
+    action: {
+      type: Function
     }
   },
   computed: {
-    activeIndex(): number {
-      const $parent = this.$parent as ZTabListT
-      return $parent.getActiveIndex
-    },
-    isActive(): boolean {
-      return this.index === this.activeIndex
-    },
     selected(): string {
       return String(this.isActive)
-    }
-  },
-  methods: {
-    clickHandler(): void {
-      if (!this.disabled) {
-        this.updateActiveIndex()
-      }
     }
   }
 })

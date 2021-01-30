@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ZFooterListItem component renders a ZFooterListItem when the component is mounted 1`] = `<li class="flex items-center pt-2 pb-1 text-sm whitespace-nowrap hover:text-juniper cursor-pointer"></li>`;

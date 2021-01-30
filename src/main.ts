@@ -20,10 +20,18 @@ import ZRadioGroup from './components/ZRadioGroup/index'
 import ZSelect from './components/ZSelect/index'
 import ZOption from './components/ZOption/index'
 import ZAvatar from './components/ZAvatar/index'
-import { ZTabs, ZTabList, ZTab, ZTabItems, ZTabItem } from './components/ZTabs'
+import ZTab from './components/ZTab/index'
+import ZTabs from './components/ZTabs/index'
+import ZTabList from './components/ZTabs/ZTabList/index'
+import ZTabItem from './components/ZTabs/ZTabItem/index'
+import ZTabPanes from './components/ZTabs/ZTabPanes/index'
+import ZTabPane from './components/ZTabs/ZTabPane/index'
 import ZLabel from './components/ZLabel/index'
 import ZTag from './components/ZTag/index'
 import ZPulse from './components/ZPulse/index'
+import ZMenu from './components/ZMenu'
+import ZMenuSection from './components/ZMenu/ZMenuSection'
+import ZMenuItem from './components/ZMenu/ZMenuItem'
 
 const components = [
   ZButton,
@@ -43,15 +51,19 @@ const components = [
   ZInput,
   ZSelect,
   ZOption,
-  ZTabs,
-  ZTabList,
-  ZTab,
-  ZTabItems,
-  ZTabItem,
   ZLabel,
   ZAvatar,
   ZTag,
-  ZPulse
+  ZPulse,
+  ZMenu,
+  ZMenuSection,
+  ZMenuItem,
+  ZTab,
+  ZTabs,
+  ZTabList,
+  ZTabItem,
+  ZTabPanes,
+  ZTabPane
 ]
 
 const install = (Vue: any) => {
@@ -80,15 +92,17 @@ export default {
   ZInput,
   ZSelect,
   ZOption,
+  ZTab,
   ZTabs,
   ZTabList,
-  ZTab,
-  ZTabItems,
   ZTabItem,
   ZLabel,
   ZAvatar,
   ZTag,
-  ZPulse
+  ZPulse,
+  ZMenu,
+  ZMenuSection,
+  ZMenuItem
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -110,10 +124,14 @@ export { default as ZSelect } from './components/ZSelect/index'
 export { default as ZOption } from './components/ZOption/index'
 export { default as ZLabel } from './components/ZLabel/index'
 export { default as ZAvatar } from './components/ZAvatar/index'
-export { ZTabs } from './components/ZTabs/index'
-export { ZTabList } from './components/ZTabs/index'
-export { ZTab } from './components/ZTabs/index'
-export { ZTabItems } from './components/ZTabs/index'
-export { ZTabItem } from './components/ZTabs/index'
 export { default as ZTag } from './components/ZTag/index'
-export { default as ZPulse } from './components/ZLabel/index'
+export { default as ZPulse } from './components/ZPulse/index'
+export { default as ZMenu } from './components/ZMenu/index'
+export { default as ZMenuSection } from './components/ZMenu/ZMenuSection/index'
+export { default as ZMenuItem } from './components/ZMenu/ZMenuItem/index'
+export { default as ZTab } from './components/ZTab/index'
+export { default as ZTabs } from './components/ZTabs/index'
+export { default as ZTabList } from './components/ZTabs/ZTabList'
+export { default as ZTabItem } from './components/ZTabs/ZTabItem'
+export { default as ZTabPanes } from './components/ZTabs/ZTabPanes'
+export { default as ZTabPane } from './components/ZTabs/ZTabPane'

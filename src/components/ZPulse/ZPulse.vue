@@ -29,8 +29,8 @@ export default Vue.extend({
   computed: {
     pulseSize(): number {
       const sizes: Record<string, number> = {
-        small: 2,
-        base: 3,
+        small: 3,
+        base: 4,
         large: 5
       }
 
@@ -38,9 +38,9 @@ export default Vue.extend({
     },
     dotSize(): number {
       const sizes: Record<string, number> = {
-        small: 1,
-        base: 2,
-        large: 3
+        small: 2,
+        base: 3,
+        large: 4
       }
 
       return sizes[this.size || 'base']

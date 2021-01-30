@@ -31,6 +31,8 @@ module.exports = {
       gitlab: '#6753B5',
       bitbucket: '#1E54C5',
       lavender: '#7A97FA',
+      lilac: '#C97BD4',
+      sea_glass: '#49F9CF',
       pink: '#F977FF',
       vanilla: {
         100: '#ffffff',
@@ -46,19 +48,30 @@ module.exports = {
       }
     },
     gradients: (theme) => ({
-      ocean: ['98.66deg', '#49f9ce 9.7%', '#3dcded 96.6%'],
+      ocean: ['98.66deg', `${theme('colors.sea_glass')} 9.7%`, `${theme('colors.aqua')} 96.6%`],
       galaxy: {
         type: 'radial',
         colors: [
           '60.53% 61.06% at 68.85% 57.59%',
-          'rgba(51, 0, 255, 0.37) 0%',
-          'rgba(189, 52, 201, 0.169375) 55.73%',
-          'rgba(116, 95, 203, 0.01) 100%'
+          `${theme('colors.robin')}75 0%`,
+          `${theme('colors.lilac')}29 55.73%`,
+          `${theme('colors.vanilla.100')}00 100%`
         ]
       },
-      dawn: ['98.66deg', '#7a96f2 4.42%', '#ce79d1 96.6%'],
-      splash: ['98.66deg', '#4568dc 4.42%', '#324daa 96.6%'],
-      skeleton: ['104.58deg', '#21242B 0%', `${theme('colors.ink.200')} 40.08%`, '#21242B 60.32%']
+      dawn: ['98.66deg', `${theme('colors.robin')} 4.42%`, `${theme('colors.lilac')} 96.6%`],
+      dark_dawn: {
+        custom: `linear-gradient(180deg, ${theme(
+          'colors.ink.400'
+        )} 0%, rgba(22, 24, 29, 0.7) 100%), 
+          linear-gradient(98.66deg, ${theme('colors.robin')} 4.42%, ${theme('colors.lilac')} 96.6%)`
+      },
+      splash: ['98.66deg', `${theme('colors.robin')} 4.42%`, '#3450AF 96.6%'],
+      skeleton: [
+        '104.58deg',
+        `${theme('colors.ink.300')} 0%`,
+        `${theme('colors.ink.200')} 40.08%`,
+        `${theme('colors.ink.300')} 60.32%`
+      ]
     }),
     backdropFilter: (theme) => ({
       none: 'none',
@@ -66,28 +79,36 @@ module.exports = {
     }),
     spacing: {
       px: '1px',
-      0: '0',
+      0: '0px',
       0.5: '0.125rem',
       1: '0.25rem',
       1.5: '0.375rem',
       2: '0.5rem',
       2.5: '0.625rem',
       3: '0.75rem',
+      3.5: '0.875rem',
       4: '1rem',
       5: '1.25rem',
       6: '1.5rem',
       7: '1.75rem',
       8: '2rem',
+      9: '2.25rem',
       10: '2.5rem',
+      11: '2.75rem',
       12: '3rem',
+      14: '3.5rem',
       16: '4rem',
       20: '5rem',
       24: '6rem',
+      28: '7rem',
       32: '8rem',
+      36: '9rem',
       40: '10rem',
+      44: '11rem',
       48: '12rem',
       52: '13rem',
       56: '14rem',
+      60: '15rem',
       64: '16rem',
       72: '18rem',
       80: '20rem',
@@ -110,7 +131,8 @@ module.exports = {
     backgroundSize: {
       auto: 'auto',
       cover: 'cover',
-      contain: 'contain'
+      contain: 'contain',
+      '400%': '400%'
     },
     borderColor: (theme) => ({
       ...theme('colors'),
@@ -309,12 +331,13 @@ module.exports = {
       full: '100%',
       ...breakpoints(theme('screens'))
     }),
-    minHeight: {
+    minHeight: (theme) => ({
       0: '0',
       '1/2': '50%',
       full: '100%',
-      screen: '100vh'
-    },
+      screen: '100vh',
+      ...theme('spacing')
+    }),
     minWidth: (theme) => ({
       0: '0',
       full: '100%',
@@ -614,6 +637,9 @@ module.exports = {
       spin: 'spin 1s linear infinite',
       'first-half-spin': 'first-half-spin 0.5s',
       'reverse-half-spin': 'reverse-half-spin 0.5s',
+      'first-quarter-spin': 'first-quarter-spin 0.5s',
+      'reverse-quarter-spin': 'reverse-quarter-spin 0.5s',
+      gradient: 'gradient 30s ease infinite',
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
@@ -638,6 +664,25 @@ module.exports = {
       spin: {
         from: { transform: 'rotate(0deg)' },
         to: { transform: 'rotate(360deg)' }
+      },
+      'first-quarter-spin': {
+        from: { transform: 'rotate(0deg)' },
+        to: { transform: 'rotate(90deg)' }
+      },
+      'reverse-quarter-spin': {
+        from: { transform: 'rotate(90deg)' },
+        to: { transform: 'rotate(0deg)' }
+      },
+      gradient: {
+        '0%': {
+          'background-position': '0% 50%'
+        },
+        '50%': {
+          'background-position': '100% 50%'
+        },
+        '100%': {
+          'background-position': '0% 50%'
+        }
       },
       'first-half-spin': {
         from: { transform: 'rotate(0deg)' },
@@ -1070,16 +1115,22 @@ module.exports = {
     plugin(({ addUtilities, e, theme, variants }) => {
       const utilities = Object.keys(theme('gradients')).map((name) => {
         const gradient = theme('gradients')[name]
-        const type = Object.prototype.hasOwnProperty.call(gradient, 'type')
-          ? gradient.type
-          : 'linear'
-        const colors = Object.prototype.hasOwnProperty.call(gradient, 'colors')
-          ? gradient.colors
-          : gradient
+        let background = ''
+        if (Object.prototype.hasOwnProperty.call(gradient, 'custom')) {
+          background = gradient.custom
+        } else {
+          const type = Object.prototype.hasOwnProperty.call(gradient, 'type')
+            ? gradient.type
+            : 'linear'
+          const colors = Object.prototype.hasOwnProperty.call(gradient, 'colors')
+            ? gradient.colors
+            : gradient
+          background = `${type}-gradient(${colors.join(', ')})`
+        }
 
         return {
           [`.bg-gradient-${e(name)}`]: {
-            backgroundImage: `${type}-gradient(${colors.join(', ')})`
+            backgroundImage: background
           }
         }
       })
