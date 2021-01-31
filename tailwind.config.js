@@ -760,8 +760,11 @@ module.exports = {
             },
             a: {
               color: theme('colors.juniper'),
-              textDecoration: 'underline',
+              textDecoration: 'normal',
               fontWeight: theme('fontWeight.medium')
+            },
+            'a:hover': {
+              textDecoration: 'underline',
             },
             strong: {
               color: theme('colors.vanilla.100'),
@@ -903,6 +906,25 @@ module.exports = {
               backgroundColor: theme('colors.ink.200'),
               overflowX: 'auto',
               borderRadius: '0'
+            }
+          }
+        },
+        lg: {
+          css: {
+            'ul > li::before': {
+              ...BEFORE_LIST_ITEM(theme)
+            },
+            'pre, figure img': {
+              ...FULL_WIDTH_INACTIVE(theme)
+            },
+            pre: {
+              color: theme('colors.vanilla.400'),
+              backgroundColor: theme('colors.ink.200'),
+              overflowX: 'auto',
+              borderRadius: `${theme('spacing.1')}`
+            },
+            'figure img': {
+              borderRadius: `${theme('spacing.1')}`
             }
           }
         },
