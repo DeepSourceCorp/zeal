@@ -1,7 +1,7 @@
 <template>
   <span
-    :class="`text-${baseColor} border-${baseColor} bg-${baseColor} ${sizeClass}`"
-    class="inline-flex items-center gap-2 py-1 border bg-opacity-5"
+    :class="`text-${baseColor} border-${baseColor} ${sizeClass}`"
+    class="inline-flex items-center gap-2 py-1 border"
   >
     <z-icon v-if="icon" :icon="icon" :size="iconSize" :color="`text-${baseColor}`"></z-icon>
     <slot></slot>
