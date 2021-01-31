@@ -38,15 +38,21 @@ export default Vue.extend({
   },
   computed: {
     baseColor(): string {
-      if (this.state === 'success') return 'juniper'
-      else if (this.state == 'error') return 'cherry'
-      else if (this.state == 'warning') return 'honey'
-      else return 'vanilla-100'
+      const colors: Record<string, string> = {
+        success: 'juniper',
+        error: 'cherry',
+        warning: 'honey',
+        default: 'vanilla-100'
+      }
+      return colors[this.state || 'default']
     },
     sizeClass(): string {
-      if (this.size === 'small') return 'rounded-sm text-xs px-2'
-      else if (this.size === 'large') return 'rounded-sm text-md px-3 py-2'
-      return 'rounded-sm text-sm px-2'
+      const sizes: Record<string, string> = {
+        small: 'rounded-sm text-xs px-2',
+        base: 'rounded-sm text-sm px-2',
+        large: 'rounded-sm text-md px-3 py-2'
+      }
+      return sizes[(this.size, 'base')]
     },
     iconSize(): string {
       return this.size === 'large' ? '' : 'small'
