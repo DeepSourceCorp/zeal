@@ -764,7 +764,7 @@ module.exports = {
               fontWeight: theme('fontWeight.medium')
             },
             'a:hover': {
-              textDecoration: 'underline',
+              textDecoration: 'underline'
             },
             strong: {
               color: theme('colors.vanilla.100'),
