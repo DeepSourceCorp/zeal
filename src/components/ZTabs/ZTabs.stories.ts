@@ -40,8 +40,8 @@ export const DisabledTabs = () => ({
                 <z-tab-list>
                   <z-tab-item>Overview</z-tab-item>
                   <z-tab-item>Issues</z-tab-item>
-                  <z-tab-item :disabled="true">Metrics (Disabled)</z-tab-item>
-                  <z-tab-item :disabled="true">Autofix (Disabled)</z-tab-item>
+                  <z-tab-item :disabled="true">Metrics</z-tab-item>
+                  <z-tab-item :disabled="true">Autofix</z-tab-item>
                 </z-tab-list>
                 <z-tab-panes>
                   <z-tab-pane>Overview of the code.</z-tab-pane>
