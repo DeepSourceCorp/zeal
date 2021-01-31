@@ -21,7 +21,7 @@ export const BasicMenu = () => ({
     <div class="container">
         <z-menu>
           <template slot="trigger">
-            <span class="bg-ink-100 text-vanilla-100 p-2 px-4 rounded-lg shadow-sm outline-none focus:outline-none">Menu</span>
+            <span class="bg-ink-100 text-vanilla-100 p-2 px-4 rounded-sm shadow-sm outline-none focus:outline-none">Menu</span>
           </template>
           <template slot="body">
             <z-menu-section title="Logged In As">
@@ -53,7 +53,7 @@ export const MultipleSizes = () => ({
     <div class="container flex align-top gap-5">
         <z-menu size="large">
           <template slot="trigger">
-            <span class="bg-ink-100 text-vanilla-100 p-3 px-5 text-sm rounded-lg shadow-sm outline-none focus:outline-none">Menu</span>
+            <span class="bg-ink-100 text-vanilla-100 p-3 px-5 text-sm rounded-sm shadow-sm outline-none focus:outline-none">Menu</span>
           </template>
           <template slot="body">
             <z-menu-item :action="goToSettings">Account Settings</z-menu-item>
@@ -63,7 +63,7 @@ export const MultipleSizes = () => ({
         </z-menu>
         <z-menu size="base">
           <template slot="trigger">
-            <span class="bg-ink-100 text-vanilla-100 p-2 px-4 text-sm rounded-lg shadow-sm outline-none focus:outline-none">Menu</span>
+            <span class="bg-ink-100 text-vanilla-100 p-2 px-4 text-sm rounded-sm shadow-sm outline-none focus:outline-none">Menu</span>
           </template>
           <template slot="body">
             <z-menu-item :action="goToSettings">Account Settings</z-menu-item>
@@ -73,7 +73,7 @@ export const MultipleSizes = () => ({
         </z-menu>
         <z-menu size="small">
           <template slot="trigger">
-            <span class="bg-ink-100 text-vanilla-100 p-1 px-2 text-sm rounded-lg shadow-sm outline-none focus:outline-none">Menu</span>
+            <span class="bg-ink-100 text-vanilla-100 p-1 px-2 text-sm rounded-sm shadow-sm outline-none focus:outline-none">Menu</span>
           </template>
           <template slot="body">
             <z-menu-item :action="goToSettings">Account Settings</z-menu-item>
@@ -95,7 +95,7 @@ export const MenuWithIcons = () => ({
     <div class="container">
         <z-menu>
           <template slot="trigger">
-            <span class="bg-ink-100 text-vanilla-100 p-2 px-4 rounded-lg shadow-sm outline-none focus:outline-none">Menu</span>
+            <span class="bg-ink-100 text-vanilla-100 p-2 px-4 rounded-sm shadow-sm outline-none focus:outline-none">Menu</span>
           </template>
           <template slot="body">
             <z-menu-section title="Logged In As">
@@ -158,7 +158,7 @@ export const MenuWithComplexItems = () => ({
     <div class="container">
         <z-menu>
           <template slot="trigger">
-            <span class="bg-ink-100 text-vanilla-100 p-2 px-4 rounded-lg shadow-sm outline-none focus:outline-none">Switch User</span>
+            <span class="bg-ink-100 text-vanilla-100 p-2 px-4 rounded-sm shadow-sm outline-none focus:outline-none">Switch User</span>
           </template>
           <template slot="body">
             <z-menu-section title="Switch User">
