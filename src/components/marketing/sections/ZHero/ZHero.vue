@@ -2,12 +2,12 @@
   <section class="z-hero__section w-full relative text-vanilla-100 text-center">
     <span class="z-hero__content block">
       <h1
-        class="block text-vanilla-100 mb-6 text-3xl lg:text-5xl leading-11 lg:leading-12 w-auto lg:w-4/5 font-bold mx-auto"
+        class="block text-vanilla-100 mb-6 text-3xl lg:text-5xl leading-11 lg:leading-12 w-auto lg:w-4/5 font-bold mx-auto sm:px-10 md:px-5"
       >
         <slot name="heading"></slot>
       </h1>
       <h2
-        class="block text-lg lg:text-lg leading-9 lg:leading-normal w-auto lg:w-1/2 font-normal text-vanilla-200 mb-12 mx-auto"
+        class="block text-lg lg:text-lg leading-9 lg:leading-normal w-auto lg:w-1/2 font-normal text-vanilla-200 mb-12 mx-auto px-5 sm:px-32 md:px-16"
       >
         <slot name="subheading"></slot>
       </h2>
@@ -31,8 +31,6 @@ import Vue from 'vue'
 
 const MIN_SCALE = 0.7
 const MAX_SCALE = 0.95
-const MIN_Y = -20
-const MAX_Y = -10
 const MIN_ROTATION_ANGLE = 0
 const MAX_ROTATION_ANGLE = 20
 
@@ -47,7 +45,9 @@ export default Vue.extend({
   },
   methods: {
     handleScroll() {
-      this.changeOpacity()
+      if (window.innerWidth > 833) {
+        this.changeOpacity()
+      }
       this.scaleIllustration()
       this.rotateIllustration()
     },
