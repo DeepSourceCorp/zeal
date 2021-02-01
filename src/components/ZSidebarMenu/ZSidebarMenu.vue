@@ -27,7 +27,9 @@
       >
         <slot name="footer" :isCollapsed="isCollapsed"></slot>
       </footer>
-      <div class="hidden lg:group-hover:block absolute top-0 right-0 h-full w-px bg-gradient-to-t from-vanilla-300 via-juniper to-juniper"></div>
+      <div
+        class="hidden lg:group-hover:block absolute top-0 right-0 h-full w-px bg-gradient-to-t from-vanilla-300 via-juniper to-juniper"
+      ></div>
       <div
         class="lg:group-hover:block hidden bg-juniper p-1 rounded-full relative lg:absolute top-3"
         @click.stop="collapseSidebar()"
