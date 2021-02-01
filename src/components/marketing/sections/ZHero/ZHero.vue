@@ -16,7 +16,7 @@
       </span>
     </span>
 
-    <div class="z-hero-illustration__content mt-10 lg:-mt-12">
+    <div class="z-hero-illustration__content mt-10 lg:-mt-16">
       <!-- This div is for scaling from a (a < 1) to b (a < b <= 1) -->
       <div class="z-hero-illustration__container">
         <!-- This div for rotating on the z-axis from `a`deg (a > 0deg) to `b`deg ( 0deg <= b < a) -->
@@ -53,7 +53,7 @@ export default Vue.extend({
     },
     changeOpacity() {
       const heroContent = document.getElementsByClassName('z-hero__content')[0] as HTMLElement
-      heroContent.style.opacity = `${1 - window.scrollY / 400}`
+      heroContent.style.opacity = `${this.getOpacity(window.scrollY)}`
     },
     scaleIllustration() {
       const illustrationContent = document.getElementsByClassName(
@@ -71,6 +71,10 @@ export default Vue.extend({
         perspective(800px)
         rotateX(${this.getRotationValue(window.scrollY)}deg)
         translateZ(0px)`
+    },
+    getOpacity(scrollY: number): number {
+      const calc = 1 - window.scrollY / 350
+      return calc
     },
     getScaleValue(scrollY: number): number {
       const calc = MIN_SCALE + (scrollY * 0.08) / 100
