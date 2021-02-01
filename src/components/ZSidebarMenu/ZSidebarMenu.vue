@@ -47,6 +47,7 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import ZIcon from '@/components/ZIcon/ZIcon.vue'
 import outsideClickDirective from '@/directives/outside-click'
 
@@ -150,3 +151,4 @@ export default {
   }
 }
 </script>
+
