@@ -6,7 +6,7 @@
     <z-icon v-if="icon" :icon="icon" size="small" :color="iconColor"></z-icon>
     <div
       class="items-center space-x-1 w-full text-xs sm:text-sm"
-      :class="[isCollapsed ? 'hidden' : 'hidden lg:flex']"
+      :class="[isCollapsed ? 'hidden' : 'flex']"
     >
       <slot></slot>
     </div>
