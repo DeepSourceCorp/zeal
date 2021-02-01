@@ -108,7 +108,8 @@ export default {
         small: 'h-8 text-xs',
         medium: 'h-8 text-xs sm:h-10 sm:text-base',
         large: 'h-12 text-lg',
-        xlarge: 'h-16 text-lg'
+        xlarge: 'h-16 text-lg',
+        none: ''
       }
       return sizes[this.size] || sizes['medium']
     }

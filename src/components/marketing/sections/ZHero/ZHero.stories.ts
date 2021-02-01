@@ -136,19 +136,19 @@ export const Basic = () => ({
           <template slot="cta">
             <h3 class="text-sm uppercase tracking-widest-lg font-semibold mb-6">Integrate with</h3>
             <span class="flex flex-wrap items-center justify-center">
-              <z-button class="bg-github w-full sm:w-40 mx-2 mb-3 sm:mb-0">
+              <z-button class="bg-github w-full sm:w-40 mx-3 mb-3 sm:mb-0 h-12 text-lg sm:h-10 sm:text-base" size="none">
                 <span class="flex items-center">
                   <z-icon class="text-normal mr-3 -mt-1" size="medium" icon="github"></z-icon>
                   GitHub
                 </span>
               </z-button>
-              <z-button class="bg-gitlab w-full sm:w-40 mx-2 mb-3 sm:mb-0">
+              <z-button class="bg-gitlab w-full sm:w-40 mx-3 mb-3 sm:mb-0 h-12 text-lg sm:h-10 sm:text-base" size="none">
                 <span class="flex items-center">
                   <z-icon class="text-normal mr-3 -mt-1" size="medium" icon="gitlab"></z-icon>
                   GitLab
                 </span>
               </z-button>
-              <z-button class="bg-bitbucket w-full sm:w-40 mx-2 mb-3 sm:mb-0">
+              <z-button class="bg-bitbucket w-full sm:w-40 mx-3 mb-3 sm:mb-0 h-12 text-lg sm:h-10 sm:text-base" size="none">
                 <span class="flex items-center">
                   <z-icon class="text-normal mr-3 -mt-1" size="medium" icon="bitbucket"></z-icon>
                   Bitbucket
