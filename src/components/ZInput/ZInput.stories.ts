@@ -98,3 +98,23 @@ export const DefaultInputWithSmallSizeText = () => ({
         </div>
     </div>`
 })
+
+export const DefaultInputWithMultipleSpacing = () => ({
+  components: { ZInput },
+  template: `<div class='padded-container'>
+        <div class="input-container space-y-2">
+            <z-input v-model="name" spacing="tight"></z-input>
+            <z-input v-model="name" spacing="base"></z-input>
+            <z-input v-model="name" spacing="loose"></z-input>
+        </div>
+    </div>`
+})
+
+export const InputBorderAndBackground = () => ({
+  components: { ZInput },
+  template: `<div class='padded-container'>
+        <div class="input-container">
+            <z-input v-model="name" :showBorder="false" backgroundColor="ink-200"></z-input>
+        </div>
+    </div>`
+})
