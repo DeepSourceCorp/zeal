@@ -37,7 +37,7 @@ export default Vue.extend({
       }
     },
     width: {
-      type: Number
+      type: String
     }
   },
   data() {
