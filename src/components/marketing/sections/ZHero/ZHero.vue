@@ -73,7 +73,7 @@ export default Vue.extend({
         translateZ(0px)`
     },
     getOpacity(scrollY: number): number {
-      const calc = 1 - window.scrollY / 350
+      const calc = 1 - scrollY / 350
       return calc
     },
     getScaleValue(scrollY: number): number {
