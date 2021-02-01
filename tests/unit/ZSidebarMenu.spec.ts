@@ -3,7 +3,7 @@ import ZSidebarItem from '../../src/components/ZSidebarItem'
 import { mount } from '@vue/test-utils'
 
 const defaultSidebar = {
-    template: `
+  template: `
         <z-sidebar-menu>
         <div slot="header">
             <span>Deepsource</span>
