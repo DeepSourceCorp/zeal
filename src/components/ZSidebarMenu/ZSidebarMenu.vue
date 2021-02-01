@@ -30,6 +30,7 @@
       >
         <slot name="footer" :isCollapsed="isCollapsed"></slot>
       </footer>
+      <div class="hidden lg:group-hover:block absolute top-0 right-0 h-full w-px bg-gradient-to-t from-vanilla-300 via-juniper to-juniper"></div>
       <div
         class="lg:group-hover:block hidden bg-juniper p-1 rounded-full relative lg:absolute top-3"
         @click.stop="collapseSidebar()"
@@ -37,7 +38,6 @@
       >
         <z-icon :icon="getArrow" size="small" color="ink-400"></z-icon>
       </div>
-      <div class="hidden group-hover:lg:block absolute top-0 right-0 h-full w-px bg-gradient-to-t from-vanilla-300 via-juniper to-juniper"></div>
     </div>
     <div :class="{'absolute w-full h-screen bg-ink-400 opacity-50 left-0 top-0 z-0': isOpen}"></div>
   </div>
