@@ -25,16 +25,19 @@ export default Vue.extend({
     direction: {
       type: String,
       default: 'right',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['left', 'right'].includes(value)
       }
     },
     size: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['small', 'base', 'large'].includes(value)
       }
+    },
+    width: {
+      type: Number
     }
   },
   data() {
@@ -56,9 +59,9 @@ export default Vue.extend({
     },
     sizeClass(): string {
       const sizes: Record<string, string> = {
-        small: 'py-1 text-xs w-52 mt-2',
-        base: 'py-1 text-sm w-64 mt-2',
-        large: 'py-2 text-base w-72 mt-4'
+        small: `py-1 text-xs w-${this.width || '52'} mt-2`,
+        base: `py-1 text-sm w-${this.width || '64'} mt-2`,
+        large: `py-2 text-base w-${this.width || '72'} mt-4`
       }
 
       return sizes[this.size || 'base']
