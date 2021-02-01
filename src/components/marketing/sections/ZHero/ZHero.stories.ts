@@ -135,20 +135,20 @@ export const Basic = () => ({
 
           <template slot="cta">
             <h3 class="text-sm uppercase tracking-widest-lg font-bold mb-6">Integrate with</h3>
-            <span class="flex items-center justify-center">
-              <z-button class="bg-github w-40">
+            <span class="flex flex-wrap items-center justify-center">
+              <z-button class="bg-github w-40 mx-2 mb-3 sm:mb-0">
                 <span class="flex items-center">
                   <z-icon class="text-normal mr-3 -mt-1" size="medium" icon="github"></z-icon>
                   GitHub
                 </span>
               </z-button>
-              <z-button class="bg-gitlab w-40 mx-6">
+              <z-button class="bg-gitlab w-40 mx-2 mb-3 sm:mb-0">
                 <span class="flex items-center">
                   <z-icon class="text-normal mr-3 -mt-1" size="medium" icon="gitlab"></z-icon>
                   GitLab
                 </span>
               </z-button>
-              <z-button class="bg-bitbucket w-40">
+              <z-button class="bg-bitbucket w-40 mx-2 mb-3 sm:mb-0">
                 <span class="flex items-center">
                   <z-icon class="text-normal mr-3 -mt-1" size="medium" icon="bitbucket"></z-icon>
                   Bitbucket
