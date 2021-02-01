@@ -8,11 +8,13 @@
     </span>
     <input
       type="text"
-      class="input w-full pt-2.5 caret-juniper bg-ink-400 focus:shadow-white focus:border-vanilla-400 border border-solid border-bg-ink-100 rounded-sm outline-none"
+      class="input w-full caret-juniper focus:shadow-white rounded-sm outline-none"
       :class="[
         `${(disabled && 'text-slate cursor-not-allowed') || 'text-vanilla-300'}`,
         getIconBasedStyle,
-        `text-${textSize}`
+        borderStyles,
+        `text-${textSize}`,
+        `bg-${backgroundColor}`
       ]"
       :value="name"
       :placeholder="placeholder"
@@ -70,6 +72,21 @@ export default Vue.extend({
     textSize: {
       type: String,
       default: 'sm'
+    },
+    spacing: {
+      type: String,
+      default: 'base',
+      validator(value): boolean {
+        return ['tight', 'base', 'loose'].includes(value)
+      }
+    },
+    backgroundColor: {
+      type: String,
+      default: 'ink-400'
+    },
+    showBorder: {
+      type: Boolean,
+      default: true
     }
   },
   model: {
@@ -79,11 +96,25 @@ export default Vue.extend({
   computed: {
     getIconBasedStyle(): string {
       const iconPositions = {
-        left: 'pl-8 p-3',
-        right: 'pr-8 p-3',
-        none: 'p-3'
+        left: `pl-8 ${this.getSpacingClass}`,
+        right: `pr-8 ${this.getSpacingClass}`,
+        none: `${this.getSpacingClass}`
       }
       return (this.icon && iconPositions[this.iconPosition]) || iconPositions['none']
+    },
+    getSpacingClass(): string {
+      const spacers: Record<string, string> = {
+        tight: 'px-3 py-1.5',
+        base: 'p-3',
+        loose: 'px-3 py-4'
+      }
+      return spacers[this.spacing || 'base']
+    },
+    borderStyles(): string {
+      if (this.showBorder) {
+        return 'focus:border-vanilla-400 border border-solid border-ink-100'
+      }
+      return ''
     }
   },
   methods: {
