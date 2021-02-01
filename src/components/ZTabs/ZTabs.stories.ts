@@ -23,7 +23,7 @@ export const BasicTabs = () => ({
                   <z-tab-item>Metrics</z-tab-item>
                   <z-tab-item>Autofix</z-tab-item>
                 </z-tab-list>
-                <z-tab-panes>
+                <z-tab-panes class="p-4">
                   <z-tab-pane>Overview of the code.</z-tab-pane>
                   <z-tab-pane>There are the list of issues.</z-tab-pane>
                   <z-tab-pane>This are metrics.</z-tab-pane>
@@ -40,10 +40,10 @@ export const DisabledTabs = () => ({
                 <z-tab-list>
                   <z-tab-item>Overview</z-tab-item>
                   <z-tab-item>Issues</z-tab-item>
-                  <z-tab-item :disabled="true">Metrics (Disabled)</z-tab-item>
-                  <z-tab-item :disabled="true">Autofix (Disabled)</z-tab-item>
+                  <z-tab-item :disabled="true">Metrics</z-tab-item>
+                  <z-tab-item :disabled="true">Autofix</z-tab-item>
                 </z-tab-list>
-                <z-tab-panes>
+                <z-tab-panes class="p-4">
                   <z-tab-pane>Overview of the code.</z-tab-pane>
                   <z-tab-pane>There are the list of issues.</z-tab-pane>
                   <z-tab-pane>This are metrics.</z-tab-pane>
