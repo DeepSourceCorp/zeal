@@ -1,17 +1,19 @@
 <template>
   <section class="z-hero__section w-full relative text-vanilla-100 text-center">
-    <h1
-      class="z-hero__title block text-vanilla-100 mb-6 text-3xl lg:text-5xl leading-11 lg:leading-12 w-auto lg:w-4/5 font-bold mx-auto"
-    >
-      <slot name="heading"></slot>
-    </h1>
-    <h2
-      class="z-hero__subtitle block text-lg lg:text-lg leading-9 lg:leading-normal w-auto lg:w-1/2 font-normal text-vanilla-200 mb-12 mx-auto"
-    >
-      <slot name="subheading"></slot>
-    </h2>
-    <span class="z-hero__cta block">
-      <slot name="cta"></slot>
+    <span class="z-hero__content block">
+      <h1
+        class="block text-vanilla-100 mb-6 text-3xl lg:text-5xl leading-11 lg:leading-12 w-auto lg:w-4/5 font-bold mx-auto"
+      >
+        <slot name="heading"></slot>
+      </h1>
+      <h2
+        class="block text-lg lg:text-lg leading-9 lg:leading-normal w-auto lg:w-1/2 font-normal text-vanilla-200 mb-12 mx-auto"
+      >
+        <slot name="subheading"></slot>
+      </h2>
+      <span class="block">
+        <slot name="cta"></slot>
+      </span>
     </span>
 
     <div class="z-hero-illustration__content mt-10 lg:mt-0">
@@ -35,7 +37,6 @@ const MIN_ROTATION_ANGLE = 0
 const MAX_ROTATION_ANGLE = 20
 
 export default Vue.extend({
-  components: {},
   name: 'ZHero',
   mounted() {
     this.handleScroll()
@@ -46,8 +47,13 @@ export default Vue.extend({
   },
   methods: {
     handleScroll() {
+      this.changeOpacity()
       this.scaleIllustration()
       this.rotateIllustration()
+    },
+    changeOpacity() {
+      const heroContent = document.getElementsByClassName('z-hero__content')[0] as HTMLElement
+      heroContent.style.opacity = `${1 - window.scrollY / 400}`
     },
     scaleIllustration() {
       const illustrationContent = document.getElementsByClassName(
