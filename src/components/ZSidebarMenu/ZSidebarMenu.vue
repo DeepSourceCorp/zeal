@@ -1,19 +1,16 @@
 <template>
   <div>
-    <div class="absolute top-2 left-2 block lg:hidden cursor-pointer z-10"
-        v-outside-click="closeModal"
-        @click="openModal()">
+    <div
+      class="absolute top-2 left-2 block lg:hidden cursor-pointer z-10"
+      v-outside-click="closeModal"
+      @click="openModal()"
+    >
       <z-icon icon="menu" size="small"></z-icon>
     </div>
     <div
-      class="group bg-ink-400 absolute z-20 sidebar-menu h-screen flex flex-col border-ink-200 text-vanilla-100 top-0  cursor-pointer transition-all duration-300 ease-in-out"
-      :class="[
-        getWidth,
-        getDirectionClasses,
-        getBorderClasses,
-        isOpen && 'shadow-black'
-      ]"
-      >
+      class="group bg-ink-400 absolute z-20 sidebar-menu h-screen flex flex-col border-ink-200 text-vanilla-100 top-0 cursor-pointer transition-all duration-300 ease-in-out"
+      :class="[getWidth, getDirectionClasses, getBorderClasses, isOpen && 'shadow-black']"
+    >
       <header
         class="w-full border-b border-solid border-ink-200 p-2"
         v-if="$scopedSlots.header"
@@ -37,9 +34,13 @@
       >
         <z-icon :icon="getArrow" size="small" color="ink-400"></z-icon>
       </div>
-      <div class="hidden group-hover:lg:block absolute top-0 right-0 h-full w-px bg-gradient-to-t from-vanilla-300 via-juniper to-juniper"></div>
+      <div
+        class="hidden group-hover:lg:block absolute top-0 right-0 h-full w-px bg-gradient-to-t from-vanilla-300 via-juniper to-juniper"
+      ></div>
     </div>
-    <div :class="{'absolute w-full h-screen bg-ink-400 opacity-50 left-0 top-0 z-0': isOpen}"></div>
+    <div
+      :class="{ 'absolute w-full h-screen bg-ink-400 opacity-50 left-0 top-0 z-0': isOpen }"
+    ></div>
   </div>
 </template>
 
@@ -92,7 +93,7 @@ export default {
         left: 'left-0',
         right: 'right-0'
       }
-      if(this.isOpen) {
+      if (this.isOpen) {
         return openDirections[this.direction]
       }
       return directionStyle[this.direction]
@@ -105,8 +106,7 @@ export default {
       return !this.isOpen && borders[this.direction]
     },
     getWidth() {
-      if(this.isCollapsed) 
-        return `lg:w-${this.widthCollapsed} w-9/12`
+      if (this.isCollapsed) return `lg:w-${this.widthCollapsed} w-9/12`
       return `lg:w-${this.width} w-9/12`
     },
     getHoverStyle() {
@@ -132,11 +132,10 @@ export default {
     },
     openModal() {
       this.isOpen = !this.isOpen
-    }, 
+    },
     closeModal() {
       this.isOpen = false
     }
   }
 }
 </script>
-
