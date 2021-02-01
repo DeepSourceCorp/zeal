@@ -20,30 +20,30 @@ export const DefaultSidebarMenu = () => ({
     <z-sidebar-menu>
       <template v-slot:header="{ isCollapsed }">
         <div class="h-full flex items-center p-1 justify-between"
-            :class="isCollapsed ? 'flex-col' : 'flex-col lg:flex-row'">
+            :class="isCollapsed ? 'flex-col' : 'flex-row'">
           <div class="flex space-x-1 items-center">
             <z-icon icon="globe" size="small"></z-icon>
-            <span :class="isCollapsed ? 'hidden' : 'hidden lg:block'">
+            <span :class="isCollapsed ? 'hidden' : 'block'">
               MediaCorp
             </span>
           </div>
-          <div class="flex items-center"
+          <div class="items-center hidden lg:flex"
               :class="{'lg:space-x-1': !isCollapsed}">
             <z-avatar
               image="https://randomuser.me/api/portraits/women/24.jpg"
               user-name="Akshay Paliwal"
               size="sm"
-              :class="isCollapsed ? 'hidden' : 'hidden lg:block'"
+              :class="isCollapsed ? 'hidden' : 'block'"
             ></z-avatar>
             <z-avatar
               image="https://randomuser.me/api/portraits/women/24.jpg"
               user-name="Akshay Paliwal"
               size="xs"
-              :class="isCollapsed ? 'block' : 'block lg:hidden'"
+              :class="isCollapsed ? 'block' : 'hidden'"
             ></z-avatar>
             <z-icon icon="chevron-down" 
                     size="small" 
-                    :class="isCollapsed ? 'hidden' : 'hidden lg:block'">
+                    :class="isCollapsed ? 'hidden' : 'block'">
             </z-icon>
           </div>
         </div>
@@ -60,7 +60,7 @@ export const DefaultSidebarMenu = () => ({
           </z-button>
         </z-sidebar-item>
         <div class="ml-5 text-vanilla-400"
-              :class="isCollapsed ? 'hidden' : 'hidden lg:block'">
+              :class="isCollapsed ? 'hidden' : 'block'">
           <z-sidebar-item icon="refresh-ccw" icon-color="juniper">org-activity-archive</z-sidebar-item>
           <z-sidebar-item icon="globe">marvin</z-sidebar-item>
           <z-sidebar-item icon="git-merge">asgard-office</z-sidebar-item>
@@ -90,30 +90,30 @@ export const RightSidebarMenu = () => ({
     <z-sidebar-menu direction="right">
       <template v-slot:header="{ isCollapsed }">
         <div class="h-full flex items-center p-1 justify-between"
-            :class="isCollapsed ? 'flex-col' : 'flex-col lg:flex-row'">
+            :class="isCollapsed ? 'flex-col' : 'flex-row'">
           <div class="flex space-x-1 items-center">
             <z-icon icon="globe" size="small"></z-icon>
-            <span :class="isCollapsed ? 'hidden' : 'hidden lg:block'">
+            <span :class="isCollapsed ? 'hidden' : 'block'">
               MediaCorp
             </span>
           </div>
-          <div class="flex items-center"
+          <div class="items-center hidden lg:flex"
               :class="{'lg:space-x-1': !isCollapsed}">
             <z-avatar
               image="https://randomuser.me/api/portraits/women/24.jpg"
               user-name="Akshay Paliwal"
               size="sm"
-              :class="isCollapsed ? 'hidden' : 'hidden lg:block'"
+              :class="isCollapsed ? 'hidden' : 'block'"
             ></z-avatar>
             <z-avatar
               image="https://randomuser.me/api/portraits/women/24.jpg"
               user-name="Akshay Paliwal"
               size="xs"
-              :class="isCollapsed ? 'block' : 'block lg:hidden'"
+              :class="isCollapsed ? 'block' : 'hidden'"
             ></z-avatar>
             <z-icon icon="chevron-down" 
                     size="small" 
-                    :class="isCollapsed ? 'hidden' : 'hidden lg:block'">
+                    :class="isCollapsed ? 'hidden' : 'block'">
             </z-icon>
           </div>
         </div>
@@ -130,7 +130,7 @@ export const RightSidebarMenu = () => ({
           </z-button>
         </z-sidebar-item>
         <div class="ml-5 text-vanilla-400"
-              :class="isCollapsed ? 'hidden' : 'hidden lg:block'">
+              :class="isCollapsed ? 'hidden' : 'block'">
           <z-sidebar-item icon="refresh-ccw" icon-color="juniper">org-activity-archive</z-sidebar-item>
           <z-sidebar-item icon="globe">marvin</z-sidebar-item>
           <z-sidebar-item icon="git-merge">asgard-office</z-sidebar-item>
