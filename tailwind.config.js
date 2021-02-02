@@ -968,15 +968,7 @@ module.exports = {
     boxSizing: ['responsive'],
     container: ['responsive'],
     cursor: ['responsive'],
-<<<<<<< HEAD
-<<<<<<< HEAD
     display: ['responsive', 'group-hover'],
-=======
-    display: ['responsive','group-hover'],
->>>>>>> Add sidebar component
-=======
-    display: ['responsive', 'group-hover'],
->>>>>>> Format code with prettier
     divideColor: ['responsive', 'group-hover'],
     divideOpacity: ['responsive'],
     divideWidth: ['responsive'],
