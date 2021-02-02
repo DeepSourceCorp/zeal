@@ -1,8 +1,8 @@
 <template>
   <nav role="navigation" aria-label="Pagination Navigation">
-    <ul class="flex items-center space-x-2">
+    <ul class="z-pagination flex items-center space-x-2">
       <li class="flex items-center justify-center w-6 h-6 rounded-sm">
-        <button @click="previous()" :disabled="atFirst">
+        <button @click="previous()" :disabled="atFirst" class="z-pagination-previous">
           <z-icon
             icon="chevron-left"
             size="small"
@@ -13,6 +13,7 @@
       <li v-for="page in pages" v-bind:key="page.name">
         <button
           :class="[
+            'z-pagination-pager',
             'w-6 h-6',
             'items-center',
             'text-center',
@@ -31,12 +32,12 @@
         </button>
         <span
           v-else
-          class="w-6 h-6 items-center text-center rounded-sm text-vanilla-400 hover:bg-ink-300 select-none"
+          class="z-pagination-divider w-6 h-6 items-center text-center rounded-sm text-vanilla-400 hover:bg-ink-300 select-none"
           >…</span
         >
       </li>
       <li class="flex items-center justify-center w-6 h-6 rounded-sm">
-        <button @click="next()" :disabled="atLast">
+        <button @click="next()" :disabled="atLast" class="z-pagination-next">
           <z-icon
             icon="chevron-right"
             size="small"
