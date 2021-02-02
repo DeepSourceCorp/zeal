@@ -18,7 +18,17 @@ export default {
 }
 
 export const DefaultSidebarMenu = () => ({
-  components: { ZSidebarMenu, ZSidebarItem, ZIcon, ZAvatar, ZButton, ZMenu, ZMenuItem, ZMenuSection, ZDivider },
+  components: {
+    ZSidebarMenu,
+    ZSidebarItem,
+    ZIcon,
+    ZAvatar,
+    ZButton,
+    ZMenu,
+    ZMenuItem,
+    ZMenuSection,
+    ZDivider
+  },
   template: `
   <div class="w-80">  
     <z-sidebar-menu>
@@ -94,4 +104,3 @@ export const DefaultSidebarMenu = () => ({
       </template>
     </z-sidebar-menu>`
 })
-
