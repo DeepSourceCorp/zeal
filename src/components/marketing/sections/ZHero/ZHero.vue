@@ -30,7 +30,8 @@
 import Vue from 'vue'
 
 const MIN_SCALE = 0.7
-const MAX_SCALE = 0.95
+const MAX_SCALE_FOR_SMALL_SCREEN = 0.95
+const MAX_SCALE_FOR_LARGE_SCREEN = 0.85
 const MIN_ROTATION_ANGLE = 0
 const MAX_ROTATION_ANGLE = 20
 
@@ -43,9 +44,14 @@ export default Vue.extend({
   beforeDestroy() {
     document.removeEventListener('scroll', this.handleScroll)
   },
+  computed: {
+    isLargeScreen() {
+      return window.innerWidth > 833
+    }
+  },
   methods: {
     handleScroll() {
-      if (window.innerWidth > 833) {
+      if (this.isLargeScreen) {
         this.changeOpacity()
       }
       this.scaleIllustration()
@@ -73,11 +79,13 @@ export default Vue.extend({
         translateZ(0px)`
     },
     getOpacity(scrollY: number): number {
-      const calc = 1 - scrollY / 350
+      const calc = 1 - scrollY / 200
       return calc
     },
     getScaleValue(scrollY: number): number {
-      const calc = MIN_SCALE + (scrollY * 0.08) / 100
+      const MAX_SCALE = this.isLargeScreen ? MAX_SCALE_FOR_LARGE_SCREEN : MAX_SCALE_FOR_SMALL_SCREEN
+      const SPEED_CONTROLLER = this.isLargeScreen ? 0.045 : 0.08
+      const calc = MIN_SCALE + (scrollY * SPEED_CONTROLLER) / 100
       return calc < MAX_SCALE ? calc : MAX_SCALE
     },
     getRotationValue(scrollY: number): number {
