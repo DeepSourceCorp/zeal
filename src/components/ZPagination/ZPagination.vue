@@ -58,8 +58,12 @@ export default Vue.extend({
   components: {
     ZIcon
   },
+  model: {
+    prop: 'page',
+    event: 'selected'
+  },
   props: {
-    value: {
+    page: {
       type: Number,
       default: 1
     },
@@ -85,7 +89,7 @@ export default Vue.extend({
     }
   },
   mounted() {
-    this.activeIndex = this.value
+    this.activeIndex = this.page
   },
   computed: {
     atFirst(): boolean {
@@ -177,7 +181,7 @@ export default Vue.extend({
   methods: {
     updateActiveIndex(index: number): void {
       this.activeIndex = index
-      this.$emit('selected', index)
+      this.$emit('selected', this.activeIndex)
     },
     next(): void {
       if (this.atLast) return
