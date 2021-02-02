@@ -10,7 +10,7 @@ export default {
   excludeStories: /.*Data$/
 }
 
-export const BasicMenu = () => ({
+export const BasicPages = () => ({
   components: { ZPagination },
   template: `
     <div class="container space-y-5">
