@@ -30,7 +30,7 @@ const outsideClickDirective: DirectiveOptions = {
     const index = Number(el.dataset.outsideClickIndex)
     if (isNaN(index)) {
       const handler = instances[index]
-      document.addEventListener('click', handler)
+      document.removeEventListener('click', handler)
       instances.splice(index, 1)
     }
   }
