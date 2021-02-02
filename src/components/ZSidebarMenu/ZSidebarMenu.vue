@@ -1,35 +1,35 @@
 <template>
   <div>
     <div
-      v-outside-click="closeModal"
       v-on:click="openModal()"
-      class="absolute top-2 left-2 block lg:hidden cursor-pointer z-10"
+      class="absolute z-10 block cursor-pointer top-2 left-2 lg:hidden"
       :class="{ hidden: isOpen }"
     >
       <z-icon icon="menu"></z-icon>
     </div>
     <div
-      class="group bg-ink-400 absolute z-30 sidebar-menu h-screen flex flex-col border-ink-200 text-vanilla-100 top-0 cursor-pointer transition-all duration-300 ease-in-out"
+      class="absolute top-0 z-30 flex flex-col h-screen duration-300 ease-in-out cursor-pointer transition-width group bg-ink-400 sidebar-menu border-ink-200 text-vanilla-100"
       :class="[getWidth, getDirectionClasses, getBorderClasses, isOpen && 'shadow-black']"
+      v-outside-click="closeModal"
     >
       <header
-        class="w-full border-b border-solid border-ink-200 p-2"
+        class="w-full p-2 border-b border-solid border-ink-200"
         v-if="$scopedSlots.header"
         :class="[isCollapsed ? 'h-20' : 'h-12']"
       >
         <slot name="header" :isCollapsed="isCollapsed"></slot>
       </header>
-      <div class="sidebar-items w-full flex-1 p-2 overflow-scroll">
+      <div class="flex-1 w-full p-2 overflow-scroll sidebar-items">
         <slot :isCollapsed="isCollapsed"></slot>
       </div>
       <footer
-        class="w-full border-t border-solid border-ink-200 px-2 py-4"
+        class="w-full px-2 py-4 border-t border-solid border-ink-200"
         v-if="$scopedSlots.footer"
       >
         <slot name="footer" :isCollapsed="isCollapsed"></slot>
       </footer>
       <div
-        class="hidden lg:group-hover:block absolute top-0 -right-px h-full w-px bg-gradient-juniper_gradient"
+        class="absolute top-0 hidden w-px h-full lg:group-hover:block -right-px bg-gradient-juniper_gradient"
       ></div>
       <div
         class="lg:group-hover:block hidden bg-juniper p-0.5 rounded-full relative lg:absolute top-3"
@@ -79,7 +79,7 @@ export default {
   mounted() {
     this.$nextTick(() => {
       window.addEventListener('resize', () => {
-        if (this.windowScreenWidth < this.largeScreenSize) this.isOpen = false
+        if (window.innerWidth > this.largeScreenSize) this.isOpen = false
       })
     })
   },
@@ -87,8 +87,7 @@ export default {
     return {
       isCollapsed: this.collapsed,
       isOpen: false,
-      largeScreenSize: 1024,
-      windowScreenWidth: window.innerWidth
+      largeScreenSize: 1024
     }
   },
   computed: {
@@ -140,6 +139,7 @@ export default {
   methods: {
     collapseSidebar() {
       this.isCollapsed = !this.isCollapsed
+      this.$emit('collapse', this.isCollapsed)
     },
     openModal() {
       this.isOpen = !this.isOpen

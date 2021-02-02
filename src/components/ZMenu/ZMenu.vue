@@ -5,7 +5,7 @@
     </button>
     <div
       v-if="isOpen"
-      class="absolute rounded-sm text-vanilla-200 bg-ink-200"
+      class="absolute z-10 rounded-sm text-vanilla-200 bg-ink-200"
       :class="`${directionClass} ${sizeClass}`"
     >
       <slot name="body"></slot>

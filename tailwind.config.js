@@ -607,6 +607,7 @@ module.exports = {
       opacity: 'opacity',
       shadow: 'box-shadow',
       transform: 'transform',
+      width: 'width',
       'max-height': 'max-height'
     },
     transitionTimingFunction: {
