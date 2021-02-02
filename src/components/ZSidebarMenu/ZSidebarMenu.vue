@@ -8,7 +8,7 @@
       <z-icon icon="menu"></z-icon>
     </div>
     <div
-      class="absolute top-0 z-30 flex flex-col h-screen transition-all duration-300 ease-in-out cursor-pointer group bg-ink-400 sidebar-menu border-ink-200 text-vanilla-100"
+      class="absolute top-0 z-30 flex flex-col h-screen duration-300 ease-in-out cursor-pointer transition-width group bg-ink-400 sidebar-menu border-ink-200 text-vanilla-100"
       :class="[getWidth, getDirectionClasses, getBorderClasses, isOpen && 'shadow-black']"
       v-outside-click="closeModal"
     >
