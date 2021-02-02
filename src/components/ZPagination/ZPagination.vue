@@ -57,10 +57,6 @@ export default Vue.extend({
       type: Number,
       required: true
     },
-    showEnds: {
-      type: Boolean,
-      default: true
-    },
     totalVisible: {
       type: Number,
       default: 4
@@ -85,39 +81,39 @@ export default Vue.extend({
     atLast(): boolean {
       return this.activeIndex === this.totalPages
     },
+    showEnds(): boolean {
+      if (this.totalVisible < 4) return false
+      if (this.totalPages < this.totalVisible) return false
+      return true
+    },
     pageCount(): number {
       return this.showEnds ? this.totalVisible - 2 : this.totalVisible
     },
-    showStart(): boolean {
-      if (!this.showEnds || this.atFirst) return false
+    showFirst(): boolean {
+      if (!this.showEnds) return false
       return this.activeIndex > this.pageCount
     },
-    showEnd(): boolean {
-      if (!this.showEnds || this.atLast) return false
+    showLast(): boolean {
+      if (!this.showEnds) return false
       return this.activeIndex < this.totalPages - this.pageCount
     },
     startAt(): number {
-      if (this.atFirst) return 1
-      if (this.activeIndex <= 3) return 1
-      if (this.atLast) return this.totalPages - this.totalVisible + 1
-
-      // by default show the active page and a page before that
-      let start = this.activeIndex - 1
-
-      // ensure there are always totalVisible items on the switcher
-      const offset = this.totalPages - start + 1
-      // check if enought elements are present ahead
-      if (offset < this.pageCount) {
-        // if not present, move the start point behind by that offset
-        start = start - (this.pageCount - offset)
+      let start: number = this.activeIndex - 1
+      if (this.atFirst) start = 1
+      if (this.activeIndex > this.totalPages - this.totalVisible + 1) {
+        start = this.totalPages - this.pageCount
       }
+
       return start > 0 ? start : 1
     },
     pages(): Array<Record<string, string | number | boolean>> {
       const range = []
 
-      const startRange = Math.min(this.startAt + this.totalVisible - 1, this.totalPages)
-      if (this.showStart) {
+      const startRange = Math.min(
+        this.startAt + this.pageCount - Number(this.showFirst && this.showLast),
+        this.totalPages
+      )
+      if (this.showFirst) {
         range.push({
           type: 'Button',
           name: 1,
@@ -135,7 +131,7 @@ export default Vue.extend({
         })
       }
 
-      if (this.showEnd) {
+      if (this.showLast) {
         range.push({
           type: 'Divider'
         })

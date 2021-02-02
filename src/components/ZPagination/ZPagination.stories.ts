@@ -16,7 +16,7 @@ export const BasicMenu = () => ({
     <div class="container">
       <z-pagination
         :totalPages="12"
-        :totalVisible="5"
+        :totalVisible="3"
       ></z-pagination>
     </div>`
 })
