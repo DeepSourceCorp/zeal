@@ -28,7 +28,9 @@
       >
         <slot name="footer" :isCollapsed="isCollapsed"></slot>
       </footer>
-      <div class="absolute top-0 right-0 hidden w-px h-full lg:group-hover:block bg-gradient-to-t from-vanilla-300 via-juniper to-juniper"></div>
+      <div
+        class="absolute top-0 right-0 hidden w-px h-full lg:group-hover:block bg-gradient-to-t from-vanilla-300 via-juniper to-juniper"
+      ></div>
       <div
         class="absolute top-0 hidden w-px h-full lg:group-hover:block -right-px bg-gradient-juniper_gradient"
       ></div>
