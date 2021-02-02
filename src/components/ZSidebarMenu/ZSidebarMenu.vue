@@ -4,7 +4,7 @@
       v-outside-click="closeModal"
       v-on:click="openModal()"
       class="absolute top-2 left-2 block lg:hidden cursor-pointer z-10"
-      :class="{'hidden': isOpen}"
+      :class="{ hidden: isOpen }"
     >
       <z-icon icon="menu"></z-icon>
     </div>
@@ -79,9 +79,8 @@ export default {
   mounted() {
     this.$nextTick(() => {
       window.addEventListener('resize', () => {
-        if(this.windowScreenWidth < this.largeScreenSize)
-          this.isOpen = false
-      });
+        if (this.windowScreenWidth < this.largeScreenSize) this.isOpen = false
+      })
     })
   },
   data() {
