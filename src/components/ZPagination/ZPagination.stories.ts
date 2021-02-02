@@ -21,6 +21,26 @@ export const BasicPages = () => ({
     </div>`
 })
 
+export const StartAtDiffernetNumber = () => ({
+  components: { ZPagination },
+  data() {
+    return {
+      currentPage: 5
+    }
+  },
+  template: `
+    <div class="container space-y-5">
+      <z-pagination
+        v-model="currentPage"
+        :totalPages="12"
+        :totalVisible="5"
+      ></z-pagination>
+      <div class="text-vanilla-400">
+        Currently at {{ currentPage }}
+      </div>
+    </div>`
+})
+
 export const LargerWindowThanPages = () => ({
   components: { ZPagination },
   template: `
