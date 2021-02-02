@@ -6,7 +6,8 @@ import { DirectiveBinding } from 'vue/types/options'
 const instances: Array<(ev: Event) => void> = []
 
 function onDocumentClick(event: Event, el: HTMLElement, fn: (event: Event) => void) {
-  const target = event.target as HTMLElement // Casting becuase EventTarget is not usable with el.contains
+  // Casting becuase EventTarget is not usable with el.contains
+  const target = event.target as HTMLElement
   // Check if the click is on the target or in the child elements of the click target
   if (target && el !== target && !el.contains(target)) {
     fn(event)
@@ -24,6 +25,7 @@ const outsideClickDirective: DirectiveOptions = {
     }
 
     document.addEventListener('click', click)
+    document.addEventListener('touchstart', click)
     instances.push(click)
   },
   unbind(el: HTMLElement) {
@@ -31,6 +33,7 @@ const outsideClickDirective: DirectiveOptions = {
     if (isNaN(index)) {
       const handler = instances[index]
       document.removeEventListener('click', handler)
+      document.removeEventListener('touchstart', handler)
       instances.splice(index, 1)
     }
   }
