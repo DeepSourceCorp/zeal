@@ -1,5 +1,6 @@
 import ZRadio from '../../src/components/ZRadio'
 import ZRadioGroup from '../../src/components/ZRadioGroup'
+import ZRadioButton from '../../src/components/ZRadioButton'
 
 import { mount } from '@vue/test-utils'
 
@@ -71,6 +72,23 @@ const DisabledCheckedRadioButton = {
   }
 }
 
+const DefaultRadioButtonStyle = {
+  components: { ZRadioGroup, ZRadio, ZRadioButton },
+  data() {
+    return {
+      modelValue: 'female'
+    }
+  },
+  template: `<div class='padded-container'>
+            <div class="input-container">
+                <z-radio-group v-model="modelValue" class="flex">
+                    <z-radio-button value="female" label="Female"></z-radio-button>
+                    <z-radio-button value="male" label="Male"></z-radio-button>
+                </z-radio-group>
+            </div>
+        </div>`
+}
+
 describe('Radio Button Component', () => {
   it('renders the default radio component', () => {
     const wrapper = mount(defaultRadio)
@@ -93,5 +111,10 @@ describe('Radio Button Component', () => {
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.findAll('input[disabled="disabled"]').length).toEqual(2)
     expect(wrapper.findAll('.z-radio--inner span').length).toEqual(1)
+  })
+  it('renders a radio button with button style like switcher', () => {
+    const wrapper = mount(DefaultRadioButtonStyle)
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.findAll('.z-radio-button').length).toEqual(2)
   })
 })

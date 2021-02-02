@@ -17,6 +17,7 @@ import ZExpandable from './components/ZExpandable/index'
 import ZInput from './components/ZInput/index'
 import ZRadio from './components/ZRadio/index'
 import ZRadioGroup from './components/ZRadioGroup/index'
+import ZRadioButton from './components/ZRadioButton/index'
 import ZSelect from './components/ZSelect/index'
 import ZOption from './components/ZOption/index'
 import ZAvatar from './components/ZAvatar/index'
@@ -67,7 +68,8 @@ const components = [
   ZTabPanes,
   ZTabPane,
   ZSidebarMenu,
-  ZSidebarItem
+  ZSidebarItem,
+  ZRadioButton
 ]
 
 const install = (Vue: any) => {
@@ -108,7 +110,8 @@ export default {
   ZMenuSection,
   ZMenuItem,
   ZSidebarMenu,
-  ZSidebarItem
+  ZSidebarItem,
+  ZRadioButton
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -126,6 +129,7 @@ export { default as ZExpandable } from './components/ZExpandable/index'
 export { default as ZInput } from './components/ZInput/index'
 export { default as ZRadio } from './components/ZRadio/index'
 export { default as ZRadioGroup } from './components/ZRadioGroup/index'
+export { default as ZRadioButton } from './components/ZRadioButton/index'
 export { default as ZSelect } from './components/ZSelect/index'
 export { default as ZOption } from './components/ZOption/index'
 export { default as ZLabel } from './components/ZLabel/index'
