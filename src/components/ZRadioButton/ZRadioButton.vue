@@ -1,15 +1,15 @@
 <template>
   <label
-    class="z-radio-button text-vanilla-100 flex items-center border-ink-200 last:border-r"
+    class="flex items-center z-radio-button text-vanilla-100 border-ink-200 last:border-r"
     :class="`${(isDisabled && 'cursor-not-allowed') || 'cursor-pointer'}`"
     @click="updateInput"
   >
     <span
-      class="z-radio--inner font-medium text-sm relative cursor-pointer py-2 px-3 inline-block box-border border border-solid border-r-0 border-ink-200"
-      :class="{
-        'bg-ink-200 text-vanilla-100': isChecked,
-        'bg-transparent text-vanilla-400': !isChecked
-      }"
+      class="box-border relative inline-block text-sm font-medium border border-r-0 border-solid cursor-pointer z-radio--inner border-ink-200"
+      :class="[
+        isChecked ? 'bg-ink-200 text-vanilla-100' : 'bg-transparent text-vanilla-400',
+        spacing
+      ]"
     >
       <slot></slot>
       <template v-if="!$slots.default">{{ label }}</template>
@@ -20,7 +20,7 @@
       :value="value"
       @change="updateInput"
       :disabled="isDisabled"
-      class="opacity-0 absolute h-0 w-0"
+      class="absolute w-0 h-0 opacity-0"
     />
   </label>
 </template>
@@ -43,6 +43,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    spacing: {
+      type: string,
+      default: 'px-3 py-2'
     }
   },
   computed: {
