@@ -1,27 +1,26 @@
 <template>
   <nav role="navigation" aria-label="Pagination Navigation">
     <ul class="flex items-center space-x-2">
-      <li
-        class="flex items-center justify-center w-6 h-6 rounded-sm cursor-pointer text-vanilla-200"
-      >
+      <li class="flex items-center justify-center w-6 h-6 rounded-sm">
         <button @click="previous()" :disabled="atFirst">
-          <z-icon icon="chevron-left" size="small"></z-icon>
+          <z-icon
+            icon="chevron-left"
+            size="small"
+            :color="`${atFirst ? 'slate' : 'vanilla-200'}`"
+          ></z-icon>
         </button>
       </li>
-      <li
-        :class="[
-          'w-6 h-6',
-          'items-center',
-          'text-center',
-          'rounded-sm',
-          page.name === activeIndex
-            ? 'bg-juniper text-ink-400'
-            : 'text-vanilla-400 hover:bg-ink-300 cursor-pointer'
-        ]"
-        v-for="page in pages"
-        v-bind:key="page.name"
-      >
+      <li v-for="page in pages" v-bind:key="page.name">
         <button
+          :class="[
+            'w-6 h-6',
+            'items-center',
+            'text-center',
+            'rounded-sm',
+            page.name === activeIndex
+              ? 'bg-juniper text-ink-400'
+              : 'text-vanilla-400 hover:bg-ink-300'
+          ]"
           v-if="page.type == 'Button'"
           type="button"
           :disabled="page.isDisabled"
@@ -30,13 +29,19 @@
         >
           {{ page.name }}
         </button>
-        <span v-else>...</span>
+        <span
+          v-else
+          class="w-6 h-6 items-center text-center rounded-sm text-vanilla-400 hover:bg-ink-300 select-none"
+          >…</span
+        >
       </li>
-      <li
-        class="flex items-center justify-center w-6 h-6 rounded-sm cursor-pointer text-vanilla-200"
-      >
+      <li class="flex items-center justify-center w-6 h-6 rounded-sm">
         <button @click="next()" :disabled="atLast">
-          <z-icon icon="chevron-right" size="small"></z-icon>
+          <z-icon
+            icon="chevron-right"
+            size="small"
+            :color="`${atLast ? 'slate' : 'vanilla-200'}`"
+          ></z-icon>
         </button>
       </li>
     </ul>
