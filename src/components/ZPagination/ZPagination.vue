@@ -99,12 +99,16 @@ export default Vue.extend({
       return true
     },
     pageCount(): number {
+      // if ends are visible, remove two counts from total visible to offset end indicators
+      // otherwise totalvisible minus on to offset for active index
       return this.showEnds ? this.totalVisible - 2 : this.totalVisible - 1
     },
     showFirst(): boolean {
+      // Don't show first if activeIndex is in the first pageCount batch
       return this.showEnds && this.activeIndex > this.pageCount
     },
     showLast(): boolean {
+      // Don't show last if activeIndex is within the last pageCount batch
       return this.showEnds && this.activeIndex < this.totalPages - this.pageCount
     },
     startAt(): number {
@@ -124,6 +128,7 @@ export default Vue.extend({
         start = this.totalPages - this.pageCount
       }
 
+      // In case the activeIndex is in first totalVisible batch, start with 1
       if (this.showEnds && this.activeIndex <= 3 && this.pageCount !== 1) {
         start = 1
       }
