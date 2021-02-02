@@ -45,7 +45,7 @@ export default {
       default: false
     },
     spacing: {
-      type: string,
+      type: String,
       default: 'px-3 py-2'
     }
   },
