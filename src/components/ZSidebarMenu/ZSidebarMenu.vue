@@ -1,14 +1,15 @@
 <template>
   <div>
     <div
-      class="absolute top-2 left-2 block lg:hidden cursor-pointer z-10"
       v-outside-click="closeModal"
-      @click="openModal()"
+      v-on:click="openModal()"
+      class="absolute top-2 left-2 block lg:hidden cursor-pointer z-10"
+      :class="{'hidden': isOpen}"
     >
-      <z-icon icon="menu" size="small"></z-icon>
+      <z-icon icon="menu"></z-icon>
     </div>
     <div
-      class="group bg-ink-400 absolute z-20 sidebar-menu h-screen flex flex-col border-ink-200 text-vanilla-100 top-0 cursor-pointer transition-all duration-300 ease-in-out"
+      class="group bg-ink-400 absolute z-30 sidebar-menu h-screen flex flex-col border-ink-200 text-vanilla-100 top-0 cursor-pointer transition-all duration-300 ease-in-out"
       :class="[getWidth, getDirectionClasses, getBorderClasses, isOpen && 'shadow-black']"
     >
       <header
@@ -28,33 +29,34 @@
         <slot name="footer" :isCollapsed="isCollapsed"></slot>
       </footer>
       <div
-        class="hidden lg:group-hover:block absolute top-0 right-0 h-full w-px bg-gradient-to-t from-vanilla-300 via-juniper to-juniper"
+        class="hidden lg:group-hover:block absolute top-0 -right-px h-full w-px bg-gradient-juniper_gradient"
       ></div>
       <div
-        class="lg:group-hover:block hidden bg-juniper p-1 rounded-full relative lg:absolute top-3"
+        class="lg:group-hover:block hidden bg-juniper p-0.5 rounded-full relative lg:absolute top-3"
         @click.stop="collapseSidebar()"
         :class="getHoverStyle"
       >
         <z-icon :icon="getArrow" size="small" color="ink-400"></z-icon>
       </div>
     </div>
+    <!-- Overlay -->
     <div
-      :class="{ 'absolute w-full h-screen bg-ink-400 opacity-50 left-0 top-0 z-0': isOpen }"
+      :class="{ 'absolute w-full h-screen bg-ink-400 opacity-50 left-0 top-0 z-20': isOpen }"
     ></div>
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
 import ZIcon from '@/components/ZIcon/ZIcon.vue'
-import outsideClickDirective from '../../directives/outside-click'
-
-Vue.directive('outside-click', outsideClickDirective)
+import outsideClickDirective from '@/directives/outside-click'
 
 export default {
   name: 'ZSidebarMenu',
   components: {
     ZIcon
+  },
+  directives: {
+    outsideClick: outsideClickDirective
   },
   props: {
     width: {
@@ -74,10 +76,20 @@ export default {
       default: 'left'
     }
   },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', () => {
+        if(this.windowScreenWidth < this.largeScreenSize)
+          this.isOpen = false
+      });
+    })
+  },
   data() {
     return {
       isCollapsed: this.collapsed,
-      isOpen: false
+      isOpen: false,
+      largeScreenSize: 1024,
+      windowScreenWidth: window.innerWidth
     }
   },
   computed: {
