@@ -118,8 +118,14 @@ export default Vue.extend({
 
       // If the pager is at first,
       if (this.atFirst) start = 1
+
+      // Check if the activeIndex is within the last totalVisible batch
       if (this.activeIndex > this.totalPages - this.totalVisible + 1) {
         start = this.totalPages - this.pageCount
+      }
+
+      if (this.showEnds && this.activeIndex <= 3 && this.pageCount !== 1) {
+        start = 1
       }
 
       return start > 0 ? start : 1
