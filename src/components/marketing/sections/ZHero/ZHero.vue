@@ -2,7 +2,7 @@
   <section class="z-hero__section w-full relative text-vanilla-100 text-center">
     <span class="z-hero__content block">
       <h1
-        class="block text-vanilla-100 mb-4 sm:mb-6 text-2xl sm:text-3xl lg:text-5xl leading-10 sm:leading-11 lg:leading-12 w-auto lg:w-4/5 font-bold mx-auto sm:px-10 md:px-5"
+        class="block text-vanilla-100 mb-4 sm:mb-6 text-2xl xs:text-2.5xl sm:text-3xl lg:text-5xl leading-10 sm:leading-11 lg:leading-12 w-auto lg:w-4/5 font-bold mx-auto sm:px-10 md:px-5"
       >
         <slot name="heading"></slot>
       </h1>

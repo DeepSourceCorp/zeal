@@ -13,7 +13,7 @@ module.exports = {
   separator: ':',
   theme: {
     screens: {
-      xs: '320px',
+      xs: '321px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
@@ -242,6 +242,7 @@ module.exports = {
       lg: '1.25rem',
       xl: '1.375rem',
       '2xl': '1.75rem',
+      '2.5xl': '2rem',
       '3xl': '2.75rem',
       '4xl': '4rem',
       '5xl': ['4.5rem', { lineHeight: '1' }],
