@@ -36,7 +36,6 @@ import ZMenuItem from './components/ZMenu/ZMenuItem'
 import ZSidebarMenu from './components/ZSidebarMenu/index'
 import ZSidebarItem from './components/ZSidebarItem/index'
 
-
 const components = [
   ZButton,
   ZIcon,
