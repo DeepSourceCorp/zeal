@@ -95,4 +95,3 @@ export const DefaultSidebarMenu = () => ({
       </template>
     </z-sidebar-menu>`
 })
-

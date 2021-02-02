@@ -6,8 +6,10 @@
   >
     <span
       class="z-radio--inner font-medium text-sm relative cursor-pointer py-2 px-3 inline-block box-border border border-solid border-r-0 border-ink-200"
-      :class="{'bg-ink-200 text-vanilla-100': isChecked,
-              'bg-transparent text-vanilla-400': !isChecked }"
+      :class="{
+        'bg-ink-200 text-vanilla-100': isChecked,
+        'bg-transparent text-vanilla-400': !isChecked
+      }"
     >
       <slot></slot>
       <template v-if="!$slots.default">{{ label }}</template>
