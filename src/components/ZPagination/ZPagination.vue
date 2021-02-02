@@ -1,7 +1,9 @@
 <template>
   <nav role="navigation" aria-label="Pagination Navigation">
-    <ul class="flex space-x-2 items-center">
-      <li class="w-6 h-6 flex items-center rounded-sm text-vanilla-200 cursor-pointer">
+    <ul class="flex items-center space-x-2">
+      <li
+        class="flex items-center justify-center w-6 h-6 rounded-sm cursor-pointer text-vanilla-200"
+      >
         <button @click="previous()" :disabled="atFirst">
           <z-icon icon="chevron-left" size="small"></z-icon>
         </button>
@@ -30,7 +32,9 @@
         </button>
         <span v-else>...</span>
       </li>
-      <li class="w-6 h-6 flex items-center rounded-sm text-vanilla-200 cursor-pointer">
+      <li
+        class="flex items-center justify-center w-6 h-6 rounded-sm cursor-pointer text-vanilla-200"
+      >
         <button @click="next()" :disabled="atLast">
           <z-icon icon="chevron-right" size="small"></z-icon>
         </button>
