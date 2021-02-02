@@ -82,23 +82,29 @@ export default Vue.extend({
       return this.activeIndex === this.totalPages
     },
     showEnds(): boolean {
-      if (this.totalVisible < 4) return false
+      if (this.totalVisible < 3) return false
       if (this.totalPages < this.totalVisible) return false
       return true
     },
     pageCount(): number {
-      return this.showEnds ? this.totalVisible - 2 : this.totalVisible
+      return this.showEnds ? this.totalVisible - 2 : this.totalVisible - 1
     },
     showFirst(): boolean {
-      if (!this.showEnds) return false
-      return this.activeIndex > this.pageCount
+      return this.showEnds && this.activeIndex > this.pageCount
     },
     showLast(): boolean {
-      if (!this.showEnds) return false
-      return this.activeIndex < this.totalPages - this.pageCount
+      return this.showEnds && this.activeIndex < this.totalPages - this.pageCount
     },
     startAt(): number {
       let start: number = this.activeIndex - 1
+
+      // For a case where totalVisible = 3
+      // the pager will have only one item if ends are visible
+      if (this.showEnds && this.pageCount == 1) {
+        start = this.activeIndex
+      }
+
+      // If the pager is at first,
       if (this.atFirst) start = 1
       if (this.activeIndex > this.totalPages - this.totalVisible + 1) {
         start = this.totalPages - this.pageCount
