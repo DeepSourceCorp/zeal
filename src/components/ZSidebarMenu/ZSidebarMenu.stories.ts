@@ -93,5 +93,6 @@ export const DefaultSidebarMenu = () => ({
           <z-sidebar-item icon="star" icon-color="juniper">Upgrade to Pro</z-sidebar-item>
         </div>
       </template>
-    </z-sidebar-menu>`
+    </z-sidebar-menu>
+  </div>`
 })

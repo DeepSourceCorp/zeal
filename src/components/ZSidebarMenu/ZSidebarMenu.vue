@@ -1,16 +1,14 @@
 <template>
-  <div>
+  <div v-outside-click="closeModal">
     <div
-      v-on:click="openModal()"
+      @click="openModal()"
       class="absolute z-10 block cursor-pointer top-2 left-2 lg:hidden"
-      :class="{ hidden: isOpen }"
     >
-      <z-icon icon="menu"></z-icon>
+      <z-icon icon="menu" size="medium"></z-icon>
     </div>
     <div
-      class="absolute top-0 z-30 flex flex-col h-screen duration-300 ease-in-out cursor-pointer transition-width group bg-ink-400 sidebar-menu border-ink-200 text-vanilla-100"
+      class="absolute top-0 z-30 flex flex-col h-screen transition-all duration-300 ease-in-out cursor-pointer group bg-ink-400 sidebar-menu border-ink-200 text-vanilla-100"
       :class="[getWidth, getDirectionClasses, getBorderClasses, isOpen && 'shadow-black']"
-      v-outside-click="closeModal"
     >
       <header
         class="w-full p-2 border-b border-solid border-ink-200"
@@ -29,9 +27,6 @@
         <slot name="footer" :isCollapsed="isCollapsed"></slot>
       </footer>
       <div
-        class="absolute top-0 right-0 hidden w-px h-full lg:group-hover:block bg-gradient-to-t from-vanilla-300 via-juniper to-juniper"
-      ></div>
-      <div
         class="absolute top-0 hidden w-px h-full lg:group-hover:block -right-px bg-gradient-juniper_gradient"
       ></div>
       <div
@@ -45,6 +40,7 @@
     <!-- Overlay -->
     <div
       :class="{ 'absolute w-full h-screen bg-ink-400 opacity-50 left-0 top-0 z-20': isOpen }"
+      @click="closeModal()"
     ></div>
   </div>
 </template>

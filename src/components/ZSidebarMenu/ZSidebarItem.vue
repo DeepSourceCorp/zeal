@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center px-2 py-2 space-x-2 text-sm transition-all duration-300 ease-in-out cursor-pointer sidebar-item hover:bg-ink-300"
+    class="flex items-center px-2 py-2 space-x-2 text-sm cursor-pointer sidebar-item hover:bg-ink-300"
     :class="{ 'bg-ink-300': active }"
   >
     <z-icon v-if="icon" :icon="icon" size="small" :color="iconColor"></z-icon>
