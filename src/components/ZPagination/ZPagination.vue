@@ -59,7 +59,10 @@ export default Vue.extend({
     },
     totalVisible: {
       type: Number,
-      default: 4
+      default: 4,
+      validator(value): boolean {
+        return value > 1
+      }
     },
     hideForSinglePage: {
       type: Boolean,
