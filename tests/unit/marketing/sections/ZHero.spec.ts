@@ -26,7 +26,8 @@ describe('Customers section', () => {
         cta: '<span class="hero-cta">This is cta</span>',
         heading: '<span class="hero-heading">This is heading</span>',
         subheading: '<span class="hero-subheading">This is subheading</span>',
-        illustration: '<span class="hero-illustration"><img src="https://www.tibco.com/blog/wp-content/uploads/2016/07/rsz_bigstock-electronic-devices-with-blank-81878129.jpg" /></span>'
+        illustration:
+          '<span class="hero-illustration"><img src="https://www.tibco.com/blog/wp-content/uploads/2016/07/rsz_bigstock-electronic-devices-with-blank-81878129.jpg" /></span>'
       }
     })
     expect(mountedInstance.html()).toContain('hero-cta')
