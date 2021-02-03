@@ -2,7 +2,9 @@ const plugin = require('tailwindcss/plugin')
 const {
   FULL_WIDTH_ACTIVE,
   FULL_WIDTH_INACTIVE,
-  BEFORE_LIST_ITEM
+  BEFORE_LIST_ITEM,
+  SMALL_SCREEN_CSS,
+  LARGE_SCREEN_CSS
 } = require('./src/helpers/tailwind/typography.js')
 module.exports = {
   purge: [],
@@ -895,75 +897,22 @@ module.exports = {
         },
         sm: {
           css: {
-            'ul > li::before': {
-              ...BEFORE_LIST_ITEM(theme)
-            },
-            'pre, figure img': {
-              ...FULL_WIDTH_ACTIVE(theme)
-            },
-            pre: {
-              color: theme('colors.vanilla.400'),
-              backgroundColor: theme('colors.ink.200'),
-              overflowX: 'auto',
-              borderRadius: '0'
-            }
+            ...SMALL_SCREEN_CSS(theme)
           }
         },
         lg: {
           css: {
-            'ul > li::before': {
-              ...BEFORE_LIST_ITEM(theme)
-            },
-            'pre, figure img': {
-              ...FULL_WIDTH_INACTIVE(theme)
-            },
-            pre: {
-              color: theme('colors.vanilla.400'),
-              backgroundColor: theme('colors.ink.200'),
-              overflowX: 'auto',
-              borderRadius: `${theme('spacing.1')}`
-            },
-            'figure img': {
-              borderRadius: `${theme('spacing.1')}`
-            }
+            ...LARGE_SCREEN_CSS(theme)
           }
         },
         xl: {
           css: {
-            'ul > li::before': {
-              ...BEFORE_LIST_ITEM(theme)
-            },
-            'pre, figure img': {
-              ...FULL_WIDTH_INACTIVE(theme)
-            },
-            pre: {
-              color: theme('colors.vanilla.400'),
-              backgroundColor: theme('colors.ink.200'),
-              overflowX: 'auto',
-              borderRadius: `${theme('spacing.1')}`
-            },
-            'figure img': {
-              borderRadius: `${theme('spacing.1')}`
-            }
+            ...LARGE_SCREEN_CSS(theme)
           }
         },
         '2xl': {
           css: {
-            'ul > li::before': {
-              ...BEFORE_LIST_ITEM(theme)
-            },
-            'pre, figure img': {
-              ...FULL_WIDTH_INACTIVE(theme)
-            },
-            pre: {
-              color: theme('colors.vanilla.400'),
-              backgroundColor: theme('colors.ink.200'),
-              overflowX: 'auto',
-              borderRadius: `${theme('spacing.1')}`
-            },
-            'figure img': {
-              borderRadius: `${theme('spacing.1')}`
-            }
+            ...LARGE_SCREEN_CSS(theme)
           }
         }
       })
