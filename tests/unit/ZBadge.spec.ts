@@ -1,6 +1,10 @@
 import ZBadge from '../../src/components/ZBadge'
 import ZButton from '../../src/components/ZButton'
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> Add badge component
 import { shallowMount, mount } from '@vue/test-utils'
 
 const slotData = {
@@ -8,6 +12,7 @@ const slotData = {
 }
 
 const BasicBadge = {
+<<<<<<< HEAD
   template: `<z-badge type="danger" :value="12">
             <z-button color="primary">Likes</z-button>
         </z-badge>`,
@@ -15,17 +20,35 @@ const BasicBadge = {
     ZBadge,
     ZButton
   }
+=======
+    template: `<z-badge type="danger" :value="12">
+            <z-button color="primary">Likes</z-button>
+        </z-badge>`,
+    components: {
+        ZBadge,
+        ZButton
+    }
+>>>>>>> Add badge component
 }
 
 describe('Badge', () => {
   it('renders a badge as a dot', () => {
     const wrapper = shallowMount(ZBadge, {
+<<<<<<< HEAD
       slots: slotData,
       propsData: {
         isDot: true
       }
     })
 
+=======
+        slots: slotData,
+        propsData: {
+            isDot: true
+        }
+    })
+   
+>>>>>>> Add badge component
     expect(wrapper.html()).toMatchSnapshot()
   })
 
@@ -90,7 +113,11 @@ describe('Badge', () => {
         slots: slotData
       }).html()
     ).toMatchSnapshot()
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> Add badge component
     expect(
       shallowMount(ZBadge, {
         propsData: {
