@@ -36,6 +36,7 @@ import ZMenuItem from './components/ZMenu/ZMenuItem'
 import ZSidebarMenu from './components/ZSidebarMenu/index'
 import ZSidebarItem from './components/ZSidebarItem/index'
 import ZBadge from './components/ZBadge/index'
+import ZPagination from './components/ZPagination/index'
 
 const components = [
   ZButton,
@@ -71,7 +72,8 @@ const components = [
   ZSidebarMenu,
   ZSidebarItem,
   ZRadioButton,
-  ZBadge
+  ZBadge,
+  ZPagination
 ]
 
 const install = (Vue: any) => {
@@ -114,7 +116,8 @@ export default {
   ZSidebarMenu,
   ZSidebarItem,
   ZRadioButton,
-  ZBadge
+  ZBadge,
+  ZPagination
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -151,3 +154,4 @@ export { default as ZTabPane } from './components/ZTabs/ZTabPane'
 export { default as ZSidebarMenu } from './components/ZSidebarMenu/index'
 export { default as ZSidebarItem } from './components/ZSidebarItem/index'
 export { default as ZBadge } from './components/ZBadge/index'
+export { default as ZPagination } from './components/ZPagination/index'
