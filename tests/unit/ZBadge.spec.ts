@@ -90,6 +90,7 @@ describe('Badge', () => {
         slots: slotData
       }).html()
     ).toMatchSnapshot()
+      
     expect(
       shallowMount(ZBadge, {
         propsData: {
