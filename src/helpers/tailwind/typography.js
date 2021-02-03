@@ -1,4 +1,4 @@
-const FULL_WIDTH_ACTIVE = function(theme) {
+const FULL_WIDTH_ACTIVE = function (theme) {
   return {
     marginLeft: `-${theme('width.halfScreen')}`,
     marginRight: `-${theme('width.halfScreen')}`,
@@ -9,7 +9,7 @@ const FULL_WIDTH_ACTIVE = function(theme) {
     width: theme('width.screen')
   }
 }
-const FULL_WIDTH_INACTIVE = function(theme) {
+const FULL_WIDTH_INACTIVE = function (theme) {
   return {
     marginLeft: 'unset',
     marginRight: 'unset',
@@ -21,7 +21,7 @@ const FULL_WIDTH_INACTIVE = function(theme) {
     width: 'unset'
   }
 }
-const BEFORE_LIST_ITEM = function(theme) {
+const BEFORE_LIST_ITEM = function (theme) {
   return {
     content: '"—"',
     marginRight: theme('spacing.2'),
@@ -38,7 +38,7 @@ module.exports = {
   FULL_WIDTH_ACTIVE,
   FULL_WIDTH_INACTIVE,
   BEFORE_LIST_ITEM,
-  SMALL_SCREEN_CSS: function(theme) {
+  SMALL_SCREEN_CSS: function (theme) {
     return {
       'ul > li::before': {
         ...BEFORE_LIST_ITEM(theme)
@@ -54,7 +54,7 @@ module.exports = {
       }
     }
   },
-  LARGE_SCREEN_CSS: function(theme) {
+  LARGE_SCREEN_CSS: function (theme) {
     return {
       'ul > li::before': {
         ...BEFORE_LIST_ITEM(theme)
