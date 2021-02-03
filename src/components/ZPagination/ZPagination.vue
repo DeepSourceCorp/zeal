@@ -2,7 +2,11 @@
   <nav role="navigation" aria-label="Pagination Navigation">
     <ul class="z-pagination flex items-center space-x-2">
       <li class="flex items-center justify-center w-6 h-6 rounded-sm">
-        <button @click="previous()" :disabled="atFirst" class="z-pagination-previous">
+        <button
+          @click="previous()"
+          :disabled="atFirst"
+          class="z-pagination-previous outline-none focus:outline-none"
+        >
           <z-icon
             icon="chevron-left"
             size="small"
@@ -18,6 +22,8 @@
             'items-center',
             'text-center',
             'rounded-sm',
+            'outline-none',
+            'focus:outline-none',
             page.name === activeIndex
               ? 'bg-juniper text-ink-400'
               : 'text-vanilla-400 hover:bg-ink-300'
@@ -37,7 +43,11 @@
         >
       </li>
       <li class="flex items-center justify-center w-6 h-6 rounded-sm">
-        <button @click="next()" :disabled="atLast" class="z-pagination-next">
+        <button
+          @click="next()"
+          :disabled="atLast"
+          class="z-pagination-next outline-none focus:outline-none"
+        >
           <z-icon
             icon="chevron-right"
             size="small"
