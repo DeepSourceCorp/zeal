@@ -1,11 +1,12 @@
 <template>
   <nav role="navigation" aria-label="Pagination Navigation">
     <ul class="z-pagination flex items-center space-x-2">
-      <li class="flex items-center justify-center w-6 h-6 rounded-sm">
+      <li>
         <button
           @click="previous()"
           :disabled="atFirst"
-          class="z-pagination-previous outline-none focus:outline-none"
+          class="z-pagination-previous outline-none focus:outline-none flex items-center justify-center w-6 h-6 rounded-sm"
+          :class="{ 'hover:bg-ink-300': !atFirst }"
         >
           <z-icon
             icon="chevron-left"
@@ -42,11 +43,12 @@
           >…</span
         >
       </li>
-      <li class="flex items-center justify-center w-6 h-6 rounded-sm">
+      <li>
         <button
           @click="next()"
           :disabled="atLast"
-          class="z-pagination-next outline-none focus:outline-none"
+          class="z-pagination-next outline-none focus:outline-none flex items-center justify-center w-6 h-6 rounded-sm"
+          :class="{ 'hover:bg-ink-300': !atLast }"
         >
           <z-icon
             icon="chevron-right"
