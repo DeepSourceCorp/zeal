@@ -345,6 +345,7 @@ module.exports = {
     }),
     minWidth: (theme) => ({
       0: '0',
+      '1/2': '50%',
       full: '100%',
       min: 'min-content',
       max: 'max-content',

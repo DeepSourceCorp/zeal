@@ -40,7 +40,8 @@
     </div>
     <!-- Overlay -->
     <div
-      :class="{ 'absolute w-full h-screen bg-ink-400 opacity-50 left-0 top-0 z-20': isOpen }"
+      :class="{ 'fixed w-full h-screen bg-ink-400 opacity-50 left-0 top-0 z-20': isOpen }"
+      @click="closeModal()"
     ></div>
   </div>
 </template>
