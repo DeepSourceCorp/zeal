@@ -37,9 +37,7 @@
         >
           {{ page.name }}
         </button>
-        <span
-          v-else
-          class="z-pagination-divider w-6 h-6 items-center text-center rounded-sm text-vanilla-400 hover:bg-ink-300 select-none"
+        <span v-else class="z-pagination-divider w-6 h-6 items-center text-center select-none"
           >…</span
         >
       </li>
