@@ -34,6 +34,7 @@ import ZMenuSection from './components/ZMenu/ZMenuSection'
 import ZMenuItem from './components/ZMenu/ZMenuItem'
 import ZSidebarMenu from './components/ZSidebarMenu/index'
 import ZSidebarItem from './components/ZSidebarItem/index'
+import ZBadge from './components/ZBadge/index'
 
 const components = [
   ZButton,
@@ -67,7 +68,8 @@ const components = [
   ZTabPanes,
   ZTabPane,
   ZSidebarMenu,
-  ZSidebarItem
+  ZSidebarItem,
+  ZBadge
 ]
 
 const install = (Vue: any) => {
@@ -108,7 +110,8 @@ export default {
   ZMenuSection,
   ZMenuItem,
   ZSidebarMenu,
-  ZSidebarItem
+  ZSidebarItem,
+  ZBadge
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -143,3 +146,4 @@ export { default as ZTabPanes } from './components/ZTabs/ZTabPanes'
 export { default as ZTabPane } from './components/ZTabs/ZTabPane'
 export { default as ZSidebarMenu } from './components/ZSidebarMenu/index'
 export { default as ZSidebarItem } from './components/ZSidebarItem/index'
+export { default as ZBadge } from './components/ZBadge/index'
