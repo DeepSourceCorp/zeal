@@ -139,6 +139,7 @@ export default {
   methods: {
     collapseSidebar() {
       this.isCollapsed = !this.isCollapsed
+      this.$emit('collapse', this.isCollapsed)
     },
     openModal() {
       this.isOpen = !this.isOpen
