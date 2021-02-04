@@ -44,7 +44,13 @@ export default {
       if (this.size === 'small') {
         return 'w-4 h-4'
       }
-      return 'w-6 h-6'
+      if (this.size === 'medium') {
+        return 'w-6 h-6'
+      }
+      if(this.size === 'x-small') {
+        return 'w-3.5 h-3.5'
+      }
+      return 'w-4 h-4 sm:w-6 sm:h-6'
     },
     getPositionStyle() {
       if (this.position === 'left') {

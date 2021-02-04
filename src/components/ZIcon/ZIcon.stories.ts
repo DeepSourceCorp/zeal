@@ -33,3 +33,11 @@ export const SmallIcon = () => ({
         <p class='icon-title'>arrow-up</p>
     </div>`
 })
+
+export const ExtraSmallIcon = () => ({
+  components: { ZIcon },
+  template: `<div class='wrapper'>
+        <z-icon icon='arrow-up' size="x-small"></z-icon>
+        <p class='icon-title'>arrow-up</p>
+    </div>`
+})
