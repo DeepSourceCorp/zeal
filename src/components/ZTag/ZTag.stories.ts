@@ -60,8 +60,8 @@ export const TagsWithIcons = () => ({
 export const TagsWithSizes = () => ({
   components: { ZTag },
   template: `<div class='padded-container'>
-        <z-tag state="success" size="small">Tag</z-tag>
-        <z-tag state="success" size="large">Tag</z-tag>
+        <z-tag state="success" text-size="sm">Tag</z-tag>
+        <z-tag state="success" text-size="lg">Tag</z-tag>
     </div>`
 })
 
