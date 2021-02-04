@@ -1,15 +1,30 @@
 <template>
   <span class="relative z-menu">
-    <button v-on:click="toggle" v-outside-click="close" class="outline-none focus:outline-none">
+    <button v-on:click="toggle" class="outline-none focus:outline-none" ref="menu-trigger">
       <slot name="trigger"></slot>
     </button>
-    <div
-      v-if="isOpen"
-      class="absolute z-10 rounded-sm text-vanilla-200 bg-ink-200"
-      :class="`${directionClass} ${sizeClass}`"
+    <transition
+      enter-active-class="animate-slide-bottom-enter-active sm:animate-none sm:transition-all sm:duration-75 sm:ease-out-quad"
+      leave-active-class="animate-slide-bottom-leave-active sm:animate-none sm:transition-all sm:duration-150 sm:ease-in-quad"
+      enter-class="sm:opacity-0 sm:scale-75"
+      enter-to-class="sm:opacity-100 sm:scale-100"
+      leave-class="sm:opacity-100 sm:scale-100"
+      leave-to-class="sm:opacity-0 sm:scale-75"
     >
-      <slot name="body"></slot>
-    </div>
+      <div
+        v-if="isOpen"
+        class="fixed inset-0 sm:inset-auto z-10 flex items-end overflow-hidden h-100 sm:absolute text-vanilla-200 transform-gpu"
+        :class="`${directionClass}`"
+      >
+        <div
+          class="rounded-t-lg bg-ink-200 sm:rounded-sm"
+          :class="`${sizeClass}`"
+          v-outside-click="close"
+        >
+          <slot name="body"></slot>
+        </div>
+      </div>
+    </transition>
   </span>
 </template>
 
@@ -25,14 +40,14 @@ export default Vue.extend({
     direction: {
       type: String,
       default: 'right',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['left', 'right'].includes(value)
       }
     },
     size: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['small', 'base', 'large'].includes(value)
       }
     },
@@ -49,19 +64,25 @@ export default Vue.extend({
     toggle(): void {
       this.isOpen = !this.isOpen
     },
-    close(): void {
-      this.isOpen = false
+    close(event: Event): void {
+      const target = event.target as HTMLElement
+      const menuTrigger = this.$refs['menu-trigger'] as HTMLElement
+      if (this.isOpen && target !== menuTrigger && !menuTrigger.contains(target)) {
+        this.isOpen = false
+      }
     }
   },
   computed: {
     directionClass(): string {
-      return this.direction == 'right' ? 'left-0 origin-top-left' : 'right-0 origin-top-right'
+      return this.direction == 'right'
+        ? 'sm:left-0 sm:origin-top-left'
+        : 'sm:right-0 sm:origin-top-right'
     },
     sizeClass(): string {
       const sizes: Record<string, string> = {
-        small: `py-1 text-xs w-${this.width || '52'} mt-2`,
-        base: `py-1 text-sm w-${this.width || '64'} mt-2`,
-        large: `py-2 text-base w-${this.width || '72'} mt-4`
+        small: `py-1 text-xs w-full sm:w-${this.width || '52'} mt-5 sm:mt-2`,
+        base: `py-1 text-sm w-full sm:w-${this.width || '64'} mt-5 sm:mt-2`,
+        large: `py-2 text-base w-full sm:w-${this.width || '72'} mt-5 sm:mt-4`
       }
 
       return sizes[this.size || 'base']
