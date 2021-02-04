@@ -1,7 +1,7 @@
 <template>
   <div
-    class="inline-flex items-center justify-evenly text-vanilla-100 rounded-full space-x-2"
-    :class="[getSizeBasedClasses, getBaseColor, `bg-${bgColor}`]"
+    class="inline-flex items-center space-x-2 rounded-full justify-evenly text-vanilla-100"
+    :class="[spacing, `text-${textSize}`, getBaseColor, `bg-${bgColor}`]"
   >
     <z-icon v-if="iconLeft" :icon="iconLeft" :size="size"></z-icon>
     <div><slot></slot></div>
@@ -42,16 +42,17 @@ export default Vue.extend({
     bgColor: {
       default: 'ink-300',
       type: String
+    },
+    textSize: {
+      default: 'sm', 
+      type: String
+    },
+    spacing: {
+      type: String,
+      default: 'py-1 px-4'
     }
   },
   computed: {
-    getSizeBasedClasses(): string {
-      const sizes: Record<string, string> = {
-        small: 'py-1 px-4 text-sm',
-        large: 'py-1 px-4 text-lg'
-      }
-      return sizes[this.size]
-    },
     getBaseColor(): string {
       const states: Record<string, string> = {
         success: 'border-2 border-solid border-juniper',
