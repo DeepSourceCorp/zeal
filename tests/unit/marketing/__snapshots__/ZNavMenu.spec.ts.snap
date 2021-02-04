@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ZNavMenu component renders a ZNavMenu when the component is mounted 1`] = `<span class="text-vanilla-100"><!----> <!----> <span class="block py-4"><span class="block font-semibold px-4">Dummy title</span> <span class="block text-sm md:text-md -mb-2 -mx-1"></span></span></span>`;
+
+exports[`ZNavMenu component when type is accordion 1`] = `
+<span class="text-vanilla-100"><!----> <span class="flex items-center cursor-pointer px-4 py-3 bg-ink-300 inline-block hover:opacity-75 select-none font-semibold w-full"><span class="flex flex-1">Dummy title</span> <svg viewBox="0 0 24 24" fill="none" class="stroke-2 transform z-icon w-4 h-4 sm:w-6 sm:h-6 z-icon--chevron-down text-vanilla-400">
+  <polyline points="6 9 12 15 18 9"></polyline>
+</svg></span> <span class="block bg-ink-300 overflow-scroll transition-max-height duration-500 ease-in-out max-h-0"><span class="-mt-2 -mx-1 block text-sm md:text-md">Something</span></span>
+<!----></span>
+`;
+
+exports[`ZNavMenu component when type is dropdown 1`] = `
+<span class="text-vanilla-100"><span class="relative inline-block text-left"><div class="relative py-3 h-full"><a href="#" type="link" class="z-btn inline-flex items-center font-medium border-transparent rounded-sm relative justify-center px-4 false false p-0 h-8 text-xs sm:h-10 sm:text-base">
+        Dummy title
+      </a> <span class="absolute -ml-2 mt-1 left-1/2 block w-0 h-0 border-t-0 border-r-8 border-l-8 border-b-8 border-l-transparent border-r-transparent border-b-ink-300 hidden"></span></div>
+<div data-before="" class="absolute -left-12 origin-top-right bg-ink-300 rounded-md shadow-lg min-w-52 hidden">Something</div>
+</span>
+<!---->
+<!----></span>
+`;
+
+exports[`ZNavMenu component when type is none 1`] = `<span class="text-vanilla-100"><!----> <!----> <span class="block py-4"><span class="block font-semibold px-4">Dummy title</span> <span class="block text-sm md:text-md -mb-2 -mx-1">Something</span></span></span>`;

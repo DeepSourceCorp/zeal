@@ -10,7 +10,12 @@
         `${HEADING_ALIGNMENT_CLASSES[align]}-${HEADINGS[heading.tagName].indentSpace}`
       ]"
     >
-      <a v-if="isHeadingVisible(heading)" class="text-sm" :href="`#${heading.id}`">
+      <a
+        @click.prevent="scrollSmoothlyTo(heading.id)"
+        v-if="isHeadingVisible(heading)"
+        class="text-sm"
+        :href="`#${heading.id}`"
+      >
         {{ heading.text }}
       </a>
     </li>
@@ -19,6 +24,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import smoothscroll from 'smoothscroll-polyfill'
+
 interface Heading {
   id: string | null
   text: string | null
@@ -66,6 +73,7 @@ export default Vue.extend({
     return {
       observer: {} as IntersectionObserver,
       activeHeading: {} as Heading,
+      primaryHeadingTagName: '' as Heading['tagName'],
       headingsMap: {} as Record<string, Heading>,
       HEADINGS,
       HEADING_ALIGNMENT_CLASSES,
@@ -74,14 +82,14 @@ export default Vue.extend({
   },
   computed: {
     headingElements(): NodeListOf<Element> {
-      return document.querySelectorAll(`#${this.rootId} h1, h2, h3`)
+      return document.querySelectorAll(`#${this.rootId} h1, #${this.rootId} h2, #${this.rootId} h3`)
     }
   },
   created() {
     this.observer = new IntersectionObserver(this.onElementObserved, {
       root: document.querySelector(`#${this.rootId}`),
       threshold: 1.0,
-      rootMargin: '0px 0px -50% 0px'
+      rootMargin: '10px 0px -50% 0px'
     })
   },
   mounted() {
@@ -89,6 +97,7 @@ export default Vue.extend({
       this.addAsHeadingToHeadingsMap(headingElement)
       this.observer.observe(headingElement)
     })
+    this.setPrimaryHeadingTagName()
     this.breakDownHeadingsIntoBlocks()
   },
   methods: {
@@ -105,13 +114,13 @@ export default Vue.extend({
     breakDownHeadingsIntoBlocks() {
       /**
        * Breaks down all the headings in block categories.
-       * A block is named after it's primary heading's (i.e, h1) id.
+       * A block is named after the primary heading's (i.e, if h1 is present then h1 else h2) id.
        */
       let block = '' as Heading['block']
       this.headingElements.forEach((headingElement: Element) => {
         const { id, tagName } = this.getHeading(headingElement)
         if (id) {
-          if (tagName === HEADINGS.h1.tag) {
+          if (tagName === this.primaryHeadingTagName) {
             block = id
           }
           this.headingsMap[id].block = block
@@ -137,13 +146,6 @@ export default Vue.extend({
         block: ''
       }
     },
-    getHeadingLevel(tagName: Heading['tagName']): number {
-      /**
-       * Level of a heading is formed using it's tagName.
-       * For e.g, level of `h1` is 1, and level of `h2` is 2
-       */
-      return parseInt(tagName.charAt(tagName.length - 1))
-    },
     isHeadingActive({ id }: Heading): boolean {
       /**
        * Returns true if heading passed has the same id
@@ -155,10 +157,42 @@ export default Vue.extend({
       /**
        * Allows to show headings if their block is currently active.
        */
-      if (tagName === HEADINGS.h1.tag) {
+      if (tagName === this.primaryHeadingTagName) {
         return true
       }
       return this.activeHeading.id ? this.headingsMap[this.activeHeading.id].block === block : false
+    },
+    setPrimaryHeadingTagName() {
+      /**
+       * Sets the primary heading tagName.
+       * Primary heading is the one which is present on the highest level.
+       * For e.g, if `h1` is present in all headings, then `h1` is primary else `h2`.
+       */
+      this.primaryHeadingTagName =
+        (this.headingTagNameExists(HEADINGS.h1.tag) && HEADINGS.h1.tag) ||
+        (this.headingTagNameExists(HEADINGS.h2.tag) && HEADINGS.h2.tag) ||
+        HEADINGS.h3.tag
+    },
+    headingTagNameExists(tagName: Heading['tagName']) {
+      /**
+       * Returns true if a tagName exists in all the headings.
+       */
+      let tagNameFound = false as boolean
+      this.headingElements.forEach((headingElement: Element) => {
+        if (headingElement.tagName.toLowerCase() === tagName) {
+          tagNameFound = true
+        }
+      })
+      return tagNameFound
+    },
+    scrollSmoothlyTo(headingId: Heading['id']) {
+      const elem = headingId && document.getElementById(headingId)
+      smoothscroll.polyfill()
+      if (elem) {
+        elem.scrollIntoView({
+          behavior: 'smooth'
+        })
+      }
     }
   }
 })

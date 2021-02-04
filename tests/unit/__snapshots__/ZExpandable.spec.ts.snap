@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ZExpandable renders an expandable in an open state 1`] = `
+<div class="z-expandable mt-2">
+  <div class="z-expandable__header bg-ink-300 p-2.5 font-semibold text-sm leading-6 cursor-pointer transition-all duration-300 ease-in-out text-vanilla-100">
+    <p>Non-iterable value used in an iterating context</p>
+  </div>
+  <div class="z-expandable__content bg-ink-200 text-vanilla-100 overflow-scroll transition-all duration-700 ease-in-out text-sm leading-6 max-h-52">
+    <div class="py-5 px-2.5">
+      <p>
+        Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ZExpandable renders the default expandable component 1`] = `
+<div class="z-expandable mt-2">
+  <div class="z-expandable__header bg-ink-300 p-2.5 font-semibold text-sm leading-6 cursor-pointer transition-all duration-300 ease-in-out text-vanilla-400">
+    <p>Non-iterable value used in an iterating context</p>
+  </div>
+  <div class="z-expandable__content bg-ink-200 text-vanilla-100 overflow-scroll transition-all duration-700 ease-in-out text-sm leading-6 max-h-0">
+    <div class="py-5 px-2.5">
+      <p>
+        Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.
+      </p>
+    </div>
+  </div>
+</div>
+`;

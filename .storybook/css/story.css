@@ -7,7 +7,7 @@
 }
 
 .padded-container {
-  @apply p-4;
+  @apply p-2 md:p-4;
 }
 
 .container {
@@ -25,4 +25,17 @@
 
 .bg-dark {
   @apply bg-ink-400;
+}
+
+.expandable-container {
+  width: 440px;
+}
+
+.input-container {
+  @apply w-4/12;
+}
+
+.select-container {
+  width: 300px;
+  height: 40px;
 }

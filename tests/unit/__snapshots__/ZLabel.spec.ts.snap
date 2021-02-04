@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Labels renders with icon 1`] = `<span class="inline-flex items-center gap-2 py-1 border bg-opacity-5 text-vanilla-100 border-vanilla-100 bg-vanilla-100 rounded-sm text-sm px-2"><z-icon-stub icon="check-circle" size="small" position="" color="text-vanilla-100"></z-icon-stub> Hello World</span>`;
+
+exports[`Labels renders with size 1`] = `<span class="inline-flex items-center gap-2 py-1 border bg-opacity-5 text-vanilla-100 border-vanilla-100 bg-vanilla-100 rounded-sm text-xs px-2"><z-icon-stub icon="check-circle" size="small" position="" color="text-vanilla-100"></z-icon-stub> Hello World</span>`;
+
+exports[`Labels renders with size 2`] = `<span class="inline-flex items-center gap-2 py-1 border bg-opacity-5 text-vanilla-100 border-vanilla-100 bg-vanilla-100 rounded-sm text-sm px-2"><z-icon-stub icon="check-circle" size="small" position="" color="text-vanilla-100"></z-icon-stub> Hello World</span>`;
+
+exports[`Labels renders with size 3`] = `<span class="inline-flex items-center gap-2 py-1 border bg-opacity-5 text-vanilla-100 border-vanilla-100 bg-vanilla-100 rounded-sm text-md px-3 py-2"><z-icon-stub icon="check-circle" size="" position="" color="text-vanilla-100"></z-icon-stub> Hello World</span>`;
+
+exports[`Labels renders with state 1`] = `<span class="inline-flex items-center gap-2 py-1 border bg-opacity-5 text-juniper border-juniper bg-juniper rounded-sm text-sm px-2"><z-icon-stub icon="check-circle" size="small" position="" color="text-juniper"></z-icon-stub> Hello World</span>`;
+
+exports[`Labels renders with state 2`] = `<span class="inline-flex items-center gap-2 py-1 border bg-opacity-5 text-cherry border-cherry bg-cherry rounded-sm text-sm px-2"><z-icon-stub icon="check-circle" size="small" position="" color="text-cherry"></z-icon-stub> Hello World</span>`;
+
+exports[`Labels renders with state 3`] = `<span class="inline-flex items-center gap-2 py-1 border bg-opacity-5 text-honey border-honey bg-honey rounded-sm text-sm px-2"><z-icon-stub icon="check-circle" size="small" position="" color="text-honey"></z-icon-stub> Hello World</span>`;
+
+exports[`Labels renders with state 4`] = `<span class="inline-flex items-center gap-2 py-1 border bg-opacity-5 text-vanilla-100 border-vanilla-100 bg-vanilla-100 rounded-sm text-sm px-2"><z-icon-stub icon="check-circle" size="small" position="" color="text-vanilla-100"></z-icon-stub> Hello World</span>`;
+
+exports[`Labels renders without icon 1`] = `<span class="inline-flex items-center gap-2 py-1 border bg-opacity-5 text-vanilla-100 border-vanilla-100 bg-vanilla-100 rounded-sm text-sm px-2"><!----> Hello World</span>`;

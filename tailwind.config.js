@@ -1,10 +1,18 @@
 const plugin = require('tailwindcss/plugin')
+const {
+  FULL_WIDTH_ACTIVE,
+  FULL_WIDTH_INACTIVE,
+  BEFORE_LIST_ITEM,
+  SMALL_SCREEN_CSS,
+  LARGE_SCREEN_CSS
+} = require('./src/helpers/tailwind/typography.js')
 module.exports = {
   purge: [],
   presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
+      xs: '320px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
@@ -24,6 +32,8 @@ module.exports = {
       gitlab: '#6753B5',
       bitbucket: '#1E54C5',
       lavender: '#7A97FA',
+      lilac: '#C97BD4',
+      sea_glass: '#49F9CF',
       pink: '#F977FF',
       vanilla: {
         100: '#ffffff',
@@ -39,18 +49,39 @@ module.exports = {
       }
     },
     gradients: (theme) => ({
-      ocean: ['98.66deg', '#49f9ce 9.7%', '#3dcded 96.6%'],
+      ocean: ['98.66deg', `${theme('colors.sea_glass')} 9.7%`, `${theme('colors.aqua')} 96.6%`],
       galaxy: {
         type: 'radial',
         colors: [
           '60.53% 61.06% at 68.85% 57.59%',
-          'rgba(51, 0, 255, 0.37) 0%',
-          'rgba(189, 52, 201, 0.169375) 55.73%',
-          'rgba(116, 95, 203, 0.01) 100%'
+          `${theme('colors.robin')}75 0%`,
+          `${theme('colors.lilac')}29 55.73%`,
+          `${theme('colors.vanilla.100')}00 100%`
         ]
       },
-      dawn: ['98.66deg', '#7a96f2 4.42%', '#ce79d1 96.6%'],
-      splash: ['98.66deg', '#4568dc 4.42%', '#324daa 96.6%']
+      dawn: ['98.66deg', `${theme('colors.robin')} 4.42%`, `${theme('colors.lilac')} 96.6%`],
+      dark_dawn: {
+        custom: `linear-gradient(180deg, ${theme(
+          'colors.ink.400'
+        )} 0%, rgba(22, 24, 29, 0.7) 100%), 
+          linear-gradient(98.66deg, ${theme('colors.robin')} 4.42%, ${theme('colors.lilac')} 96.6%)`
+      },
+      splash: ['98.66deg', `${theme('colors.robin')} 4.42%`, '#3450AF 96.6%'],
+      skeleton: [
+        '104.58deg',
+        `${theme('colors.ink.300')} 0%`,
+        `${theme('colors.ink.200')} 40.08%`,
+        `${theme('colors.ink.300')} 60.32%`
+      ],
+      juniper_gradient: [
+        '0deg',
+        `${theme('colors.transparent')} 65%`,
+        `${theme('colors.juniper')} 100%`
+      ]
+    }),
+    backdropFilter: (theme) => ({
+      none: 'none',
+      blur: `blur(${theme('spacing.5')})`
     }),
     spacing: {
       px: '1px',
@@ -87,7 +118,8 @@ module.exports = {
       64: '16rem',
       72: '18rem',
       80: '20rem',
-      96: '24rem'
+      96: '24rem',
+      102: '32rem'
     },
     backgroundColor: (theme) => theme('colors'),
     backgroundImage: {
@@ -116,7 +148,8 @@ module.exports = {
     backgroundSize: {
       auto: 'auto',
       cover: 'cover',
-      contain: 'contain'
+      contain: 'contain',
+      '400%': '400%'
     },
     borderColor: (theme) => ({
       ...theme('colors'),
@@ -126,12 +159,9 @@ module.exports = {
     borderRadius: {
       none: '0',
       sm: '0.125rem',
-      DEFAULT: '0.25rem',
-      md: '0.375rem',
-      lg: '0.5rem',
-      xl: '0.75rem',
-      '2xl': '1rem',
-      '3xl': '1.5rem',
+      md: '0.25rem',
+      lg: '0.375rem',
+      xl: '0.625rem',
       full: '9999px'
     },
     borderWidth: {
@@ -149,9 +179,20 @@ module.exports = {
       xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
       '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
       inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
-      none: 'none'
+      outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
+      none: 'none',
+      white: '0px 0px 2px 0px rgba(255,255,255,1)',
+      black: '1px 4px 20px rgba(0, 0, 0, 0.44)'
     },
-    container: {},
+    container: {
+      padding: {
+        DEFAULT: '0rem',
+        sm: '1rem',
+        lg: '2rem',
+        xl: '4rem',
+        '2xl': '5rem'
+      }
+    },
     cursor: {
       auto: 'auto',
       default: 'default',
@@ -210,19 +251,15 @@ module.exports = {
       ]
     },
     fontSize: {
-      xs: ['0.75rem', { lineHeight: '1rem' }],
-      sm: ['0.875rem', { lineHeight: '1.25rem' }],
-      base: ['1rem', { lineHeight: '1.5rem' }],
-      lg: ['1.125rem', { lineHeight: '1.75rem' }],
-      xl: ['1.25rem', { lineHeight: '1.75rem' }],
-      '2xl': ['1.5rem', { lineHeight: '2rem' }],
-      '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-      '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
-      '5xl': ['3rem', { lineHeight: '1' }],
-      '6xl': ['3.75rem', { lineHeight: '1' }],
-      '7xl': ['4.5rem', { lineHeight: '1' }],
-      '8xl': ['6rem', { lineHeight: '1' }],
-      '9xl': ['8rem', { lineHeight: '1' }]
+      xxs: '0.5rem',
+      xs: '0.75rem',
+      sm: '0.875rem',
+      base: '1rem',
+      lg: '1.25rem',
+      xl: '1.375rem',
+      '2xl': '1.75rem',
+      '3xl': '2.75rem',
+      '4xl': '4rem'
     },
     fontWeight: {
       thin: '100',
@@ -274,10 +311,7 @@ module.exports = {
       '-2/4': '-50%',
       '-3/4': '-75%',
       '-full': '-100%',
-      0: '0',
-      1: '0.5rem',
-      px: '1px',
-      6: '1.5rem',
+      7: '1.75rem',
       auto: 'auto',
       50: '50%'
     }),
@@ -339,17 +373,21 @@ module.exports = {
       prose: '65ch',
       ...breakpoints(theme('screens'))
     }),
-    minHeight: {
+    minHeight: (theme) => ({
       0: '0',
+      '1/2': '50%',
       full: '100%',
-      screen: '100vh'
-    },
-    minWidth: {
+      screen: '100vh',
+      ...theme('spacing')
+    }),
+    minWidth: (theme) => ({
       0: '0',
+      '1/2': '50%',
       full: '100%',
       min: 'min-content',
-      max: 'max-content'
-    },
+      max: 'max-content',
+      ...theme('spacing')
+    }),
     objectPosition: {
       bottom: 'bottom',
       center: 'center',
@@ -450,7 +488,8 @@ module.exports = {
       full: '100%',
       screen: '100vw',
       min: 'min-content',
-      max: 'max-content'
+      max: 'max-content',
+      halfScreen: '50vw'
     }),
     zIndex: {
       auto: 'auto',
@@ -459,7 +498,8 @@ module.exports = {
       20: '20',
       30: '30',
       40: '40',
-      50: '50'
+      50: '50',
+      1000: '1000'
     },
     gap: (theme) => theme('spacing'),
     gradientColorStops: (theme) => theme('colors'),
@@ -488,7 +528,8 @@ module.exports = {
       9: 'repeat(9, minmax(0, 1fr))',
       10: 'repeat(10, minmax(0, 1fr))',
       11: 'repeat(11, minmax(0, 1fr))',
-      12: 'repeat(12, minmax(0, 1fr))'
+      12: 'repeat(12, minmax(0, 1fr))',
+      'repo-header': '1fr 1fr minmax(auto, 24rem)'
     },
     gridColumn: {
       auto: 'auto',
@@ -682,7 +723,8 @@ module.exports = {
       colors: 'background-color, border-color, color, fill, stroke',
       opacity: 'opacity',
       shadow: 'box-shadow',
-      transform: 'transform'
+      transform: 'transform',
+      'max-height': 'max-height'
     },
     transitionTimingFunction: {
       DEFAULT: 'cubic-bezier(0.4, 0, 0.2, 1)',
@@ -714,7 +756,15 @@ module.exports = {
     },
     animation: {
       none: 'none',
+      fadeIn: 'fadeIn 1s',
+      fadeInFast: 'fadeIn 0.5s',
+      expand: 'expand 1s',
       spin: 'spin 1s linear infinite',
+      'first-half-spin': 'first-half-spin 0.5s',
+      'reverse-half-spin': 'reverse-half-spin 0.5s',
+      'first-quarter-spin': 'first-quarter-spin 0.5s',
+      'reverse-quarter-spin': 'reverse-quarter-spin 0.5s',
+      gradient: 'gradient 30s ease infinite',
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
@@ -724,9 +774,48 @@ module.exports = {
       'slide-right-leave-active': 'slide-right-out 0.5s ease-out'
     },
     keyframes: {
+      expand: {
+        from: {
+          height: '0px'
+        },
+        to: {
+          height: 'auto'
+        }
+      },
+      fadeIn: {
+        '0%': { opacity: '0' },
+        '100%': { opacity: '1' }
+      },
       spin: {
         from: { transform: 'rotate(0deg)' },
         to: { transform: 'rotate(360deg)' }
+      },
+      'first-quarter-spin': {
+        from: { transform: 'rotate(0deg)' },
+        to: { transform: 'rotate(90deg)' }
+      },
+      'reverse-quarter-spin': {
+        from: { transform: 'rotate(90deg)' },
+        to: { transform: 'rotate(0deg)' }
+      },
+      gradient: {
+        '0%': {
+          'background-position': '0% 50%'
+        },
+        '50%': {
+          'background-position': '100% 50%'
+        },
+        '100%': {
+          'background-position': '0% 50%'
+        }
+      },
+      'first-half-spin': {
+        from: { transform: 'rotate(0deg)' },
+        to: { transform: 'rotate(180deg)' }
+      },
+      'reverse-half-spin': {
+        from: { transform: 'rotate(180deg)' },
+        to: { transform: 'rotate(0deg)' }
       },
       ping: {
         '0%': { transform: 'scale(1)', opacity: '1' },
@@ -778,6 +867,171 @@ module.exports = {
           transform: 'translateX(100%)'
         }
       }
+    },
+    extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.vanilla.100'),
+            '[class~="lead"]': {
+              color: theme('colors.vanilla.400')
+            },
+            a: {
+              color: theme('colors.juniper'),
+              textDecoration: 'normal',
+              fontWeight: theme('fontWeight.medium')
+            },
+            'a:hover': {
+              textDecoration: 'underline'
+            },
+            strong: {
+              color: theme('colors.vanilla.100'),
+              fontWeight: theme('fontWeight.semibold')
+            },
+            'ol > li': {
+              position: 'relative'
+            },
+            'ol > li::before': {
+              content: 'counter(list-item) "."',
+              position: 'absolute',
+              fontWeight: theme('fontWeight.normal'),
+              color: theme('colors.vanilla.400')
+            },
+            ul: {
+              listStyleType: 'none',
+              listStyle: 'none'
+            },
+            'ul > li': {
+              position: 'relative'
+            },
+            'ul > li::before': {
+              ...BEFORE_LIST_ITEM(theme)
+            },
+            hr: {
+              borderColor: theme('colors.ink.100'),
+              borderTopWidth: 1
+            },
+            blockquote: {
+              fontWeight: theme('fontWeight.medium'),
+              lineHeight: theme('lineHeight.normal'),
+              fontSize: theme('fontSize.lg'),
+              fontStyle: 'normal',
+              color: 'inherit',
+              borderLeftWidth: '0.25rem',
+              borderLeftColor: theme('colors.juniper'),
+              quotes: '"\\201C""\\201D""\\2018""\\2019"'
+            },
+            'blockquote p:first-of-type::before': {
+              content: 'open-quote'
+            },
+            'blockquote p:last-of-type::after': {
+              content: 'close-quote'
+            },
+            'h1, h2, h3, h4, h5': {
+              color: theme('colors.vanilla.100')
+            },
+            'h1::before, h2::before, h3::before, h4::before, h5::before': {
+              content: '"#"',
+              marginRight: theme('spacing.2'),
+              color: theme('colors.slate')
+            },
+            h1: {
+              fontWeight: theme('fontWeight.bold')
+            },
+            h2: {
+              fontWeight: theme('fontWeight.semibold')
+            },
+            'h3, h4, h5': {
+              fontWeight: theme('fontWeight.medium')
+            },
+            'figure figcaption': {
+              color: theme('colors.vanilla.400'),
+              textAlign: 'center',
+              [`@media (min-width: ${theme('screens.sm')})`]: {
+                textAlign: 'left'
+              }
+            },
+            'pre, figure img': {
+              ...FULL_WIDTH_INACTIVE(theme)
+            },
+            'figure img': {
+              borderRadius: `${theme('spacing.1')}`
+            },
+            code: {
+              color: theme('colors.vanilla.300'),
+              fontWeight: theme('fontWeight.semibold')
+            },
+            'code::before, code::after': {
+              content: '"`"'
+            },
+            'a code': {
+              color: theme('colors.juniper')
+            },
+            pre: {
+              color: theme('colors.vanilla.400'),
+              backgroundColor: theme('colors.ink.200'),
+              overflowX: 'auto',
+              borderRadius: `${theme('spacing.1')}`
+            },
+            'pre code': {
+              backgroundColor: 'transparent',
+              borderWidth: '0',
+              borderRadius: '0',
+              padding: '0',
+              fontWeight: theme('fontWeight.normal'),
+              color: 'inherit',
+              fontSize: 'inherit',
+              fontFamily: 'inherit',
+              lineHeight: 'inherit'
+            },
+            'pre code::before, pre code::after': {
+              content: '""'
+            },
+            table: {
+              width: '100%',
+              tableLayout: 'auto',
+              textAlign: 'left'
+            },
+            thead: {
+              color: theme('colors.vanilla.400')
+            },
+            'thead th': {
+              fontWeight: theme('fontWeight.medium'),
+              verticalAlign: 'bottom'
+            },
+            'thead, tbody tr': {
+              borderBottomWidth: theme('spacing.px'),
+              borderBottomColor: theme('colors.ink.100')
+            },
+            'tbody tr:last-child': {
+              borderBottomWidth: '0'
+            },
+            'tbody td': {
+              verticalAlign: 'top'
+            }
+          }
+        },
+        sm: {
+          css: {
+            ...SMALL_SCREEN_CSS(theme)
+          }
+        },
+        lg: {
+          css: {
+            ...LARGE_SCREEN_CSS(theme)
+          }
+        },
+        xl: {
+          css: {
+            ...LARGE_SCREEN_CSS(theme)
+          }
+        },
+        '2xl': {
+          css: {
+            ...LARGE_SCREEN_CSS(theme)
+          }
+        }
+      })
     }
   },
   variantOrder: [
@@ -831,18 +1085,18 @@ module.exports = {
     ],
     borderOpacity: ['responsive', 'hover', 'focus'],
     borderRadius: ['responsive'],
-    borderStyle: ['responsive'],
-    borderWidth: ['responsive'],
+    borderStyle: ['responsive', 'last'],
+    borderWidth: ['responsive', 'last'],
     boxShadow: ['responsive', 'group-hover', 'focus-within', 'hover', 'focus'],
     boxSizing: ['responsive'],
     clear: ['responsive'],
     container: ['responsive'],
     cursor: ['responsive'],
-    display: ['responsive'],
-    divideColor: ['responsive', 'dark'],
+    display: ['responsive', 'group-hover'],
+    divideColor: ['responsive', 'dark', 'group-hover'],
     divideOpacity: ['responsive'],
     divideWidth: ['responsive'],
-    fill: ['responsive'],
+    fill: ['responsive', 'hover'],
     flex: ['responsive'],
     flexDirection: ['responsive'],
     flexGrow: ['responsive'],
@@ -855,7 +1109,7 @@ module.exports = {
     fontSmoothing: ['responsive'],
     fontStyle: ['responsive'],
     fontVariantNumeric: ['responsive'],
-    fontWeight: ['responsive'],
+    fontWeight: ['responsive', 'hover', 'focus', 'group-hover'],
     gap: ['responsive'],
     gradientColorStops: ['responsive', 'dark', 'hover', 'focus'],
     gridAutoColumns: ['responsive'],
@@ -943,6 +1197,7 @@ module.exports = {
   },
   corePlugins: {},
   plugins: [
+    require('@tailwindcss/typography'),
     plugin(function ({ addVariant }) {
       addVariant('sibling-checked', ({ container }) => {
         container.walkRules((rule) => {
@@ -979,20 +1234,112 @@ module.exports = {
       }
       addUtilities(contentUtilities, ['before', 'after'])
     }),
+    plugin(({ addUtilities, e, theme }) => {
+      const colors = theme('colors')
+      const caretColors = Object.keys(colors).reduce((acc, key) => {
+        if (typeof colors[key] === 'string') {
+          return {
+            ...acc,
+            [`.caret-${e(key)}`]: {
+              'caret-color': colors[key]
+            }
+          }
+        }
+
+        const variants = Object.keys(colors[key])
+
+        return {
+          ...acc,
+          ...variants.reduce(
+            (a, variant) => ({
+              ...a,
+              [`.caret-${e(key)}-${variant}`]: {
+                'caret-color': colors[key][variant]
+              }
+            }),
+            {}
+          )
+        }
+      }, {})
+      addUtilities(caretColors)
+    }),
     plugin(({ addUtilities, e, theme, variants }) => {
       const utilities = Object.keys(theme('gradients')).map((name) => {
         const gradient = theme('gradients')[name]
-        const type = gradient.hasOwnProperty('type') ? gradient.type : 'linear'
-        const colors = gradient.hasOwnProperty('colors') ? gradient.colors : gradient
+        let background = ''
+        if (Object.prototype.hasOwnProperty.call(gradient, 'custom')) {
+          background = gradient.custom
+        } else {
+          const type = Object.prototype.hasOwnProperty.call(gradient, 'type')
+            ? gradient.type
+            : 'linear'
+          const colors = Object.prototype.hasOwnProperty.call(gradient, 'colors')
+            ? gradient.colors
+            : gradient
+          background = `${type}-gradient(${colors.join(', ')})`
+        }
 
         return {
           [`.bg-gradient-${e(name)}`]: {
-            backgroundImage: `${type}-gradient(${colors.join(', ')})`
+            backgroundImage: background
           }
         }
       })
 
       addUtilities(utilities, variants('gradients', []))
+    }),
+    plugin(({ addUtilities, theme }) => {
+      const utilities = {
+        '.w-full-screen': {
+          ...FULL_WIDTH_ACTIVE(theme)
+        },
+        '.w-full-screen-none': {
+          ...FULL_WIDTH_INACTIVE(theme)
+        }
+      }
+
+      addUtilities(utilities, ['responsive'])
+    }),
+    plugin(({ theme, variants, e, addUtilities }) => {
+      const backdropFilterUtilities = Object.keys(theme('backdropFilter')).map((type) => {
+        const backdropFilter = theme('backdropFilter')[type]
+        return {
+          [`.backdrop-${e(type)}`]: {
+            backdropFilter: backdropFilter
+          }
+        }
+      })
+
+      addUtilities(backdropFilterUtilities, variants('backdropFilter'))
+    }),
+    plugin(({ addUtilities, theme }) => {
+      const individualBorderColors = []
+      const traverseObject = (obj, prevKey) => {
+        Object.keys(obj).forEach((key) => {
+          let colorName = `${prevKey}${prevKey && '-'}${key}`
+          individualBorderColors.push({
+            [`.border-b-${colorName}`]: {
+              borderBottomColor: obj[key]
+            },
+            [`.border-t-${colorName}`]: {
+              borderTopColor: obj[key]
+            },
+            [`.border-l-${colorName}`]: {
+              borderLeftColor: obj[key]
+            },
+            [`.border-r-${colorName}`]: {
+              borderRightColor: obj[key]
+            }
+          })
+
+          if (typeof obj[key] === 'object') {
+            traverseObject(obj[key], key)
+          }
+        })
+      }
+      traverseObject(theme('colors'), '')
+
+      addUtilities(individualBorderColors, ['responsive', 'before', 'after'])
     })
   ]
 }

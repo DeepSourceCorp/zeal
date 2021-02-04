@@ -1,7 +1,5 @@
 import ZButton from './ZButton.vue'
 
-import { action } from '@storybook/addon-actions'
-
 import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'
@@ -47,6 +45,25 @@ export const States = () => ({
         <z-button color="primary" disabled>Disabled Button</z-button>
         <z-button color="secondary" active>Active Secondary Button</z-button>
         <z-button color="secondary" disabled>Disabled Secondary Button</z-button>
+    </div>`
+})
+
+export const IconButton = () => ({
+  components: { ZButton },
+  template: `<div>
+        <z-button color="primary" 
+                  icon="plus"
+                  iconColor="ink-400"></z-button>
+    </div>`
+})
+
+export const SmallIconButton = () => ({
+  components: { ZButton },
+  template: `<div>
+        <z-button color="primary" 
+                  icon="plus"
+                  iconColor="ink-400"
+                  iconSize="small"></z-button>
     </div>`
 })
 

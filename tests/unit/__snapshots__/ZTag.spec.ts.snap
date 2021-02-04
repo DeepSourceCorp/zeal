@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tags renders a default tag 1`] = `
+<div class="bg-ink-300 inline-flex items-center justify-evenly text-vanilla-100 rounded-full space-x-2 py-1 px-4 text-sm">
+  <!---->
+  <div>Tag</div>
+  <!---->
+</div>
+`;
+
+exports[`Tags renders with left icon 1`] = `
+<div class="bg-ink-300 inline-flex items-center justify-evenly text-vanilla-100 rounded-full space-x-2 py-1 px-4 text-sm">
+  <z-icon-stub icon="star" size="small" position="" color="vanilla-400"></z-icon-stub>
+  <div>Tag</div>
+  <!---->
+</div>
+`;
+
+exports[`Tags renders with right icon 1`] = `
+<div class="bg-ink-300 inline-flex items-center justify-evenly text-vanilla-100 rounded-full space-x-2 py-1 px-4 text-sm">
+  <!---->
+  <div>Tag</div>
+  <z-icon-stub icon="star" size="small" position="" color="vanilla-400"></z-icon-stub>
+</div>
+`;
+
+exports[`Tags renders with size 1`] = `
+<div class="bg-ink-300 inline-flex items-center justify-evenly text-vanilla-100 rounded-full space-x-2 py-1 px-4 text-sm">
+  <z-icon-stub icon="star" size="small" position="" color="vanilla-400"></z-icon-stub>
+  <div>Tag</div>
+  <!---->
+</div>
+`;
+
+exports[`Tags renders with size 2`] = `
+<div class="bg-ink-300 inline-flex items-center justify-evenly text-vanilla-100 rounded-full space-x-2 py-1 px-4 text-lg">
+  <z-icon-stub icon="star" size="large" position="" color="vanilla-400"></z-icon-stub>
+  <div>Tag</div>
+  <!---->
+</div>
+`;
+
+exports[`Tags renders with state 1`] = `
+<div class="bg-ink-300 inline-flex items-center justify-evenly text-vanilla-100 rounded-full space-x-2 py-1 px-4 text-sm border-2 border-solid border-juniper">
+  <!---->
+  <div>Tag</div>
+  <!---->
+</div>
+`;
+
+exports[`Tags renders with state 2`] = `
+<div class="bg-ink-300 inline-flex items-center justify-evenly text-vanilla-100 rounded-full space-x-2 py-1 px-4 text-sm border-2 border-solid border-cherry">
+  <!---->
+  <div>Tag</div>
+  <!---->
+</div>
+`;
+
+exports[`Tags renders with state 3`] = `
+<div class="bg-ink-300 inline-flex items-center justify-evenly text-vanilla-100 rounded-full space-x-2 py-1 px-4 text-sm border-2 border-solid border-honey">
+  <!---->
+  <div>Tag</div>
+  <!---->
+</div>
+`;
+
+exports[`Tags renders with state 4`] = `
+<div class="bg-ink-300 inline-flex items-center justify-evenly text-vanilla-100 rounded-full space-x-2 py-1 px-4 text-sm border-2 border-solid border-aqua">
+  <!---->
+  <div>Tag</div>
+  <!---->
+</div>
+`;
+
+exports[`Tags renders with state 5`] = `
+<div class="bg-ink-300 inline-flex items-center justify-evenly text-vanilla-100 rounded-full space-x-2 py-1 px-4 text-sm">
+  <!---->
+  <div>Tag</div>
+  <!---->
+</div>
+`;

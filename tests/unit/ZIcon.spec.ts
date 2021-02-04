@@ -1,6 +1,6 @@
 import ZIcon from '../../src/components/ZIcon'
 
-import { createLocalVue, mount, Wrapper, shallowMount } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 
 describe('ZIcon', () => {
   it('renders an empty icon', () => {
@@ -15,18 +15,17 @@ describe('ZIcon', () => {
         icon: 'github'
       }
     })
-    expect(wrapper.classes()).toContain(`z-icon--github`)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it.only('renders a small icon when size prop is passed', () => {
+  it('renders a small icon when size prop is passed', () => {
     const wrapper = shallowMount(ZIcon, {
       propsData: {
         size: 'small',
         icon: 'github'
       }
     })
-    expect(wrapper.classes()).toContain(`z-icon--small`)
+    expect(wrapper.classes()).toContain(`w-4`)
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

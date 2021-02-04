@@ -14,7 +14,7 @@
     <span
       data-before="✓"
       data-content=""
-      class="z-input__checkbox--checkmark before:content-before text-vanilla-100 text-center text-lg sibling-checked:bg-juniper sibling-checked:border-juniper grid place-items-center absolute left-0 h-5 w-5 rounded-sm border border-slate border-solid bg-transparent cursor-pointer group-hover:border-juniper"
+      class="z-input__checkbox--checkmark before:content-before text-transparent text-center text-lg sibling-checked:text-vanilla-100 sibling-checked:bg-juniper sibling-checked:border-juniper grid place-items-center absolute left-0 h-5 w-5 rounded-sm border border-slate border-solid bg-transparent cursor-pointer group-hover:border-juniper"
       :class="[
         `${
           disabled &&
@@ -22,7 +22,11 @@
         }`
       ]"
     ></span>
-    <span class="z-input__checkbox--text ml-2" :class="[`${disabled && `text-slate`}`]">
+    <span
+      v-if="label"
+      class="z-input__checkbox--text ml-2"
+      :class="[`${disabled && `text-slate`}`]"
+    >
       {{ label }}
     </span>
   </label>
@@ -69,10 +73,10 @@ export default {
   },
   methods: {
     updateInput(event) {
-      let isChecked = event.target.checked
+      const isChecked = event.target.checked
 
       if (this.modelValue instanceof Array) {
-        let newValue = [...this.modelValue]
+        const newValue = [...this.modelValue]
 
         if (isChecked) {
           newValue.push(this.value)

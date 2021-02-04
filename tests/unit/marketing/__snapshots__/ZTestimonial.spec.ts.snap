@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testimonial component renders a testimonial card when the component is mounted 1`] = `
+<div class="rounded-sm md:rounded-md overflow-hidden transition-all shadow flex flex-col justify-around h-full px-5 py-4 md:px-10 md:py-8">
+  <!----> <span class="flex-1"><!----> <!----></span>
+</div>
+`;
+
+exports[`Testimonial component renders slots only when they are available 1`] = `
+<div class="rounded-sm md:rounded-md overflow-hidden transition-all shadow flex flex-col justify-around h-full px-5 py-4 md:px-10 md:py-8">
+  <!----> <span class="flex-1"><!----> <!----></span>
+</div>
+`;

@@ -1,6 +1,6 @@
-import icons from '../icons/icons.json'
+import Icons from '../../icons/icons.json'
 
-interface icons {
+interface Icons {
   [key: string]: any
 }
 
@@ -13,8 +13,8 @@ class Icon {
   }
 }
 
-export default Object.keys(icons)
-  .map((key) => new Icon(key, icons[key]))
+export default Object.keys(Icons)
+  .map((key) => new Icon(key, Icons[key]))
   .reduce((object, icon) => {
     object[icon.name] = icon
     return object

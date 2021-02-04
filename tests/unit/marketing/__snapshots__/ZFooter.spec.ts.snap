@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ZFooterList component renders a ZFooter when the component is mounted 1`] = `
+<footer class="w-full-screen flex flex-col justify-between bg-transparent text-vanilla-100 border-t border-ink-200 min-h-102 pb-10 pt-20">
+  <div class="md:flex items-start w-screen lg:mx-auto lg:max-w-6xl">
+    <!----> <span class="hidden md:flex items-start w-full"><!----> <!----></span> <span class="block md:hidden w-full"><!----> <!----></span>
+  </div>
+  <div class="flex flex-col-reverse md:flex-row items-center justify-between w-screen md:mx-auto text-vanilla-400 text-sm lg:max-w-6xl px-6 md:px-4 lg:px-6">
+    <!---->
+    <!---->
+  </div>
+</footer>
+`;
+
+exports[`ZFooterList component renders a ZFooter with proper container size 1`] = `
+<footer class="w-full-screen flex flex-col justify-between bg-transparent text-vanilla-100 border-t border-ink-200 min-h-102 pb-10 pt-20">
+  <div class="md:flex items-start w-screen lg:mx-auto lg:max-w-6xl">
+    <!----> <span class="hidden md:flex items-start w-full"><!----> <!----></span> <span class="block md:hidden w-full"><!----> <!----></span>
+  </div>
+  <div class="flex flex-col-reverse md:flex-row items-center justify-between w-screen md:mx-auto text-vanilla-400 text-sm lg:max-w-6xl px-6 md:px-4 lg:px-6">
+    <!---->
+    <!---->
+  </div>
+</footer>
+`;

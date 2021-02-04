@@ -1,12 +1,13 @@
 <template>
   <svg
-    class="stroke-2 text-vanilla-400"
+    class="stroke-2"
     :class="[
       'z-icon',
       `${getSizeStyle}`,
       `${icon && `z-icon--${icon}`}`,
       `${position && `${getPositionStyle}`}`,
-      `${customStyle}`
+      `${customStyle}`,
+      `text-${color}`
     ]"
     viewBox="0 0 24 24"
     v-html="getIcon(icon)"
@@ -16,7 +17,7 @@
 
 <script>
 import feather from 'feather-icons'
-import customIcons from '../../utils/icon-helper'
+import customIcons from '../../helpers/components/icon'
 
 export default {
   name: 'ZIcon',
@@ -32,6 +33,10 @@ export default {
     position: {
       default: '',
       type: String
+    },
+    color: {
+      type: String,
+      default: 'vanilla-400'
     }
   },
   data() {
@@ -54,9 +59,9 @@ export default {
     },
     getPositionStyle() {
       if (this.position === 'left') {
-        return 'absolute left-1 w-4'
+        return 'absolute left-2 w-4'
       } else if (this.position === 'right') {
-        return 'absolute right-1 w-4'
+        return 'absolute right-2 w-4'
       }
       return ''
     }

@@ -45,7 +45,7 @@
     "tests/**/*.ts",
     "tests/**/*.tsx",
     "src/utils/build-icons.js",
-    "src/utils/icon-helper.ts"
+    "src/helpers/components/icon.ts"
   ],
   // "include": ["src/*"],
   "exclude": ["**/*.spec.ts", "**/*.spec.js", "node_modules"]
