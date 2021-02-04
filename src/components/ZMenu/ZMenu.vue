@@ -17,7 +17,7 @@
         :class="`${directionClass}`"
       >
         <div
-          class="rounded-t-lg bg-ink-200 sm:rounded-sm"
+          class="rounded-t-lg bg-ink-200 sm:rounded-sm py-2 sm:py-0"
           :class="`${sizeClass}`"
           v-outside-click="close"
         >
