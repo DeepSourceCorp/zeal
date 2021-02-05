@@ -10,6 +10,8 @@ module.exports = {
   purge: [],
   prefix: '',
   important: false,
+  presets: [],
+  darkMode: false, // or 'media' or 'class',
   separator: ':',
   theme: {
     screens: {
@@ -123,6 +125,17 @@ module.exports = {
       102: '32rem'
     },
     backgroundColor: (theme) => theme('colors'),
+    backgroundImage: {
+      none: 'none',
+      'gradient-to-t': 'linear-gradient(to top, var(--tw-gradient-stops))',
+      'gradient-to-tr': 'linear-gradient(to top right, var(--tw-gradient-stops))',
+      'gradient-to-r': 'linear-gradient(to right, var(--tw-gradient-stops))',
+      'gradient-to-br': 'linear-gradient(to bottom right, var(--tw-gradient-stops))',
+      'gradient-to-b': 'linear-gradient(to bottom, var(--tw-gradient-stops))',
+      'gradient-to-bl': 'linear-gradient(to bottom left, var(--tw-gradient-stops))',
+      'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
+      'gradient-to-tl': 'linear-gradient(to top left, var(--tw-gradient-stops))'
+    },
     backgroundOpacity: (theme) => theme('opacity'),
     backgroundPosition: {
       bottom: 'bottom',
@@ -156,7 +169,7 @@ module.exports = {
     },
     borderWidth: {
       DEFAULT: '1px',
-      0: '0',
+      0: '0px',
       2: '2px',
       4: '4px',
       8: '8px'
@@ -173,7 +186,12 @@ module.exports = {
       outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
       none: 'none',
       white: '0px 0px 2px 0px rgba(255,255,255,1)',
-      black: '1px 4px 20px rgba(0, 0, 0, 0.44)'
+      black: '1px 4px 20px rgba(0, 0, 0, 0.44)',
+      z1: '2px 2px 6px 0px #050D21 20%',
+      z2: '4px 10px 15px 2px #050D21 20%',
+      z3: '6px 15px 20px 5px #050D21 30%',
+      'inner-z1': '2px 2px 6px 2px #050D21 20% inset',
+      'inner-z2': '-1px -1px 12px 0px #9A9A9A 10% inset'
     },
     container: {
       padding: {
@@ -216,6 +234,7 @@ module.exports = {
     fontFamily: {
       sans: [
         'Inter',
+        'ui-sans-serif',
         'system-ui',
         '-apple-system',
         'BlinkMacSystemFont',
@@ -231,7 +250,15 @@ module.exports = {
         '"Noto Color Emoji"'
       ],
       serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
-      mono: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace']
+      mono: [
+        'ui-monospace',
+        'Menlo',
+        'Monaco',
+        'Consolas',
+        '"Liberation Mono"',
+        '"Courier New"',
+        'monospace'
+      ]
     },
     fontSize: {
       xxs: '0.5rem',
@@ -245,20 +272,32 @@ module.exports = {
       '4xl': '4rem'
     },
     fontWeight: {
+      thin: '100',
+      extralight: '200',
       normal: '400',
       medium: '500',
       semibold: '600',
-      bold: '700'
+      bold: '700',
+      black: '900'
     },
     height: (theme) => ({
       auto: 'auto',
       ...theme('spacing'),
+      '1/2': '50%',
+      '1/3': '33.333333%',
+      '2/3': '66.666667%',
       '1/4': '25%',
+      '2/4': '50%',
       '3/4': '75%',
       '1/5': '20%',
       '2/5': '40%',
+      '3/5': '60%',
       '4/5': '80%',
+      '1/6': '16.666667%',
       '2/6': '33.333333%',
+      '3/6': '50%',
+      '4/6': '66.666667%',
+      '5/6': '83.333333%',
       full: '100%',
       screen: '100vh'
     }),
@@ -286,7 +325,7 @@ module.exports = {
     letterSpacing: {
       tighter: '-0.05em',
       tight: '-0.025em',
-      normal: '0',
+      normal: '0em',
       wide: '0.025em',
       wider: '0.05em',
       widest: '0.1em'
@@ -338,6 +377,9 @@ module.exports = {
       '6xl': '72rem',
       '7xl': '80rem',
       full: '100%',
+      min: 'min-content',
+      max: 'max-content',
+      prose: '65ch',
       ...breakpoints(theme('screens'))
     }),
     minHeight: (theme) => ({
@@ -369,10 +411,18 @@ module.exports = {
     opacity: {
       0: '0',
       5: '0.05',
+      10: '0.1',
+      20: '0.2',
       25: '0.25',
+      30: '0.3',
+      40: '0.4',
       50: '0.5',
       60: '0.6',
+      70: '0.7',
       75: '0.75',
+      80: '0.8',
+      90: '0.9',
+      95: '0.95',
       100: '1'
     },
     order: {
@@ -391,6 +441,11 @@ module.exports = {
       10: '10',
       11: '11',
       12: '12'
+    },
+    outline: {
+      none: ['2px solid transparent', '2px'],
+      white: ['2px dotted white', '2px'],
+      black: ['2px dotted black', '2px']
     },
     padding: (theme) => theme('spacing'),
     placeholderColor: (theme) => theme('colors'),
@@ -440,6 +495,8 @@ module.exports = {
       '11/12': '91.666667%',
       full: '100%',
       screen: '100vw',
+      min: 'min-content',
+      max: 'max-content',
       halfScreen: '50vw'
     }),
     zIndex: {
@@ -453,6 +510,19 @@ module.exports = {
       1000: '1000'
     },
     gap: (theme) => theme('spacing'),
+    gradientColorStops: (theme) => theme('colors'),
+    gridAutoColumns: {
+      auto: 'auto',
+      min: 'min-content',
+      max: 'max-content',
+      fr: 'minmax(0, 1fr)'
+    },
+    gridAutoRows: {
+      auto: 'auto',
+      min: 'min-content',
+      max: 'max-content',
+      fr: 'minmax(0, 1fr)'
+    },
     gridTemplateColumns: {
       none: 'none',
       1: 'repeat(1, minmax(0, 1fr))',
@@ -482,7 +552,8 @@ module.exports = {
       'span-9': 'span 9 / span 9',
       'span-10': 'span 10 / span 10',
       'span-11': 'span 11 / span 11',
-      'span-12': 'span 12 / span 12'
+      'span-12': 'span 12 / span 12',
+      'span-full': '1 / -1'
     },
     gridColumnStart: {
       auto: 'auto',
@@ -532,7 +603,8 @@ module.exports = {
       'span-3': 'span 3 / span 3',
       'span-4': 'span 4 / span 4',
       'span-5': 'span 5 / span 5',
-      'span-6': 'span 6 / span 6'
+      'span-6': 'span 6 / span 6',
+      'span-full': '1 / -1'
     },
     gridRowStart: {
       auto: 'auto',
@@ -565,6 +637,30 @@ module.exports = {
       left: 'left',
       'top-left': 'top left'
     },
+    ringColor: (theme) => ({
+      DEFAULT: theme('colors.blue.500', '#3b82f6'),
+      ...theme('colors')
+    }),
+    ringOffsetColor: (theme) => theme('colors'),
+    ringOffsetWidth: {
+      0: '0px',
+      1: '1px',
+      2: '2px',
+      4: '4px',
+      8: '8px'
+    },
+    ringOpacity: (theme) => ({
+      DEFAULT: '0.5',
+      ...theme('opacity')
+    }),
+    ringWidth: {
+      DEFAULT: '3px',
+      0: '0px',
+      1: '1px',
+      2: '2px',
+      4: '4px',
+      8: '8px'
+    },
     scale: {
       0: '0',
       50: '.5',
@@ -581,7 +677,17 @@ module.exports = {
       '-180': '-180deg',
       '-90': '-90deg',
       '-45': '-45deg',
-      0: '0',
+      '-12': '-12deg',
+      '-6': '-6deg',
+      '-3': '-3deg',
+      '-2': '-2deg',
+      '-1': '-1deg',
+      0: '0deg',
+      1: '1deg',
+      2: '2deg',
+      3: '3deg',
+      6: '6deg',
+      12: '12deg',
       45: '45deg',
       90: '90deg',
       180: '180deg'
@@ -589,16 +695,31 @@ module.exports = {
     translate: (theme, { negative }) => ({
       ...theme('spacing'),
       ...negative(theme('spacing')),
+      '1/3': '33.333333%',
+      '2/3': '66.666667%',
+      '1/4': '25%',
+      '2/4': '50%',
+      '3/4': '75%',
       '-full': '-100%',
       '-1/2': '-50%',
       '1/2': '50%',
+      '-1/2': '-50%',
+      '-1/3': '-33.333333%',
+      '-2/3': '-66.666667%',
+      '-1/4': '-25%',
+      '-2/4': '-50%',
+      '-3/4': '-75%',
       full: '100%'
     }),
     skew: {
       '-12': '-12deg',
       '-6': '-6deg',
       '-3': '-3deg',
-      0: '0',
+      '-2': '-2deg',
+      '-1': '-1deg',
+      0: '0deg',
+      1: '1deg',
+      2: '2deg',
       3: '3deg',
       6: '6deg',
       12: '12deg'
@@ -615,12 +736,14 @@ module.exports = {
       'max-height': 'max-height'
     },
     transitionTimingFunction: {
+      DEFAULT: 'cubic-bezier(0.4, 0, 0.2, 1)',
       linear: 'linear',
       in: 'cubic-bezier(0.4, 0, 1, 1)',
       out: 'cubic-bezier(0, 0, 0.2, 1)',
       'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)'
     },
     transitionDuration: {
+      DEFAULT: '150ms',
       75: '75ms',
       100: '100ms',
       150: '150ms',
@@ -920,30 +1043,48 @@ module.exports = {
       })
     }
   },
+  variantOrder: [
+    'first',
+    'last',
+    'odd',
+    'even',
+    'visited',
+    'checked',
+    'group-hover',
+    'group-focus',
+    'focus-within',
+    'hover',
+    'focus',
+    'focus-visible',
+    'active',
+    'disabled'
+  ],
   variants: {
-    accessibility: ['responsive', 'focus'],
+    accessibility: ['responsive', 'focus', 'focus-within'],
     alignContent: ['responsive'],
     alignItems: ['responsive'],
     alignSelf: ['responsive'],
     appearance: ['responsive'],
+    backgroundClip: ['responsive'],
     backgroundAttachment: ['responsive'],
-    backgroundColor: ['responsive', 'hover', 'focus', 'sibling-checked', 'group-hover'],
-    backgroundOpacity: ['responsive', 'hover', 'focus'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'sibling-checked', 'group-hover', 'dark', 'focus-within'],
+    backgroundImage: ['responsive'],
+    backgroundOpacity: ['responsive', 'hover', 'focus', 'group-hover', 'focus-within'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: ['responsive'],
-    borderColor: ['responsive', 'hover', 'focus', 'group-hover', 'sibling-checked'],
+    borderColor: ['responsive', 'hover', 'focus', 'group-hover', 'sibling-checked', 'dark', 'focus-within'],
     borderOpacity: ['responsive', 'hover', 'focus'],
     borderRadius: ['responsive'],
     borderStyle: ['responsive', 'last'],
     borderWidth: ['responsive', 'even', 'last'],
-    boxShadow: ['responsive', 'hover', 'focus'],
+    boxShadow: ['responsive', 'hover', 'focus', 'group-hover', 'focus-within'],
     boxSizing: ['responsive'],
     container: ['responsive'],
     cursor: ['responsive'],
     display: ['responsive', 'group-hover'],
-    divideColor: ['responsive', 'group-hover'],
+    divideColor: ['responsive', 'group-hover', 'dark'],
     divideOpacity: ['responsive'],
     divideWidth: ['responsive'],
     fill: ['responsive', 'hover'],
@@ -959,9 +1100,12 @@ module.exports = {
     fontSmoothing: ['responsive'],
     fontStyle: ['responsive'],
     fontWeight: ['responsive', 'hover', 'focus', 'group-hover'],
+    fontVariantNumeric: ['responsive'],
     height: ['responsive'],
     inset: ['responsive'],
     justifyContent: ['responsive'],
+    justifyItems: ['responsive'],
+    justifySelf: ['responsive'],
     letterSpacing: ['responsive'],
     lineHeight: ['responsive'],
     listStylePosition: ['responsive'],
@@ -973,25 +1117,33 @@ module.exports = {
     minWidth: ['responsive'],
     objectFit: ['responsive'],
     objectPosition: ['responsive'],
-    opacity: ['responsive', 'hover', 'focus', 'disabled'],
+    opacity: ['responsive', 'hover', 'focus', 'disabled', 'group-hover', 'focus-within'],
     order: ['responsive'],
-    outline: ['responsive', 'focus'],
+    outline: ['responsive', 'focus', 'focus-within'],
     overflow: ['responsive'],
     overscrollBehavior: ['responsive'],
     padding: ['responsive'],
+    placeContent: ['responsive'],
+    placeItems: ['responsive'],
+    placeSelf: ['responsive'],
     placeholderColor: ['responsive', 'focus'],
     placeholderOpacity: ['responsive', 'focus'],
     pointerEvents: ['responsive'],
     position: ['responsive'],
     resize: ['responsive'],
+    ringColor: ['responsive', 'dark', 'focus-within', 'focus'],
+    ringOffsetColor: ['responsive', 'dark', 'focus-within', 'focus'],
+    ringOffsetWidth: ['responsive', 'focus-within', 'focus'],
+    ringOpacity: ['responsive', 'focus-within', 'focus'],
+    ringWidth: ['responsive', 'focus-within', 'focus'],
     space: ['responsive'],
     stroke: ['responsive'],
     strokeWidth: ['responsive'],
     tableLayout: ['responsive'],
     textAlign: ['responsive'],
-    textColor: ['responsive', 'group-hover', 'hover', 'focus', 'sibling-checked'],
-    textOpacity: ['responsive', 'hover', 'focus'],
-    textDecoration: ['responsive', 'hover', 'focus'],
+    textColor: ['responsive', 'group-hover', 'hover', 'focus', 'sibling-checked', 'focus-within', 'dark'],
+    textOpacity: ['responsive', 'hover', 'focus','group-hover', 'focus-within'],
+    textDecoration: ['responsive', 'hover', 'focus', 'group-hover', 'focus-within'],
     textTransform: ['responsive'],
     userSelect: ['responsive'],
     verticalAlign: ['responsive'],
@@ -1002,7 +1154,10 @@ module.exports = {
     textOverflow: ['responsive'],
     zIndex: ['responsive'],
     gap: ['responsive'],
+    gradientColorStops: ['responsive', 'dark', 'hover', 'focus'],
+    gridAutoColumns: ['responsive'],
     gridAutoFlow: ['responsive'],
+    gridAutoRows: ['responsive'],
     gridTemplateColumns: ['responsive'],
     gridColumn: ['responsive'],
     gridColumnStart: ['responsive'],
