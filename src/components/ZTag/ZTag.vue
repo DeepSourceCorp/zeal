@@ -44,7 +44,7 @@ export default Vue.extend({
       type: String
     },
     textSize: {
-      default: 'sm', 
+      default: 'sm',
       type: String
     },
     spacing: {
