@@ -11,8 +11,6 @@ import ZCard from './components/ZCard/index'
 import ZCheckbox from './components/ZCheckbox/index'
 import ZStepper from './components/ZStepper/index'
 import ZStep from './components/ZStep/index'
-import ZContentGuide from './components/marketing/layouts/ZContentGuide/index'
-import ZPageLabel from './components/marketing/ZPageLabel/index'
 import ZExpandable from './components/ZExpandable/index'
 import ZInput from './components/ZInput/index'
 import ZRadio from './components/ZRadio/index'
@@ -37,6 +35,30 @@ import ZSidebarMenu from './components/ZSidebarMenu/index'
 import ZSidebarItem from './components/ZSidebarItem/index'
 import ZBadge from './components/ZBadge/index'
 import ZPagination from './components/ZPagination/index'
+
+// Marketing components
+import ZFooter from './components/marketing/ZFooter'
+import ZFooterList from './components/marketing/ZFooterList'
+import ZFooterListItem from './components/marketing/ZFooterListItem'
+import ZNav from './components/marketing/ZNav'
+import ZNavItem from './components/marketing/ZNavItem'
+import ZNavList from './components/marketing/ZNavList'
+import ZNavListItem from './components/marketing/ZNavListItem'
+import ZNavMenu from './components/marketing/ZNavMenu'
+import ZRelatedArticle from './components/marketing/ZRelatedArticle'
+import ZScrollSpy from './components/marketing/ZScrollSpy'
+import ZTestimonial from './components/marketing/ZTestimonial'
+import ZInputCta from './components/marketing/ZInputCta'
+import ZPageLabel from './components/marketing/ZPageLabel/index'
+
+// Marketing sections
+import ZCustomers from './components/marketing/sections/ZCustomers'
+import ZTestimonials from './components/marketing/sections/ZTestimonials'
+import ZRelatedArticles from './components/marketing/sections/ZRelatedArticles'
+import ZHero from './components/marketing/sections/ZHero'
+
+// Marketing layouts
+import ZContentGuide from './components/marketing/layouts/ZContentGuide/index'
 
 const components = [
   ZButton,
@@ -73,7 +95,23 @@ const components = [
   ZSidebarItem,
   ZRadioButton,
   ZBadge,
-  ZPagination
+  ZPagination,
+  ZFooter,
+  ZFooterList,
+  ZFooterListItem,
+  ZNav,
+  ZNavItem,
+  ZNavList,
+  ZNavListItem,
+  ZNavMenu,
+  ZRelatedArticle,
+  ZScrollSpy,
+  ZTestimonial,
+  ZInputCta,
+  ZCustomers,
+  ZTestimonials,
+  ZRelatedArticles,
+  ZHero
 ]
 
 const install = (Vue: any) => {
@@ -117,7 +155,23 @@ export default {
   ZSidebarItem,
   ZRadioButton,
   ZBadge,
-  ZPagination
+  ZPagination,
+  ZFooter,
+  ZFooterList,
+  ZFooterListItem,
+  ZNav,
+  ZNavItem,
+  ZNavList,
+  ZNavListItem,
+  ZNavMenu,
+  ZRelatedArticle,
+  ZScrollSpy,
+  ZTestimonial,
+  ZInputCta,
+  ZCustomers,
+  ZTestimonials,
+  ZRelatedArticles,
+  ZHero
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -129,8 +183,6 @@ export { default as ZCard } from './components/ZCard/index'
 export { default as ZCheckbox } from './components/ZCheckbox/index'
 export { default as ZStepper } from './components/ZStepper/index'
 export { default as ZStep } from './components/ZStep/index'
-export { default as ZContentGuide } from './components/marketing/layouts/ZContentGuide/index'
-export { default as ZPageLabel } from './components/marketing/ZPageLabel/index'
 export { default as ZExpandable } from './components/ZExpandable/index'
 export { default as ZInput } from './components/ZInput/index'
 export { default as ZRadio } from './components/ZRadio/index'
@@ -155,3 +207,21 @@ export { default as ZSidebarMenu } from './components/ZSidebarMenu/index'
 export { default as ZSidebarItem } from './components/ZSidebarItem/index'
 export { default as ZBadge } from './components/ZBadge/index'
 export { default as ZPagination } from './components/ZPagination/index'
+export { default as ZFooter } from './components/marketing/ZFooter/index'
+export { default as ZFooterList } from './components/marketing/ZFooterList/index'
+export { default as ZFooterListItem } from './components/marketing/ZFooterListItem/index'
+export { default as ZNav } from './components/marketing/ZNav/index'
+export { default as ZNavItem } from './components/marketing/ZNavItem/index'
+export { default as ZNavList } from './components/marketing/ZNavList/index'
+export { default as ZNavListItem } from './components/marketing/ZNavListItem/index'
+export { default as ZNavMenu } from './components/marketing/ZNavMenu/index'
+export { default as ZRelatedArticle } from './components/marketing/ZRelatedArticle/index'
+export { default as ZScrollSpy } from './components/marketing/ZScrollSpy/index'
+export { default as ZTestimonial } from './components/marketing/ZTestimonial/index'
+export { default as ZInputCta } from './components/marketing/ZInputCta/index'
+export { default as ZCustomers } from './components/marketing/sections/ZCustomers/index'
+export { default as ZTestimonials } from './components/marketing/sections/ZTestimonials/index'
+export { default as ZRelatedArticles } from './components/marketing/sections/ZRelatedArticles/index'
+export { default as ZHero } from './components/marketing/sections/ZHero/index'
+export { default as ZContentGuide } from './components/marketing/layouts/ZContentGuide/index'
+export { default as ZPageLabel } from './components/marketing/ZPageLabel/index'
