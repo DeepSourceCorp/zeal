@@ -1,3 +1,3 @@
-import ZHero from './ZHero.vue'
+import ZIssueDisplay from './ZIssueDisplay.vue'
 
-export default ZHero
+export default ZIssueDisplay
