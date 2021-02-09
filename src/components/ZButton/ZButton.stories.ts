@@ -51,7 +51,7 @@ export const States = () => ({
 export const IconButton = () => ({
   components: { ZButton },
   template: `<div>
-        <z-button color="primary" 
+        <z-button color="primary"
                   icon="plus"
                   iconColor="ink-400"></z-button>
     </div>`
@@ -60,7 +60,7 @@ export const IconButton = () => ({
 export const SmallIconButton = () => ({
   components: { ZButton },
   template: `<div>
-        <z-button color="primary" 
+        <z-button color="primary"
                   icon="plus"
                   iconColor="ink-400"
                   iconSize="small"></z-button>
@@ -77,20 +77,29 @@ export const FullWidthButton = () => ({
 export const DefaultLinkButton = () => ({
   components: { ZButton },
   template: `<div>
-        <z-button color="link" type="link" to="https://deepsource.io/">Link Button</z-button>
+        <z-button color="link" type="link" to="#">Link Button</z-button>
     </div>`
 })
 
 export const ActiveLinkButton = () => ({
   components: { ZButton },
   template: `<div>
-        <z-button color="link" type="link" to="https://deepsource.io/" active>Link Button</z-button>
+        <z-button color="link" type="link" to="#" active>Link Button</z-button>
     </div>`
 })
 
 export const DisabledLinkButton = () => ({
   components: { ZButton },
   template: `<div>
-        <z-button color="link" type="link" to="https://deepsource.io/" disabled>Link Button</z-button>
+        <z-button color="link" type="link" to="#" disabled>Link Button</z-button>
+    </div>`
+})
+
+export const GhostButton = () => ({
+  components: { ZButton },
+  template: `<div class="flex flex-row space-x-2 items-center">
+        <z-button color="ghost" type="link" to="#" class="text-juniper">Ghost Link</z-button>
+        <z-button color="ghost" type="button" class="text-vanilla-100">Ghost Button</z-button>
+        <z-button color="ghost" icon="plus" iconColor="vanilla-100"></z-button>
     </div>`
 })
