@@ -15,6 +15,11 @@ export default {
 
 export const InputWithCustomPlaceholder = () => ({
   components: { ZInput },
+  data() {
+    return {
+      name: ''
+    }
+  },
   template: `<div class='padded-container'>
         <div class="input-container">
             <z-input v-model="name"
@@ -40,6 +45,11 @@ export const DisabledInput = () => ({
 
 export const InputWithDifferentSizes = () => ({
   components: { ZInput },
+  data() {
+    return {
+      name: ''
+    }
+  },
   template: `<div class='padded-container'>
         <div class="input-container space-y-2">
             <z-input v-model="name" text-size="xs"></z-input>
@@ -52,6 +62,11 @@ export const InputWithDifferentSizes = () => ({
 
 export const InputBorderAndBackground = () => ({
   components: { ZInput },
+  data() {
+    return {
+      name: ''
+    }
+  },
   template: `<div class='padded-container'>
         <div class="input-container">
             <z-input v-model="name" :showBorder="false" backgroundColor="ink-200"></z-input>
@@ -61,6 +76,11 @@ export const InputBorderAndBackground = () => ({
 
 export const StandAloneInput = () => ({
   components: { ZInput },
+  data() {
+    return {
+      name: ''
+    }
+  },
   template: `<div class='padded-container'>
         <div class="input-container">
             <z-input v-model="name"></z-input>
@@ -70,6 +90,11 @@ export const StandAloneInput = () => ({
 
 export const InputWithLeftIcon = () => ({
   components: { ZInput, ZInputGroup, ZIcon },
+  data() {
+    return {
+      name: ''
+    }
+  },
   template: `<div class='padded-container'>
         <div class="input-container">
           <z-input v-model="name">
@@ -83,6 +108,11 @@ export const InputWithLeftIcon = () => ({
 
 export const InputWithRightIcon = () => ({
   components: { ZInput, ZInputGroup, ZIcon },
+  data() {
+    return {
+      name: ''
+    }
+  },
   template: `<div class='padded-container'>
         <div class="input-container">
           <z-input v-model="name">
@@ -96,6 +126,11 @@ export const InputWithRightIcon = () => ({
 
 export const InputWithIconsOnEitherSides = () => ({
   components: { ZInput, ZInputGroup, ZIcon },
+  data() {
+    return {
+      name: ''
+    }
+  },
   template: `<div class='padded-container'>
         <div class="input-container">
           <z-input v-model="name">

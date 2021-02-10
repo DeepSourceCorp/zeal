@@ -23,6 +23,8 @@
       }"
       :value="name"
       :placeholder="placeholder"
+      @focus="isFocused = true"
+      @blur="isFocused = false"
       :disabled="disabled"
       @input="updateSelf($event.target.value)"
     />
