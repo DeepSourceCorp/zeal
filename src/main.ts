@@ -13,6 +13,8 @@ import ZStepper from './components/ZStepper/index'
 import ZStep from './components/ZStep/index'
 import ZExpandable from './components/ZExpandable/index'
 import ZInput from './components/ZInput/index'
+import ZInputGroup from './components/ZInputGroup/index'
+import ZInputAddon from './components/ZInputAddon/index'
 import ZRadio from './components/ZRadio/index'
 import ZRadioGroup from './components/ZRadioGroup/index'
 import ZRadioButton from './components/ZRadioButton/index'
@@ -111,7 +113,9 @@ const components = [
   ZCustomers,
   ZTestimonials,
   ZRelatedArticles,
-  ZHero
+  ZHero,
+  ZInputGroup,
+  ZInputAddon
 ]
 
 const install = (Vue: any) => {
@@ -171,7 +175,9 @@ export default {
   ZCustomers,
   ZTestimonials,
   ZRelatedArticles,
-  ZHero
+  ZHero,
+  ZInputAddon,
+  ZInputGroup
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -185,6 +191,8 @@ export { default as ZStepper } from './components/ZStepper/index'
 export { default as ZStep } from './components/ZStep/index'
 export { default as ZExpandable } from './components/ZExpandable/index'
 export { default as ZInput } from './components/ZInput/index'
+export { default as ZInputGroup } from './components/ZInputGroup/index'
+export { default as ZInputAddon } from './components/ZInputAddon/index'
 export { default as ZRadio } from './components/ZRadio/index'
 export { default as ZRadioGroup } from './components/ZRadioGroup/index'
 export { default as ZRadioButton } from './components/ZRadioButton/index'
