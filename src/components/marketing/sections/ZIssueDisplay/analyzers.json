@@ -1,0 +1,497 @@
+
+[{
+  "name": "python",
+  "label": "Python",
+  "image": "https://i.imgur.com/YM84f5U.png",
+  "active": false,
+  "issueDetails": [
+    {
+      "name": "bug-risk",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": true,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "security",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "coverage",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "anti-pattern",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "performance",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "type-check",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "style",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "documentation",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    }
+  ]
+}, {
+  "name": "go",
+  "label": "Go",
+  "image": "https://i.imgur.com/YM84f5U.png",
+  "active": false,
+  "issueDetails": [
+    {
+      "name": "bug-risk",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": true,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "security",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "coverage",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "anti-pattern",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "performance",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "type-check",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "style",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "documentation",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    }
+  ]
+}, {
+  "name": "javascript",
+  "label": "JavaScript",
+  "image": "https://i.imgur.com/YM84f5U.png",
+  "active": false,
+  "issueDetails": [
+    {
+      "name": "bug-risk",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": true,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "security",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "coverage",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "anti-pattern",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "performance",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "type-check",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "style",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "documentation",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    }
+  ]
+}, {
+  "name": "sql",
+  "label": "SQL",
+  "image": "https://i.imgur.com/YM84f5U.png",
+  "active": false,
+  "issueDetails": [
+    {
+      "name": "bug-risk",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": true,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "security",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "coverage",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "anti-pattern",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "performance",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "type-check",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "style",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "documentation",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    }
+  ]
+}, {
+  "name": "docker",
+  "label": "Docker",
+  "image": "https://i.imgur.com/YM84f5U.png",
+  "active": false,
+  "issueDetails": [
+    {
+      "name": "bug-risk",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": true,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "security",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "coverage",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "anti-pattern",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "performance",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "type-check",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "style",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "documentation",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    }
+  ]
+}, {
+  "name": "terraform",
+  "label": "Terraform",
+  "image": "https://i.imgur.com/YM84f5U.png",
+  "active": false,
+  "issueDetails": [
+    {
+      "name": "bug-risk",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": true,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "security",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "coverage",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "anti-pattern",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "performance",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "type-check",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "style",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "documentation",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    }
+  ]
+}, {
+  "name": "ruby",
+  "label": "Ruby",
+  "image": "https://i.imgur.com/YM84f5U.png",
+  "active": false,
+  "issueDetails": [
+    {
+      "name": "bug-risk",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": true,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "security",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "coverage",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "anti-pattern",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "performance",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "type-check",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "style",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "documentation",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    }
+  ]
+}, {
+  "name": "java",
+  "label": "Java",
+  "image": "https://i.imgur.com/YM84f5U.png",
+  "active": false,
+  "issueDetails": [
+    {
+      "name": "bug-risk",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": true,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "security",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "coverage",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "anti-pattern",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "performance",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "type-check",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "style",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "documentation",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    }
+  ]
+}, {
+  "name": "shell",
+  "label": "Shell",
+  "image": "https://i.imgur.com/YM84f5U.png",
+  "active": false,
+  "issueDetails": [
+    {
+      "name": "bug-risk",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": true,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "security",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "coverage",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "anti-pattern",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "performance",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "type-check",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "style",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    },
+    {
+      "name": "documentation",
+      "snippet": "Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc uch as: design style, icons and texts, position of elements, etc.",
+      "isOpen": false,
+      "title": "Non-iterable value used in an iterating context"
+    }
+  ]
+}]  

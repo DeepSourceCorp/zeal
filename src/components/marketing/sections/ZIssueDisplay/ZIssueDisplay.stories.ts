@@ -1,4 +1,5 @@
 import ZIssueDisplay from './ZIssueDisplay.vue'
+import analyzers from './analyzers.json'
 
 export default {
   title: 'Zeal Marketing/Issue display section',
@@ -9,7 +10,7 @@ export default {
   }
 }
 
-export const Basic = () => ({
+export const MultipleAnalyzers = () => ({
   components: { ZIssueDisplay },
   data() {
     return {
@@ -47,50 +48,3 @@ export const Basic = () => ({
       </div>
     </div>`
 })
-
-const analyzers = [{
-  "name": "python",
-  "label": "Python",
-  "image": "https://i.imgur.com/YM84f5U.png",
-  "active": false
-}, {
-  "name": "go",
-  "label": "Go",
-  "image": "https://i.imgur.com/YM84f5U.png",
-  "active": false
-}, {
-  "name": "javascript",
-  "label": "JavaScript",
-  "image": "https://i.imgur.com/YM84f5U.png",
-  "active": false
-}, {
-  "name": "sql",
-  "label": "SQL",
-  "image": "https://i.imgur.com/YM84f5U.png",
-  "active": false
-}, {
-  "name": "docker",
-  "label": "Docker",
-  "image": "https://i.imgur.com/YM84f5U.png",
-  "active": false
-}, {
-  "name": "terraform",
-  "label": "Terraform",
-  "image": "https://i.imgur.com/YM84f5U.png",
-  "active": false
-}, {
-  "name": "ruby",
-  "label": "Ruby",
-  "image": "https://i.imgur.com/YM84f5U.png",
-  "active": false
-}, {
-  "name": "java",
-  "label": "Java",
-  "image": "https://i.imgur.com/YM84f5U.png",
-  "active": false
-}, {
-  "name": "shell",
-  "label": "Shell",
-  "image": "https://i.imgur.com/YM84f5U.png",
-  "active": false
-}]  

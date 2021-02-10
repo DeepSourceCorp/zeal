@@ -17,9 +17,9 @@
           <div
             v-for="analyzer in analyzers"
             :key="analyzer.name"
-            class="flex items-center mr-2 text-sm"
+            class="flex items-center text-sm mx-2"
           >
-            <img :src="analyzer.image" :alt="analyzer.name" class="mx-2 h-5" />
+            <img :src="analyzer.image" :alt="analyzer.name" class="mr-2 h-5" />
             {{ analyzer.label }}
           </div>
         </div>
@@ -27,8 +27,25 @@
 
       <!-- Issues section -->
       <div class="bg-gradient-ocean pl-2 pt-2 h-full">
-        <div class="bg-ink-400">
-          asdf
+        <div class="bg-ink-400 p-8 overflow-y-scroll max-h-102">
+          <template v-for="issue in analyzers[0].issueDetails">
+            <z-expandable :open="issue.isOpen" :key="issue.name">
+              <template slot="header">
+                <p>
+                  <z-icon
+                    :icon="issue.name"
+                    class="inline-block mr-2 align-text-bottom"
+                    color="vanilla-100"
+                    size="small"
+                  ></z-icon>
+                  {{ issue.title }}
+                </p>
+              </template>
+              <template slot="content">
+                <p>{{ issue.snippet }}</p>
+              </template>
+            </z-expandable>
+          </template>
         </div>
       </div>
     </div>
@@ -52,10 +69,11 @@
 
 <script lang="ts">
 import ZIcon from '@/components/ZIcon/ZIcon.vue'
+import ZExpandable from '@/components/ZExpandable'
 import Vue from 'vue'
 
 export default Vue.extend({
-  components: { ZIcon },
+  components: { ZIcon, ZExpandable },
   name: 'ZIssueDisplay',
   props: {
     analyzers: {
