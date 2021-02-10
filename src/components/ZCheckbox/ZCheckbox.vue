@@ -86,9 +86,9 @@ export default {
         } else {
           newValue.splice(newValue.indexOf(this.value), 1)
         }
-        this.$emit('change', newValue)
+        this.$emit('change', newValue, event)
       } else {
-        this.$emit('change', isChecked ? this.trueValue : this.falseValue)
+        this.$emit('change', isChecked ? this.trueValue : this.falseValue, event)
       }
     }
   }
