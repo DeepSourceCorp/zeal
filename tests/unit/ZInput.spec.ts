@@ -49,14 +49,4 @@ describe('Input Component', () => {
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.findAll('.z-icon--x').length).toEqual(1)
   })
-  it('renders an input with an icon', () => {
-    const wrapper = mountFn({
-      propsData: {
-        icon: 'search',
-        iconPosition: 'left'
-      }
-    })
-    expect(wrapper.html()).toMatchSnapshot()
-    expect(wrapper.findAll('.z-icon--search').length).toEqual(1)
-  })
 })

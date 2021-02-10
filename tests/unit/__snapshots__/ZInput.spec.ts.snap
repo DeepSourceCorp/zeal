@@ -1,82 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Checkbox Component renders a disabled input 1`] = `
-<div class="z-input w-full relative">
-  <!---->
-  <!----> <input type="text" placeholder="Enter a value" disabled="disabled" class="input w-full text-sm bg-ink-400 focus:shadow-white focus:border-vanilla-400 border border-solid border-bg-ink-100 rounded-sm outline-none h-10 text-slate cursor-not-allowed p-3 p-3">
-  <!---->
-  <!---->
-</div>
-`;
-
-exports[`Checkbox Component renders an input with an icon 1`] = `
-<div class="z-input w-full relative">
-  <!----> <span class="absolute h-full flex items-center top-0 text-center transition-all left-2 cursor-pointer"><svg viewBox="0 0 24 24" fill="none" class="stroke-2 z-icon w-4 h-4 z-icon--search text-vanilla-400"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span> <input type="text" placeholder="Enter a value" class="input w-full text-sm bg-ink-400 focus:shadow-white focus:border-vanilla-400 border border-solid border-bg-ink-100 rounded-sm outline-none h-10 text-vanilla-300 pl-8 p-3 p-3">
-  <!---->
-  <!---->
-</div>
-`;
-
-exports[`Checkbox Component renders an input with clearable 1`] = `
-<div class="z-input w-full relative">
-  <!---->
-  <!----> <input type="text" placeholder="Enter a value" class="input w-full text-sm bg-ink-400 focus:shadow-white focus:border-vanilla-400 border border-solid border-bg-ink-100 rounded-sm outline-none h-10 text-vanilla-300 p-3 p-3"> <span class="absolute h-full flex items-center top-0 text-center transition-all right-2 cursor-pointer"><svg viewBox="0 0 24 24" fill="none" class="stroke-2 z-icon w-4 h-4 z-icon--x text-vanilla-400"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span>
-  <!---->
-</div>
-`;
-
-exports[`Checkbox Component renders the default input component 1`] = `
-<div class="z-input w-full relative">
-  <!---->
-  <!----> <input type="text" placeholder="Enter a value" class="input w-full text-sm bg-ink-400 focus:shadow-white focus:border-vanilla-400 border border-solid border-bg-ink-100 rounded-sm outline-none h-10 text-vanilla-300 p-3 p-3">
-  <!---->
-  <!---->
-</div>
-`;
-
-exports[`Checkbox Component renders the input with custom placeholder 1`] = `
-<div class="z-input w-full relative">
-  <!---->
-  <!----> <input type="text" placeholder="captain@marvel.com" class="input w-full text-sm bg-ink-400 focus:shadow-white focus:border-vanilla-400 border border-solid border-bg-ink-100 rounded-sm outline-none h-10 text-vanilla-300 p-3 p-3">
-  <!---->
-  <!---->
-</div>
-`;
-
 exports[`Input Component renders a disabled input 1`] = `
-<div class="z-input w-full relative">
-  <!----> <input type="text" placeholder="Enter a value" disabled="disabled" class="input w-full pt-2.5 text-sm caret-juniper bg-ink-400 focus:shadow-white focus:border-vanilla-400 border border-solid border-bg-ink-100 rounded-sm outline-none h-10 text-slate cursor-not-allowed p-3">
-  <!---->
-  <!---->
-</div>
-`;
-
-exports[`Input Component renders an input with an icon 1`] = `
-<div class="z-input w-full relative"><span class="absolute h-full flex items-center top-0 text-center transition-all left-2 cursor-pointer"><svg viewBox="0 0 24 24" fill="none" class="stroke-2 z-icon w-4 h-4 z-icon--search text-vanilla-400"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span> <input type="text" placeholder="Enter a value" class="input w-full pt-2.5 text-sm caret-juniper bg-ink-400 focus:shadow-white focus:border-vanilla-400 border border-solid border-bg-ink-100 rounded-sm outline-none h-10 text-vanilla-300 pl-8 p-3">
-  <!---->
+<div class="flex items-center w-full rounded-sm outline-none space-x-2 p-3 focus:border-vanilla-400 border border-solid border-ink-100 text-sm bg-ink-400 shadow-none text-slate cursor-not-allowed"> <input type="text" placeholder="Enter a value" disabled="disabled" class="w-full h-full caret-juniper flex flex-grow outline-none bg-transparent cursor-not-allowed">
   <!---->
 </div>
 `;
 
 exports[`Input Component renders an input with clearable 1`] = `
-<div class="z-input w-full relative">
-  <!----> <input type="text" placeholder="Enter a value" class="input w-full pt-2.5 text-sm caret-juniper bg-ink-400 focus:shadow-white focus:border-vanilla-400 border border-solid border-bg-ink-100 rounded-sm outline-none h-10 text-vanilla-300 p-3"> <span class="absolute h-full flex items-center top-0 text-center right-2 transition-all cursor-pointer"><svg viewBox="0 0 24 24" fill="none" class="stroke-2 z-icon w-4 h-4 z-icon--x text-vanilla-400"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span>
-  <!---->
-</div>
+<div class="flex items-center w-full rounded-sm outline-none space-x-2 p-3 focus:border-vanilla-400 border border-solid border-ink-100 text-sm bg-ink-400 shadow-none text-vanilla-300"> <input type="text" placeholder="Enter a value" class="w-full h-full caret-juniper flex flex-grow outline-none bg-transparent"> <svg viewBox="0 0 24 24" fill="none" class="stroke-2 cursor-pointer z-icon w-4 h-4 z-icon--x text-vanilla-400">
+    <line x1="18" y1="6" x2="6" y2="18"></line>
+    <line x1="6" y1="6" x2="18" y2="18"></line>
+  </svg></div>
 `;
 
 exports[`Input Component renders the default input component 1`] = `
-<div class="z-input w-full relative">
-  <!----> <input type="text" placeholder="Enter a value" class="input w-full pt-2.5 text-sm caret-juniper bg-ink-400 focus:shadow-white focus:border-vanilla-400 border border-solid border-bg-ink-100 rounded-sm outline-none h-10 text-vanilla-300 p-3">
-  <!---->
+<div class="flex items-center w-full rounded-sm outline-none space-x-2 p-3 focus:border-vanilla-400 border border-solid border-ink-100 text-sm bg-ink-400 shadow-none text-vanilla-300"> <input type="text" placeholder="Enter a value" class="w-full h-full caret-juniper flex flex-grow outline-none bg-transparent">
   <!---->
 </div>
 `;
 
 exports[`Input Component renders the input with custom placeholder 1`] = `
-<div class="z-input w-full relative">
-  <!----> <input type="text" placeholder="captain@marvel.com" class="input w-full pt-2.5 text-sm caret-juniper bg-ink-400 focus:shadow-white focus:border-vanilla-400 border border-solid border-bg-ink-100 rounded-sm outline-none h-10 text-vanilla-300 p-3">
-  <!---->
+<div class="flex items-center w-full rounded-sm outline-none space-x-2 p-3 focus:border-vanilla-400 border border-solid border-ink-100 text-sm bg-ink-400 shadow-none text-vanilla-300"> <input type="text" placeholder="captain@marvel.com" class="w-full h-full caret-juniper flex flex-grow outline-none bg-transparent">
   <!---->
 </div>
 `;

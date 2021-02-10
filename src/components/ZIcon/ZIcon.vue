@@ -12,6 +12,7 @@
     viewBox="0 0 24 24"
     v-html="getIcon(icon)"
     fill="none"
+    @click.stop="handleClick"
   ></svg>
 </template>
 
@@ -77,6 +78,9 @@ export default {
         this.customStyle = 'stroke-current'
       }
       return DOM
+    },
+    handleClick(event) {
+      this.$emit('click', event)
     }
   }
 }
