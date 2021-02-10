@@ -1,39 +1,43 @@
 <template>
-    <div class="flex items-center w-full rounded-sm outline-none space-x-2 p-3"
-        :class="[
-          borderStyles,
-          `text-${textSize}`,
-          `bg-${backgroundColor}`,
-          {
-            'shadow-white': isFocused,
-            'shadow-none': !isFocused,
-            'text-slate cursor-not-allowed': disabled,
-            'text-vanilla-300': !disabled
-          }
-        ]">
-      <!-- Any icon/content to the left renders here -->
-      <slot name="left"></slot>
-      <input
-          type="text"
-          class="w-full h-full caret-juniper flex flex-grow outline-none bg-transparent"
-          :class="{
-            'cursor-not-allowed': disabled
-          }"
-          :value="name"
-          :placeholder="placeholder"
-          :disabled="disabled"
-          @input="updateSelf($event.target.value)"
-      />
-      <!-- Any icon/content to the right renders here -->
-      <slot name="right">
-        <z-icon v-if="clearable"
-                icon="x" 
-                size="small"
-                class="cursor-pointer"
-                @click.stop="updateSelf('')">
-        </z-icon>
-      </slot>
-    </div>
+  <div
+    class="flex items-center w-full rounded-sm outline-none space-x-2 p-3"
+    :class="[
+      borderStyles,
+      `text-${textSize}`,
+      `bg-${backgroundColor}`,
+      {
+        'shadow-white': isFocused,
+        'shadow-none': !isFocused,
+        'text-slate cursor-not-allowed': disabled,
+        'text-vanilla-300': !disabled
+      }
+    ]"
+  >
+    <!-- Any icon/content to the left renders here -->
+    <slot name="left"></slot>
+    <input
+      type="text"
+      class="w-full h-full caret-juniper flex flex-grow outline-none bg-transparent"
+      :class="{
+        'cursor-not-allowed': disabled
+      }"
+      :value="name"
+      :placeholder="placeholder"
+      :disabled="disabled"
+      @input="updateSelf($event.target.value)"
+    />
+    <!-- Any icon/content to the right renders here -->
+    <slot name="right">
+      <z-icon
+        v-if="clearable"
+        icon="x"
+        size="small"
+        class="cursor-pointer"
+        @click.stop="updateSelf('')"
+      >
+      </z-icon>
+    </slot>
+  </div>
 </template>
 
 <script lang="ts">

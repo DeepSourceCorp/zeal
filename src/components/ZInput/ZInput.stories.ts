@@ -7,14 +7,11 @@ import ZInputAddon from '@/components/ZInputAddon/ZInputAddon.vue'
 import ZIcon from '@/components/ZIcon/ZIcon.vue'
 import ZButton from '@/components/ZIcon/ZIcon.vue'
 
-
-
 export default {
   title: 'Form Inputs and Controls: Input',
   component: ZInput,
   excludeStories: /.*Data$/
 }
-
 
 export const InputWithCustomPlaceholder = () => ({
   components: { ZInput },
@@ -71,7 +68,7 @@ export const StandAloneInput = () => ({
     </div>`
 })
 
-export const InputWithLeftIcon= () => ({
+export const InputWithLeftIcon = () => ({
   components: { ZInput, ZInputGroup, ZIcon },
   template: `<div class='padded-container'>
         <div class="input-container">
@@ -84,7 +81,7 @@ export const InputWithLeftIcon= () => ({
     </div>`
 })
 
-export const InputWithRightIcon= () => ({
+export const InputWithRightIcon = () => ({
   components: { ZInput, ZInputGroup, ZIcon },
   template: `<div class='padded-container'>
         <div class="input-container">
@@ -97,7 +94,7 @@ export const InputWithRightIcon= () => ({
     </div>`
 })
 
-export const InputWithIconsOnEitherSides= () => ({
+export const InputWithIconsOnEitherSides = () => ({
   components: { ZInput, ZInputGroup, ZIcon },
   template: `<div class='padded-container'>
         <div class="input-container">
@@ -113,7 +110,7 @@ export const InputWithIconsOnEitherSides= () => ({
     </div>`
 })
 
-export const InputWithClearables= () => ({
+export const InputWithClearables = () => ({
   components: { ZInput, ZInputGroup, ZIcon },
   data() {
     return {
@@ -128,7 +125,7 @@ export const InputWithClearables= () => ({
     </div>`
 })
 
-export const InputWithLeftAddon= () => ({
+export const InputWithLeftAddon = () => ({
   components: { ZInput, ZInputGroup, ZInputAddon, ZIcon },
   data() {
     return {
@@ -147,7 +144,7 @@ export const InputWithLeftAddon= () => ({
     </div>`
 })
 
-export const InputWithRightAddon= () => ({
+export const InputWithRightAddon = () => ({
   components: { ZInput, ZInputGroup, ZInputAddon, ZIcon },
   data() {
     return {
@@ -166,7 +163,7 @@ export const InputWithRightAddon= () => ({
     </div>`
 })
 
-export const InputWithButtonOnTheRight= () => ({
+export const InputWithButtonOnTheRight = () => ({
   components: { ZInput, ZInputGroup, ZInputAddon, ZIcon, ZButton },
   data() {
     return {
