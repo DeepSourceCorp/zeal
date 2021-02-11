@@ -9,19 +9,17 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'ZAccordion',
-  components: {
-  },
+  components: {},
   props: {
-      defaultStyle: {
-          type: Boolean,
-          default: false
-      },
-      disabled: {
-          type: Boolean,
-          default: false
-      }
+    defaultStyle: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    }
   },
-  computed: {
-  }
+  computed: {}
 })
 </script>

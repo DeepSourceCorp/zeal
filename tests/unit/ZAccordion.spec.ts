@@ -57,7 +57,6 @@ const CustomizedAccordion = {
   }
 }
 
-
 describe('Accordions', () => {
   it('renders a default accordion', () => {
     let wrapper = mount(DefaultAccordion)
