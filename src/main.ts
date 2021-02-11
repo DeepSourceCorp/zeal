@@ -35,6 +35,8 @@ import ZSidebarMenu from './components/ZSidebarMenu/index'
 import ZSidebarItem from './components/ZSidebarItem/index'
 import ZBadge from './components/ZBadge/index'
 import ZPagination from './components/ZPagination/index'
+import ZAccordion from './components/ZAccordion/index'
+import ZAccordionItem from './components/ZAccordionItem/index'
 
 // Marketing components
 import ZFooter from './components/marketing/ZFooter'
@@ -171,7 +173,9 @@ export default {
   ZCustomers,
   ZTestimonials,
   ZRelatedArticles,
-  ZHero
+  ZHero,
+  ZAccordion,
+  ZAccordionItem
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -225,3 +229,5 @@ export { default as ZRelatedArticles } from './components/marketing/sections/ZRe
 export { default as ZHero } from './components/marketing/sections/ZHero/index'
 export { default as ZContentGuide } from './components/marketing/layouts/ZContentGuide/index'
 export { default as ZPageLabel } from './components/marketing/ZPageLabel/index'
+export { default as ZAccordion } from './components/ZAccordion/index'
+export { default as ZAccordionItem } from './components/ZAccordionItem/index'
