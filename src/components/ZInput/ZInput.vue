@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center w-full rounded-sm outline-none space-x-2 p-2 focus-within:shadow-white"
+    class="flex items-center w-full rounded-sm outline-none space-x-2 p-1 focus-within:shadow-white"
     :class="[
       borderStyles,
       `text-${textSize}`,
