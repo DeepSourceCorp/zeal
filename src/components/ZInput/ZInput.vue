@@ -1,13 +1,11 @@
 <template>
   <div
-    class="flex items-center w-full rounded-sm outline-none space-x-2 p-2"
+    class="flex items-center w-full rounded-sm outline-none space-x-2 p-2 focus-within:shadow-white"
     :class="[
       borderStyles,
       `text-${textSize}`,
       `bg-${backgroundColor}`,
       {
-        'shadow-white': isFocused,
-        'shadow-none': !isFocused,
         'text-slate cursor-not-allowed': disabled,
         'text-vanilla-300': !disabled
       }
@@ -23,8 +21,6 @@
       }"
       :value="name"
       :placeholder="placeholder"
-      @focus="isFocused = true"
-      @blur="isFocused = false"
       :disabled="disabled"
       @input="updateSelf($event.target.value)"
     />
@@ -81,11 +77,6 @@ export default Vue.extend({
     showBorder: {
       type: Boolean,
       default: true
-    }
-  },
-  data() {
-    return {
-      isFocused: false
     }
   },
   model: {

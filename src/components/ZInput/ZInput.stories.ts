@@ -5,7 +5,7 @@ import ZInput from './ZInput.vue'
 import ZInputGroup from '@/components/ZInputGroup/ZInputGroup.vue'
 import ZInputAddon from '@/components/ZInputAddon/ZInputAddon.vue'
 import ZIcon from '@/components/ZIcon/ZIcon.vue'
-import ZButton from '@/components/ZIcon/ZIcon.vue'
+import ZButton from '@/components/ZButton/ZButton.vue'
 
 export default {
   title: 'Form Inputs and Controls: Input',
@@ -155,8 +155,26 @@ export const InputWithLeftButton = () => ({
   template: `<div class='padded-container'>
         <div class="input-container">
           <z-input v-model="name">
+            <template slot="left">
+              <z-button color="primary" icon="chevron-left" iconSize="medium" iconColor="ink-400"></z-button>
+            </template>
+          </z-input>
+        </div>
+    </div>`
+})
+
+export const InputWithRightButton = () => ({
+  components: { ZInput, ZInputGroup, ZButton },
+  data() {
+    return {
+      name: ''
+    }
+  },
+  template: `<div class='padded-container'>
+        <div class="input-container">
+          <z-input v-model="name">
             <template slot="right">
-              <z-button color="primary" size="small">Click</z-button>
+              <z-button color="primary" icon="chevron-right" iconSize="medium" iconColor="ink-400"></z-button>
             </template>
           </z-input>
         </div>
@@ -210,25 +228,6 @@ export const InputWithRightAddon = () => ({
             <z-input v-model="name"></z-input>
             <z-input-addon class="bg-juniper px-2 rounded-sm -ml-0.5">
               www.
-            </z-input-addon>
-          </z-input-group>
-        </div>
-    </div>`
-})
-
-export const InputWithButtonOnTheRight = () => ({
-  components: { ZInput, ZInputGroup, ZInputAddon, ZIcon, ZButton },
-  data() {
-    return {
-      name: 'Hello World'
-    }
-  },
-  template: `<div class='padded-container'>
-        <div class="w-60">
-          <z-input-group>
-            <z-input v-model="name"></z-input>
-            <z-input-addon class="bg-juniper px-2 rounded-sm -ml-0.5">
-              <z-button color="primary" icon="chevron-right" iconSize="small"></z-button>
             </z-input-addon>
           </z-input-group>
         </div>
