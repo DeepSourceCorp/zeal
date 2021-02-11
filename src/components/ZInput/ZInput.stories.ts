@@ -145,6 +145,24 @@ export const InputWithIconsOnEitherSides = () => ({
     </div>`
 })
 
+export const InputWithLeftButton = () => ({
+  components: { ZInput, ZInputGroup, ZButton },
+  data() {
+    return {
+      name: ''
+    }
+  },
+  template: `<div class='padded-container'>
+        <div class="input-container">
+          <z-input v-model="name">
+            <template slot="right">
+              <z-button color="primary" size="small">Click</z-button>
+            </template>
+          </z-input>
+        </div>
+    </div>`
+})
+
 export const InputWithClearables = () => ({
   components: { ZInput, ZInputGroup, ZIcon },
   data() {

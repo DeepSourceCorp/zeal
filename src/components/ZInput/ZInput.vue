@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center w-full rounded-sm outline-none space-x-2 p-3"
+    class="flex items-center w-full rounded-sm outline-none space-x-2 p-2"
     :class="[
       borderStyles,
       `text-${textSize}`,
@@ -17,7 +17,7 @@
     <slot name="left"></slot>
     <input
       type="text"
-      class="w-full h-full caret-juniper flex flex-grow outline-none bg-transparent"
+      class="w-full caret-juniper flex flex-grow outline-none bg-transparent"
       :class="{
         'cursor-not-allowed': disabled
       }"
