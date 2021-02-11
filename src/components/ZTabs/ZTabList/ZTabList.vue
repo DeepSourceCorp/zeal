@@ -1,5 +1,6 @@
 <script>
 import ZTabItem from '@/components/ZTabs/ZTabItem'
+import { toPascal } from '@/helpers/components/utils.js'
 
 export default {
   name: 'ZTabList',
@@ -9,24 +10,10 @@ export default {
       return $parent.activeIndex
     }
   },
-  methods: {
-    toPascal(word) {
-      // https://stackoverflow.com/a/53952925
-      return `${word}`
-        .replace(new RegExp(/[-_]+/, 'g'), ' ')
-        .replace(new RegExp(/[^\w\s]/, 'g'), '')
-        .replace(
-          new RegExp(/\s+(.)(\w+)/, 'g'),
-          ($1, $2, $3) => `${$2.toUpperCase() + $3.toLowerCase()}`
-        )
-        .replace(new RegExp(/\s/, 'g'), '')
-        .replace(new RegExp(/\w/), (s) => s.toUpperCase())
-    }
-  },
   render(h) {
     const children = this.$slots.default?.map((child, index) => {
       const options = child.componentOptions
-      if (options && this.toPascal(options.tag || '') === 'ZTabItem') {
+      if (options && toPascal(options.tag || '') === 'ZTabItem') {
         const props = {
           index,
           updateActiveIndex: () => {
