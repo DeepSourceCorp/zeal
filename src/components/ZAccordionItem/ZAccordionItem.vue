@@ -1,6 +1,6 @@
 <template>
   <div
-    class="z-accordion-item p-4"
+    class="z-accordion-item"
     :class="{
       'border-slate border-t last:border-b': this.baseStyle,
       'text-slate': this.isDisabled
@@ -12,10 +12,10 @@
         @click="toggleAccordion()"
         :class="{
           'cursor-not-allowed': this.isDisabled,
-          'cursor-pointer': !this.isDisabled
+          'cursor-pointer': !this.isDisabled && !this.isList
         }"
       >
-        <span class="flex-1">{{ title }}</span>
+        <span class="flex-1 font-medium">{{ title }}</span>
         <z-icon
           icon="chevron-down"
           color="slate"
@@ -25,7 +25,8 @@
             {
               'text-vanilla-100 rotate-180': this.open,
               'text-slate': this.isDisabled,
-              'group-hover:text-vanilla-100': !this.isDisabled
+              'group-hover:text-vanilla-100': !this.isDisabled,
+              'hidden': this.isList
             }
           ]"
         ></z-icon>
@@ -35,7 +36,8 @@
       class="overflow-scroll transition-max-height duration-300 ease-in-out text-sm leading-6"
       :class="{
         'max-h-52': this.open,
-        'max-h-0': !this.open
+        'max-h-0': !this.open,
+        'max-h-full': this.isList
       }"
     >
       <slot></slot>
@@ -62,6 +64,10 @@ export default {
     icon: {
       type: String,
       default: 'down'
+    },
+    isList: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -74,6 +80,7 @@ export default {
   },
   methods: {
     toggleAccordion() {
+      if(this.isList) return;
       this.open = !this.open
       this.accordionHeaderAnimations = this.open
         ? 'animate-first-half-spin rotate-180'
