@@ -13,6 +13,8 @@ import ZStepper from './components/ZStepper/index'
 import ZStep from './components/ZStep/index'
 import ZExpandable from './components/ZExpandable/index'
 import ZInput from './components/ZInput/index'
+import ZInputGroup from './components/ZInputGroup/index'
+import ZInputAddon from './components/ZInputAddon/index'
 import ZRadio from './components/ZRadio/index'
 import ZRadioGroup from './components/ZRadioGroup/index'
 import ZRadioButton from './components/ZRadioButton/index'
@@ -50,7 +52,6 @@ import ZNavMenu from './components/marketing/ZNavMenu'
 import ZRelatedArticle from './components/marketing/ZRelatedArticle'
 import ZScrollSpy from './components/marketing/ZScrollSpy'
 import ZTestimonial from './components/marketing/ZTestimonial'
-import ZInputCta from './components/marketing/ZInputCta'
 import ZPageLabel from './components/marketing/ZPageLabel/index'
 
 // Marketing sections
@@ -78,6 +79,8 @@ const components = [
   ZRadio,
   ZRadioGroup,
   ZInput,
+  ZInputGroup,
+  ZInputAddon,
   ZSelect,
   ZOption,
   ZLabel,
@@ -109,7 +112,6 @@ const components = [
   ZRelatedArticle,
   ZScrollSpy,
   ZTestimonial,
-  ZInputCta,
   ZCustomers,
   ZTestimonials,
   ZRelatedArticles,
@@ -140,6 +142,8 @@ export default {
   ZRadio,
   ZRadioGroup,
   ZInput,
+  ZInputGroup,
+  ZInputAddon,
   ZSelect,
   ZOption,
   ZTab,
@@ -169,7 +173,6 @@ export default {
   ZRelatedArticle,
   ZScrollSpy,
   ZTestimonial,
-  ZInputCta,
   ZCustomers,
   ZTestimonials,
   ZRelatedArticles,
@@ -189,6 +192,8 @@ export { default as ZStepper } from './components/ZStepper/index'
 export { default as ZStep } from './components/ZStep/index'
 export { default as ZExpandable } from './components/ZExpandable/index'
 export { default as ZInput } from './components/ZInput/index'
+export { default as ZInputGroup } from './components/ZInputGroup/index'
+export { default as ZInputAddon } from './components/ZInputAddon/index'
 export { default as ZRadio } from './components/ZRadio/index'
 export { default as ZRadioGroup } from './components/ZRadioGroup/index'
 export { default as ZRadioButton } from './components/ZRadioButton/index'
@@ -222,7 +227,6 @@ export { default as ZNavMenu } from './components/marketing/ZNavMenu/index'
 export { default as ZRelatedArticle } from './components/marketing/ZRelatedArticle/index'
 export { default as ZScrollSpy } from './components/marketing/ZScrollSpy/index'
 export { default as ZTestimonial } from './components/marketing/ZTestimonial/index'
-export { default as ZInputCta } from './components/marketing/ZInputCta/index'
 export { default as ZCustomers } from './components/marketing/sections/ZCustomers/index'
 export { default as ZTestimonials } from './components/marketing/sections/ZTestimonials/index'
 export { default as ZRelatedArticles } from './components/marketing/sections/ZRelatedArticles/index'
