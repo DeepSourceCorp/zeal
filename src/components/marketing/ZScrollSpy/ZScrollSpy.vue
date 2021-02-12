@@ -189,7 +189,8 @@ export default Vue.extend({
       const elem = headingId && document.getElementById(headingId)
       smoothscroll.polyfill()
       if (elem) {
-        elem.scrollIntoView({
+        window.scrollTo({
+          top: elem.offsetTop - 80,
           behavior: 'smooth'
         })
       }
