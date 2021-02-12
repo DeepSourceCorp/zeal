@@ -67,6 +67,10 @@ export default Vue.extend({
       default: 'left',
       validator: (val: string) =>
         Object.keys(HEADING_ALIGNMENT_CLASSES).some((alignment) => alignment === val)
+    },
+    headingOffsetTop: {
+      type: Number,
+      default: 0
     }
   },
   data() {
@@ -190,7 +194,7 @@ export default Vue.extend({
       smoothscroll.polyfill()
       if (elem) {
         window.scrollTo({
-          top: elem.offsetTop - 80,
+          top: elem.offsetTop - this.headingOffsetTop,
           behavior: 'smooth'
         })
       }
