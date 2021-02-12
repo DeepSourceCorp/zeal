@@ -17,13 +17,13 @@
       >
         <span class="flex-1 font-medium">{{ title }}</span>
         <z-icon
-          icon="chevron-down"
+          icon="chevron-right"
           color="slate"
           class="transform"
           :class="[
             accordionHeaderAnimations,
             {
-              'text-vanilla-100 rotate-180': this.open,
+              'text-vanilla-100 rotate-90': this.open,
               'text-slate': this.isDisabled,
               'group-hover:text-vanilla-100': !this.isDisabled,
               hidden: this.isList
@@ -83,8 +83,8 @@ export default {
       if (this.isList) return
       this.open = !this.open
       this.accordionHeaderAnimations = this.open
-        ? 'animate-first-half-spin rotate-180'
-        : 'animate-reverse-half-spin rotate-0'
+        ? 'animate-first-quarter-spin rotate-90'
+        : 'animate-reverse-quarter-spin rotate-0'
       this.$emit('isOpen', this.open)
     }
   }
