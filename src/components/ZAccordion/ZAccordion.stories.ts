@@ -7,7 +7,6 @@ import ZIcon from '@/components/ZIcon/ZIcon.vue'
 import ZButton from '@/components/ZButton/ZButton.vue'
 import ZInput from '@/components/ZInput/ZInput.vue'
 
-
 export default {
   title: 'Accordion',
   component: ZAccordion,
@@ -179,9 +178,9 @@ export const WebNextFooter = () => ({
       ]
     }
   },
-  computed:  {
+  computed: {
     isMobile() {
-      return window.innerWidth < 640;
+      return window.innerWidth < 640
     }
   },
   template: `<div class="h-screen w-full-screen">
