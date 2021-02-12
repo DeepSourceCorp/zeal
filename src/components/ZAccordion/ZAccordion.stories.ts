@@ -180,7 +180,7 @@ export const WebNextFooter = () => ({
   },
   computed: {
     isMobile() {
-      return window.innerWidth < 768;
+      return window.innerWidth < 768
     }
   },
   template: `<div class="h-screen w-full-screen">
