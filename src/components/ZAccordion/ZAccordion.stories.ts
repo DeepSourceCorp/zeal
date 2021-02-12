@@ -164,7 +164,15 @@ export const WebNextFooter = () => ({
       product: ['Autofix', 'Code formatters', 'Pricing', 'Security'],
       languages: ['For Python', 'For Go', 'For Ruby', 'For JavaScript'],
       resources: ['Documentation', 'Blog', 'Changelog', 'Slack user group'],
-      company: ['About', 'Customers', 'Jobs', 'Privacy Policy', 'Terms of Service', 'Press Enquiries', 'Brand Assets']
+      company: [
+        'About',
+        'Customers',
+        'Jobs',
+        'Privacy Policy',
+        'Terms of Service',
+        'Press Enquiries',
+        'Brand Assets'
+      ]
     }
   },
   template: `<div class="h-screen w-full-screen">

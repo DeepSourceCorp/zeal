@@ -26,7 +26,7 @@
               'text-vanilla-100 rotate-180': this.open,
               'text-slate': this.isDisabled,
               'group-hover:text-vanilla-100': !this.isDisabled,
-              'hidden': this.isList
+              hidden: this.isList
             }
           ]"
         ></z-icon>
@@ -80,7 +80,7 @@ export default {
   },
   methods: {
     toggleAccordion() {
-      if(this.isList) return;
+      if (this.isList) return
       this.open = !this.open
       this.accordionHeaderAnimations = this.open
         ? 'animate-first-half-spin rotate-180'

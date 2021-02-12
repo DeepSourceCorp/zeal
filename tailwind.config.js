@@ -544,7 +544,7 @@ module.exports = {
       11: 'repeat(11, minmax(0, 1fr))',
       12: 'repeat(12, minmax(0, 1fr))',
       'repo-header': '1fr 1fr minmax(auto, 24rem)',
-      'footer': 'repeat(5, 1fr) 2fr 1.5fr'
+      footer: 'repeat(5, 1fr) 2fr 1.5fr'
     },
     gridColumn: {
       auto: 'auto',
@@ -602,7 +602,7 @@ module.exports = {
       4: 'repeat(4, minmax(0, 1fr))',
       5: 'repeat(5, minmax(0, 1fr))',
       6: 'repeat(6, minmax(0, 1fr))',
-      'footer': 'auto 15%'
+      footer: 'auto 15%'
     },
     gridRow: {
       auto: 'auto',
