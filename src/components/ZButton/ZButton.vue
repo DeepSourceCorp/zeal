@@ -12,7 +12,7 @@
       `${color && `z-btn--${color}`}`,
       `${this.fullWidth !== false && 'w-full inline-block'}`,
       `${this.isButtonDisabled && 'opacity-50 cursor-not-allowed'}`,
-      ((isLink || icon) && 'p-0') || 'px-6',
+      ((isLink || icon) && 'p-0') || spacing,
       isLink || icon ? '' : getSizeClasses,
       `${getStyleBasedOnType}`
     ]"
@@ -71,6 +71,10 @@ export default {
     },
     iconSize: {
       type: String
+    },
+    spacing: {
+      type: String,
+      default: 'px-6'
     }
   },
   data() {

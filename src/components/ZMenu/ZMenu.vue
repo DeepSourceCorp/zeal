@@ -1,7 +1,8 @@
 <template>
   <span class="relative z-menu">
-    <button v-on:click="toggle" class="outline-none focus:outline-none" ref="menu-trigger">
-      <slot name="trigger"></slot>
+    <button v-on:click="toggle" 
+            class="outline-none focus:outline-none" ref="menu-trigger">
+      <slot name="trigger" :toggle="toggle"></slot>
     </button>
     <transition
       enter-active-class="animate-slide-bottom-enter-active sm:animate-none sm:transition-all sm:duration-75 sm:ease-out-quad"
@@ -53,6 +54,10 @@ export default Vue.extend({
     },
     width: {
       type: String
+    },
+    collapseOnMobile: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
