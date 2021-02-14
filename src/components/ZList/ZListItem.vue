@@ -30,7 +30,7 @@ export default {
       default: 'small'
     },
     itemStyle: {
-        type: String
+      type: String
     }
   },
   data() {

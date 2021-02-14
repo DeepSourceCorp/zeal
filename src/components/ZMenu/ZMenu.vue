@@ -1,7 +1,6 @@
 <template>
   <span class="relative z-menu">
-    <button v-on:click="toggle" 
-            class="outline-none focus:outline-none" ref="menu-trigger">
+    <button v-on:click="toggle" class="outline-none focus:outline-none" ref="menu-trigger">
       <slot name="trigger" :toggle="toggle"></slot>
     </button>
     <transition
