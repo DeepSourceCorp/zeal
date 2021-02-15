@@ -7,6 +7,7 @@
       type="checkbox"
       :checked="isChecked"
       :value="value"
+      :name="name"
       @change="updateInput"
       :disabled="this.disabled"
       class="absolute opacity-0 h-0 w-0"
@@ -32,7 +33,9 @@
   </label>
 </template>
 <script>
-export default {
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'ZCheckbox',
   model: {
     prop: 'modelValue',
@@ -40,6 +43,10 @@ export default {
   },
   props: {
     label: {
+      default: '',
+      type: String
+    },
+    name: {
       default: '',
       type: String
     },
@@ -83,11 +90,11 @@ export default {
         } else {
           newValue.splice(newValue.indexOf(this.value), 1)
         }
-        this.$emit('change', newValue)
+        this.$emit('change', newValue, event)
       } else {
-        this.$emit('change', isChecked ? this.trueValue : this.falseValue)
+        this.$emit('change', isChecked ? this.trueValue : this.falseValue, event)
       }
     }
   }
-}
+})
 </script>
