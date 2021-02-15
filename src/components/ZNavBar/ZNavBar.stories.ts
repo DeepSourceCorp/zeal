@@ -41,10 +41,14 @@ export const Horizontal = () => ({
                     </template>
                     <template slot="links">
                         <z-menu width="auto">
-                            <template v-slot:trigger="{ toggle }">
-                                <span class="block px-4 py-2 hover:bg-ink-300 rounded-sm" @mouseover="toggle()">Product</span>
+                            <template v-slot:trigger="{ isOpen, toggle }">
+                                <span class="block px-4 py-2 hover:bg-ink-300 rounded-sm"
+                                    :class="{
+                                       'bg-ink-300': isOpen,
+                                       'bg-transparent': !isOpen
+                                    }">Product</span>
                             </template>
-                            <template slot="body" @mouseleave="toggle()">
+                            <template slot="body">
                                 <div class="flex w-full space-x-4">
                                     <z-list class="text-vanilla-400 text-sm lg:text-base space-y-3 w-auto lg:w-32 uppercase p-4 border-b border-ink-200 lg:border-0" title="Integrations">
                                         <div class="flex flex-col space-y-4 text-vanilla-100 capitalize">
@@ -66,8 +70,12 @@ export const Horizontal = () => ({
                             </template>
                         </z-menu>
                         <z-menu :collapseOnMobile="true">
-                            <template v-slot:trigger="{ toggle }">
-                                <span class="block px-4 py-2 hover:bg-ink-300 rounded-sm" @mouseover="toggle()">Resources</span>
+                            <template v-slot:trigger="{ isOpen, toggle }">
+                                <span class="block px-4 py-2 hover:bg-ink-300 rounded-sm"
+                                        :class="{
+                                            'bg-ink-300': isOpen,
+                                            'bg-transparent': !isOpen
+                                        }">Resources</span>
                             </template>
                             <template slot="body">
                                 <z-menu-item v-for="item in resources" :key="item">

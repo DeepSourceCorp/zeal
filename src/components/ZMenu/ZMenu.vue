@@ -1,7 +1,7 @@
 <template>
   <span class="relative z-menu">
     <button v-on:click="toggle" class="outline-none focus:outline-none" ref="menu-trigger">
-      <slot name="trigger" :toggle="toggle"></slot>
+      <slot name="trigger" :toggle="toggle" :isOpen="isOpen"></slot>
     </button>
     <transition
       enter-active-class="animate-slide-bottom-enter-active sm:animate-none sm:transition-all sm:duration-75 sm:ease-out-quad"
