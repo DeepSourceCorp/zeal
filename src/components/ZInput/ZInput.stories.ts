@@ -2,6 +2,10 @@ import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'
 import ZInput from './ZInput.vue'
+import ZInputGroup from '@/components/ZInputGroup/ZInputGroup.vue'
+import ZInputAddon from '@/components/ZInputAddon/ZInputAddon.vue'
+import ZIcon from '@/components/ZIcon/ZIcon.vue'
+import ZButton from '@/components/ZButton/ZButton.vue'
 
 export default {
   title: 'Form Inputs and Controls: Input',
@@ -9,17 +13,13 @@ export default {
   excludeStories: /.*Data$/
 }
 
-export const DefaultInput = () => ({
-  components: { ZInput },
-  template: `<div class='padded-container'>
-        <div class="input-container">
-            <z-input v-model="name"></z-input>
-        </div>
-    </div>`
-})
-
 export const InputWithCustomPlaceholder = () => ({
   components: { ZInput },
+  data() {
+    return {
+      name: ''
+    }
+  },
   template: `<div class='padded-container'>
         <div class="input-container">
             <z-input v-model="name"
@@ -43,78 +43,193 @@ export const DisabledInput = () => ({
     </div>`
 })
 
-export const InputWithClearable = () => ({
+export const InputWithDifferentSizes = () => ({
   components: { ZInput },
   data() {
     return {
-      name: 'Hello World'
+      name: ''
     }
   },
-  template: `<div class='padded-container'>
-        <div class="input-container">
-            <z-input v-model="name"
-                    :clearable="true"></z-input>
-        </div>
-    </div>`
-})
-
-export const InputWithIconOnLeft = () => ({
-  components: { ZInput },
-  data() {
-    return {
-      name: 'Hello World'
-    }
-  },
-  template: `<div class='padded-container'>
-        <div class="input-container">
-            <z-input v-model="name"
-                    icon="search"
-                    iconPosition="left"></z-input>
-        </div>
-    </div>`
-})
-
-export const InputWithIconOnRight = () => ({
-  components: { ZInput },
-  data() {
-    return {
-      name: 'Hello World'
-    }
-  },
-  template: `<div class='padded-container'>
-        <div class="input-container">
-            <z-input v-model="name"
-                    icon="search"
-                    iconPosition="right"></z-input>
-        </div>
-    </div>`
-})
-
-export const DefaultInputWithSmallSizeText = () => ({
-  components: { ZInput },
-  template: `<div class='padded-container'>
-        <div class="input-container">
-            <z-input v-model="name" textSize="xs"></z-input>
-        </div>
-    </div>`
-})
-
-export const DefaultInputWithMultipleSpacing = () => ({
-  components: { ZInput },
   template: `<div class='padded-container'>
         <div class="input-container space-y-2">
-            <z-input v-model="name" spacing="tight"></z-input>
-            <z-input v-model="name" spacing="base"></z-input>
-            <z-input v-model="name" spacing="loose"></z-input>
+            <z-input v-model="name" text-size="xs"></z-input>
+            <z-input v-model="name" text-size="sm"></z-input>
+            <z-input v-model="name" text-size="base"></z-input>
+            <z-input v-model="name" text-size="lg"></z-input>
         </div>
     </div>`
 })
 
 export const InputBorderAndBackground = () => ({
   components: { ZInput },
+  data() {
+    return {
+      name: ''
+    }
+  },
   template: `<div class='padded-container'>
         <div class="input-container">
             <z-input v-model="name" :showBorder="false" backgroundColor="ink-200"></z-input>
+        </div>
+    </div>`
+})
+
+export const StandAloneInput = () => ({
+  components: { ZInput },
+  data() {
+    return {
+      name: ''
+    }
+  },
+  template: `<div class='padded-container'>
+        <div class="input-container">
+            <z-input v-model="name"></z-input>
+        </div>
+    </div>`
+})
+
+export const InputWithLeftIcon = () => ({
+  components: { ZInput, ZInputGroup, ZIcon },
+  data() {
+    return {
+      name: ''
+    }
+  },
+  template: `<div class='padded-container'>
+        <div class="input-container">
+          <z-input v-model="name">
+            <template slot="left">
+              <z-icon icon="search" size="small"></z-icon>
+            </template>
+          </z-input>
+        </div>
+    </div>`
+})
+
+export const InputWithRightIcon = () => ({
+  components: { ZInput, ZInputGroup, ZIcon },
+  data() {
+    return {
+      name: ''
+    }
+  },
+  template: `<div class='padded-container'>
+        <div class="input-container">
+          <z-input v-model="name">
+            <template slot="right">
+              <z-icon icon="search" size="small"></z-icon>
+            </template>
+          </z-input>
+        </div>
+    </div>`
+})
+
+export const InputWithIconsOnEitherSides = () => ({
+  components: { ZInput, ZInputGroup, ZIcon },
+  data() {
+    return {
+      name: ''
+    }
+  },
+  template: `<div class='padded-container'>
+        <div class="input-container">
+          <z-input v-model="name">
+            <template slot="left">
+              <z-icon icon="search" size="small"></z-icon>
+            </template>
+            <template slot="right">
+              <z-icon icon="check" size="small"></z-icon>
+            </template>
+          </z-input>
+        </div>
+    </div>`
+})
+
+export const InputWithLeftButton = () => ({
+  components: { ZInput, ZInputGroup, ZButton },
+  data() {
+    return {
+      name: ''
+    }
+  },
+  template: `<div class='padded-container'>
+        <div class="input-container">
+          <z-input v-model="name">
+            <template slot="left">
+              <z-button color="primary" icon="chevron-left" iconSize="medium" iconColor="ink-400"></z-button>
+            </template>
+          </z-input>
+        </div>
+    </div>`
+})
+
+export const InputWithRightButton = () => ({
+  components: { ZInput, ZInputGroup, ZButton },
+  data() {
+    return {
+      name: ''
+    }
+  },
+  template: `<div class='padded-container'>
+        <div class="input-container">
+          <z-input v-model="name">
+            <template slot="right">
+              <z-button color="primary" icon="chevron-right" iconSize="medium" iconColor="ink-400"></z-button>
+            </template>
+          </z-input>
+        </div>
+    </div>`
+})
+
+export const InputWithClearables = () => ({
+  components: { ZInput, ZInputGroup, ZIcon },
+  data() {
+    return {
+      name: 'Hello World'
+    }
+  },
+  template: `<div class='padded-container'>
+        <div class="input-container">
+          <z-input v-model="name" :clearable="true">
+          </z-input>
+        </div>
+    </div>`
+})
+
+export const InputWithLeftAddon = () => ({
+  components: { ZInput, ZInputGroup, ZInputAddon, ZIcon },
+  data() {
+    return {
+      name: 'Hello World'
+    }
+  },
+  template: `<div class='padded-container'>
+        <div class="input-container">
+          <z-input-group>
+            <z-input-addon class="bg-juniper px-2 rounded-sm -mr-0.5">
+              www.
+            </z-input-addon>
+            <z-input v-model="name"></z-input>
+          </z-input-group>
+        </div>
+    </div>`
+})
+
+export const InputWithRightAddon = () => ({
+  components: { ZInput, ZInputGroup, ZInputAddon, ZIcon },
+  data() {
+    return {
+      name: 'Hello World'
+    }
+  },
+  template: `<div class='padded-container'>
+        <div class="input-container">
+          <z-input-group>
+            <z-input v-model="name"></z-input>
+            <z-input-addon class="bg-juniper px-2 rounded-sm -ml-0.5">
+              www.
+            </z-input-addon>
+          </z-input-group>
         </div>
     </div>`
 })
