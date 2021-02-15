@@ -100,14 +100,11 @@ export default {
       ),
       menuItems = this.$slots.links?.map((child) => {
         const options = child.componentOptions
-        if (
-          options &&
-          this.toPascal(options.tag || '') === 'ZMenu'  
-        ) {
-          if(options.propsData?.collapseOnMobile) {
+        if (options && this.toPascal(options.tag || '') === 'ZMenu') {
+          if (options.propsData?.collapseOnMobile) {
             const items = this.getComponent(options.children, 'ZMenuItem'),
-            // Checks if Menu Items are collapsible in Mobile, if true then render an accordion
-            // Else the Menu item remains the same
+              // Checks if Menu Items are collapsible in Mobile, if true then render an accordion
+              // Else the Menu item remains the same
               accordionItems = items.map((item) => {
                 return h(
                   'div',
