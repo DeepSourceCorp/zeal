@@ -8,13 +8,13 @@
     @click="handleClick"
     :class="[
       customClasses,
-      icon ? '' : defaultClasses,
+      defaultClasses,
       `${color && `z-btn--${color}`}`,
       `${this.fullWidth !== false && 'w-full inline-block'}`,
       `${this.isButtonDisabled && 'opacity-50 cursor-not-allowed'}`,
       ((isLink || icon) && 'p-0') || spacing,
-      isLink || icon ? '' : getSizeClasses,
-      `${getStyleBasedOnType}`
+      isLink || icon ? '' : sizeClasses,
+      `${stylesBasedOnColor}`
     ]"
     :type="type"
   >
@@ -77,12 +77,16 @@ export default Vue.extend({
     spacing: {
       type: String,
       default: 'px-6'
+    },
+    hoverOpacity: {
+      type: String,
+      default: '50'
     }
   },
   data() {
     return {
       defaultClasses:
-        'inline-flex items-center font-medium border-transparent rounded-sm relative justify-center'
+        'inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none'
     }
   },
   computed: {
@@ -92,7 +96,7 @@ export default Vue.extend({
     isButtonActive() {
       return this.active !== false
     },
-    getStyleBasedOnType() {
+    stylesBasedOnColor() {
       const colors = {
         link: `font-normal text-juniper ${this.isButtonActive && 'underline'} ${
           (this.isButtonDisabled && 'text-slate no-underline') || 'hover:underline'
@@ -102,14 +106,22 @@ export default Vue.extend({
         }`,
         secondary: `bg-ink-300 text-vanilla-100 border border-slate ${
           (this.isButtonDisabled && 'hover:bg-ink-300') || 'hover:bg-ink-200'
-        } ${this.isButtonActive && 'bg-ink-100'}`
+        } ${this.isButtonActive && 'bg-ink-100'}`,
+        ghost: `transition-DEFAULT duration-300 ease-in-out 
+                ${!this.icon && 'px-6'} 
+                ${this.icon ? '' : this.sizeClasses} 
+                ${
+                  (this.isButtonDisabled && 'hover:bg-ink-300') ||
+                  `hover:bg-ink-200 hover:bg-opacity-${this.hoverOpacity}`
+                } 
+                ${this.isButtonActive && 'bg-ink-100'}`
       }
       return colors[this.color] || ''
     },
     isLink() {
       return this.type === 'link' || this.to
     },
-    getSizeClasses() {
+    sizeClasses() {
       const sizes = {
         small: 'h-8 text-xs',
         medium: 'h-8 text-xs sm:h-10 sm:text-base',
