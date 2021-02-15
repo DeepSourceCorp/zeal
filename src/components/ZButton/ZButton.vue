@@ -104,7 +104,10 @@ export default {
         ghost: `transition-DEFAULT duration-300 ease-in-out 
                 ${!this.icon && 'px-6'} 
                 ${this.icon ? '' : this.sizeClasses} 
-                ${ (this.isButtonDisabled && 'hover:bg-ink-300') || `hover:bg-ink-200 hover:bg-opacity-${this.hoverOpacity}`} 
+                ${
+                  (this.isButtonDisabled && 'hover:bg-ink-300') ||
+                  `hover:bg-ink-200 hover:bg-opacity-${this.hoverOpacity}`
+                } 
                 ${this.isButtonActive && 'bg-ink-100'}`
       }
       return colors[this.color] || ''
