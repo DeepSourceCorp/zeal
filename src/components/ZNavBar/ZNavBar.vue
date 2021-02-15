@@ -81,7 +81,7 @@ export default {
       headerWrapperStyle = `${this.isScrolling && 'lg:backdrop-blur lg:bg-opacity-25'} ${
         this.isUserOnTop && 'lg:border-0'
       } 
-          sticky left-0 top-0 flex z-1000 justify-center w-full max-w-full bg-ink-400 border-b border-ink-200 min-h-16`,
+        fixed left-0 top-0 flex z-1000 justify-center w-full max-w-full bg-ink-400 border-b border-ink-200 min-h-16`,
       headerStyle = `${mWidth} 
         w-full flex items-center px-6`,
       mobHeaderStyle = `${this.isOpen ? 'right-0' : '-right-full'} 
