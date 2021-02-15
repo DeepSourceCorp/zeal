@@ -97,9 +97,10 @@ export default {
         secondary: `bg-ink-300 text-vanilla-100 border border-slate ${
           (this.isButtonDisabled && 'hover:bg-ink-300') || 'hover:bg-ink-200'
         } ${this.isButtonActive && 'bg-ink-100'}`,
-        ghost: `${!this.icon && 'px-6'} ${this.icon ? '' : this.sizeClasses} ${
-          (this.isButtonDisabled && 'hover:bg-ink-300') || 'hover:bg-ink-200 hover:bg-opacity-50'
-        } ${this.isButtonActive && 'bg-ink-100'}`
+        ghost: `${!this.icon && 'px-6'} 
+                ${this.icon ? '' : this.sizeClasses} 
+                ${ (this.isButtonDisabled && 'hover:bg-ink-300') || `hover:bg-ink-200 hover:bg-opacity-50`} 
+                ${this.isButtonActive && 'bg-ink-100'}`
       }
       return colors[this.color] || ''
     },
