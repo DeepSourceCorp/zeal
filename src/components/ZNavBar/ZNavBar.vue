@@ -98,7 +98,7 @@ export default {
           </div>
         </header>
       ),
-      menuItems = this.$slots.links?.map(child => {
+      menuItems = this.$slots.links?.map((child) => {
         const options = child.componentOptions
         if (
           options &&
