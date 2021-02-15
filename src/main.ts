@@ -33,6 +33,7 @@ import ZPulse from './components/ZPulse/index'
 import ZMenu from './components/ZMenu'
 import ZMenuSection from './components/ZMenu/ZMenuSection'
 import ZMenuItem from './components/ZMenu/ZMenuItem'
+import ZNavBar from './components/ZNavBar/index'
 import ZSidebarMenu from './components/ZSidebarMenu/index'
 import ZSidebarItem from './components/ZSidebarItem/index'
 import ZBadge from './components/ZBadge/index'
@@ -96,6 +97,7 @@ const components = [
   ZTabItem,
   ZTabPanes,
   ZTabPane,
+  ZNavBar,
   ZSidebarMenu,
   ZSidebarItem,
   ZRadioButton,
@@ -157,6 +159,7 @@ export default {
   ZMenu,
   ZMenuSection,
   ZMenuItem,
+  ZNavBar,
   ZSidebarMenu,
   ZSidebarItem,
   ZRadioButton,
@@ -206,6 +209,7 @@ export { default as ZPulse } from './components/ZPulse/index'
 export { default as ZMenu } from './components/ZMenu/index'
 export { default as ZMenuSection } from './components/ZMenu/ZMenuSection/index'
 export { default as ZMenuItem } from './components/ZMenu/ZMenuItem/index'
+export { default as ZNavBar } from './components/ZNavBar/index'
 export { default as ZTab } from './components/ZTab/index'
 export { default as ZTabs } from './components/ZTabs/index'
 export { default as ZTabList } from './components/ZTabs/ZTabList'
