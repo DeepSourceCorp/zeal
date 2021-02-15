@@ -24,8 +24,10 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import ZIcon from '@/components/ZIcon/ZIcon.vue'
-export default {
+
+export default Vue.extend({
   name: 'ZButton',
   components: {
     ZIcon
@@ -120,8 +122,8 @@ export default {
   },
   methods: {
     handleClick(event) {
-      this.$emit('click', event)
+      this.$emit('clicked', event)
     }
   }
-}
+})
 </script>

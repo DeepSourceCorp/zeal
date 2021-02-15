@@ -2,7 +2,7 @@
   <div
     class="z-accordion-item"
     :class="{
-      'border-slate border-t last:border-b': this.baseStyle,
+      'border-slate border-t last:border-b': this.showBorders,
       'text-slate': this.isDisabled
     }"
   >
@@ -74,8 +74,8 @@ export default {
     return {
       open: this.isOpen,
       accordionHeaderAnimations: '',
-      baseStyle: this.$parent.defaultStyle,
-      isDisabled: this.$parent.disabled
+      isDisabled: this.$parent.disabled,
+      showBorders: this.$parent.showBorders
     }
   },
   methods: {

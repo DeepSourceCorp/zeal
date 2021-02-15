@@ -57,7 +57,8 @@ export default Vue.extend({
   },
   props: {
     selected: {
-      type: String
+      type: String,
+      default: ''
     },
     tabIndex: {
       type: Number,
@@ -73,6 +74,10 @@ export default Vue.extend({
       default: false
     }
   },
+  model: {
+    prop: 'selected',
+    event: 'change'
+  },
   data() {
     return {
       selectedOpt: this.selected ? this.selected : '',
@@ -87,6 +92,11 @@ export default Vue.extend({
   methods: {
     clearSelected(): void {
       this.selectedOpt = ''
+    }
+  },
+  watch: {
+    selectedOpt: function (newValue) {
+      this.$emit('change', newValue)
     }
   }
 })

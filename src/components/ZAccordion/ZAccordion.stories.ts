@@ -7,6 +7,7 @@ import ZIcon from '@/components/ZIcon/ZIcon.vue'
 import ZButton from '@/components/ZButton/ZButton.vue'
 import ZInput from '@/components/ZInput/ZInput.vue'
 
+
 export default {
   title: 'Accordion',
   component: ZAccordion,
@@ -36,7 +37,7 @@ export const DefaultAccordion = () => ({
 export const AccordionWithBaseStyle = () => ({
   components: { ZAccordion, ZAccordionItem },
   template: `<div class='padded-container input-container'>
-        <z-accordion class="text-vanilla-100" :defaultStyle="true">
+        <z-accordion class="text-vanilla-100" :showBorders="true">
           <z-accordion-item title="Consistency" class="p-4">
             <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
             <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
@@ -56,7 +57,7 @@ export const AccordionWithBaseStyle = () => ({
 export const AccordionWithOpenedCards = () => ({
   components: { ZAccordion, ZAccordionItem },
   template: `<div class='padded-container input-container'>
-        <z-accordion class="text-vanilla-100" :defaultStyle="true">
+        <z-accordion class="text-vanilla-100" :showBorders="true">
           <z-accordion-item title="Consistency" :is-open="true" class="p-4">
             <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
             <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
@@ -76,7 +77,7 @@ export const AccordionWithOpenedCards = () => ({
 export const AccordionWithDisabledState = () => ({
   components: { ZAccordion, ZAccordionItem },
   template: `<div class='padded-container input-container'>
-        <z-accordion class="text-vanilla-100" :defaultStyle="true" :disabled="true">
+        <z-accordion class="text-vanilla-100" :showBorders="true" :disabled="true">
           <z-accordion-item title="Consistency" class="p-4">
             <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
             <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>

@@ -20,6 +20,10 @@ export default {
     allowMultiple: {
       type: Boolean,
       default: true
+    },
+    showBorders: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
