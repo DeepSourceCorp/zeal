@@ -10,14 +10,19 @@ export default {
   },
   props: {
     maxWidth: {
-        type: String
+      type: String
+    },
+    hideLinksOnScroll: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
     return {
         isOpen: false,
         isScrolling: false,
-        isUserOnTop: true
+        isUserOnTop: true,
+        hideOnScroll: ''
     }
   },
   mounted() {
@@ -53,6 +58,7 @@ export default {
     handleScroll() {
       this.isScrolling = true
       this.isUserOnTop = Boolean(!(window.scrollY > 50))
+      this.hideOnScroll = window.scrollY > 50 && this.hideLinksOnScroll ? 'lg:opacity-0' : 'lg:opacity-1'
     },
     getComponent(parent, name, list = []) {
         parent.forEach(child => {
@@ -67,15 +73,16 @@ export default {
   },
   render(h) {
       const mWidth = this.maxWidth && `max-w-${this.maxWidth}` || '', 
-        headerWrapperStyle = `${this.isScrolling || !this.isUserOnTop && 'lg:backdrop-blur lg:bg-opacity-25'} ${this.isUserOnTop && 'lg:border-0'} fixed left-0 top-0 flex z-100 justify-center w-full max-w-full bg-ink-400 border-b border-ink-200 min-h-16`,
+        headerWrapperStyle = `${this.isScrolling && 'lg:backdrop-blur lg:bg-opacity-25'} ${this.isUserOnTop && 'lg:border-0'} fixed left-0 top-0 flex z-1000 justify-center w-full max-w-full bg-ink-400 border-b border-ink-200 min-h-16`,
         headerStyle = `${mWidth}w-full flex items-center px-6`,
         mobHeaderStyle = `${this.isOpen ? 'right-0' : '-right-full'} overflow-y-scroll lg:-right-full w-full h-screen absolute flex flex-col space-y-2 transition-all duration-700 ease-in-out top-0 bg-ink-300 flex flex-col`,
+        linkSlotStyle = `${this.hideOnScroll} second hidden lg:flex flex-1 items-center justify-center space-x-4 w-full transition-all duration-300 ease-in-out`,
         header = (
           <header class={headerStyle}>
                 <div class="first flex items-center flex-1">
                     {this.$slots.brand}
                 </div>
-                <div class="second hidden lg:flex flex-1 items-center justify-center space-x-4 w-full">
+                <div class={linkSlotStyle}>
                     {this.$slots.links}
                 </div>
                 <div class="third flex flex-1 items-center space-x-4 justify-end">
@@ -111,7 +118,7 @@ export default {
                             ...options.propsData
                         },
                         class: {
-                            'px-4 py-2': true
+                            'px-4 py-2 border-b border-ink-200 lg:border-0': true
                         },
                         scopedSlots: {
                             default: props => accordionItems
@@ -120,8 +127,7 @@ export default {
                 )
             } else if(options && this.toPascal(options.tag || '') === 'ZMenu') {
                 const listItems = this.getComponent(options.children, 'ZList')
-                console.log(listItems)
-                return h('div',listItems)
+                return h('div', listItems)
             }
             return child;
         }),

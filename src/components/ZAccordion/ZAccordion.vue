@@ -4,10 +4,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
+<script>
+export default {
   name: 'ZAccordion',
   components: {},
   props: {
@@ -18,8 +16,17 @@ export default Vue.extend({
     disabled: {
       type: Boolean,
       default: false
+    },
+    allowMultiple: {
+      type: Boolean,
+      default: true
+    }
+  },
+  data() {
+    return {
+      accordionItems:[]
     }
   },
   computed: {}
-})
+}
 </script>

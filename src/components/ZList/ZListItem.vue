@@ -1,7 +1,7 @@
 <template>
   <div class="z-list-item flex space-x-1">
     <z-icon v-if="icon" :icon="icon" :size="iconSize"></z-icon>
-    <component :is="as" :href="to" :class="[itemStyle, tagSpecificStyles]">
+    <component :is="as" :href="to" :class="[zStyle, tagSpecificStyles]">
       <slot></slot>
     </component>
   </div>
@@ -29,8 +29,8 @@ export default {
       type: String,
       default: 'small'
     },
-    itemStyle: {
-        type: String
+    zStyle: {
+      type: String
     }
   },
   data() {
