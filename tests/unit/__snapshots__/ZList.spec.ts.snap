@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ZList renders a list with link list items 1`] = `
+<div class="z-list flex flex-col text-vanilla-100 space-y-2">
+  <div class="font-medium">Heading</div>
+  <div class="z-list-item flex space-x-1">
+    <!----> <a href="#" class="hover:text-juniper transition-all duration-300 ease-in-out">First</a>
+  </div>
+  <div class="z-list-item flex space-x-1">
+    <!----> <a href="#" class="hover:text-juniper transition-all duration-300 ease-in-out">Second</a>
+  </div>
+  <div class="z-list-item flex space-x-1">
+    <!----> <a href="#" class="hover:text-juniper transition-all duration-300 ease-in-out">Third</a>
+  </div>
+</div>
+`;
+
+exports[`ZList renders a list with title 1`] = `
+<div class="z-list flex flex-col text-vanilla-100 space-y-2">
+  <div class="font-medium">Headings</div>
+  <div class="z-list-item flex space-x-1">
+    <!----> <a href="#" class="hover:text-juniper transition-all duration-300 ease-in-out">First</a>
+  </div>
+  <div class="z-list-item flex space-x-1">
+    <!----> <a href="#" class="hover:text-juniper transition-all duration-300 ease-in-out">Second</a>
+  </div>
+  <div class="z-list-item flex space-x-1">
+    <!----> <a href="#" class="hover:text-juniper transition-all duration-300 ease-in-out">Third</a>
+  </div>
+</div>
+`;
