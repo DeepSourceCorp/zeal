@@ -17,8 +17,10 @@
       data-content=""
       class="z-input__checkbox--checkmark before:content-before text-transparent text-center text-lg sibling-checked:text-vanilla-100 sibling-checked:bg-juniper sibling-checked:border-juniper grid place-items-center absolute left-0 h-5 w-5 rounded-sm border border-slate border-solid bg-transparent cursor-pointer group-hover:border-juniper"
       :class="[
-        `${disabled &&
-          `cursor-not-allowed group-hover:border-slate sibling-checked:text-ink-300 sibling-checked:border-slate sibling-checked:bg-slate`}`
+        `${
+          disabled &&
+          `cursor-not-allowed group-hover:border-slate sibling-checked:text-ink-300 sibling-checked:border-slate sibling-checked:bg-slate`
+        }`
       ]"
     ></span>
     <span

@@ -87,7 +87,7 @@ export default Vue.extend({
     }
   },
   mounted() {
-    this.options = this.$children.filter(child => child.$options.name === 'ZOption')
+    this.options = this.$children.filter((child) => child.$options.name === 'ZOption')
   },
   methods: {
     clearSelected(): void {
@@ -95,7 +95,7 @@ export default Vue.extend({
     }
   },
   watch: {
-    selectedOpt: function(newValue) {
+    selectedOpt: function (newValue) {
       this.$emit('change', newValue)
     }
   }
