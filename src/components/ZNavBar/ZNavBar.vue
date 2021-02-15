@@ -38,7 +38,22 @@ export default {
       }, 1500)
     }
   },
-  computed: {},
+  computed: {
+    headerWrapperStyle() {
+      return `${this.isScrolling && 'lg:backdrop-blur lg:bg-opacity-25'} ${
+          this.isUserOnTop && 'lg:border-0'
+        } 
+        fixed left-0 top-0 flex z-1000 justify-center w-full max-w-full bg-ink-400 border-b border-ink-200 min-h-16`
+    },
+    mobHeaderStyle() {
+      return `${this.isOpen ? 'right-0' : '-right-full'} 
+              overflow-y-scroll lg:-right-full w-full h-screen absolute flex flex-col space-y-2 transition-all duration-700 ease-in-out top-0 bg-ink-300 flex flex-col`
+    },
+    linkSlotStyle() {
+      return `${this.hideOnScroll} 
+              second hidden lg:flex flex-1 items-center justify-center space-x-4 w-full transition-all duration-300 ease-in-out`
+    }
+  },
   methods: {
     toPascal(word) {
       // https://stackoverflow.com/a/53952925
@@ -78,20 +93,12 @@ export default {
   },
   render(h) {
     const mWidth = (this.maxWidth && `max-w-${this.maxWidth}`) || '',
-      headerWrapperStyle = `${this.isScrolling && 'lg:backdrop-blur lg:bg-opacity-25'} ${
-        this.isUserOnTop && 'lg:border-0'
-      } 
-        fixed left-0 top-0 flex z-1000 justify-center w-full max-w-full bg-ink-400 border-b border-ink-200 min-h-16`,
       headerStyle = `${mWidth} 
         w-full flex items-center px-6`,
-      mobHeaderStyle = `${this.isOpen ? 'right-0' : '-right-full'} 
-        overflow-y-scroll lg:-right-full w-full h-screen absolute flex flex-col space-y-2 transition-all duration-700 ease-in-out top-0 bg-ink-300 flex flex-col`,
-      linkSlotStyle = `${this.hideOnScroll} 
-        second hidden lg:flex flex-1 items-center justify-center space-x-4 w-full transition-all duration-300 ease-in-out`,
       header = (
         <header class={headerStyle}>
           <div class="first flex items-center flex-1">{this.$slots.brand}</div>
-          <div class={linkSlotStyle}>{this.$slots.links}</div>
+          <div class={this.linkSlotStyle}>{this.$slots.links}</div>
           <div class="third flex flex-1 items-center space-x-4 justify-end">{this.$slots.cta}</div>
           <div class="flex cursor-pointer lg:hidden space-x-2 pl-2" on-click={this.toggleModal}>
             <z-icon icon="menu" size="medium"></z-icon>
@@ -140,7 +147,7 @@ export default {
       }),
       mobileHeader = (
         // Mobile Header Section
-        <div class={mobHeaderStyle}>
+        <div class={this.mobHeaderStyle}>
           <div
             class="flex cursor-pointer justify-end p-4 border-b border-ink-200"
             on-click={this.toggleModal}
@@ -153,7 +160,7 @@ export default {
       )
     return (
       // Entire Header Wrapper
-      <div class={headerWrapperStyle}>
+      <div class={this.headerWrapperStyle}>
         {header}
         {mobileHeader}
       </div>
