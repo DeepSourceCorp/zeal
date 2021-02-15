@@ -18,13 +18,23 @@ export default {
 }
 
 export const Horizontal = () => ({
-    components: { ZNavBar, ZButton, ZMenuItem, ZMenu, ZList, ZListItem, ZMenuSection, ZIcon, ZDivider },
-    data() { 
-        return { 
-            resources: ['Documentation', 'Discourse forum', 'Learning Center', 'Blog', 'Slack User Group']
-        }
-    },
-    template: `<div class="bg-gradient-galaxy h-screen w-full-screen">
+  components: {
+    ZNavBar,
+    ZButton,
+    ZMenuItem,
+    ZMenu,
+    ZList,
+    ZListItem,
+    ZMenuSection,
+    ZIcon,
+    ZDivider
+  },
+  data() {
+    return {
+      resources: ['Documentation', 'Discourse forum', 'Learning Center', 'Blog', 'Slack User Group']
+    }
+  },
+  template: `<div class="bg-gradient-galaxy h-screen w-full-screen">
                 <z-nav-bar class="text-vanilla-100">
                     <template slot="brand">
                         <img class="h-5 lg:h-7 max-w-none" src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
@@ -211,4 +221,3 @@ export const Horizontal = () => ({
     </div>
     </div>`
 })
-

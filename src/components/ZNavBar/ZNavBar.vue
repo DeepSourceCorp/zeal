@@ -53,7 +53,7 @@ export default {
         .replace(new RegExp(/\w/), (s) => s.toUpperCase())
     },
     toggleModal() {
-        this.isOpen = !this.isOpen
+      this.isOpen = !this.isOpen
     },
     handleScroll() {
       this.isScrolling = true
@@ -61,22 +61,40 @@ export default {
       this.hideOnScroll = window.scrollY > 50 && this.hideLinksOnScroll ? 'lg:opacity-0' : 'lg:opacity-1'
     },
     getComponent(parent, name, list = []) {
-        parent.forEach(child => {
-            if(child && child?.componentOptions && this.toPascal(child.componentOptions.tag || '') === name) {
-                list.push(child)
-            } else if(child?.children){
-              this.getComponent(child.children, name, list)  
-            }
-        })
-        return list
+      parent.forEach((child) => {
+        if (
+          child &&
+          child?.componentOptions &&
+          this.toPascal(child.componentOptions.tag || '') === name
+        ) {
+          list.push(child)
+        } else if (child?.children) {
+          this.getComponent(child.children, name, list)
+        }
+      })
+      return list
     }
   },
   render(h) {
       const mWidth = this.maxWidth && `max-w-${this.maxWidth}` || '', 
-        headerWrapperStyle = `${this.isScrolling && 'lg:backdrop-blur lg:bg-opacity-25'} ${this.isUserOnTop && 'lg:border-0'} fixed left-0 top-0 flex z-1000 justify-center w-full max-w-full bg-ink-400 border-b border-ink-200 min-h-16`,
-        headerStyle = `${mWidth}w-full flex items-center px-6`,
-        mobHeaderStyle = `${this.isOpen ? 'right-0' : '-right-full'} overflow-y-scroll lg:-right-full w-full h-screen absolute flex flex-col space-y-2 transition-all duration-700 ease-in-out top-0 bg-ink-300 flex flex-col`,
-        linkSlotStyle = `${this.hideOnScroll} second hidden lg:flex flex-1 items-center justify-center space-x-4 w-full transition-all duration-300 ease-in-out`,
+        headerWrapperStyle = `${
+          this.isScrolling && 'lg:backdrop-blur lg:bg-opacity-25'
+          } ${
+            this.isUserOnTop && 'lg:border-0'
+          } 
+          fixed left-0 top-0 flex z-1000 justify-center w-full max-w-full bg-ink-400 border-b border-ink-200 min-h-16`,
+        headerStyle = `${
+          mWidth
+        } 
+        w-full flex items-center px-6`,
+        mobHeaderStyle = `${
+          this.isOpen ? 'right-0' : '-right-full'
+        } 
+        overflow-y-scroll lg:-right-full w-full h-screen absolute flex flex-col space-y-2 transition-all duration-700 ease-in-out top-0 bg-ink-300 flex flex-col`,
+        linkSlotStyle = `${
+          this.hideOnScroll
+        } 
+        second hidden lg:flex flex-1 items-center justify-center space-x-4 w-full transition-all duration-300 ease-in-out`,
         header = (
           <header class={headerStyle}>
                 <div class="first flex items-center flex-1">
@@ -129,28 +147,26 @@ export default {
                 const listItems = this.getComponent(options.children, 'ZList')
                 return h('div', listItems)
             }
-            return child;
-        }),
-        mobileHeader = (
+            return child
+          }),
+          mobileHeader = (
             <div class={mobHeaderStyle}>
-                <div
-                    class="flex cursor-pointer justify-end p-4 border-b border-ink-200"
-                    on-click={this.toggleModal}>
-                    <z-icon icon="x" size="medium" color="vanilla-100"></z-icon>
-                </div>
-                {menuItems}
-                <div class="flex flex-col space-y-4 p-4">
-                    {this.$slots.cta}
-                </div>
+              <div
+                class="flex cursor-pointer justify-end p-4 border-b border-ink-200"
+                on-click={this.toggleModal}
+              >
+                <z-icon icon="x" size="medium" color="vanilla-100"></z-icon>
+              </div>
+              {menuItems}
+              <div class="flex flex-col space-y-4 p-4">{this.$slots.cta}</div>
             </div>
-        )
-    return (
-        <div class={headerWrapperStyle}
-        >
-          {header}  
-          {mobileHeader}
-        </div>
-    )
+          )
+          return (
+            <div class={headerWrapperStyle}>
+              {header}
+              {mobileHeader}
+            </div>
+          )
   }
 }
 </script>
