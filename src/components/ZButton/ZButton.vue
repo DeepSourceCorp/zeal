@@ -71,6 +71,10 @@ export default {
     },
     iconSize: {
       type: String
+    },
+    hoverOpacity: {
+      type: String,
+      default: '50'
     }
   },
   data() {
@@ -97,9 +101,10 @@ export default {
         secondary: `bg-ink-300 text-vanilla-100 border border-slate ${
           (this.isButtonDisabled && 'hover:bg-ink-300') || 'hover:bg-ink-200'
         } ${this.isButtonActive && 'bg-ink-100'}`,
-        ghost: `${!this.icon && 'px-6'} 
+        ghost: `transition-DEFAULT duration-300 ease-in-out 
+                ${!this.icon && 'px-6'} 
                 ${this.icon ? '' : this.sizeClasses} 
-                ${ (this.isButtonDisabled && 'hover:bg-ink-300') || `hover:bg-ink-200 hover:bg-opacity-50`} 
+                ${ (this.isButtonDisabled && 'hover:bg-ink-300') || `hover:bg-ink-200 hover:bg-opacity-${this.hoverOpacity}`} 
                 ${this.isButtonActive && 'bg-ink-100'}`
       }
       return colors[this.color] || ''

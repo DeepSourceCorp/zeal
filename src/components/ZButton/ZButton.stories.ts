@@ -97,9 +97,15 @@ export const DisabledLinkButton = () => ({
 
 export const GhostButton = () => ({
   components: { ZButton },
-  template: `<div class="flex flex-row space-x-2 items-center">
-        <z-button color="ghost" type="link" to="#" class="text-juniper">Ghost Link</z-button>
-        <z-button color="ghost" type="button" class="text-vanilla-100">Ghost Button</z-button>
-        <z-button color="ghost" icon="plus" iconColor="vanilla-100"></z-button>
+  template: `<div class="flex flex-col space-x-2 items-center">
+        <div class="w-full p-6 bg-ink-400">
+          <z-button color="ghost" type="link" to="#" class="text-juniper" hoverOpacity="50">Ghost Link</z-button>
+        </div>
+        <div class="w-full p-6 bg-ink-300">
+          <z-button color="ghost" type="button" class="text-vanilla-100" hoverOpacity="100">Ghost Button</z-button>
+        </div>
+        <div class="w-full p-6">
+          <z-button color="ghost" icon="plus" iconColor="vanilla-100"></z-button>
+        </div>
     </div>`
 })
