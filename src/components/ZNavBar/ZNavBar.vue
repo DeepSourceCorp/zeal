@@ -98,7 +98,7 @@ export default {
           </div>
         </header>
       ),
-      menuItems = this.$slots.links?.map((child, index) => {
+      menuItems = this.$slots.links?.map(child => {
         const options = child.componentOptions
         if (
           options &&
@@ -127,7 +127,7 @@ export default {
               'px-4 py-2 border-b border-ink-200 lg:border-0': true
             },
             scopedSlots: {
-              default: (props) => accordionItems
+              default: () => accordionItems
             }
           })
         } else if (options && this.toPascal(options.tag || '') === 'ZMenu') {
