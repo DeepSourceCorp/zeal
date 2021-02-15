@@ -81,7 +81,7 @@ export default {
       headerWrapperStyle = `${this.isScrolling && 'lg:backdrop-blur lg:bg-opacity-25'} ${
         this.isUserOnTop && 'lg:border-0'
       } 
-          fixed left-0 top-0 flex z-1000 justify-center w-full max-w-full bg-ink-400 border-b border-ink-200 min-h-16`,
+          sticky left-0 top-0 flex z-1000 justify-center w-full max-w-full bg-ink-400 border-b border-ink-200 min-h-16`,
       headerStyle = `${mWidth} 
         w-full flex items-center px-6`,
       mobHeaderStyle = `${this.isOpen ? 'right-0' : '-right-full'} 
@@ -102,41 +102,47 @@ export default {
         const options = child.componentOptions
         if (
           options &&
-          this.toPascal(options.tag || '') === 'ZMenu' &&
-          options.propsData?.collapseOnMobile
+          this.toPascal(options.tag || '') === 'ZMenu'  
         ) {
-          const items = this.getComponent(options.children, 'ZMenuItem'),
-            accordionItems = items.map((item) => {
-              return h(
-                'div',
-                {
-                  domProps: {
-                    key: item.key
-                  }
-                },
-                item?.componentOptions?.children
-              )
+          if(options.propsData?.collapseOnMobile) {
+            const items = this.getComponent(options.children, 'ZMenuItem'),
+            // Checks if Menu Items are collapsible in Mobile, if true then render an accordion
+            // Else the Menu item remains the same
+              accordionItems = items.map((item) => {
+                return h(
+                  'div',
+                  {
+                    domProps: {
+                      key: item.key
+                    }
+                  },
+                  item?.componentOptions?.children
+                )
+              })
+            return h(ZAccordionItem, {
+              ...options.data,
+              props: {
+                title: 'Resources',
+                ...options.propsData
+              },
+              class: {
+                'px-4 py-2 border-b border-ink-200 lg:border-0': true
+              },
+              scopedSlots: {
+                default: () => accordionItems
+              }
             })
-          return h(ZAccordionItem, {
-            ...options.data,
-            props: {
-              title: 'Resources',
-              ...options.propsData
-            },
-            class: {
-              'px-4 py-2 border-b border-ink-200 lg:border-0': true
-            },
-            scopedSlots: {
-              default: () => accordionItems
-            }
-          })
-        } else if (options && this.toPascal(options.tag || '') === 'ZMenu') {
-          const listItems = this.getComponent(options.children, 'ZList')
-          return h('div', listItems)
+          } else {
+            // If the menu item is a List Item Component, it will be rendered as a separate component
+            // from the Menu Component
+            const listItems = this.getComponent(options.children, 'ZList')
+            return h('div', listItems)
+          }
         }
         return child
       }),
       mobileHeader = (
+        // Mobile Header Section
         <div class={mobHeaderStyle}>
           <div
             class="flex cursor-pointer justify-end p-4 border-b border-ink-200"
@@ -149,6 +155,7 @@ export default {
         </div>
       )
     return (
+      // Entire Header Wrapper
       <div class={headerWrapperStyle}>
         {header}
         {mobileHeader}
