@@ -37,7 +37,7 @@ export const Horizontal = () => ({
   template: `<div class="bg-gradient-galaxy h-screen w-full-screen">
                 <z-nav-bar class="text-vanilla-100">
                     <template slot="brand">
-                        <img class="h-5 lg:h-7 max-w-none" src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
+                        <img class="h-4 sm:h-5 lg:h-7 max-w-none" src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
                     </template>
                     <template slot="links">
                         <z-menu width="auto">
@@ -47,7 +47,7 @@ export const Horizontal = () => ({
                             <template slot="body" @mouseleave="toggle()">
                                 <div class="flex w-full space-x-4">
                                     <z-list class="text-vanilla-400 text-sm lg:text-base space-y-3 w-auto lg:w-32 uppercase p-4 border-b border-ink-200 lg:border-0" title="Integrations">
-                                        <div class="flex flex-col gap-y-4 text-vanilla-100 capitalize">
+                                        <div class="flex flex-col space-y-4 text-vanilla-100 capitalize">
                                             <z-list-item v-for="i in 3" :key="i" as="a" icon="gitlab" iconSize="medium" class="text-xs lg:text-sm flex cursor-pointer items-end space-x-2">
                                                 GitHub
                                             </z-list-item>
@@ -55,7 +55,7 @@ export const Horizontal = () => ({
                                     </z-list>
                                     <div class="h-auto w-px bg-slate"></div>
                                     <z-list class="text-vanilla-400 text-sm lg:text-base space-y-3 w-auto lg:w-72 uppercase p-4 border-b border-ink-200 lg:border-0" title="Languages">
-                                        <div class="flex flex-col flex-nowrap lg:flex-row lg:flex-wrap gap-x-0 gap-y-4 lg:gap-x-3 lg:gap-y-3 text-vanilla-100 capitalize">
+                                        <div class="flex flex-col flex-nowrap lg:flex-row lg:flex-wrap space-x-0 space-y-4 lg:gap-x-3 lg:gap-y-3 lg:space-x-0 lg:space-y-0 text-vanilla-100 capitalize">
                                             <z-list-item v-for="i in 10" :key="i" class="cursor-pointer" zStyle="w-full flex items-center space-x-2">
                                                 <img src="https://i.imgur.com/6r5cdUd.png" class="h-4 lg:h-10" />
                                                 <a class="text-xs lg:text-sm flex lg:hidden hover:text-juniper transition-all duration-300 ease-in-out">JavaScript</a>    
@@ -79,8 +79,8 @@ export const Horizontal = () => ({
                         <a class="flex px-4 py-2 hover:bg-ink-300 border-b border-ink-200 lg:border-0" href="https://deepsource.io/pricing">Pricing</a>
                     </template>
                     <template slot="cta">
-                        <z-button color="link" type="link" class="text-sm lg:text-base">Log in</z-button>
-                        <z-button color="primary" size="small" spacing="px-4 lg:px-6">Sign up</z-button>
+                        <z-button color="link" type="link" class="text-xs sm:text-sm lg:text-base">Log in</z-button>
+                        <z-button color="primary" size="none" spacing="px-4 lg:px-6" class="text-xxs sm:text-xs lg:text-sm h-6 sm:h-8">Sign up</z-button>
                     </template>
                 </z-nav-bar>
 
