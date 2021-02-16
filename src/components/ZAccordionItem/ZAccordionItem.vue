@@ -2,7 +2,8 @@
   <div
     class="z-accordion-item"
     :class="{
-      'border-ink-200 border-t border-b first:border-0 last:border-0 hover:bg-ink-300': this.showBorders,
+      'border-ink-200 border-t border-b first:border-0 last:border-0 hover:bg-ink-300': this
+        .showBorders,
       'text-slate': this.isDisabled
     }"
   >
