@@ -2,7 +2,7 @@
   <div
     class="z-accordion-item"
     :class="{
-      'border-slate border-t last:border-b': this.showBorders,
+      'border-ink-200 border-t border-b first:border-0 last:border-0 hover:bg-ink-300': this.showBorders,
       'text-slate': this.isDisabled
     }"
   >
@@ -15,17 +15,17 @@
           'cursor-pointer': !this.isDisabled && !this.isList
         }"
       >
-        <span class="flex-1 font-medium">{{ title }}</span>
+        <span class="flex-1 font-medium text-vanilla-200">{{ title }}</span>
         <z-icon
           icon="chevron-right"
           color="slate"
-          class="transform"
+          class="transform transition-all duration-DEFAULT ease-in-out group"
           :class="[
             accordionHeaderAnimations,
             {
-              'text-vanilla-100 rotate-90': this.open,
+              'text-vanilla-200 rotate-90': this.open,
               'text-slate': this.isDisabled,
-              'group-hover:text-vanilla-100': !this.isDisabled,
+              'group-hover:text-vanilla-200': !this.isDisabled,
               hidden: this.isList
             }
           ]"
@@ -40,7 +40,9 @@
         'max-h-full': this.isList
       }"
     >
-      <slot></slot>
+      <div class="py-2">
+        <slot></slot>
+      </div>
     </div>
   </div>
 </template>
