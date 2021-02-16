@@ -1,7 +1,7 @@
 <template>
   <span class="relative z-menu">
     <button v-on:click="toggle" class="outline-none focus:outline-none" ref="menu-trigger">
-      <slot name="trigger"></slot>
+      <slot name="trigger" :toggle="toggle" :isOpen="isOpen"></slot>
     </button>
     <transition
       enter-active-class="animate-slide-bottom-enter-active sm:animate-none sm:transition-all sm:duration-75 sm:ease-out-quad"
@@ -31,9 +31,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import outsideClickDirective from '../../directives/outside-click'
-
 Vue.directive('outside-click', outsideClickDirective)
-
 export default Vue.extend({
   name: 'ZMenu',
   props: {
@@ -53,6 +51,10 @@ export default Vue.extend({
     },
     width: {
       type: String
+    },
+    collapseOnMobile: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -84,7 +86,6 @@ export default Vue.extend({
         base: `py-1 text-sm w-full sm:w-${this.width || '64'} mt-5 sm:mt-2`,
         large: `py-2 text-base w-full sm:w-${this.width || '72'} mt-5 sm:mt-4`
       }
-
       return sizes[this.size || 'base']
     }
   }
