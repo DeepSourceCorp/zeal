@@ -10,7 +10,7 @@
       `text-${color}`
     ]"
     viewBox="0 0 24 24"
-    stroke-linecap="round" 
+    stroke-linecap="round"
     stroke-linejoin="round"
     v-html="getIcon(icon)"
     fill="none"
