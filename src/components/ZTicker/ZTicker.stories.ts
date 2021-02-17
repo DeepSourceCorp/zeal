@@ -14,8 +14,41 @@ export const DefaultTicker = () => ({
  
   template: `<div class='padded-container'>
         <div class="input-container">
-            <z-ticker></z-ticker>
+            <z-ticker class="text-vanilla"></z-ticker>
         </div>
     </div>`
 })
 
+export const NegativeTicker = () => ({
+  components: { ZTicker },
+ 
+  template: `<div class='padded-container'>
+        <div class="input-container">
+            <z-ticker class="text-vanilla" type="decrease" value="44"></z-ticker>
+        </div>
+    </div>`
+})
+
+export const TickerWithoutIcon = () => ({
+  components: { ZTicker },
+ 
+  template: `<div class='padded-container'>
+        <div class="input-container">
+            <z-ticker class="text-vanilla" type="decrease" value="44" :hide-icon="true"></z-ticker>
+        </div>
+    </div>`
+})
+
+export const TickerWithContent= () => ({
+  components: { ZTicker },
+ 
+  template: `<div class='padded-container'>
+        <div class="input-container">
+            <z-ticker class="text-vanilla-200 space-x-1" type="decrease" value="44">
+              <template slot="content">
+                <span class="text-sm">since last week</span>
+              </template>
+            </z-ticker>
+        </div>
+    </div>`
+})
