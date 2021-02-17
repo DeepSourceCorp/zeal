@@ -1,6 +1,8 @@
 <script>
 import ZIcon from '@/components/ZIcon/ZIcon.vue'
 import ZAccordionItem from '@/components/ZAccordionItem/ZAccordionItem.vue'
+import { toPascal } from '@/helpers/components/utils.js'
+
 export default {
   name: 'ZNavBar',
   components: {
@@ -54,18 +56,6 @@ export default {
     }
   },
   methods: {
-    toPascal(word) {
-      // https://stackoverflow.com/a/53952925
-      return `${word}`
-        .replace(new RegExp(/[-_]+/, 'g'), ' ')
-        .replace(new RegExp(/[^\w\s]/, 'g'), '')
-        .replace(
-          new RegExp(/\s+(.)(\w+)/, 'g'),
-          ($1, $2, $3) => `${$2.toUpperCase() + $3.toLowerCase()}`
-        )
-        .replace(new RegExp(/\s/, 'g'), '')
-        .replace(new RegExp(/\w/), (s) => s.toUpperCase())
-    },
     toggleModal() {
       this.isOpen = !this.isOpen
     },
@@ -80,7 +70,7 @@ export default {
         if (
           child &&
           child?.componentOptions &&
-          this.toPascal(child.componentOptions.tag || '') === name
+          toPascal(child.componentOptions.tag || '') === name
         ) {
           list.push(child)
         } else if (child?.children) {
@@ -106,7 +96,7 @@ export default {
       ),
       menuItems = this.$slots.links?.map((child) => {
         const options = child.componentOptions
-        if (options && this.toPascal(options.tag || '') === 'ZMenu') {
+        if (options && toPascal(options.tag || '') === 'ZMenu') {
           if (options.propsData?.collapseOnMobile) {
             const items = this.getComponent(options.children, 'ZMenuItem'),
               // Checks if Menu Items are collapsible in Mobile, if true then render an accordion

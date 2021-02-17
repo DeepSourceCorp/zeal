@@ -466,6 +466,7 @@ module.exports = {
     strokeWidth: {
       0: '0',
       1: '1',
+      '1.5': '1.5',
       2: '2'
     },
     textColor: (theme) => theme('colors'),
