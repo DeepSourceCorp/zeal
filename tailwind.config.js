@@ -215,9 +215,10 @@ module.exports = {
     divideColor: (theme) => theme('borderColor'),
     divideOpacity: (theme) => theme('borderOpacity'),
     divideWidth: (theme) => theme('borderWidth'),
-    fill: {
+    fill: (theme) => ({
+      ...theme('colors'),
       current: 'currentColor'
-    },
+    }),
     flex: {
       1: '1 1 0%',
       auto: '1 1 auto',
@@ -460,9 +461,10 @@ module.exports = {
       ...theme('spacing'),
       ...negative(theme('spacing'))
     }),
-    stroke: {
+    stroke: (theme) => ({
+      ...theme('colors'),
       current: 'currentColor'
-    },
+    }),
     strokeWidth: {
       0: '0',
       1: '1',
