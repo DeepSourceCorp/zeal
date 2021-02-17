@@ -5,10 +5,10 @@
       <z-icon
         icon="triangle-down"
         :color="color"
-        size="small"
+        size="x-small"
         class="transform"
         :class="{
-          'rotate-180 mt-0.5': this.type === 'increase',
+          'rotate-180 mt-1': this.type === 'increase',
           'rotate-0': this.type === 'decrease',
           hidden: this.hideIcon
         }"
