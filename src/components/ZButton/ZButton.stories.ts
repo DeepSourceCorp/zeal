@@ -105,7 +105,7 @@ export const GhostButton = () => ({
           <z-button color="ghost" type="button" class="text-vanilla-100" hoverOpacity="100">Ghost Button</z-button>
         </div>
         <div class="w-full p-6">
-          <z-button color="ghost" icon="plus" iconColor="vanilla-100"></z-button>
+          <z-button color="ghost" icon="plus" iconColor="vanilla-100" class="text-vanilla-100"></z-button>
         </div>
     </div>`
 })

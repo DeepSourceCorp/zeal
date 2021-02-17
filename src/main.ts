@@ -39,6 +39,9 @@ import ZBadge from './components/ZBadge/index'
 import ZPagination from './components/ZPagination/index'
 import ZList from './components/ZList/index'
 import ZListItem from './components/ZListItem/index'
+import ZNavBar from './components/ZNavBar/index'
+import ZAccordion from './components/ZAccordion/index'
+import ZAccordionItem from './components/ZAccordionItem/index'
 
 // Marketing components
 import ZFooter from './components/marketing/ZFooter'
@@ -117,7 +120,10 @@ const components = [
   ZRelatedArticles,
   ZHero,
   ZListItem,
-  ZList
+  ZList,
+  ZNavBar,
+  ZAccordion,
+  ZAccordionItem
 ]
 
 const install = (Vue: any) => {
@@ -237,3 +243,6 @@ export { default as ZContentGuide } from './components/marketing/layouts/ZConten
 export { default as ZPageLabel } from './components/marketing/ZPageLabel/index'
 export { default as ZList } from './components/ZList/index'
 export { default as ZListItem } from './components/ZListItem/index'
+export { default as ZAccordion } from './components/ZAccordion/index'
+export { default as ZAccordionItem } from './components/ZAccordionItem/index'
+export { default as ZNavBar } from './components/ZNavBar/index'

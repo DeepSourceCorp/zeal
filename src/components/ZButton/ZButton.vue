@@ -11,10 +11,13 @@
       defaultClasses,
       `${color && `z-btn--${color}`}`,
       `${this.fullWidth !== false && 'w-full inline-block'}`,
-      `${this.isButtonDisabled && 'opacity-80 cursor-not-allowed'}`,
-      ((isLink || icon) && 'p-0') || 'px-6',
+      `${this.isButtonDisabled && 'opacity-50 cursor-not-allowed'}`,
+      ((isLink || icon) && 'p-0') || spacing,
       isLink || icon ? '' : sizeClasses,
-      `${stylesBasedOnColor}`
+      `${stylesBasedOnColor}`,
+      {
+        'p-0.5': icon
+      }
     ]"
     :type="type"
   >
@@ -77,6 +80,10 @@ export default Vue.extend({
     hoverOpacity: {
       type: String,
       default: '50'
+    },
+    spacing: {
+      type: String,
+      default: 'px-6'
     }
   },
   data() {
