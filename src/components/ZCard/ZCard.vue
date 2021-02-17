@@ -1,6 +1,7 @@
 <template>
   <div
     class="z-card text-vanilla-100 rounded-md overflow-hidden transition-all flex flex-col h-full"
+    @click="handleClick"
   >
     <div class="z-card__header" v-if="$slots.header">
       <slot name="header"></slot>
@@ -14,8 +15,13 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 export default {
-  name: 'ZCard'
+  name: 'ZCard',
+  methods: {
+    handleClick(event) {
+      this.$emit('click', event)
+    }
+  }
 }
 </script>

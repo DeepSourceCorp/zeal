@@ -14,7 +14,10 @@
       `${this.isButtonDisabled && 'opacity-50 cursor-not-allowed'}`,
       ((isLink || icon) && 'p-0') || spacing,
       isLink || icon ? '' : sizeClasses,
-      `${stylesBasedOnColor}`
+      `${stylesBasedOnColor}`,
+      {
+        'p-0.5': icon
+      }
     ]"
     :type="type"
   >
