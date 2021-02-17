@@ -15,7 +15,7 @@
     <slot name="left"></slot>
     <input
       type="text"
-      class="w-full caret-juniper flex flex-grow outline-none bg-transparent"
+      class="w-full caret-juniper flex flex-grow outline-none bg-transparent pl-0.5 leading-5"
       :class="{
         'cursor-not-allowed': disabled
       }"
