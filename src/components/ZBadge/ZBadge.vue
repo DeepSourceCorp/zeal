@@ -74,7 +74,7 @@ export default Vue.extend({
       return 'relative top-0 right-0 translate-x-0 translate-y-0'
     },
     typeClasses() {
-      if(typeof this.value === 'number') {
+      if (typeof this.value === 'number') {
         return `h-6 w-6 flex justify-center items-center text-xxs font-bold`
       }
       return 'inline-block text-xs px-2'

@@ -85,7 +85,7 @@ export const DotBadgeWithCustomPositioning = () => ({
 
 export const StandAloneNotification = () => ({
   components: { ZBadge, ZButton, ZAvatar },
-    template: `<div class='padded-container flex space-x-2'>
+  template: `<div class='padded-container flex space-x-2'>
         <span class="text-vanilla-100">Metrics</span>
         <z-badge type="danger" :value="12" :isNotification="true">
         </z-badge>
