@@ -11,7 +11,8 @@
           direction,
           {
             hidden: this.hideIcon
-          }]"
+          }
+        ]"
       ></z-icon>
     </div>
     <slot name="content"></slot>
