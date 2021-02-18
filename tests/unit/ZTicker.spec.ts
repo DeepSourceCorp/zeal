@@ -2,10 +2,6 @@ import ZTicker from '../../src/components/ZTicker'
 
 import { shallowMount } from '@vue/test-utils'
 
-const slotData = {
-  default: 'Ticker'
-}
-
 describe('Ticker', () => {
   it('renders a default ticker', () => {
     const wrapper = shallowMount(ZTicker)
