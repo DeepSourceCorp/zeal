@@ -16,7 +16,7 @@ describe('Ticker', () => {
   it('renders a negative type ticker', () => {
     const wrapper = shallowMount(ZTicker, {
       propsData: {
-        type: 'decrease', 
+        type: 'decrease',
         value: '44'
       }
     })
@@ -26,11 +26,11 @@ describe('Ticker', () => {
 
   it('renders a ticker with additional content', () => {
     const wrapper = shallowMount(ZTicker, {
-        propsData: {
-            type: 'decrease', 
-            value: '44'
-        },
-        slots: {content:  '<span class="text-sm">since last week</span>'}
+      propsData: {
+        type: 'decrease',
+        value: '44'
+      },
+      slots: { content: '<span class="text-sm">since last week</span>' }
     })
 
     expect(wrapper.html()).toMatchSnapshot()
