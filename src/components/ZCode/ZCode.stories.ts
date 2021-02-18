@@ -10,15 +10,15 @@ export default {
 }
 
 export const DefaultCode = () => ({
-    components: { ZCode },
-    data() { 
-        return { 
-            content: `<div class='input-container'>
+  components: { ZCode },
+  data() {
+    return {
+      content: `<div class='input-container'>
         <z-code :content="content"></z-code>           
     </div>`
-        }
-    },
-    template: `<div class='input-container'>
+    }
+  },
+  template: `<div class='input-container'>
         <z-code :content="content"></z-code>           
     </div>`
 })
