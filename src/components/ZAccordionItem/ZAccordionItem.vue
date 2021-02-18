@@ -83,8 +83,8 @@ export default {
   },
   methods: {
     toggleAccordion() {
-      if(this.isDisabled) return
-      if(this.isList) return
+      if (this.isDisabled) return
+      if (this.isList) return
       this.open = !this.open
       this.accordionHeaderAnimations = this.open
         ? 'animate-first-quarter-spin rotate-90'
