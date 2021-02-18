@@ -7,11 +7,11 @@
         :color="color"
         size="x-small"
         class="transform"
-        :class="{
-          'rotate-180 mt-px': this.type === 'increase',
-          'rotate-0 -mt-px': this.type === 'decrease',
-          hidden: this.hideIcon
-        }"
+        :class="[
+          direction,
+          {
+            hidden: this.hideIcon
+          }]"
       ></z-icon>
     </div>
     <slot name="content"></slot>
@@ -31,21 +31,25 @@ export default {
       type: [String, Number],
       default: 100
     },
-    type: {
+    arrowDirection: {
       type: String,
-      default: 'increase'
+      default: 'up'
     },
     hideIcon: {
       type: Boolean
+    },
+    color: {
+      type: String,
+      default: 'juniper'
     }
   },
   computed: {
-    color() {
-      const colors = {
-        increase: 'juniper',
-        decrease: 'cherry'
+    direction() {
+      const directions = {
+        down: 'rotate-0 -mt-px',
+        up: 'rotate-180 mt-px'
       }
-      return colors[this.type]
+      return directions[this.arrowDirection]
     }
   }
 }
