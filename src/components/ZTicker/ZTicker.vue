@@ -8,8 +8,8 @@
         size="x-small"
         class="transform"
         :class="{
-          'rotate-180 mt-1': this.type === 'increase',
-          'rotate-0': this.type === 'decrease',
+          'rotate-180 mt-px': this.type === 'increase',
+          'rotate-0 -mt-px': this.type === 'decrease',
           hidden: this.hideIcon
         }"
       ></z-icon>
