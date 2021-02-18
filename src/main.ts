@@ -40,6 +40,7 @@ import ZPagination from './components/ZPagination/index'
 import ZList from './components/ZList/index'
 import ZListItem from './components/ZListItem/index'
 import ZNavBar from './components/ZNavBar/index'
+import ZNotification from './components/ZNotification/index'
 import ZAccordion from './components/ZAccordion/index'
 import ZAccordionItem from './components/ZAccordionItem/index'
 
@@ -123,7 +124,8 @@ const components = [
   ZList,
   ZNavBar,
   ZAccordion,
-  ZAccordionItem
+  ZAccordionItem,
+  ZNotification
 ]
 
 const install = (Vue: any) => {
@@ -186,7 +188,8 @@ export default {
   ZRelatedArticles,
   ZHero,
   ZListItem,
-  ZList
+  ZList,
+  ZNotification
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -246,3 +249,5 @@ export { default as ZListItem } from './components/ZListItem/index'
 export { default as ZAccordion } from './components/ZAccordion/index'
 export { default as ZAccordionItem } from './components/ZAccordionItem/index'
 export { default as ZNavBar } from './components/ZNavBar/index'
+export { default as ZNotification } from './components/ZNotification/index'
+
