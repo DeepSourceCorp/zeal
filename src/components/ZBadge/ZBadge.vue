@@ -3,24 +3,22 @@
     <slot></slot>
     <div
       v-show="!hidden && (content || content === 0 || isDot)"
-      v-text="content"
       class="text-center transform z-badge-content"
       :class="[
         bgColor,
         sizeClasses,
-        positionClasses,
-        typeClasses,
+        !this.isNotification && positionClasses,
+        this.isNotification && notificationClasses,
+        !this.isDot && typeClasses,
         `text-${textColor}`,
         {
-          'absolute': !this.isNotification,
-          'relative top-0 right-0 translate-x-0 translate-y-0': this.isNotification,
-          'p-0 rounded-full translate-x-1/2 -translate-y-1/2': !this.isNotification && isDot,
-          'translate-x-1/2 -translate-y-1/2': !this.isNotification && !isDot,
+          'absolute translate-x-1/2 -translate-y-1/2': !this.isNotification,
+          'p-0 rounded-full': !this.isNotification && isDot,
           'leading-4 rounded-full': value,
-          'px-2': typeof this.value === 'string'
         }
       ]"
     >
+      <span>{{content}}</span>
     </div>
   </div>
 </template>
@@ -72,11 +70,14 @@ export default Vue.extend({
       }
       return `bg-${colors[this.type as string]}`
     },
+    notificationClasses() {
+      return 'relative top-0 right-0 translate-x-0 translate-y-0'
+    },
     typeClasses() {
       if(typeof this.value === 'number') {
         return `h-6 w-6 flex justify-center items-center text-xxs font-bold`
       }
-      return 'inline-block text-xs'
+      return 'inline-block text-xs px-2'
     },
     sizeClasses() {
       const sizes: Record<string, string> = {
@@ -89,12 +90,9 @@ export default Vue.extend({
     positionClasses(): string {
       if (this.position) return this.position as string
       else {
-        if(!this.isNotification) {
-          if (this.value) return 'top-px right-0'
-          if (this.isDot) return 'top-px right-px'
-          return 'top-0'
-        }
-        return ''
+        if (this.value) return 'top-px right-0'
+        if (this.isDot) return 'top-px right-px'
+        return 'top-0'
       }
     },
     content() {
