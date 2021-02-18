@@ -12,7 +12,7 @@
         typeClasses,
         `text-${textColor}`,
         {
-          'absolute': !this.isNotification,
+          absolute: !this.isNotification,
           'relative top-0 right-0 translate-x-0 translate-y-0': this.isNotification,
           'p-0 rounded-full translate-x-1/2 -translate-y-1/2': !this.isNotification && isDot,
           'translate-x-1/2 -translate-y-1/2': !this.isNotification && !isDot,
@@ -20,8 +20,7 @@
           'px-2': typeof this.value === 'string'
         }
       ]"
-    >
-    </div>
+    ></div>
   </div>
 </template>
 
@@ -73,7 +72,7 @@ export default Vue.extend({
       return `bg-${colors[this.type as string]}`
     },
     typeClasses() {
-      if(typeof this.value === 'number') {
+      if (typeof this.value === 'number') {
         return `h-6 w-6 flex justify-center items-center text-xxs font-bold`
       }
       return 'inline-block text-xs'
@@ -89,7 +88,7 @@ export default Vue.extend({
     positionClasses(): string {
       if (this.position) return this.position as string
       else {
-        if(!this.isNotification) {
+        if (!this.isNotification) {
           if (this.value) return 'top-px right-0'
           if (this.isDot) return 'top-px right-px'
           return 'top-0'
