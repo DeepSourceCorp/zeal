@@ -14,11 +14,11 @@
         {
           'absolute translate-x-1/2 -translate-y-1/2': !this.isNotification,
           'p-0 rounded-full': !this.isNotification && isDot,
-          'leading-4 rounded-full': value,
+          'leading-4 rounded-full': value
         }
       ]"
     >
-      <span>{{content}}</span>
+      <span>{{ content }}</span>
     </div>
   </div>
 </template>
