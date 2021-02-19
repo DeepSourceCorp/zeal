@@ -74,11 +74,20 @@ export const DotBadgeWithDifferentSizes = () => ({
 export const DotBadgeWithCustomPositioning = () => ({
   components: { ZBadge, ZButton, ZAvatar },
   template: `<div class='padded-container'>
-        <z-badge is-dot type="warning" size="md" position="right-2 top-1">
+        <z-badge is-dot type="warning" size="md" position="top-1 right-1">
             <z-avatar
             user-name="Akshay Paliwal"
             size="md"
             ></z-avatar>
+        </z-badge>
+    </div>`
+})
+
+export const StandAloneNotification = () => ({
+  components: { ZBadge, ZButton, ZAvatar },
+  template: `<div class='padded-container flex space-x-2'>
+        <span class="text-vanilla-100">Metrics</span>
+        <z-badge type="danger" :value="12" :isNotification="true">
         </z-badge>
     </div>`
 })
