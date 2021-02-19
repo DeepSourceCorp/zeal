@@ -4,7 +4,7 @@ import '../../assets/css/layout.css'
 import '../../assets/css/chart.css'
 import ZChart from './ZChart.vue'
 
-const financialData = {
+const issueData = {
   labels: [
     'Jan',
     'Feb',
@@ -42,9 +42,9 @@ export const LineChart = () => ({
   components: { ZChart },
   data() {
     return {
-      dataSets: financialData.datasets,
-      labels: financialData.labels,
-      yMarkers: financialData.yMarkers
+      dataSets: issueData.datasets,
+      labels: issueData.labels,
+      yMarkers: issueData.yMarkers
     }
   },
   template: `<div class="padding-container">
@@ -52,13 +52,27 @@ export const LineChart = () => ({
   </div>`
 })
 
+export const CustomColors = () => ({
+  components: { ZChart },
+  data() {
+    return {
+      dataSets: issueData.datasets,
+      labels: issueData.labels,
+      yMarkers: issueData.yMarkers
+    }
+  },
+  template: `<div class="padding-container">
+    <z-chart :dataSets="dataSets" :labels="labels" :yMarkers=yMarkers type="line" :colors="['ink-200', 'vanilla-400']"></z-chart>
+  </div>`
+})
+
 export const BarChart = () => ({
   components: { ZChart },
   data() {
     return {
-      dataSets: financialData.datasets,
-      labels: financialData.labels,
-      yMarkers: financialData.yMarkers
+      dataSets: issueData.datasets,
+      labels: issueData.labels,
+      yMarkers: issueData.yMarkers
     }
   },
   template: `<div class="padding-container">
@@ -70,9 +84,9 @@ export const DonutChart = () => ({
   components: { ZChart },
   data() {
     return {
-      dataSets: financialData.datasets,
-      labels: financialData.labels,
-      yMarkers: financialData.yMarkers
+      dataSets: issueData.datasets,
+      labels: issueData.labels,
+      yMarkers: issueData.yMarkers
     }
   },
   template: `<div class="padding-container">
@@ -84,9 +98,9 @@ export const PieChart = () => ({
   components: { ZChart },
   data() {
     return {
-      dataSets: financialData.datasets,
-      labels: financialData.labels,
-      yMarkers: financialData.yMarkers
+      dataSets: issueData.datasets,
+      labels: issueData.labels,
+      yMarkers: issueData.yMarkers
     }
   },
   template: `<div class="padding-container">
@@ -98,9 +112,9 @@ export const PercentageChart = () => ({
   components: { ZChart },
   data() {
     return {
-      dataSets: financialData.datasets,
-      labels: financialData.labels,
-      yMarkers: financialData.yMarkers
+      dataSets: issueData.datasets,
+      labels: issueData.labels,
+      yMarkers: issueData.yMarkers
     }
   },
   template: `<div class="padding-container">

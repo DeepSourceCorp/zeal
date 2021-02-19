@@ -8,12 +8,7 @@ declare module 'frappe-charts/dist/frappe-charts.esm.js' {
   export { Chart }
 }
 
-declare module 'tailwindcss/resolveConfig' {
-  const resolveConfig
-  export default resolveConfig
-}
-
-declare module '@/../tailwind.config.js' {
-  const tailwindConfig
-  export { tailwindConfig }
+declare module '@/helpers/tailwind/colors' {
+  const colors: Record<string, string | Record<string, string>>
+  export default colors
 }

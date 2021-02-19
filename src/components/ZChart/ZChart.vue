@@ -3,12 +3,7 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
-// https://tailwindcss.com/docs/configuration#referencing-in-java-script
-import resolveConfig from 'tailwindcss/resolveConfig'
-import tailwindConfig from '@/../tailwind.config.js'
-
-const config = resolveConfig(tailwindConfig)
-const themeColors = config.theme.colors
+import baseColors from '@/helpers/tailwind/colors'
 
 // https://frappe.io/charts/docs
 import { Chart } from 'frappe-charts/dist/frappe-charts.esm.js'
@@ -139,8 +134,12 @@ export default Vue.extend({
         labels: this.labels,
         datasets: this.dataSets,
         yMarkers: this.yMarkers
-      }
+      },
+      themeColors: {} as Record<string, string>
     }
+  },
+  created() {
+    this.themeColors = this.getThemeColors(baseColors)
   },
   watch: {
     labels() {
@@ -190,11 +189,28 @@ export default Vue.extend({
     },
     removeDataPoint(index: number) {
       this.chart && this.chart.removeDataPoint(index)
+    },
+    getThemeColors(
+      config: Record<string, string | Record<string, string>>,
+      prefix = ''
+    ): Record<string, string> {
+      const colors: Record<string, string> = {}
+      Object.entries(config).forEach(([token, value]) => {
+        if (typeof value === 'string') {
+          colors[prefix + token] = value
+        } else {
+          Object.assign(colors, this.getThemeColors(value, `${token}-`))
+        }
+      })
+      return colors
     }
   },
   computed: {
     palette(): Array<string> {
-      return this.colors.map((token) => themeColors[token])
+      if (this.colors) {
+        return (this.colors as Array<string>).map((token) => this.themeColors[token])
+      }
+      return []
     }
   },
   mounted() {
