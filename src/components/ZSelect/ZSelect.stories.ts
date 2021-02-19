@@ -40,7 +40,7 @@ export const DefaultSelect = () => ({
       ]
     }
   },
-  template: `<div class='padded-container'>
+  template: `<div class='padded-container  h-48'>
             <div class="select-container">
                 <z-select v-model="value">
                     <z-option
