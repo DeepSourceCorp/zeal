@@ -1,6 +1,6 @@
 .highlight .hll,
 .highlight .hl {
-  background-color: #c0c1c3;
+  background-color: #21242c;
   display: inherit;
 }
 .highlight .hlr {
@@ -209,7 +209,7 @@
 .highlight .ln {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
-  color: #c0c1c3;
+  color: #6a737d;
 }
 
 .highlight .hl .ln {
@@ -218,7 +218,7 @@
 
 .highlight .hl .ln,
 .highlight .hll .ln {
-  background-color: #c0c1c3;
+  background-color: #21242c;
 }
 .highlight .hlg .ln {
   background-color: #33cb9a;
@@ -248,7 +248,7 @@
 }
 .highlighttable .linenos {
   padding-left: 0.75rem;
-  color: #c0c1c3;
+  color: #6a737d;
 }
 .highlighttable .linenos pre {
   font-size: 13px;
