@@ -4,6 +4,7 @@
     :class="{
       'border-ink-200 border-t border-b first:border-0 last:border-0 hover:bg-ink-300': this
         .showBorders,
+      'text-vanilla-200': !this.isDisabled,
       'text-slate': this.isDisabled
     }"
   >
@@ -16,7 +17,7 @@
           'cursor-pointer': !this.isDisabled && !this.isList
         }"
       >
-        <span class="flex-1 font-medium text-vanilla-200">{{ title }}</span>
+        <span class="flex-1 font-medium">{{ title }}</span>
         <z-icon
           icon="chevron-right"
           color="slate"
@@ -82,6 +83,7 @@ export default {
   },
   methods: {
     toggleAccordion() {
+      if (this.isDisabled) return
       if (this.isList) return
       this.open = !this.open
       this.accordionHeaderAnimations = this.open
