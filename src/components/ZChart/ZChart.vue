@@ -54,7 +54,7 @@ export default Vue.extend({
     type: {
       type: String,
       default: 'axis-mixed',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['bar', 'line', 'percentage', 'heatmap', 'donut', 'pie', 'axis-mixed'].includes(
           value
         )
@@ -62,7 +62,7 @@ export default Vue.extend({
     },
     height: {
       type: Number,
-      default: 350
+      default: 300
     },
     yMarkers: {
       required: false,
@@ -130,11 +130,6 @@ export default Vue.extend({
     return {
       wrapperName: 'chart-wrapper',
       chart: {} as ChartInterface,
-      data: {
-        labels: this.labels,
-        datasets: this.dataSets,
-        yMarkers: this.yMarkers
-      },
       themeColors: {} as Record<string, string>
     }
   },
@@ -142,6 +137,9 @@ export default Vue.extend({
     this.themeColors = this.getThemeColors(baseColors)
   },
   watch: {
+    chartType() {
+      this.initChart()
+    },
     labels() {
       this.updateChart()
     },
@@ -155,7 +153,11 @@ export default Vue.extend({
   methods: {
     initChart() {
       const chartOptions = {
-        data: this.data,
+        data: {
+          labels: this.labels,
+          datasets: this.dataSets,
+          yMarkers: this.yMarkers ? this.getMarkers : undefined
+        },
         tooltipOptions: this.tooltipOptions,
         barOptions: this.barOptions,
         lineOptions: this.lineOptions,
@@ -180,7 +182,7 @@ export default Vue.extend({
         this.chart.update({
           labels: this.labels as Array<string>,
           datasets: this.dataSets as Array<DataItem>,
-          yMarkers: this.yMarkers as Array<Marker>
+          yMarkers: this.yMarkers ? this.getMarkers : undefined
         })
       }, 100)
     },
@@ -208,9 +210,21 @@ export default Vue.extend({
   computed: {
     palette(): Array<string> {
       if (this.colors) {
-        return (this.colors as Array<string>).map((token) => this.themeColors[token])
+        return (this.colors as Array<string>).map(token => this.themeColors[token])
       }
       return []
+    },
+    getMarkers(): Array<Marker> {
+      return (this.yMarkers as Array<Marker>).map(marker => {
+        if (!marker.options) {
+          marker.options = {}
+        }
+        marker.options.lineType = 'solid'
+        if (marker.options.stroke && marker.options.stroke in this.themeColors) {
+          marker.options.stroke = this.themeColors[marker.options.stroke]
+        }
+        return marker
+      })
     }
   },
   mounted() {

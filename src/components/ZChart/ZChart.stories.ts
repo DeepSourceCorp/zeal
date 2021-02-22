@@ -29,7 +29,7 @@ const issueData = {
       values: Array.from({ length: 12 }, () => Math.floor(Math.random() * 4000))
     }
   ],
-  yMarkers: [{ label: 'Threshold', value: 6000, options: { labelPos: 'right', stroke: '#23C4F8' } }]
+  yMarkers: [{ label: 'Threshold', value: 6000, options: { labelPos: 'right', stroke: 'cherry' } }]
 }
 
 export default {
