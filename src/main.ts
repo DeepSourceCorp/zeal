@@ -42,6 +42,7 @@ import ZListItem from './components/ZListItem/index'
 import ZNavBar from './components/ZNavBar/index'
 import ZAccordion from './components/ZAccordion/index'
 import ZAccordionItem from './components/ZAccordionItem/index'
+import ZCode from './components/ZCode/index'
 import ZTicker from './components/ZTicker/index'
 
 // Marketing components
@@ -125,6 +126,7 @@ const components = [
   ZNavBar,
   ZAccordion,
   ZAccordionItem,
+  ZCode,
   ZTicker
 ]
 
@@ -189,6 +191,7 @@ export default {
   ZHero,
   ZListItem,
   ZList,
+  ZCode,
   ZTicker
 }
 
@@ -249,4 +252,5 @@ export { default as ZListItem } from './components/ZListItem/index'
 export { default as ZAccordion } from './components/ZAccordion/index'
 export { default as ZAccordionItem } from './components/ZAccordionItem/index'
 export { default as ZNavBar } from './components/ZNavBar/index'
+export { default as ZCode } from './components/ZCode/index'
 export { default as ZTicker } from './components/ZTicker/index'
