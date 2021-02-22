@@ -156,7 +156,7 @@ export default Vue.extend({
         data: {
           labels: this.labels,
           datasets: this.dataSets,
-          yMarkers: this.yMarkers ? this.getMarkers : undefined
+          yMarkers: this.yMarkers ? this.markers : undefined
         },
         tooltipOptions: this.tooltipOptions,
         barOptions: this.barOptions,
@@ -166,7 +166,7 @@ export default Vue.extend({
         maxLegendPoints: this.maxLegendPoints
       }
       this.chart = new Chart(this.$refs[this.wrapperName], {
-        type: this.type,
+        type: this.chartType,
         colors: this.palette,
         height: this.height,
         title: this.title,
@@ -182,7 +182,7 @@ export default Vue.extend({
         this.chart.update({
           labels: this.labels as Array<string>,
           datasets: this.dataSets as Array<DataItem>,
-          yMarkers: this.yMarkers ? this.getMarkers : undefined
+          yMarkers: this.yMarkers ? this.markers : undefined
         })
       }, 100)
     },
@@ -214,7 +214,7 @@ export default Vue.extend({
       }
       return []
     },
-    getMarkers(): Array<Marker> {
+    markers(): Array<Marker> {
       return (this.yMarkers as Array<Marker>).map(marker => {
         if (!marker.options) {
           marker.options = {}
@@ -225,6 +225,9 @@ export default Vue.extend({
         }
         return marker
       })
+    },
+    chartType(): string {
+      return this.type
     }
   },
   mounted() {
