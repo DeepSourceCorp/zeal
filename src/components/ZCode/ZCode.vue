@@ -1,6 +1,5 @@
 <template>
-  <div class="z-code" v-html="content">
-  </div>
+  <div class="z-code" v-html="content"></div>
 </template>
 <script>
 export default {
