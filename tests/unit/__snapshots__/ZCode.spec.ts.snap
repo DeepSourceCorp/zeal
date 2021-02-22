@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ZCode renders a code component with Default Syntax highlighting 1`] = `
+<div class="z-code">
+  <div class="highlight"><pre><span class="ln">2</span>
+<span class="ln">3</span>
+<span class="ln">4</span><span class="nd">@dramatiq.actor</span>
+<span class="hl"><span class="ln">5</span><span class="k">def</span> <span class="nf">example</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></span><span class="ln">6</span>    <span class="k">pass</span>
+</pre>
+  </div>
+</div>
+`;
