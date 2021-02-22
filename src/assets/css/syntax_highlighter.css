@@ -4,11 +4,11 @@
   display: inherit;
 }
 .highlight .hlr {
-  background-color: #df6145;
+  background-color: #582c27;
   display: inherit;
 }
 .highlight .hlg {
-  background-color: #33cb9a;
+  background-color: #004f41;
   display: inherit;
 }
 .highlight .c {
@@ -221,10 +221,10 @@
   background-color: #21242c;
 }
 .highlight .hlg .ln {
-  background-color: #33cb9a;
+  background-color: #004f41;
 }
 .highlight .hlr .ln {
-  background-color: #df6145;
+  background-color: #582c27;
 }
 
 .highlight pre {
