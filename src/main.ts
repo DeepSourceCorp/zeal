@@ -43,6 +43,7 @@ import ZNavBar from './components/ZNavBar/index'
 import ZAccordion from './components/ZAccordion/index'
 import ZAccordionItem from './components/ZAccordionItem/index'
 import ZCode from './components/ZCode/index'
+import ZTicker from './components/ZTicker/index'
 
 // Marketing components
 import ZFooter from './components/marketing/ZFooter'
@@ -125,7 +126,8 @@ const components = [
   ZNavBar,
   ZAccordion,
   ZAccordionItem,
-  ZCode
+  ZCode,
+  ZTicker
 ]
 
 const install = (Vue: any) => {
@@ -189,7 +191,8 @@ export default {
   ZHero,
   ZListItem,
   ZList,
-  ZCode
+  ZCode,
+  ZTicker
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -250,3 +253,4 @@ export { default as ZAccordion } from './components/ZAccordion/index'
 export { default as ZAccordionItem } from './components/ZAccordionItem/index'
 export { default as ZNavBar } from './components/ZNavBar/index'
 export { default as ZCode } from './components/ZCode/index'
+export { default as ZTicker } from './components/ZTicker/index'
