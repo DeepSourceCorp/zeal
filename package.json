@@ -19,17 +19,18 @@
     "build-storybook": "yarn storybook:build",
     "chromatic": "npx chromatic --project-token kbbvog2zr9",
     "build_icons": "node bin/build-icons.js",
-    "build:css": "postcss src/assets/css/tailwind.css -o dist/tailwind.css && postcss src/assets/css/typography.css -o dist/typography.css && postcss src/assets/css/layout.css -o dist/layout.css"
+    "build:css": "postcss src/assets/css/tailwind.css -o dist/tailwind.css && postcss src/assets/css/typography.css -o dist/typography.css && postcss src/assets/css/layout.css -o dist/layout.css && postcss src/assets/css/chart.css -o dist/chart.css"
   },
   "dependencies": {
+    "@tailwindcss/postcss7-compat": "^2.0.2",
     "@tailwindcss/typography": "^0.3.1",
     "core-js": "^3.6.5",
-    "postcss-cli": "7.1.2",
-    "vue": "^2.6.12",
-    "@tailwindcss/postcss7-compat": "^2.0.2",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "frappe-charts": "^2.0.0-rc8",
     "postcss": "^7",
-    "smoothscroll-polyfill": "^0.4.4"
+    "postcss-cli": "7.1.2",
+    "smoothscroll-polyfill": "^0.4.4",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "vue": "^2.6.12"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^6.0.26",
