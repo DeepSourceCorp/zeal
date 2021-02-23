@@ -4,7 +4,7 @@
     :class="[spacing, `text-${textSize}`, getBaseColor, `bg-${bgColor}`]"
   >
     <z-icon v-if="iconLeft" :icon="iconLeft" :size="size"></z-icon>
-    <div><slot></slot></div>
+    <slot></slot>
     <z-icon v-if="iconRight" :icon="iconRight" :size="size"></z-icon>
   </div>
 </template>
