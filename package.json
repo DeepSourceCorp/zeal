@@ -22,7 +22,7 @@
     "build:css": "postcss src/assets/css/tailwind.css -o dist/tailwind.css && postcss src/assets/css/typography.css -o dist/typography.css && postcss src/assets/css/layout.css -o dist/layout.css && postcss src/assets/css/chart.css -o dist/chart.css"
   },
   "dependencies": {
-    "@tailwindcss/postcss7-compat": "^2.0.2",
+    "@tailwindcss/postcss7-compat": "^2.0.3",
     "@tailwindcss/typography": "^0.3.1",
     "core-js": "^3.6.5",
     "frappe-charts": "^2.0.0-rc8",
