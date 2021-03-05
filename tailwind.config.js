@@ -160,6 +160,7 @@ module.exports = {
       none: 'none',
       white: '0px 0px 2px 0px rgba(255,255,255,1)',
       black: '1px 4px 20px rgba(0, 0, 0, 0.44)',
+      grey: '0px 2px 6px rgba(0, 0, 0, 0.3)',
       z1: '2px 2px 6px 0px #050D21 20%',
       z2: '4px 10px 15px 2px #050D21 20%',
       z3: '6px 15px 20px 5px #050D21 30%',
