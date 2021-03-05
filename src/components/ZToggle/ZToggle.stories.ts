@@ -19,8 +19,7 @@ export const DefaultToggle = () => ({
 
   template: `<div class='padded-container'>
             <div class="input-container p-4">
-                <z-toggle :value="value"
-                @input="() => this.value = !this.value"></z-toggle>
+                <z-toggle v-model="value"></z-toggle>
             </div>
         </div>`
 })
@@ -35,8 +34,7 @@ export const DisabledToggle = () => ({
 
   template: `<div class='padded-container'>
             <div class="input-container p-4">
-                <z-toggle :value="value" :disabled="true"
-                @input="() => this.value = !this.value"></z-toggle>
+                <z-toggle v-model="value" :disabled="true"></z-toggle>
             </div>
         </div>`
 })
@@ -51,8 +49,7 @@ export const DisabledTogglePreSelected = () => ({
 
   template: `<div class='padded-container'>
             <div class="input-container p-4">
-                <z-toggle :value="value" :disabled="true"
-                @input="() => this.value = !this.value"></z-toggle>
+                <z-toggle v-model="value" :disabled="true"></z-toggle>
             </div>
         </div>`
 })
