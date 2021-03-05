@@ -32,20 +32,21 @@
 import Vue from 'vue'
 import outsideClickDirective from '../../directives/outside-click'
 Vue.directive('outside-click', outsideClickDirective)
+
 export default Vue.extend({
   name: 'ZMenu',
   props: {
     direction: {
       type: String,
       default: 'right',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['left', 'right'].includes(value)
       }
     },
     size: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['small', 'base', 'large'].includes(value)
       }
     },
@@ -69,7 +70,9 @@ export default Vue.extend({
     close(event: Event): void {
       const target = event.target as HTMLElement
       const menuTrigger = this.$refs['menu-trigger'] as HTMLElement
-      if (this.isOpen && target !== menuTrigger && !menuTrigger.contains(target)) {
+      if (!menuTrigger) {
+        this.isOpen = false
+      } else if (this.isOpen && target !== menuTrigger && !menuTrigger.contains(target)) {
         this.isOpen = false
       }
     }
