@@ -22,7 +22,6 @@
           'translate-x-full': this.value,
           'translate-x-0': !this.value
         }"
-        :style="indicatorStyles"
       />
     </span>
   </div>
