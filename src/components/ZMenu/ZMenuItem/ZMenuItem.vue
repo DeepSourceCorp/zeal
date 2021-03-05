@@ -22,7 +22,7 @@ import Vue from 'vue'
 import ZIcon from '../../ZIcon/ZIcon.vue'
 
 interface ZMenuT extends Vue {
-  close: Function
+  close: () => void
 }
 
 export default Vue.extend({
