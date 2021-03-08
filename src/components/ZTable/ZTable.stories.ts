@@ -38,11 +38,11 @@ export const DefaultTable = () => ({
                 <z-table class="text-vanilla-100">
                   <template v-slot:head>
                     <z-table-row>
-                      <z-table-cell v-for="head in headerData" :key="head.title" class="text-sm font-normal" :text-align="head.align">{{head.title}}</z-table-cell>
+                      <z-table-cell v-for="head in headerData" :key="head.title" class="text-sm font-bold" :text-align="head.align">{{head.title}}</z-table-cell>
                     </z-table-row>
                   </template>
                   <template v-slot:body>
-                    <z-table-row v-for="type in data" :key="type.name" class="text-vanilla-100">
+                    <z-table-row v-for="type in data" :key="type.name" class="text-vanilla-100 hover:bg-ink-300">
                       <z-table-cell class="text-xs font-normal" text-align="left">{{type.name}}</z-table-cell>
                       <z-table-cell class="text-sm font-normal flex justify-center items-center" text-align="center">
                         <z-checkbox v-model="type.isIgnoredToDisplay" class="h-full" :true-value="false" :false-value="true" spacing="4" fontSize="base"/>
