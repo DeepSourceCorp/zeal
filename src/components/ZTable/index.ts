@@ -1,3 +1,3 @@
-import ZTicker from './ZTicker.vue'
+import ZTable from './ZTable.vue'
 
-export default ZTicker
+export default ZTable
