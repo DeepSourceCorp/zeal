@@ -48,6 +48,7 @@ import ZChart from './components/ZChart/index'
 import ZTable from './components/ZTable/index'
 import ZTableRow from './components/ZTableRow/index'
 import ZTableCell from './components/ZTableCell/index'
+import ZToggle from './components/ZToggle/index'
 
 // Marketing components
 import ZFooter from './components/marketing/ZFooter'
@@ -135,11 +136,12 @@ const components = [
   ZChart,
   ZTable,
   ZTableRow,
-  ZTableCell
+  ZTableCell,
+  ZToggle
 ]
 
 const install = (Vue: any) => {
-  components.forEach(component => {
+  components.forEach((component) => {
     Vue.component(component.name, component)
   })
 }
@@ -204,7 +206,8 @@ export default {
   ZChart,
   ZTable,
   ZTableRow,
-  ZTableCell
+  ZTableCell,
+  ZToggle
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -270,3 +273,4 @@ export { default as ZChart } from './components/ZChart/index'
 export { default as ZTable } from './components/ZTable/index'
 export { default as ZTableRow } from './components/ZTableRow/index'
 export { default as ZTableCell } from './components/ZTableCell/index'
+export { default as ZToggle } from './components/ZChart/index'

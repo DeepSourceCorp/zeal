@@ -19,8 +19,10 @@
       :class="[
         `h-${spacing} w-${spacing}`,
         fontSize,
-        `${disabled &&
-          `cursor-not-allowed group-hover:border-slate sibling-checked:text-ink-300 sibling-checked:border-slate sibling-checked:bg-slate`}`
+        `${
+          disabled &&
+          `cursor-not-allowed group-hover:border-slate sibling-checked:text-ink-300 sibling-checked:border-slate sibling-checked:bg-slate`
+        }`
       ]"
     ></span>
     <span
