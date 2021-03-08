@@ -234,7 +234,7 @@ export default Vue.extend({
     this.initChart()
   },
   beforeDestroy() {
-    this.chart.destroy()
+    this.chart?.destroy?.()
   }
 })
 </script>
