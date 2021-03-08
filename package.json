@@ -1,6 +1,6 @@
 {
   "name": "@deepsourcelabs/zeal",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "repository": "https://github.com/deepsourcelabs/bifrost",
   "main": "./dist/zeal.common.js",
   "private": true,
@@ -25,7 +25,7 @@
     "@tailwindcss/typography": "^0.4.0",
     "@tailwindcss/postcss7-compat": "^2.0.3",
     "core-js": "^3.8.3",
-    "frappe-charts": "^2.0.0-rc8",
+    "frappe-charts": "^2.0.0-rc9",
     "postcss": "^7",
     "postcss-cli": "7.1.2",
     "smoothscroll-polyfill": "^0.4.4",
