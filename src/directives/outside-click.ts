@@ -2,6 +2,7 @@
 
 import { DirectiveOptions } from 'vue'
 import { DirectiveBinding } from 'vue/types/options'
+import { containsElement } from '@/helpers/components/utils'
 
 const instances: Array<(ev: Event) => void> = []
 
@@ -9,7 +10,7 @@ function onDocumentClick(event: Event, el: HTMLElement, fn: (event: Event) => vo
   // Casting becuase EventTarget is not usable with el.contains
   const target = event.target as HTMLElement
   // Check if the click is on the target or in the child elements of the click target
-  if (target && el !== target && !el.contains(target)) {
+  if (!containsElement(el, target)) {
     fn(event)
   }
 }
@@ -20,7 +21,7 @@ const outsideClickDirective: DirectiveOptions = {
     el.dataset.outsideClickIndex = String(instances.length)
 
     const fn = binding.value
-    const click = function (event: Event) {
+    const click = function(event: Event) {
       onDocumentClick(event, el, fn)
     }
 

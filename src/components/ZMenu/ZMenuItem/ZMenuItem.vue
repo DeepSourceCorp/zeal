@@ -21,7 +21,7 @@
 import Vue from 'vue'
 import ZIcon from '../../ZIcon/ZIcon.vue'
 
-interface ZMenuT extends Vue {
+interface ZMenuParent extends Vue {
   close: () => void
 }
 
@@ -47,7 +47,7 @@ export default Vue.extend({
       if (this.action) {
         this.action(event)
       }
-      const parent = this.$parent as ZMenuT
+      const parent = this.$parent as ZMenuParent
       parent.close()
     }
   }

@@ -30,6 +30,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { containsElement } from '@/helpers/components/utils'
 import outsideClickDirective from '../../directives/outside-click'
 Vue.directive('outside-click', outsideClickDirective)
 
@@ -67,13 +68,17 @@ export default Vue.extend({
     toggle(): void {
       this.isOpen = !this.isOpen
     },
-    close(event: Event): void {
-      const target = event.target as HTMLElement
-      const menuTrigger = this.$refs['menu-trigger'] as HTMLElement
-      if (!menuTrigger) {
+    close(event?: Event): void {
+      // If click event is not present close directly
+      if (!event) {
         this.isOpen = false
-      } else if (this.isOpen && target !== menuTrigger && !menuTrigger.contains(target)) {
-        this.isOpen = false
+      } else {
+        const target = event.target as HTMLElement
+        const menuTrigger = this.$refs['menu-trigger'] as HTMLElement
+
+        if (!containsElement(menuTrigger, target)) {
+          this.isOpen = false
+        }
       }
     }
   },
