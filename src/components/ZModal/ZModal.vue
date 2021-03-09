@@ -31,9 +31,13 @@
           class="py-2 px-3 space-x-2 text-right border-t text-vanilla-100 border-ink-200"
         >
           <z-button color="secondary" size="small" @click="close">Cancel</z-button>
-          <z-button :color="primaryActionType" size="small" @click="primaryAction">{{
-            primaryActionLabel
-          }}</z-button>
+          <z-button
+            class="modal-primary-action"
+            :color="primaryActionType"
+            size="small"
+            @click="primaryAction"
+            >{{ primaryActionLabel }}</z-button
+          >
         </div>
       </slot>
     </div>
