@@ -11,14 +11,6 @@
 
 <script>
 export default {
-  name: 'ZTable',
-  props: {
-    height: {
-      default: '',
-      type: String
-    }
-  },
-  computed: {},
-  methods: {}
+  name: 'ZTable'
 }
 </script>

@@ -6,14 +6,6 @@
 
 <script>
 export default {
-  name: 'ZTableRow',
-  props: {
-    height: {
-      default: '',
-      type: String
-    }
-  },
-  computed: {},
-  methods: {}
+  name: 'ZTableRow'
 }
 </script>

@@ -2,8 +2,8 @@ import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'
 import ZTable from '../ZTable/ZTable.vue'
-import ZTableRow from '../ZTableRow/ZTableRow.vue'
-import ZTableCell from '../ZTableCell/ZTableCell.vue'
+import ZTableRow from '../ZTable/ZTableRow/ZTableRow.vue'
+import ZTableCell from '../ZTable/ZTableCell/ZTableCell.vue'
 import ZCheckbox from '../ZCheckbox/ZCheckbox.vue'
 
 export default {
@@ -17,9 +17,9 @@ export const DefaultTable = () => ({
   data() {
     return {
       headerData: [
-        { title: 'Issue type', align: 'left' },
-        { title: 'Report Issues', align: 'center' },
-        { title: 'Block Pull Requests', align: 'center' }
+        { title: 'Issue type', align: 'text-left' },
+        { title: 'Report Issues', align: 'text-center' },
+        { title: 'Block Pull Requests', align: 'text-center' }
       ],
       data: [
         { name: 'Bug Risk', isIgnoredToDisplay: false, isIgnoredInCheckStatus: false },
@@ -38,7 +38,10 @@ export const DefaultTable = () => ({
                 <z-table class="text-vanilla-100">
                   <template v-slot:head>
                     <z-table-row>
-                      <z-table-cell v-for="head in headerData" :key="head.title" class="text-sm font-bold" :text-align="head.align">{{head.title}}</z-table-cell>
+                      <z-table-cell v-for="head in headerData"
+                        :key="head.title"
+                        class="text-sm font-bold"
+                        :class="head.align">{{head.title}}</z-table-cell>
                     </z-table-row>
                   </template>
                   <template v-slot:body>

@@ -1,6 +1,6 @@
 import ZTable from '../../src/components/ZTable'
-import ZTableRow from '../../src/components/ZTableRow'
-import ZTableCell from '../../src/components/ZTableCell'
+import ZTableRow from '../../src/components/ZTable/ZTableRow'
+import ZTableCell from '../../src/components/ZTable/ZTableCell'
 
 import { mount } from '@vue/test-utils'
 
