@@ -4,29 +4,31 @@ import ZButton from '../ZButton/ZButton.vue'
 import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'
+import Vue from 'vue'
 
 export default {
   title: 'Modal',
   component: ZModal
 }
 
-export const Default = () => ({
-  components: { ZModal, ZButton },
-  data() {
-    return {
-      isOpen: false
-    }
-  },
-  methods: {
-    close() {
-      this.isOpen = false
+export const Default = () =>
+  Vue.extend({
+    components: { ZModal, ZButton },
+    data() {
+      return {
+        isOpen: false
+      }
     },
-    confirm() {
-      window.alert('Configuration Save')
-    }
-  },
-  template: `<div class='wrapper'>
-        <z-button color="primary" @click="() => { this.isOpen = !this.isOpen }">Save Settings</z-button>
+    methods: {
+      close() {
+        this.isOpen = false
+      },
+      confirm() {
+        window.alert('Configuration Save')
+      }
+    },
+    template: `<div class='wrapper'>
+        <z-button color="primary" @click="() => { this.isOpen = true }">Save Settings</z-button>
         <z-modal
           v-if="isOpen"
           title="Save Config"
@@ -36,29 +38,30 @@ export const Default = () => ({
           @primaryAction="confirm"
         ></z-modal>
     </div>`
-})
+  })
 
-export const ModalSizes = () => ({
-  components: { ZModal, ZButton },
-  data() {
-    return {
-      isOpen: false,
-      width: 'base'
-    }
-  },
-  methods: {
-    open(width) {
-      this.width = width
-      this.isOpen = true
+export const ModalSizes = () =>
+  Vue.extend({
+    components: { ZModal, ZButton },
+    data() {
+      return {
+        isOpen: false,
+        width: 'base'
+      }
     },
-    close() {
-      this.isOpen = false
+    methods: {
+      open(width: string) {
+        this.width = width
+        this.isOpen = true
+      },
+      close() {
+        this.isOpen = false
+      },
+      confirm() {
+        window.alert('Configuration Save')
+      }
     },
-    confirm() {
-      window.alert('Configuration Save')
-    }
-  },
-  template: `<div class='wrapper'>
+    template: `<div class='wrapper'>
         <div class="flex space-x-4">
           <z-button color="primary" @click="open('narrow')">Narrow Modal</z-button>
           <z-button color="primary" @click="open('base')">Default/Base Modal</z-button>
@@ -74,24 +77,25 @@ export const ModalSizes = () => ({
           @primaryAction="confirm"
         ></z-modal>
     </div>`
-})
+  })
 
-export const PrimaryActionColor = () => ({
-  components: { ZModal, ZButton },
-  data() {
-    return {
-      isOpen: false
-    }
-  },
-  methods: {
-    close() {
-      this.isOpen = false
+export const PrimaryActionColor = () =>
+  Vue.extend({
+    components: { ZModal, ZButton },
+    data() {
+      return {
+        isOpen: false
+      }
     },
-    confirm() {
-      window.alert('Account Deleted')
-    }
-  },
-  template: `<div class='wrapper'>
+    methods: {
+      close() {
+        this.isOpen = false
+      },
+      confirm() {
+        window.alert('Account Deleted')
+      }
+    },
+    template: `<div class='wrapper'>
         <z-button color="danger" @click="() => { this.isOpen = !this.isOpen }">Delete Account</z-button>
         <z-modal
           v-if="isOpen"
@@ -107,4 +111,4 @@ export const PrimaryActionColor = () => ({
           </div>
         </z-modal>
     </div>`
-})
+  })
