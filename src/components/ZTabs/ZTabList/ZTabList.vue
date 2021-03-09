@@ -1,6 +1,6 @@
 <script>
 import ZTabItem from '@/components/ZTabs/ZTabItem'
-import { toPascal } from '@/helpers/components/utils.js'
+import { toPascal } from '@/helpers/components/utils.ts'
 
 export default {
   name: 'ZTabList',
