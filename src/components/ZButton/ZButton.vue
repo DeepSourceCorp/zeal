@@ -83,9 +83,12 @@ export default Vue.extend({
       type: String,
       default: 'px-6'
     },
-    iconStyle: {
-      default: 'p-0.5',
-      type: String
+    iconSpacing: {
+      default: 'tight',
+      type: String,
+      validator(val) {
+        return ['tight', 'base', 'loose'].indexOf(val) > -1
+      }
     }
   },
   data() {
@@ -95,6 +98,14 @@ export default Vue.extend({
     }
   },
   computed: {
+    iconStyle() {
+      const spacingTypes = {
+        tight: '0.5',
+        base: '1',
+        loose: '1.5'
+      }
+      return `p-${spacingTypes[this.iconSpacing]}`
+    },
     isButtonDisabled() {
       return this.disabled !== false
     },

@@ -43,7 +43,7 @@ describe('Textarea Component', () => {
   it('renders a textarea with right slot', () => {
     const wrapper = mountFn({
       slots: {
-        right: CopyButton
+        default: CopyButton
       }
     })
     expect(wrapper.html()).toMatchSnapshot()

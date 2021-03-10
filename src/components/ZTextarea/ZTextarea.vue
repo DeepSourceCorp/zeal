@@ -1,11 +1,12 @@
 <template>
   <div
-    class="w-full h-full p-1 border border-ink-200 flex items-start focus-within:shadow-white"
+    class="w-full h-full overflow-scroll p-1 border border-ink-200 flex items-start focus-within:shadow-white rounded-sm"
     :class="{
-      'cursor-not-allowed': disabled
+      'cursor-not-allowed': disabled,
+      'resize-none': !resizable,
+      resize: resizable
     }"
   >
-    <slot name="left"></slot>
     <textarea
       class="w-full h-full p-1 bg-transparent resize-none outline-none"
       :class="[
@@ -21,7 +22,7 @@
       @input="updateSelf($event.target.value)"
     >
     </textarea>
-    <slot name="right"></slot>
+    <slot></slot>
   </div>
 </template>
 
@@ -47,6 +48,10 @@ export default Vue.extend({
       default: 'vanilla-400'
     },
     disabled: {
+      type: Boolean,
+      default: false
+    },
+    resizable: {
       type: Boolean,
       default: false
     }
