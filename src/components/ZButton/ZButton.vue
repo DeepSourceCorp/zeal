@@ -87,7 +87,7 @@ export default Vue.extend({
       default: 'tight',
       type: String,
       validator(val) {
-        return ['tight', 'base', 'loose'].indexOf(val) > -1
+        return ['tight', 'base', 'loose'].includes(val)
       }
     }
   },
