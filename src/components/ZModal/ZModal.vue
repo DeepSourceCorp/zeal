@@ -78,31 +78,31 @@ export default Vue.extend({
     ZIcon,
     ZButton
   },
-  mounted: function() {
+  mounted() {
     document.addEventListener('keyup', this.handleKeyup)
   },
   beforeDestroy() {
     document.removeEventListener('keyup', this.handleKeyup)
   },
   computed: {
-    modalWidth: function() {
+    modalWidth(): string {
       const width: Record<string, string> = {
         narrow: 'w-80 max-w-md',
         base: 'w-102 max-w-xl',
         wide: 'w-2/3 max-w-2xl'
       }
-      return width[this.width]
+      return width[(this.width, 'base')]
     }
   },
   methods: {
-    close: function() {
+    close(): void {
       this.$emit('onClose')
     },
-    primaryAction: function() {
+    primaryAction(): void {
       this.$emit('primaryAction')
       this.close()
     },
-    handleKeyup(e: KeyboardEvent) {
+    handleKeyup(e: KeyboardEvent): void {
       if (e.key === 'Escape') {
         this.close()
       }
