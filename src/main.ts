@@ -45,6 +45,9 @@ import ZAccordionItem from './components/ZAccordionItem/index'
 import ZCode from './components/ZCode/index'
 import ZTicker from './components/ZTicker/index'
 import ZChart from './components/ZChart/index'
+import ZTable from './components/ZTable/index'
+import ZTableRow from './components/ZTable/ZTableRow/index'
+import ZTableCell from './components/ZTable/ZTableCell/index'
 import ZToggle from './components/ZToggle/index'
 import ZTextarea from './components/ZTextarea/index'
 
@@ -132,12 +135,15 @@ const components = [
   ZCode,
   ZTicker,
   ZChart,
-  ZToggle,
-  ZTextarea
+  ZTextarea,
+  ZTable,
+  ZTableRow,
+  ZTableCell,
+  ZToggle
 ]
 
 const install = (Vue: any) => {
-  components.forEach(component => {
+  components.forEach((component) => {
     Vue.component(component.name, component)
   })
 }
@@ -200,8 +206,11 @@ export default {
   ZCode,
   ZTicker,
   ZChart,
-  ZToggle,
-  ZTextarea
+  ZTextarea,
+  ZTable,
+  ZTableRow,
+  ZTableCell,
+  ZToggle
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -264,5 +273,8 @@ export { default as ZNavBar } from './components/ZNavBar/index'
 export { default as ZCode } from './components/ZCode/index'
 export { default as ZTicker } from './components/ZTicker/index'
 export { default as ZChart } from './components/ZChart/index'
-export { default as ZToggle } from './components/ZToggle/index'
 export { default as ZTextarea } from './components/ZTextarea/index'
+export { default as ZTable } from './components/ZTable/index'
+export { default as ZTableRow } from './components/ZTable/ZTableRow/index'
+export { default as ZTableCell } from './components/ZTable/ZTableCell/index'
+export { default as ZToggle } from './components/ZToggle/index'
