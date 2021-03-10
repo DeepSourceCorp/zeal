@@ -100,11 +100,11 @@ export default Vue.extend({
   computed: {
     iconStyle() {
       const spacingTypes = {
-        tight: '0.5',
-        base: '1',
-        loose: '1.5'
+        tight: 'p-0.5',
+        base: 'p-1',
+        loose: 'p-1.5'
       }
-      return `p-${spacingTypes[this.iconSpacing]}`
+      return spacingTypes[this.iconSpacing]
     },
     isButtonDisabled() {
       return this.disabled !== false
