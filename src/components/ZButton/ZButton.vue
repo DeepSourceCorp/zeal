@@ -15,9 +15,7 @@
       ((isLink || icon) && 'p-0') || spacing,
       isLink || icon ? '' : sizeClasses,
       `${stylesBasedOnColor}`,
-      {
-        'p-0.5': icon
-      }
+      icon && iconStyle
     ]"
     :type="type"
   >
@@ -84,6 +82,10 @@ export default Vue.extend({
     spacing: {
       type: String,
       default: 'px-6'
+    },
+    iconStyle: {
+      default: 'p-0.5',
+      type: String
     }
   },
   data() {
@@ -101,22 +103,20 @@ export default Vue.extend({
     },
     stylesBasedOnColor() {
       const colors = {
-        link: `font-normal text-juniper ${this.isButtonActive && 'underline'} ${
-          (this.isButtonDisabled && 'text-slate no-underline') || 'hover:underline'
-        }`,
-        primary: `bg-juniper text-ink-400 ${
-          (this.isButtonDisabled && 'hover:bg-juniper') || 'hover:bg-light_juniper'
-        }`,
-        secondary: `bg-ink-300 text-vanilla-100 border border-slate ${
-          (this.isButtonDisabled && 'hover:bg-ink-300') || 'hover:bg-ink-200'
-        } ${this.isButtonActive && 'bg-ink-100'}`,
+        link: `font-normal text-juniper ${this.isButtonActive && 'underline'} ${(this
+          .isButtonDisabled &&
+          'text-slate no-underline') ||
+          'hover:underline'}`,
+        primary: `bg-juniper text-ink-400 ${(this.isButtonDisabled && 'hover:bg-juniper') ||
+          'hover:bg-light_juniper'}`,
+        secondary: `bg-ink-300 text-vanilla-100 border border-slate ${(this.isButtonDisabled &&
+          'hover:bg-ink-300') ||
+          'hover:bg-ink-200'} ${this.isButtonActive && 'bg-ink-100'}`,
         ghost: `transition-DEFAULT duration-300 ease-in-out 
                 ${!this.icon && 'px-6'} 
                 ${this.icon ? '' : this.sizeClasses} 
-                ${
-                  (this.isButtonDisabled && 'hover:bg-ink-300') ||
-                  `hover:bg-ink-200 hover:bg-opacity-${this.hoverOpacity}`
-                } 
+                ${(this.isButtonDisabled && 'hover:bg-ink-300') ||
+                  `hover:bg-ink-200 hover:bg-opacity-${this.hoverOpacity}`} 
                 ${this.isButtonActive && 'bg-ink-100'}`
       }
       return colors[this.color] || ''
