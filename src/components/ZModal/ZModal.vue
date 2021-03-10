@@ -91,7 +91,7 @@ export default Vue.extend({
         base: 'w-102 max-w-xl',
         wide: 'w-2/3 max-w-2xl'
       }
-      return width[(this.width, 'base')]
+      return width[this.width]
     }
   },
   methods: {
