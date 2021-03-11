@@ -8,7 +8,7 @@
     }"
   >
     <textarea
-      class="w-full h-full bg-transparent resize-none outline-none"
+      class="w-full h-full p-1 bg-transparent resize-none outline-none"
       :class="[
         `text-${textSize}`,
         disabled ? 'text-slate' : `text-${textColor}`,
