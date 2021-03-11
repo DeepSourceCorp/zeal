@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full h-full overflow-scroll p-1 border border-ink-200 flex items-start focus-within:shadow-white rounded-sm"
+    class="h-full overflow-scroll p-1 border border-ink-200 flex items-start focus-within:shadow-white rounded-sm"
     :class="{
       'cursor-not-allowed': disabled,
       'resize-none': !resizable,
@@ -8,7 +8,7 @@
     }"
   >
     <textarea
-      class="w-full h-full p-1 bg-transparent resize-none outline-none"
+      class="w-full h-full bg-transparent resize-none outline-none"
       :class="[
         `text-${textSize}`,
         disabled ? 'text-slate' : `text-${textColor}`,
@@ -60,6 +60,7 @@ export default Vue.extend({
     prop: 'value',
     event: 'input'
   },
+
   methods: {
     updateSelf(value: string): void {
       if (!this.disabled) this.$emit('input', value)
