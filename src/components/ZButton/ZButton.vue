@@ -15,9 +15,7 @@
       ((isLink || icon) && 'p-0') || spacing,
       isLink || icon ? '' : sizeClasses,
       `${stylesBasedOnColor}`,
-      {
-        'p-0.5': icon
-      }
+      icon && iconStyle
     ]"
     :type="type"
   >
@@ -29,6 +27,12 @@
 <script>
 import Vue from 'vue'
 import ZIcon from '@/components/ZIcon/ZIcon.vue'
+
+const spacingTypes = {
+  tight: '0.5',
+  base: '1',
+  loose: '1.5'
+}
 
 export default Vue.extend({
   name: 'ZButton',
@@ -84,6 +88,13 @@ export default Vue.extend({
     spacing: {
       type: String,
       default: 'px-6'
+    },
+    iconSpacing: {
+      default: 'tight',
+      type: String,
+      validator(val) {
+        return ['tight', 'base', 'loose'].includes(val)
+      }
     }
   },
   data() {
@@ -93,6 +104,9 @@ export default Vue.extend({
     }
   },
   computed: {
+    iconStyle() {
+      return `p-${spacingTypes[this.iconSpacing]}`
+    },
     isButtonDisabled() {
       return this.disabled !== false
     },
