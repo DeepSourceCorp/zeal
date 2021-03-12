@@ -119,7 +119,7 @@ export default Vue.extend({
           (this.isButtonDisabled && 'text-slate no-underline') || 'hover:underline'
         }`,
         primary: `bg-juniper text-ink-400 ${
-          (this.isButtonDisabled && 'hover:bg-juniper') || 'hover:bg-light_juniper'
+          (this.isButtonDisabled && 'hover:bg-juniper') || 'hover:bg-light-juniper'
         }`,
         secondary: `bg-ink-300 text-vanilla-100 border border-slate ${
           (this.isButtonDisabled && 'hover:bg-ink-300') || 'hover:bg-ink-200'
@@ -131,7 +131,10 @@ export default Vue.extend({
                   (this.isButtonDisabled && 'hover:bg-ink-300') ||
                   `hover:bg-ink-200 hover:bg-opacity-${this.hoverOpacity}`
                 } 
-                ${this.isButtonActive && 'bg-ink-100'}`
+                ${this.isButtonActive && 'bg-ink-100'}`,
+        danger: `bg-cherry text-ink-400 ${
+          (this.isButtonDisabled && 'hover:bg-cherry') || 'hover:bg-cherry'
+        }`
       }
       return colors[this.color] || ''
     },
