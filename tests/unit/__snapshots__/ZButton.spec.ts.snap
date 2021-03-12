@@ -4,7 +4,7 @@ exports[`Button component renders a button tag when the component is mounted 1`]
 
 exports[`Button component renders a button tag with the given text 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center px-6 font-medium border-transparent rounded-sm relative justify-center false false h-10 text-base">Hello World</button>`;
 
-exports[`Button component renders a button with primary color 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center px-6 font-medium border-transparent rounded-sm relative justify-center z-btn--primary false false h-10 text-base bg-juniper text-ink-400 hover:bg-light_juniper">Primary Button</button>`;
+exports[`Button component renders a button with primary color 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center px-6 font-medium border-transparent rounded-sm relative justify-center z-btn--primary false false h-10 text-base bg-juniper text-ink-400 hover:bg-light-juniper">Primary Button</button>`;
 
 exports[`Button component renders a button with secondary color 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center px-6 font-medium border-transparent rounded-sm relative justify-center z-btn--secondary false false h-10 text-base bg-ink-300 text-vanilla-100 border border-slate hover:bg-ink-200 false">Secondary Button</button>`;
 
