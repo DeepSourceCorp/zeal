@@ -1,6 +1,6 @@
 <template>
   <div
-    class="z-modal-backdrop fixed inset-0 flex items-center bg-opacity-75 bg-ink-100 px-2 sm:px-0"
+    class="z-modal-backdrop fixed inset-0 flex items-center bg-opacity-75 bg-black px-2 sm:px-0"
     @click="close"
   >
     <div
@@ -8,7 +8,10 @@
       :class="[modalWidth]"
       @click.stop
     >
-      <div class="flex items-center justify-between py-2 px-3 space-x-2 border-b border-ink-200">
+      <div
+        class="flex items-center justify-between py-2 px-3 space-x-2 border-ink-200"
+        :class="{ 'border-b': showHeaderBorder }"
+      >
         <slot name="title">
           <span class="text-sm font-medium text-vanilla-100">{{ title }}</span>
         </slot>
@@ -28,7 +31,8 @@
       <slot name="footer">
         <div
           v-if="primaryActionLabel"
-          class="py-2 px-3 space-x-2 text-right border-t text-vanilla-100 border-ink-200"
+          class="py-2 px-3 space-x-2 text-right text-vanilla-100 border-ink-200"
+          :class="{ 'border-t': showFooterBorder }"
         >
           <z-button color="secondary" size="small" @click="close">Cancel</z-button>
           <z-button
@@ -72,6 +76,14 @@ export default Vue.extend({
     primaryActionType: {
       type: String,
       default: 'primary'
+    },
+    showFooterBorder: {
+      type: Boolean,
+      default: true
+    },
+    showHeaderBorder: {
+      type: Boolean,
+      default: true
     }
   },
   components: {

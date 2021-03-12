@@ -520,6 +520,7 @@ module.exports = {
       11: 'repeat(11, minmax(0, 1fr))',
       12: 'repeat(12, minmax(0, 1fr))',
       'repo-header': '1fr 1fr minmax(auto, 24rem)',
+      'dashboard-header': '1fr minmax(auto, 24rem)',
       footer: 'repeat(5, 1fr) 2fr 1.5fr'
     },
     gridColumn: {
