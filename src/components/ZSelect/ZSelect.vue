@@ -6,7 +6,7 @@
   >
     <div
       class="selected h-full relative bg-ink-400 rounded-sm border border-solid text-vanilla-300 cursor-pointer"
-      :class="(open && 'border-vanilla-400') || 'border-slate'"
+      :class="[(open && 'border-vanilla-400') || 'border-slate', spacing]"
       @click="open = !open"
     >
       <div
@@ -72,6 +72,10 @@ export default Vue.extend({
     clearable: {
       type: Boolean,
       default: false
+    },
+    spacing: {
+      type: String,
+      default: ''
     }
   },
   model: {
