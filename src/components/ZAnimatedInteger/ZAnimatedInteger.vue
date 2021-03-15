@@ -16,21 +16,21 @@ export default Vue.extend({
       default: (val: string): string => val
     }
   },
-  data: function() {
+  data: function () {
     return {
       animatedValue: 0
     }
   },
   watch: {
-    value: function(newValue, oldValue) {
+    value: function (newValue, oldValue) {
       this.animate(oldValue, newValue)
     }
   },
-  mounted: function() {
+  mounted: function () {
     this.animate(0, this.value)
   },
   methods: {
-    animate: function(from: number, to: number) {
+    animate: function (from: number, to: number) {
       const duration = 500
 
       const easingFunction = (
