@@ -426,10 +426,12 @@ module.exports = {
       none: ['2px solid transparent', '2px'],
       white: ['2px dotted white', '2px'],
       black: ['2px dotted black', '2px'],
-      'ink-100': [`1px solid ${theme('colors.ink.100')}`, '1px'],
-      'ink-200': [`1px solid ${theme('colors.ink.200')}`, '1px'],
-      'ink-300': [`1px solid ${theme('colors.ink.300')}`, '1px'],
-      'ink-400': [`1px solid ${theme('colors.ink.400')}`, '1px']
+      ink: {
+        100: [`1px solid ${theme('colors.ink.100')}`, '1px'],
+        200: [`1px solid ${theme('colors.ink.200')}`, '1px'],
+        300: [`1px solid ${theme('colors.ink.300')}`, '1px'],
+        400: [`1px solid ${theme('colors.ink.400')}`, '1px']
+      }
     }),
     padding: (theme) => theme('spacing'),
     placeholderColor: (theme) => theme('colors'),
@@ -523,8 +525,8 @@ module.exports = {
       10: 'repeat(10, minmax(0, 1fr))',
       11: 'repeat(11, minmax(0, 1fr))',
       12: 'repeat(12, minmax(0, 1fr))',
-      'repo-header': '1fr 1fr minmax(auto, 24rem)',
-      'dashboard-header': '1fr minmax(auto, 24rem)',
+      'fr-fr-24': '1fr 1fr minmax(auto, 24rem)',
+      'fr-24': '1fr minmax(auto, 24rem)',
       footer: 'repeat(5, 1fr) 2fr 1.5fr'
     },
     gridColumn: {
