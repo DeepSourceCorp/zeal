@@ -13,7 +13,7 @@
         v-if="selectedOpt"
         class="selected-option flex items-center bg-transparent w-10/12 pl-4 outline-none cursor-pointer h-full text-xs"
       >
-        {{ selectedOpt }}
+        {{ selectedOptLabel || selectedOpt }}
       </div>
       <div
         v-else
@@ -50,6 +50,11 @@
 import Vue from 'vue'
 import ZIcon from '@/components/ZIcon/ZIcon.vue'
 
+interface ZOptionPropsT extends Vue {
+  value: string | number | null
+  label: string
+}
+
 export default Vue.extend({
   name: 'ZSelect',
   components: {
@@ -57,8 +62,8 @@ export default Vue.extend({
   },
   props: {
     selected: {
-      type: String,
-      default: ''
+      type: String || Number || null,
+      default: null
     },
     tabIndex: {
       type: Number,
@@ -84,22 +89,38 @@ export default Vue.extend({
   },
   data() {
     return {
-      selectedOpt: this.selected ? this.selected : '',
+      selectedOpt: '' as string | number | null,
+      selectedOptLabel: '' as string | number | null,
       selectedOptHTML: '',
       open: false,
       options: [] as Vue[]
     }
   },
   mounted() {
-    this.options = this.$children.filter((child) => child.$options.name === 'ZOption')
+    this.options = this.$children.filter(child => child.$options.name === 'ZOption')
+
+    if (this.selected) {
+      const selectedOpt = this.options
+        .map(child => {
+          return child.$options.propsData as ZOptionPropsT
+        })
+        .filter(childProp => {
+          return childProp.value === this.selected
+        })
+
+      if (selectedOpt[0]) {
+        this.selectedOpt = selectedOpt[0].value
+        this.selectedOptLabel = selectedOpt[0].label || selectedOpt[0].value
+      }
+    }
   },
   methods: {
     clearSelected(): void {
-      this.selectedOpt = ''
+      this.selectedOpt = null
     }
   },
   watch: {
-    selectedOpt: function (newValue) {
+    selectedOpt: function(newValue) {
       this.$emit('change', newValue)
     }
   }
