@@ -1,11 +1,12 @@
 module.exports = {
   transparent: 'transparent',
   current: 'currentColor',
+  black: '#000000',
   juniper: '#33cb9a',
   lightJuniper: '#2EB78B',
   robin: '#4568dc',
   slate: '#52575c',
-  cherry: '#df6145',
+  cherry: '#da5565',
   honey: '#f6d87c',
   aqua: '#23c4f8',
   github: '#414141',
