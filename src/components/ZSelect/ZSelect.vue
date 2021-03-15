@@ -11,24 +11,24 @@
     >
       <div
         v-if="selectedOpt"
-        class="selected-option flex items-center bg-transparent w-10/12 pl-4 outline-none cursor-pointer h-full text-xs"
+        class="selected-option flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full text-xs"
       >
         {{ selectedOptLabel || selectedOpt }}
       </div>
       <div
         v-else
-        class="flex items-center bg-transparent w-10/12 pl-4 outline-none cursor-pointer h-full text-vanilla-400 opacity-70 text-xs"
+        class="flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full text-vanilla-400 opacity-70 text-xs"
       >
         {{ placeholder }}
       </div>
       <span
         v-if="selectedOpt && clearable"
-        class="absolute right-6 top-50 transform -translate-y-1/2"
+        class="absolute right-3 top-50 transform -translate-y-1/2"
         @click.stop="clearSelected()"
       >
         <z-icon icon="x" size="small"></z-icon>
       </span>
-      <span v-else class="absolute top-50 right-2 transform -translate-y-1/2">
+      <span v-else class="absolute top-50 right-3 transform -translate-y-1/2">
         <z-icon
           icon="chevron-down"
           size="small"

@@ -192,7 +192,7 @@ export const SelectWithPreselectedOption = () => ({
   components: { ZSelect, ZOption, ZIcon },
   data() {
     return {
-      value: '',
+      value: 'Option 1',
       options: [
         {
           value: 'Option 1',
