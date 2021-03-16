@@ -12,7 +12,7 @@
 
 Add this in the tailwind.config.js
 
-```
+```javascript
 // tailwind.config.js
 module.exports = {
   // import the tailwind config from Zeal.
