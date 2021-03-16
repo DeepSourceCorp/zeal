@@ -1,8 +1,8 @@
 <div align="center">
 
-  # Zeal
+# Zeal
 
-  [![DeepSource](https://deepsource.io/gh/deepsourcelabs/zeal.svg/?label=active+issues&show_trend=true&token=JIW55GPf1_QuPsjkJSkhKBct)](https://deepsource.io/gh/deepsourcelabs/zeal/?ref=repository-badge) [![DeepSource](https://deepsource.io/gh/deepsourcelabs/zeal.svg/?label=resolved+issues&show_trend=true&token=JIW55GPf1_QuPsjkJSkhKBct)](https://deepsource.io/gh/deepsourcelabs/zeal/?ref=repository-badge)
+[![DeepSource](https://deepsource.io/gh/deepsourcelabs/zeal.svg/?label=active+issues&show_trend=true&token=JIW55GPf1_QuPsjkJSkhKBct)](https://deepsource.io/gh/deepsourcelabs/zeal/?ref=repository-badge) [![DeepSource](https://deepsource.io/gh/deepsourcelabs/zeal.svg/?label=resolved+issues&show_trend=true&token=JIW55GPf1_QuPsjkJSkhKBct)](https://deepsource.io/gh/deepsourcelabs/zeal/?ref=repository-badge)
 
   <p>Zeal is the component system used across DeepSource Assets</p>
 
