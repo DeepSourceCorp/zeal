@@ -5,7 +5,7 @@
       'hover:bg-ink-100 cursor-pointer': !disabled,
       'text-vanilla-400 cursor-not-allowed': disabled
     }"
-    v-on:click="action()"
+    v-on:click="itemClicked"
   >
     <z-icon
       v-if="icon"
@@ -18,9 +18,14 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
 import ZIcon from '../../ZIcon/ZIcon.vue'
 
-export default {
+interface ZMenuParent extends Vue {
+  close: () => void
+}
+
+export default Vue.extend({
   name: 'ZMenuItem',
   components: {
     ZIcon
@@ -36,6 +41,15 @@ export default {
     action: {
       type: Function
     }
+  },
+  methods: {
+    itemClicked(event: Event): void {
+      if (this.action) {
+        this.action(event)
+      }
+      const parent = this.$parent as ZMenuParent
+      parent.close()
+    }
   }
-}
+})
 </script>
