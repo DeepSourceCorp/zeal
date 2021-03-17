@@ -2,7 +2,7 @@
 
 exports[`Ticker renders a default ticker 1`] = `
 <div class="z-indicator flex items-center">
-  <div class="flex items-center space-x-0.5 text-juniper"><span>100%</span>
+  <div class="flex items-center space-x-0.5 text-juniper"><span>100</span>
     <z-icon-stub icon="triangle-down" size="x-small" position="" color="juniper" class="transform rotate-180 mt-1"></z-icon-stub>
   </div>
 </div>

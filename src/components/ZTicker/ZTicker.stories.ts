@@ -24,7 +24,7 @@ export const NegativeTicker = () => ({
 
   template: `<div class='padded-container'>
         <div class="input-container">
-            <z-ticker class="text-vanilla" color="cherry" arrowDirection="down" value="44"></z-ticker>
+            <z-ticker class="text-vanilla" color="cherry" arrowDirection="down" value="44%"></z-ticker>
         </div>
     </div>`
 })
@@ -34,7 +34,7 @@ export const TickerWithoutIcon = () => ({
 
   template: `<div class='padded-container'>
         <div class="input-container">
-            <z-ticker class="text-vanilla" color="cherry" value="44" :hide-icon="true"></z-ticker>
+            <z-ticker class="text-vanilla" color="cherry" value="44%" :hide-icon="true"></z-ticker>
         </div>
     </div>`
 })
@@ -44,7 +44,7 @@ export const TickerWithContent = () => ({
 
   template: `<div class='padded-container'>
         <div class="input-container">
-            <z-ticker class="text-vanilla-200 space-x-1" color="juniper" arrowDirection="up" value="44">
+            <z-ticker class="text-vanilla-200 space-x-1" color="juniper" arrowDirection="up" value="44%">
               <template slot="content">
                 <span class="text-sm">since last week</span>
               </template>

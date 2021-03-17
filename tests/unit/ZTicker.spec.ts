@@ -13,7 +13,7 @@ describe('Ticker', () => {
     const wrapper = shallowMount(ZTicker, {
       propsData: {
         type: 'decrease',
-        value: '44'
+        value: '44%'
       }
     })
 
@@ -24,7 +24,7 @@ describe('Ticker', () => {
     const wrapper = shallowMount(ZTicker, {
       propsData: {
         type: 'decrease',
-        value: '44'
+        value: '44%'
       },
       slots: { content: '<span class="text-sm">since last week</span>' }
     })
