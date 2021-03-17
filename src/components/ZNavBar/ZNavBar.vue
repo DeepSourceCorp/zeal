@@ -1,7 +1,7 @@
 <script>
 import ZIcon from '@/components/ZIcon/ZIcon.vue'
 import ZAccordionItem from '@/components/ZAccordionItem/ZAccordionItem.vue'
-import { toPascal } from '@/helpers/components/utils.js'
+import { toPascal } from '@/helpers/components/utils.ts'
 
 export default {
   name: 'ZNavBar',

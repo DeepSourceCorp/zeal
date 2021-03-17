@@ -13,8 +13,13 @@
 
 <script lang="ts">
 import ZDivider from '../../ZDivider/ZDivider.vue'
+import Vue from 'vue'
 
-export default {
+interface ZMenuT extends Vue {
+  close: () => void
+}
+
+export default Vue.extend({
   name: 'ZMenuItem',
   components: {
     ZDivider
@@ -27,6 +32,12 @@ export default {
       type: Boolean,
       default: true
     }
+  },
+  methods: {
+    close(): void {
+      const parent = this.$parent as ZMenuT
+      parent.close()
+    }
   }
-}
+})
 </script>
