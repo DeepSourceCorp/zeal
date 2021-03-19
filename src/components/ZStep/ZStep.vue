@@ -80,13 +80,19 @@ export default {
   name: 'ZStep',
   props: {
     title: {
+      required: false,
       type: String
     },
     description: {
+      required: false,
       type: String
     },
     status: {
-      type: String
+      required: false,
+      type: String,
+      validator: value => {
+        return ['default', 'active', 'completed'].includes(value)
+      }
     }
   },
   data() {
