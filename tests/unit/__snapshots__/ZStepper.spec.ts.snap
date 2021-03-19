@@ -2,40 +2,49 @@
 
 exports[`ZStepper renders a default stepper component 1`] = `
 <div class="z-stepper flex">
-  <div class="z-step w-1/2 mr-0 w-1/3 flex-shrink-0 flex-grow-0">
-    <div class="z-step__head relative w-full">
+  <div class="w-1/2 mr-0 z-step w-1/3 flex-shrink-0 flex-grow-0">
+    <div class="relative z-step__head currentStatus w-full">
       <!---->
-      <div class="z-step__icon rounded-full w-6 h-6 bg-ink-200">
+      <div class="w-6 h-6 rounded-full z-step__icon bg-ink-200">
         <!---->
       </div>
+      <!---->
     </div>
-    <div class="z-step__main">
-      <div class="z-step__title uppercase text-slate font-medium mt-4 tracking-wider leading-snug text-xs">step1</div>
-      <div class="z-step__description font-bold leading-6 mt-1 text-sm text-vanilla-400"></div>
+    <div class="z-step__main mt-4">
+      <div class="mt-1 text-xs font-medium leading-snug tracking-wider uppercase z-step__title text-slate">
+        step1
+      </div>
+      <div class="mt-1 text-sm font-bold leading-6 z-step__description text-vanilla-200 text-vanilla-400"></div>
     </div>
   </div>
-  <div class="z-step w-1/2 mr-0 w-1/3 flex-shrink-0 flex-grow-0">
-    <div class="z-step__head relative w-full">
+  <div class="w-1/2 mr-0 z-step w-1/3 flex-shrink-0 flex-grow-0">
+    <div class="relative z-step__head currentStatus w-full">
       <!---->
-      <div class="z-step__icon rounded-full w-6 h-6 bg-ink-200">
+      <div class="w-6 h-6 rounded-full z-step__icon bg-ink-200">
         <!---->
       </div>
+      <!---->
     </div>
-    <div class="z-step__main">
-      <div class="z-step__title uppercase text-slate font-medium mt-4 tracking-wider leading-snug text-xs">step2</div>
-      <div class="z-step__description font-bold leading-6 mt-1 text-sm text-vanilla-400"></div>
+    <div class="z-step__main mt-4">
+      <div class="mt-1 text-xs font-medium leading-snug tracking-wider uppercase z-step__title text-slate">
+        step2
+      </div>
+      <div class="mt-1 text-sm font-bold leading-6 z-step__description text-vanilla-200 text-vanilla-400"></div>
     </div>
   </div>
-  <div class="z-step w-1/2 mr-0 w-1/3 flex-shrink-0 flex-grow-0">
-    <div class="z-step__head relative w-full">
+  <div class="w-1/2 mr-0 z-step w-1/3 flex-shrink-0 flex-grow-0">
+    <div class="relative z-step__head currentStatus w-full">
       <!---->
-      <div class="z-step__icon rounded-full w-6 h-6 bg-ink-200">
+      <div class="w-6 h-6 rounded-full z-step__icon bg-ink-200">
         <!---->
       </div>
+      <!---->
     </div>
-    <div class="z-step__main">
-      <div class="z-step__title uppercase text-slate font-medium mt-4 tracking-wider leading-snug text-xs">step3</div>
-      <div class="z-step__description font-bold leading-6 mt-1 text-sm text-vanilla-400"></div>
+    <div class="z-step__main mt-4">
+      <div class="mt-1 text-xs font-medium leading-snug tracking-wider uppercase z-step__title text-slate">
+        step3
+      </div>
+      <div class="mt-1 text-sm font-bold leading-6 z-step__description text-vanilla-200 text-vanilla-400"></div>
     </div>
   </div>
 </div>
@@ -43,38 +52,47 @@ exports[`ZStepper renders a default stepper component 1`] = `
 
 exports[`ZStepper renders a stepper component with status from the Step 1`] = `
 <div class="z-stepper flex">
-  <div class="z-step w-1/2 mr-0 w-1/3 flex-shrink-0 flex-grow-0">
-    <div class="z-step__head relative w-full completed">
+  <div class="w-1/2 mr-0 z-step w-1/3 flex-shrink-0 flex-grow-0">
+    <div class="relative z-step__head currentStatus w-full">
       <!---->
-      <div class="z-step__icon rounded-full w-6 h-6 bg-juniper"><span class="text-vanilla-100 flex justify-center items-center text-base h-full font-bold">✓</span></div>
+      <div class="w-6 h-6 rounded-full z-step__icon bg-juniper"><span class="flex items-center justify-center h-full text-base font-bold text-vanilla-100">✓</span></div>
+      <!---->
     </div>
-    <div class="z-step__main">
-      <div class="z-step__title uppercase text-slate font-medium mt-4 tracking-wider leading-snug text-xs">Step 1</div>
-      <div class="z-step__description font-bold leading-6 mt-1 text-sm text-vanilla-200">Some description</div>
+    <div class="z-step__main mt-4">
+      <div class="mt-1 text-xs font-medium leading-snug tracking-wider uppercase z-step__title text-slate">
+        Step 1
+      </div>
+      <div class="mt-1 text-sm font-bold leading-6 z-step__description text-vanilla-200">Some description</div>
     </div>
   </div>
-  <div class="z-step w-1/2 mr-0 w-1/3 flex-shrink-0 flex-grow-0">
-    <div class="z-step__head relative w-full active">
+  <div class="w-1/2 mr-0 z-step w-1/3 flex-shrink-0 flex-grow-0">
+    <div class="relative z-step__head currentStatus w-full">
       <!---->
-      <div class="z-step__icon rounded-full w-6 h-6 bg-robin">
+      <div class="w-6 h-6 rounded-full z-step__icon bg-robin">
         <!---->
       </div>
+      <!---->
     </div>
-    <div class="z-step__main">
-      <div class="z-step__title uppercase text-slate font-medium mt-4 tracking-wider leading-snug text-xs">Step 2</div>
-      <div class="z-step__description font-bold leading-6 mt-1 text-sm text-vanilla-200">Some description</div>
+    <div class="z-step__main mt-4">
+      <div class="mt-1 text-xs font-medium leading-snug tracking-wider uppercase z-step__title text-slate">
+        Step 2
+      </div>
+      <div class="mt-1 text-sm font-bold leading-6 z-step__description text-vanilla-200">Some description</div>
     </div>
   </div>
-  <div class="z-step w-1/2 mr-0 w-1/3 flex-shrink-0 flex-grow-0">
-    <div class="z-step__head relative w-full">
+  <div class="w-1/2 mr-0 z-step w-1/3 flex-shrink-0 flex-grow-0">
+    <div class="relative z-step__head currentStatus w-full">
       <!---->
-      <div class="z-step__icon rounded-full w-6 h-6 bg-ink-200">
+      <div class="w-6 h-6 rounded-full z-step__icon bg-ink-200">
         <!---->
       </div>
+      <!---->
     </div>
-    <div class="z-step__main">
-      <div class="z-step__title uppercase text-slate font-medium mt-4 tracking-wider leading-snug text-xs">Step 3</div>
-      <div class="z-step__description font-bold leading-6 mt-1 text-sm text-vanilla-400">Some description</div>
+    <div class="z-step__main mt-4">
+      <div class="mt-1 text-xs font-medium leading-snug tracking-wider uppercase z-step__title text-slate">
+        Step 3
+      </div>
+      <div class="mt-1 text-sm font-bold leading-6 z-step__description text-vanilla-200 text-vanilla-400">Some description</div>
     </div>
   </div>
 </div>
@@ -82,40 +100,99 @@ exports[`ZStepper renders a stepper component with status from the Step 1`] = `
 
 exports[`ZStepper renders a stepper component with status passed from the Parent Component 1`] = `
 <div class="z-stepper flex">
-  <div class="z-step w-1/2 mr-0 w-1/3 flex-shrink-0 flex-grow-0">
-    <div class="z-step__head relative w-full">
+  <div class="w-1/2 mr-0 z-step w-1/3 flex-shrink-0 flex-grow-0">
+    <div class="relative z-step__head currentStatus w-full">
       <!---->
-      <div class="z-step__icon rounded-full w-6 h-6 bg-ink-200">
+      <div class="w-6 h-6 rounded-full z-step__icon bg-ink-200">
         <!---->
       </div>
+      <!---->
     </div>
-    <div class="z-step__main">
-      <div class="z-step__title uppercase text-slate font-medium mt-4 tracking-wider leading-snug text-xs">Step 1</div>
-      <div class="z-step__description font-bold leading-6 mt-1 text-sm text-vanilla-400">Some description</div>
+    <div class="z-step__main mt-4">
+      <div class="mt-1 text-xs font-medium leading-snug tracking-wider uppercase z-step__title text-slate">
+        Step 1
+      </div>
+      <div class="mt-1 text-sm font-bold leading-6 z-step__description text-vanilla-200 text-vanilla-400">Some description</div>
     </div>
   </div>
-  <div class="z-step w-1/2 mr-0 w-1/3 flex-shrink-0 flex-grow-0">
-    <div class="z-step__head relative w-full">
+  <div class="w-1/2 mr-0 z-step w-1/3 flex-shrink-0 flex-grow-0">
+    <div class="relative z-step__head currentStatus w-full">
       <!---->
-      <div class="z-step__icon rounded-full w-6 h-6 bg-ink-200">
+      <div class="w-6 h-6 rounded-full z-step__icon bg-ink-200">
         <!---->
       </div>
+      <!---->
     </div>
-    <div class="z-step__main">
-      <div class="z-step__title uppercase text-slate font-medium mt-4 tracking-wider leading-snug text-xs">Step 2</div>
-      <div class="z-step__description font-bold leading-6 mt-1 text-sm text-vanilla-400">Some description</div>
+    <div class="z-step__main mt-4">
+      <div class="mt-1 text-xs font-medium leading-snug tracking-wider uppercase z-step__title text-slate">
+        Step 2
+      </div>
+      <div class="mt-1 text-sm font-bold leading-6 z-step__description text-vanilla-200 text-vanilla-400">Some description</div>
     </div>
   </div>
-  <div class="z-step w-1/2 mr-0 w-1/3 flex-shrink-0 flex-grow-0">
-    <div class="z-step__head relative w-full">
+  <div class="w-1/2 mr-0 z-step w-1/3 flex-shrink-0 flex-grow-0">
+    <div class="relative z-step__head currentStatus w-full">
       <!---->
-      <div class="z-step__icon rounded-full w-6 h-6 bg-ink-200">
+      <div class="w-6 h-6 rounded-full z-step__icon bg-ink-200">
         <!---->
       </div>
+      <!---->
     </div>
-    <div class="z-step__main">
-      <div class="z-step__title uppercase text-slate font-medium mt-4 tracking-wider leading-snug text-xs">Step 3</div>
-      <div class="z-step__description font-bold leading-6 mt-1 text-sm text-vanilla-400">Some description</div>
+    <div class="z-step__main mt-4">
+      <div class="mt-1 text-xs font-medium leading-snug tracking-wider uppercase z-step__title text-slate">
+        Step 3
+      </div>
+      <div class="mt-1 text-sm font-bold leading-6 z-step__description text-vanilla-200 text-vanilla-400">Some description</div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ZStepper renders a vertical stepper component 1`] = `
+<div class="z-stepper flex flex-col">
+  <div class="w-1/2 mr-0 z-step w-1/3 flex-shrink-0 flex-grow-0">
+    <div class="relative z-step__head currentStatus w-full">
+      <!---->
+      <div class="w-6 h-6 rounded-full z-step__icon bg-ink-200">
+        <!---->
+      </div>
+      <!---->
+    </div>
+    <div class="z-step__main mt-4">
+      <div class="mt-1 text-xs font-medium leading-snug tracking-wider uppercase z-step__title text-slate">
+        Step 1
+      </div>
+      <div class="mt-1 text-sm font-bold leading-6 z-step__description text-vanilla-200 text-vanilla-400">Some description</div>
+    </div>
+  </div>
+  <div class="w-1/2 mr-0 z-step w-1/3 flex-shrink-0 flex-grow-0">
+    <div class="relative z-step__head currentStatus w-full">
+      <!---->
+      <div class="w-6 h-6 rounded-full z-step__icon bg-ink-200">
+        <!---->
+      </div>
+      <!---->
+    </div>
+    <div class="z-step__main mt-4">
+      <div class="mt-1 text-xs font-medium leading-snug tracking-wider uppercase z-step__title text-slate">
+        Step 2
+      </div>
+      <div class="mt-1 text-sm font-bold leading-6 z-step__description text-vanilla-200 text-vanilla-400">Some description</div>
+    </div>
+  </div>
+  <div class="w-1/2 mr-0 z-step w-1/3 flex-shrink-0 flex-grow-0">
+    <div class="relative z-step__head currentStatus w-full">
+      <!---->
+      <div class="w-6 h-6 rounded-full z-step__icon bg-ink-200">
+        <!---->
+      </div>
+      <!---->
+    </div>
+    <div class="z-step__main mt-4">
+      <div class="mt-1 text-xs font-medium leading-snug tracking-wider uppercase z-step__title text-slate">
+        Step 3
+      </div>
+      <div class="mt-1 text-sm font-bold leading-6 z-step__description text-vanilla-200 text-vanilla-400">Some description</div>
     </div>
   </div>
 </div>
