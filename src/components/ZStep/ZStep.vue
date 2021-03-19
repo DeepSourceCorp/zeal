@@ -90,7 +90,7 @@ export default {
     status: {
       required: false,
       type: String,
-      validator: value => {
+      validator: (value) => {
         return ['default', 'active', 'completed'].includes(value)
       }
     }
