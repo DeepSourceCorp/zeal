@@ -12,27 +12,29 @@ export default {
   excludeStories: /.*Data$/
 }
 
-export const DefaultStepper = () => ({
-  components: { ZStepper, ZStep },
-  template: `<div class="container">
+export const DefaultStepper = () =>
+  Vue.extend({
+    components: { ZStepper, ZStep },
+    template: `<div class="container">
         <z-stepper>
             <z-step title="Step 1" description="Some description"></z-step>
             <z-step title="Step 2" description="Some description"></z-step>
             <z-step title="Step 3" description="Some description"></z-step>
         </z-stepper>
     </div>`
-})
+  })
 
-export const VerticalStepper = () => ({
-  components: { ZStepper, ZStep },
-  template: `<div class="container">
+export const VerticalStepper = () =>
+  Vue.extend({
+    components: { ZStepper, ZStep },
+    template: `<div class="container">
         <z-stepper align="vertical">
             <z-step title="Step 1" description="Some description"></z-step>
             <z-step title="Step 2" description="Some description"></z-step>
             <z-step title="Step 3" description="Some description"></z-step>
         </z-stepper>
     </div>`
-})
+  })
 
 export const VerticalStepperWithCustomSlots = () =>
   Vue.extend({
@@ -91,24 +93,26 @@ export const VerticalStepperWithCustomSlots = () =>
     </div>`
   })
 
-export const StepperWithDirectStatus = () => ({
-  components: { ZStepper, ZStep },
-  template: `<div class="container">
+export const StepperWithDirectStatus = () =>
+  Vue.extend({
+    components: { ZStepper, ZStep },
+    template: `<div class="container">
         <z-stepper>
             <z-step title="Step 1" description="Some description" status="completed"></z-step>
             <z-step title="Step 2" description="Some description" status="active"></z-step>
             <z-step title="Step 3" description="Some description"></z-step>
         </z-stepper>
     </div>`
-})
+  })
 
-export const StepperWithStatusFromParent = () => ({
-  components: { ZStepper, ZStep, ZButton },
-  template: `<div class="container">
+export const StepperWithStatusFromParent = () =>
+  Vue.extend({
+    components: { ZStepper, ZStep, ZButton },
+    template: `<div class="container">
       <z-stepper :active="2">
           <z-step title="Step 1" description="Some description"></z-step>
           <z-step title="Step 2" description="Some description"></z-step>
           <z-step title="Step 3" description="Some description"></z-step>
       </z-stepper>
   </div>`
-})
+  })
