@@ -1,27 +1,75 @@
 <template>
-  <div class="z-step w-1/2 mr-0" :class="[isLast && 'w-1/3 flex-shrink-0 flex-grow-0']">
-    <div class="z-step__head relative w-full" :class="[`${currentStatus}`]">
+  <div
+    class="w-1/2 mr-0 z-step"
+    :class="{
+      'w-1/3 flex-shrink-0 flex-grow-0': align === 'horizontal' && isLast,
+      'flex flex-row': align === 'vertical'
+    }"
+  >
+    <div
+      class="relative z-step__head"
+      :class="{
+        currentStatus: true,
+        'w-full': align === 'horizontal',
+        'flex flex-col justify-center': align === 'vertical' && !isLast
+      }"
+    >
       <div
+        v-if="align == 'horizontal' && !isLast"
         class="z-step__line absolute h-0.5 top-2.5 rounded-sm w-auto left-7 right-1"
-        :class="[(currentStatus == 'completed' && 'bg-juniper') || 'bg-ink-200']"
-        v-if="!isLast"
+        :class="{
+          'bg-juniper': currentStatus === 'completed',
+          'bg-ink-200': currentStatus !== 'completed'
+        }"
       ></div>
-      <div class="z-step__icon rounded-full w-6 h-6" :class="[getIconStyle]">
+      <div
+        class="w-6 h-6 rounded-full z-step__icon"
+        :class="{
+          'bg-juniper': currentStatus == 'completed',
+          'bg-robin': currentStatus == 'active',
+          'bg-ink-200': currentStatus == 'default',
+          'flex-shrink-0 mt-0.5': align === 'vertical'
+        }"
+      >
         <span
-          v-if="currentStatus == 'completed'"
-          class="text-vanilla-100 flex justify-center items-center text-base h-full font-bold"
+          v-if="showNumbers"
+          class="flex items-center justify-center h-full text-base font-bold text-vanilla-100"
+          >{{ index + 1 }}</span
+        >
+        <span
+          v-else-if="currentStatus == 'completed'"
+          class="flex items-center justify-center h-full text-base font-bold text-vanilla-100"
           >✓</span
         >
       </div>
-    </div>
-    <div class="z-step__main">
       <div
-        class="z-step__title uppercase text-slate font-medium mt-4 tracking-wider leading-snug text-xs"
+        v-if="align == 'vertical' && !isLast"
+        class="z-step__line h-full w-0.5 my-2 rounded-sm mx-auto"
+        :class="{
+          'bg-juniper': currentStatus === 'completed',
+          'bg-ink-200': currentStatus !== 'completed'
+        }"
+      ></div>
+    </div>
+    <div
+      class="z-step__main"
+      :class="{ 'mt-4': align === 'horizontal', 'mb-4 ml-4': align === 'vertical' }"
+    >
+      <slot name="title">
+        <div
+          class="mt-1 text-xs font-medium leading-snug tracking-wider uppercase z-step__title text-slate"
+        >
+          {{ title }}
+        </div>
+      </slot>
+      <div
+        class="mt-1 text-sm font-bold leading-6 z-step__description"
+        :class="{
+          'text-vanilla-200': currentStatus,
+          'text-vanilla-400': currentStatus == 'default'
+        }"
       >
-        <slot name="title">{{ title }}</slot>
-      </div>
-      <div class="z-step__description font-bold leading-6 mt-1 text-sm" :class="[getTextStyle]">
-        <slot name="description">{{ description }}</slot>
+        <slot name="description" v-bind:status="currentStatus">{{ description }}</slot>
       </div>
     </div>
   </div>
@@ -32,37 +80,35 @@ export default {
   name: 'ZStep',
   props: {
     title: {
+      required: false,
+      default: undefined,
       type: String
     },
     description: {
+      required: false,
+      default: undefined,
       type: String
     },
     status: {
-      type: String
+      required: false,
+      type: String,
+      default: 'default',
+      validator: (value) => {
+        return ['default', 'active', 'completed'].includes(value)
+      }
     }
   },
   data() {
     return {
       index: -1,
-      internalStatus: ''
+      showNumbers: false,
+      internalStatus: 'default',
+      align: 'horizontal'
     }
   },
   computed: {
     currentStatus() {
       return this.status || this.internalStatus
-    },
-    getIconStyle() {
-      const bgColors = {
-        completed: 'bg-juniper',
-        active: 'bg-robin',
-        default: 'bg-ink-200'
-      }
-      return bgColors[this.currentStatus] || bgColors['default']
-    },
-    getTextStyle() {
-      const activeColor = 'text-vanilla-200',
-        defaultColor = 'text-vanilla-400'
-      return (this.currentStatus && activeColor) || defaultColor
     },
     isLast() {
       const parent = this.$parent
