@@ -12,7 +12,7 @@ export default {
   excludeStories: /.*Data$/
 }
 
-export const DefaultStepper = () =>
+export const DefaultStepper = (): unknown =>
   Vue.extend({
     components: { ZStepper, ZStep },
     template: `<div class="container">
@@ -24,7 +24,7 @@ export const DefaultStepper = () =>
     </div>`
   })
 
-export const VerticalStepper = () =>
+export const VerticalStepper = (): unknown =>
   Vue.extend({
     components: { ZStepper, ZStep },
     template: `<div class="container">
@@ -36,7 +36,7 @@ export const VerticalStepper = () =>
     </div>`
   })
 
-export const VerticalStepperWithCustomSlots = () =>
+export const VerticalStepperWithCustomSlots = (): unknown =>
   Vue.extend({
     components: { ZStepper, ZStep, ZButton },
     data() {
@@ -93,7 +93,7 @@ export const VerticalStepperWithCustomSlots = () =>
     </div>`
   })
 
-export const StepperWithDirectStatus = () =>
+export const StepperWithDirectStatus = (): unknown =>
   Vue.extend({
     components: { ZStepper, ZStep },
     template: `<div class="container">
@@ -105,7 +105,7 @@ export const StepperWithDirectStatus = () =>
     </div>`
   })
 
-export const StepperWithStatusFromParent = () =>
+export const StepperWithStatusFromParent = (): unknown =>
   Vue.extend({
     components: { ZStepper, ZStep, ZButton },
     template: `<div class="container">
