@@ -81,16 +81,19 @@ export default {
   props: {
     title: {
       required: false,
+      default: undefined,
       type: String
     },
     description: {
       required: false,
+      default: undefined,
       type: String
     },
     status: {
       required: false,
       type: String,
-      validator: (value) => {
+      default: 'default',
+      validator: value => {
         return ['default', 'active', 'completed'].includes(value)
       }
     }
