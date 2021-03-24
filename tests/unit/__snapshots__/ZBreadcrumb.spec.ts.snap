@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ZBreadcrumb renders a breadcrumb component with current set by the user 1`] = `<div aria-label="Breadcrumb" role="navigation" class="flex space-x-2 text-sm text-vanilla-100"><span class="space-x-2 text-slate"><!----> <span role="link"><a href="#">Home</a></span></span> <span class="space-x-2 text-slate"><!----> <span role="link"><a href="#">Repository</a></span></span> <span class="space-x-2"><!----> <span role="link">Settings</span></span></div>`;
+
+exports[`ZBreadcrumb renders a default breadcrumb component 1`] = `<div aria-label="Breadcrumb" role="navigation" class="flex space-x-2 text-sm text-vanilla-100"><span class="space-x-2 text-slate"><!----> <span role="link"><a href="#">Autofix</a></span></span> <span class="space-x-2 text-slate"><!----> <span role="link">Method has no argument</span></span></div>`;
