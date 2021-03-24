@@ -77,6 +77,7 @@ import ZHero from './components/marketing/sections/ZHero'
 
 // Marketing layouts
 import ZContentGuide from './components/marketing/layouts/ZContentGuide/index'
+import { VueConstructor } from 'vue/types/umd'
 
 const components = [
   ZButton,
@@ -150,7 +151,7 @@ const components = [
   ZBreadcrumbItem
 ]
 
-const install = (Vue: any) => {
+const install = (Vue: VueConstructor) => {
   components.forEach(component => {
     Vue.component(component.name, component)
   })
