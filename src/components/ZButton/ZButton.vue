@@ -15,9 +15,7 @@
       ((isLink || icon) && 'p-0') || spacing,
       isLink || icon ? '' : sizeClasses,
       `${stylesBasedOnColor}`,
-      {
-        'p-0.5': icon
-      }
+      icon && iconStyle
     ]"
     :type="type"
   >
@@ -29,6 +27,12 @@
 <script>
 import Vue from 'vue'
 import ZIcon from '@/components/ZIcon/ZIcon.vue'
+
+const spacingTypes = {
+  tight: '0.5',
+  base: '1',
+  loose: '1.5'
+}
 
 export default Vue.extend({
   name: 'ZButton',
@@ -84,6 +88,13 @@ export default Vue.extend({
     spacing: {
       type: String,
       default: 'px-6'
+    },
+    iconSpacing: {
+      default: 'tight',
+      type: String,
+      validator(val) {
+        return ['tight', 'base', 'loose'].includes(val)
+      }
     }
   },
   data() {
@@ -93,6 +104,9 @@ export default Vue.extend({
     }
   },
   computed: {
+    iconStyle() {
+      return `p-${spacingTypes[this.iconSpacing]}`
+    },
     isButtonDisabled() {
       return this.disabled !== false
     },
@@ -105,7 +119,7 @@ export default Vue.extend({
           (this.isButtonDisabled && 'text-slate no-underline') || 'hover:underline'
         }`,
         primary: `bg-juniper text-ink-400 ${
-          (this.isButtonDisabled && 'hover:bg-juniper') || 'hover:bg-light_juniper'
+          (this.isButtonDisabled && 'hover:bg-juniper') || 'hover:bg-light-juniper'
         }`,
         secondary: `bg-ink-300 text-vanilla-100 border border-slate ${
           (this.isButtonDisabled && 'hover:bg-ink-300') || 'hover:bg-ink-200'
@@ -117,7 +131,10 @@ export default Vue.extend({
                   (this.isButtonDisabled && 'hover:bg-ink-300') ||
                   `hover:bg-ink-200 hover:bg-opacity-${this.hoverOpacity}`
                 } 
-                ${this.isButtonActive && 'bg-ink-100'}`
+                ${this.isButtonActive && 'bg-ink-100'}`,
+        danger: `bg-cherry text-ink-400 ${
+          (this.isButtonDisabled && 'hover:bg-cherry') || 'hover:bg-cherry'
+        }`
       }
       return colors[this.color] || ''
     },

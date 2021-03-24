@@ -13,7 +13,8 @@
 import Vue from 'vue'
 
 interface ZSelectT extends Vue {
-  selectedOpt: string
+  selectedOpt: string | number
+  selectedOptLabel: string | number
   open: boolean
 }
 
@@ -24,7 +25,7 @@ export default Vue.extend({
       type: String
     },
     value: {
-      type: String
+      type: String || Number
     }
   },
   computed: {
@@ -37,6 +38,7 @@ export default Vue.extend({
     selectOption(): void {
       const $parent = this.$parent as ZSelectT
       $parent.selectedOpt = this.value
+      $parent.selectedOptLabel = this.label || this.value
       $parent.open = false
     }
   }

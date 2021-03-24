@@ -1,7 +1,7 @@
 <template>
   <div class="z-indicator flex items-center">
     <div class="flex items-center space-x-0.5" :class="[`text-${color}`]">
-      <span>{{ value }}%</span>
+      <span>{{ value }}</span>
       <z-icon
         icon="triangle-down"
         :color="color"

@@ -1,4 +1,4 @@
-export const toPascal = (word) => {
+export const toPascal = (word: string) => {
   // https://stackoverflow.com/a/53952925
   return `${word}`
     .replace(new RegExp(/[-_]+/, 'g'), ' ')
@@ -9,4 +9,10 @@ export const toPascal = (word) => {
     )
     .replace(new RegExp(/\s/, 'g'), '')
     .replace(new RegExp(/\w/), (s) => s.toUpperCase())
+}
+
+export const containsElement = (parentCandidate: HTMLElement, target: HTMLElement): boolean => {
+  return Boolean(
+    parentCandidate && (target === parentCandidate || parentCandidate.contains(target))
+  )
 }
