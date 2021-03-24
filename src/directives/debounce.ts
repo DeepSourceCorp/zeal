@@ -5,7 +5,7 @@ import { DirectiveBinding } from 'vue/types/options'
 
 const debounceDirective: DirectiveOptions = {
   bind(el: HTMLElement, binding: DirectiveBinding) {
-    const fn = binding.value
+    const fn = binding.value as (value: unknown, event: Event) => void
     let timeoutID: ReturnType<typeof setTimeout>
 
     el.oninput = (event: Event) => {
@@ -13,7 +13,7 @@ const debounceDirective: DirectiveOptions = {
       timeoutID = setTimeout(() => {
         const target = event.target as HTMLInputElement
         fn(target.value, event)
-      }, Number(binding.arg) || 400)
+      }, Number(binding.arg as string) || 400)
     }
   }
 }
