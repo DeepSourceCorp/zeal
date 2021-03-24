@@ -39,7 +39,7 @@ export const Colors = () => ({
 export const Sizes = () => ({
   components: { ZButton },
   filters: {
-    capitalize: function(value: string) {
+    capitalize: function (value: string) {
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
@@ -61,7 +61,7 @@ export const Sizes = () => ({
 export const States = () => ({
   components: { ZButton },
   filters: {
-    capitalize: function(value: string) {
+    capitalize: function (value: string) {
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
