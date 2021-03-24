@@ -54,8 +54,6 @@ import ZBreadcrumbItem from './components/ZBreadcrumb/ZBreadcrumbItem/index'
 import ZTextarea from './components/ZTextarea/index'
 import ZModal from './components/ZModal/index'
 import ZAnimatedInteger from './components/ZAnimatedInteger/index'
-import ZBreadcrumb from './components/ZBreadcrumb/index'
-import ZBreadcrumbItem from './components/ZBreadcrumb/ZBreadcrumbItem/index'
 
 // Marketing components
 import ZFooter from './components/marketing/ZFooter'
@@ -79,7 +77,6 @@ import ZHero from './components/marketing/sections/ZHero'
 
 // Marketing layouts
 import ZContentGuide from './components/marketing/layouts/ZContentGuide/index'
-import { VueConstructor } from 'vue/types/umd'
 
 const components = [
   ZButton,
@@ -150,12 +147,10 @@ const components = [
   ZTableRow,
   ZTableCell,
   ZModal,
-  ZAnimatedInteger,
-  ZBreadcrumb,
-  ZBreadcrumbItem
+  ZAnimatedInteger
 ]
 
-const install = (Vue: VueConstructor) => {
+const install = (Vue: any) => {
   components.forEach(component => {
     Vue.component(component.name, component)
   })
@@ -227,9 +222,7 @@ export default {
   ZTableCell,
   ZToggle,
   ZModal,
-  ZAnimatedInteger,
-  ZBreadcrumb,
-  ZBreadcrumbItem
+  ZAnimatedInteger
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -301,5 +294,3 @@ export { default as ZTableCell } from './components/ZTable/ZTableCell/index'
 export { default as ZToggle } from './components/ZToggle/index'
 export { default as ZModal } from './components/ZModal/index'
 export { default as ZAnimatedInteger } from './components/ZAnimatedInteger/index'
-export { default as ZBreadcrumb } from './components/ZBreadcrumb/index'
-export { default as ZBreadcrumbItem } from './components/ZBreadcrumb/ZBreadcrumbItem/index'
