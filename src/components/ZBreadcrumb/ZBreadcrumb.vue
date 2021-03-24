@@ -20,7 +20,7 @@ export default {
     }
   },
   mounted() {
-    this.items = this.$children.filter(child => child.$options.name === 'ZBreadcrumbItem')
+    this.items = this.$children.filter((child) => child.$options.name === 'ZBreadcrumbItem')
     this.length = this.items.length
     this.items.map((item, index) => {
       item.index = index
