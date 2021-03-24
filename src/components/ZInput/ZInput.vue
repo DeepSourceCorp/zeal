@@ -14,6 +14,7 @@
     <!-- Any icon/content to the left renders here -->
     <slot name="left"></slot>
     <input
+      v-debounce:[debounceDelay]="updateDebounce"
       type="text"
       class="w-full caret-juniper flex flex-grow outline-none bg-transparent pl-0.5 leading-5"
       :class="{
@@ -41,10 +42,15 @@
 <script lang="ts">
 import Vue from 'vue'
 import ZIcon from '../ZIcon/ZIcon.vue'
+import debounceDirective from '@/directives/debounce'
+
 export default Vue.extend({
   name: 'ZInput',
   components: {
     ZIcon
+  },
+  directives: {
+    debounce: debounceDirective
   },
   props: {
     name: {
@@ -58,6 +64,10 @@ export default Vue.extend({
     disabled: {
       default: false,
       type: Boolean
+    },
+    debounceDelay: {
+      default: 350,
+      type: Number
     },
     icon: {
       type: String
@@ -93,6 +103,9 @@ export default Vue.extend({
   methods: {
     updateSelf(name: string): void {
       this.$emit('input', name)
+    },
+    updateDebounce(value: unknown): void {
+      this.$emit('debounceInput', value)
     }
   }
 })
