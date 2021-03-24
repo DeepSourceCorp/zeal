@@ -70,7 +70,8 @@ export default Vue.extend({
       type: Number
     },
     icon: {
-      type: String
+      type: String,
+      default: undefined
     },
     clearable: {
       type: Boolean
