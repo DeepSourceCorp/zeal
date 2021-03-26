@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Input Component emits debounce changes 1`] = `
+<div class="flex items-center w-full rounded-sm outline-none space-x-2 p-1 focus-within:shadow-white focus:border-vanilla-400 border border-solid border-ink-100 text-sm bg-ink-400 text-vanilla-300"> <input type="text" placeholder="captain@marvel.com" class="w-full caret-juniper flex flex-grow outline-none bg-transparent pl-0.5 leading-5">
+  <!---->
+</div>
+`;
+
 exports[`Input Component renders a disabled input 1`] = `
 <div class="flex items-center w-full rounded-sm outline-none space-x-2 p-1 focus-within:shadow-white focus:border-vanilla-400 border border-solid border-ink-100 text-sm bg-ink-400 text-slate cursor-not-allowed"> <input type="text" placeholder="Enter a value" disabled="disabled" class="w-full caret-juniper flex flex-grow outline-none bg-transparent cursor-not-allowed">
   <!---->

@@ -6,6 +6,7 @@ import ZInputGroup from '@/components/ZInputGroup/ZInputGroup.vue'
 import ZInputAddon from '@/components/ZInputAddon/ZInputAddon.vue'
 import ZIcon from '@/components/ZIcon/ZIcon.vue'
 import ZButton from '@/components/ZButton/ZButton.vue'
+import Vue from 'vue'
 
 export default {
   title: 'Form Inputs and Controls: Input',
@@ -27,6 +28,37 @@ export const InputWithCustomPlaceholder = () => ({
         </div>
     </div>`
 })
+
+export const DebounceInput = () =>
+  Vue.extend({
+    components: { ZInput },
+    data() {
+      return {
+        name: '',
+        delayname: '',
+        debouncedValue: '',
+        delayDebouncedValue: ''
+      }
+    },
+    methods: {
+      debounce(val: string): void {
+        this.debouncedValue = val
+      },
+      delayDebounce(val: string): void {
+        this.delayDebouncedValue = val
+      }
+    },
+    template: `<div class='padded-container space-y-6'>
+        <div class="input-container space-y-2">
+            <z-input @debounceInput="debounce" v-model="name" :showBorder="false" backgroundColor="ink-200"></z-input>
+            <p class="text-vanilla-100 text-sm">Debounced Value: {{debouncedValue}}</p>
+        </div>
+        <div class="input-container space-y-2">
+            <z-input :debounceDelay="1200" @debounceInput="delayDebounce" v-model="delayname" :showBorder="false" backgroundColor="ink-200"></z-input>
+            <p class="text-vanilla-100 text-sm">Delayed Debounced Value: {{delayDebouncedValue}}</p>
+        </div>
+    </div>`
+  })
 
 export const DisabledInput = () => ({
   components: { ZInput },

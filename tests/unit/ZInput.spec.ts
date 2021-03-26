@@ -22,6 +22,7 @@ describe('Input Component', () => {
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.findAll('input').length).toEqual(1)
   })
+
   it('renders the input with custom placeholder', () => {
     const wrapper = mountFn({
       propsData: {
@@ -31,6 +32,20 @@ describe('Input Component', () => {
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.find('input').attributes('placeholder')).toMatch('captain@marvel.com')
   })
+
+  it('emits debounce changes', () => {
+    const wrapper = mountFn({
+      propsData: {
+        placeholder: 'captain@marvel.com'
+      }
+    })
+    expect(wrapper.html()).toMatchSnapshot()
+    wrapper.find('input').setValue('hello, world')
+    setTimeout(() => {
+      expect(wrapper.emitted('debounceInput')).toBeTruthy()
+    }, 500)
+  })
+
   it('renders a disabled input', () => {
     const wrapper = mountFn({
       propsData: {
