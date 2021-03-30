@@ -51,7 +51,7 @@ export default {
     },
     mobHeaderStyle() {
       return `${this.isOpen ? 'right-0' : '-right-full'} 
-              overflow-y-scroll lg:-right-full w-full h-screen absolute flex flex-col space-y-2 transition-all duration-700 ease-in-out top-0 bg-ink-300 flex flex-col`
+              overflow-y-scroll lg:-right-full w-full h-screen absolute flex flex-col space-y-2 transition-all duration-300 ease-in-out top-0 bg-ink-300 flex flex-col`
     },
     linkSlotStyle() {
       return `${this.hideOnScroll} 
@@ -91,7 +91,7 @@ export default {
         <header class={headerStyle}>
           <div class="first flex items-center flex-1">{this.$slots.brand}</div>
           <div class={this.linkSlotStyle}>{this.$slots.links}</div>
-          <div class="third flex flex-1 items-center space-x-4 justify-end">{this.$slots.cta}</div>
+          <div class="third flex flex-1 items-center space-x-3 justify-end">{this.$slots.cta}</div>
           <div class="flex cursor-pointer lg:hidden space-x-2 pl-2" on-click={this.toggleModal}>
             <z-icon icon="menu" size="medium"></z-icon>
           </div>

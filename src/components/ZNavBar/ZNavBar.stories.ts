@@ -87,8 +87,8 @@ export const Horizontal = () => ({
                         <a class="flex px-4 py-2 hover:bg-ink-300 border-b border-ink-200 lg:border-0" href="https://deepsource.io/pricing">Pricing</a>
                     </template>
                     <template slot="cta">
-                        <z-button color="link" type="link" class="text-xs sm:text-sm lg:text-base">Log in</z-button>
-                        <z-button color="primary" size="none" spacing="px-4 lg:px-6" class="text-xxs sm:text-xs lg:text-sm h-6 sm:h-8">Sign up</z-button>
+                        <z-button color="link" type="link" class="text-sm sm:text-sm lg:text-base whitespace-nowrap">Log in</z-button>
+                        <z-button color="primary" size="none" spacing="px-4 lg:px-6" class="text-sm lg:text-md h-6 sm:h-8 whitespace-nowrap">Sign up</z-button>
                     </template>
                 </z-nav-bar>
     <div class="prose prose-sm sm:prose sm:max-w-none mx-auto px-10 py-36">
