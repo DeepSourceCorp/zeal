@@ -30,7 +30,7 @@
           'bg-robin': currentStatus == 'active',
           'bg-ink-200': !showNumbers && currentStatus == 'default',
           'border border-vanilla-200': showNumbers && currentStatus == 'default',
-          'flex-shrink-0 mt-0.5': align === 'vertical'
+          'flex-shrink-0': align === 'vertical'
         }"
       >
         <span
@@ -46,7 +46,7 @@
       </div>
       <div
         v-if="align == 'vertical' && !isLast"
-        class="z-step__line h-full w-0.5 my-2 rounded-sm mx-auto"
+        class="z-step__line h-full w-0.5 my-1 rounded-sm mx-auto"
         :class="{
           'bg-juniper': currentStatus === 'completed',
           'bg-ink-200': currentStatus !== 'completed'
