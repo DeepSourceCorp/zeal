@@ -32,14 +32,16 @@ export default Vue.extend({
   },
   props: {
     icon: {
-      type: String
+      type: String,
+      default: undefined
     },
     disabled: {
       type: Boolean,
       default: false
     },
     action: {
-      type: Function
+      type: Function,
+      default: undefined
     }
   },
   methods: {
@@ -47,6 +49,7 @@ export default Vue.extend({
       this.$emit('click')
 
       if (this.action) {
+        console.warn('Action Prop for ZMenuItem is deprecated, use the @click event')
         this.action(event)
       }
 
