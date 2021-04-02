@@ -1,8 +1,9 @@
 <template>
   <div
-    class="w-1/2 mr-0 z-step"
+    class="mr-0 z-step"
     :class="{
       'w-1/3 flex-shrink-0 flex-grow-0': align === 'horizontal' && isLast,
+      'w-1/2': align == 'horizontal' && !isLast,
       'flex flex-row': align === 'vertical'
     }"
   >
@@ -27,8 +28,9 @@
         :class="{
           'bg-juniper': currentStatus == 'completed',
           'bg-robin': currentStatus == 'active',
-          'bg-ink-200': currentStatus == 'default',
-          'flex-shrink-0 mt-0.5': align === 'vertical'
+          'bg-ink-200': !showNumbers && currentStatus == 'default',
+          'border border-vanilla-200': showNumbers && currentStatus == 'default',
+          'flex-shrink-0': align === 'vertical'
         }"
       >
         <span
@@ -44,7 +46,7 @@
       </div>
       <div
         v-if="align == 'vertical' && !isLast"
-        class="z-step__line h-full w-0.5 my-2 rounded-sm mx-auto"
+        class="z-step__line h-full w-0.5 my-1 rounded-sm mx-auto"
         :class="{
           'bg-juniper': currentStatus === 'completed',
           'bg-ink-200': currentStatus !== 'completed'
@@ -53,7 +55,7 @@
     </div>
     <div
       class="z-step__main"
-      :class="{ 'mt-4': align === 'horizontal', 'mb-4 ml-4': align === 'vertical' }"
+      :class="{ 'mt-4': align === 'horizontal', 'mb-4 ml-4 w-full': align === 'vertical' }"
     >
       <slot name="title">
         <div
