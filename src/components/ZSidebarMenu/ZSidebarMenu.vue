@@ -142,12 +142,12 @@ export default {
       this.$emit('collapse', this.isCollapsed)
     },
     openModal() {
-      this.isOpen = !this.isOpen
-      this.$emit('open', this.isOpen)
+      this.isOpen = true
+      this.$emit('open')
     },
     closeModal() {
       this.isOpen = false
-      this.$emit('open', this.isOpen)
+      this.$emit('close')
     }
   }
 }
