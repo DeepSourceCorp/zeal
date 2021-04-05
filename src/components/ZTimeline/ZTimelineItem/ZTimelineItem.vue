@@ -1,5 +1,5 @@
 <template>
-  <div class="timeline__item flex relative gap-x-4">
+  <div class="timeline__item flex relative gap-x-2">
     <div class="flex flex-col justify-center items-center gap-y-2">
       <div class="w-8 h-8 flex justify-center items-center">
         <slot name="icon">
