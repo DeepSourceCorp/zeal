@@ -45,7 +45,7 @@ export default {
         ${
           this.isUserOnTop
             ? 'bg-transparent border-transparent'
-            : 'bg-ink-300 border-ink-100 bg-opacity-25'
+            : 'bg-ink-300 border-ink-200 bg-opacity-25'
         }
         fixed left-0 top-0 flex z-1000 justify-center w-full max-w-full border-b min-h-16 transition-DEFAULT duration-300 backdrop-blur`
     },
