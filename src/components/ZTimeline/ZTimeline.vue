@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="timeline flex flex-col gap-y-2">
     <slot></slot>
   </div>
 </template>
@@ -9,14 +9,17 @@ export default {
   name: 'ZTimeline',
   props: {},
   data() {
-    return {}
+    return {
+      items: [],
+      length: 0
+    }
   },
   mounted() {
-    // this.items = this.$children.filter(child => child.$options.name === 'ZBreadcrumbItem')
-    // this.length = this.items.length
-    // this.items.map((item, index) => {
-    //   item.index = index
-    // })
+    this.items = this.$children.filter(child => child.$options.name === 'ZTimelineItem')
+    this.length = this.items.length
+    this.items.map((item, index) => {
+      item.index = index
+    })
   }
 }
 </script>

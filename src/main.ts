@@ -54,6 +54,8 @@ import ZBreadcrumbItem from './components/ZBreadcrumb/ZBreadcrumbItem/index'
 import ZTextarea from './components/ZTextarea/index'
 import ZModal from './components/ZModal/index'
 import ZAnimatedInteger from './components/ZAnimatedInteger/index'
+import ZTimeline from './components/ZTimeline/index'
+import ZTimelineItem from './components/ZTimeline/ZTimelineItem/index'
 
 // Marketing components
 import ZFooter from './components/marketing/ZFooter'
@@ -147,11 +149,13 @@ const components = [
   ZTableRow,
   ZTableCell,
   ZModal,
-  ZAnimatedInteger
+  ZAnimatedInteger,
+  ZTimeline,
+  ZTimelineItem
 ]
 
 const install = (Vue: any) => {
-  components.forEach((component) => {
+  components.forEach(component => {
     Vue.component(component.name, component)
   })
 }
@@ -222,7 +226,9 @@ export default {
   ZTableCell,
   ZToggle,
   ZModal,
-  ZAnimatedInteger
+  ZAnimatedInteger,
+  ZTimeline,
+  ZTimelineItem
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -294,3 +300,5 @@ export { default as ZTableCell } from './components/ZTable/ZTableCell/index'
 export { default as ZToggle } from './components/ZToggle/index'
 export { default as ZModal } from './components/ZModal/index'
 export { default as ZAnimatedInteger } from './components/ZAnimatedInteger/index'
+export { default as ZTimeline } from './components/ZTimeline/index'
+export { default as ZTimelineItem } from './components/ZTimeline/ZTimelineItem/index'

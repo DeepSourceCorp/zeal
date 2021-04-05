@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ZTimeline renders a default timeline component 1`] = `
+<div class="timeline flex flex-col gap-y-2">
+  <div class="timeline__item flex relative gap-x-4 h-32">
+    <div class="flex flex-col justify-center items-center gap-y-2">
+      <div class="w-8 h-8 flex justify-center items-center"><span class="inline-block h-full w-full rounded-full bg-juniper"></span></div> <span class="h-full border-l border-2 rounded-sm left-4 border-ink-100"></span>
+    </div>
+    <div class="flex flex-col space-y-2 text-xs">
+      <div class="text-vanilla-100">Carter Workman</div>
+      <div class="text-vanilla-400">Friday, 4:24PM</div>
+    </div>
+  </div>
+  <div class="timeline__item flex relative gap-x-4 h-32">
+    <div class="flex flex-col justify-center items-center gap-y-2">
+      <div class="w-8 h-8 flex justify-center items-center"><span class="inline-block h-full w-full rounded-full bg-juniper"></span></div> <span class="h-full border-l border-2 rounded-sm left-4 border-ink-100"></span>
+    </div>
+    <div class="flex flex-col space-y-2 text-xs">
+      <div class="text-vanilla-100">Carter Workman</div>
+      <div class="text-vanilla-400">Friday, 4:24PM</div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ZTimeline renders a timeline component with custom icon 1`] = `
+<div class="timeline flex flex-col gap-y-2">
+  <div class="timeline__item flex relative gap-x-4 h-32">
+    <div class="flex flex-col justify-center items-center gap-y-2">
+      <div class="w-8 h-8 flex justify-center items-center"><a class="inline-block"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
+          <!---->
+        </a></div> <span class="h-full border-l border-2 rounded-sm left-4 border-ink-100"></span>
+    </div>
+    <div class="flex flex-col space-y-2 text-xs">
+      <div class="text-vanilla-100">Carter Workman</div>
+      <div class="text-vanilla-400">Friday, 4:24PM</div>
+    </div>
+  </div>
+  <div class="timeline__item flex relative gap-x-4 h-32">
+    <div class="flex flex-col justify-center items-center gap-y-2">
+      <div class="w-8 h-8 flex justify-center items-center"><a class="inline-block"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
+          <!---->
+        </a></div> <span class="h-full border-l border-2 rounded-sm left-4 border-ink-100"></span>
+    </div>
+    <div class="flex flex-col space-y-2 text-xs">
+      <div class="text-vanilla-100">Carter Workman</div>
+      <div class="text-vanilla-400">Friday, 4:24PM</div>
+    </div>
+  </div>
+</div>
+`;
