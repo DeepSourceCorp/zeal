@@ -2,7 +2,7 @@
   <div v-outside-click="closeModal">
     <div
       @click="openModal()"
-      class="absolute z-10 block cursor-pointer top-2 left-2 lg:hidden"
+      class="fixed z-10 block cursor-pointer top-2 left-2 lg:hidden"
       :class="{ hidden: isOpen }"
     >
       <z-icon icon="menu" size="medium"></z-icon>
@@ -142,10 +142,12 @@ export default {
       this.$emit('collapse', this.isCollapsed)
     },
     openModal() {
-      this.isOpen = !this.isOpen
+      this.isOpen = true
+      this.$emit('open')
     },
     closeModal() {
       this.isOpen = false
+      this.$emit('close')
     }
   }
 }

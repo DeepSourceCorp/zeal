@@ -5,7 +5,7 @@
       'hover:bg-ink-100 cursor-pointer': !disabled,
       'text-vanilla-400 cursor-not-allowed': disabled
     }"
-    v-on:click="itemClicked"
+    @click="itemClicked"
   >
     <z-icon
       v-if="icon"
@@ -21,7 +21,7 @@
 import Vue from 'vue'
 import ZIcon from '../../ZIcon/ZIcon.vue'
 
-interface ZMenuParent extends Vue {
+interface ZMenuParentT extends Vue {
   close: () => void
 }
 
@@ -32,22 +32,28 @@ export default Vue.extend({
   },
   props: {
     icon: {
-      type: String
+      type: String,
+      default: undefined
     },
     disabled: {
       type: Boolean,
       default: false
     },
     action: {
-      type: Function
+      type: Function,
+      default: undefined
     }
   },
   methods: {
     itemClicked(event: Event): void {
+      this.$emit('click')
+
       if (this.action) {
+        console.warn('Action Prop for ZMenuItem is deprecated, use the @click event')
         this.action(event)
       }
-      const parent = this.$parent as ZMenuParent
+
+      const parent = this.$parent as ZMenuParentT
       parent.close()
     }
   }
