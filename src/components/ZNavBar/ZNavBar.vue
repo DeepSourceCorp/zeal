@@ -41,10 +41,13 @@ export default {
   },
   computed: {
     headerWrapperStyle() {
-      return `${this.isScrolling && 'lg:backdrop-blur lg:bg-opacity-25'} ${
-        this.isUserOnTop && 'lg:border-0'
-      } 
-        fixed left-0 top-0 flex z-1000 justify-center w-full max-w-full bg-ink-400 border-b border-ink-200 min-h-16`
+      return ` 
+        ${
+          this.isUserOnTop
+            ? 'bg-transparent border-transparent'
+            : 'bg-ink-300 border-ink-100 bg-opacity-25'
+        }
+        fixed left-0 top-0 flex z-1000 justify-center w-full max-w-full border-b min-h-16 transition-DEFAULT duration-300 backdrop-blur`
     },
     mobHeaderStyle() {
       return `${this.isOpen ? 'right-0' : '-right-full'} 
@@ -66,7 +69,7 @@ export default {
         window.scrollY > 50 && this.hideLinksOnScroll ? 'lg:opacity-0' : 'lg:opacity-1'
     },
     getComponent(parent, name, list = []) {
-      parent.forEach((child) => {
+      parent.forEach(child => {
         if (
           child &&
           child?.componentOptions &&
@@ -94,14 +97,14 @@ export default {
           </div>
         </header>
       ),
-      menuItems = this.$slots.links?.map((child) => {
+      menuItems = this.$slots.links?.map(child => {
         const options = child.componentOptions
         if (options && toPascal(options.tag || '') === 'ZMenu') {
           if (options.propsData?.collapseOnMobile) {
             const items = this.getComponent(options.children, 'ZMenuItem'),
               // Checks if Menu Items are collapsible in Mobile, if true then render an accordion
               // Else the Menu item remains the same
-              accordionItems = items.map((item) => {
+              accordionItems = items.map(item => {
                 return h(
                   'div',
                   {
