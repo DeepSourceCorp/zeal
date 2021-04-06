@@ -41,20 +41,20 @@ export default {
   },
   computed: {
     headerWrapperStyle() {
-      return ` 
+      return `
         ${
           this.isUserOnTop
             ? 'bg-transparent border-transparent'
-            : 'bg-ink-300 border-ink-200 bg-opacity-25'
+            : 'bg-ink-300 bg-opacity-25 border-gray-light'
         }
         fixed left-0 top-0 flex z-1000 justify-center w-full max-w-full border-b min-h-16 transition-DEFAULT duration-300 backdrop-blur`
     },
     mobHeaderStyle() {
-      return `${this.isOpen ? 'right-0' : '-right-full'} 
+      return `${this.isOpen ? 'right-0' : '-right-full'}
               overflow-y-scroll lg:-right-full w-full h-screen absolute flex flex-col space-y-2 transition-all duration-300 ease-in-out top-0 bg-ink-300 flex flex-col`
     },
     linkSlotStyle() {
-      return `${this.hideOnScroll} 
+      return `${this.hideOnScroll}
               second hidden lg:flex flex-1 items-center justify-center space-x-4 w-full transition-all duration-300 ease-in-out`
     }
   },
@@ -85,7 +85,7 @@ export default {
   },
   render(h) {
     const mWidth = (this.maxWidth && `max-w-${this.maxWidth}`) || '',
-      headerStyle = `${mWidth} 
+      headerStyle = `${mWidth}
         w-full flex items-center px-6`,
       header = (
         <header class={headerStyle}>
@@ -160,3 +160,15 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+/*
+    The grays in zeal are either too bright or too dark, and do not go with a translucent
+    background blur that we are using in this component. So, we create a custom border-b
+    class with a very light gray color here. This class is not supposed to be used anywhere
+    outside of this component.
+  */
+.border-gray-light {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+</style>
