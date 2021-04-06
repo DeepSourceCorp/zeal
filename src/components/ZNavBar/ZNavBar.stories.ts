@@ -37,7 +37,8 @@ export const Horizontal = () => ({
   template: `<div class="bg-ink-400 h-screen w-full-screen">
                 <z-nav-bar class="text-vanilla-100">
                     <template slot="brand">
-                        <img class="h-4 sm:h-5 lg:h-7 max-w-none" src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
+                        <img class="h-4 sm:h-5 lg:h-7 max-w-none hidden lg:block" src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
+                        <img class="h-6 max-w-none lg:hidden" src="https://assets.deepsource.io/fc583c0/images/logo-white.svg"/>
                     </template>
                     <template slot="links">
                         <z-menu width="auto">
