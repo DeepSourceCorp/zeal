@@ -34,7 +34,7 @@ export const Horizontal = () => ({
       resources: ['Documentation', 'Discourse forum', 'Learning Center', 'Blog', 'Slack User Group']
     }
   },
-  template: `<div class="bg-gradient-galaxy h-screen w-full-screen">
+  template: `<div class="bg-ink-400 h-screen w-full-screen">
                 <z-nav-bar class="text-vanilla-100">
                     <template slot="brand">
                         <img class="h-4 sm:h-5 lg:h-7 max-w-none" src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>
@@ -91,7 +91,7 @@ export const Horizontal = () => ({
                         <z-button color="primary" size="none" spacing="px-4 lg:px-6" class="text-xxs sm:text-xs lg:text-sm h-6 sm:h-8">Sign up</z-button>
                     </template>
                 </z-nav-bar>
-    <div class="prose prose-sm sm:prose sm:max-w-none mx-auto px-10 py-16">
+    <div class="prose prose-sm sm:prose sm:max-w-none mx-auto px-10 py-36">
     <h1 id="this-is-main">Just to show off main heading</h1>
     <p class="lead">Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.</p>
     <p>By default, Tailwind removes all of the default browser styling from paragraphs, headings, lists and more. This ends up being really useful for building application UIs because you spend less time undoing user-agent styles, but when you <em>really are</em> just trying to style some content that came from a rich-text editor in a CMS or a markdown file, it can be surprising and unintuitive.</p>

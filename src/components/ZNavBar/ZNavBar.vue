@@ -41,10 +41,13 @@ export default {
   },
   computed: {
     headerWrapperStyle() {
-      return `${this.isScrolling && 'lg:backdrop-blur lg:bg-opacity-25'} ${
-        this.isUserOnTop && 'lg:border-0'
-      } 
-        fixed left-0 top-0 flex z-1000 justify-center w-full max-w-full bg-ink-400 border-b border-ink-200 min-h-16`
+      return ` 
+        ${
+          this.isUserOnTop
+            ? 'bg-transparent border-transparent'
+            : 'bg-ink-300 border-ink-200 bg-opacity-25'
+        }
+        fixed left-0 top-0 flex z-1000 justify-center w-full max-w-full border-b min-h-16 transition-DEFAULT duration-300 backdrop-blur`
     },
     mobHeaderStyle() {
       return `${this.isOpen ? 'right-0' : '-right-full'} 
