@@ -12,8 +12,8 @@
       `${color && `z-btn--${color}`}`,
       `${this.fullWidth !== false && 'w-full inline-block'}`,
       `${this.isButtonDisabled && 'opacity-50 cursor-not-allowed'}`,
-      ((isLink || icon) && 'p-0') || spacing,
-      isLink || icon ? '' : sizeClasses,
+      icon ? 'p-0' : spacing,
+      icon ? '' : sizeClasses,
       `${stylesBasedOnColor}`,
       icon && iconStyle
     ]"
@@ -100,7 +100,7 @@ export default Vue.extend({
   data() {
     return {
       defaultClasses:
-        'inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none'
+        'inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none whitespace-nowrap'
     }
   },
   computed: {
