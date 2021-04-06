@@ -73,13 +73,16 @@ export default Vue.extend({
       type: String
     },
     icon: {
+      default: null,
       type: String
     },
     iconColor: {
+      default: 'vanilla-400',
       type: String
     },
     iconSize: {
-      type: String
+      type: String,
+      default: ''
     },
     hoverOpacity: {
       type: String,
