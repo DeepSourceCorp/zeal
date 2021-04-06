@@ -86,16 +86,16 @@ export default {
   render(h) {
     const mWidth = (this.maxWidth && `max-w-${this.maxWidth}`) || '',
       headerStyle = `${mWidth}
-        w-full flex items-center px-6`,
+        w-full flex items-center px-6 space-x-3`,
       header = (
-        <header class={headerStyle}>
+        <nav class={headerStyle}>
           <div class="first flex items-center flex-1">{this.$slots.brand}</div>
           <div class={this.linkSlotStyle}>{this.$slots.links}</div>
           <div class="third flex flex-1 items-center space-x-3 justify-end">{this.$slots.cta}</div>
-          <div class="flex cursor-pointer lg:hidden space-x-2 pl-2" on-click={this.toggleModal}>
+          <div class="flex cursor-pointer lg:hidden" on-click={this.toggleModal}>
             <z-icon icon="menu" size="medium"></z-icon>
           </div>
-        </header>
+        </nav>
       ),
       menuItems = this.$slots.links?.map((child) => {
         const options = child.componentOptions
