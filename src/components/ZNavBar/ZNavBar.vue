@@ -162,13 +162,13 @@ export default {
 </script>
 
 <style scoped>
-  /*
+/*
     The grays in zeal are either too bright or too dark, and do not go with a translucent
     background blur that we are using in this component. So, we create a custom border-b
     class with a very light gray color here. This class is not supposed to be used anywhere
     outside of this component.
   */
-  .border-gray-light {
-    border-color: rgba(255, 255, 255, 0.1);
-  }
+.border-gray-light {
+  border-color: rgba(255, 255, 255, 0.1);
+}
 </style>
