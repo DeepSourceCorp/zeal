@@ -57,7 +57,7 @@ module.exports = {
     }),
     backdropFilter: (theme) => ({
       none: 'none',
-      blur: `blur(${theme('spacing.5')})`
+      blur: `blur(${theme('spacing.2')})`
     }),
     spacing: {
       px: '1px',
