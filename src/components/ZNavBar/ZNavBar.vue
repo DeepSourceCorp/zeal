@@ -69,7 +69,7 @@ export default {
         window.scrollY > 50 && this.hideLinksOnScroll ? 'lg:opacity-0' : 'lg:opacity-1'
     },
     getComponent(parent, name, list = []) {
-      parent.forEach(child => {
+      parent.forEach((child) => {
         if (
           child &&
           child?.componentOptions &&
@@ -97,14 +97,14 @@ export default {
           </div>
         </nav>
       ),
-      menuItems = this.$slots.links?.map(child => {
+      menuItems = this.$slots.links?.map((child) => {
         const options = child.componentOptions
         if (options && toPascal(options.tag || '') === 'ZMenu') {
           if (options.propsData?.collapseOnMobile) {
             const items = this.getComponent(options.children, 'ZMenuItem'),
               // Checks if Menu Items are collapsible in Mobile, if true then render an accordion
               // Else the Menu item remains the same
-              accordionItems = items.map(item => {
+              accordionItems = items.map((item) => {
                 return h(
                   'div',
                   {
