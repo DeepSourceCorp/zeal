@@ -5,7 +5,7 @@
       <span
         v-if="$slots.heading"
         @click="toggleAccordion()"
-        class="flex items-center cursor-pointer inline-block hover:opacity-75 select-none font-medium tracking-wider w-full leading-3 py-4 md:pb-8 md:pt-0 uppercase text-sm text-vanilla-400"
+        class="flex items-center cursor-pointer inline-block hover:opacity-75 select-none font-medium tracking-wider w-full leading-3 py-4 md:pt-0 uppercase text-sm text-vanilla-800"
       >
         <span class="flex flex-1">
           <slot name="heading"></slot>
@@ -32,7 +32,7 @@
       <span class="block">
         <li
           v-if="$slots.heading"
-          class="leading-3 font-medium tracking-wider py-4 md:pb-8 md:pt-0 uppercase text-sm text-vanilla-400"
+          class="leading-3 font-medium tracking-wider py-4 md:pt-0 uppercase text-sm text-vanilla-800"
         >
           <slot name="heading"></slot>
         </li>
