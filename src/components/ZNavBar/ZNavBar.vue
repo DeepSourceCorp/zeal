@@ -51,7 +51,7 @@ export default {
     },
     mobHeaderStyle() {
       return `${this.isOpen ? 'right-0' : '-right-full'}
-              overflow-y-scroll lg:-right-full w-full h-screen absolute flex flex-col space-y-2 transition-all duration-300 ease-in-out top-0 bg-ink-300 flex flex-col`
+              overflow-y-scroll lg:-right-full w-full h-screen absolute flex flex-col transition-all duration-300 ease-in-out top-0 bg-ink-300 flex flex-col`
     },
     linkSlotStyle() {
       return `${this.hideOnScroll}
