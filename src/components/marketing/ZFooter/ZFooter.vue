@@ -14,7 +14,7 @@
       <span class="hidden md:flex items-start w-full">
         <div
           v-if="$slots['desktop-menu']"
-          class="flex flex-1 flex-nowrap md:flex-wrap lg:flex-nowrap items-start mx-4"
+          class="flex flex-1 flex-nowrap md:flex-wrap lg:flex-nowrap items-start mx-4 mt-2"
         >
           <slot name="desktop-menu"></slot>
         </div>
