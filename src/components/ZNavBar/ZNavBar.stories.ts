@@ -17,6 +17,100 @@ export default {
   excludeStories: /.*Data$/
 }
 
+export const DeepSourceNext = () => ({
+  components: {
+    ZNavBar,
+    ZButton,
+    ZMenuItem,
+    ZMenu,
+    ZList,
+    ZListItem,
+    ZMenuSection,
+    ZIcon,
+    ZDivider
+  },
+  data() {
+    return {
+      MENUS: {
+        PRODUCT: [
+          { name: 'Features', url: '/features' },
+          { name: 'For teams', url: '/for-teams' },
+          { name: 'Security', url: '/security' }
+        ],
+        RESOURCES: [
+          { name: 'Documentation', url: '/docs' },
+          { name: 'Community', url: 'https://discuss.deepsource.io' },
+          { name: 'Blog', url: '/blog' }
+        ],
+        COMPANY: [
+          { name: 'About', url: '/about' },
+          { name: 'Jobs', url: '/jobs' }
+        ]
+      }
+    }
+  },
+  template: `<ZNavBar class="text-vanilla-100" max-width="6xl">
+  <template slot="brand">
+    <img
+      class="h-4 sm:h-5 lg:h-7 max-w-none hidden lg:block"
+      src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"
+    />
+    <img
+      class="h-6 max-w-none lg:hidden"
+      src="https://assets.deepsource.io/fc583c0/images/logo-white.svg"
+    />
+  </template>
+  <template slot="links">
+    <z-menu :collapseOnMobile="true">
+      <template v-slot:trigger="{}">
+        <z-button color="ghost">Product</z-button>
+      </template>
+      <template slot="body">
+        <z-menu-item v-for="item of MENUS.PRODUCT" :key="item.url">
+          <a :href="item.url" class="py-2">{{ item.name }}</a>
+        </z-menu-item>
+      </template>
+    </z-menu>
+    <z-list class="text-vanilla-100 px-4 py-2 border-b border-ink-200 lg:border-0 lg:hidden">
+      <z-list-item as="a" to="/customers" class="flex cursor-pointer items-end space-x-2">
+        Customers
+      </z-list-item>
+    </z-list>
+    <z-list class="text-vanilla-100 px-4 py-2 border-b border-ink-200 lg:border-0 lg:hidden">
+      <z-list-item as="a" to="/pricing" class="flex cursor-pointer items-end space-x-2">
+        Pricing
+      </z-list-item>
+    </z-list>
+    <z-button class="hidden lg:inline-flex" color="ghost" type="link" href="/customers">Customers</z-button>
+    <z-button class="hidden lg:inline-flex" color="ghost" type="link" href="/pricing">Pricing</z-button>
+    <z-menu :collapseOnMobile="true">
+      <template v-slot:trigger="{}">
+        <z-button color="ghost">Resources</z-button>
+      </template>
+      <template slot="body">
+        <z-menu-item v-for="item of MENUS.RESOURCES" :key="item.url">
+          <a :href="item.url" class="py-2">{{ item.name }}</a>
+        </z-menu-item>
+      </template>
+    </z-menu>
+    <z-menu :collapseOnMobile="true">
+      <template v-slot:trigger="{}">
+        <z-button color="ghost">Company</z-button>
+      </template>
+      <template slot="body">
+        <z-menu-item v-for="item of MENUS.COMPANY" :key="item.url">
+          <a :href="item.url" class="py-2">{{ item.name }}</a>
+        </z-menu-item>
+      </template>
+    </z-menu>
+  </template>
+  <template slot="cta">
+    <z-button color="ghost" type="link">Log in</z-button>
+    <z-button color="primary" size="none">Sign up</z-button>
+  </template>
+</ZNavBar>`
+})
+
 export const Horizontal = () => ({
   components: {
     ZNavBar,
