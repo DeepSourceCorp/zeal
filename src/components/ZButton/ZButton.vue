@@ -17,7 +17,7 @@
       `${stylesBasedOnColor}`,
       icon && iconStyle
     ]"
-    :type="type"
+    :type="isLink ? null : type"
   >
     <z-icon v-if="icon" :icon="icon" :color="iconColor" :size="iconSize"></z-icon>
     <slot v-else>Click</slot>
