@@ -46,7 +46,7 @@ jobs:
       - name: Test And Build Library Icons
         id: build
         run: |
-          yarn test && yarn build-lib-icons
+          yarn test:unit && yarn build-lib-icons
     
   publish-zeal-package:
     runs-on: ubuntu-latest
