@@ -40,14 +40,27 @@ export default {
     }
   },
   computed: {
+    supportsBackdropBlur() {
+      if (CSS?.supports) {
+        return (
+          CSS.supports('backdrop-filter', 'blur(1px)') ||
+          CSS.supports('-webkit-backdrop-filter', 'blur(1px)')
+        )
+      } else if (document.body.style) {
+        return (
+          'backdrop-filter' in document.body.style ||
+          '-webkit-backdrop-filter' in document.body.style
+        )
+      }
+      return false
+    },
     headerWrapperStyle() {
-      return `
-        ${
-          this.isUserOnTop
-            ? 'bg-transparent border-transparent'
-            : 'bg-ink-300 bg-opacity-25 border-gray-light'
-        }
-        fixed left-0 top-0 flex z-1000 justify-center w-full max-w-full border-b min-h-16 transition-DEFAULT duration-300 backdrop-blur`
+      return [
+        this.isUserOnTop ? 'bg-transparent border-transparent' : 'bg-ink-300 border-gray-light',
+        this.supportsBackdropBlur ? 'backdrop-blur' : 'bg-opacity-95',
+        this.isUserOnTop && this.supportsBackdropBlur ? '' : 'bg-opacity-25',
+        `fixed left-0 top-0 flex z-1000 justify-center w-full max-w-full border-b min-h-16 transition-DEFAULT duration-300`
+      ]
     },
     mobHeaderStyle() {
       return `${this.isOpen ? 'right-0' : '-right-full'}
@@ -69,7 +82,7 @@ export default {
         window.scrollY > 50 && this.hideLinksOnScroll ? 'lg:opacity-0' : 'lg:opacity-1'
     },
     getComponent(parent, name, list = []) {
-      parent.forEach((child) => {
+      parent.forEach(child => {
         if (
           child &&
           child?.componentOptions &&
@@ -97,14 +110,14 @@ export default {
           </div>
         </nav>
       ),
-      menuItems = this.$slots.links?.map((child) => {
+      menuItems = this.$slots.links?.map(child => {
         const options = child.componentOptions
         if (options && toPascal(options.tag || '') === 'ZMenu') {
           if (options.propsData?.collapseOnMobile) {
             const items = this.getComponent(options.children, 'ZMenuItem'),
               // Checks if Menu Items are collapsible in Mobile, if true then render an accordion
               // Else the Menu item remains the same
-              accordionItems = items.map((item) => {
+              accordionItems = items.map(item => {
                 return h(
                   'div',
                   {
