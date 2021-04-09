@@ -3,7 +3,7 @@ module.exports = {
   current: 'currentColor',
   black: '#000000',
   juniper: '#33cb9a',
-  lightJuniper: '#2EB78B',
+  'light-juniper': '#2EB78B',
   robin: '#4568dc',
   slate: '#52575c',
   cherry: '#da5565',
