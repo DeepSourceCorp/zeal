@@ -17,9 +17,6 @@ describe('Labels', () => {
 
   it('renders with icon', () => {
     const wrapper = shallowMount(ZLabel, {
-      propsData: {
-        icon: 'check-circle'
-      },
       slots: slotData
     })
 
@@ -30,7 +27,6 @@ describe('Labels', () => {
     expect(
       shallowMount(ZLabel, {
         propsData: {
-          icon: 'check-circle',
           state: 'success'
         },
         slots: slotData
@@ -40,7 +36,6 @@ describe('Labels', () => {
     expect(
       shallowMount(ZLabel, {
         propsData: {
-          icon: 'check-circle',
           state: 'error'
         },
         slots: slotData
@@ -50,7 +45,6 @@ describe('Labels', () => {
     expect(
       shallowMount(ZLabel, {
         propsData: {
-          icon: 'check-circle',
           state: 'warning'
         },
         slots: slotData
@@ -60,8 +54,7 @@ describe('Labels', () => {
     expect(
       shallowMount(ZLabel, {
         propsData: {
-          icon: 'check-circle',
-          state: 'default'
+          state: 'info'
         },
         slots: slotData
       }).html()
@@ -72,17 +65,6 @@ describe('Labels', () => {
     expect(
       shallowMount(ZLabel, {
         propsData: {
-          icon: 'check-circle',
-          size: 'small'
-        },
-        slots: slotData
-      }).html()
-    ).toMatchSnapshot()
-
-    expect(
-      shallowMount(ZLabel, {
-        propsData: {
-          icon: 'check-circle',
           size: 'base'
         },
         slots: slotData
@@ -92,7 +74,6 @@ describe('Labels', () => {
     expect(
       shallowMount(ZLabel, {
         propsData: {
-          icon: 'check-circle',
           size: 'large'
         },
         slots: slotData
