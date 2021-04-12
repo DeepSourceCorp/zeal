@@ -1,5 +1,5 @@
 <template>
-  <z-base-dialog v-on="$listeners" v-slot:default="{ close }">
+  <z-base-dialog v-on="$listeners">
     <div class="z-modal mx-auto mb-12 rounded-md shadow-md bg-ink-300" :class="[modalWidth]">
       <div
         class="flex items-center justify-between py-2 px-3 space-x-2 border-ink-200"
