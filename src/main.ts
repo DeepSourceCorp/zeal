@@ -56,6 +56,7 @@ import ZModal from './components/ZModal/index'
 import ZAnimatedInteger from './components/ZAnimatedInteger/index'
 import ZTimeline from './components/ZTimeline/index'
 import ZTimelineItem from './components/ZTimeline/ZTimelineItem/index'
+import ZBaseDialog from './components/ZBaseDialog/index'
 
 // Marketing components
 import ZFooter from './components/marketing/ZFooter'
@@ -151,11 +152,12 @@ const components = [
   ZModal,
   ZAnimatedInteger,
   ZTimeline,
-  ZTimelineItem
+  ZTimelineItem,
+  ZBaseDialog
 ]
 
 const install = (Vue: any) => {
-  components.forEach((component) => {
+  components.forEach(component => {
     Vue.component(component.name, component)
   })
 }
@@ -228,7 +230,8 @@ export default {
   ZModal,
   ZAnimatedInteger,
   ZTimeline,
-  ZTimelineItem
+  ZTimelineItem,
+  ZBaseDialog
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -302,3 +305,4 @@ export { default as ZModal } from './components/ZModal/index'
 export { default as ZAnimatedInteger } from './components/ZAnimatedInteger/index'
 export { default as ZTimeline } from './components/ZTimeline/index'
 export { default as ZTimelineItem } from './components/ZTimeline/ZTimelineItem/index'
+export { default as ZBaseDialog } from './components/ZBaseDialog/index'

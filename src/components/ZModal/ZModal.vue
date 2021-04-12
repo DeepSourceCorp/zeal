@@ -1,13 +1,6 @@
 <template>
-  <div
-    class="z-modal-backdrop fixed inset-0 flex items-center bg-opacity-75 bg-black px-2 sm:px-0"
-    @click="close"
-  >
-    <div
-      class="z-modal mx-auto mb-12 rounded-md shadow-md bg-ink-300"
-      :class="[modalWidth]"
-      @click.stop
-    >
+  <z-base-dialog v-on="$listeners" v-slot:default="{ close }">
+    <div class="z-modal mx-auto mb-12 rounded-md shadow-md bg-ink-300" :class="[modalWidth]">
       <div
         class="flex items-center justify-between py-2 px-3 space-x-2 border-ink-200"
         :class="{ 'border-b': showHeaderBorder }"
@@ -45,13 +38,18 @@
         </div>
       </slot>
     </div>
-  </div>
+  </z-base-dialog>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import ZIcon from '../ZIcon/ZIcon.vue'
 import ZButton from '../ZButton/ZButton.vue'
+import ZBaseDialog from '../ZBaseDialog/ZBaseDialog.vue'
+
+interface ZBaseDialogT extends Vue {
+  close: () => void
+}
 
 export default Vue.extend({
   name: 'ZModal',
@@ -65,7 +63,7 @@ export default Vue.extend({
     width: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['narrow', 'base', 'wide'].includes(value)
       }
     },
@@ -88,13 +86,8 @@ export default Vue.extend({
   },
   components: {
     ZIcon,
-    ZButton
-  },
-  mounted() {
-    document.addEventListener('keyup', this.handleKeyup)
-  },
-  beforeDestroy() {
-    document.removeEventListener('keyup', this.handleKeyup)
+    ZButton,
+    ZBaseDialog
   },
   computed: {
     modalWidth(): string {
@@ -108,16 +101,12 @@ export default Vue.extend({
   },
   methods: {
     close(): void {
-      this.$emit('onClose')
+      const $parent = this.$parent as ZBaseDialogT
+      $parent.close()
     },
     primaryAction(): void {
       this.$emit('primaryAction')
       this.close()
-    },
-    handleKeyup(e: KeyboardEvent): void {
-      if (e.key === 'Escape') {
-        this.close()
-      }
     }
   }
 })
