@@ -36,7 +36,7 @@ module.exports = {
         ]
       },
       dawn: ['98.66deg', `${theme('colors.robin')} 4.42%`, `${theme('colors.lilac')} 96.6%`],
-      dark_dawn: {
+      'dark-dawn': {
         custom: `linear-gradient(180deg, ${theme(
           'colors.ink.400'
         )} 0%, rgba(22, 24, 29, 0.7) 100%), 
@@ -49,7 +49,7 @@ module.exports = {
         `${theme('colors.ink.200')} 40.08%`,
         `${theme('colors.ink.300')} 60.32%`
       ],
-      juniper_gradient: [
+      'juniper-gradient': [
         '0deg',
         `${theme('colors.transparent')} 65%`,
         `${theme('colors.juniper')} 100%`
