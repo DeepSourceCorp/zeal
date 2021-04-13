@@ -45,7 +45,7 @@ The following NPM scripts help building the library
 
 1. Bump the version in `package.json` and commit that change
 2. Remove `private: true` from the `package.json` (revert after publishing)
-3. Run `yarn test && yarn build-lib-icons`
+3. Run `yarn test:unit && yarn build-lib-icons`
 4. On successful test and build run `npm publish`
 
-> Note: Add `private: true` back after publishing
+> Note: Add `private: true` back after publishing. In CI, don't forget to run yarn before step 3
