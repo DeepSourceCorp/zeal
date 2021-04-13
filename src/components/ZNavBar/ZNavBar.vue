@@ -117,11 +117,15 @@ export default {
             const items = this.getComponent(options.children, 'ZMenuItem'),
               // Checks if Menu Items are collapsible in Mobile, if true then render an accordion
               // Else the Menu item remains the same
-              accordionItems = h('div', {
-                class: 'flex flex-col space-y-1 text-base my-1'
-              }, items.map((item) => {
-                return item?.componentOptions?.children
-              }))
+              accordionItems = h(
+                'div',
+                {
+                  class: 'flex flex-col space-y-1 text-base my-1'
+                },
+                items.map((item) => {
+                  return item?.componentOptions?.children
+                })
+              )
             return h(ZAccordionItem, {
               ...options.data,
               props: {
