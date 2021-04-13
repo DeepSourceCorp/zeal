@@ -44,7 +44,11 @@
         `${CARD_ALIGNMENT[cardAlign].imgContainer}`
       ]"
     >
-      <img class="h-76 shadow-2xl" :class="[`${CARD_ALIGNMENT[cardAlign].imgPosition}`]" :src="IMAGE_SRC"/>
+      <img
+        class="h-76 shadow-2xl"
+        :class="[`${CARD_ALIGNMENT[cardAlign].imgPosition}`]"
+        :src="IMAGE_SRC"
+      />
     </div>
   </div>
 </template>
