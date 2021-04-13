@@ -42,6 +42,9 @@ module.exports = {
         )} 0%, rgba(22, 24, 29, 0.7) 100%), 
           linear-gradient(98.66deg, ${theme('colors.robin')} 4.42%, ${theme('colors.lilac')} 96.6%)`
       },
+      flamingo: {
+        custom: 'linear-gradient(98.66deg, #CA9CD0 -0.47%, #D38972 63.82%, #A1B1E7 96.73%)'
+      },
       splash: ['98.66deg', `${theme('colors.robin')} 4.42%`, '#3450AF 96.6%'],
       skeleton: [
         '104.58deg',
