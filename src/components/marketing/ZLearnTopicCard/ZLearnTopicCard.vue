@@ -28,7 +28,7 @@
     class="pt-8 mt-12 w-full rounded-sm"
     :class="[`${COLOR_SCHEMES[colorScheme].showcaseBg}`, `${CARD_ALIGNMENT[cardAlign].imgContainer}`]"
     >
-      <img class="h-76" :class="[`${CARD_ALIGNMENT[cardAlign].imgPosition}`]" :src="IMAGE_SRC"/>
+      <img class="h-76 shadow-2xl" :class="[`${CARD_ALIGNMENT[cardAlign].imgPosition}`]" :src="IMAGE_SRC"/>
     </div>
   </div>
 </template>
