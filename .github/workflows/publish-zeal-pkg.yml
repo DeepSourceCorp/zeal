@@ -17,14 +17,6 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
 
-      - name: Bump Version
-        env:
-          auth_token: ${{ secrets.SPOCK_PAT }}
-        run: |
-          git config --global user.email "bot@deepsource.io"
-          git config --global user.name "deepsourcebot"
-          npm version patch
-
       - name: Import GPG key
         id: import_gpg_sign_commits
         uses: crazy-max/ghaction-import-gpg@v3
@@ -34,10 +26,13 @@ jobs:
           git-user-signingkey: true
           git-commit-gpgsign: true
 
-      - name: Sign commit
+      - name: Bump Version
+        env:
+          auth_token: ${{ secrets.SPOCK_PAT }}
         run: |
-          git add .
-          git commit -S -m "Bump package version"
+          git config --global user.email "bot@deepsource.io"
+          git config --global user.name "deepsourcebot"
+          npm version patch
 
       - name: Temp disable "private"
         run: sed '/private/ s/true/false/' -i package.json
