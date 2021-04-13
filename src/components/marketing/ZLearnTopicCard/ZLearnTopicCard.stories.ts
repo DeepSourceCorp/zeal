@@ -9,8 +9,7 @@ export default {
 
 export const Basic = () => ({
   components: { ZLearnTopicCard, ZLearnTopicCardListItem },
-  template: 
-    `<div class='padded-container bg-ink-400 text-vanilla-400 grid grid-cols-12'>
+  template: `<div class='padded-container bg-ink-400 text-vanilla-400 grid grid-cols-12'>
       <z-learn-topic-card class="col-span-8" index="1" colorScheme="seaglass" cardAlign="left">
         <template slot="heading">Code Quality</template>
         <template slot="links">
