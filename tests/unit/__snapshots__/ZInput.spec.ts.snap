@@ -7,26 +7,26 @@ exports[`Input Component emits debounce changes 1`] = `
 `;
 
 exports[`Input Component renders a disabled input 1`] = `
-<div class="flex items-center w-full rounded-sm outline-none space-x-2 p-1 focus-within:shadow-white focus:border-vanilla-400 border border-solid border-ink-100 text-sm bg-ink-400 text-slate cursor-not-allowed"> <input type="text" placeholder="Enter a value" disabled="disabled" class="w-full caret-juniper flex flex-grow outline-none bg-transparent cursor-not-allowed">
+<div class="flex items-center w-full rounded-sm outline-none space-x-2 p-1 focus-within:shadow-white focus:border-vanilla-400 border border-solid border-ink-100 text-sm bg-ink-400 text-slate cursor-not-allowed"> <input type="text" placeholder="Enter a value" disabled="disabled" class="w-full caret-juniper flex flex-grow outline-none bg-transparent pl-0.5 leading-5 cursor-not-allowed">
   <!---->
 </div>
 `;
 
 exports[`Input Component renders an input with clearable 1`] = `
-<div class="flex items-center w-full rounded-sm outline-none space-x-2 p-1 focus-within:shadow-white focus:border-vanilla-400 border border-solid border-ink-100 text-sm bg-ink-400 text-vanilla-300"> <input type="text" placeholder="Enter a value" class="w-full caret-juniper flex flex-grow outline-none bg-transparent"> <svg viewBox="0 0 24 24" fill="none" class="stroke-2 cursor-pointer z-icon w-4 h-4 z-icon--x text-vanilla-400">
+<div class="flex items-center w-full rounded-sm outline-none space-x-2 p-1 focus-within:shadow-white focus:border-vanilla-400 border border-solid border-ink-100 text-sm bg-ink-400 text-vanilla-300"> <input type="text" placeholder="Enter a value" class="w-full caret-juniper flex flex-grow outline-none bg-transparent pl-0.5 leading-5"> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="stroke-1.5 cursor-pointer z-icon w-4 h-4 z-icon--x text-vanilla-400">
     <line x1="18" y1="6" x2="6" y2="18"></line>
     <line x1="6" y1="6" x2="18" y2="18"></line>
   </svg></div>
 `;
 
 exports[`Input Component renders the default input component 1`] = `
-<div class="flex items-center w-full rounded-sm outline-none space-x-2 p-1 focus-within:shadow-white focus:border-vanilla-400 border border-solid border-ink-100 text-sm bg-ink-400 text-vanilla-300"> <input type="text" placeholder="Enter a value" class="w-full caret-juniper flex flex-grow outline-none bg-transparent">
+<div class="flex items-center w-full rounded-sm outline-none space-x-2 p-1 focus-within:shadow-white focus:border-vanilla-400 border border-solid border-ink-100 text-sm bg-ink-400 text-vanilla-300"> <input type="text" placeholder="Enter a value" class="w-full caret-juniper flex flex-grow outline-none bg-transparent pl-0.5 leading-5">
   <!---->
 </div>
 `;
 
 exports[`Input Component renders the input with custom placeholder 1`] = `
-<div class="flex items-center w-full rounded-sm outline-none space-x-2 p-1 focus-within:shadow-white focus:border-vanilla-400 border border-solid border-ink-100 text-sm bg-ink-400 text-vanilla-300"> <input type="text" placeholder="captain@marvel.com" class="w-full caret-juniper flex flex-grow outline-none bg-transparent">
+<div class="flex items-center w-full rounded-sm outline-none space-x-2 p-1 focus-within:shadow-white focus:border-vanilla-400 border border-solid border-ink-100 text-sm bg-ink-400 text-vanilla-300"> <input type="text" placeholder="captain@marvel.com" class="w-full caret-juniper flex flex-grow outline-none bg-transparent pl-0.5 leading-5">
   <!---->
 </div>
 `;

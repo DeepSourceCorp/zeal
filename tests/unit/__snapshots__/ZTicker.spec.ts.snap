@@ -3,23 +3,23 @@
 exports[`Ticker renders a default ticker 1`] = `
 <div class="z-indicator flex items-center">
   <div class="flex items-center space-x-0.5 text-juniper"><span>100</span>
-    <z-icon-stub icon="triangle-down" size="x-small" position="" color="juniper" class="transform rotate-180 mt-1"></z-icon-stub>
+    <z-icon-stub icon="triangle-down" size="x-small" position="" color="juniper" class="transform rotate-180 mt-px"></z-icon-stub>
   </div>
 </div>
 `;
 
 exports[`Ticker renders a negative type ticker 1`] = `
-<div class="z-indicator flex items-center">
-  <div class="flex items-center space-x-0.5 text-cherry"><span>44%</span>
-    <z-icon-stub icon="triangle-down" size="x-small" position="" color="cherry" class="transform rotate-0"></z-icon-stub>
+<div class="z-indicator flex items-center" type="decrease">
+  <div class="flex items-center space-x-0.5 text-juniper"><span>44%</span>
+    <z-icon-stub icon="triangle-down" size="x-small" position="" color="juniper" class="transform rotate-180 mt-px"></z-icon-stub>
   </div>
 </div>
 `;
 
 exports[`Ticker renders a ticker with additional content 1`] = `
-<div class="z-indicator flex items-center">
-  <div class="flex items-center space-x-0.5 text-cherry"><span>44%</span>
-    <z-icon-stub icon="triangle-down" size="x-small" position="" color="cherry" class="transform rotate-0"></z-icon-stub>
+<div class="z-indicator flex items-center" type="decrease">
+  <div class="flex items-center space-x-0.5 text-juniper"><span>44%</span>
+    <z-icon-stub icon="triangle-down" size="x-small" position="" color="juniper" class="transform rotate-180 mt-px"></z-icon-stub>
   </div> <span class="text-sm">since last week</span>
 </div>
 `;
