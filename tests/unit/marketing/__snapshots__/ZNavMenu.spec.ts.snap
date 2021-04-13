@@ -10,7 +10,7 @@ exports[`ZNavMenu component when type is accordion 1`] = `
 `;
 
 exports[`ZNavMenu component when type is dropdown 1`] = `
-<span class="text-vanilla-100"><span class="relative inline-block text-left"><div class="relative py-3 h-full"><a href="#" class="px-4 py-2 inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none whitespace-nowrap false false px-6 h-8 text-xs sm:h-10 sm:text-base">
+<span class="text-vanilla-100"><span class="relative inline-block text-left"><div class="relative py-3 h-full"><a href="#" class="z-btn px-4 py-2 inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none whitespace-nowrap false false px-6 h-8 text-xs sm:h-10 sm:text-base">
         Dummy title
       </a> <span class="absolute -ml-2 mt-1 left-1/2 block w-0 h-0 border-t-0 border-r-8 border-l-8 border-b-8 border-l-transparent border-r-transparent border-b-ink-300 hidden"></span></div>
 <div data-before="" class="absolute -left-12 origin-top-right bg-ink-300 rounded-md shadow-lg min-w-52 hidden">Something</div>
