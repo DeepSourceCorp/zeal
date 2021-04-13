@@ -1,21 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Badge renders a badge as a dot 1`] = `<div class="relative inline-block z-badge">Badge <sup class="absolute inline-block text-xs text-center transform translate-x-full -translate-y-1/2 z-badge-content bg- w-2 h-2 top-0 right-1 text-vanilla-100 p-0 rounded-full"></sup></div>`;
+exports[`Badge renders a badge as a dot 1`] = `
+<div class="relative inline-block z-badge">Badge <div class="text-center transform z-badge-content bg- w-2 h-2 top-px right-px text-vanilla-100 absolute translate-x-1/2 -translate-y-1/2 p-0 rounded-full"><span></span></div>
+</div>
+`;
 
-exports[`Badge renders a badge with content 1`] = `<div class="relative inline-block z-badge"><button href="#" type="button" class="inline-flex items-center font-medium border-transparent rounded-sm relative justify-center z-btn--primary false false px-6 h-8 text-xs sm:h-10 sm:text-base bg-juniper text-ink-400 hover:bg-light-juniper">Likes</button> <sup class="absolute inline-block text-xs text-center transform translate-x-full -translate-y-1/2 z-badge-content bg-cherry top-0 right-3 text-vanilla-100 px-2 leading-4 rounded-full">12</sup></div>`;
+exports[`Badge renders a badge with content 1`] = `
+<div class="relative inline-block z-badge"><button href="#" type="button" class="z-btn inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none whitespace-nowrap z-btn--primary false false px-6 h-8 text-xs sm:h-10 sm:text-base bg-juniper text-ink-400 hover:bg-light-juniper">Likes</button>
+  <div class="text-center transform z-badge-content bg-cherry top-px right-0 h-6 w-6 flex justify-center items-center text-xxs font-bold text-vanilla-100 absolute translate-x-1/2 -translate-y-1/2 leading-4 rounded-full"><span>12</span></div>
+</div>
+`;
 
-exports[`Badge renders with size 1`] = `<div class="relative inline-block z-badge">Badge <sup class="absolute inline-block text-xs text-center transform translate-x-full -translate-y-1/2 z-badge-content bg- top-0 text-vanilla-100" style="display: none;"></sup></div>`;
+exports[`Badge renders with size 1`] = `
+<div class="relative inline-block z-badge">Badge <div class="text-center transform z-badge-content bg- top-0 inline-block text-xs px-2 text-vanilla-100 absolute translate-x-1/2 -translate-y-1/2" style="display: none;"><span></span></div>
+</div>
+`;
 
-exports[`Badge renders with size 2`] = `<div class="relative inline-block z-badge">Badge <sup class="absolute inline-block text-xs text-center transform translate-x-full -translate-y-1/2 z-badge-content bg- top-0 text-vanilla-100" style="display: none;"></sup></div>`;
+exports[`Badge renders with size 2`] = `
+<div class="relative inline-block z-badge">Badge <div class="text-center transform z-badge-content bg- top-0 inline-block text-xs px-2 text-vanilla-100 absolute translate-x-1/2 -translate-y-1/2" style="display: none;"><span></span></div>
+</div>
+`;
 
-exports[`Badge renders with size 3`] = `<div class="relative inline-block z-badge">Badge <sup class="absolute inline-block text-xs text-center transform translate-x-full -translate-y-1/2 z-badge-content bg- top-0 text-vanilla-100" style="display: none;"></sup></div>`;
+exports[`Badge renders with size 3`] = `
+<div class="relative inline-block z-badge">Badge <div class="text-center transform z-badge-content bg- top-0 inline-block text-xs px-2 text-vanilla-100 absolute translate-x-1/2 -translate-y-1/2" style="display: none;"><span></span></div>
+</div>
+`;
 
-exports[`Badge renders with state 1`] = `<div class="relative inline-block z-badge" state="success">Badge <sup class="absolute inline-block text-xs text-center transform translate-x-full -translate-y-1/2 z-badge-content bg- top-0 text-vanilla-100" style="display: none;"></sup></div>`;
+exports[`Badge renders with state 1`] = `
+<div class="relative inline-block z-badge" state="success">Badge <div class="text-center transform z-badge-content bg- top-0 inline-block text-xs px-2 text-vanilla-100 absolute translate-x-1/2 -translate-y-1/2" style="display: none;"><span></span></div>
+</div>
+`;
 
-exports[`Badge renders with state 2`] = `<div class="relative inline-block z-badge" state="danger">Badge <sup class="absolute inline-block text-xs text-center transform translate-x-full -translate-y-1/2 z-badge-content bg- top-0 text-vanilla-100" style="display: none;"></sup></div>`;
+exports[`Badge renders with state 2`] = `
+<div class="relative inline-block z-badge" state="danger">Badge <div class="text-center transform z-badge-content bg- top-0 inline-block text-xs px-2 text-vanilla-100 absolute translate-x-1/2 -translate-y-1/2" style="display: none;"><span></span></div>
+</div>
+`;
 
-exports[`Badge renders with state 3`] = `<div class="relative inline-block z-badge" state="warning">Badge <sup class="absolute inline-block text-xs text-center transform translate-x-full -translate-y-1/2 z-badge-content bg- top-0 text-vanilla-100" style="display: none;"></sup></div>`;
+exports[`Badge renders with state 3`] = `
+<div class="relative inline-block z-badge" state="warning">Badge <div class="text-center transform z-badge-content bg- top-0 inline-block text-xs px-2 text-vanilla-100 absolute translate-x-1/2 -translate-y-1/2" style="display: none;"><span></span></div>
+</div>
+`;
 
-exports[`Badge renders with state 4`] = `<div class="relative inline-block z-badge" state="info">Badge <sup class="absolute inline-block text-xs text-center transform translate-x-full -translate-y-1/2 z-badge-content bg- top-0 text-vanilla-100" style="display: none;"></sup></div>`;
+exports[`Badge renders with state 4`] = `
+<div class="relative inline-block z-badge" state="info">Badge <div class="text-center transform z-badge-content bg- top-0 inline-block text-xs px-2 text-vanilla-100 absolute translate-x-1/2 -translate-y-1/2" style="display: none;"><span></span></div>
+</div>
+`;
 
-exports[`Badge renders with state 5`] = `<div class="relative inline-block z-badge" state="default">Badge <sup class="absolute inline-block text-xs text-center transform translate-x-full -translate-y-1/2 z-badge-content bg- top-0 text-vanilla-100" style="display: none;"></sup></div>`;
+exports[`Badge renders with state 5`] = `
+<div class="relative inline-block z-badge" state="default">Badge <div class="text-center transform z-badge-content bg- top-0 inline-block text-xs px-2 text-vanilla-100 absolute translate-x-1/2 -translate-y-1/2" style="display: none;"><span></span></div>
+</div>
+`;

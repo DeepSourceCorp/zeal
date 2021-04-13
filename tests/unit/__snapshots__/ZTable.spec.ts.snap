@@ -4,18 +4,18 @@ exports[`Table renders a default table 1`] = `
 <table class="z-table p-8 border border-ink-200 border-collapse w-full">
   <thead class="w-full">
     <tr class="z-table-row border-b border-ink-300 flex w-full">
-      <td class="z-table-cell py-2.5 px-5 flex-1 text-left">Heading 1</td>
-      <td class="z-table-cell py-2.5 px-5 flex-1 text-left">Heading 2</td>
+      <td class="z-table-cell py-2.5 px-5 flex-1">Heading 1</td>
+      <td class="z-table-cell py-2.5 px-5 flex-1">Heading 2</td>
     </tr>
   </thead>
   <tbody class="w-full">
     <tr class="z-table-row border-b border-ink-300 flex w-full">
-      <td class="z-table-cell py-2.5 px-5 flex-1 text-left">Content Row 1</td>
-      <td class="z-table-cell py-2.5 px-5 flex-1 text-left">Content Row 1</td>
+      <td class="z-table-cell py-2.5 px-5 flex-1">Content Row 1</td>
+      <td class="z-table-cell py-2.5 px-5 flex-1">Content Row 1</td>
     </tr>
     <tr class="z-table-row border-b border-ink-300 flex w-full">
-      <td class="z-table-cell py-2.5 px-5 flex-1 text-left">Content Row 2</td>
-      <td class="z-table-cell py-2.5 px-5 flex-1 text-left">Content Row 2</td>
+      <td class="z-table-cell py-2.5 px-5 flex-1">Content Row 2</td>
+      <td class="z-table-cell py-2.5 px-5 flex-1">Content Row 2</td>
     </tr>
   </tbody>
 </table>

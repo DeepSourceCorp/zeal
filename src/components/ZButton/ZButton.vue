@@ -1,5 +1,6 @@
 <template>
   <component
+    class="z-btn"
     :is="isLink ? 'a' : 'button'"
     :href="to || '#'"
     v-bind="$attrs"
