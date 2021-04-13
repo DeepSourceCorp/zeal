@@ -38,7 +38,7 @@ describe('Animation', () => {
       setTimeout(() => {
         expect(wrapper.find('#finalValue').text()).toBe(`${val}`)
         resolve(val)
-      }, 700)
+      }, 1000)
     )
   })
 })
