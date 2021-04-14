@@ -59,16 +59,16 @@ export default {
         this.isUserOnTop ? 'bg-transparent border-transparent' : 'bg-ink-300 border-gray-light',
         this.supportsBackdropBlur ? 'backdrop-blur' : 'bg-opacity-95',
         this.isUserOnTop && this.supportsBackdropBlur ? '' : 'bg-opacity-25',
-        `fixed left-0 top-0 flex z-1000 justify-center w-full max-w-full border-b min-h-16 transition-DEFAULT duration-300`
+        `fixed left-0 top-0 flex z-1000 justify-center w-full max-w-full border-b min-h-16 transition-DEFAULT duration-75`
       ]
     },
     mobHeaderStyle() {
       return `${this.isOpen ? 'right-0' : '-right-full'}
-              overflow-y-scroll lg:-right-full w-full h-screen absolute flex flex-col transition-all duration-300 ease-in-out top-0 bg-ink-300 flex flex-col`
+              overflow-y-scroll lg:-right-full w-full h-screen absolute flex flex-col transition-all duration-200 ease-in-out top-0 bg-ink-300 flex flex-col`
     },
     linkSlotStyle() {
       return `${this.hideOnScroll}
-              second hidden lg:flex flex-1 items-center justify-center space-x-4 w-full transition-all duration-300 ease-in-out`
+              second hidden lg:flex flex-1 items-center justify-center space-x-4 w-full transition-all duration-200 ease-in-out`
     }
   },
   methods: {
@@ -117,21 +117,19 @@ export default {
             const items = this.getComponent(options.children, 'ZMenuItem'),
               // Checks if Menu Items are collapsible in Mobile, if true then render an accordion
               // Else the Menu item remains the same
-              accordionItems = items.map((item) => {
-                return h(
-                  'div',
-                  {
-                    domProps: {
-                      key: item.key
-                    }
-                  },
-                  item?.componentOptions?.children
-                )
-              })
+              accordionItems = h(
+                'div',
+                {
+                  class: 'flex flex-col space-y-1 text-base my-1'
+                },
+                items.map((item) => {
+                  return item?.componentOptions?.children
+                })
+              )
             return h(ZAccordionItem, {
               ...options.data,
               props: {
-                title: 'Resources',
+                title: child.data.attrs.title,
                 ...options.propsData
               },
               class: {
