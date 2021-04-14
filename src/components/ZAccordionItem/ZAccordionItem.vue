@@ -42,9 +42,7 @@
         'max-h-full': this.isList
       }"
     >
-      <div class="py-2">
-        <slot></slot>
-      </div>
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -58,6 +56,7 @@ export default {
   },
   props: {
     title: {
+      required: true,
       type: String
     },
     isOpen: {

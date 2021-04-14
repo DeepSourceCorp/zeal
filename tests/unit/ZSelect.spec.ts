@@ -114,7 +114,7 @@ const SelectWithCustomOptionsTemplate = {
   },
   data() {
     return {
-      value: '',
+      value: 'Option 1',
       options: [
         {
           value: 'Option 1',
@@ -139,12 +139,12 @@ describe('Select Component', () => {
   it('renders the select with a custom placeholder', () => {
     const wrapper = mount(SelectWithCustomPlaceholder)
     expect(wrapper.html()).toMatchSnapshot()
-    console.log(wrapper.find('.selected div'))
+    wrapper.find('.is-selected div')
   })
   it('renders the select component with clearables', () => {
     const wrapper = mount(SelectWithClearables)
     expect(wrapper.html()).toMatchSnapshot()
-    expect(wrapper.findAll('.z-icon--x').length).toEqual(1)
+    expect(wrapper.findAll('.z-icon').length).toEqual(1)
   })
   it('renders a select component with custom options template', () => {
     const wrapper = mount(SelectWithCustomOptionsTemplate)
