@@ -294,3 +294,6 @@ export { default as ZModal } from './components/ZModal/index'
 export { default as ZAnimatedInteger } from './components/ZAnimatedInteger/index'
 export { default as ZTimeline } from './components/ZTimeline/index'
 export { default as ZTimelineItem } from './components/ZTimeline/ZTimelineItem/index'
+
+// Directives
+export { default as outsideClickDirective } from './directives/outside-click'
