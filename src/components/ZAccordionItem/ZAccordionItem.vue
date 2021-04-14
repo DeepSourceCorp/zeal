@@ -56,6 +56,7 @@ export default {
   },
   props: {
     title: {
+      required: true,
       type: String
     },
     isOpen: {
