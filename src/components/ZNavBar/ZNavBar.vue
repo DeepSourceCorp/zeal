@@ -43,7 +43,7 @@ export default {
     headerWrapperStyle() {
       return [
         this.isUserOnTop ? 'bg-transparent border-transparent' : 'bg-ink-300 border-gray-light',
-        `header-wrapper fixed left-0 top-0 flex z-1000 justify-center w-full max-w-full border-b min-h-16 transition-DEFAULT duration-75`
+        `header-wrapper fixed left-0 top-0 flex z-1000 justify-center w-full max-w-full border-b min-h-16 transition-DEFAULT duration-75 backdrop-blur bg-opacity-25 no-filter:bg-opacity-95`
       ]
     },
     mobHeaderStyle() {
@@ -165,17 +165,5 @@ export default {
   */
 .border-gray-light {
   border-color: rgba(255, 255, 255, 0.1);
-}
-
-@supports (backdrop-filter: blur(1px)) {
-  .header-wrapper {
-    @apply backdrop-blur bg-opacity-25;
-  }
-}
-
-@supports not (backdrop-filter: blur(1px)) {
-  .header-wrapper {
-    @apply bg-opacity-95;
-  }
 }
 </style>

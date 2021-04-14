@@ -1086,7 +1086,7 @@ module.exports = {
       'focus-within'
     ],
     backgroundImage: ['responsive'],
-    backgroundOpacity: ['responsive', 'hover', 'focus', 'group-hover', 'focus-within'],
+    backgroundOpacity: ['responsive', 'hover', 'focus', 'group-hover', 'focus-within', 'no-filter'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
@@ -1215,6 +1215,19 @@ module.exports = {
   corePlugins: {},
   plugins: [
     require('@tailwindcss/typography'),
+    plugin(function ({ addVariant, e, postcss }) {
+      addVariant('no-filter', ({ container, separator }) => {
+        const supportsRule = postcss.atRule({
+          name: 'supports',
+          params: 'not (backdrop-filter: blur(1px))'
+        })
+        supportsRule.append(container.nodes)
+        container.append(supportsRule)
+        supportsRule.walkRules((rule) => {
+          rule.selector = `.${e(`no-filter${separator}${rule.selector.slice(1)}`)}`
+        })
+      })
+    }),
     plugin(function ({ addVariant }) {
       addVariant('sibling-checked', ({ container }) => {
         container.walkRules((rule) => {
