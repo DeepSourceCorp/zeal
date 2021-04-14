@@ -128,13 +128,13 @@ export default Vue.extend({
         secondary: `bg-ink-300 text-vanilla-100 border border-slate ${
           (this.isButtonDisabled && 'hover:bg-ink-300') || 'hover:bg-ink-200'
         } ${this.isButtonActive && 'bg-ink-100'}`,
-        ghost: `transition-DEFAULT duration-300 ease-in-out 
-                ${!this.icon && 'px-6'} 
-                ${this.icon ? '' : this.sizeClasses} 
+        ghost: `transition-DEFAULT duration-300 ease-in-out
+                ${!this.icon && 'px-6'}
+                ${this.icon ? '' : this.sizeClasses}
                 ${
                   (this.isButtonDisabled && 'hover:bg-ink-300') ||
                   `hover:bg-ink-200 hover:bg-opacity-${this.hoverOpacity}`
-                } 
+                }
                 ${this.isButtonActive && 'bg-ink-100'}`,
         danger: `bg-cherry text-ink-400 ${
           (this.isButtonDisabled && 'hover:bg-cherry') || 'hover:bg-cherry'
@@ -147,8 +147,8 @@ export default Vue.extend({
     },
     sizeClasses() {
       const sizes = {
-        small: 'h-8 text-xs',
-        medium: 'h-8 text-xs sm:h-10 sm:text-base',
+        small: 'h-8 text-sm',
+        medium: 'h-8 text-sm sm:h-10 sm:text-base',
         large: 'h-12 text-lg',
         xlarge: 'h-16 text-lg',
         none: ''
