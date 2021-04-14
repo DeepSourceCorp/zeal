@@ -1215,7 +1215,7 @@ module.exports = {
   corePlugins: {},
   plugins: [
     require('@tailwindcss/typography'),
-    plugin(function({ addVariant, e, postcss }) {
+    plugin(function ({ addVariant, e, postcss }) {
       addVariant('no-filter', ({ container, separator }) => {
         const supportsRule = postcss.atRule({
           name: 'supports',
@@ -1223,14 +1223,14 @@ module.exports = {
         })
         supportsRule.append(container.nodes)
         container.append(supportsRule)
-        supportsRule.walkRules(rule => {
+        supportsRule.walkRules((rule) => {
           rule.selector = `.${e(`no-filter${separator}${rule.selector.slice(1)}`)}`
         })
       })
     }),
-    plugin(function({ addVariant }) {
+    plugin(function ({ addVariant }) {
       addVariant('sibling-checked', ({ container }) => {
-        container.walkRules(rule => {
+        container.walkRules((rule) => {
           rule.selector = `:checked ~ .sibling-checked\\:${rule.selector.slice(1)}`
         })
       })
