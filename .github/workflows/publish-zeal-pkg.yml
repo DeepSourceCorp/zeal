@@ -33,6 +33,7 @@ jobs:
           git config --global user.email "bot@deepsource.io"
           git config --global user.name "deepsourcebot"
           npm version patch
+          git push
 
       - name: Temp disable "private"
         run: sed '/private/ s/true/false/' -i package.json
