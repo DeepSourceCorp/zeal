@@ -26,8 +26,8 @@
     "@tailwindcss/postcss7-compat": "^2.0.3",
     "core-js": "^3.8.3",
     "frappe-charts": "^2.0.0-rc9",
-    "postcss": "^7",
-    "postcss-cli": "7.1.2",
+    "postcss": "^8.2.10",
+    "postcss-cli": "8.0.0",
     "smoothscroll-polyfill": "^0.4.4",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue": "^2.6.12"
