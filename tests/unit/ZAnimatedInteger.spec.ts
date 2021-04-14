@@ -25,21 +25,20 @@ const AnimateInteger = Vue.extend({
     `
 })
 
-const randomValues = Array.from({ length: 5 }, () => {
+const randomValues = Array.from({ length: 3 }, () => {
   return Math.floor(Math.random() * (1000 - 0 + 1)) + 1000
 })
 
 describe('Animation', () => {
-  test.each(randomValues)('updates to correct value', async (val) => {
+  test.each(randomValues)('updates to correct value', async val => {
     const wrapper = mount(AnimateInteger)
 
     wrapper.vm.updateValue(val)
-    await new Promise((resolve) =>
+    await new Promise(resolve =>
       setTimeout(() => {
-        console.log('VAL -- ', val, wrapper.find('#finalValue').text())
         expect(wrapper.find('#finalValue').text()).toBe(`${val}`)
         resolve(val)
-      }, 700)
+      }, 1500)
     )
   })
 })
