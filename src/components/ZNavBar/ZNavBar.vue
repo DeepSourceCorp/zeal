@@ -41,12 +41,7 @@ export default {
   },
   computed: {
     supportsBackdropBlur() {
-      if (CSS?.supports) {
-        return (
-          CSS.supports('backdrop-filter', 'blur(1px)') ||
-          CSS.supports('-webkit-backdrop-filter', 'blur(1px)')
-        )
-      } else if (document.body.style) {
+      if (document.body.style) {
         return (
           'backdrop-filter' in document.body.style ||
           '-webkit-backdrop-filter' in document.body.style
