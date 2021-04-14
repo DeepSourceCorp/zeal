@@ -31,7 +31,7 @@ describe('Animation', () => {
     let val = 100
     wrapper.vm.updateValue(val)
 
-    await new Promise(resolve =>
+    await new Promise((resolve) =>
       setTimeout(() => {
         expect(wrapper.find('#finalValue').text()).toBe(`${val}`)
         resolve(val)
@@ -41,7 +41,7 @@ describe('Animation', () => {
     val = 500
     wrapper.vm.updateValue(val)
 
-    await new Promise(resolve =>
+    await new Promise((resolve) =>
       setTimeout(() => {
         expect(wrapper.find('#finalValue').text()).toBe(`${val}`)
         resolve(val)
@@ -51,7 +51,7 @@ describe('Animation', () => {
     val = 888
     wrapper.vm.updateValue(val)
 
-    await new Promise(resolve =>
+    await new Promise((resolve) =>
       setTimeout(() => {
         expect(wrapper.find('#finalValue').text()).toBe(`${val}`)
         resolve(val)
