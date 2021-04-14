@@ -51,9 +51,7 @@ jobs:
     defaults:
       run:
         shell: bash
+        working-directory: ./
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-
       - name: Publish Package
         run: npm publish
