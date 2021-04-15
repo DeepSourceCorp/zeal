@@ -36,7 +36,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.DEEPSOURCE_BOT_TOKEN }}
-          branch: ${{ github.ref }}
+          branch: master
 
       - name: Install Yarn
         run: yarn
