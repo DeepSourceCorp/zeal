@@ -21,8 +21,8 @@ jobs:
         id: import_gpg_sign_commits
         uses: crazy-max/ghaction-import-gpg@v3
         with:
-          gpg-private-key: ${{ secrets.SPOCK1966_GPG_PRIVATE_KEY }}
-          passphrase: ${{ secrets.SPOCK1966_GPG_KEY_PASSPHRASE }}
+          gpg-private-key: ${{ secrets.SPOCK_GPG_KEY }}
+          passphrase: ${{ secrets.SPOCK_GPG_KEY_PASSPHRASE }}
           git-user-signingkey: true
           git-commit-gpgsign: true
 
@@ -30,13 +30,10 @@ jobs:
         env:
           auth_token: ${{ secrets.SPOCK_PAT }}
         run: |
-          git config --global user.email "spock1966@deepsource.io"
-          git config --global user.name "spock1966"
+          git config --global user.email "bot@deepsource.io"
+          git config --global user.name "deepsourcebot"
           npm version patch
           git push
-
-      - name: Temp disable "private"
-        run: sed '/private/ s/true/false/' -i package.json
 
       - name: Install Yarn"
         run: yarn
@@ -56,6 +53,9 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
+
+      - name: Temp disable "private"
+        run: sed '/private/ s/true/false/' -i package.json
 
       - name: Publish Package
         run: npm publish
