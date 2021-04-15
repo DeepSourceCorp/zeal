@@ -32,7 +32,8 @@ jobs:
           git config --global user.name "deepsourcebot"
           npm version patch
           git remote set-url origin https://deepsourcebot:${{ secrets.DEEPSOURCE_BOT_TOKEN }}@github.com/$GITHUB_REPOSITORY
-          git push
+          git branch --show-current
+          git push origin master
           
       - name: Install Yarn
         run: yarn
