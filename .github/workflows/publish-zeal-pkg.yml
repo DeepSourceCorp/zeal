@@ -30,8 +30,8 @@ jobs:
         env:
           auth_token: ${{ secrets.SPOCK_PAT }}
         run: |
-          git config --global user.email "spock1966@deepsource.io"
-          git config --global user.name "spock1966"
+          git config --global user.email "bot@deepsource.io"
+          git config --global user.name "deepsourcebot"
           npm version patch
           git push
 
