@@ -55,6 +55,7 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
+      - run: git pull origin master
 
       - name: Temp disable "private"
         run: sed '/private/ s/true/false/' -i package.json
