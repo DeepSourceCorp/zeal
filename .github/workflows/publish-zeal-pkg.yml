@@ -60,4 +60,6 @@ jobs:
         run: sed '/private/ s/true/false/' -i package.json
 
       - name: Publish Package
-        run: npm publish
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.DEEPSOURCE_BOT_TOKEN }}
