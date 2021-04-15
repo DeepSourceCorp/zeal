@@ -38,7 +38,7 @@ jobs:
           github_token: ${{ secrets.DEEPSOURCE_BOT_TOKEN }}
           branch: ${{ github.ref }}
 
-      - name: Install Yarn"
+      - name: Install Yarn
         run: yarn
 
       - name: Test And Build Library Icons
