@@ -31,7 +31,7 @@ jobs:
           git config --global user.email "bot@deepsource.io"
           git config --global user.name "deepsourcebot"
           npm version patch
-          git remote set-url origin https://x-access-token:${{ secrets.DEEPSOURCE_BOT_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git remote set-url origin https://deepsourcebot:${{ secrets.DEEPSOURCE_BOT_TOKEN }}@github.com/$GITHUB_REPOSITORY
           git push
           
       - name: Install Yarn
