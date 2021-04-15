@@ -16,7 +16,9 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
-
+        with:
+          token: ${{ secrets.DEEPSOURCE_BOT_TOKEN }}
+          
       - name: Import GPG key
         id: import_gpg_sign_commits
         uses: crazy-max/ghaction-import-gpg@v3
@@ -31,9 +33,7 @@ jobs:
           git config --global user.email "bot@deepsource.io"
           git config --global user.name "deepsourcebot"
           npm version patch
-          git remote set-url origin https://deepsourcebot:${{ secrets.DEEPSOURCE_BOT_TOKEN }}@github.com/$GITHUB_REPOSITORY
-          git branch --show-current
-          git push origin master
+          git push
           
       - name: Install Yarn
         run: yarn
