@@ -63,3 +63,4 @@ jobs:
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.DEEPSOURCE_BOT_TOKEN }}
+          registry: https://npm.pkg.github.com/
