@@ -27,13 +27,16 @@ jobs:
           git-commit-gpgsign: true
 
       - name: Bump Version
-        env:
-          auth_token: ${{ secrets.SPOCK_PAT }}
         run: |
           git config --global user.email "bot@deepsource.io"
           git config --global user.name "deepsourcebot"
           npm version patch
-          git push
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.SPOCK_PAT }}
+          branch: ${{ github.ref }}
 
       - name: Install Yarn"
         run: yarn
