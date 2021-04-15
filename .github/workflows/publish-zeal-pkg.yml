@@ -35,7 +35,7 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.SPOCK_PAT }}
+          github_token: ${{ secrets.DEEPSOURCE_BOT_TOKEN }}
           branch: ${{ github.ref }}
 
       - name: Install Yarn"
