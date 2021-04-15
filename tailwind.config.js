@@ -49,7 +49,7 @@ module.exports = {
         `${theme('colors.ink.200')} 40.08%`,
         `${theme('colors.ink.300')} 60.32%`
       ],
-      'juniper-gradient': [
+      juniper: [
         '0deg',
         `${theme('colors.transparent')} 65%`,
         `${theme('colors.juniper')} 100%`
@@ -78,10 +78,16 @@ module.exports = {
       10: '2.5rem',
       11: '2.75rem',
       12: '3rem',
+      13: '3.25rem',
       14: '3.5rem',
+      15: '3.75rem',
       16: '4rem',
+      17: '4.25rem',
       20: '5rem',
+      22: '5.5rem',
+      23: '5.75rem',
       24: '6rem',
+      26: '6.5rem',
       28: '7rem',
       32: '8rem',
       36: '9rem',
