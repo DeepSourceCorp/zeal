@@ -60,7 +60,7 @@ jobs:
       - name: Temp disable "private"
         run: sed '/private/ s/true/false/' -i package.json
         
-      - name: Publish Package
+      - name: Publish Zeal Package
         uses: actions/setup-node@v2
         with:
           node-version: '12.x'
