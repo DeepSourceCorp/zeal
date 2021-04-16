@@ -69,3 +69,12 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.DEEPSOURCE_BOT_TOKEN }}
+        
+      - name: Notify Release
+        uses: act10ns/slack@v1
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        with: 
+         status: ${{ job.status }}
+         if: always()
+         channel: '@Shruddha'
