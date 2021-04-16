@@ -73,7 +73,7 @@ jobs:
       - name: Notify Release
         uses: act10ns/slack@v1
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with: 
          status: ${{ job.status }}
          channel: '@Shruddha'
