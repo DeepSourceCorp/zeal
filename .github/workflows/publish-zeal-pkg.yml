@@ -64,8 +64,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           token: ${{ secrets.DEEPSOURCE_BOT_TOKEN }}
-          registry: https://npm.pkg.github.com/
-      - run: npm login
+          registry-url: https://npm.pkg.github.com/
 
       - name: Publish Package
         uses: JS-DevTools/npm-publish@v1
