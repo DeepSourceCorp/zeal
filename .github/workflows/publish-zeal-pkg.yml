@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+    paths-ignore:
+      - 'package.json'
 
 jobs:
   bump-package-version:
@@ -16,7 +18,9 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
-
+        with:
+          token: ${{ secrets.DEEPSOURCE_BOT_TOKEN }}
+          
       - name: Import GPG key
         id: import_gpg_sign_commits
         uses: crazy-max/ghaction-import-gpg@v3
@@ -27,18 +31,13 @@ jobs:
           git-commit-gpgsign: true
 
       - name: Bump Version
-        env:
-          auth_token: ${{ secrets.SPOCK_PAT }}
         run: |
           git config --global user.email "bot@deepsource.io"
           git config --global user.name "deepsourcebot"
           npm version patch
           git push
-
-      - name: Temp disable "private"
-        run: sed '/private/ s/true/false/' -i package.json
-
-      - name: Install Yarn"
+          
+      - name: Install Yarn
         run: yarn
 
       - name: Test And Build Library Icons
@@ -56,6 +55,16 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
+      - run: git pull origin master
+
+      - name: Temp disable "private"
+        run: sed '/private/ s/true/false/' -i package.json
+        
+      - name: Login to NPM registry
+        run: npm adduser --registry=https://npm.pkg.github.com/ --scope=@deepsourcelabs --always-auth
 
       - name: Publish Package
-        run: npm publish
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.DEEPSOURCE_BOT_TOKEN }}
+          registry: https://npm.pkg.github.com/

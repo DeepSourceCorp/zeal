@@ -25,7 +25,7 @@ module.exports = {
     },
     colors: colors,
     gradients: (theme) => ({
-      ocean: ['98.66deg', `${theme('colors.sea_glass')} 9.7%`, `${theme('colors.aqua')} 96.6%`],
+      ocean: ['98.66deg', `${theme('colors.sea-glass')} 9.7%`, `${theme('colors.aqua')} 96.6%`],
       galaxy: {
         type: 'radial',
         colors: [
@@ -49,11 +49,7 @@ module.exports = {
         `${theme('colors.ink.200')} 40.08%`,
         `${theme('colors.ink.300')} 60.32%`
       ],
-      'juniper-gradient': [
-        '0deg',
-        `${theme('colors.transparent')} 65%`,
-        `${theme('colors.juniper')} 100%`
-      ]
+      juniper: ['0deg', `${theme('colors.transparent')} 0%`, `${theme('colors.juniper')} 100%`]
     }),
     backdropFilter: (theme) => ({
       none: 'none',
@@ -1086,7 +1082,7 @@ module.exports = {
       'focus-within'
     ],
     backgroundImage: ['responsive'],
-    backgroundOpacity: ['responsive', 'hover', 'focus', 'group-hover', 'focus-within'],
+    backgroundOpacity: ['responsive', 'hover', 'focus', 'group-hover', 'focus-within', 'no-filter'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
@@ -1215,6 +1211,19 @@ module.exports = {
   corePlugins: {},
   plugins: [
     require('@tailwindcss/typography'),
+    plugin(function ({ addVariant, e, postcss }) {
+      addVariant('no-filter', ({ container, separator }) => {
+        const supportsRule = postcss.atRule({
+          name: 'supports',
+          params: 'not (backdrop-filter: blur(1px))'
+        })
+        supportsRule.append(container.nodes)
+        container.append(supportsRule)
+        supportsRule.walkRules((rule) => {
+          rule.selector = `.${e(`no-filter${separator}${rule.selector.slice(1)}`)}`
+        })
+      })
+    }),
     plugin(function ({ addVariant }) {
       addVariant('sibling-checked', ({ container }) => {
         container.walkRules((rule) => {
