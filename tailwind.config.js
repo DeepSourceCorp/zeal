@@ -25,7 +25,7 @@ module.exports = {
     },
     colors: colors,
     gradients: (theme) => ({
-      ocean: ['98.66deg', `${theme('colors.sea_glass')} 9.7%`, `${theme('colors.aqua')} 96.6%`],
+      ocean: ['98.66deg', `${theme('colors.sea-glass')} 9.7%`, `${theme('colors.aqua')} 96.6%`],
       galaxy: {
         type: 'radial',
         colors: [
@@ -49,11 +49,7 @@ module.exports = {
         `${theme('colors.ink.200')} 40.08%`,
         `${theme('colors.ink.300')} 60.32%`
       ],
-      'juniper-gradient': [
-        '0deg',
-        `${theme('colors.transparent')} 65%`,
-        `${theme('colors.juniper')} 100%`
-      ]
+      juniper: ['0deg', `${theme('colors.transparent')} 0%`, `${theme('colors.juniper')} 100%`]
     }),
     backdropFilter: (theme) => ({
       none: 'none',
