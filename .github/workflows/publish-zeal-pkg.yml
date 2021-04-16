@@ -60,8 +60,12 @@ jobs:
       - name: Temp disable "private"
         run: sed '/private/ s/true/false/' -i package.json
         
-      - name: Login to NPM registry
-        run: npm login
+      - name: NPM Registry Login
+        uses: actions/setup-node@v2
+        with:
+          token: ${{ secrets.DEEPSOURCE_BOT_TOKEN }}
+          registry: https://npm.pkg.github.com/
+      - run: npm login
 
       - name: Publish Package
         uses: JS-DevTools/npm-publish@v1
