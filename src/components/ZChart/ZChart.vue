@@ -40,7 +40,8 @@ export default Vue.extend({
   name: 'ZChart',
   props: {
     dataSets: {
-      required: false
+      required: true,
+      type: Object
     },
     labels: {
       required: false,
@@ -49,6 +50,7 @@ export default Vue.extend({
     },
     title: {
       required: false,
+      default: null,
       type: String
     },
     type: {
@@ -123,6 +125,7 @@ export default Vue.extend({
     },
     tooltipOptions: {
       required: false,
+      default: null,
       type: Object
     }
   },
