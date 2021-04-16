@@ -25,7 +25,7 @@ module.exports = {
     },
     colors: colors,
     gradients: (theme) => ({
-      ocean: ['98.66deg', `${theme('colors.sea_glass')} 9.7%`, `${theme('colors.aqua')} 96.6%`],
+      ocean: ['98.66deg', `${theme('colors.sea-glass')} 9.7%`, `${theme('colors.aqua')} 96.6%`],
       galaxy: {
         type: 'radial',
         colors: [

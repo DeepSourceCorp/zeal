@@ -59,9 +59,22 @@ jobs:
 
       - name: Temp disable "private"
         run: sed '/private/ s/true/false/' -i package.json
-
-      - name: Publish Package
-        uses: JS-DevTools/npm-publish@v1
+        
+      - name: Publish Zeal Package
+        uses: actions/setup-node@v2
         with:
-          token: ${{ secrets.DEEPSOURCE_BOT_TOKEN }}
-          registry: https://npm.pkg.github.com/
+          node-version: '12.x'
+          registry-url: https://npm.pkg.github.com/
+          scope: '@deepsourcelabs'
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.DEEPSOURCE_BOT_TOKEN }}
+        
+      - name: Notify Release
+        uses: act10ns/slack@v1
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        with: 
+         status: ${{ job.status }}
+         channel: '#github-linear-notif'
+        if: always()
