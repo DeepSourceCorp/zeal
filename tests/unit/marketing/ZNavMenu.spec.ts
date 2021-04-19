@@ -47,7 +47,6 @@ describe('ZNavMenu component', () => {
         default: ['Something']
       }
     })
-    expect(mountedInstance.html()).toMatchSnapshot()
     expect(mountedInstance.html()).toContain('chevron-down')
     expect(mountedInstance.text()).toContain('Something')
   })

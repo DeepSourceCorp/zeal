@@ -16,7 +16,7 @@
     <input
       v-debounce:[debounceDelay]="updateDebounce"
       type="text"
-      class="w-full caret-juniper flex flex-grow outline-none bg-transparent pl-0.5 leading-5"
+      class="w-full caret-juniper flex flex-grow outline-none bg-transparent pl-0.5"
       :class="{
         'cursor-not-allowed': disabled
       }"
