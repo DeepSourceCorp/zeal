@@ -14,7 +14,7 @@ module.exports = {
   bitbucket: '#1E54C5',
   lavender: '#7A97FA',
   lilac: '#C97BD4',
-  seaGlass: '#49F9CF',
+  'sea-glass': '#49F9CF',
   pink: '#F977FF',
   vanilla: {
     100: '#ffffff',
