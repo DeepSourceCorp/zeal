@@ -41,7 +41,7 @@ export default Vue.extend({
   props: {
     dataSets: {
       required: true,
-      type: Object
+      type: Array
     },
     labels: {
       required: false,
@@ -118,6 +118,11 @@ export default Vue.extend({
       type: Number,
       default: 8
     },
+    showLegend: {
+      required: false,
+      type: Boolean,
+      default: false
+    },
     maxSlices: {
       required: false,
       type: Number,
@@ -127,6 +132,11 @@ export default Vue.extend({
       required: false,
       default: null,
       type: Object
+    },
+    animate: {
+      required: false,
+      default: true,
+      type: Boolean
     }
   },
   data() {
@@ -166,6 +176,8 @@ export default Vue.extend({
         lineOptions: this.lineOptions,
         axisOptions: this.axisOptions,
         maxSlices: this.maxSlices,
+        showLegend: this.showLegend,
+        animate: this.animate,
         maxLegendPoints: this.maxLegendPoints
       }
       this.chart = new Chart(this.$refs[this.wrapperName], {
