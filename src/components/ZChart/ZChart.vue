@@ -41,7 +41,7 @@ export default Vue.extend({
   props: {
     dataSets: {
       required: true,
-      type: Object
+      type: Array
     },
     labels: {
       required: false,
