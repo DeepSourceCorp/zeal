@@ -8,11 +8,10 @@
 
 <script lang="ts">
 import Vue from 'vue'
-
-const padNumber = (num: number) => String(num).padStart(2, '0')
+import { padNumber } from '../../../helpers/components/utils'
 
 export default Vue.extend({
-  name: 'ZLearnTopicCardListItem',
+  name: 'ZContentCardItem',
   props: {
     accentColor: {
       type: String,

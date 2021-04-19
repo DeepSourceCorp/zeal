@@ -37,8 +37,9 @@
         </z-button>
       </div>
     </div>
-    <div
-      class="pt-8 mt-12 w-full rounded-sm"
+    <div class="w-full h-full flex flex-col-reverse pt-12">
+      <div
+      class="pt-8 w-full rounded-sm"
       :class="[
         `${COLOR_SCHEMES[colorScheme].showcaseBg}`,
         `${CARD_ALIGNMENT[cardAlign].imgContainer}`
@@ -50,6 +51,9 @@
         :src="IMAGE_SRC"
       />
     </div>
+
+    </div>
+    
   </div>
 </template>
 
@@ -57,6 +61,7 @@
 import Vue from 'vue'
 import ZIcon from '../../ZIcon'
 import ZButton from '../../ZButton'
+import { padNumber } from '../../../helpers/components/utils'
 
 const COLOR_SCHEMES = {
   seaglass: {
@@ -93,15 +98,12 @@ const CARD_ALIGNMENT = {
   }
 }
 
-const padNumber = (num: number) => String(num).padStart(2, '0')
-
 export default Vue.extend({
   components: { ZButton, ZIcon },
-  name: 'ZLearnTopicCard',
+  name: 'ZContentCard',
   props: {
     colorScheme: {
       type: String,
-      //default: COLOR_SCHEMES.seaglass.name,
       default: 'seaglass',
       validator: (name) => Object.keys(COLOR_SCHEMES).includes(name)
     },
@@ -112,12 +114,12 @@ export default Vue.extend({
     },
     index: {
       type: Number,
-      default: 1,
-      validator: (value) => value > 0 && value < 10
+      required: true,
+      validator: (value) => value > 0
     },
     img: {
       type: String,
-      default: 'https://imgur.com/ZiHtp5p.png'
+      required: true
     },
     to: {
       type: String,
