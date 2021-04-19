@@ -429,12 +429,10 @@ module.exports = {
       none: ['2px solid transparent', '2px'],
       white: ['2px dotted white', '2px'],
       black: ['2px dotted black', '2px'],
-      ink: {
-        100: [`1px solid ${theme('colors.ink.100')}`, '1px'],
-        200: [`1px solid ${theme('colors.ink.200')}`, '1px'],
-        300: [`1px solid ${theme('colors.ink.300')}`, '1px'],
-        400: [`1px solid ${theme('colors.ink.400')}`, '1px']
-      }
+      'ink-100': [`1px solid ${theme('colors.ink.100')}`, '1px'],
+      'ink-200': [`1px solid ${theme('colors.ink.200')}`, '1px'],
+      'ink-300': [`1px solid ${theme('colors.ink.300')}`, '1px'],
+      'ink-400': [`1px solid ${theme('colors.ink.400')}`, '1px']
     }),
     padding: (theme) => theme('spacing'),
     placeholderColor: (theme) => theme('colors'),
