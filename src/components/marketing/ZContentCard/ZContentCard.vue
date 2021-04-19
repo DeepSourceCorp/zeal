@@ -39,21 +39,19 @@
     </div>
     <div class="w-full h-full flex flex-col-reverse pt-12">
       <div
-      class="pt-8 w-full rounded-sm"
-      :class="[
-        `${COLOR_SCHEMES[colorScheme].showcaseBg}`,
-        `${CARD_ALIGNMENT[cardAlign].imgContainer}`
-      ]"
-    >
-      <img
-        class="h-76 shadow-2xl"
-        :class="[`${CARD_ALIGNMENT[cardAlign].imgPosition}`]"
-        :src="IMAGE_SRC"
-      />
+        class="pt-8 w-full rounded-sm"
+        :class="[
+          `${COLOR_SCHEMES[colorScheme].showcaseBg}`,
+          `${CARD_ALIGNMENT[cardAlign].imgContainer}`
+        ]"
+      >
+        <img
+          class="h-76 shadow-2xl"
+          :class="[`${CARD_ALIGNMENT[cardAlign].imgPosition}`]"
+          :src="IMAGE_SRC"
+        />
+      </div>
     </div>
-
-    </div>
-    
   </div>
 </template>
 
