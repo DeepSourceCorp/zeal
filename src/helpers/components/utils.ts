@@ -16,3 +16,5 @@ export const containsElement = (parentCandidate: HTMLElement, target: HTMLElemen
     parentCandidate && (target === parentCandidate || parentCandidate.contains(target))
   )
 }
+
+export const padNumber = (num: number) => String(num).padStart(2, '0')
