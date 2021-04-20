@@ -66,7 +66,7 @@ const COLOR_SCHEMES = {
     name: 'seaglass',
     textAccent: 'text-juniper',
     textColor: 'juniper',
-    showcaseBg: 'bg-seaGlass'
+    showcaseBg: 'bg-sea-glass'
   },
   flamingo: {
     name: 'flamingo',
