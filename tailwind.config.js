@@ -49,7 +49,7 @@ module.exports = {
         `${theme('colors.ink.200')} 40.08%`,
         `${theme('colors.ink.300')} 60.32%`
       ],
-      juniper: ['0deg', `${theme('colors.transparent')} 65%`, `${theme('colors.juniper')} 100%`]
+      juniper: ['0deg', `${theme('colors.transparent')} 0%`, `${theme('colors.juniper')} 100%`]
     }),
     backdropFilter: (theme) => ({
       none: 'none',
