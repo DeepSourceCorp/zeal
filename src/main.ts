@@ -77,7 +77,6 @@ import ZHero from './components/marketing/sections/ZHero'
 
 // Marketing layouts
 import ZContentGuide from './components/marketing/layouts/ZContentGuide/index'
-import { Component } from 'vue'
 import { VueConstructor } from 'vue/types/umd'
 
 const components = [
