@@ -11,7 +11,8 @@ export default {
   name: 'ZList',
   props: {
     title: {
-      type: String
+      type: String,
+      required: true
     }
   }
 }

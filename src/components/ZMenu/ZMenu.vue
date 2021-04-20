@@ -52,7 +52,8 @@ export default Vue.extend({
       }
     },
     width: {
-      type: String
+      type: String,
+      default: ''
     },
     collapseOnMobile: {
       type: Boolean,

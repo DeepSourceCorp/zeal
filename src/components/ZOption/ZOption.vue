@@ -22,10 +22,12 @@ export default Vue.extend({
   name: 'ZOption',
   props: {
     label: {
-      type: String
+      type: String,
+      required: true
     },
     value: {
-      type: String || Number
+      type: String || Number,
+      required: true
     }
   },
   computed: {

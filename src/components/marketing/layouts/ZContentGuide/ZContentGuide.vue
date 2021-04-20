@@ -67,12 +67,18 @@ export default {
       required: true,
       type: String
     },
-    subtitle: String,
+    subtitle: {
+      required: true,
+      type: String
+    },
     author: {
       required: true,
       type: String
     },
-    authorImage: String,
+    authorImage:{
+      required: true,
+      type: String
+    },
     date: {
       required: true,
       type: String

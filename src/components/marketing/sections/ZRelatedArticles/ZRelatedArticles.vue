@@ -16,7 +16,10 @@ const COMMON_ARTICLE_CLASSES = ['col-span-6']
 export default Vue.extend({
   name: 'ZRelatedArticles',
   props: {
-    header: String
+    header: {
+      type: String,
+      required: true
+    },
   },
   data() {
     return {

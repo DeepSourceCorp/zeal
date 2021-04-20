@@ -26,7 +26,8 @@ export default Vue.extend({
   },
   props: {
     title: {
-      type: String
+      type: String,
+      default: ''
     },
     divider: {
       type: Boolean,

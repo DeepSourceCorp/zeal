@@ -21,10 +21,12 @@ export default {
       default: 'div'
     },
     to: {
-      type: String
+      type: String,
+      default: '#'
     },
     icon: {
-      type: String
+      type: String,
+      default: ''
     },
     iconSize: {
       type: String,

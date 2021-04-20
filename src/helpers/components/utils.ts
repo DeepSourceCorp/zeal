@@ -5,7 +5,7 @@ export const toPascal = (word: string) => {
     .replace(new RegExp(/[^\w\s]/, 'g'), '')
     .replace(
       new RegExp(/\s+(.)(\w+)/, 'g'),
-      ($1, $2, $3) => `${$2.toUpperCase() + $3.toLowerCase()}`
+      ($1: string, $2: string, $3: string) => `${$2.toUpperCase() + $3.toLowerCase()}`
     )
     .replace(new RegExp(/\s/, 'g'), '')
     .replace(new RegExp(/\w/), (s) => s.toUpperCase())

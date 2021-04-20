@@ -27,10 +27,12 @@ export default Vue.extend({
       }
     },
     iconLeft: {
-      type: String
+      type: String,
+      default: ''
     },
     iconRight: {
-      type: String
+      type: String,
+      default: ''
     },
     size: {
       type: String,

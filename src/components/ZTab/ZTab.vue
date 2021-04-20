@@ -40,10 +40,12 @@ export default Vue.extend({
       default: false
     },
     icon: {
-      type: String
+      type: String,
+      default: ''
     },
     action: {
-      type: Function
+      type: Function,
+      default: () => true
     }
   },
   computed: {

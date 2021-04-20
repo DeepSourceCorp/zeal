@@ -24,13 +24,16 @@ export default {
       default: false
     },
     index: {
-      type: Number
+      type: Number,
+      required: true
     },
     updateActiveIndex: {
-      type: Function
+      type: Function,
+      required: true
     },
     icon: {
-      type: String
+      type: String,
+      default: ''
     }
   },
   computed: {

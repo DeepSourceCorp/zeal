@@ -34,10 +34,12 @@ export default {
       default: ''
     },
     label: {
-      type: String
+      type: String,
+      required: true
     },
     value: {
-      type: String
+      type: String,
+      default: ''
     },
     disabled: {
       type: Boolean,

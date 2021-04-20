@@ -5,6 +5,7 @@ import ZStepper from './ZStepper.vue'
 import ZStep from '../ZStep/ZStep.vue'
 import ZButton from '../ZButton/ZButton.vue'
 import Vue from 'vue'
+import { VueConstructor } from 'vue/types/umd'
 
 export default {
   title: 'Stepper',
@@ -12,7 +13,7 @@ export default {
   excludeStories: /.*Data$/
 }
 
-export const DefaultStepper = (): unknown =>
+export const DefaultStepper = (): VueConstructor =>
   Vue.extend({
     components: { ZStepper, ZStep },
     template: `<div class="container">
@@ -24,7 +25,7 @@ export const DefaultStepper = (): unknown =>
     </div>`
   })
 
-export const VerticalStepper = (): unknown =>
+export const VerticalStepper = (): VueConstructor =>
   Vue.extend({
     components: { ZStepper, ZStep },
     template: `<div class="container">
@@ -36,7 +37,7 @@ export const VerticalStepper = (): unknown =>
     </div>`
   })
 
-export const VerticalStepperWithCustomSlots = (): unknown =>
+export const VerticalStepperWithCustomSlots = (): VueConstructor =>
   Vue.extend({
     components: { ZStepper, ZStep, ZButton },
     data() {
@@ -93,7 +94,7 @@ export const VerticalStepperWithCustomSlots = (): unknown =>
     </div>`
   })
 
-export const StepperWithDirectStatus = (): unknown =>
+export const StepperWithDirectStatus = (): VueConstructor =>
   Vue.extend({
     components: { ZStepper, ZStep },
     template: `<div class="container">
@@ -105,7 +106,7 @@ export const StepperWithDirectStatus = (): unknown =>
     </div>`
   })
 
-export const StepperWithStatusFromParent = (): unknown =>
+export const StepperWithStatusFromParent = (): VueConstructor =>
   Vue.extend({
     components: { ZStepper, ZStep, ZButton },
     template: `<div class="container">

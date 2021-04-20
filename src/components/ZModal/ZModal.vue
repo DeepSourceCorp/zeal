@@ -57,10 +57,12 @@ export default Vue.extend({
   name: 'ZModal',
   props: {
     title: {
-      type: String
+      type: String,
+      default: ''
     },
     body: {
-      type: String
+      type: String,
+      default: ''
     },
     width: {
       type: String,
