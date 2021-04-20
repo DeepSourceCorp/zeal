@@ -69,7 +69,7 @@ export default Vue.extend({
       type: Boolean
     },
     modelValue: {
-      default: '',
+      default: ''
     },
     spacing: {
       default: '5',

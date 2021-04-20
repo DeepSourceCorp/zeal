@@ -19,7 +19,7 @@ export default Vue.extend({
     header: {
       type: String,
       required: true
-    },
+    }
   },
   data() {
     return {

@@ -75,7 +75,7 @@ export default {
       required: true,
       type: String
     },
-    authorImage:{
+    authorImage: {
       required: true,
       type: String
     },
