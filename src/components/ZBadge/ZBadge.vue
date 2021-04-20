@@ -30,10 +30,22 @@ export default Vue.extend({
   name: 'ZBadge',
   components: {},
   props: {
-    value: [String, Number],
-    max: Number,
-    isDot: Boolean,
-    hidden: Boolean,
+    value: {
+      type: String || Number,
+      required: true
+    },
+    max: {
+      type: Number,
+      required: true
+    },
+    isDot: {
+      type: Boolean,
+      required: true
+    },
+    hidden: {
+      type: Boolean,
+      default: false
+    },
     size: {
       type: String,
       default: 'sm',
@@ -49,7 +61,8 @@ export default Vue.extend({
       }
     },
     position: {
-      type: String
+      type: String,
+      default: ''
     },
     textColor: {
       type: String,

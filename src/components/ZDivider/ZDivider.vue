@@ -13,7 +13,8 @@ export default {
       type: String
     },
     margin: {
-      type: String
+      type: String,
+      default: ''
     },
     color: {
       type: String,

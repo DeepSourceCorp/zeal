@@ -27,7 +27,10 @@ export default Vue.extend({
       type: Boolean,
       default: false
     },
-    limit: Number
+    limit: {
+      type: Number,
+      required: true
+    }
   },
   data() {
     return {

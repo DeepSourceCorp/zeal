@@ -6,7 +6,8 @@ export default {
   name: 'ZCode',
   props: {
     content: {
-      type: String
+      type: String,
+      default:''
     }
   }
 }

@@ -53,7 +53,10 @@ export default Vue.extend({
       type: Boolean,
       default: false
     },
-    image: String,
+    image: {
+      type: String,
+      required: true
+    },
     userName: {
       type: String,
       required: true
