@@ -125,7 +125,7 @@ export default Vue.extend({
         primary: `bg-juniper text-ink-400 ${
           (this.isButtonDisabled && 'hover:bg-juniper') || 'hover:bg-light-juniper'
         }`,
-        secondary: `bg-ink-300 text-vanilla-100 border border-slate ${
+        secondary: `bg-ink-300 text-vanilla-100 ${
           (this.isButtonDisabled && 'hover:bg-ink-300') || 'hover:bg-ink-200'
         } ${this.isButtonActive && 'bg-ink-100'}`,
         ghost: `transition-DEFAULT duration-300 ease-in-out

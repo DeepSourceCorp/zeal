@@ -1370,6 +1370,18 @@ module.exports = {
       traverseObject(theme('colors'), '')
 
       addUtilities(individualBorderColors, ['responsive', 'before', 'after'])
+    }),
+    plugin(function ({ addUtilities }) {
+      const newUtilities = {
+        '.filter-none': {
+          filter: 'none'
+        },
+        '.filter-grayscale': {
+          filter: 'grayscale(1)'
+        }
+      }
+
+      addUtilities(newUtilities, ['responsive', 'hover'])
     })
   ]
 }

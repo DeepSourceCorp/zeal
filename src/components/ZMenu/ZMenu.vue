@@ -90,9 +90,9 @@ export default Vue.extend({
     },
     sizeClass(): string {
       const sizes: Record<string, string> = {
-        small: `py-1 text-xs w-full sm:w-${this.width || '52'} mt-5 sm:mt-0`,
-        base: `py-1 text-sm w-full sm:w-${this.width || '64'} mt-5 sm:mt-0`,
-        large: `py-2 text-base w-full sm:w-${this.width || '72'} mt-5 sm:mt-2`
+        small: `py-1 text-xs w-full sm:w-${this.width || '52'} mt-5 sm:mt-2`,
+        base: `py-1 text-sm w-full sm:w-${this.width || '64'} mt-5 sm:mt-2`,
+        large: `py-2 text-base w-full sm:w-${this.width || '72'} mt-5 sm:mt-4`
       }
       return sizes[this.size || 'base']
     }

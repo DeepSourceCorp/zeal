@@ -6,7 +6,7 @@ exports[`Button component renders a button tag with the given text 1`] = `<butto
 
 exports[`Button component renders a button with primary color 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none whitespace-nowrap z-btn--primary false false px-6 h-8 text-sm sm:h-10 sm:text-base bg-juniper text-ink-400 hover:bg-light-juniper">Primary Button</button>`;
 
-exports[`Button component renders a button with secondary color 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none whitespace-nowrap z-btn--secondary false false px-6 h-8 text-sm sm:h-10 sm:text-base bg-ink-300 text-vanilla-100 border border-slate hover:bg-ink-200 false">Secondary Button</button>`;
+exports[`Button component renders a button with secondary color 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none whitespace-nowrap z-btn--secondary false false px-6 h-8 text-sm sm:h-10 sm:text-base bg-ink-300 text-vanilla-100 hover:bg-ink-200 false">Secondary Button</button>`;
 
 exports[`Button component renders a button with the given size(large) 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none whitespace-nowrap false false px-6 h-12 text-lg">Large Button</button>`;
 
