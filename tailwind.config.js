@@ -53,7 +53,7 @@ module.exports = {
     }),
     backdropFilter: (theme) => ({
       none: 'none',
-      blur: `blur(${theme('spacing.2')})`,
+      blur: `blur(${theme('spacing.2')})`
     }),
     spacing: {
       px: '1px',
@@ -1371,14 +1371,14 @@ module.exports = {
 
       addUtilities(individualBorderColors, ['responsive', 'before', 'after'])
     }),
-    plugin(function({ addUtilities }) {
+    plugin(function ({ addUtilities }) {
       const newUtilities = {
         '.filter-none': {
-          filter: 'none',
+          filter: 'none'
         },
         '.filter-grayscale': {
-          filter: 'grayscale(1)',
-        },
+          filter: 'grayscale(1)'
+        }
       }
 
       addUtilities(newUtilities, ['responsive', 'hover'])
