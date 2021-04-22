@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center w-full rounded-sm outline-none space-x-2 p-1 focus-within:shadow-white"
+    class="flex items-center w-full rounded-sm outline-none space-x-2 p-1"
     :class="[
       borderStyles,
       `text-${textSize}`,
@@ -15,15 +15,23 @@
     <slot name="left"></slot>
     <input
       v-debounce:[debounceDelay]="updateDebounce"
-      type="text"
       class="w-full caret-juniper flex flex-grow outline-none bg-transparent pl-0.5"
       :class="{
         'cursor-not-allowed': disabled
       }"
+      :aria-label="label"
       :value="name"
+      :type="type"
+      :max="max"
+      :min="min"
       :placeholder="placeholder"
       :disabled="disabled"
+      :autocomplete="autocomplete"
       @input="updateSelf($event.target.value)"
+      @blur="this.blurHandler"
+      @focus="this.focusHandler"
+      @keydown="this.keydownHandler"
+      @keyup="this.keyupHandler"
     />
     <!-- Any icon/content to the right renders here -->
     <slot name="right">
@@ -57,6 +65,22 @@ export default Vue.extend({
       default: '',
       type: String
     },
+    label: {
+      default: '',
+      type: String
+    },
+    type: {
+      default: 'text',
+      type: String
+    },
+    max: {
+      type: [String, Number],
+      default: undefined
+    },
+    min: {
+      type: [String, Number],
+      default: undefined
+    },
     placeholder: {
       default: 'Enter a value',
       type: String
@@ -75,6 +99,10 @@ export default Vue.extend({
     },
     clearable: {
       type: Boolean
+    },
+    autocomplete: {
+      type: String,
+      default: undefined
     },
     textSize: {
       type: String,
@@ -95,10 +123,7 @@ export default Vue.extend({
   },
   computed: {
     borderStyles(): string {
-      if (this.showBorder) {
-        return 'focus:border-vanilla-400 border border-solid border-ink-100'
-      }
-      return ''
+      return this.showBorder ? 'focus:border-vanilla-400 border border-solid border-ink-100' : ''
     }
   },
   methods: {
@@ -107,6 +132,18 @@ export default Vue.extend({
     },
     updateDebounce(value: unknown): void {
       this.$emit('debounceInput', value)
+    },
+    blurHandler(e: FocusEvent) {
+      this.$emit('blur', e)
+    },
+    focusHandler(e: FocusEvent) {
+      this.$emit('focus', e)
+    },
+    keyupHandler(e: KeyboardEvent) {
+      this.$emit('keyup', e)
+    },
+    keydownHandler(e: KeyboardEvent) {
+      this.$emit('keydown', e)
     }
   }
 })

@@ -6,7 +6,7 @@ import ZOption from '../ZOption/ZOption.vue'
 import ZIcon from '../ZIcon/ZIcon.vue'
 
 export default {
-  title: 'Form Inputs and Controls: Select',
+  title: 'Select',
   component: ZSelect,
   excludeStories: /.*Data$/
 }

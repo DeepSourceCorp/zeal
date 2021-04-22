@@ -49,7 +49,7 @@ module.exports = {
         `${theme('colors.ink.200')} 40.08%`,
         `${theme('colors.ink.300')} 60.32%`
       ],
-      juniper: ['0deg', `${theme('colors.transparent')} 65%`, `${theme('colors.juniper')} 100%`]
+      juniper: ['0deg', `${theme('colors.transparent')} 0%`, `${theme('colors.juniper')} 100%`]
     }),
     backdropFilter: (theme) => ({
       none: 'none',
@@ -526,7 +526,7 @@ module.exports = {
       10: 'repeat(10, minmax(0, 1fr))',
       11: 'repeat(11, minmax(0, 1fr))',
       12: 'repeat(12, minmax(0, 1fr))',
-      'fr-fr-24': '1fr 1fr minmax(auto, 24rem)',
+      'fr-fr-22': '1fr 1fr minmax(auto, 22rem)',
       'fr-24': '1fr minmax(auto, 24rem)',
       footer: 'repeat(5, 1fr) 2fr 1.5fr'
     },

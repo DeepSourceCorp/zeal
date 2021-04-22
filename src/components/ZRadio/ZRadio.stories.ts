@@ -7,7 +7,7 @@ import ZIcon from '../ZIcon/ZIcon.vue'
 import ZRadio from './ZRadio.vue'
 
 export default {
-  title: 'Form Inputs and Controls: Radio Button',
+  title: 'Radio Button',
   component: ZRadio,
   excludeStories: /.*Data$/
 }
