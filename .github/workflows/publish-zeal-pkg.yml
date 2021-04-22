@@ -40,10 +40,8 @@ jobs:
       - name: Install Yarn
         run: yarn
 
-      - name: Test And Build Library Icons
-        id: build
-        run: |
-          yarn test:unit && yarn build-lib-icons
+      - name: Test
+        run: yarn test:unit
 
   publish-zeal-package:
     runs-on: ubuntu-latest
@@ -59,6 +57,9 @@ jobs:
 
       - name: Temp disable "private"
         run: sed '/private/ s/true/false/' -i package.json
+        
+      - name: Build Library Icons
+        run: yarn build-lib-icons
         
       - name: Publish Zeal Package
         uses: actions/setup-node@v2
