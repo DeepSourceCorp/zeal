@@ -39,22 +39,19 @@ export default Vue.extend({
       type: Boolean,
       default: false
     },
-    action: {
-      type: Function,
-      default: undefined
+    closeOnClick: {
+      type: Boolean,
+      default: true
     }
   },
   methods: {
     itemClicked(event: Event): void {
-      this.$emit('click')
+      this.$emit('click', event)
 
-      if (this.action) {
-        console.warn('Action Prop for ZMenuItem is deprecated, use the @click event')
-        this.action(event)
+      if (this.closeOnClick) {
+        const parent = this.$parent as ZMenuParentT
+        parent.close()
       }
-
-      const parent = this.$parent as ZMenuParentT
-      parent.close()
     }
   }
 })

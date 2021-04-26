@@ -33,8 +33,6 @@ import ZPulse from './components/ZPulse/index'
 import ZMenu from './components/ZMenu'
 import ZMenuSection from './components/ZMenu/ZMenuSection'
 import ZMenuItem from './components/ZMenu/ZMenuItem'
-import ZSidebarMenu from './components/ZSidebarMenu/index'
-import ZSidebarItem from './components/ZSidebarItem/index'
 import ZBadge from './components/ZBadge/index'
 import ZPagination from './components/ZPagination/index'
 import ZList from './components/ZList/index'
@@ -114,8 +112,6 @@ const components = [
   ZTabItem,
   ZTabPanes,
   ZTabPane,
-  ZSidebarMenu,
-  ZSidebarItem,
   ZRadioButton,
   ZBadge,
   ZPagination,
@@ -195,8 +191,6 @@ export default {
   ZMenu,
   ZMenuSection,
   ZMenuItem,
-  ZSidebarMenu,
-  ZSidebarItem,
   ZRadioButton,
   ZBadge,
   ZPagination,
@@ -265,8 +259,6 @@ export { default as ZTabList } from './components/ZTabs/ZTabList'
 export { default as ZTabItem } from './components/ZTabs/ZTabItem'
 export { default as ZTabPanes } from './components/ZTabs/ZTabPanes'
 export { default as ZTabPane } from './components/ZTabs/ZTabPane'
-export { default as ZSidebarMenu } from './components/ZSidebarMenu/index'
-export { default as ZSidebarItem } from './components/ZSidebarItem/index'
 export { default as ZBadge } from './components/ZBadge/index'
 export { default as ZPagination } from './components/ZPagination/index'
 export { default as ZFooter } from './components/marketing/ZFooter/index'
@@ -306,3 +298,6 @@ export { default as ZAnimatedInteger } from './components/ZAnimatedInteger/index
 export { default as ZTimeline } from './components/ZTimeline/index'
 export { default as ZTimelineItem } from './components/ZTimeline/ZTimelineItem/index'
 export { default as ZBaseDialog } from './components/ZBaseDialog/index'
+
+// Directives
+export { default as outsideClickDirective } from './directives/outside-click'

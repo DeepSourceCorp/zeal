@@ -5,7 +5,7 @@ import ZTextarea from './ZTextarea.vue'
 import ZButton from '@/components/ZButton/ZButton.vue'
 
 export default {
-  title: 'Form Inputs and Controls: Textarea',
+  title: 'Textarea',
   component: ZTextarea,
   excludeStories: /.*Data$/
 }

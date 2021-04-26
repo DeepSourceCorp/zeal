@@ -61,13 +61,13 @@ export const DeepSourceNext = () => ({
     />
   </template>
   <template slot="links">
-    <z-menu :collapseOnMobile="true">
+    <z-menu :collapseOnMobile="true" title="Product">
       <template v-slot:trigger="{}">
         <z-button color="ghost">Product</z-button>
       </template>
       <template slot="body">
         <z-menu-item v-for="item of MENUS.PRODUCT" :key="item.url">
-          <a :href="item.url" class="py-2">{{ item.name }}</a>
+          <a :href="item.url">{{ item.name }}</a>
         </z-menu-item>
       </template>
     </z-menu>
@@ -89,7 +89,7 @@ export const DeepSourceNext = () => ({
       </template>
       <template slot="body">
         <z-menu-item v-for="item of MENUS.RESOURCES" :key="item.url">
-          <a :href="item.url" class="py-2">{{ item.name }}</a>
+          <a :href="item.url">{{ item.name }}</a>
         </z-menu-item>
       </template>
     </z-menu>
@@ -99,7 +99,7 @@ export const DeepSourceNext = () => ({
       </template>
       <template slot="body">
         <z-menu-item v-for="item of MENUS.COMPANY" :key="item.url">
-          <a :href="item.url" class="py-2">{{ item.name }}</a>
+          <a :href="item.url">{{ item.name }}</a>
         </z-menu-item>
       </template>
     </z-menu>
@@ -157,7 +157,7 @@ export const Horizontal = () => ({
                                         <div class="flex flex-col flex-nowrap lg:flex-row lg:flex-wrap space-x-0 space-y-4 lg:gap-x-3 lg:gap-y-3 lg:space-x-0 lg:space-y-0 text-vanilla-100 capitalize">
                                             <z-list-item v-for="i in 10" :key="i" class="cursor-pointer" zStyle="w-full flex items-center space-x-2">
                                                 <img src="https://i.imgur.com/6r5cdUd.png" class="h-4 lg:h-10" />
-                                                <a class="text-xs lg:text-sm flex lg:hidden hover:text-juniper transition-all duration-300 ease-in-out">JavaScript</a>    
+                                                <a class="text-xs lg:text-sm flex lg:hidden hover:text-juniper transition-all duration-300 ease-in-out">JavaScript</a>
                                             </z-list-item>
                                         </div>
                                     </z-list>
@@ -174,7 +174,7 @@ export const Horizontal = () => ({
                             </template>
                             <template slot="body">
                                 <z-menu-item v-for="item in resources" :key="item">
-                                    <a class="text-xs lg:text-sm text-vanilla-400 lg:text-vanilla-100 inline-block cursor-pointer py-1 lg:hover:text-vanilla-100 hover:text-juniper transition-all duration-300 ease-in-out">{{item}}</a>    
+                                    <a class="text-xs lg:text-sm text-vanilla-400 lg:text-vanilla-100 inline-block cursor-pointer py-1 lg:hover:text-vanilla-100 hover:text-juniper transition-all duration-300 ease-in-out">{{item}}</a>
                                 </z-menu-item>
                             </template>
                         </z-menu>
@@ -216,7 +216,7 @@ export const Horizontal = () => ({
     </blockquote>
     <p>It's probably important that images look okay here by default as well:</p>
     <figure>
-    <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="">  
+    <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="">
     <figcaption>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</figcaption>
     </figure>
     <p>Now I'm going to show you an example of an unordered list to make sure that looks good, too:</p>
