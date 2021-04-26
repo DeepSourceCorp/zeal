@@ -4,7 +4,7 @@
     :href="to || '#'"
     :disabled="disabled"
     :type="type"
-    class="inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap"
+    class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap"
     :class="{
       [`z-btn--${color}`]: color,
       'w-full': fullWidth,
@@ -38,6 +38,7 @@
       'opacity-50 cursor-not-allowed': disabled,
       'font-normal text-slate': ['link', 'ghost'].includes(buttonStyle) && disabled
     }"
+    @click="clicked"
   >
     <z-icon
       v-if="icon"
@@ -84,7 +85,7 @@ export default Vue.extend({
       default: 'button',
       type: String,
       validator(val) {
-        return ['submit', 'reset', 'button'].includes(val)
+        return ['submit', 'reset', 'button', 'link'].includes(val)
       }
     },
     size: {
@@ -119,6 +120,11 @@ export default Vue.extend({
         'inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none'
     }
   },
+  methods: {
+    clicked(event: Event) {
+      this.$emit('click', event)
+    }
+  },
   computed: {
     iconColor(): string {
       const colors = {
@@ -138,7 +144,7 @@ export default Vue.extend({
       return (this.buttonType || this.color || 'primary') as string
     },
     isLink() {
-      return this.as === 'link' || this.to
+      return this.as === 'link' || this.type === 'link' || this.to
     }
   }
 })
