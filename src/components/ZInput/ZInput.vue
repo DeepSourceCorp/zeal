@@ -133,7 +133,9 @@ export default Vue.extend({
   },
   computed: {
     borderStyles(): string {
-      return this.showBorder ? 'focus:border-vanilla-400 border border-solid border-ink-100' : ''
+      return this.showBorder
+        ? 'focus-within:border-vanilla-400 border border-solid border-ink-100'
+        : ''
     }
   },
   methods: {
