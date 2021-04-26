@@ -1,39 +1,63 @@
 <template>
   <component
-    class="z-btn"
     :is="isLink ? 'a' : 'button'"
     :href="to || '#'"
-    v-bind="$attrs"
     :disabled="disabled"
-    v-on="$listeners"
-    @click="handleClick"
-    :class="[
-      customClasses,
-      defaultClasses,
-      `${color && `z-btn--${color}`}`,
-      `${this.fullWidth !== false && 'w-full inline-block'}`,
-      `${this.isButtonDisabled && 'opacity-50 cursor-not-allowed'}`,
-      icon ? 'p-0' : spacing,
-      icon ? '' : sizeClasses,
-      `${stylesBasedOnColor}`,
-      icon && iconStyle
-    ]"
-    :type="isLink ? null : type"
+    :type="type"
+    class="inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap"
+    :class="{
+      [`z-btn--${color}`]: color,
+      'w-full': fullWidth,
+
+      // Button Size & Spacing Styles
+      'p-0': isLink || icon,
+      'h-8 px-4 py-1 leading-loose text-xs': size == 'small' && !(isLink || iconOnly),
+      'h-10 px-4 py-2 text-base leading-8': size == 'medium' && !(isLink || iconOnly),
+      'h-12 px-4 py-2.5 text-lg leading-9': size == 'large' && !(isLink || iconOnly),
+      'h-13 px-4 py-3 text-lg leading-9': size == 'xlarge' && !(isLink || iconOnly),
+
+      // Set width of button when just icon is used
+      'h-8 w-8': size == 'small' && iconOnly,
+      'h-10 w-10': size == 'medium' && iconOnly,
+      'h-12 w-12': size == 'large' && iconOnly,
+      'h-13 w-13': size == 'xlarge' && iconOnly,
+
+      // Button Base Styles
+      'font-normal text-juniper': ['link', 'ghost'].includes(buttonStyle),
+      'bg-juniper text-ink-400': buttonStyle == 'primary',
+      'bg-ink-300 text-vanilla-100': buttonStyle == 'secondary',
+      'bg-cherry text-ink-400': buttonStyle == 'danger',
+
+      // Button Hover Styles
+      'hover:underline': buttonStyle == 'link' && !disabled,
+      'hover:bg-light-juniper': buttonStyle == 'primary' && !disabled,
+      'hover:bg-ink-200': ['secondary', 'ghost'].includes(buttonStyle) && !disabled,
+      'hover:bg-light-cherry': buttonStyle == 'danger' && !disabled,
+
+      // Disabled Styles
+      'opacity-50 cursor-not-allowed': disabled,
+      'font-normal text-slate': ['link', 'ghost'].includes(buttonStyle) && disabled
+    }"
   >
-    <z-icon v-if="icon" :icon="icon" :color="iconColor" :size="iconSize"></z-icon>
-    <slot v-else>Click</slot>
+    <z-icon
+      v-if="icon"
+      :icon="icon"
+      :color="iconColor"
+      :size="iconSize"
+      :class="{
+        'mr-1': size == 'small' && $slots.default,
+        'mr-1.5': size == 'medium' && $slots.default,
+        'mr-2.5': size == 'large' && $slots.default,
+        'mr-4': size == 'xlarge' && $slots.default
+      }"
+    ></z-icon>
+    <slot></slot>
   </component>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue'
 import ZIcon from '@/components/ZIcon/ZIcon.vue'
-
-const spacingTypes = {
-  tight: '0.5',
-  base: '1',
-  loose: '1.5'
-}
 
 export default Vue.extend({
   name: 'ZButton',
@@ -45,23 +69,32 @@ export default Vue.extend({
       default: '',
       type: String
     },
-    type: {
+    as: {
       default: 'button',
       type: String
     },
-    customClasses: {
-      default: '',
-      type: String
+    buttonType: {
+      default: 'primary',
+      type: String,
+      validator(val) {
+        return ['primary', 'secondary', 'link', 'ghost', 'danger'].includes(val)
+      }
+    },
+    type: {
+      default: 'button',
+      type: String,
+      validator(val) {
+        return ['submit', 'reset', 'button'].includes(val)
+      }
     },
     size: {
-      default: '',
-      type: String
+      default: 'medium',
+      type: String,
+      validator(val) {
+        return ['small', 'medium', 'large', 'xlarge'].includes(val)
+      }
     },
     disabled: {
-      default: false,
-      type: Boolean
-    },
-    active: {
       default: false,
       type: Boolean
     },
@@ -74,91 +107,38 @@ export default Vue.extend({
       type: String
     },
     icon: {
-      default: null,
-      type: String
-    },
-    iconColor: {
-      default: 'vanilla-400',
       type: String
     },
     iconSize: {
-      type: String,
-      default: ''
-    },
-    hoverOpacity: {
-      type: String,
-      default: '50'
-    },
-    spacing: {
-      type: String,
-      default: 'px-6'
-    },
-    iconSpacing: {
-      default: 'tight',
-      type: String,
-      validator(val) {
-        return ['tight', 'base', 'loose'].includes(val)
-      }
+      type: String
     }
   },
   data() {
     return {
       defaultClasses:
-        'inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none whitespace-nowrap'
+        'inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none'
     }
   },
   computed: {
-    iconStyle() {
-      return `p-${spacingTypes[this.iconSpacing]}`
-    },
-    isButtonDisabled() {
-      return this.disabled !== false
-    },
-    isButtonActive() {
-      return this.active !== false
-    },
-    stylesBasedOnColor() {
+    iconColor(): string {
       const colors = {
-        link: `font-normal text-juniper ${this.isButtonActive && 'underline'} ${
-          (this.isButtonDisabled && 'text-slate no-underline') || 'hover:underline'
-        }`,
-        primary: `bg-juniper text-ink-400 ${
-          (this.isButtonDisabled && 'hover:bg-juniper') || 'hover:bg-light-juniper'
-        }`,
-        secondary: `bg-ink-300 text-vanilla-100 ${
-          (this.isButtonDisabled && 'hover:bg-ink-300') || 'hover:bg-ink-200'
-        } ${this.isButtonActive && 'bg-ink-100'}`,
-        ghost: `transition-DEFAULT duration-300 ease-in-out
-                ${!this.icon && 'px-6'}
-                ${this.icon ? '' : this.sizeClasses}
-                ${
-                  (this.isButtonDisabled && 'hover:bg-ink-300') ||
-                  `hover:bg-ink-200 hover:bg-opacity-${this.hoverOpacity}`
-                }
-                ${this.isButtonActive && 'bg-ink-100'}`,
-        danger: `bg-cherry text-ink-400 ${
-          (this.isButtonDisabled && 'hover:bg-cherry') || 'hover:bg-cherry'
-        }`
+        link: 'text-juniper',
+        ghost: 'text-juniper',
+        primary: 'text-ink-400',
+        secondary: 'text-vanilla-100',
+        danger: 'text-ink-400'
       }
-      return colors[this.color] || ''
+
+      return colors[this.buttonStyle as string]
+    },
+    iconOnly() {
+      return this.icon && !this.$slots['default']
+    },
+    buttonStyle(): string {
+      return (this.buttonType || this.color || 'primary') as string
     },
     isLink() {
-      return this.type === 'link' || this.to
-    },
-    sizeClasses() {
-      const sizes = {
-        small: 'h-8 text-sm',
-        medium: 'h-8 text-sm sm:h-10 sm:text-base',
-        large: 'h-12 text-lg',
-        xlarge: 'h-16 text-lg',
-        none: ''
-      }
-      return sizes[this.size] || sizes['medium']
-    }
-  },
-  methods: {
-    handleClick(event) {
-      this.$emit('clicked', event)
+      return this.as === 'link' || this.to
     }
   }
 })
