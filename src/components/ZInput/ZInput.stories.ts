@@ -76,18 +76,30 @@ export const DisabledInput = () => ({
 })
 
 export const InputWithDifferentSizes = () => ({
-  components: { ZInput },
+  components: { ZInput, ZButton },
   data() {
     return {
       name: ''
     }
   },
   template: `<div class='padded-container'>
-        <div class="input-container space-y-2">
-            <z-input v-model="name" text-size="xs"></z-input>
-            <z-input v-model="name" text-size="sm"></z-input>
-            <z-input v-model="name" text-size="base"></z-input>
-            <z-input v-model="name" text-size="lg"></z-input>
+        <div class="max-w-xl space-y-2">
+          <div class="flex items-center space-x-2">
+            <z-input v-model="name" size="small"></z-input>
+            <z-button size="small" :buttonType="primary" icon="plus">Send Invite</z-button>
+          </div>  
+          <div class="flex items-center space-x-2">
+            <z-input v-model="name" size="medium"></z-input>
+            <z-button size="medium" :buttonType="primary" icon="plus">Send Invite</z-button>
+          </div>  
+          <div class="flex items-center space-x-2">
+            <z-input v-model="name" size="large"></z-input>
+            <z-button size="large" :buttonType="primary" icon="plus">Send Invite</z-button>
+          </div>  
+          <div class="flex items-center space-x-2">
+            <z-input v-model="name" size="xlarge"></z-input>
+            <z-button size="xlarge" :buttonType="primary" icon="plus">Send Invite</z-button>
+          </div>  
         </div>
     </div>`
 })
