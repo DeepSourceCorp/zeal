@@ -8,10 +8,13 @@
       {
         'text-slate cursor-not-allowed': disabled,
         'text-vanilla-300': !disabled,
-        'h-8 px-4 py-1 text-xs space-x-1 leading-loose': size == 'small',
-        'h-10 px-4 py-2 text-base space-x-2 leading-8': size == 'medium',
-        'h-12 px-4 py-2.5 text-lg space-x-2.5 leading-9': size == 'large',
-        'h-13 px-4 py-3 text-lg space-x-3 leading-9': size == 'xlarge'
+        'h-8 py-1 text-xs space-x-1 leading-loose': size == 'small',
+        'h-10 py-2 text-base space-x-2 leading-8': size == 'medium',
+        'h-12 py-2.5 text-lg space-x-2.5 leading-9': size == 'large',
+        'h-13 py-3 text-lg space-x-3 leading-9': size == 'xlarge',
+        'px-4': !$slots.left && !$slots.right,
+        'pl-4': $slots.right && !$slots.left,
+        'pr-4': $slots.left && !$slots.right
       }
     ]"
   >

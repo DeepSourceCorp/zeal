@@ -198,9 +198,9 @@ export const InputWithLeftButton = () => ({
   },
   template: `<div class='padded-container'>
         <div class="input-container">
-          <z-input v-model="name">
+          <z-input v-model="name" size="medium">
             <template slot="left">
-              <z-button color="primary" icon="chevron-left" iconSize="medium" iconColor="ink-400"></z-button>
+              <z-button buttonType="primary" size="small" icon="chevron-left" iconSize="medium" iconColor="ink-400"></z-button>
             </template>
           </z-input>
         </div>
@@ -216,9 +216,9 @@ export const InputWithRightButton = () => ({
   },
   template: `<div class='padded-container'>
         <div class="input-container">
-          <z-input v-model="name">
+          <z-input v-model="name" size="medium">
             <template slot="right">
-              <z-button color="primary" icon="chevron-right" iconSize="medium" iconColor="ink-400"></z-button>
+              <z-button buttonType="primary" size="small" icon="chevron-right" iconSize="medium" iconColor="ink-400"></z-button>
             </template>
           </z-input>
         </div>
