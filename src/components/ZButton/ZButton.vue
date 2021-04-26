@@ -11,10 +11,10 @@
 
       // Button Size & Spacing Styles
       'p-0': isLink || icon,
-      'h-8 px-4 py-1 leading-loose text-xs': size == 'small' && !(isLink || iconOnly),
-      'h-10 px-4 py-2 text-base leading-8': size == 'medium' && !(isLink || iconOnly),
-      'h-12 px-4 py-2.5 text-lg leading-9': size == 'large' && !(isLink || iconOnly),
-      'h-13 px-4 py-3 text-lg leading-9': size == 'xlarge' && !(isLink || iconOnly),
+      'h-8 px-4 py-1 text-xs space-x-1 leading-loose': size == 'small' && !(isLink || iconOnly),
+      'h-10 px-4 py-2 text-base space-x-2 leading-8': size == 'medium' && !(isLink || iconOnly),
+      'h-12 px-4 py-2.5 text-lg space-x-2.5 leading-9': size == 'large' && !(isLink || iconOnly),
+      'h-13 px-4 py-3 text-lg space-x-3 leading-9': size == 'xlarge' && !(isLink || iconOnly),
 
       // Set width of button when just icon is used
       'h-8 w-8': size == 'small' && iconOnly,
@@ -40,19 +40,8 @@
     }"
     @click="clicked"
   >
-    <z-icon
-      v-if="icon"
-      :icon="icon"
-      :color="iconColor"
-      :size="iconSize"
-      :class="{
-        'mr-1': size == 'small' && $slots.default,
-        'mr-1.5': size == 'medium' && $slots.default,
-        'mr-2.5': size == 'large' && $slots.default,
-        'mr-4': size == 'xlarge' && $slots.default
-      }"
-    ></z-icon>
-    <slot></slot>
+    <z-icon v-if="icon" :icon="icon" :color="iconColor" :size="iconSizeToken"></z-icon>
+    <span><slot></slot></span>
   </component>
 </template>
 
@@ -108,10 +97,12 @@ export default Vue.extend({
       type: String
     },
     icon: {
-      type: String
+      type: String,
+      default: undefined
     },
     iconSize: {
-      type: String
+      type: String,
+      default: undefined
     }
   },
   data() {
@@ -137,14 +128,23 @@ export default Vue.extend({
 
       return colors[this.buttonStyle as string]
     },
-    iconOnly() {
-      return this.icon && !this.$slots['default']
+    iconSizeToken(): string {
+      const sizes = {
+        small: 'x-small',
+        medium: 'small',
+        large: 'medium',
+        xlarge: 'medium'
+      }
+      return this.iconSize || sizes[this.size]
+    },
+    iconOnly(): boolean {
+      return Boolean(this.icon && !this.$slots['default'])
     },
     buttonStyle(): string {
       return (this.buttonType || this.color || 'primary') as string
     },
-    isLink() {
-      return this.as === 'link' || this.type === 'link' || this.to
+    isLink(): boolean {
+      return Boolean(this.as === 'link' || this.type === 'link' || this.to)
     }
   }
 })
