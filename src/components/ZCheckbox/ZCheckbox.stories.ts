@@ -4,7 +4,7 @@ import '../../assets/css/layout.css'
 import ZCheckbox from './ZCheckbox.vue'
 
 export default {
-  title: 'Form Input - Checkbox',
+  title: 'Checkbox',
   component: ZCheckbox,
   excludeStories: /.*Data$/
 }

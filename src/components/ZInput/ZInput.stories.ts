@@ -9,7 +9,7 @@ import ZButton from '@/components/ZButton/ZButton.vue'
 import Vue from 'vue'
 
 export default {
-  title: 'Form Inputs and Controls: Input',
+  title: 'Input',
   component: ZInput,
   excludeStories: /.*Data$/
 }

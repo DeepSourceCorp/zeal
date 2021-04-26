@@ -40,7 +40,8 @@ export default Vue.extend({
   name: 'ZChart',
   props: {
     dataSets: {
-      required: false
+      required: true,
+      type: Array
     },
     labels: {
       required: false,
@@ -49,6 +50,7 @@ export default Vue.extend({
     },
     title: {
       required: false,
+      default: null,
       type: String
     },
     type: {
@@ -72,7 +74,7 @@ export default Vue.extend({
     colors: {
       required: false,
       type: Array,
-      default: () => ['honey', 'juniper', 'aqua', 'cherry', 'lilac', 'pink', 'sea_glass', 'robin']
+      default: () => ['honey', 'juniper', 'aqua', 'cherry', 'lilac', 'pink', 'sea-glass', 'robin']
     },
     lineOptions: {
       required: false,
@@ -116,6 +118,11 @@ export default Vue.extend({
       type: Number,
       default: 8
     },
+    showLegend: {
+      required: false,
+      type: Boolean,
+      default: false
+    },
     maxSlices: {
       required: false,
       type: Number,
@@ -123,7 +130,13 @@ export default Vue.extend({
     },
     tooltipOptions: {
       required: false,
+      default: null,
       type: Object
+    },
+    animate: {
+      required: false,
+      default: true,
+      type: Boolean
     }
   },
   data() {
@@ -163,6 +176,8 @@ export default Vue.extend({
         lineOptions: this.lineOptions,
         axisOptions: this.axisOptions,
         maxSlices: this.maxSlices,
+        showLegend: this.showLegend,
+        animate: this.animate,
         maxLegendPoints: this.maxLegendPoints
       }
       this.chart = new Chart(this.$refs[this.wrapperName], {

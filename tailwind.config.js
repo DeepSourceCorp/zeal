@@ -25,7 +25,7 @@ module.exports = {
     },
     colors: colors,
     gradients: (theme) => ({
-      ocean: ['98.66deg', `${theme('colors.sea_glass')} 9.7%`, `${theme('colors.aqua')} 96.6%`],
+      ocean: ['98.66deg', `${theme('colors.sea-glass')} 9.7%`, `${theme('colors.aqua')} 96.6%`],
       galaxy: {
         type: 'radial',
         colors: [
@@ -36,7 +36,7 @@ module.exports = {
         ]
       },
       dawn: ['98.66deg', `${theme('colors.robin')} 4.42%`, `${theme('colors.lilac')} 96.6%`],
-      dark_dawn: {
+      'dark-dawn': {
         custom: `linear-gradient(180deg, ${theme(
           'colors.ink.400'
         )} 0%, rgba(22, 24, 29, 0.7) 100%), 
@@ -49,11 +49,7 @@ module.exports = {
         `${theme('colors.ink.200')} 40.08%`,
         `${theme('colors.ink.300')} 60.32%`
       ],
-      juniper_gradient: [
-        '0deg',
-        `${theme('colors.transparent')} 65%`,
-        `${theme('colors.juniper')} 100%`
-      ]
+      juniper: ['0deg', `${theme('colors.transparent')} 0%`, `${theme('colors.juniper')} 100%`]
     }),
     backdropFilter: (theme) => ({
       none: 'none',
@@ -78,10 +74,16 @@ module.exports = {
       10: '2.5rem',
       11: '2.75rem',
       12: '3rem',
+      13: '3.25rem',
       14: '3.5rem',
+      15: '3.75rem',
       16: '4rem',
+      17: '4.25rem',
       20: '5rem',
+      22: '5.5rem',
+      23: '5.75rem',
       24: '6rem',
+      26: '6.5rem',
       28: '7rem',
       32: '8rem',
       36: '9rem',
@@ -304,6 +306,7 @@ module.exports = {
     letterSpacing: {
       tighter: '-0.05em',
       tight: '-0.025em',
+      snug: '-0.008em',
       normal: '0em',
       wide: '0.025em',
       wider: '0.05em',
@@ -426,12 +429,10 @@ module.exports = {
       none: ['2px solid transparent', '2px'],
       white: ['2px dotted white', '2px'],
       black: ['2px dotted black', '2px'],
-      ink: {
-        100: [`1px solid ${theme('colors.ink.100')}`, '1px'],
-        200: [`1px solid ${theme('colors.ink.200')}`, '1px'],
-        300: [`1px solid ${theme('colors.ink.300')}`, '1px'],
-        400: [`1px solid ${theme('colors.ink.400')}`, '1px']
-      }
+      'ink-100': [`1px solid ${theme('colors.ink.100')}`, '1px'],
+      'ink-200': [`1px solid ${theme('colors.ink.200')}`, '1px'],
+      'ink-300': [`1px solid ${theme('colors.ink.300')}`, '1px'],
+      'ink-400': [`1px solid ${theme('colors.ink.400')}`, '1px']
     }),
     padding: (theme) => theme('spacing'),
     placeholderColor: (theme) => theme('colors'),
@@ -525,7 +526,7 @@ module.exports = {
       10: 'repeat(10, minmax(0, 1fr))',
       11: 'repeat(11, minmax(0, 1fr))',
       12: 'repeat(12, minmax(0, 1fr))',
-      'fr-fr-24': '1fr 1fr minmax(auto, 24rem)',
+      'fr-fr-22': '1fr 1fr minmax(auto, 22rem)',
       'fr-24': '1fr minmax(auto, 24rem)',
       footer: 'repeat(5, 1fr) 2fr 1.5fr'
     },
@@ -1085,7 +1086,7 @@ module.exports = {
       'focus-within'
     ],
     backgroundImage: ['responsive'],
-    backgroundOpacity: ['responsive', 'hover', 'focus', 'group-hover', 'focus-within'],
+    backgroundOpacity: ['responsive', 'hover', 'focus', 'group-hover', 'focus-within', 'no-filter'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
@@ -1214,6 +1215,19 @@ module.exports = {
   corePlugins: {},
   plugins: [
     require('@tailwindcss/typography'),
+    plugin(function ({ addVariant, e, postcss }) {
+      addVariant('no-filter', ({ container, separator }) => {
+        const supportsRule = postcss.atRule({
+          name: 'supports',
+          params: 'not (backdrop-filter: blur(1px))'
+        })
+        supportsRule.append(container.nodes)
+        container.append(supportsRule)
+        supportsRule.walkRules((rule) => {
+          rule.selector = `.${e(`no-filter${separator}${rule.selector.slice(1)}`)}`
+        })
+      })
+    }),
     plugin(function ({ addVariant }) {
       addVariant('sibling-checked', ({ container }) => {
         container.walkRules((rule) => {
@@ -1356,6 +1370,18 @@ module.exports = {
       traverseObject(theme('colors'), '')
 
       addUtilities(individualBorderColors, ['responsive', 'before', 'after'])
+    }),
+    plugin(function ({ addUtilities }) {
+      const newUtilities = {
+        '.filter-none': {
+          filter: 'none'
+        },
+        '.filter-grayscale': {
+          filter: 'grayscale(1)'
+        }
+      }
+
+      addUtilities(newUtilities, ['responsive', 'hover'])
     })
   ]
 }

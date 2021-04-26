@@ -4,7 +4,7 @@ import '../../assets/css/layout.css'
 import ZToggle from '../ZToggle/ZToggle.vue'
 
 export default {
-  title: 'Form Inputs and Controls: Toggle Button',
+  title: 'Toggle Button',
   component: ZToggle,
   excludeStories: /.*Data$/
 }
