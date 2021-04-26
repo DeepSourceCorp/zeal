@@ -13,7 +13,7 @@ export default {
 
 export const BasicDialog = () =>
   Vue.extend({
-    components: { ZButton },
+    components: { ZBaseDialog, ZButton },
     data() {
       return {
         isOpen: false
