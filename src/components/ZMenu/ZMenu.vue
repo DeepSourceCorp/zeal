@@ -40,21 +40,21 @@ export default Vue.extend({
     direction: {
       type: String,
       default: 'right',
-      validator: function(value: string): boolean {
+      validator: function (value: string): boolean {
         return ['left', 'right'].includes(value)
       }
     },
     placement: {
       type: String,
       default: 'bottom',
-      validator: function(value: string): boolean {
+      validator: function (value: string): boolean {
         return ['top', 'bottom'].includes(value)
       }
     },
     size: {
       type: String,
       default: 'base',
-      validator: function(value: string): boolean {
+      validator: function (value: string): boolean {
         return ['small', 'base', 'large'].includes(value)
       }
     },
