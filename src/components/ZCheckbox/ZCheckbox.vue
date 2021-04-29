@@ -67,7 +67,8 @@ export default Vue.extend({
       type: Boolean
     },
     modelValue: {
-      default: ''
+      default: '',
+      type: String
     },
     size: {
       default: 'base',
