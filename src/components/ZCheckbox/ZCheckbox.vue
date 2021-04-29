@@ -1,7 +1,9 @@
 <template>
   <label
-    class="group z-input z-input__checkbox block relative pl-6 text-base flex items-center"
-    :class="[`${disabled && `cursor-not-allowed`}`, { 'is-disabled': this.disabled !== false }]"
+    class="group z-input z-input__checkbox relative pl-6 text-base flex items-center"
+    :class="{
+      'cursor-not-allowed is-disabled': disabled
+    }"
   >
     <input
       type="checkbox"
@@ -16,19 +18,15 @@
       data-before="✓"
       data-content=""
       class="z-input__checkbox--checkmark before:content-before text-transparent text-center sibling-checked:text-vanilla-100 sibling-checked:bg-juniper sibling-checked:border-juniper grid place-items-center absolute left-0 rounded-sm border border-slate border-solid bg-transparent cursor-pointer group-hover:border-juniper"
-      :class="[
-        `h-${spacing} w-${spacing}`,
-        fontSize,
-        `${
-          disabled &&
-          `cursor-not-allowed group-hover:border-slate sibling-checked:text-ink-300 sibling-checked:border-slate sibling-checked:bg-slate`
-        }`
-      ]"
+      :class="{
+        [checkBoxSize]: true,
+        'cursor-not-allowed group-hover:border-slate sibling-checked:text-ink-300 sibling-checked:border-slate sibling-checked:bg-slate': disabled
+      }"
     ></span>
     <span
       v-if="label"
-      class="z-input__checkbox--text ml-2"
-      :class="[`${disabled && `text-slate`}`]"
+      class="z-input__checkbox--text"
+      :class="{ [fontSize]: true, 'text-slate': disabled }"
     >
       {{ label }}
     </span>
@@ -69,15 +67,15 @@ export default Vue.extend({
       type: Boolean
     },
     modelValue: {
-      default: ''
-    },
-    spacing: {
-      default: '5',
+      default: '',
       type: String
     },
-    fontSize: {
-      default: 'lg',
-      type: String
+    size: {
+      default: 'base',
+      type: String,
+      validator: (value) => {
+        return ['small', 'base', 'large'].includes(value)
+      }
     }
   },
   computed: {
@@ -86,6 +84,22 @@ export default Vue.extend({
         return this.modelValue.includes(this.value)
       }
       return this.modelValue === this.trueValue
+    },
+    checkBoxSize() {
+      const sizes = {
+        small: 'h-4 w-4',
+        base: 'h-5 w-5',
+        large: 'h-6 w-6'
+      }
+      return sizes[this.size] || 'h-5 w-5'
+    },
+    fontSize() {
+      const sizes = {
+        small: 'text-sm',
+        base: 'text-base ml-1',
+        large: 'text-lg ml-2'
+      }
+      return sizes[this.size] || 'text-base ml-2'
     }
   },
   methods: {
