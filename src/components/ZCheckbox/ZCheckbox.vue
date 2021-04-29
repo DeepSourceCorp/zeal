@@ -73,7 +73,7 @@ export default Vue.extend({
     size: {
       default: 'base',
       type: String,
-      validator: value => {
+      validator: (value) => {
         return ['small', 'base', 'large'].includes(value)
       }
     }
