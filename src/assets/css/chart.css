@@ -17,7 +17,19 @@
 }
 
 .z-chart-wrapper .graph-svg-tip {
-  @apply border border-ink-100 bg-ink-300 bg-opacity-25 backdrop-blur !important;
+  @apply border border-ink-100 bg-ink-300 backdrop-blur !important;
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .z-chart-wrapper .graph-svg-tip {
+    @apply bg-opacity-25 !important;
+  }
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .z-chart-wrapper .graph-svg-tip {
+    @apply bg-opacity-90 !important;
+  }
 }
 
 .z-chart-wrapper .graph-svg-tip .svg-pointer {
