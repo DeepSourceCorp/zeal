@@ -13,8 +13,8 @@
     >
       <div
         v-if="isOpen"
-        class="fixed inset-0 sm:inset-auto z-10 flex items-end overflow-hidden h-100 sm:absolute text-vanilla-200 transform-gpu"
-        :class="`${directionClass}`"
+        class="fixed z-10 flex items-end overflow-hidden h-100 sm:absolute text-vanilla-200 transform-gpu"
+        :class="[directionClass, placementClasses]"
       >
         <div
           class="rounded-t-lg bg-ink-200 sm:rounded-sm"
@@ -42,6 +42,13 @@ export default Vue.extend({
       default: 'right',
       validator: function (value: string): boolean {
         return ['left', 'right'].includes(value)
+      }
+    },
+    placement: {
+      type: String,
+      default: 'bottom',
+      validator: function (value: string): boolean {
+        return ['top', 'bottom'].includes(value)
       }
     },
     size: {
@@ -87,6 +94,12 @@ export default Vue.extend({
       return this.direction == 'right'
         ? 'sm:left-0 sm:origin-top-left'
         : 'sm:right-0 sm:origin-top-right'
+    },
+    placementClasses(): string {
+      if (this.placement == 'top') {
+        return 'sm:inset-auto sm:bottom-10'
+      }
+      return 'sm:inset-auto'
     },
     sizeClass(): string {
       const sizes: Record<string, string> = {
