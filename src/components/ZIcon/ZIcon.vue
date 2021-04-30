@@ -2,7 +2,6 @@
   <svg
     :class="[
       'z-icon stroke-current',
-      getStrokeWidth,
       getSizeStyle,
       icon && `z-icon--${icon}`,
       position && `${getPositionStyle}`,
