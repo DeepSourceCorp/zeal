@@ -130,10 +130,10 @@ export default Vue.extend({
     },
     iconSizeToken(): string {
       const sizes = {
-        small: 'x-small',
-        medium: 'small',
+        small: 'small',
+        medium: 'base',
         large: 'medium',
-        xlarge: 'medium'
+        xlarge: 'large'
       }
       return this.iconSize || sizes[this.size]
     },
