@@ -31,7 +31,7 @@ export default {
     size: {
       default: 'small',
       type: String,
-      validator: val => ['x-small', 'small', 'base', 'medium', 'large'].includes(val)
+      validator: (val) => ['x-small', 'small', 'base', 'medium', 'large'].includes(val)
     },
     position: {
       default: '',
