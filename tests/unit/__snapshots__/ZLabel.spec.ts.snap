@@ -4,7 +4,7 @@ exports[`Labels renders with icon 1`] = `<span class="inline-flex items-center u
 
 exports[`Labels renders with size 1`] = `<span class="inline-flex items-center uppercase font-semibold border rounded-full bg-ink-400 border-ink-200 text-vanilla-200 tracking-wide leading-none text-xxs px-1 py-1 pr-2 space-x-1"><z-icon-stub icon="solid-circle" size="small" position="" color="robin"></z-icon-stub> <span>Hello World</span></span>`;
 
-exports[`Labels renders with size 2`] = `<span class="inline-flex items-center uppercase font-semibold border rounded-full bg-ink-400 border-ink-200 text-vanilla-200 tracking-wide leading-none text-xs px-1 py-1 pr-3 space-x-2"><z-icon-stub icon="solid-circle" size="" position="" color="robin"></z-icon-stub> <span>Hello World</span></span>`;
+exports[`Labels renders with size 2`] = `<span class="inline-flex items-center uppercase font-semibold border rounded-full bg-ink-400 border-ink-200 text-vanilla-200 tracking-wide leading-none text-xs px-1 py-1 pr-3 space-x-2"><z-icon-stub icon="solid-circle" size="medium" position="" color="robin"></z-icon-stub> <span>Hello World</span></span>`;
 
 exports[`Labels renders with state 1`] = `<span class="inline-flex items-center uppercase font-semibold border rounded-full bg-ink-400 border-ink-200 text-vanilla-200 tracking-wide leading-none text-xxs px-1 py-1 pr-2 space-x-1"><z-icon-stub icon="check-circle" size="small" position="" color="juniper"></z-icon-stub> <span>Hello World</span></span>`;
 
