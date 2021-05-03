@@ -9,27 +9,27 @@ exports[`Tags renders a default tag 1`] = `
 
 exports[`Tags renders with left icon 1`] = `
 <div class="inline-flex items-center space-x-2 rounded-full justify-evenly text-vanilla-100 py-1 px-4 text-sm bg-ink-300">
-  <z-icon-stub icon="star" size="small" position="" color="vanilla-400"></z-icon-stub> Tag
+  <z-icon-stub icon="star" size="small" position="" color="vanilla-400" stroke="stroke-1.5"></z-icon-stub> Tag
   <!---->
 </div>
 `;
 
 exports[`Tags renders with right icon 1`] = `
 <div class="inline-flex items-center space-x-2 rounded-full justify-evenly text-vanilla-100 py-1 px-4 text-sm bg-ink-300">
-  <!----> Tag <z-icon-stub icon="star" size="small" position="" color="vanilla-400"></z-icon-stub>
+  <!----> Tag <z-icon-stub icon="star" size="small" position="" color="vanilla-400" stroke="stroke-1.5"></z-icon-stub>
 </div>
 `;
 
 exports[`Tags renders with size 1`] = `
 <div class="inline-flex items-center space-x-2 rounded-full justify-evenly text-vanilla-100 py-1 px-4 text-sm bg-ink-300">
-  <z-icon-stub icon="star" size="small" position="" color="vanilla-400"></z-icon-stub> Tag
+  <z-icon-stub icon="star" size="small" position="" color="vanilla-400" stroke="stroke-1.5"></z-icon-stub> Tag
   <!---->
 </div>
 `;
 
 exports[`Tags renders with size 2`] = `
 <div class="inline-flex items-center space-x-2 rounded-full justify-evenly text-vanilla-100 py-1 px-4 text-sm bg-ink-300">
-  <z-icon-stub icon="star" size="large" position="" color="vanilla-400"></z-icon-stub> Tag
+  <z-icon-stub icon="star" size="large" position="" color="vanilla-400" stroke="stroke-1.5"></z-icon-stub> Tag
   <!---->
 </div>
 `;
