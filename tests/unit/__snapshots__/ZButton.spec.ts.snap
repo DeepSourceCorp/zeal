@@ -2,48 +2,48 @@
 
 exports[`Button component renders a button tag when the component is mounted 1`] = `
 <button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper text-ink-400 hover:bg-light-juniper">
-  <!----> <span></span>
+  <!---->
 </button>
 `;
 
 exports[`Button component renders a button tag with the given text 1`] = `
 <button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper text-ink-400 hover:bg-light-juniper">
-  <!----> <span>Hello World</span>
+  <!----> Hello World
 </button>
 `;
 
 exports[`Button component renders a button with primary color 1`] = `
 <button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap z-btn--primary h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper text-ink-400 hover:bg-light-juniper">
-  <!----> <span>Primary Button</span>
+  <!----> Primary Button
 </button>
 `;
 
 exports[`Button component renders a button with secondary color 1`] = `
 <button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap z-btn--secondary h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper text-ink-400 hover:bg-light-juniper">
-  <!----> <span>Secondary Button</span>
+  <!----> Secondary Button
 </button>
 `;
 
 exports[`Button component renders a button with the given size(large) 1`] = `
 <button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap h-12 px-4 py-2.5 text-lg space-x-2.5 leading-9 bg-juniper text-ink-400 hover:bg-light-juniper">
-  <!----> <span>Large Button</span>
+  <!----> Large Button
 </button>
 `;
 
 exports[`Button component renders a disabled button when the disabled attribute is passed 1`] = `
 <button href="#" disabled="disabled" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper text-ink-400 opacity-50 cursor-not-allowed">
-  <!----> <span>Disabled Button</span>
+  <!----> Disabled Button
 </button>
 `;
 
 exports[`Button component renders a full-width button 1`] = `
 <button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap w-full h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper text-ink-400 hover:bg-light-juniper">
-  <!----> <span>Full Width Button</span>
+  <!----> Full Width Button
 </button>
 `;
 
 exports[`Button component renders a link tag when type is specified as link 1`] = `
-<a href="https://deepsource.io/" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap z-btn--link p-0 bg-juniper text-ink-400 hover:bg-light-juniper">
-  <!----> <span>Link Button</span>
+<a href="https://deepsource.io/" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap z-btn--link p-0 h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper text-ink-400 hover:bg-light-juniper">
+  <!----> Link Button
 </a>
 `;

@@ -11,10 +11,10 @@
 
       // Button Size & Spacing Styles
       'p-0': isLink || icon,
-      'h-8 px-4 py-1 text-xs space-x-1 leading-loose': size == 'small' && !(isLink || iconOnly),
-      'h-10 px-4 py-2 text-base space-x-2 leading-8': size == 'medium' && !(isLink || iconOnly),
-      'h-12 px-4 py-2.5 text-lg space-x-2.5 leading-9': size == 'large' && !(isLink || iconOnly),
-      'h-13 px-4 py-3 text-lg space-x-3 leading-9': size == 'xlarge' && !(isLink || iconOnly),
+      'h-8 px-4 py-1 text-xs space-x-1 leading-loose': size == 'small' && !iconOnly,
+      'h-10 px-4 py-2 text-base space-x-2 leading-8': size == 'medium' && !iconOnly,
+      'h-12 px-4 py-2.5 text-lg space-x-2.5 leading-9': size == 'large' && !iconOnly,
+      'h-13 px-4 py-3 text-lg space-x-3 leading-9': size == 'xlarge' && !iconOnly,
 
       // Set width of button when just icon is used
       'h-8 w-8': size == 'small' && iconOnly,
@@ -40,8 +40,19 @@
     }"
     @click="clicked"
   >
-    <z-icon v-if="icon" :icon="icon" :color="iconColor" :size="iconSizeToken"></z-icon>
-    <span><slot></slot></span>
+    <z-icon
+      v-if="icon"
+      :icon="icon"
+      :color="iconColor"
+      :size="iconSizeToken"
+      :class="{
+        'mr-1': size == 'small' && !iconOnly,
+        'mr-2': size == 'medium' && !iconOnly,
+        'mr-2.5': size == 'large' && !iconOnly,
+        'mr-3': size == 'xlarge' && !iconOnly
+      }"
+    ></z-icon>
+    <slot></slot>
   </component>
 </template>
 
@@ -141,7 +152,7 @@ export default Vue.extend({
       return Boolean(this.icon && !this.$slots['default'])
     },
     buttonStyle(): string {
-      return (this.buttonType || this.color || 'primary') as string
+      return (this.buttonType || this.color || 'secondary') as string
     },
     isLink(): boolean {
       return Boolean(this.as === 'link' || this.type === 'link' || this.to)

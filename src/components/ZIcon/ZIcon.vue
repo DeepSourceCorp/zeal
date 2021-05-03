@@ -1,7 +1,8 @@
 <template>
   <svg
     :class="[
-      'z-icon stroke-current',
+      'z-icon',
+      stroke,
       getSizeStyle,
       icon && `z-icon--${icon}`,
       position && `${getPositionStyle}`,
@@ -39,6 +40,10 @@ export default {
     color: {
       type: String,
       default: 'vanilla-400'
+    },
+    stroke: {
+      type: String,
+      default: 'stroke-1.5'
     }
   },
   data() {
