@@ -4,11 +4,84 @@ import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'
 
+import feather from 'feather-icons'
+import customIcons from '../../helpers/components/icon'
+
+async function copyToClipboard(candidate: string) {
+  candidate = `<z-icon icon="${candidate} size="small"></z-icon>`
+  try {
+    await navigator.clipboard.writeText(candidate)
+  } catch (e) {
+    const el = document.createElement('input')
+    el.value = candidate
+    el.select()
+    document.execCommand('copy')
+    el.remove()
+  }
+}
+
 export default {
   title: 'Icons',
   component: ZIcon,
   excludeStories: /.*Data$/
 }
+
+export const ZealIcons = () => ({
+  components: { ZIcon },
+  methods: {
+    copyToClipboard: copyToClipboard
+  },
+  computed: {
+    customIcons() {
+      return Object.keys(customIcons).sort()
+    }
+  },
+  template: `<div class="space-y-4">
+  <div>
+    <h3 class="text-lg uppercase tracking-wide text-vanilla-100 font-bold">Zeal Icons</h3>
+    <p class="text-vanilla-400 text-xs">Click on the icon to copy</p>
+  </div>
+  <div class="grid grid-cols-8 gap-3">
+    <div
+      v-for="icon in customIcons"
+      :key="icon"
+      @click="copyToClipboard(icon)"
+      class="rounded-lg border-ink-200 border flex flex-col space-y-2 text-center items-center justify-center px-2 py-4 h-22 hover:bg-ink-300 cursor-pointer"
+    >
+      <z-icon :icon="icon" size="medium"></z-icon>
+      <span class="text-xs text-vanilla-300">{{ icon }}</span>
+    </div>
+  </div>
+</div>`
+})
+export const FeatherIcons = () => ({
+  components: { ZIcon },
+  methods: {
+    copyToClipboard: copyToClipboard
+  },
+  computed: {
+    featherIcons() {
+      return Object.keys(feather.icons).sort()
+    }
+  },
+  template: `<div class="space-y-4">
+  <div>
+    <h3 class="text-lg uppercase tracking-wide text-vanilla-100 font-bold">Feather Icons</h3>
+    <p class="text-vanilla-400 text-xs">Click on the icon to copy</p>
+  </div>
+  <div class="grid grid-cols-8 gap-3">
+    <div
+      v-for="icon in featherIcons"
+      :key="icon"
+      @click="copyToClipboard(icon)"
+      class="rounded-lg border-ink-200 border flex flex-col space-y-2 text-center items-center justify-center px-2 py-4 h-22 hover:bg-ink-300 cursor-pointer"
+    >
+      <z-icon :icon="icon" size="medium"></z-icon>
+      <span class="text-xs text-vanilla-300">{{ icon }}</span>
+    </div>
+  </div>
+</div>`
+})
 
 export const Default = () => ({
   components: { ZIcon },
