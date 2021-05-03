@@ -46,7 +46,7 @@
       :color="iconColor"
       :size="iconSizeToken"
       :class="{
-        'mr-1': size == 'small' && !iconOnly,
+        'mr-1.5': size == 'small' && !iconOnly,
         'mr-2': size == 'medium' && !iconOnly,
         'mr-2.5': size == 'large' && !iconOnly,
         'mr-3': size == 'xlarge' && !iconOnly

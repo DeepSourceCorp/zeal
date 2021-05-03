@@ -3,7 +3,6 @@
     class="flex items-center w-full rounded-sm outline-none space-x-2 p-1"
     :class="[
       borderStyles,
-      `text-${textSize}`,
       `bg-${backgroundColor}`,
       {
         'text-slate cursor-not-allowed': disabled,
