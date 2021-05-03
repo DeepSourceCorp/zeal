@@ -2,7 +2,7 @@
   <svg
     :class="[
       'z-icon',
-      stroke,
+      strokeClass,
       getSizeStyle,
       icon && `z-icon--${icon}`,
       position && `${getPositionStyle}`,
@@ -31,7 +31,7 @@ export default {
     size: {
       default: 'small',
       type: String,
-      validator: (val) => ['x-small', 'small', 'base', 'medium', 'large'].includes(val)
+      validator: val => ['x-small', 'small', 'base', 'medium', 'large'].includes(val)
     },
     position: {
       default: '',
@@ -40,15 +40,12 @@ export default {
     color: {
       type: String,
       default: 'vanilla-400'
-    },
-    stroke: {
-      type: String,
-      default: 'stroke-1.5'
     }
   },
   data() {
     return {
-      customStyle: ''
+      customStyle: '',
+      strokeClass: ''
     }
   },
   computed: {
@@ -77,8 +74,10 @@ export default {
       let DOM = null
       if (customIcons[iconName]) {
         DOM = customIcons[iconName] && customIcons[iconName].contents
+        this.strokeClass = 'stroke-1.5'
       } else {
         DOM = feather.icons[iconName] && feather.icons[iconName].contents
+        this.strokeClass = 'stroke-current'
         // For feathericons, stroke has to be added, while for custom icons it has to be none
       }
       return DOM
