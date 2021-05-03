@@ -58,6 +58,9 @@ jobs:
       - name: Temp disable "private"
         run: sed '/private/ s/true/false/' -i package.json
         
+      - name: Install Packages
+        run: yarn
+        
       - name: Build Library Icons
         run: yarn build-lib-icons
         
