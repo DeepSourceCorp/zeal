@@ -1,73 +1,73 @@
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M6.54333 21L19.3929 20.0944L20.3825 6.63881L16.4672 14.8803L6.54333 21Z" fill="url(#paint0_linear)"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M15.301 16.2956L19.4137 20.0865L18.3092 12.1703L15.301 16.2956Z" fill="url(#paint1_linear)"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M6.58521 20.9844L19.4278 20.087L11.3366 19.4274L6.58521 20.9844Z" fill="url(#paint2_linear)"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M4.16986 15.0974L6.59643 20.9865L8.61769 14.1098L4.16986 15.0974Z" fill="url(#paint3_linear)"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M8.11688 13.9339L15.2992 16.3182L13.4394 8.75265L8.11688 13.9339Z" fill="url(#paint4_linear)"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M13.5276 9.2962L19.9598 8.85979L14.9286 4.59234L13.5276 9.2962Z" fill="url(#paint5_linear)"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M12.7812 3.04688L17.6072 3.06965L14.6481 4.76789L12.7812 3.04688Z" fill="url(#paint6_linear)"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M3.23687 12.2584L3 17.4033L4.2396 15.0554L3.23687 12.2584Z" fill="url(#paint7_linear)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.54333 21L19.3929 20.0944L20.3825 6.63881L16.4672 14.8803L6.54333 21Z" fill="url(#paint0_linear_ruby_lang)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15.301 16.2956L19.4137 20.0865L18.3092 12.1703L15.301 16.2956Z" fill="url(#paint1_linear_ruby_lang)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.58521 20.9844L19.4278 20.087L11.3366 19.4274L6.58521 20.9844Z" fill="url(#paint2_linear_ruby_lang)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.16986 15.0974L6.59643 20.9865L8.61769 14.1098L4.16986 15.0974Z" fill="url(#paint3_linear_ruby_lang)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.11688 13.9339L15.2992 16.3182L13.4394 8.75265L8.11688 13.9339Z" fill="url(#paint4_linear_ruby_lang)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13.5276 9.2962L19.9598 8.85979L14.9286 4.59234L13.5276 9.2962Z" fill="url(#paint5_linear_ruby_lang)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.7812 3.04688L17.6072 3.06965L14.6481 4.76789L12.7812 3.04688Z" fill="url(#paint6_linear_ruby_lang)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.23687 12.2584L3 17.4033L4.2396 15.0554L3.23687 12.2584Z" fill="url(#paint7_linear_ruby_lang)"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M3.16949 12.1699L4.17837 15.1418L8.56479 14.1205L13.5697 9.29185L14.9821 4.63264L12.7556 3L8.97449 4.46956C7.78313 5.62024 5.47149 7.897 5.38815 7.93982C5.3048 7.98264 3.86167 10.8179 3.16949 12.1699Z" fill="white"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M6.71443 6.83173C9.29628 4.17322 12.6247 2.60254 13.902 3.9409C15.1793 5.27926 13.8248 8.53178 11.243 11.1894C8.66112 13.847 5.37043 15.5042 4.09749 14.1658C2.82455 12.8275 4.13258 9.48932 6.71443 6.83173Z" fill="url(#paint8_linear)"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M6.59607 20.9835L8.60154 14.0849L15.2619 16.307C12.8537 18.6521 10.1754 20.6346 6.59607 20.9835Z" fill="url(#paint9_linear)"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M13.577 9.27727L15.2869 16.3107C17.3002 14.116 19.1039 11.7526 19.9882 8.83176L13.577 9.27727Z" fill="url(#paint10_linear)"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M19.9695 8.86583C20.6538 6.72117 20.8082 3.64449 17.585 3.07324L14.9374 4.592L19.9695 8.86583Z" fill="url(#paint11_linear)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.71443 6.83173C9.29628 4.17322 12.6247 2.60254 13.902 3.9409C15.1793 5.27926 13.8248 8.53178 11.243 11.1894C8.66112 13.847 5.37043 15.5042 4.09749 14.1658C2.82455 12.8275 4.13258 9.48932 6.71443 6.83173Z" fill="url(#paint8_linear_ruby_lang)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.59607 20.9835L8.60154 14.0849L15.2619 16.307C12.8537 18.6521 10.1754 20.6346 6.59607 20.9835Z" fill="url(#paint9_linear_ruby_lang)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13.577 9.27727L15.2869 16.3107C17.3002 14.116 19.1039 11.7526 19.9882 8.83176L13.577 9.27727Z" fill="url(#paint10_linear_ruby_lang)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.9695 8.86583C20.6538 6.72117 20.8082 3.64449 17.585 3.07324L14.9374 4.592L19.9695 8.86583Z" fill="url(#paint11_linear_ruby_lang)"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M3 17.372C3.09475 20.9115 5.55377 20.9644 6.60125 20.9954L4.1817 15.1272L3 17.372Z" fill="#AA3E35"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M13.5861 9.28609C15.1319 10.2728 18.2471 12.2544 18.3103 12.2926C18.4085 12.35 19.6534 10.1124 19.9359 8.84787L13.5861 9.28609Z" fill="url(#paint12_radial)"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.60022 14.0849L11.2812 19.4602C12.8665 18.5673 14.1078 17.4795 15.2448 16.3143L8.60022 14.0849Z" fill="url(#paint13_radial)"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M4.17111 15.1335L3.78949 19.8309C4.50623 20.8477 5.4923 20.9361 6.52662 20.8568C5.78005 18.9226 4.28516 15.0551 4.17111 15.1335Z" fill="url(#paint14_linear)"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M14.9225 4.60456L20.2485 5.38079C19.9643 4.12989 19.0914 3.32268 17.6035 3.07032L14.9225 4.60456Z" fill="url(#paint15_linear)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.17111 15.1335L3.78949 19.8309C4.50623 20.8477 5.4923 20.9361 6.52662 20.8568C5.78005 18.9226 4.28516 15.0551 4.17111 15.1335Z" fill="url(#paint14_linear_ruby_lang)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.9225 4.60456L20.2485 5.38079C19.9643 4.12989 19.0914 3.32268 17.6035 3.07032L14.9225 4.60456Z" fill="url(#paint15_linear_ruby_lang)"/>
 <defs>
-<linearGradient id="paint0_linear" x1="18.2718" y1="22.6363" x2="14.3908" y2="16.0384" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_ruby_lang" x1="18.2718" y1="22.6363" x2="14.3908" y2="16.0384" gradientUnits="userSpaceOnUse">
 <stop stop-color="#F68F71"/>
 <stop offset="0.41" stop-color="#DC5242"/>
 <stop offset="0.99" stop-color="#A72C32"/>
 <stop offset="1" stop-color="#A72C32"/>
 </linearGradient>
-<linearGradient id="paint1_linear" x1="20.098" y1="16.9907" x2="15.2636" y2="13.8663" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint1_linear_ruby_lang" x1="20.098" y1="16.9907" x2="15.2636" y2="13.8663" gradientUnits="userSpaceOnUse">
 <stop stop-color="#9B3F34"/>
 <stop offset="0.99" stop-color="#A23E36"/>
 <stop offset="1" stop-color="#A23E36"/>
 </linearGradient>
-<linearGradient id="paint2_linear" x1="1955.96" y1="358.515" x2="1924.26" y2="183.01" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint2_linear_ruby_lang" x1="1955.96" y1="358.515" x2="1924.26" y2="183.01" gradientUnits="userSpaceOnUse">
 <stop stop-color="#9B3F34"/>
 <stop offset="0.99" stop-color="#A23E36"/>
 <stop offset="1" stop-color="#A23E36"/>
 </linearGradient>
-<linearGradient id="paint3_linear" x1="6.39465" y1="14.6072" x2="7.18326" y2="19.5426" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint3_linear_ruby_lang" x1="6.39465" y1="14.6072" x2="7.18326" y2="19.5426" gradientUnits="userSpaceOnUse">
 <stop stop-color="white"/>
 <stop offset="0.23" stop-color="#E28B6F"/>
 <stop offset="0.46" stop-color="#DA6144"/>
 <stop offset="0.99" stop-color="#A60003"/>
 <stop offset="1" stop-color="#A60003"/>
 </linearGradient>
-<linearGradient id="paint4_linear" x1="11.433" y1="9.98897" x2="11.7244" y2="15.0342" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint4_linear_ruby_lang" x1="11.433" y1="9.98897" x2="11.7244" y2="15.0342" gradientUnits="userSpaceOnUse">
 <stop stop-color="white"/>
 <stop offset="0.23" stop-color="#E08A6D"/>
 <stop offset="0.56" stop-color="#C14435"/>
 <stop offset="0.99" stop-color="#B13430"/>
 <stop offset="1" stop-color="#B13430"/>
 </linearGradient>
-<linearGradient id="paint5_linear" x1="15.905" y1="5.32575" x2="16.7739" y2="8.92823" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint5_linear_ruby_lang" x1="15.905" y1="5.32575" x2="16.7739" y2="8.92823" gradientUnits="userSpaceOnUse">
 <stop stop-color="white"/>
 <stop offset="0.18" stop-color="#DF8063"/>
 <stop offset="0.4" stop-color="#C94D37"/>
 <stop offset="0.99" stop-color="#B13430"/>
 <stop offset="1" stop-color="#B13430"/>
 </linearGradient>
-<linearGradient id="paint6_linear" x1="13.4383" y1="4.05088" x2="16.9717" y2="2.34926" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint6_linear_ruby_lang" x1="13.4383" y1="4.05088" x2="16.9717" y2="2.34926" gradientUnits="userSpaceOnUse">
 <stop stop-color="white"/>
 <stop offset="0.54" stop-color="#C94838"/>
 <stop offset="0.99" stop-color="#C12D2F"/>
 <stop offset="1" stop-color="#C12D2F"/>
 </linearGradient>
-<linearGradient id="paint7_linear" x1="3.34214" y1="13.3463" x2="3.65129" y2="16.3241" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint7_linear_ruby_lang" x1="3.34214" y1="13.3463" x2="3.65129" y2="16.3241" gradientUnits="userSpaceOnUse">
 <stop stop-color="white"/>
 <stop offset="0.31" stop-color="#DA6548"/>
 <stop offset="0.99" stop-color="#C14433"/>
 <stop offset="1" stop-color="#C14433"/>
 </linearGradient>
-<linearGradient id="paint8_linear" x1="1.37352" y1="17.1323" x2="15.3696" y2="3.27347" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint8_linear_ruby_lang" x1="1.37352" y1="17.1323" x2="15.3696" y2="3.27347" gradientUnits="userSpaceOnUse">
 <stop stop-color="#BD0012"/>
 <stop offset="0.07" stop-color="white"/>
 <stop offset="0.17" stop-color="white"/>
@@ -78,18 +78,18 @@
 <stop offset="0.99" stop-color="#DE4E2B"/>
 <stop offset="1" stop-color="#DE4E2B"/>
 </linearGradient>
-<linearGradient id="paint9_linear" x1="11.6913" y1="18.5828" x2="7.61601" y2="17.6149" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint9_linear_ruby_lang" x1="11.6913" y1="18.5828" x2="7.61601" y2="17.6149" gradientUnits="userSpaceOnUse">
 <stop stop-color="#9F3633"/>
 <stop offset="0.54" stop-color="#A73532"/>
 <stop offset="0.99" stop-color="#B13439"/>
 <stop offset="1" stop-color="#B13439"/>
 </linearGradient>
-<linearGradient id="paint10_linear" x1="18.6626" y1="13.5247" x2="14.9362" y2="10.3092" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint10_linear_ruby_lang" x1="18.6626" y1="13.5247" x2="14.9362" y2="10.3092" gradientUnits="userSpaceOnUse">
 <stop stop-color="#923C36"/>
 <stop offset="0.99" stop-color="#AA3531"/>
 <stop offset="1" stop-color="#AA3531"/>
 </linearGradient>
-<linearGradient id="paint11_linear" x1="19.9853" y1="7.36712" x2="18.1169" y2="5.44325" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint11_linear_ruby_lang" x1="19.9853" y1="7.36712" x2="18.1169" y2="5.44325" gradientUnits="userSpaceOnUse">
 <stop stop-color="#8D3E36"/>
 <stop offset="0.99" stop-color="#AA3E37"/>
 <stop offset="1" stop-color="#AA3E37"/>
@@ -104,13 +104,13 @@
 <stop offset="0.99" stop-color="#953A36"/>
 <stop offset="1" stop-color="#953A36"/>
 </radialGradient>
-<linearGradient id="paint14_linear" x1="5.33965" y1="20.978" x2="3.7713" y2="15.8535" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint14_linear_ruby_lang" x1="5.33965" y1="20.978" x2="3.7713" y2="15.8535" gradientUnits="userSpaceOnUse">
 <stop stop-color="#994939"/>
 <stop offset="0.43" stop-color="#AA3A36"/>
 <stop offset="0.99" stop-color="#B83936"/>
 <stop offset="1" stop-color="#B83936"/>
 </linearGradient>
-<linearGradient id="paint15_linear" x1="16.5666" y1="3.89301" x2="19.887" y2="5.30445" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint15_linear_ruby_lang" x1="16.5666" y1="3.89301" x2="19.887" y2="5.30445" gradientUnits="userSpaceOnUse">
 <stop stop-color="#B9392F"/>
 <stop offset="0.44" stop-color="#A23A36"/>
 <stop offset="0.99" stop-color="#8D463A"/>
