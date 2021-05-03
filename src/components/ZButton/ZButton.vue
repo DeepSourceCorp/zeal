@@ -130,11 +130,11 @@ export default Vue.extend({
   computed: {
     iconColor(): string {
       const colors = {
-        link: 'text-juniper',
-        ghost: 'text-juniper',
-        primary: 'text-ink-400',
-        secondary: 'text-vanilla-100',
-        danger: 'text-ink-400'
+        link: 'juniper',
+        ghost: 'juniper',
+        primary: 'ink-400',
+        secondary: 'vanilla-100',
+        danger: 'ink-400'
       }
 
       return colors[this.buttonStyle as string]
