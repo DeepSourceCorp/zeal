@@ -93,7 +93,7 @@ describe('Button component', () => {
     expect(
       mountFunction({
         propsData: {
-          type: 'link',
+          as: 'link',
           color: 'link',
           to: 'https://deepsource.io/'
         },
@@ -102,18 +102,6 @@ describe('Button component', () => {
         }
       }).html()
     ).toMatchSnapshot()
-  })
-  it('should use custom classes', () => {
-    const wrapper = mountFunction({
-      propsData: {
-        customClasses: 'bg-transparent'
-      },
-      slots: {
-        default: 'Custom Styled Button'
-      }
-    })
-
-    expect(wrapper.classes('bg-transparent')).toBe(true)
   })
   it('button should emit a click event', () => {
     const click = jest.fn()

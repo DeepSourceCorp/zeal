@@ -5,7 +5,7 @@ import Vue from 'vue'
 import { mount, Wrapper } from '@vue/test-utils'
 
 const CopyButton = {
-  template: `<z-button color="secondary" iconStyle="p-1" icon="copy" iconSize="small" iconColor="vanilla-100"></z-button>`,
+  template: `<z-button buttonType="secondary" icon="copy" iconSize="small"></z-button>`,
   components: {
     ZButton
   }

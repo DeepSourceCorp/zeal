@@ -7,7 +7,14 @@
       `bg-${backgroundColor}`,
       {
         'text-slate cursor-not-allowed': disabled,
-        'text-vanilla-300': !disabled
+        'text-vanilla-300': !disabled,
+        'h-8 py-1 text-xs space-x-1 leading-loose': size == 'small',
+        'h-10 py-2 text-base space-x-2 leading-8': size == 'medium',
+        'h-12 py-2.5 text-lg space-x-2.5 leading-9': size == 'large',
+        'h-13 py-3 text-lg space-x-3 leading-9': size == 'xlarge',
+        'px-4': !$slots.left && !$slots.right,
+        'pl-4': $slots.right && !$slots.left,
+        'pr-4': $slots.left && !$slots.right
       }
     ]"
   >
@@ -104,9 +111,12 @@ export default Vue.extend({
       type: String,
       default: undefined
     },
-    textSize: {
+    size: {
+      default: 'medium',
       type: String,
-      default: 'sm'
+      validator(val) {
+        return ['small', 'medium', 'large', 'xlarge'].includes(val)
+      }
     },
     backgroundColor: {
       type: String,
@@ -123,7 +133,9 @@ export default Vue.extend({
   },
   computed: {
     borderStyles(): string {
-      return this.showBorder ? 'focus:border-vanilla-400 border border-solid border-ink-100' : ''
+      return this.showBorder
+        ? 'focus-within:border-vanilla-400 border border-solid border-ink-100'
+        : ''
     }
   },
   methods: {

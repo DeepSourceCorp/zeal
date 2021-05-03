@@ -57,10 +57,12 @@ export default Vue.extend({
   name: 'ZModal',
   props: {
     title: {
-      type: String
+      type: String,
+      default: undefined
     },
     body: {
-      type: String
+      type: String,
+      default: undefined
     },
     width: {
       type: String,
@@ -71,7 +73,7 @@ export default Vue.extend({
     },
     primaryActionLabel: {
       type: String,
-      default: 'Continue'
+      default: undefined
     },
     primaryActionType: {
       type: String,

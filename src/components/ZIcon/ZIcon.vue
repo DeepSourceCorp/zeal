@@ -1,12 +1,10 @@
 <template>
   <svg
-    class="stroke-1.5"
     :class="[
-      'z-icon',
-      `${getSizeStyle}`,
-      `${icon && `z-icon--${icon}`}`,
-      `${position && `${getPositionStyle}`}`,
-      `${customStyle}`,
+      'z-icon stroke-current',
+      getSizeStyle,
+      icon && `z-icon--${icon}`,
+      position && `${getPositionStyle}`,
       `text-${color}`
     ]"
     viewBox="0 0 24 24"
@@ -30,8 +28,9 @@ export default {
       type: String
     },
     size: {
-      default: '',
-      type: String
+      default: 'small',
+      type: String,
+      validator: (val) => ['x-small', 'small', 'base', 'medium', 'large'].includes(val)
     },
     position: {
       default: '',
@@ -49,16 +48,15 @@ export default {
   },
   computed: {
     getSizeStyle() {
-      if (this.size === 'small') {
-        return 'w-4 h-4'
+      const sizes = {
+        'x-small': 'w-3 h-3',
+        small: 'w-4 h-4',
+        base: 'w-5 h-5',
+        medium: 'w-6 h-6',
+        large: 'w-8 h-8'
       }
-      if (this.size === 'medium') {
-        return 'w-6 h-6'
-      }
-      if (this.size === 'x-small') {
-        return 'w-3.5 h-3.5'
-      }
-      return 'w-4 h-4 sm:w-6 sm:h-6'
+
+      return sizes[this.size] || 'w-5 h-5'
     },
     getPositionStyle() {
       if (this.position === 'left') {
@@ -77,7 +75,6 @@ export default {
       } else {
         DOM = feather.icons[iconName] && feather.icons[iconName].contents
         // For feathericons, stroke has to be added, while for custom icons it has to be none
-        this.customStyle = 'stroke-current'
       }
       return DOM
     },

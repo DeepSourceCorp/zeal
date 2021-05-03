@@ -1,17 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button component renders a button tag when the component is mounted 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none whitespace-nowrap false false px-6 h-8 text-sm sm:h-10 sm:text-base">Click</button>`;
+exports[`Button component renders a button tag when the component is mounted 1`] = `
+<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper text-ink-400 hover:bg-light-juniper">
+  <!----> <span></span>
+</button>
+`;
 
-exports[`Button component renders a button tag with the given text 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none whitespace-nowrap false false px-6 h-8 text-sm sm:h-10 sm:text-base">Hello World</button>`;
+exports[`Button component renders a button tag with the given text 1`] = `
+<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper text-ink-400 hover:bg-light-juniper">
+  <!----> <span>Hello World</span>
+</button>
+`;
 
-exports[`Button component renders a button with primary color 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none whitespace-nowrap z-btn--primary false false px-6 h-8 text-sm sm:h-10 sm:text-base bg-juniper text-ink-400 hover:bg-light-juniper">Primary Button</button>`;
+exports[`Button component renders a button with primary color 1`] = `
+<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap z-btn--primary h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper text-ink-400 hover:bg-light-juniper">
+  <!----> <span>Primary Button</span>
+</button>
+`;
 
-exports[`Button component renders a button with secondary color 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none whitespace-nowrap z-btn--secondary false false px-6 h-8 text-sm sm:h-10 sm:text-base bg-ink-300 text-vanilla-100 hover:bg-ink-200 false">Secondary Button</button>`;
+exports[`Button component renders a button with secondary color 1`] = `
+<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap z-btn--secondary h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper text-ink-400 hover:bg-light-juniper">
+  <!----> <span>Secondary Button</span>
+</button>
+`;
 
-exports[`Button component renders a button with the given size(large) 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none whitespace-nowrap false false px-6 h-12 text-lg">Large Button</button>`;
+exports[`Button component renders a button with the given size(large) 1`] = `
+<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap h-12 px-4 py-2.5 text-lg space-x-2.5 leading-9 bg-juniper text-ink-400 hover:bg-light-juniper">
+  <!----> <span>Large Button</span>
+</button>
+`;
 
-exports[`Button component renders a disabled button when the disabled attribute is passed 1`] = `<button href="#" disabled="disabled" type="button" class="z-btn inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none whitespace-nowrap false opacity-50 cursor-not-allowed px-6 h-8 text-sm sm:h-10 sm:text-base">Disabled Button</button>`;
+exports[`Button component renders a disabled button when the disabled attribute is passed 1`] = `
+<button href="#" disabled="disabled" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper text-ink-400 opacity-50 cursor-not-allowed">
+  <!----> <span>Disabled Button</span>
+</button>
+`;
 
-exports[`Button component renders a full-width button 1`] = `<button href="#" type="button" class="z-btn inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none whitespace-nowrap w-full inline-block false px-6 h-8 text-sm sm:h-10 sm:text-base">Full Width Button</button>`;
+exports[`Button component renders a full-width button 1`] = `
+<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap w-full h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper text-ink-400 hover:bg-light-juniper">
+  <!----> <span>Full Width Button</span>
+</button>
+`;
 
-exports[`Button component renders a link tag when type is specified as link 1`] = `<a href="https://deepsource.io/" class="z-btn inline-flex items-center font-medium border-transparent rounded-sm relative justify-center focus:outline-none whitespace-nowrap z-btn--link false false px-6 h-8 text-sm sm:h-10 sm:text-base font-normal text-juniper false hover:underline">Link Button</a>`;
+exports[`Button component renders a link tag when type is specified as link 1`] = `
+<a href="https://deepsource.io/" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap z-btn--link p-0 bg-juniper text-ink-400 hover:bg-light-juniper">
+  <!----> <span>Link Button</span>
+</a>
+`;

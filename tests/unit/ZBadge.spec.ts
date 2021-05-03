@@ -9,7 +9,7 @@ const slotData = {
 
 const BasicBadge = {
   template: `<z-badge type="danger" :value="12">
-            <z-button color="primary">Likes</z-button>
+            <z-button buttonType="primary">Likes</z-button>
         </z-badge>`,
   components: {
     ZBadge,

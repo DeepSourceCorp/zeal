@@ -7,6 +7,7 @@ module.exports = {
   robin: '#4568dc',
   slate: '#52575c',
   cherry: '#da5565',
+  'light-cherry': '#D6435B',
   honey: '#f6d87c',
   aqua: '#23c4f8',
   github: '#414141',

@@ -65,7 +65,7 @@ export default Vue.extend({
       const sizes: Record<string, string> = {
         small: 'x-small',
         base: 'small',
-        large: ''
+        large: 'medium'
       }
       return sizes[this.size || 'base']
     }
