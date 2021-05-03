@@ -10,13 +10,8 @@ import customIcons from '../../helpers/components/icon'
 async function copyToClipboard(candidate: string) {
   candidate = `<z-icon icon="${candidate} size="small"></z-icon>`
   try {
-    // try the clipboard API
-    // https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API
-    // This will fail in Firefox
     await navigator.clipboard.writeText(candidate)
   } catch (e) {
-    // fallback for firefox
-    // Always run inside click event
     const el = document.createElement('input')
     el.value = candidate
     el.select()
