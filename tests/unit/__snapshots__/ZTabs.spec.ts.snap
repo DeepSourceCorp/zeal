@@ -19,13 +19,13 @@ exports[`ZTabs renders a default tab component 1`] = `
 
 exports[`ZTabs renders tabs with icons 1`] = `
 <div class="z-tabs text-vanilla-400">
-  <div class="z-tab-list space-x-5 overflow-auto flex flex-nowrap"><button role="tab" aria-selected="true" class="inline-flex items-end gap-2 pb-3 px-1 text-sm leading-none outline-none z-nav-item focus:outline-none border-b-2 z-tab-item text-vanilla-100 border-juniper"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="stroke-1.5 z-icon w-4 h-4 z-icon--code text-vanilla-100">
+  <div class="z-tab-list space-x-5 overflow-auto flex flex-nowrap"><button role="tab" aria-selected="true" class="inline-flex items-end gap-2 pb-3 px-1 text-sm leading-none outline-none z-nav-item focus:outline-none border-b-2 z-tab-item text-vanilla-100 border-juniper"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon stroke-current w-4 h-4 z-icon--code text-vanilla-100">
         <polyline points="16 18 22 12 16 6"></polyline>
         <polyline points="8 6 2 12 8 18"></polyline>
-      </svg> Overview</button> <button role="tab" aria-selected="false" class="inline-flex items-end gap-2 pb-3 px-1 text-sm leading-none outline-none z-nav-item focus:outline-none border-b-2 z-tab-item text-vanilla-400 border-transparent"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="stroke-1.5 z-icon w-4 h-4 z-icon--code text-vanilla-400">
+      </svg> Overview</button> <button role="tab" aria-selected="false" class="inline-flex items-end gap-2 pb-3 px-1 text-sm leading-none outline-none z-nav-item focus:outline-none border-b-2 z-tab-item text-vanilla-400 border-transparent"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon stroke-current w-4 h-4 z-icon--code text-vanilla-400">
         <polyline points="16 18 22 12 16 6"></polyline>
         <polyline points="8 6 2 12 8 18"></polyline>
-      </svg> Issues</button> <button role="tab" aria-selected="false" class="inline-flex items-end gap-2 pb-3 px-1 text-sm leading-none outline-none z-nav-item focus:outline-none border-b-2 z-tab-item text-vanilla-400 border-transparent"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="stroke-1.5 z-icon w-4 h-4 z-icon--code text-vanilla-400">
+      </svg> Issues</button> <button role="tab" aria-selected="false" class="inline-flex items-end gap-2 pb-3 px-1 text-sm leading-none outline-none z-nav-item focus:outline-none border-b-2 z-tab-item text-vanilla-400 border-transparent"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon stroke-current w-4 h-4 z-icon--code text-vanilla-400">
         <polyline points="16 18 22 12 16 6"></polyline>
         <polyline points="8 6 2 12 8 18"></polyline>
       </svg> Metrics</button></div>
