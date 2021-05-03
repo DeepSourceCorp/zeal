@@ -3,9 +3,9 @@
 exports[`ZNavList component renders a ZNav when the component is mounted 1`] = `
 <nav class="z-1000 sticky flex items-center bg-ink-400 text-vanilla-100 top-0 border-b border-ink-200 h-16 lg:backdrop-blur lg:bg-opacity-25 lg:border-0">
   <div class="flex items-center w-screen lg:mx-auto px-4 lg:max-w-6xl">
-    <!----> <span class="hidden lg:flex items-center w-full"><!----> <!----></span> <span class="lg:hidden ml-auto cursor-pointer"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon stroke-1.5 w-6 h-6 z-icon--menu text-vanilla-400"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></span>
+    <!----> <span class="hidden lg:flex items-center w-full"><!----> <!----></span> <span class="lg:hidden ml-auto cursor-pointer"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-6 h-6 z-icon--menu text-vanilla-400"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></span>
   </div>
-  <aside class="fixed lg:hidden bg-ink-300 transform top-0 right-0 w-full h-full overflow-auto ease-in-out transition-all duration-300 z-30 translate-x-full"><span class="flex items-center justify-end border-b border-ink-200 h-16 px-4"><span class="cursor-pointer"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon stroke-1.5 w-6 h-6 z-icon--x text-vanilla-400"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></span>
+  <aside class="fixed lg:hidden bg-ink-300 transform top-0 right-0 w-full h-full overflow-auto ease-in-out transition-all duration-300 z-30 translate-x-full"><span class="flex items-center justify-end border-b border-ink-200 h-16 px-4"><span class="cursor-pointer"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-6 h-6 z-icon--x text-vanilla-400"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></span>
     <!---->
     <!---->
   </aside>
@@ -15,9 +15,9 @@ exports[`ZNavList component renders a ZNav when the component is mounted 1`] = `
 exports[`ZNavList component renders a ZNav with drawer to toggle 1`] = `
 <nav class="z-1000 sticky flex items-center bg-ink-400 text-vanilla-100 top-0 border-b border-ink-200 h-16 lg:backdrop-blur lg:bg-opacity-25 lg:border-0">
   <div class="flex items-center w-screen lg:mx-auto px-4 lg:max-w-6xl">
-    <!----> <span class="hidden lg:flex items-center w-full"><!----> <!----></span> <span class="lg:hidden ml-auto cursor-pointer"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon stroke-1.5 w-6 h-6 z-icon--menu text-vanilla-400"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></span>
+    <!----> <span class="hidden lg:flex items-center w-full"><!----> <!----></span> <span class="lg:hidden ml-auto cursor-pointer"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-6 h-6 z-icon--menu text-vanilla-400"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></span>
   </div>
-  <aside class="fixed lg:hidden bg-ink-300 transform top-0 right-0 w-full h-full overflow-auto ease-in-out transition-all duration-300 z-30 translate-x-full"><span class="flex items-center justify-end border-b border-ink-200 h-16 px-4"><span class="cursor-pointer"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon stroke-1.5 w-6 h-6 z-icon--x text-vanilla-400"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></span>
+  <aside class="fixed lg:hidden bg-ink-300 transform top-0 right-0 w-full h-full overflow-auto ease-in-out transition-all duration-300 z-30 translate-x-full"><span class="flex items-center justify-end border-b border-ink-200 h-16 px-4"><span class="cursor-pointer"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-6 h-6 z-icon--x text-vanilla-400"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></span>
     <!---->
     <!---->
   </aside>
@@ -27,9 +27,9 @@ exports[`ZNavList component renders a ZNav with drawer to toggle 1`] = `
 exports[`ZNavList component renders a ZNav with proper container size 1`] = `
 <nav class="z-1000 sticky flex items-center bg-ink-400 text-vanilla-100 top-0 border-b border-ink-200 h-16 lg:backdrop-blur lg:bg-opacity-25 lg:border-0">
   <div class="flex items-center w-screen lg:mx-auto px-4 lg:max-w-6xl">
-    <!----> <span class="hidden lg:flex items-center w-full"><!----> <!----></span> <span class="lg:hidden ml-auto cursor-pointer"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon stroke-1.5 w-6 h-6 z-icon--menu text-vanilla-400"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></span>
+    <!----> <span class="hidden lg:flex items-center w-full"><!----> <!----></span> <span class="lg:hidden ml-auto cursor-pointer"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-6 h-6 z-icon--menu text-vanilla-400"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></span>
   </div>
-  <aside class="fixed lg:hidden bg-ink-300 transform top-0 right-0 w-full h-full overflow-auto ease-in-out transition-all duration-300 z-30 translate-x-full"><span class="flex items-center justify-end border-b border-ink-200 h-16 px-4"><span class="cursor-pointer"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon stroke-1.5 w-6 h-6 z-icon--x text-vanilla-400"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></span>
+  <aside class="fixed lg:hidden bg-ink-300 transform top-0 right-0 w-full h-full overflow-auto ease-in-out transition-all duration-300 z-30 translate-x-full"><span class="flex items-center justify-end border-b border-ink-200 h-16 px-4"><span class="cursor-pointer"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-6 h-6 z-icon--x text-vanilla-400"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></span>
     <!---->
     <!---->
   </aside>
@@ -39,9 +39,9 @@ exports[`ZNavList component renders a ZNav with proper container size 1`] = `
 exports[`ZNavList component renders a ZNav with proper menu alignment 1`] = `
 <nav class="z-1000 sticky flex items-center bg-ink-400 text-vanilla-100 top-0 border-b border-ink-200 h-16 lg:backdrop-blur lg:bg-opacity-25 lg:border-0">
   <div class="flex items-center w-screen lg:mx-auto px-4 lg:max-w-6xl">
-    <!----> <span class="hidden lg:flex items-center w-full"><!----> <!----></span> <span class="lg:hidden ml-auto cursor-pointer"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon stroke-1.5 w-6 h-6 z-icon--menu text-vanilla-400"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></span>
+    <!----> <span class="hidden lg:flex items-center w-full"><!----> <!----></span> <span class="lg:hidden ml-auto cursor-pointer"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-6 h-6 z-icon--menu text-vanilla-400"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></span>
   </div>
-  <aside class="fixed lg:hidden bg-ink-300 transform top-0 right-0 w-full h-full overflow-auto ease-in-out transition-all duration-300 z-30 translate-x-full"><span class="flex items-center justify-end border-b border-ink-200 h-16 px-4"><span class="cursor-pointer"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon stroke-1.5 w-6 h-6 z-icon--x text-vanilla-400"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></span>
+  <aside class="fixed lg:hidden bg-ink-300 transform top-0 right-0 w-full h-full overflow-auto ease-in-out transition-all duration-300 z-30 translate-x-full"><span class="flex items-center justify-end border-b border-ink-200 h-16 px-4"><span class="cursor-pointer"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-6 h-6 z-icon--x text-vanilla-400"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></span>
     <!---->
     <!---->
   </aside>
