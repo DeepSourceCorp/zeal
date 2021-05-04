@@ -46,7 +46,7 @@
       :color="iconColor"
       :size="iconSizeToken"
       :class="{
-        'mr-1': size == 'small' && !iconOnly,
+        'mr-1.5': size == 'small' && !iconOnly,
         'mr-2': size == 'medium' && !iconOnly,
         'mr-2.5': size == 'large' && !iconOnly,
         'mr-3': size == 'xlarge' && !iconOnly
@@ -130,11 +130,11 @@ export default Vue.extend({
   computed: {
     iconColor(): string {
       const colors = {
-        link: 'text-juniper',
-        ghost: 'text-juniper',
-        primary: 'text-ink-400',
-        secondary: 'text-vanilla-100',
-        danger: 'text-ink-400'
+        link: 'juniper',
+        ghost: 'juniper',
+        primary: 'ink-400',
+        secondary: 'vanilla-100',
+        danger: 'ink-400'
       }
 
       return colors[this.buttonStyle as string]
