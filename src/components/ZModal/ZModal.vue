@@ -9,7 +9,7 @@
       @click.stop
     >
       <div
-        class="flex items-center justify-between py-2 px-3 space-x-2 border-ink-200"
+        class="flex items-center justify-between py-3 px-4 space-x-2 border-ink-200"
         :class="{ 'border-b': showHeaderBorder }"
       >
         <slot name="title">
@@ -67,7 +67,7 @@ export default Vue.extend({
     width: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['narrow', 'base', 'wide'].includes(value)
       }
     },

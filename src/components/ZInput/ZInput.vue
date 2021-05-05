@@ -26,7 +26,7 @@
     <slot name="left"></slot>
     <input
       v-debounce:[debounceDelay]="updateDebounce"
-      class="w-full caret-juniper flex flex-grow outline-none bg-transparent pl-0.5"
+      class="overflow-ellipsis overflow-hidden w-full caret-juniper flex flex-grow outline-none bg-transparent pl-0.5"
       :class="{
         'cursor-not-allowed': disabled
       }"
