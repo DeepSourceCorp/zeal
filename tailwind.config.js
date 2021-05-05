@@ -167,7 +167,9 @@ module.exports = {
       z2: '4px 10px 15px 2px #050D21 20%',
       z3: '6px 15px 20px 5px #050D21 30%',
       'inner-z1': '2px 2px 6px 2px #050D21 20% inset',
-      'inner-z2': '-1px -1px 12px 0px #9A9A9A 10% inset'
+      'inner-z2': '-1px -1px 12px 0px #9A9A9A 10% inset',
+      'double-dark':
+        '0px 18px 51px rgba(0, 0, 0, 0.26), 0px 2.25388px 6.38599px rgba(0, 0, 0, 0.13)'
     },
     container: {
       padding: {

@@ -17,7 +17,7 @@
         :class="[directionClass, placementClasses]"
       >
         <div
-          class="rounded-t-lg bg-ink-200 sm:rounded-sm"
+          class="rounded-t-lg bg-ink-300 sm:rounded-sm shadow-double-dark"
           :class="`${sizeClass}`"
           v-outside-click="close"
         >
