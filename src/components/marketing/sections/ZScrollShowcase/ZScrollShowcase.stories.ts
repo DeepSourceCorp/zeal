@@ -17,8 +17,20 @@ export default {
   }
 }
 
+const animations = [
+  'https://assets.deepsource.io/879e7a0/videos/autofix-workflow.mp4',
+  'https://assets.deepsource.io/879e7a0/videos/autofix-workflow.mp4',
+  'https://assets.deepsource.io/879e7a0/videos/autofix-workflow.mp4'
+]
+
 export const Basic = () => ({
   components: { ZScrollShowcase, ZNav, ZIcon, ZButton, ZNavMenu, ZNavItem, ZNavList, ZNavListItem, ZScrollShowcaseItem },
+  data: function() {
+    return {
+      animations
+    }
+    
+  },
   template: `
   <div>
   <div class="prose prose-sm sm:prose sm:max-w-none mx-auto px-10 py-10">
@@ -68,7 +80,7 @@ export const Basic = () => ({
         </div>
 
       <div class="padded-container">
-        <z-scroll-showcase>
+        <z-scroll-showcase :animations="animations">
           <template slot="heading">
             Automatically create <span class="bg-gradient-ocean bg-clip-text text-transparent">pull requests with bug fixes</span>
           </template>
@@ -78,9 +90,9 @@ export const Basic = () => ({
             commit and pull request.
           </template>
 
-          <template slot="items">
-            <z-scroll-showcase-item>
-              <template slot="title">
+          <template v-slot:items="{toggles}">
+            <z-scroll-showcase-item :toggles="toggles" :index="0">
+              <template v-slot:title="{ toggleState }">
                 Integrates with code review workflow
               </template>
               <template slot="description">
@@ -88,7 +100,7 @@ export const Basic = () => ({
                 <span class="text-juniper">+7 more</span>
                 </template>
             </z-scroll-showcase-item>
-            <z-scroll-showcase-item>
+            <z-scroll-showcase-item :toggles="toggles" :index="1">
               <template slot="title">
                 Detect 2,000+ issues in your codebase
               </template>
@@ -97,7 +109,7 @@ export const Basic = () => ({
                 <p>Less than 5% false positives</p>
                 </template>
             </z-scroll-showcase-item>
-            <z-scroll-showcase-item>
+            <z-scroll-showcase-item :toggles="toggles" :index="2">
               <template slot="title">
                 Automatically format code on every commit
               </template>
@@ -107,15 +119,6 @@ export const Basic = () => ({
                 <p>No CI setup required</p>
                 </template>
             </z-scroll-showcase-item>
-          </template>
-
-          <template slot="illustration">
-            <video autoplay="" muted="" loop="" playsinline="" preload="metadata">
-              <source
-                src="https://assets.deepsource.io/879e7a0/videos/autofix-workflow.mp4"
-                type="video/mp4"
-              />
-            </video>
           </template>
         </z-scroll-showcase>
       </div>

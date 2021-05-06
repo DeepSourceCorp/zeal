@@ -15,13 +15,9 @@
 
         <span class="block">
           <div class="flex flex-row mt-4">
+            
             <div class="flex flex-col">
-              <div class="mr-2" v-for="(item, index) in steps" :key="item">
-                <z-toggle v-model="toggles[index]"></z-toggle>
-              </div>
-            </div>
-            <div class="flex flex-col">
-              <slot name="items" v-bind:toggles="toggles"></slot>
+              <slot name="items" :toggles="toggles"></slot>
             </div>
           </div>
           
@@ -29,7 +25,12 @@
       </div>
       
       <div class="mt-10">
-        <slot name="illustration"></slot>
+        <video autoplay="" muted="" loop="" playsinline="" preload="metadata">
+          <source
+            :src="animations[0]"
+            type="video/mp4"
+          />
+        </video>
      </div>
     </div>
   </section>
@@ -37,24 +38,17 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import ZToggle from '../../../ZToggle'
 
 //move to utils
 const elementInViewport = (el: HTMLElement | null) => {
-  if (el){
-    let top = el.offsetTop;
-    const height = el.offsetHeight;
-
-    while(el?.offsetParent) {
-      el = el.offsetParent;
-      top += el.offsetTop;
-    }
-
+  if (el) {
+    const rect = el.getBoundingClientRect()
     return (
-      top >= window.pageYOffset &&
-      (top + height) <= (window.pageYOffset + window.innerHeight)
-    );
-
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    )
   }
   return false
 }
@@ -62,12 +56,20 @@ const elementInViewport = (el: HTMLElement | null) => {
 
 export default Vue.extend({
   name: 'ZScrollShowcase',
-  components: {
-    ZToggle
+  props: {
+    size: {
+      type: Number,
+      default: 3
+    },
+    animations: {
+      type: Array,
+      required: true
+    }
   },
   mounted() {
     this.handleScroll()
     document.addEventListener('scroll', this.handleScroll)
+    
   },
   beforeDestroy() {
     document.removeEventListener('scroll', this.handleScroll)
@@ -90,9 +92,6 @@ export default Vue.extend({
           return true
         }
         document.body.style.overflow = 'hidden'
-        console.log('offset', el?.offsetTop)
-        
-        console.log('scrolled while in view')
       }
       
       return false;
@@ -108,9 +107,9 @@ export default Vue.extend({
   },
   data() {
     return {
-      steps: this.$slots.items,
-      toggles: this.$slots.items?.map(() => false),
-      elementScrolls: 0
+      toggles: Array(this.size).fill(false),
+      elementScrolls: 0,
+      animationStage: 0
     }
   },
   watch: {
