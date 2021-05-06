@@ -34,10 +34,10 @@
           class="py-2 px-3 space-x-2 text-right text-vanilla-100 border-ink-200"
           :class="{ 'border-t': showFooterBorder }"
         >
-          <z-button color="secondary" size="small" @click="close">Cancel</z-button>
+          <z-button buttonType="secondary" size="small" @click="close">Cancel</z-button>
           <z-button
             class="modal-primary-action"
-            :color="primaryActionType"
+            :buttonType="primaryActionType"
             size="small"
             @click="primaryAction"
             >{{ primaryActionLabel }}</z-button
