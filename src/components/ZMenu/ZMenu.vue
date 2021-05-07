@@ -40,26 +40,30 @@ export default Vue.extend({
     direction: {
       type: String,
       default: 'right',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['left', 'right'].includes(value)
       }
     },
     placement: {
       type: String,
       default: 'bottom',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['top', 'bottom'].includes(value)
       }
     },
     size: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['small', 'base', 'large'].includes(value)
       }
     },
     width: {
-      type: String
+      type: String,
+      default: 'base',
+      validator: function(value: string): boolean {
+        return ['x-small', 'small', 'base', 'large', 'x-large'].includes(value)
+      }
     },
     collapseOnMobile: {
       type: Boolean,
@@ -103,11 +107,21 @@ export default Vue.extend({
     },
     sizeClass(): string {
       const sizes: Record<string, string> = {
-        small: `py-1 text-xs w-full sm:w-${this.width || '52'} mt-5 sm:mt-2`,
-        base: `py-1 text-sm w-full sm:w-${this.width || '64'} mt-5 sm:mt-2`,
-        large: `py-2 text-base w-full sm:w-${this.width || '72'} mt-5 sm:mt-4`
+        small: `py-1 text-xs w-full ${this.widthClass} mt-5 sm:mt-2`,
+        base: `py-1 text-sm w-full ${this.widthClass} mt-5 sm:mt-2`,
+        large: `py-2 text-base w-full ${this.widthClass} mt-5 sm:mt-4`
       }
       return sizes[this.size || 'base']
+    },
+    widthClass(): string {
+      const widths = {
+        'x-small': 'sm:w-48',
+        small: 'sm:w-52',
+        base: 'sm:w-64',
+        large: 'sm:w-72',
+        'x-large': 'sm:w-80'
+      }
+      return widths[this.width] || 'sm:w-64'
     }
   }
 })
