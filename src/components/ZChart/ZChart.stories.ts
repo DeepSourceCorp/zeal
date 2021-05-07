@@ -22,14 +22,14 @@ const issueData = {
   datasets: [
     {
       name: 'Active Issues',
-      values: Array.from({ length: 12 }, () => Math.floor(4000 + Math.random() * 10000))
+      values: Array.from({ length: 12 }, () => Math.floor(10 + Math.random() * 80))
     },
     {
       name: 'Resolved Issues',
-      values: Array.from({ length: 12 }, () => Math.floor(Math.random() * 4000))
+      values: Array.from({ length: 12 }, () => Math.floor(10 + Math.random() * 75))
     }
   ],
-  yMarkers: [{ label: 'Threshold', value: 6000, options: { labelPos: 'right', stroke: 'cherry' } }]
+  yMarkers: [{ label: 'Threshold', value: 75, options: { labelPos: 'right', stroke: 'cherry' } }]
 }
 
 export default {
@@ -48,7 +48,7 @@ export const LineChart = () => ({
     }
   },
   template: `<div class="padding-container">
-    <z-chart :dataSets="dataSets" :labels="labels" :yMarkers=yMarkers type="line"></z-chart>
+    <z-chart :dataSets="dataSets" :labels="labels" :yMarkers=yMarkers type="line" :yAxisMax="100" :yAxisMin="0"></z-chart>
   </div>`
 })
 

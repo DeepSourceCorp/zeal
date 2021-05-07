@@ -53,6 +53,16 @@ export default Vue.extend({
       default: null,
       type: String
     },
+    yAxisMin: {
+      required: false,
+      default: undefined,
+      type: Number
+    },
+    yAxisMax: {
+      required: false,
+      default: undefined,
+      type: Number
+    },
     type: {
       type: String,
       default: 'axis-mixed',
@@ -174,7 +184,13 @@ export default Vue.extend({
         tooltipOptions: this.tooltipOptions,
         barOptions: this.barOptions,
         lineOptions: this.lineOptions,
-        axisOptions: this.axisOptions,
+        axisOptions: {
+          ...this.axisOptions,
+          yAxisRange: {
+            min: this.yAxisMin,
+            max: this.yAxisMax
+          }
+        },
         maxSlices: this.maxSlices,
         showLegend: this.showLegend,
         animate: this.animate,
