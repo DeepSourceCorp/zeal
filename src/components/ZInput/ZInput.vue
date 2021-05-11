@@ -16,8 +16,8 @@
         'py-2.5': size === 'large' && !padding,
         'py-3': size === 'xlarge' && !padding,
         'px-4': !$slots.left && !$slots.right && !padding,
-        'pl-4': $slots.right && !$slots.left && !padding,
-        'pr-4': $slots.left && !$slots.right && !padding,
+        'pl-4 pr-2': $slots.right && !$slots.left && !padding,
+        'pr-4 pl-2': $slots.left && !$slots.right && !padding,
         [padding]: padding
       }
     ]"
@@ -26,7 +26,7 @@
     <slot name="left"></slot>
     <input
       v-debounce:[debounceDelay]="updateDebounce"
-      class="overflow-ellipsis overflow-hidden w-full caret-juniper flex flex-grow outline-none bg-transparent pl-0.5"
+      class="overflow-ellipsis overflow-hidden w-full caret-juniper flex flex-grow outline-none bg-transparent"
       :class="{
         'cursor-not-allowed': disabled
       }"
