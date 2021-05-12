@@ -529,8 +529,30 @@ module.exports = {
       10: 'repeat(10, minmax(0, 1fr))',
       11: 'repeat(11, minmax(0, 1fr))',
       12: 'repeat(12, minmax(0, 1fr))',
+
+      'fr-fr-8': '1fr 1fr minmax(auto, 8rem)',
+      'fr-fr-10': '1fr 1fr minmax(auto, 10rem)',
+      'fr-fr-12': '1fr 1fr minmax(auto, 12rem)',
+      'fr-fr-16': '1fr 1fr minmax(auto, 16rem)',
+      'fr-fr-20': '1fr 1fr minmax(auto, 20rem)',
       'fr-fr-22': '1fr 1fr minmax(auto, 22rem)',
+      'fr-fr-24': '1fr 1fr minmax(auto, 24rem)',
+
+      'fr-8': '1fr minmax(auto, 8rem)',
+      'fr-10': '1fr minmax(auto, 10rem)',
+      'fr-12': '1fr minmax(auto, 12rem)',
+      'fr-16': '1fr minmax(auto, 16rem)',
+      'fr-20': '1fr minmax(auto, 20rem)',
+      'fr-22': '1fr minmax(auto, 22rem)',
       'fr-24': '1fr minmax(auto, 24rem)',
+
+      '8-fr': 'minmax(auto, 8rem) 1fr',
+      '12-fr': 'minmax(auto, 12rem) 1fr',
+      '16-fr': 'minmax(auto, 16rem) 1fr',
+      '20-fr': 'minmax(auto, 20rem) 1fr',
+      '22-fr': 'minmax(auto, 22rem) 1fr',
+      '24-fr': 'minmax(auto, 24rem) 1fr',
+
       footer: 'repeat(5, 1fr) 2fr 1.5fr'
     },
     gridColumn: {
