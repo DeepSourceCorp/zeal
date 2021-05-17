@@ -13,7 +13,7 @@
     >
       <div
         v-if="isOpen"
-        class="fixed z-10 flex items-end overflow-hidden h-100 sm:absolute text-vanilla-200 transform-gpu"
+        class="fixed z-10 flex items-end overflow-hidden h-100 sm:absolute text-vanilla-200 transform-gpu bg-ink-400 bg-opacity-25 sm:bg-transparent sm:bg-opacity-0"
         :class="[directionClass, placementClasses]"
       >
         <div
@@ -110,9 +110,9 @@ export default Vue.extend({
     },
     placementClasses(): string {
       if (this.placement == 'top') {
-        return 'sm:inset-auto sm:bottom-10'
+        return 'inset-0 sm:inset-auto sm:bottom-10'
       }
-      return 'sm:inset-auto'
+      return 'inset-0 sm:inset-auto'
     },
     sizeClass(): string {
       const sizes: Record<string, string> = {
