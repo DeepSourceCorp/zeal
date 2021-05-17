@@ -119,7 +119,8 @@ export default Vue.extend({
         small: 'sm:w-52',
         base: 'sm:w-64',
         large: 'sm:w-72',
-        'x-large': 'sm:w-80'
+        'x-large': 'sm:w-80',
+        '2x-large': 'sm:w-102'
       }
       return widths[this.width] || 'sm:w-64'
     }

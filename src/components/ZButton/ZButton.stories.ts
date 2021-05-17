@@ -47,7 +47,7 @@ export const Sizes = () => ({
   },
   data() {
     return {
-      sizes: ['small', 'medium', 'large', 'xlarge'],
+      sizes: ['x-small', 'small', 'medium', 'large', 'xlarge'],
       types: ['primary', 'secondary', 'danger']
     }
   },
