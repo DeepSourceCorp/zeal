@@ -12,13 +12,16 @@
   >
     <span
       class="inline-block rounded-full h-full w-full transition-DEFAULT duration-300 ease-in-out p-0.5 flex items-center"
-      :class="[backgroundStyles]"
+      :class="{
+        'bg-juniper': this.value,
+        'bg-ink-100': !this.value || this.disabled
+      }"
     >
       <span
         class="inline-block w-3.5 h-3.5 transform rounded-full transition-transform ease-in-out duration-300 shadow-grey"
         :class="{
-          'bg-vanilla-100': !this.disabled,
-          'bg-vanilla-400 opacity-50': this.disabled,
+          'bg-vanilla-400': !this.disabled,
+          'bg-vanilla-400 opacity-20': this.disabled,
           'translate-x-full': this.value,
           'translate-x-0': !this.value
         }"
@@ -42,20 +45,6 @@ export default {
   model: {
     prop: 'value',
     event: 'input'
-  },
-  computed: {
-    backgroundStyles() {
-      if (this.disabled) {
-        return {
-          'bg-ink-100': this.value,
-          'bg-slate': !this.value
-        }
-      }
-      return {
-        'bg-juniper': this.value,
-        'bg-vanilla-200': !this.value
-      }
-    }
   },
   methods: {
     toggle(newValue) {
