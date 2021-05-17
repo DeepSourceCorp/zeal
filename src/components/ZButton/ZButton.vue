@@ -11,28 +11,30 @@
 
       // Button Size & Spacing Styles
       'p-0': isLink || icon,
-      'h-8 px-4 py-1 text-xs space-x-1 leading-loose': size == 'small' && !iconOnly,
-      'h-10 px-4 py-2 text-base space-x-2 leading-8': size == 'medium' && !iconOnly,
-      'h-12 px-4 py-2.5 text-lg space-x-2.5 leading-9': size == 'large' && !iconOnly,
-      'h-13 px-4 py-3 text-lg space-x-3 leading-9': size == 'xlarge' && !iconOnly,
+      'h-6 px-2 py-0.5 text-xs space-x-1 leading-loose': size === 'x-small' && !iconOnly,
+      'h-8 px-4 py-1 text-xs space-x-1 leading-loose': size === 'small' && !iconOnly,
+      'h-10 px-4 py-2 text-base space-x-2 leading-8': size === 'medium' && !iconOnly,
+      'h-12 px-4 py-2.5 text-lg space-x-2.5 leading-9': size === 'large' && !iconOnly,
+      'h-13 px-4 py-3 text-lg space-x-3 leading-9': size === 'xlarge' && !iconOnly,
 
       // Set width of button when just icon is used
-      'h-8 w-8': size == 'small' && iconOnly,
-      'h-10 w-10': size == 'medium' && iconOnly,
-      'h-12 w-12': size == 'large' && iconOnly,
-      'h-13 w-13': size == 'xlarge' && iconOnly,
+      'h-6 w-6': size === 'x-small' && iconOnly,
+      'h-8 w-8': size === 'small' && iconOnly,
+      'h-10 w-10': size === 'medium' && iconOnly,
+      'h-12 w-12': size === 'large' && iconOnly,
+      'h-13 w-13': size === 'xlarge' && iconOnly,
 
       // Button Base Styles
       'font-normal text-juniper': ['link', 'ghost'].includes(buttonStyle),
-      'bg-juniper text-ink-400': buttonStyle == 'primary',
-      'bg-ink-300 text-vanilla-100': buttonStyle == 'secondary',
-      'bg-cherry text-ink-400': buttonStyle == 'danger',
+      'bg-juniper text-ink-400': buttonStyle === 'primary',
+      'bg-ink-300 text-vanilla-100': buttonStyle === 'secondary',
+      'bg-cherry text-ink-400': buttonStyle === 'danger',
 
       // Button Hover Styles
-      'hover:underline': buttonStyle == 'link' && !disabled,
-      'hover:bg-light-juniper': buttonStyle == 'primary' && !disabled,
+      'hover:underline': buttonStyle === 'link' && !disabled,
+      'hover:bg-light-juniper': buttonStyle === 'primary' && !disabled,
       'hover:bg-ink-200': ['secondary', 'ghost'].includes(buttonStyle) && !disabled,
-      'hover:bg-light-cherry': buttonStyle == 'danger' && !disabled,
+      'hover:bg-light-cherry': buttonStyle === 'danger' && !disabled,
 
       // Disabled Styles
       'opacity-50 cursor-not-allowed': disabled,
@@ -92,7 +94,7 @@ export default Vue.extend({
       default: 'medium',
       type: String,
       validator(val) {
-        return ['small', 'medium', 'large', 'xlarge'].includes(val)
+        return ['x-small', 'small', 'medium', 'large', 'xlarge'].includes(val)
       }
     },
     disabled: {
@@ -141,6 +143,7 @@ export default Vue.extend({
     },
     iconSizeToken(): string {
       const sizes = {
+        'x-small': 'small',
         small: 'small',
         medium: 'base',
         large: 'medium',
