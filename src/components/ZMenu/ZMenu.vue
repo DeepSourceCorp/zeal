@@ -40,28 +40,28 @@ export default Vue.extend({
     direction: {
       type: String,
       default: 'right',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['left', 'right'].includes(value)
       }
     },
     placement: {
       type: String,
       default: 'bottom',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['top', 'bottom'].includes(value)
       }
     },
     size: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['small', 'base', 'large'].includes(value)
       }
     },
     width: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['x-small', 'small', 'base', 'large', 'x-large'].includes(value)
       }
     },
@@ -119,7 +119,8 @@ export default Vue.extend({
         small: 'sm:w-52',
         base: 'sm:w-64',
         large: 'sm:w-72',
-        'x-large': 'sm:w-80'
+        'x-large': 'sm:w-80',
+        '2x-large': 'sm:w-102'
       }
       return widths[this.width] || 'sm:w-64'
     }
