@@ -13,15 +13,16 @@
     >
       <div
         v-if="isOpen"
-        class="fixed z-10 flex items-end overflow-hidden h-100 sm:absolute text-vanilla-200 transform-gpu"
+        class="fixed z-10 flex items-end overflow-hidden h-100 sm:absolute text-vanilla-200 transform-gpu bg-ink-400 bg-opacity-25 sm:bg-transparent sm:bg-opacity-0"
         :class="[directionClass, placementClasses]"
       >
         <div
           class="rounded-t-lg bg-ink-300 sm:rounded-sm shadow-double-dark"
           :class="`${sizeClass}`"
-          v-outside-click="close"
+          ref="menu-body"
+          v-outside-click="triggerClose"
         >
-          <slot name="body"></slot>
+          <slot name="body" :isOpen="isOpen" :close="close"></slot>
         </div>
       </div>
     </transition>
@@ -62,7 +63,7 @@ export default Vue.extend({
       type: String,
       default: 'base',
       validator: function (value: string): boolean {
-        return ['x-small', 'small', 'base', 'large', 'x-large'].includes(value)
+        return ['x-small', 'small', 'base', 'large', 'x-large', '2x-large'].includes(value)
       }
     },
     collapseOnMobile: {
@@ -79,16 +80,24 @@ export default Vue.extend({
     toggle(): void {
       this.isOpen = !this.isOpen
     },
-    close(event?: Event): void {
-      // If click event is not present close directly
-      if (!event) {
-        this.isOpen = false
-      } else {
-        const target = event.target as HTMLElement
-        const menuTrigger = this.$refs['menu-trigger'] as HTMLElement
-
-        if (!containsElement(menuTrigger, target)) {
+    close(): void {
+      this.isOpen = false
+    },
+    triggerClose(event?: Event): void {
+      // Trigger only if open
+      if (this.isOpen) {
+        // If click event is not present close directly
+        if (!event) {
           this.isOpen = false
+        } else {
+          event.stopImmediatePropagation()
+          const target = event.target as HTMLElement
+          const menuTrigger = this.$refs['menu-trigger'] as HTMLElement
+          const menuBody = this.$refs['menu-body'] as HTMLElement
+
+          if (!containsElement(menuTrigger, target) && !containsElement(menuBody, target)) {
+            this.isOpen = false
+          }
         }
       }
     }
@@ -101,9 +110,9 @@ export default Vue.extend({
     },
     placementClasses(): string {
       if (this.placement == 'top') {
-        return 'sm:inset-auto sm:bottom-10'
+        return 'inset-0 sm:inset-auto sm:bottom-10'
       }
-      return 'sm:inset-auto'
+      return 'inset-0 sm:inset-auto'
     },
     sizeClass(): string {
       const sizes: Record<string, string> = {
@@ -120,7 +129,7 @@ export default Vue.extend({
         base: 'sm:w-64',
         large: 'sm:w-72',
         'x-large': 'sm:w-80',
-        '2x-large': 'sm:w-102'
+        '2x-large': 'sm:w-96'
       }
       return widths[this.width] || 'sm:w-64'
     }
