@@ -7,17 +7,18 @@
       {
         'text-slate cursor-not-allowed': disabled,
         'text-vanilla-300': !disabled,
-        'h-8 py-1 text-xs space-x-1 leading-loose': size === 'small',
-        'h-10 py-2 text-sm space-x-2 leading-8': size === 'medium',
-        'h-12 py-2.5 text-base space-x-2.5 leading-9': size === 'large',
-        'h-13 py-3 text-lg space-x-3 leading-9': size === 'xlarge',
-        'py-1': size === 'small' && !padding,
-        'py-2': size === 'medium' && !padding,
-        'py-2.5': size === 'large' && !padding,
-        'py-3': size === 'xlarge' && !padding,
-        'px-4': !$slots.left && !$slots.right && !padding,
-        'pl-4 pr-1': $slots.right && !$slots.left && !padding,
-        'pr-4 pl-1': $slots.left && !$slots.right && !padding,
+        'h-6 text-xs space-x-1 leading-loose': size === 'x-small',
+        'h-8 text-xs space-x-1 leading-loose': size === 'small',
+        'h-10 text-sm space-x-2 leading-8': size === 'medium',
+        'h-12 text-base space-x-2.5 leading-9': size === 'large',
+        'h-13 text-lg space-x-3 leading-9': ['x-large', 'xlarge'].includes(size),
+        'py-0.5 px-1.5': size === 'x-small' && !padding,
+        'py-1 px-2': size === 'small' && !padding,
+        'py-2 px-3': size === 'medium' && !padding,
+        'py-2.5 px-4': size === 'large' && !padding,
+        'py-3 px-4': ['x-large', 'xlarge'].includes(size) && !padding,
+        'pr-1': $slots.right && !$slots.left && !padding,
+        'pl-1': $slots.left && !$slots.right && !padding,
         [padding]: padding
       }
     ]"
@@ -123,7 +124,7 @@ export default Vue.extend({
       default: 'medium',
       type: String,
       validator(val) {
-        return ['small', 'medium', 'large', 'xlarge'].includes(val)
+        return ['x-small', 'small', 'medium', 'large', 'x-large'].includes(val)
       }
     },
     backgroundColor: {
