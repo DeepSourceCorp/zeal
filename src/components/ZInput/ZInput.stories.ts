@@ -83,22 +83,21 @@ export const InputWithDifferentSizes = () => ({
     }
   },
   template: `<div class='padded-container'>
-        <div class="max-w-xl space-y-2">
+        <div class="max-w-md space-y-2">
+          <div class="flex items-center space-x-2">
+            <z-input v-model="name" size="x-small"></z-input>
+          </div>  
           <div class="flex items-center space-x-2">
             <z-input v-model="name" size="small"></z-input>
-            <z-button size="small" buttonType="primary" icon="plus">Send Invite</z-button>
           </div>  
           <div class="flex items-center space-x-2">
             <z-input v-model="name" size="medium"></z-input>
-            <z-button size="medium" buttonType="primary" icon="plus">Send Invite</z-button>
           </div>  
           <div class="flex items-center space-x-2">
             <z-input v-model="name" size="large"></z-input>
-            <z-button size="large" buttonType="primary" icon="plus">Send Invite</z-button>
           </div>  
           <div class="flex items-center space-x-2">
             <z-input v-model="name" size="xlarge"></z-input>
-            <z-button size="xlarge" buttonType="primary" icon="plus">Send Invite</z-button>
           </div>  
         </div>
     </div>`
