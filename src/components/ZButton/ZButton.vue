@@ -3,7 +3,7 @@
     :is="isLink ? 'a' : 'button'"
     :href="to || '#'"
     :disabled="disabled"
-    :type="type"
+    :type="isLink ? 'link' : type"
     class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap"
     :class="{
       [`z-btn--${color}`]: color,

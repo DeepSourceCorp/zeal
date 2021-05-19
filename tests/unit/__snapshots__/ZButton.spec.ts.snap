@@ -43,7 +43,7 @@ exports[`Button component renders a full-width button 1`] = `
 `;
 
 exports[`Button component renders a link tag when type is specified as link 1`] = `
-<a href="https://deepsource.io/" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap z-btn--link p-0 h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper text-ink-400 hover:bg-light-juniper">
+<a href="https://deepsource.io/" type="link" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap z-btn--link p-0 h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper text-ink-400 hover:bg-light-juniper">
   <!----> Link Button
 </a>
 `;
