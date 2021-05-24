@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Avatar component renders an avatar when the component is mounted 1`] = `
-<a class="inline-block">
+<a class="inline-block bg-ink-300 p-0.5 rounded-full">
   <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-8 w-8 text-sm">
       JD
     </span>
@@ -9,13 +9,13 @@ exports[`Avatar component renders an avatar when the component is mounted 1`] = 
 `;
 
 exports[`Avatar component renders avatar correctly, when image is given 1`] = `
-<a class="inline-block"><img src="https://example.com/some.jpg" alt="John Doe" class="rounded-full leading-none h-8 w-8 text-sm">
+<a class="inline-block bg-ink-300 p-0.5 rounded-full"><img src="https://example.com/some.jpg" alt="John Doe" class="rounded-full leading-none h-8 w-8 text-sm">
   <!---->
 </a>
 `;
 
 exports[`Avatar component renders avatar correctly, when image is not given 1`] = `
-<a class="inline-block">
+<a class="inline-block bg-ink-300 p-0.5 rounded-full">
   <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-8 w-8 text-sm">
       JD
     </span>
@@ -23,17 +23,17 @@ exports[`Avatar component renders avatar correctly, when image is not given 1`] 
 `;
 
 exports[`Avatar component renders avatar correctly, when size is given 1`] = `
-<a class="inline-block">
+<a class="inline-block bg-ink-300 p-0.5 rounded-full">
   <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-6 w-6 text-xs">
       JD
     </span>
 </a>
 `;
 
-exports[`Avatar component renders avatar with skeleton gradient background when loading is true 1`] = `<a class="inline-block"><span class="flex items-center justify-center bg-gradient-skeleton text-vanilla-300 text-center rounded-full leading-none h-8 w-8 text-sm"></span></a>`;
+exports[`Avatar component renders avatar with skeleton gradient background when loading is true 1`] = `<a class="inline-block bg-ink-300 p-0.5 rounded-full"><span class="flex items-center justify-center bg-gradient-skeleton text-vanilla-300 text-center rounded-full leading-none h-8 w-8 text-sm"></span></a>`;
 
 exports[`Avatar component renders root element as a link for avatar with no props 1`] = `
-<a class="inline-block">
+<a class="inline-block bg-ink-300 p-0.5 rounded-full">
   <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-8 w-8 text-sm">
       JD
     </span>
@@ -41,7 +41,7 @@ exports[`Avatar component renders root element as a link for avatar with no prop
 `;
 
 exports[`Avatar component renders root element as a span for avatar with type prop \`span\` 1`] = `
-<span class="inline-block"><!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-8 w-8 text-sm">
+<span class="inline-block bg-ink-300 p-0.5 rounded-full"><!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-8 w-8 text-sm">
       JD
     </span></span>
 `;
