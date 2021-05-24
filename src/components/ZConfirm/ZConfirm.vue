@@ -1,36 +1,26 @@
 <template>
   <div
-    class="z-modal-backdrop fixed inset-0 flex items-end sm:items-center bg-opacity-75 bg-black"
+    class="z-modal-backdrop fixed inset-0 flex items-end sm:items-center bg-opacity-75 bg-black px-0"
     @click="close"
   >
     <div
-      class="z-modal mx-auto sm:mb-12 sm:rounded-md shadow-md bg-ink-300"
-      :class="[modalWidth]"
-      @click.stop
+      class="z-modal mx-auto sm:mb-12 sm:rounded-md shadow-md bg-ink-300 p-6 sm:p-8"
+      style="width: 480px;"
     >
-      <div
-        class="flex items-center justify-between p-4 space-x-2 border-ink-200"
-        :class="{ 'border-b': showHeaderBorder }"
-      >
-        <slot name="title">
-          <span class="text-base text-vanilla-100">{{ title }}</span>
-        </slot>
-        <!--This icon is too small, we can increase it a point-->
-        <z-button icon="x" buttonType="secondary" size="x-small" @click="close"></z-button>
-      </div>
       <slot>
-        <div class="p-4 text-vanilla-100 text-sm min-h-20">
-          {{ body }}
+        <div class="text-vanilla-100 text-base mb-2 leading-relaxed">{{ title }} {{ title }}</div>
+        <div class="text-vanilla-400 text-sm leading-relaxed">
+          {{ subtitle }}
         </div>
       </slot>
       <slot name="footer">
-        <div
-          v-if="primaryActionLabel"
-          class="p-4 space-x-4 text-right text-vanilla-100 border-ink-200"
-        >
+        <div v-if="primaryActionLabel" class="space-x-4 text-right text-vanilla-100 mt-6">
+          <z-button buttonType="ghost" class="text-vanilla-100" size="small" @click="close"
+            >Cancel</z-button
+          >
           <z-button
             :icon="primaryActionIcon"
-            class="modal-primary-action"
+            class="modal-primary-action "
             :buttonType="primaryActionType"
             size="small"
             @click="primaryAction"
@@ -44,6 +34,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+// import ZIcon from '../ZIcon/ZIcon.vue'
 import ZButton from '../ZButton/ZButton.vue'
 
 export default Vue.extend({
@@ -53,7 +44,7 @@ export default Vue.extend({
       type: String,
       default: undefined
     },
-    body: {
+    subtitle: {
       type: String,
       default: undefined
     },
@@ -86,7 +77,7 @@ export default Vue.extend({
     },
     showCancel: {
       type: Boolean,
-      default: true
+      default: false
     }
   },
   components: {
@@ -101,8 +92,8 @@ export default Vue.extend({
   computed: {
     modalWidth(): string {
       const width: Record<string, string> = {
-        narrow: 'w-96',
-        base: 'w-102',
+        narrow: 'w-96 max-w-md',
+        base: 'w-102 max-w-xl',
         wide: 'w-2/3 max-w-2xl'
       }
       return width[this.width]

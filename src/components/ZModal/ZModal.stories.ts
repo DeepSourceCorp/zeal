@@ -69,7 +69,7 @@ export const ModalSizes = () =>
         </div>
         <z-modal
           v-if="isOpen"
-          title="Save Config"
+          title="Save config"
           body="Are you sure you want to save this config?"
           primaryActionLabel="Confirm"
           :width="width"
