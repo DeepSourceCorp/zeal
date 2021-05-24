@@ -1,3 +1,3 @@
 import ZLanguageTabs from './ZLanguageTabs.vue'
 
-export default ZLanguageTabs;
+export default ZLanguageTabs

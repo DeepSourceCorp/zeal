@@ -2,11 +2,13 @@
   <div
     class="flex flex-row p-4 rounded-t-lg cursor-pointer text-vanilla-100 justify-between"
     :class="{
-        'bg-ink-300': open,
-      }"
+      'bg-ink-300': open
+    }"
   >
     <span class="capitalize align-middle">{{ title }}</span>
-    <z-tag class="uppercase" v-if="issue && open" state="success" :icon-left="issue.icon"><span class="ml-1">{{issue.title}}</span></z-tag>
+    <z-tag class="uppercase" v-if="issue && open" state="success" :icon-left="issue.icon"
+      ><span class="ml-1">{{ issue.title }}</span></z-tag
+    >
   </div>
 </template>
 
@@ -19,7 +21,7 @@ const issueTypes = [
     icon: 'performance'
   },
   {
-    title:'style',
+    title: 'style',
     icon: 'style'
   },
   {
@@ -67,7 +69,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      issue: issueTypes.find(({title}) => title === this.issueType)
+      issue: issueTypes.find(({ title }) => title === this.issueType)
     }
   }
 })

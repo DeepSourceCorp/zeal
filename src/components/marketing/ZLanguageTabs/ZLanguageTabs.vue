@@ -1,13 +1,11 @@
 <template>
-<div class="flex flex-row">
-  
-  <div class=" text-vanilla-400 space-x-4">
-    <!--<button @click="decrementActiveIndex"><z-icon size="large" icon="chevron-left"></z-icon></button>-->
-    <slot></slot>
-    <!--<button @click="incrementActiveIndex"><z-icon size="large" icon="chevron-right"></z-icon></button>-->
+  <div class="flex flex-row">
+    <div class="text-vanilla-400 space-x-4">
+      <!--<button @click="decrementActiveIndex"><z-icon size="large" icon="chevron-left"></z-icon></button>-->
+      <slot></slot>
+      <!--<button @click="incrementActiveIndex"><z-icon size="large" icon="chevron-right"></z-icon></button>-->
+    </div>
   </div>
-  
-</div>
 </template>
 
 <script>

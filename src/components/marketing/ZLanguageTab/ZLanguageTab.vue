@@ -7,7 +7,7 @@
       class="inline-flex items-center justify-center gap-2 pb-3 px-1 text-sm leading-none outline-none z-nav-item focus:outline-none opacity-50"
       :disabled="disabled"
       :class="{
-        'opacity-100': isActive && !disabled,
+        'opacity-100': isActive && !disabled
       }"
     >
       <z-icon
@@ -15,8 +15,8 @@
         class="w-14 h-14"
         :icon="lang"
         :class="{
-        'w-16 h-16': isActive && !disabled,
-      }"
+          'w-16 h-16': isActive && !disabled
+        }"
       ></z-icon>
       <slot></slot>
     </button>

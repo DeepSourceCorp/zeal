@@ -7,7 +7,6 @@ import ZLanguageTabList from './ZLanguageTabList'
 import ZLanguageTabPane from './ZLanguageTabPane'
 import ZLanguageTabPanes from './ZLanguageTabPanes'
 
-
 export default {
   title: 'Zeal Marketing/Language Tabs',
   component: ZLanguageTabs,
@@ -118,7 +117,13 @@ const data = [
 ]
 
 export const Default = () => ({
-  components: { ZLanguageTabs, ZLanguageTabItem, ZLanguageTabList, ZLanguageTabPanes, ZLanguageTabPane },
+  components: {
+    ZLanguageTabs,
+    ZLanguageTabItem,
+    ZLanguageTabList,
+    ZLanguageTabPanes,
+    ZLanguageTabPane
+  },
   data() {
     return {
       data
