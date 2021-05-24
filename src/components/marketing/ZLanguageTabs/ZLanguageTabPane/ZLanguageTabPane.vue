@@ -1,5 +1,5 @@
 <template>
-  <div class="z-tab-pane" :key="Math.random().toString(36).substring(7)">
+  <div class="z-tab-pane p-4" :key="Math.random().toString(36).substring(7)">
     <div>
       <z-accordion class="text-vanilla-100">
         <z-accordion-item
@@ -10,7 +10,7 @@
               <z-language-issue-header :open="open" :title="issue.title" :issueType="issue.type"></z-language-issue-header>
             </div>
           </template>
-          <div class="border-2 border-ink-200">
+          <div class="border-2 border-t-0 border-ink-200 rounded-b-lg">
             <img :src="issue.image"/>
           </div>
         </z-accordion-item>
