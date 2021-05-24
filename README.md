@@ -12,9 +12,9 @@
 
 #### Setting up your npmrc
 
-Zeal is a private package, registered on Github Package Registry. To make zeal available to local create and `.npmrc` file in the root folder of your device user. `
+Zeal is a private package, registered on Github Package Registry. To make zeal available in your dev setup create and `.npmrc` file in the home folder (i.e. `~/`).
 
-```shell
+```sh
 //npm.pkg.github.com/:_authToken=<github-personal-access-token>
 @deepsourcelabs:registry=https://npm.pkg.github.com/
 ```
