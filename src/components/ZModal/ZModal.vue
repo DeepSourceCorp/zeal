@@ -34,8 +34,11 @@
           class="py-2 px-3 space-x-2 text-right text-vanilla-100 border-ink-200"
           :class="{ 'border-t': showFooterBorder }"
         >
-          <z-button buttonType="secondary" size="small" @click="close">Cancel</z-button>
+          <z-button v-if="showCancel" buttonType="secondary" size="small" @click="close"
+            >Cancel</z-button
+          >
           <z-button
+            :icon="primaryActionIcon"
             class="modal-primary-action"
             :buttonType="primaryActionType"
             size="small"
@@ -67,11 +70,15 @@ export default Vue.extend({
     width: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['narrow', 'base', 'wide'].includes(value)
       }
     },
     primaryActionLabel: {
+      type: String,
+      default: undefined
+    },
+    primaryActionIcon: {
       type: String,
       default: undefined
     },
@@ -86,6 +93,10 @@ export default Vue.extend({
     showHeaderBorder: {
       type: Boolean,
       default: true
+    },
+    showCancel: {
+      type: Boolean,
+      default: false
     }
   },
   components: {
