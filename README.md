@@ -10,6 +10,21 @@
 
 ## Using in another library
 
+#### Setting up your npmrc
+
+Zeal is a private package, registered on Github Package Registry. To make zeal available in your dev setup create and `.npmrc` file in the home folder (i.e. `~/`).
+
+```sh
+//npm.pkg.github.com/:_authToken=<github-personal-access-token>
+@deepsourcelabs:registry=https://npm.pkg.github.com/
+```
+
+P.S. You can also create the `npmrc` file in root of your project, but make sure to add it to your `.gitignore`
+
+If you plan to publish zeal package from your local setup, you need to authenticate with the registry as well. To do that, simply run `npm login --scope=@deepsourcelabs --registry=https://npm.pkg.github.com` in your bash console. Enter your github username and your github token for password.
+
+#### Setting up tailwind
+
 Add this in the tailwind.config.js
 
 ```javascript
@@ -42,6 +57,8 @@ The following NPM scripts help building the library
 5. **`yarn build-lib-icons`**: This will build the library, css files and the icons
 
 ### Publishing
+
+Before you begin, ensure you have the `.npmrc` file setup.
 
 1. Bump the version in `package.json` and commit that change
 2. Remove `private: true` from the `package.json` (revert after publishing)
