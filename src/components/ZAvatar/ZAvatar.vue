@@ -1,5 +1,5 @@
 <template>
-  <component v-if="isVisible" :is="TYPES[type]" class="inline-block">
+  <component v-if="isVisible" :is="TYPES[type]" class="inline-block bg-ink-300 p-0.5 rounded-full">
     <span
       v-if="isLoading"
       :class="[`${SIZES[getSize].classes}`]"

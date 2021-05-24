@@ -51,7 +51,7 @@ export const WithImageAndUserName = (): Component => ({
   components: { ZAvatar },
   template: `<div class='padded-container'>
       <z-avatar
-        image="https://randomuser.me/api/portraits/women/24.jpg"
+        image="https://static.deepsource.io/avatars/ea226af3-a3a2-4f9f-ba5b-bce3225d1f80.svg"
         user-name="Akshay Paliwal"
       ></z-avatar>
     </div>`
