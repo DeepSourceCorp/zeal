@@ -54,6 +54,8 @@ import ZModal from './components/ZModal/index'
 import ZAnimatedInteger from './components/ZAnimatedInteger/index'
 import ZTimeline from './components/ZTimeline/index'
 import ZTimelineItem from './components/ZTimeline/ZTimelineItem/index'
+import ZConfirm from './components/ZConfirm/index'
+import ZDialogGeneric from './components/ZDialogGeneric/index'
 
 // Marketing components
 import ZFooter from './components/marketing/ZFooter'
@@ -147,11 +149,13 @@ const components = [
   ZModal,
   ZAnimatedInteger,
   ZTimeline,
-  ZTimelineItem
+  ZTimelineItem,
+  ZConfirm,
+  ZDialogGeneric
 ]
 
 const install = (Vue: any) => {
-  components.forEach((component) => {
+  components.forEach(component => {
     Vue.component(component.name, component)
   })
 }
@@ -222,7 +226,9 @@ export default {
   ZModal,
   ZAnimatedInteger,
   ZTimeline,
-  ZTimelineItem
+  ZTimelineItem,
+  ZConfirm,
+  ZDialogGeneric
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -294,6 +300,8 @@ export { default as ZModal } from './components/ZModal/index'
 export { default as ZAnimatedInteger } from './components/ZAnimatedInteger/index'
 export { default as ZTimeline } from './components/ZTimeline/index'
 export { default as ZTimelineItem } from './components/ZTimeline/ZTimelineItem/index'
+export { default as ZConfirm } from './components/ZConfirm/index'
+export { default as ZDialogGeneric } from './components/ZDialogGeneric/index'
 
 // Directives
 export { default as outsideClickDirective } from './directives/outside-click'
