@@ -1,7 +1,7 @@
 <template>
   <z-dialog-generic @onClose="closeDialog">
     <template v-slot:default="{ close }">
-      <div class="p-6 sm:p-8 w-100" @click.stop>
+      <div class="p-6 sm:p-8 sm:w-100" @click.stop>
         <slot>
           <div class="mb-2 text-base leading-relaxed text-vanilla-100">{{ title }}</div>
           <div class="text-sm leading-relaxed text-vanilla-400">
@@ -9,7 +9,7 @@
           </div>
         </slot>
         <slot name="footer">
-          <div class="mt-6 space-x-4 text-right text-vanilla-100">
+          <div class="mt-6 space-x-4 text-right text-vanilla-100 flex items-center justify-end">
             <z-button buttonType="ghost" class="text-vanilla-100" size="small" @click="close"
               >Cancel</z-button
             >

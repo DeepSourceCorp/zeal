@@ -1,7 +1,15 @@
 <template>
   <z-dialog-generic @onClose="closeModal">
     <template v-slot:default="{ close }">
-      <div :class="[modalWidth]" @click.stop>
+      <div
+        class="w-full"
+        :class="{
+          'sm:w-96': width === 'narrow',
+          'sm:w-102': width === 'base',
+          'sm:w-120 max-w-2xl': width === 'wide'
+        }"
+        @click.stop
+      >
         <div
           class="flex items-center justify-between p-4 space-x-2 border-ink-200"
           :class="{ 'border-b': showHeaderBorder }"
@@ -80,16 +88,6 @@ export default Vue.extend({
   components: {
     ZButton,
     ZDialogGeneric
-  },
-  computed: {
-    modalWidth(): string {
-      const width: Record<string, string> = {
-        narrow: 'w-96',
-        base: 'w-102',
-        wide: 'w-120 max-w-2xl'
-      }
-      return width[this.width]
-    }
   },
   methods: {
     closeModal(): void {
