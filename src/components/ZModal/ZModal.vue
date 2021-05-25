@@ -1,50 +1,46 @@
 <template>
-  <div
-    class="z-modal-backdrop fixed inset-0 flex items-end sm:items-center bg-opacity-75 bg-black"
-    @click="close"
-  >
-    <div
-      class="z-modal mx-auto sm:mb-12 sm:rounded-md shadow-md bg-ink-300"
-      :class="[modalWidth]"
-      @click.stop
-    >
-      <div
-        class="flex items-center justify-between p-4 space-x-2 border-ink-200"
-        :class="{ 'border-b': showHeaderBorder }"
-      >
-        <slot name="title">
-          <span class="text-base text-vanilla-100">{{ title }}</span>
-        </slot>
-        <!--This icon is too small, we can increase it a point-->
-        <z-button icon="x" buttonType="secondary" size="x-small" @click="close"></z-button>
-      </div>
-      <slot>
-        <div class="p-4 text-vanilla-100 text-sm min-h-20">
-          {{ body }}
-        </div>
-      </slot>
-      <slot name="footer">
+  <z-dialog-generic @onClose="closeModal">
+    <template v-slot:default="{ close }">
+      <div :class="[modalWidth]" @click.stop>
         <div
-          v-if="primaryActionLabel"
-          class="p-4 space-x-4 text-right text-vanilla-100 border-ink-200"
+          class="flex items-center justify-between p-4 space-x-2 border-ink-200"
+          :class="{ 'border-b': showHeaderBorder }"
         >
-          <z-button
-            :icon="primaryActionIcon"
-            class="modal-primary-action"
-            :buttonType="primaryActionType"
-            size="small"
-            @click="primaryAction"
-            >{{ primaryActionLabel }}</z-button
-          >
+          <slot name="title">
+            <span class="text-base text-vanilla-100">{{ title }}</span>
+          </slot>
+          <!--This icon is too small, we can increase it a point-->
+          <z-button icon="x" buttonType="secondary" size="x-small" @click="close"></z-button>
         </div>
-      </slot>
-    </div>
-  </div>
+        <slot>
+          <div class="p-4 text-sm text-vanilla-100 min-h-20">
+            {{ body }}
+          </div>
+        </slot>
+        <slot name="footer">
+          <div
+            v-if="primaryActionLabel"
+            class="p-4 space-x-4 text-right text-vanilla-100 border-ink-200"
+          >
+            <z-button
+              :icon="primaryActionIcon"
+              class="modal-primary-action"
+              :buttonType="primaryActionType"
+              size="small"
+              @click="primaryAction(close)"
+              >{{ primaryActionLabel }}</z-button
+            >
+          </div>
+        </slot>
+      </div>
+    </template>
+  </z-dialog-generic>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import ZButton from '../ZButton/ZButton.vue'
+import ZDialogGeneric from '../ZDialogGeneric/ZDialogGeneric.vue'
 
 export default Vue.extend({
   name: 'ZModal',
@@ -76,50 +72,32 @@ export default Vue.extend({
       type: String,
       default: 'primary'
     },
-    showFooterBorder: {
-      type: Boolean,
-      default: true
-    },
     showHeaderBorder: {
-      type: Boolean,
-      default: true
-    },
-    showCancel: {
       type: Boolean,
       default: true
     }
   },
   components: {
-    ZButton
-  },
-  mounted() {
-    document.addEventListener('keyup', this.handleKeyup)
-  },
-  beforeDestroy() {
-    document.removeEventListener('keyup', this.handleKeyup)
+    ZButton,
+    ZDialogGeneric
   },
   computed: {
     modalWidth(): string {
       const width: Record<string, string> = {
         narrow: 'w-96',
         base: 'w-102',
-        wide: 'w-2/3 max-w-2xl'
+        wide: 'w-120 max-w-2xl'
       }
       return width[this.width]
     }
   },
   methods: {
-    close(): void {
+    closeModal(): void {
       this.$emit('onClose')
     },
-    primaryAction(): void {
+    primaryAction(close: () => void): void {
       this.$emit('primaryAction')
-      this.close()
-    },
-    handleKeyup(e: KeyboardEvent): void {
-      if (e.key === 'Escape') {
-        this.close()
-      }
+      close()
     }
   }
 })
