@@ -5,6 +5,7 @@
     :action="clickHandler"
     :isActive="isActive"
     :disabled="disabled"
+    :indicator="indicator"
   >
     <slot :isActive="isActive"></slot>
   </z-tab>
@@ -31,6 +32,10 @@ export default {
     },
     icon: {
       type: String
+    },
+    indicator: {
+      type: Boolean,
+      default: true
     }
   },
   computed: {
