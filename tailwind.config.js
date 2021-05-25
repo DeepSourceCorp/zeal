@@ -799,8 +799,8 @@ module.exports = {
       'slide-left-leave-active': 'slide-left-out 0.5s ease-out',
       'slide-right-enter-active': 'slide-right-in 0.5s ease-out',
       'slide-right-leave-active': 'slide-right-out 0.5s ease-out',
-      'slide-bottom-enter-active': 'slide-bottom-in 0.5s ease-out',
-      'slide-bottom-leave-active': 'slide-bottom-out 0.5s ease-out'
+      'slide-bottom-enter-active': 'slide-bottom-in 0.2s ease-out',
+      'slide-bottom-leave-active': 'slide-bottom-out 0.2s ease-out'
     },
     keyframes: {
       expand: {
