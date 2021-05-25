@@ -6,7 +6,7 @@
     :isActive="isActive"
     :disabled="disabled"
   >
-    <slot></slot>
+    <slot :active="active"></slot>
   </z-tab>
 </template>
 
