@@ -47,7 +47,7 @@ describe('ZModal', () => {
 
     // Hides on click x
     await clickAwait(wrapper, '.z-modal-close-x')
-    await new Promise(resolve =>
+    await new Promise((resolve) =>
       setTimeout(() => {
         expect(wrapper.findAll('.z-modal').length).toEqual(0)
         expect(wrapper.findAll('.z-modal-backdrop').length).toEqual(0)
@@ -58,7 +58,7 @@ describe('ZModal', () => {
     // Hides on backdrop click
     await clickAwait(wrapper, '#triggerClick')
     await clickAwait(wrapper, '.z-modal-backdrop')
-    await new Promise(resolve =>
+    await new Promise((resolve) =>
       setTimeout(() => {
         expect(wrapper.findAll('.z-modal').length).toEqual(0)
         expect(wrapper.findAll('.z-modal-backdrop').length).toEqual(0)
