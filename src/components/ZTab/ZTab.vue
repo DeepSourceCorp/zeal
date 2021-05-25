@@ -8,7 +8,8 @@
     :class="{
       'text-vanilla-100 border-juniper': isActive && !disabled,
       'text-vanilla-400 border-transparent hover:border-ink-100': !isActive && !disabled,
-      'text-slate cursor-not-allowed border-transparent': disabled
+      'text-slate cursor-not-allowed border-transparent': disabled,
+      'border-none' : !indicator
     }"
   >
     <z-icon
@@ -44,6 +45,10 @@ export default Vue.extend({
     },
     action: {
       type: Function
+    },
+    indicator: {
+      type: Boolean,
+      default: true
     }
   },
   computed: {
