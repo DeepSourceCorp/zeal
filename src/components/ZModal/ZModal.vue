@@ -1,8 +1,8 @@
 <template>
-  <z-dialog-generic @onClose="closeModal">
+  <z-dialog-generic class="z-modal-backdrop" @onClose="closeModal">
     <template v-slot:default="{ close }">
       <div
-        class="w-full"
+        class="z-modal w-full"
         :class="{
           'sm:w-96': width === 'narrow',
           'sm:w-102': width === 'base',
@@ -18,7 +18,13 @@
             <span class="text-base text-vanilla-100">{{ title }}</span>
           </slot>
           <!--This icon is too small, we can increase it a point-->
-          <z-button icon="x" buttonType="secondary" size="x-small" @click="close"></z-button>
+          <z-button
+            icon="x"
+            buttonType="secondary"
+            size="x-small"
+            class="z-modal-close-x"
+            @click="close"
+          ></z-button>
         </div>
         <slot>
           <div class="p-4 text-sm text-vanilla-100 min-h-20">

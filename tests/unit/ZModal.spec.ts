@@ -46,15 +46,25 @@ describe('ZModal', () => {
     expect(wrapper.findAll('.z-modal').length).toEqual(1)
 
     // Hides on click x
-    await clickAwait(wrapper, '.z-icon')
-    expect(wrapper.findAll('.z-modal-backdrop').length).toEqual(0)
-    expect(wrapper.findAll('.z-modal').length).toEqual(0)
+    await clickAwait(wrapper, '.z-modal-close-x')
+    await new Promise(resolve =>
+      setTimeout(() => {
+        expect(wrapper.findAll('.z-modal').length).toEqual(0)
+        expect(wrapper.findAll('.z-modal-backdrop').length).toEqual(0)
+        resolve()
+      }, 200)
+    )
 
     // Hides on backdrop click
     await clickAwait(wrapper, '#triggerClick')
     await clickAwait(wrapper, '.z-modal-backdrop')
-    expect(wrapper.findAll('.z-modal-backdrop').length).toEqual(0)
-    expect(wrapper.findAll('.z-modal').length).toEqual(0)
+    await new Promise(resolve =>
+      setTimeout(() => {
+        expect(wrapper.findAll('.z-modal').length).toEqual(0)
+        expect(wrapper.findAll('.z-modal-backdrop').length).toEqual(0)
+        resolve()
+      }, 200)
+    )
   })
 
   it('triggers primary action', async () => {
