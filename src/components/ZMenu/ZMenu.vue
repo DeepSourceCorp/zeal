@@ -13,12 +13,12 @@
     >
       <div
         v-if="isOpen"
-        class="fixed z-10 flex items-end overflow-hidden h-100 sm:absolute text-vanilla-200 transform-gpu bg-ink-400 bg-opacity-25 sm:bg-transparent sm:bg-opacity-0"
+        class="fixed z-10 flex items-end overflow-hidden sm:overflow-visible h-100 sm:absolute text-vanilla-200 transform-gpu bg-ink-400 bg-opacity-25 sm:bg-transparent sm:bg-opacity-0"
         :class="[directionClass, placementClasses]"
       >
         <div
           class="rounded-t-lg bg-ink-300 sm:rounded-sm shadow-double-dark"
-          :class="`${sizeClass}`"
+          :class="[sizeClass, spacingClass]"
           ref="menu-body"
           v-outside-click="triggerClose"
         >
@@ -65,6 +65,10 @@ export default Vue.extend({
       validator: function (value: string): boolean {
         return ['x-small', 'small', 'base', 'large', 'x-large', '2x-large'].includes(value)
       }
+    },
+    bodySpacing: {
+      type: String,
+      default: ''
     },
     collapseOnMobile: {
       type: Boolean,
@@ -116,9 +120,20 @@ export default Vue.extend({
     },
     sizeClass(): string {
       const sizes: Record<string, string> = {
-        small: `py-1 text-xs w-full ${this.widthClass} mt-5 sm:mt-2`,
-        base: `py-1 text-sm w-full ${this.widthClass} mt-5 sm:mt-2`,
-        large: `py-2 text-base w-full ${this.widthClass} mt-5 sm:mt-4`
+        small: `text-xs w-full ${this.widthClass} mt-5 sm:mt-2`,
+        base: `text-sm w-full ${this.widthClass} mt-5 sm:mt-2`,
+        large: `text-base w-full ${this.widthClass} mt-5 sm:mt-4`
+      }
+      return sizes[this.size || 'base']
+    },
+    spacingClass(): string {
+      if (this.bodySpacing) {
+        return this.bodySpacing
+      }
+      const sizes: Record<string, string> = {
+        small: `py-1`,
+        base: `py-1`,
+        large: `py-2`
       }
       return sizes[this.size || 'base']
     },

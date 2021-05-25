@@ -459,6 +459,8 @@ module.exports = {
     width: (theme) => ({
       auto: 'auto',
       ...theme('spacing'),
+      100: '30rem',
+      120: '42rem',
       '1/2': '50%',
       '1/3': '33.333333%',
       '2/3': '66.666667%',
@@ -797,8 +799,8 @@ module.exports = {
       'slide-left-leave-active': 'slide-left-out 0.5s ease-out',
       'slide-right-enter-active': 'slide-right-in 0.5s ease-out',
       'slide-right-leave-active': 'slide-right-out 0.5s ease-out',
-      'slide-bottom-enter-active': 'slide-bottom-in 0.5s ease-out',
-      'slide-bottom-leave-active': 'slide-bottom-out 0.5s ease-out'
+      'slide-bottom-enter-active': 'slide-bottom-in 0.2s ease-out',
+      'slide-bottom-leave-active': 'slide-bottom-out 0.2s ease-out'
     },
     keyframes: {
       expand: {
