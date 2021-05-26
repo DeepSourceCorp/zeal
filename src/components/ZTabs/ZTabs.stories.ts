@@ -114,10 +114,10 @@ export const TabsWithoutIndicators = () => ({
   template: `<div class='padded-container'>
               <z-tabs>
                 <z-tab-list>
-                  <z-tab-item :indicator="false">Overview</z-tab-item>
-                  <z-tab-item :indicator="false">Issues</z-tab-item>
-                  <z-tab-item :indicator="false">Metrics</z-tab-item>
-                  <z-tab-item :indicator="false">Autofix</z-tab-item>
+                  <z-tab-item :removeIndicatorStyles="true">Overview</z-tab-item>
+                  <z-tab-item :removeIndicatorStyles="true">Issues</z-tab-item>
+                  <z-tab-item :removeIndicatorStyles="true">Metrics</z-tab-item>
+                  <z-tab-item :removeIndicatorStyles="true">Autofix</z-tab-item>
                 </z-tab-list>
                 <z-tab-panes class="p-4">
                   <z-tab-pane>Overview of the code.</z-tab-pane>
