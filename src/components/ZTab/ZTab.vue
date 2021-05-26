@@ -3,11 +3,14 @@
     role="tab"
     :aria-selected="selected"
     @click="action && action()"
-    class="inline-flex items-end gap-2 pb-3 px-1 text-sm leading-none outline-none z-nav-item focus:outline-none border-b-2"
+    class="inline-flex items-end gap-2 pb-3 px-1 text-sm leading-none outline-none z-nav-item focus:outline-none"
     :disabled="disabled"
     :class="{
-      'text-vanilla-100 border-juniper': isActive && !disabled,
-      'text-vanilla-400 border-transparent hover:border-ink-100': !isActive && !disabled,
+      'border-b-2': !removeIndicatorStyles,
+      'text-vanilla-100': isActive && !disabled,
+      'border-juniper': isActive && !disabled && !removeIndicatorStyles,
+      'text-vanilla-400': !isActive && !disabled,
+      'border-transparent hover:border-ink-100': !isActive && !disabled && !removeIndicatorStyles,
       'text-slate cursor-not-allowed border-transparent': disabled
     }"
   >
@@ -44,6 +47,10 @@ export default Vue.extend({
     },
     action: {
       type: Function
+    },
+    removeIndicatorStyles: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {

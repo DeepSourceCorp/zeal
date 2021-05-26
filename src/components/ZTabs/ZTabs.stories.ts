@@ -108,3 +108,23 @@ export const MixedTabs = () => ({
               </z-tabs>
       </div>`
 })
+
+export const TabsWithoutIndicators = () => ({
+  components: { ZTabs, ZTabList, ZTabItem, ZTabPanes, ZTabPane },
+  template: `<div class='padded-container'>
+              <z-tabs>
+                <z-tab-list>
+                  <z-tab-item :removeIndicatorStyles="true">Overview</z-tab-item>
+                  <z-tab-item :removeIndicatorStyles="true">Issues</z-tab-item>
+                  <z-tab-item :removeIndicatorStyles="true">Metrics</z-tab-item>
+                  <z-tab-item :removeIndicatorStyles="true">Autofix</z-tab-item>
+                </z-tab-list>
+                <z-tab-panes class="p-4">
+                  <z-tab-pane>Overview of the code.</z-tab-pane>
+                  <z-tab-pane>There are the list of issues.</z-tab-pane>
+                  <z-tab-pane>This are metrics.</z-tab-pane>
+                  <z-tab-pane>Works like magic</z-tab-pane>
+                </z-tab-panes>
+              </z-tabs>
+      </div>`
+})

@@ -5,8 +5,9 @@
     :action="clickHandler"
     :isActive="isActive"
     :disabled="disabled"
+    :removeIndicatorStyles="removeIndicatorStyles"
   >
-    <slot :active="active"></slot>
+    <slot :isActive="isActive"></slot>
   </z-tab>
 </template>
 
@@ -31,6 +32,10 @@ export default {
     },
     icon: {
       type: String
+    },
+    removeIndicatorStyles: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
