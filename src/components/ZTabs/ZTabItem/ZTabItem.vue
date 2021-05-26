@@ -5,7 +5,7 @@
     :action="clickHandler"
     :isActive="isActive"
     :disabled="disabled"
-    :indicator="indicator"
+    :removeIndicatorStyles="removeIndicatorStyles"
   >
     <slot :isActive="isActive"></slot>
   </z-tab>
