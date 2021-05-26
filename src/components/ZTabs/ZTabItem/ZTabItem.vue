@@ -33,9 +33,9 @@ export default {
     icon: {
       type: String
     },
-    indicator: {
+    removeIndicatorStyles: {
       type: Boolean,
-      default: true
+      default: false
     }
   },
   computed: {
