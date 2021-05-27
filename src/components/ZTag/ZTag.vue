@@ -22,7 +22,7 @@ export default Vue.extend({
     state: {
       type: String,
       default: 'default',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['success', 'error', 'warning', 'info', 'default'].includes(value)
       }
     },
@@ -35,8 +35,8 @@ export default Vue.extend({
     size: {
       type: String,
       default: 'small',
-      validator: function (value: string): boolean {
-        return ['small', 'large'].includes(value)
+      validator: function(value: string): boolean {
+        return ['x-small', 'small', 'base', 'medium', 'large'].includes(value)
       }
     },
     bgColor: {
