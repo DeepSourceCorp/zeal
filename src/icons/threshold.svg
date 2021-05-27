@@ -1,0 +1,4 @@
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<rect x="2.25" y="2.25" width="19.5" height="19.5" rx="2.75" stroke="currentColor" stroke-width="2.5"/>
+<path d="M1 12H23V19C23 21.2091 21.2091 23 19 23H5C2.79086 23 1 21.2091 1 19V12Z" fill="currentColor"/>
+</svg>

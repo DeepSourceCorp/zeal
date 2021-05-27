@@ -36,7 +36,7 @@ export default Vue.extend({
       type: String,
       default: 'small',
       validator: function (value: string): boolean {
-        return ['small', 'large'].includes(value)
+        return ['x-small', 'small', 'base', 'medium', 'large'].includes(value)
       }
     },
     bgColor: {
