@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Checkbox Component renders a disabled checkbox component when disabled prop is passed 1`] = `
-<label class="group z-input z-input__checkbox relative pl-6 text-base flex items-center cursor-not-allowed is-disabled"><input type="checkbox" name="" disabled="disabled" class="absolute opacity-0 h-0 w-0" value=""> <span data-before="✓" data-content="" class="z-input__checkbox--checkmark before:content-before text-transparent text-center sibling-checked:text-vanilla-100 sibling-checked:bg-juniper sibling-checked:border-juniper grid place-items-center absolute left-0 rounded-sm border border-slate border-solid bg-transparent cursor-pointer group-hover:border-juniper h-5 w-5 cursor-not-allowed group-hover:border-slate sibling-checked:text-ink-300 sibling-checked:border-slate sibling-checked:bg-slate"></span>
+<label class="relative flex items-center pl-6 text-base group z-input z-input__checkbox cursor-not-allowed is-disabled"><input type="checkbox" name="" disabled="disabled" class="absolute w-0 h-0 opacity-0" value=""> <span data-before="✓" data-content="" class="z-input__checkbox--checkmark h-5 w-5 absolute left-0 grid text-center text-transparent bg-transparent border border-solid rounded-sm cursor-pointer place-items-center border-slate before:content-before sibling-checked:text-vanilla-100 sibling-checked:bg-juniper sibling-checked:border-juniper group-hover:border-juniper cursor-not-allowed group-hover:border-slate sibling-checked:text-ink-300 sibling-checked:border-slate sibling-checked:bg-slate"></span>
   <!---->
 </label>
 `;
 
 exports[`Checkbox Component renders a pre-selected checkbox when the value is passed as checked 1`] = `
-<label class="group z-input z-input__checkbox relative pl-6 text-base flex items-center"><input type="checkbox" name="" class="absolute opacity-0 h-0 w-0" value="icecream"> <span data-before="✓" data-content="" class="z-input__checkbox--checkmark before:content-before text-transparent text-center sibling-checked:text-vanilla-100 sibling-checked:bg-juniper sibling-checked:border-juniper grid place-items-center absolute left-0 rounded-sm border border-slate border-solid bg-transparent cursor-pointer group-hover:border-juniper h-5 w-5"></span> <span class="z-input__checkbox--text text-base ml-1">
+<label class="relative flex items-center pl-6 text-base group z-input z-input__checkbox"><input type="checkbox" name="" class="absolute w-0 h-0 opacity-0" value="icecream"> <span data-before="✓" data-content="" class="z-input__checkbox--checkmark h-5 w-5 absolute left-0 grid text-center text-transparent bg-transparent border border-solid rounded-sm cursor-pointer place-items-center border-slate before:content-before sibling-checked:text-vanilla-100 sibling-checked:bg-juniper sibling-checked:border-juniper group-hover:border-juniper"></span> <span class="z-input__checkbox--text text-base ml-1">
     Icecreams
   </span></label>
 `;
 
 exports[`Checkbox Component renders the checkbox component 1`] = `
-<label class="group z-input z-input__checkbox relative pl-6 text-base flex items-center"><input type="checkbox" name="" class="absolute opacity-0 h-0 w-0" value=""> <span data-before="✓" data-content="" class="z-input__checkbox--checkmark before:content-before text-transparent text-center sibling-checked:text-vanilla-100 sibling-checked:bg-juniper sibling-checked:border-juniper grid place-items-center absolute left-0 rounded-sm border border-slate border-solid bg-transparent cursor-pointer group-hover:border-juniper h-5 w-5"></span>
+<label class="relative flex items-center pl-6 text-base group z-input z-input__checkbox"><input type="checkbox" name="" class="absolute w-0 h-0 opacity-0" value=""> <span data-before="✓" data-content="" class="z-input__checkbox--checkmark h-5 w-5 absolute left-0 grid text-center text-transparent bg-transparent border border-solid rounded-sm cursor-pointer place-items-center border-slate before:content-before sibling-checked:text-vanilla-100 sibling-checked:bg-juniper sibling-checked:border-juniper group-hover:border-juniper"></span>
   <!---->
 </label>
 `;
