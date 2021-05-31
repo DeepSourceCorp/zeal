@@ -17,9 +17,12 @@
     <span
       data-before="✓"
       data-content=""
-      class="absolute left-0 grid text-center text-transparent bg-transparent border border-solid rounded-sm cursor-pointer  z-input__checkbox--checkmark before:content-before sibling-checked:text-vanilla-100 sibling-checked:bg-juniper sibling-checked:border-juniper place-items-center border-slate group-hover:border-juniper"
+      class="z-input__checkbox--checkmark"
       :class="{
         [checkBoxSize]: true,
+        'absolute left-0 grid text-center text-transparent bg-transparent border border-solid': true,
+        'rounded-sm cursor-pointer place-items-center border-slate before:content-before': true,
+        'sibling-checked:text-vanilla-100 sibling-checked:bg-juniper sibling-checked:border-juniper group-hover:border-juniper': true,
         'cursor-not-allowed group-hover:border-slate sibling-checked:text-ink-300 sibling-checked:border-slate sibling-checked:bg-slate': disabled
       }"
     ></span>
