@@ -1,6 +1,6 @@
 <template>
   <label
-    class="group z-input z-input__checkbox relative pl-6 text-base flex items-center"
+    class="relative flex items-center pl-6 text-base group z-input z-input__checkbox"
     :class="{
       'cursor-not-allowed is-disabled': disabled
     }"
@@ -12,30 +12,15 @@
       :name="name"
       @change="updateInput"
       :disabled="this.disabled"
-      class="absolute opacity-0 h-0 w-0"
+      class="absolute w-0 h-0 opacity-0"
     />
     <span
       data-before="✓"
       data-content=""
-      class="
-        z-input__checkbox--checkmark
-        before:content-before
-        text-transparent text-center
-        sibling-checked:text-vanilla-100 sibling-checked:bg-juniper sibling-checked:border-juniper
-        grid
-        place-items-center
-        absolute
-        left-0
-        rounded-sm
-        border border-slate border-solid
-        bg-transparent
-        cursor-pointer
-        group-hover:border-juniper
-      "
+      class="absolute left-0 grid text-center text-transparent bg-transparent border border-solid rounded-sm cursor-pointer  z-input__checkbox--checkmark before:content-before sibling-checked:text-vanilla-100 sibling-checked:bg-juniper sibling-checked:border-juniper place-items-center border-slate group-hover:border-juniper"
       :class="{
         [checkBoxSize]: true,
-        'cursor-not-allowed group-hover:border-slate sibling-checked:text-ink-300 sibling-checked:border-slate sibling-checked:bg-slate':
-          disabled
+        'cursor-not-allowed group-hover:border-slate sibling-checked:text-ink-300 sibling-checked:border-slate sibling-checked:bg-slate': disabled
       }"
     ></span>
     <span
@@ -88,7 +73,7 @@ export default Vue.extend({
     size: {
       default: 'base',
       type: String,
-      validator: (value) => {
+      validator: value => {
         return ['small', 'base', 'large'].includes(value)
       }
     }
