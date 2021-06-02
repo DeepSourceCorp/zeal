@@ -4,7 +4,19 @@
     :href="to || '#'"
     :disabled="disabled"
     :type="isLink ? 'link' : type"
-    class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap"
+    class="
+      z-btn
+      inline-flex
+      items-center
+      justify-center
+      font-medium
+      transition-colors
+      duration-300
+      ease-in-out
+      rounded-sm
+      focus:outline-none
+      whitespace-nowrap
+    "
     :class="{
       [textColor]: textColor,
       [`z-btn--${color}`]: color,
