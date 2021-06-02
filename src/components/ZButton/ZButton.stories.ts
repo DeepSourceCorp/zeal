@@ -27,19 +27,20 @@ export const ButtonWithClickAction = () => ({
 
 export const Colors = () => ({
   components: { ZButton },
-  template: `<div>
+  template: `<div class="stroke-2">
         <z-button buttonType="primary">Primary Button</z-button>
         <z-button buttonType="secondary">Secondary Button</z-button>
         <z-button buttonType="danger">Danger Button</z-button>
         <z-button buttonType="ghost">Ghost Button</z-button>
         <z-button buttonType="link">Link Button</z-button>
+        <z-button buttonType="ghost" icon="zap" color="vanilla-400">Custom Color Button</z-button>
     </div>`
 })
 
 export const Sizes = () => ({
   components: { ZButton },
   filters: {
-    capitalize: function (value: string) {
+    capitalize: function(value: string) {
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
@@ -66,7 +67,7 @@ export const Sizes = () => ({
 export const States = () => ({
   components: { ZButton },
   filters: {
-    capitalize: function (value: string) {
+    capitalize: function(value: string) {
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
