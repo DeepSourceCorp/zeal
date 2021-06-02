@@ -6,6 +6,7 @@
     :type="isLink ? 'link' : type"
     class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap"
     :class="{
+      [textColor]: textColor,
       [`z-btn--${color}`]: color,
       'w-full': fullWidth,
 
@@ -25,10 +26,10 @@
       'h-13 w-13': size === 'xlarge' && iconOnly,
 
       // Button Base Styles
-      'font-normal text-juniper': ['link', 'ghost'].includes(buttonStyle),
-      'bg-juniper text-ink-400': buttonStyle === 'primary',
-      'bg-ink-300 text-vanilla-100': buttonStyle === 'secondary',
-      'bg-cherry text-ink-400': buttonStyle === 'danger',
+      'font-normal': ['link', 'ghost'].includes(buttonStyle),
+      'bg-juniper': buttonStyle === 'primary',
+      'bg-ink-300': buttonStyle === 'secondary',
+      'bg-cherry': buttonStyle === 'danger',
 
       // Button Hover Styles
       'hover:underline': buttonStyle === 'link' && !disabled,
@@ -45,7 +46,7 @@
     <z-icon
       v-if="icon"
       :icon="icon"
-      :color="iconColor"
+      :color="iconColorComputed"
       :size="iconSizeToken"
       :class="{
         'mr-0.5': size == 'x-small' && !iconOnly,
@@ -70,6 +71,10 @@ export default Vue.extend({
   },
   props: {
     color: {
+      default: '',
+      type: String
+    },
+    iconColor: {
       default: '',
       type: String
     },
@@ -131,7 +136,7 @@ export default Vue.extend({
     }
   },
   computed: {
-    iconColor(): string {
+    iconColorComputed(): string {
       const colors = {
         link: 'juniper',
         ghost: 'juniper',
@@ -140,8 +145,33 @@ export default Vue.extend({
         danger: 'ink-400'
       }
 
+      if (this.iconColor) {
+        return this.iconColor
+      }
+
+      if (this.color) {
+        return this.color
+      }
+
       return colors[this.buttonStyle as string]
     },
+
+    textColor(): string {
+      const colors = {
+        link: 'text-juniper',
+        ghost: 'text-juniper',
+        primary: 'text-ink-400',
+        secondary: 'text-vanilla-100',
+        danger: 'text-ink-400'
+      }
+
+      if (this.color) {
+        return `text-${this.color}`
+      }
+
+      return colors[this.buttonStyle as string]
+    },
+
     iconSizeToken(): string {
       const sizes = {
         'x-small': 'small',
