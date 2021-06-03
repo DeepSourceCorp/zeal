@@ -22,10 +22,18 @@ export interface Marker {
   options?: Record<string, string>
 }
 
+export interface Region {
+  label: string
+  start: number
+  end: number
+  options?: Record<string, string>
+}
+
 export interface ChartData {
   labels: Array<string>
   datasets: Array<DataItem>
   yMarkers?: Array<Marker>
+  yRegions?: Array<Region>
 }
 
 export interface ChartInterface {
@@ -34,6 +42,25 @@ export interface ChartInterface {
   addDataPoint: (label: string, valueFromEachDataset: Array<number> | number, index: number) => void
   removeDataPoint: (index: number) => void
   destroy: () => void
+}
+
+const DEFAULT_LINE_OPTIONS = {
+  dotSize: 4,
+  hideLine: 0,
+  showDots: 0,
+  trailingDot: 1,
+  hideDotBorder: true,
+  heatline: 0,
+  regionFill: 1,
+  areaFill: 0,
+  spline: 0
+}
+
+const DEFAULT_AXIS_OPTIONS = {
+  yAxisMode: '',
+  xAxisMode: 'tick',
+  shortenYAxisNumbers: true,
+  xIsSeries: 0
 }
 
 export default Vue.extend({
@@ -67,9 +94,7 @@ export default Vue.extend({
       type: String,
       default: 'axis-mixed',
       validator: function (value: string): boolean {
-        return ['bar', 'line', 'percentage', 'heatmap', 'donut', 'pie', 'axis-mixed'].includes(
-          value
-        )
+        return ['bar', 'line', 'percentage', 'heatmap', 'donut', 'pie', 'axis-mixed'].includes(value)
       }
     },
     height: {
@@ -81,25 +106,20 @@ export default Vue.extend({
       type: Array,
       default: () => null
     },
+    yRegions: {
+      required: false,
+      type: Array,
+      default: () => null
+    },
     colors: {
       required: false,
       type: Array,
-      default: () => ['honey', 'juniper', 'aqua', 'cherry', 'lilac', 'pink', 'sea-glass', 'robin']
+      default: () => ['robin', 'cherry', 'aqua', 'honey', 'juniper', 'lilac', 'pink', 'sea-glass', 'robin']
     },
     lineOptions: {
       required: false,
       type: Object,
-      default: () => {
-        return {
-          dotSize: 4,
-          hideLine: 0,
-          hideDots: 1,
-          heatline: 0,
-          regionFill: 1,
-          areaFill: 0,
-          spline: 1
-        }
-      }
+      default: () => DEFAULT_LINE_OPTIONS
     },
     barOptions: {
       required: false,
@@ -114,14 +134,7 @@ export default Vue.extend({
     axisOptions: {
       required: false,
       type: Object,
-      default: () => {
-        return {
-          yAxisMode: '',
-          xAxisMode: 'tick',
-          shortenYAxisNumbers: true,
-          xIsSeries: 0
-        }
-      }
+      default: () => DEFAULT_AXIS_OPTIONS
     },
     maxLegendPoints: {
       required: false,
@@ -145,7 +158,7 @@ export default Vue.extend({
     },
     animate: {
       required: false,
-      default: true,
+      default: false,
       type: Boolean
     }
   },
@@ -179,13 +192,14 @@ export default Vue.extend({
         data: {
           labels: this.labels,
           datasets: this.dataSets,
-          yMarkers: this.yMarkers ? this.markers : undefined
+          yMarkers: this.yMarkers ? this.markers : undefined,
+          yRegions: this.yRegions ? this.regions : undefined
         },
         tooltipOptions: this.tooltipOptions,
         barOptions: this.barOptions,
-        lineOptions: this.lineOptions,
+        lineOptions: Object.assign(DEFAULT_LINE_OPTIONS, this.lineOptions),
         axisOptions: {
-          ...this.axisOptions,
+          ...Object.assign(DEFAULT_AXIS_OPTIONS, this.axisOptions),
           yAxisRange: {
             min: this.yAxisMin,
             max: this.yAxisMax
@@ -194,6 +208,7 @@ export default Vue.extend({
         maxSlices: this.maxSlices,
         showLegend: this.showLegend,
         animate: this.animate,
+        disableEntryAnimation: this.animate,
         maxLegendPoints: this.maxLegendPoints
       }
       this.chart = new Chart(this.$refs[this.wrapperName], {
@@ -213,7 +228,8 @@ export default Vue.extend({
         this.chart.update({
           labels: this.labels as Array<string>,
           datasets: this.dataSets as Array<DataItem>,
-          yMarkers: this.yMarkers ? this.markers : undefined
+          yMarkers: this.yMarkers ? this.markers : undefined,
+          yRegions: this.yRegions ? this.regions : undefined
         })
       }, 100)
     },
@@ -223,10 +239,7 @@ export default Vue.extend({
     removeDataPoint(index: number) {
       this.chart && this.chart.removeDataPoint(index)
     },
-    getThemeColors(
-      config: Record<string, string | Record<string, string>>,
-      prefix = ''
-    ): Record<string, string> {
+    getThemeColors(config: Record<string, string | Record<string, string>>, prefix = ''): Record<string, string> {
       const colors: Record<string, string> = {}
       Object.entries(config).forEach(([token, value]) => {
         if (typeof value === 'string') {
@@ -255,6 +268,20 @@ export default Vue.extend({
           marker.options.stroke = this.themeColors[marker.options.stroke]
         }
         return marker
+      })
+    },
+    regions(): Array<Region> {
+      return (this.yRegions as Array<Region>).map((region) => {
+        if (!region.options) {
+          region.options = {}
+        }
+
+        const color = region.options.fill in this.themeColors ? region.options.fill : 'ink-300'
+        region.options.fill = this.themeColors[color]
+        region.options.stroke = this.themeColors[color]
+        console.log(region.options)
+
+        return region
       })
     },
     chartType(): string {

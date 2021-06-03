@@ -5,20 +5,7 @@ import '../../assets/css/chart.css'
 import ZChart from './ZChart.vue'
 
 const issueData = {
-  labels: [
-    'Jan',
-    'Feb',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'Aug',
-    'Sept',
-    'Oct',
-    'Nov',
-    'Dec'
-  ],
+  labels: ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
   datasets: [
     {
       name: 'Active Issues',
@@ -29,7 +16,7 @@ const issueData = {
       values: Array.from({ length: 12 }, () => Math.floor(10 + Math.random() * 75))
     }
   ],
-  yMarkers: [{ label: 'Threshold', value: 75, options: { labelPos: 'right', stroke: 'cherry' } }]
+  yRegions: [{ label: 'Threshold', start: 0, end: 35, options: { fill: 'ink-300' } }]
 }
 
 export default {
@@ -44,11 +31,11 @@ export const LineChart = () => ({
     return {
       dataSets: issueData.datasets,
       labels: issueData.labels,
-      yMarkers: issueData.yMarkers
+      yRegions: issueData.yRegions
     }
   },
   template: `<div class="padding-container">
-    <z-chart :dataSets="dataSets" :labels="labels" :yMarkers=yMarkers type="line" :yAxisMax="100" :yAxisMin="0"></z-chart>
+    <z-chart :dataSets="dataSets" :labels="labels" :yRegions=yRegions type="line" :yAxisMax="100" :yAxisMin="0"></z-chart>
   </div>`
 })
 
@@ -58,11 +45,11 @@ export const CustomColors = () => ({
     return {
       dataSets: issueData.datasets,
       labels: issueData.labels,
-      yMarkers: issueData.yMarkers
+      yRegions: issueData.yRegions
     }
   },
   template: `<div class="padding-container">
-    <z-chart :dataSets="dataSets" :labels="labels" :yMarkers=yMarkers type="line" :colors="['ink-200', 'vanilla-400']"></z-chart>
+    <z-chart :dataSets="dataSets" :labels="labels" :yRegions=yRegions type="line" :colors="['ink-200', 'vanilla-400']"></z-chart>
   </div>`
 })
 
@@ -72,11 +59,11 @@ export const BarChart = () => ({
     return {
       dataSets: issueData.datasets,
       labels: issueData.labels,
-      yMarkers: issueData.yMarkers
+      yRegions: issueData.yRegions
     }
   },
   template: `<div class="padding-container">
-    <z-chart :dataSets="dataSets" :labels="labels" :yMarkers=yMarkers type="bar"></z-chart>
+    <z-chart :dataSets="dataSets" :labels="labels" :yRegions=yRegions type="bar"></z-chart>
   </div>`
 })
 
@@ -86,11 +73,11 @@ export const DonutChart = () => ({
     return {
       dataSets: issueData.datasets,
       labels: issueData.labels,
-      yMarkers: issueData.yMarkers
+      yRegions: issueData.yRegions
     }
   },
   template: `<div class="padding-container">
-    <z-chart :dataSets="dataSets" :labels="labels" :yMarkers=yMarkers type="donut"></z-chart>
+    <z-chart :dataSets="dataSets" :labels="labels" :yRegions=yRegions type="donut"></z-chart>
   </div>`
 })
 
@@ -100,11 +87,11 @@ export const PieChart = () => ({
     return {
       dataSets: issueData.datasets,
       labels: issueData.labels,
-      yMarkers: issueData.yMarkers
+      yRegions: issueData.yRegions
     }
   },
   template: `<div class="padding-container">
-    <z-chart :dataSets="dataSets" :labels="labels" :yMarkers=yMarkers type="pie"></z-chart>
+    <z-chart :dataSets="dataSets" :labels="labels" :yRegions=yRegions type="pie"></z-chart>
   </div>`
 })
 
@@ -114,10 +101,10 @@ export const PercentageChart = () => ({
     return {
       dataSets: issueData.datasets,
       labels: issueData.labels,
-      yMarkers: issueData.yMarkers
+      yRegions: issueData.yRegions
     }
   },
   template: `<div class="padding-container">
-    <z-chart :dataSets="dataSets" :labels="labels" :yMarkers=yMarkers type="percentage"></z-chart>
+    <z-chart :dataSets="dataSets" :labels="labels" :yRegions=yRegions type="percentage"></z-chart>
   </div>`
 })
