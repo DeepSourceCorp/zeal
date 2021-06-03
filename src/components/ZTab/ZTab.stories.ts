@@ -57,3 +57,16 @@ export const TabWithLinks = () => ({
                 </div>
       </div>`
 })
+
+export const TabWithCustomActiveColor = () => ({
+  components: { ZTab },
+  template: `<div class='padded-container'>
+                <div class="gap-5 overflow-auto flex flex-nowrap">
+                  <z-tab :isActive="true" border-active-color="vanilla-300">DeepSource</z-tab>
+                  <z-tab :isActive="true" border-active-color="cherry">Github</z-tab>
+                  <z-tab :isActive="true" border-active-color="honey">Zeal</z-tab>
+                  <z-tab :isActive="true" border-active-color="lavender">Bifrost</z-tab>
+                  <z-tab :disabled="true" border-active-color="lilac">Bad Code</z-tab>
+                </div>
+      </div>`
+})
