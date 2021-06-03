@@ -8,7 +8,7 @@
     :class="{
       'border-b-2': !removeIndicatorStyles,
       'text-vanilla-100': isActive && !disabled,
-      'border-juniper': isActive && !disabled && !removeIndicatorStyles,
+      [borderActive]: isActive && !disabled && !removeIndicatorStyles,
       'text-vanilla-400': !isActive && !disabled,
       'border-transparent hover:border-ink-100': !isActive && !disabled && !removeIndicatorStyles,
       'text-slate cursor-not-allowed border-transparent': disabled
@@ -27,6 +27,8 @@
 <script lang="ts">
 import Vue from 'vue'
 import ZIcon from '../ZIcon/ZIcon.vue'
+
+const DEFAULT_BORDER_ACTIVE_COLOR = 'juniper'
 
 export default Vue.extend({
   name: 'ZTab',
@@ -51,11 +53,18 @@ export default Vue.extend({
     removeIndicatorStyles: {
       type: Boolean,
       default: false
+    },
+    borderActiveColor: {
+      type: String,
+      default: DEFAULT_BORDER_ACTIVE_COLOR
     }
   },
   computed: {
     selected(): string {
       return String(this.isActive)
+    },
+    borderActive(): string {
+      return `border-${this.borderActiveColor}`
     }
   }
 })
