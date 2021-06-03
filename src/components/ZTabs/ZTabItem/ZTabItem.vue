@@ -6,6 +6,7 @@
     :isActive="isActive"
     :disabled="disabled"
     :removeIndicatorStyles="removeIndicatorStyles"
+    :borderActiveColor="borderActiveColor"
   >
     <slot :isActive="isActive"></slot>
   </z-tab>
@@ -13,6 +14,8 @@
 
 <script>
 import ZTab from '@/components/ZTab'
+
+const DEFAULT_BORDER_ACTIVE_COLOR = 'juniper'
 
 export default {
   name: 'ZTabItem',
@@ -36,6 +39,10 @@ export default {
     removeIndicatorStyles: {
       type: Boolean,
       default: false
+    },
+    borderActiveColor: {
+      type: String,
+      default: DEFAULT_BORDER_ACTIVE_COLOR
     }
   },
   computed: {
