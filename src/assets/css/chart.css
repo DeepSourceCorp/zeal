@@ -14,7 +14,7 @@
 }
 
 .z-chart-wrapper .graph-svg-tip.comparison .title {
-  @apply font-bold text-vanilla-100 fill-vanilla-100 tracking-widest;
+  @apply font-bold text-vanilla-100 fill-vanilla-100 tracking-wider;
 }
 
 .z-chart-wrapper .graph-svg-tip.comparison li .tooltip-label {
