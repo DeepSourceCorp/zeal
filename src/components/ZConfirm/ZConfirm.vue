@@ -10,9 +10,9 @@
         </slot>
         <slot name="footer">
           <div class="mt-6 space-x-4 text-right text-vanilla-100 flex items-center justify-end">
-            <z-button buttonType="ghost" class="text-vanilla-100" size="small" @click="close"
-              >Cancel</z-button
-            >
+            <z-button buttonType="ghost" class="text-vanilla-100" size="small" @click="close">{{
+              secondaryActionLabel
+            }}</z-button>
             <z-button
               :icon="primaryActionIcon"
               class="modal-primary-action"
@@ -47,6 +47,10 @@ export default Vue.extend({
     primaryActionLabel: {
       type: String,
       default: 'Confirm'
+    },
+    secondaryActionLabel: {
+      type: String,
+      default: 'Cancel'
     },
     primaryActionIcon: {
       type: String,
