@@ -1,20 +1,20 @@
 <template>
-  <section class="w-full relative text-vanilla-100 text-center">
-    <span class="block" ref="z-hero__content">
+  <section class="w-full relative text-vanilla-300 text-center">
+    <div ref="z-hero__content" class="flex flex-col space-y-5 sm:space-y-6">
       <!-- prettier-ignore -->
-      <h1 class="block text-vanilla-100 mb-4 sm:mb-6 text-2xl xs:text-2.5xl sm:text-3xl lg:text-5xl leading-10 sm:leading-11 lg:leading-12 w-auto lg:w-4/5 font-bold mx-auto sm:px-20">
+      <h1 class="text-vanilla-100 text-2.5xl sm:text-5xl w-auto font-bold mx-auto max-w-4xl leading-snug sm:leading-12 px-8 sm:px-0">
         <slot name="heading"></slot>
       </h1>
       <!-- prettier-ignore -->
-      <h2 class="block text-sm sm:text-lg lg:text-lg leading-6 sm:leading-9 lg:leading-normal w-auto lg:w-1/2 font-normal text-vanilla-200 mb-12 mx-auto px-5 xs:px-12 sm:px-40 lg:px-16">
+      <h2 class="text-base sm:text-lg leading-normal font-normal text-vanilla-300 px-4 sm:px-0 max-w-3xl mx-auto">
         <slot name="subheading"></slot>
       </h2>
-      <span class="block">
+      <div>
         <slot name="cta"></slot>
-      </span>
-    </span>
+      </div>
+    </div>
 
-    <div class="mt-10 lg:-mt-16" ref="z-hero-illustration__content">
+    <div class="mt-4 lg:-mt-16" ref="z-hero-illustration__content">
       <!-- This div is for scaling from a (a < 1) to b (a < b <= 1) -->
       <div ref="z-hero-illustration__container">
         <!-- This div for rotating on the z-axis from `a`deg (a > 0deg) to `b`deg ( 0deg <= b < a) -->
