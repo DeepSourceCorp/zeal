@@ -44,6 +44,10 @@ export default Vue.extend({
       type: String,
       default: undefined
     },
+    closeAfterPrimaryAction: {
+      type: Boolean,
+      default: true
+    },
     primaryActionLabel: {
       type: String,
       default: 'Confirm'
@@ -71,7 +75,9 @@ export default Vue.extend({
     },
     primaryAction(close: () => void): void {
       this.$emit('primaryAction')
-      close()
+      if (this.closeAfterPrimaryAction) {
+        close()
+      }
     }
   }
 })

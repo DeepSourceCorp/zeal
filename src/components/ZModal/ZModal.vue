@@ -65,6 +65,10 @@ export default Vue.extend({
         return ['narrow', 'base', 'wide'].includes(value)
       }
     },
+    closeAfterPrimaryAction: {
+      type: Boolean,
+      default: true
+    },
     primaryActionLabel: {
       type: String,
       default: undefined
@@ -92,7 +96,9 @@ export default Vue.extend({
     },
     primaryAction(close: () => void): void {
       this.$emit('primaryAction')
-      close()
+      if (this.closeAfterPrimaryAction) {
+        close()
+      }
     }
   }
 })
