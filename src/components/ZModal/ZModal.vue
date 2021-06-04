@@ -18,24 +18,15 @@
             <span class="text-base text-vanilla-100">{{ title }}</span>
           </slot>
           <!--This icon is too small, we can increase it a point-->
-          <z-button
-            icon="x"
-            buttonType="secondary"
-            size="x-small"
-            class="z-modal-close-x"
-            @click="close"
-          ></z-button>
+          <z-button icon="x" buttonType="secondary" size="x-small" class="z-modal-close-x" @click="close"></z-button>
         </div>
         <slot>
           <div class="p-4 text-sm text-vanilla-100 min-h-20">
             {{ body }}
           </div>
         </slot>
-        <slot name="footer">
-          <div
-            v-if="primaryActionLabel"
-            class="p-4 space-x-4 text-right text-vanilla-100 border-ink-200"
-          >
+        <slot name="footer" :close="close">
+          <div v-if="primaryActionLabel" class="p-4 space-x-4 text-right text-vanilla-100 border-ink-200">
             <z-button
               :icon="primaryActionIcon"
               class="modal-primary-action"
@@ -74,6 +65,10 @@ export default Vue.extend({
         return ['narrow', 'base', 'wide'].includes(value)
       }
     },
+    closeAfterPrimaryAction: {
+      type: Boolean,
+      default: true
+    },
     primaryActionLabel: {
       type: String,
       default: undefined
@@ -101,7 +96,9 @@ export default Vue.extend({
     },
     primaryAction(close: () => void): void {
       this.$emit('primaryAction')
-      close()
+      if (this.closeAfterPrimaryAction) {
+        close()
+      }
     }
   }
 })

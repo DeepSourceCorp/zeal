@@ -8,7 +8,7 @@
             {{ subtitle }}
           </div>
         </slot>
-        <slot name="footer">
+        <slot name="footer" :close="close">
           <div class="mt-6 space-x-4 text-right text-vanilla-100 flex items-center justify-end">
             <z-button buttonType="ghost" class="text-vanilla-100" size="small" @click="close">{{
               secondaryActionLabel
@@ -44,6 +44,10 @@ export default Vue.extend({
       type: String,
       default: undefined
     },
+    closeAfterPrimaryAction: {
+      type: Boolean,
+      default: true
+    },
     primaryActionLabel: {
       type: String,
       default: 'Confirm'
@@ -71,7 +75,9 @@ export default Vue.extend({
     },
     primaryAction(close: () => void): void {
       this.$emit('primaryAction')
-      close()
+      if (this.closeAfterPrimaryAction) {
+        close()
+      }
     }
   }
 })
