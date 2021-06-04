@@ -1,5 +1,5 @@
 .wrapper {
-  @apply inline-flex flex-col items-center;
+  @apply inline-flex flex-col items-center antialiased;
 }
 
 .icon-title {

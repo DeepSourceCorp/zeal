@@ -1,8 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Customers section renders hero section when the component is mounted 1`] = `
-<section class="w-full relative text-vanilla-100 text-center"><span class="block" style="opacity: 1;"><h1 class="block text-vanilla-100 mb-4 sm:mb-6 text-2xl xs:text-2.5xl sm:text-3xl lg:text-5xl leading-10 sm:leading-11 lg:leading-12 w-auto lg:w-4/5 font-bold mx-auto sm:px-20"></h1> <h2 class="block text-sm sm:text-lg lg:text-lg leading-6 sm:leading-9 lg:leading-normal w-auto lg:w-1/2 font-normal text-vanilla-200 mb-12 mx-auto px-5 xs:px-12 sm:px-40 lg:px-16"></h2> <span class="block"></span></span>
-  <div class="mt-10 lg:-mt-16" style="transform: 
+<section class="w-full relative text-vanilla-300 text-center">
+  <div class="flex flex-col space-y-5 sm:space-y-6" style="opacity: 1;">
+    <h1 class="text-vanilla-100 text-2.5xl sm:text-5xl w-auto font-bold mx-auto max-w-4xl leading-snug sm:leading-12 px-8 sm:px-0"></h1>
+    <h2 class="text-base sm:text-lg leading-normal font-normal text-vanilla-300 px-4 sm:px-0 max-w-3xl mx-auto"></h2>
+    <div></div>
+  </div>
+  <div class="mt-4 lg:-mt-16" style="transform: 
         translateX(0px)
         scale(0.7) translateZ(0px);">
     <div style="transform: 
