@@ -1,51 +1,12 @@
 <template>
   <section class="w-full relative text-vanilla-100 text-center">
     <span class="block" ref="z-hero__content">
-      // prettier-ignore
-      <h1
-        class="
-          block
-          text-vanilla-100
-          mb-4
-          sm:mb-6
-          text-2xl
-          xs:text-2.5xl
-          sm:text-3xl
-          lg:text-5xl
-          leading-10
-          sm:leading-11
-          lg:leading-12
-          w-auto
-          lg:w-4/5
-          font-bold
-          mx-auto
-          sm:px-20
-        "
-      >
+      <!-- prettier-ignore -->
+      <h1 class="block text-vanilla-100 mb-4 sm:mb-6 text-2xl xs:text-2.5xl sm:text-3xl lg:text-5xl leading-10 sm:leading-11 lg:leading-12 w-auto lg:w-4/5 font-bold mx-auto sm:px-20">
         <slot name="heading"></slot>
       </h1>
-      // prettier-ignore
-      <h2
-        class="
-          block
-          text-sm
-          sm:text-lg
-          lg:text-lg
-          leading-6
-          sm:leading-9
-          lg:leading-normal
-          w-auto
-          lg:w-1/2
-          font-normal
-          text-vanilla-200
-          mb-12
-          mx-auto
-          px-5
-          xs:px-12
-          sm:px-40
-          lg:px-16
-        "
-      >
+      <!-- prettier-ignore -->
+      <h2 class="block text-sm sm:text-lg lg:text-lg leading-6 sm:leading-9 lg:leading-normal w-auto lg:w-1/2 font-normal text-vanilla-200 mb-12 mx-auto px-5 xs:px-12 sm:px-40 lg:px-16">
         <slot name="subheading"></slot>
       </h2>
       <span class="block">
