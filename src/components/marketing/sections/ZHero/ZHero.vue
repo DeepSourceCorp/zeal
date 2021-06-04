@@ -1,6 +1,7 @@
 <template>
   <section class="w-full relative text-vanilla-100 text-center">
     <span class="block" ref="z-hero__content">
+      // prettier-ignore
       <h1
         class="
           block
@@ -23,6 +24,7 @@
       >
         <slot name="heading"></slot>
       </h1>
+      // prettier-ignore
       <h2
         class="
           block
