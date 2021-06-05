@@ -28,8 +28,8 @@ export const PulseWithColor = () => ({
 })
 
 export const PulseWithSizes = () => ({
-         components: { ZPulse },
-         template: `<div class="flex flex-col gap-3">
+  components: { ZPulse },
+  template: `<div class="flex flex-col gap-3">
       <div class="flex gap-2">
         <z-pulse size="small" color="cherry"></z-pulse>
         <z-pulse size="small" color="honey"></z-pulse>
@@ -66,4 +66,4 @@ export const PulseWithSizes = () => ({
         <z-pulse size="xxlarge" color="robin"></z-pulse>
       </div>
     </div>`
-       })
+})
