@@ -22,7 +22,7 @@ export default Vue.extend({
       type: String,
       default: 'base',
       validator: function (value: string): boolean {
-        return ['small', 'base', 'large'].includes(value)
+        return ['small', 'base', 'large', 'xlarge'].includes(value)
       }
     }
   },
@@ -31,7 +31,9 @@ export default Vue.extend({
       const sizes: Record<string, number> = {
         small: 3,
         base: 4,
-        large: 5
+        large: 5,
+        xlarge: 6,
+        xxlarge: 7
       }
 
       return sizes[this.size || 'base']
@@ -40,7 +42,9 @@ export default Vue.extend({
       const sizes: Record<string, number> = {
         small: 2,
         base: 3,
-        large: 4
+        large: 4,
+        xlarge: 5,
+        xxlarge: 6
       }
 
       return sizes[this.size || 'base']
