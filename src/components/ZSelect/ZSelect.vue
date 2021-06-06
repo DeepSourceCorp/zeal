@@ -5,8 +5,8 @@
     @blur.stop="open = false"
   >
     <div
-      class="selected h-full relative bg-ink-400 rounded-sm border border-solid text-vanilla-300 cursor-pointer"
-      :class="[(open && 'border-vanilla-400') || 'border-slate', spacing]"
+      class="selected h-full relative rounded-md border border-solid text-vanilla-300 cursor-pointer"
+      :class="[(open && 'border-vanilla-400') || borderClass, spacing, backgroundClass]"
       @click="open = !open"
     >
       <div
@@ -15,6 +15,7 @@
       >
         {{ selectedOptLabel || selectedOpt }}
       </div>
+      <!-- prettier-ignore -->
       <div
         v-else
         class="flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full text-vanilla-400 opacity-70 text-xs"
@@ -37,8 +38,9 @@
         ></z-icon>
       </span>
     </div>
+    <!-- prettier-ignore -->
     <div
-      class="options shadow-black border border-solid border-ink-100 text-vanilla-300 rounded-sm overflow-hidden absolute bg-ink-300 left-0 right-0 z-10 transition-all duration-300"
+      class="options shadow-black border border-solid border-ink-100 text-vanilla-300 rounded-md overflow-hidden absolute bg-ink-300 left-0 right-0 z-10 transition-all duration-300 mt-1"
       :class="!open && 'hidden'"
     >
       <slot></slot>
@@ -81,6 +83,14 @@ export default Vue.extend({
     spacing: {
       type: String,
       default: ''
+    },
+    borderClass: {
+      type: String,
+      default: 'border-ink-200'
+    },
+    backgroundClass: {
+      type: String,
+      default: 'bg-transparent'
     }
   },
   model: {
