@@ -15,6 +15,7 @@
       >
         {{ selectedOptLabel || selectedOpt }}
       </div>
+      <!-- prettier-ignore -->
       <div
         v-else
         class="flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full text-vanilla-400 opacity-70 text-xs"
@@ -37,6 +38,7 @@
         ></z-icon>
       </span>
     </div>
+    <!-- prettier-ignore -->
     <div
       class="options shadow-black border border-solid border-ink-100 text-vanilla-300 rounded-md overflow-hidden absolute bg-ink-300 left-0 right-0 z-10 transition-all duration-300 mt-1"
       :class="!open && 'hidden'"
