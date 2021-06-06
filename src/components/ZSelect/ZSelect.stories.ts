@@ -234,3 +234,50 @@ export const SelectWithPreselectedOption = () => ({
             </div>
         </div>`
 })
+
+export const SelectWithCustomStyle = () => ({
+  components: { ZSelect, ZOption, ZIcon },
+  data() {
+    return {
+      value: 'Option 1',
+      options: [
+        {
+          value: 'Option 1',
+          label: 'Option 1'
+        },
+        {
+          value: 'Option 2',
+          label: 'Option 2'
+        },
+        {
+          value: 'Option 3',
+          label: 'Option 3'
+        },
+        {
+          value: 'Option 4',
+          label: 'Option 4'
+        },
+        {
+          value: 'Option 5',
+          label: 'Option 5'
+        }
+      ]
+    }
+  },
+  template: `<div class='padded-container'>
+            <div class="select-container">
+                <z-select v-model="value" placeholder="Choose a framework" :clearable="true" selected="Option 5" borderClass="border-cherry" backgroundClass="bg-cherry">
+                    <z-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                        <div class="flex items-center">
+                            <z-icon icon="github" size="small" class="-mt-1 mr-2"></z-icon>
+                            <span class="flex-1">{{item.label}}</span>
+                        </div>
+                    </z-option>
+                </z-select>
+            </div>
+        </div>`
+})
