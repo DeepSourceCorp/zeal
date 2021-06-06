@@ -157,7 +157,7 @@ const components = [
 ]
 
 const install = (Vue: any) => {
-  components.forEach(component => {
+  components.forEach((component) => {
     Vue.component(component.name, component)
   })
   Vue.use(ZTooltip, TooltipOptions)
