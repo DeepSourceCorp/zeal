@@ -56,6 +56,8 @@ import ZTimeline from './components/ZTimeline/index'
 import ZTimelineItem from './components/ZTimeline/ZTimelineItem/index'
 import ZConfirm from './components/ZConfirm/index'
 import ZDialogGeneric from './components/ZDialogGeneric/index'
+import { default as ZTooltip } from 'v-tooltip'
+import TooltipOptions from './helpers/components/tooltip'
 
 // Marketing components
 import ZFooter from './components/marketing/ZFooter'
@@ -158,6 +160,7 @@ const install = (Vue: any) => {
   components.forEach((component) => {
     Vue.component(component.name, component)
   })
+  Vue.use(ZTooltip, TooltipOptions)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -302,6 +305,8 @@ export { default as ZTimeline } from './components/ZTimeline/index'
 export { default as ZTimelineItem } from './components/ZTimeline/ZTimelineItem/index'
 export { default as ZConfirm } from './components/ZConfirm/index'
 export { default as ZDialogGeneric } from './components/ZDialogGeneric/index'
+export { default as ZTooltip } from 'v-tooltip'
+export { default as TooltipOptions } from './helpers/components/tooltip'
 
 // Directives
 export { default as outsideClickDirective } from './directives/outside-click'
