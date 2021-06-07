@@ -8,7 +8,7 @@ import feather from 'feather-icons'
 import customIcons from '../../helpers/components/icon'
 
 async function copyToClipboard(candidate: string) {
-  candidate = `<z-icon icon="${candidate} size="small"></z-icon>`
+  candidate = `<z-icon icon="${candidate}" size="small"></z-icon>`
   try {
     await navigator.clipboard.writeText(candidate)
   } catch (e) {
