@@ -62,16 +62,11 @@ export default {
     handleScroll() {
       this.isScrolling = true
       this.isUserOnTop = Boolean(!(window.scrollY > 50))
-      this.hideOnScroll =
-        window.scrollY > 50 && this.hideLinksOnScroll ? 'lg:opacity-0' : 'lg:opacity-1'
+      this.hideOnScroll = window.scrollY > 50 && this.hideLinksOnScroll ? 'lg:opacity-0' : 'lg:opacity-1'
     },
     getComponent(parent, name, list = []) {
       parent.forEach((child) => {
-        if (
-          child &&
-          child?.componentOptions &&
-          toPascal(child.componentOptions.tag || '') === name
-        ) {
+        if (child && child?.componentOptions && toPascal(child.componentOptions.tag || '') === name) {
           list.push(child)
         } else if (child?.children) {
           this.getComponent(child.children, name, list)
@@ -135,10 +130,7 @@ export default {
       mobileHeader = (
         // Mobile Header Section
         <div class={this.mobHeaderStyle}>
-          <div
-            class="flex cursor-pointer justify-end p-4 border-b border-ink-200"
-            on-click={this.toggleModal}
-          >
+          <div class="flex cursor-pointer justify-end p-4 border-b border-ink-200" on-click={this.toggleModal}>
             <z-icon icon="x" size="medium" color="vanilla-100"></z-icon>
           </div>
           {menuItems}
