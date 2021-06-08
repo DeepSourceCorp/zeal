@@ -2,7 +2,7 @@
   <section class="lg:flex">
     <div class="flex flex-col justify-around relative">
       <span
-        class="text-vanilla-100 font-bold text-3xl md:text-4xl leading-11 lg:leading-12 md:mr-20"
+        class="text-vanilla-100 font-bold text-2xl sm:text-3xl leading-11 lg:leading-12 md:mr-20"
       >
         <slot name="heading"></slot>
       </span>
@@ -81,7 +81,7 @@ import ZTestimonial from '@/components/marketing/ZTestimonial'
 import ZIcon from '@/components/ZIcon'
 
 const CARD = {
-  ACTIVE: 'block animate-fadeIn',
+  ACTIVE: 'block animate-fadeInFast',
   INACTIVE: 'hidden'
 }
 const LOGO = {
