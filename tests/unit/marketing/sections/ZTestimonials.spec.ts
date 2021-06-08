@@ -95,6 +95,6 @@ describe('Testimonials section', () => {
     })
     expect(mountedInstance.findAll('.z-testimonials__logo').length).toEqual(6)
     expect(mountedInstance.findAll('.bg-ink-300').length).toEqual(6)
-    expect(mountedInstance.findAll('.block.animate-fadeIn').length).toEqual(1)
+    expect(mountedInstance.findAll('.block.animate-fadeInFast').length).toEqual(1)
   })
 })
