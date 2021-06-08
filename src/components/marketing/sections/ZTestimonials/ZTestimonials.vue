@@ -4,21 +4,9 @@
       <span class="text-vanilla-100 font-bold text-2xl sm:text-3xl leading-11 lg:leading-12 md:mr-20">
         <slot name="heading"></slot>
       </span>
+      <!-- prettier-ignore -->
       <span
-        class="
-          z-testimonials__logos
-          flex
-          lg:grid
-          grid-cols-3
-          px-8
-          sm:px-0
-          mt-6
-          mb-2
-          overflow-x-hidden
-          flex-nowrap
-          w-full-screen
-          lg:w-full-screen-none
-        "
+        class="z-testimonials__logos flex lg:grid grid-cols-3 px-8 sm:px-0 mt-6 mb-2 overflow-x-hidden flex-nowrap w-full-screen lg:w-full-screen-none"
       >
         <span
           v-for="(testimonial, index) in testimonials"
