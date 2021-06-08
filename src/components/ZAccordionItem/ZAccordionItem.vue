@@ -2,8 +2,7 @@
   <div
     class="z-accordion-item"
     :class="{
-      'border-ink-200 border-t border-b first:border-0 last:border-0 hover:bg-ink-300': this
-        .showBorders,
+      'border-ink-200 border-t border-b first:border-0 last:border-0 hover:bg-ink-300': this.showBorders,
       'text-vanilla-200': !this.isDisabled,
       'text-slate': this.isDisabled
     }"
@@ -21,7 +20,8 @@
         <z-icon
           icon="chevron-right"
           color="slate"
-          class="transform transition-all duration-DEFAULT ease-in-out group"
+          class="transform transition-all duration-DEFAULT ease-in-out group stroke-1.5"
+          size="medium"
           :class="[
             accordionHeaderAnimations,
             {

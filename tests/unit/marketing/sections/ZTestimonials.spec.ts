@@ -6,48 +6,42 @@ import ZTestimonials from '../../../../src/components/marketing/sections/ZTestim
 const testimonials = [
   {
     customer: 'Dgraph',
-    text:
-      'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
+    text: 'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
     author: 'Piero Molino, Senior Technology Officer',
     image: { color: 'https://i.imgur.com/ISsHpNY.png', bnw: 'https://i.imgur.com/ISsHpNY.png' },
     url: ''
   },
   {
     customer: 'Intel',
-    text:
-      'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
+    text: 'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
     author: 'Piero Molino, Senior Technology Officer',
     image: { color: 'https://i.imgur.com/oqlV3mB.png', bnw: 'https://i.imgur.com/oqlV3mB.png' },
     url: ''
   },
   {
     customer: 'Qubole',
-    text:
-      'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
+    text: 'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
     author: 'Piero Molino, Senior Technology Officer',
     image: { color: 'https://i.imgur.com/ISsHpNY.png', bnw: 'https://i.imgur.com/ISsHpNY.png' },
     url: ''
   },
   {
     customer: 'Okteto',
-    text:
-      'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
+    text: 'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
     author: 'Piero Molino, Senior Technology Officer',
     image: { color: 'https://i.imgur.com/oqlV3mB.png', bnw: 'https://i.imgur.com/oqlV3mB.png' },
     url: ''
   },
   {
     customer: 'Slack1',
-    text:
-      'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
+    text: 'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
     author: 'Piero Molino, Senior Technology Officer',
     image: { color: 'https://i.imgur.com/ifq7pvm.png', bnw: 'https://i.imgur.com/ifq7pvm.png' },
     url: ''
   },
   {
     customer: 'Slack2',
-    text:
-      'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
+    text: 'DeepSource actually helped us resolve more than 50 bugs, which has made the code base much more stable and dependable. It allowed us to identify many more areas for improvement.',
     author: 'Piero Molino, Senior Technology Officer',
     image: { color: 'https://i.imgur.com/ifq7pvm.png', bnw: 'https://i.imgur.com/ifq7pvm.png' },
     url: ''
@@ -95,6 +89,6 @@ describe('Testimonials section', () => {
     })
     expect(mountedInstance.findAll('.z-testimonials__logo').length).toEqual(6)
     expect(mountedInstance.findAll('.bg-ink-300').length).toEqual(6)
-    expect(mountedInstance.findAll('.block.animate-fadeIn').length).toEqual(1)
+    expect(mountedInstance.findAll('.block.animate-fadeInFast').length).toEqual(1)
   })
 })
