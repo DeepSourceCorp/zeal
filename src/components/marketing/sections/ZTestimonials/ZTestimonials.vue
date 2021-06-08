@@ -1,13 +1,24 @@
 <template>
   <section class="lg:flex">
     <div class="flex flex-col justify-around relative">
-      <span
-        class="text-vanilla-100 font-bold text-2xl sm:text-3xl leading-11 lg:leading-12 md:mr-20"
-      >
+      <span class="text-vanilla-100 font-bold text-2xl sm:text-3xl leading-11 lg:leading-12 md:mr-20">
         <slot name="heading"></slot>
       </span>
       <span
-        class="z-testimonials__logos flex lg:grid grid-cols-3 px-8 sm:px-0 mt-6 mb-2 overflow-x-hidden flex-nowrap w-full-screen lg:w-full-screen-none"
+        class="
+          z-testimonials__logos
+          flex
+          lg:grid
+          grid-cols-3
+          px-8
+          sm:px-0
+          mt-6
+          mb-2
+          overflow-x-hidden
+          flex-nowrap
+          w-full-screen
+          lg:w-full-screen-none
+        "
       >
         <span
           v-for="(testimonial, index) in testimonials"
@@ -23,9 +34,7 @@
           />
         </span>
       </span>
-      <span
-        class="flex justify-between -mt-16 w-full-screen lg:w-full-screen-none lg:hidden pointer-events-none"
-      >
+      <span class="flex justify-between -mt-16 w-full-screen lg:w-full-screen-none lg:hidden pointer-events-none">
         <span class="w-20 bg-gradient-to-r from-ink-400 via-transparent to-transparent h-16"></span>
         <span class="w-40 bg-gradient-to-r from-transparent via-transparent to-ink-400 h-16"></span>
       </span>
@@ -67,9 +76,7 @@
             <button />
           </li>
         </span>
-        <span class="cursor-pointer" @click="showNextTestimonial()"
-          ><z-icon color="slate" icon="arrow-right"
-        /></span>
+        <span class="cursor-pointer" @click="showNextTestimonial()"><z-icon color="slate" icon="arrow-right" /></span>
       </ul>
     </div>
   </section>
@@ -153,9 +160,7 @@ export default Vue.extend({
     },
     scrollActiveTestimonialLogoIntoView() {
       const logos = document.getElementsByClassName('z-testimonials__logos')[0] as HTMLElement
-      const logo = document.getElementsByClassName('z-testimonials__logo')[
-        this.currentIndex
-      ] as HTMLElement
+      const logo = document.getElementsByClassName('z-testimonials__logo')[this.currentIndex] as HTMLElement
       logos.scrollTo({ left: logo.offsetLeft - 30, behavior: 'smooth' })
     }
   }
