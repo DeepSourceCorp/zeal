@@ -6,6 +6,7 @@ import ZAccordionItem from '@/components/ZAccordionItem/ZAccordionItem.vue'
 import ZIcon from '@/components/ZIcon/ZIcon.vue'
 import ZButton from '@/components/ZButton/ZButton.vue'
 import ZInput from '@/components/ZInput/ZInput.vue'
+import Vue from 'vue'
 
 export default {
   title: 'Accordion',
@@ -53,25 +54,68 @@ export const AccordionWithBaseStyle = () => ({
     </div>`
 })
 
-export const AccordionWithOpenedCards = () => ({
-  components: { ZAccordion, ZAccordionItem },
-  template: `<div class='padded-container input-container'>
-        <z-accordion class="text-vanilla-100" :showBorders="true">
-          <z-accordion-item title="Consistency" :is-open="true" class="p-4">
-            <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
-            <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
-          </z-accordion-item>
-          <z-accordion-item title="Feedback" class="p-4">
-            <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
-            <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
-          </z-accordion-item>
-          <z-accordion-item title="Efficiency" class="p-4">
-            <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
-            <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
-          </z-accordion-item>
-        </z-accordion>
-    </div>`
-})
+export const AccordionWithControlledCards = () => {
+  return Vue.extend({
+    components: { ZAccordion, ZAccordionItem, ZButton },
+    data() {
+      return {
+        currentIndex: 0,
+        buttons: [0,1,2]
+      }
+    },
+    methods: {
+      updateIndex(index: number){
+        this.currentIndex = index
+      }
+    },
+    template: `<div class='padded-container input-container'>
+          <div class="flex flex-row gap-4">
+            <z-button v-for="(button, index) in buttons" :buttonType="currentIndex === index ? 'primary' : 'secondary'" @click="() => updateIndex(index)">{{index}}</z-button>
+          </div>
+          <z-accordion class="text-vanilla-100" :showBorders="true">
+            <z-accordion-item title="Consistency" :is-open="currentIndex === 0" class="p-4">
+              <template v-slot:title="{ open }">
+                <div class="flex items-center cursor-pointer w-full" @click="() => updateIndex(0)">
+                  <span class="flex-1 font-medium text-vanilla-100">Consistency</span>
+                  <z-icon icon="chevron-right" 
+                      size="small" color="slate" 
+                      class="transform"
+                      :class="open ? 'animate-first-quarter-spin rotate-90' : 'animate-reverse-quarter-spin rotate-0'"></z-icon>
+                </div>
+              </template>
+              <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
+              <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
+            </z-accordion-item>
+            <z-accordion-item title="Feedback" :is-open="currentIndex === 1" class="p-4">
+              <template v-slot:title="{ open }">
+                <div class="flex items-center cursor-pointer w-full" @click="() => updateIndex(1)">
+                  <span class="flex-1 font-medium text-vanilla-100">Feedback</span>
+                  <z-icon icon="chevron-right" 
+                      size="small" color="slate" 
+                      class="transform"
+                      :class="open ? 'animate-first-quarter-spin rotate-90' : 'animate-reverse-quarter-spin rotate-0'"></z-icon>
+                </div>
+              </template>
+              <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
+              <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
+            </z-accordion-item>
+            <z-accordion-item title="Efficiency" :is-open="currentIndex === 2" class="p-4">
+              <template v-slot:title="{ open }">
+                <div class="flex items-center cursor-pointer w-full" @click="() => updateIndex(2)">
+                  <span class="flex-1 font-medium text-vanilla-100">Efficiency</span>
+                  <z-icon icon="chevron-right" 
+                      size="small" color="slate" 
+                      class="transform"
+                      :class="open ? 'animate-first-quarter-spin rotate-90' : 'animate-reverse-quarter-spin rotate-0'"></z-icon>
+                </div>
+              </template>
+              <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
+              <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
+            </z-accordion-item>
+          </z-accordion>
+      </div>`
+  })
+}
 
 export const AccordionWithDisabledState = () => ({
   components: { ZAccordion, ZAccordionItem },
