@@ -21,7 +21,8 @@
         <z-icon
           icon="chevron-right"
           color="slate"
-          class="transform transition-all duration-DEFAULT ease-in-out group"
+          class="transform transition-all duration-DEFAULT ease-in-out group stroke-1.5"
+          size="medium"
           :class="[
             accordionHeaderAnimations,
             {
@@ -78,6 +79,11 @@ export default {
       accordionHeaderAnimations: '',
       isDisabled: this.$parent.disabled,
       showBorders: this.$parent.showBorders
+    }
+  },
+  watch: {
+    isOpen() {
+      this.toggleAccordion()
     }
   },
   methods: {
