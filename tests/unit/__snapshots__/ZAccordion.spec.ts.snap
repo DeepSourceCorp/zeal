@@ -18,7 +18,7 @@ exports[`Accordions renders a customized accordion 1`] = `
 exports[`Accordions renders a default accordion 1`] = `
 <div class="text-vanilla-100">
   <div class="z-accordion-item text-vanilla-200">
-    <div class="flex items-center transition-all duration-700 ease-in-out group cursor-pointer"><span class="flex-1 font-medium">Consistency</span> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transform transition-all duration-DEFAULT ease-in-out group z-icon w-4 h-4 z-icon--chevron-right text-slate group-hover:text-vanilla-200">
+    <div class="flex items-center transition-all duration-700 ease-in-out group cursor-pointer"><span class="flex-1 font-medium">Consistency</span> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transform transition-all duration-DEFAULT ease-in-out group stroke-1.5 z-icon w-6 h-6 z-icon--chevron-right text-slate group-hover:text-vanilla-200">
         <polyline points="9 18 15 12 9 6"></polyline>
       </svg></div>
     <div class="overflow-scroll transition-max-height duration-300 ease-in-out text-sm leading-6 max-h-0">
@@ -27,7 +27,7 @@ exports[`Accordions renders a default accordion 1`] = `
     </div>
   </div>
   <div class="z-accordion-item text-vanilla-200">
-    <div class="flex items-center transition-all duration-700 ease-in-out group cursor-pointer"><span class="flex-1 font-medium">Feedback</span> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transform transition-all duration-DEFAULT ease-in-out group z-icon w-4 h-4 z-icon--chevron-right text-slate group-hover:text-vanilla-200">
+    <div class="flex items-center transition-all duration-700 ease-in-out group cursor-pointer"><span class="flex-1 font-medium">Feedback</span> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transform transition-all duration-DEFAULT ease-in-out group stroke-1.5 z-icon w-6 h-6 z-icon--chevron-right text-slate group-hover:text-vanilla-200">
         <polyline points="9 18 15 12 9 6"></polyline>
       </svg></div>
     <div class="overflow-scroll transition-max-height duration-300 ease-in-out text-sm leading-6 max-h-0">
@@ -36,7 +36,7 @@ exports[`Accordions renders a default accordion 1`] = `
     </div>
   </div>
   <div class="z-accordion-item text-vanilla-200">
-    <div class="flex items-center transition-all duration-700 ease-in-out group cursor-pointer"><span class="flex-1 font-medium">Efficiency</span> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transform transition-all duration-DEFAULT ease-in-out group z-icon w-4 h-4 z-icon--chevron-right text-slate group-hover:text-vanilla-200">
+    <div class="flex items-center transition-all duration-700 ease-in-out group cursor-pointer"><span class="flex-1 font-medium">Efficiency</span> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transform transition-all duration-DEFAULT ease-in-out group stroke-1.5 z-icon w-6 h-6 z-icon--chevron-right text-slate group-hover:text-vanilla-200">
         <polyline points="9 18 15 12 9 6"></polyline>
       </svg></div>
     <div class="overflow-scroll transition-max-height duration-300 ease-in-out text-sm leading-6 max-h-0">
