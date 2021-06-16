@@ -101,6 +101,12 @@ export const IconButton = () => ({
     </div>`
 })
 
+export const LoadingButton = () => ({
+  components: { ZButton },
+  template:
+    '<z-button icon="plus" :isLoading="true" label="Hello World" loadingLabel="Sending Email" buttonType="primary"></z-button>'
+})
+
 export const IconButtonWithText = () => ({
   components: { ZButton },
   data() {
