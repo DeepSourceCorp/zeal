@@ -10,8 +10,7 @@ import Vue from 'vue'
 
 export default {
   title: 'Accordion',
-  component: ZAccordion,
-  excludeStories: /.*Data$/
+  component: ZAccordion
 }
 
 export const DefaultAccordion = () => ({
