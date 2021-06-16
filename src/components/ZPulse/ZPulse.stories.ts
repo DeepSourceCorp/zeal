@@ -28,8 +28,8 @@ export const PulseWithColor = () => ({
 })
 
 export const PulseWithSizes = () => ({
-  components: { ZPulse },
-  template: `<div class="flex flex-col gap-3">
+         components: { ZPulse },
+         template: `<div class="flex flex-col gap-3">
       <div class="flex gap-2">
         <z-pulse size="small" color="cherry"></z-pulse>
         <z-pulse size="small" color="honey"></z-pulse>
@@ -51,5 +51,19 @@ export const PulseWithSizes = () => ({
         <z-pulse size="large" color="slate"></z-pulse>
         <z-pulse size="large" color="robin"></z-pulse>
       </div>
+      <div class="flex gap-2">
+        <z-pulse size="xlarge" color="cherry"></z-pulse>
+        <z-pulse size="xlarge" color="honey"></z-pulse>
+        <z-pulse size="xlarge" color="aqua"></z-pulse>
+        <z-pulse size="xlarge" color="slate"></z-pulse>
+        <z-pulse size="xlarge" color="robin"></z-pulse>
+      </div>
+      <div class="flex gap-2">
+        <z-pulse size="xxlarge" color="cherry"></z-pulse>
+        <z-pulse size="xxlarge" color="honey"></z-pulse>
+        <z-pulse size="xxlarge" color="aqua"></z-pulse>
+        <z-pulse size="xxlarge" color="slate"></z-pulse>
+        <z-pulse size="xxlarge" color="robin"></z-pulse>
+      </div>
     </div>`
-})
+       })
