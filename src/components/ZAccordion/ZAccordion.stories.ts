@@ -60,11 +60,11 @@ export const AccordionWithControlledCards = () => {
     data() {
       return {
         currentIndex: 0,
-        buttons: [0,1,2]
+        buttons: [0, 1, 2]
       }
     },
     methods: {
-      updateIndex(index: number){
+      updateIndex(index: number) {
         this.currentIndex = index
       }
     },
@@ -211,15 +211,7 @@ export const WebNextFooter = () => ({
       product: ['Autofix', 'Code formatters', 'Pricing', 'Security'],
       languages: ['For Python', 'For Go', 'For Ruby', 'For JavaScript'],
       resources: ['Documentation', 'Blog', 'Changelog', 'Slack user group'],
-      company: [
-        'About',
-        'Customers',
-        'Jobs',
-        'Privacy Policy',
-        'Terms of Service',
-        'Press Enquiries',
-        'Brand Assets'
-      ]
+      company: ['About', 'Customers', 'Jobs', 'Privacy Policy', 'Terms of Service', 'Press Enquiries', 'Brand Assets']
     }
   },
   computed: {
