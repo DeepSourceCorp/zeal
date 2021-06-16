@@ -29,11 +29,11 @@ describe('Button component', () => {
     ).toMatchSnapshot()
   })
 
-  it('renders a button with primary color', () => {
+  it('renders a button with primary type', () => {
     expect(
       mountFunction({
         propsData: {
-          color: 'primary'
+          buttonType: 'primary'
         },
         slots: {
           default: 'Primary Button'
@@ -41,11 +41,11 @@ describe('Button component', () => {
       }).html()
     ).toMatchSnapshot()
   })
-  it('renders a button with secondary color', () => {
+  it('renders a button with secondary type', () => {
     expect(
       mountFunction({
         propsData: {
-          color: 'secondary'
+          buttonType: 'secondary'
         },
         slots: {
           default: 'Secondary Button'
@@ -94,7 +94,7 @@ describe('Button component', () => {
       mountFunction({
         propsData: {
           as: 'link',
-          color: 'link',
+          buttonType: 'link',
           to: 'https://deepsource.io/'
         },
         slots: {
@@ -112,5 +112,30 @@ describe('Button component', () => {
     })
     wrapper.find('.z-btn').trigger('click')
     expect(click).toHaveBeenCalledTimes(1)
+  })
+  it('button should render correct colors', () => {
+    expect(
+      mountFunction({
+        propsData: {
+          color: 'robin'
+        },
+        slots: {
+          default: 'Secondary Button'
+        }
+      }).html()
+    ).toMatchSnapshot()
+  })
+  it('should render loading state', () => {
+    expect(
+      mountFunction({
+        propsData: {
+          isLoading: true,
+          loadingLabel: 'Loading'
+        },
+        slots: {
+          default: 'Secondary Button'
+        }
+      }).html()
+    ).toMatchSnapshot()
   })
 })

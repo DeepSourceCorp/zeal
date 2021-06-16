@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Button component button should render correct colors 1`] = `
+<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-robin z-btn--robin h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-light-juniper">
+  <!----> Secondary Button
+</button>
+`;
+
 exports[`Button component renders a button tag when the component is mounted 1`] = `
 <button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-ink-400 h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-light-juniper">
   <!---->
@@ -12,14 +18,14 @@ exports[`Button component renders a button tag with the given text 1`] = `
 </button>
 `;
 
-exports[`Button component renders a button with primary color 1`] = `
-<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-primary z-btn--primary h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-light-juniper">
+exports[`Button component renders a button with primary type 1`] = `
+<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-ink-400 h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-light-juniper">
   <!----> Primary Button
 </button>
 `;
 
-exports[`Button component renders a button with secondary color 1`] = `
-<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-secondary z-btn--secondary h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-light-juniper">
+exports[`Button component renders a button with secondary type 1`] = `
+<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-vanilla-100 h-10 px-4 py-2 text-base space-x-2 leading-8 bg-ink-300 hover:bg-ink-200">
   <!----> Secondary Button
 </button>
 `;
@@ -43,7 +49,13 @@ exports[`Button component renders a full-width button 1`] = `
 `;
 
 exports[`Button component renders a link tag when type is specified as link 1`] = `
-<a href="https://deepsource.io/" type="link" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-link z-btn--link p-0 h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-light-juniper">
+<a href="https://deepsource.io/" type="link" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-juniper p-0 h-10 px-4 py-2 text-base space-x-2 leading-8 font-normal hover:underline">
   <!----> Link Button
 </a>
+`;
+
+exports[`Button component should render loading state 1`] = `
+<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-ink-400 h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-light-juniper">
+  <!----> Secondary Button
+</button>
 `;
