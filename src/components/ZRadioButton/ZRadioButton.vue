@@ -1,7 +1,7 @@
 <template>
   <!-- prettier-ignore -->
   <label
-    class="flex items-center z-radio-button border-ink-200 last:border-r border border-r-0 first:rounded-l-md last:rounded-r-md"
+    class="flex items-center z-radio-button border-ink-200 last:border-r border border-r-0 first:rounded-l-sm last:rounded-r-sm"
     :class="`${(isDisabled && 'cursor-not-allowed') || 'cursor-pointer'}`"
     @click="updateInput"
   >
