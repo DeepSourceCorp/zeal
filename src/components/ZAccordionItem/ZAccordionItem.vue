@@ -80,6 +80,11 @@ export default {
       showBorders: this.$parent.showBorders
     }
   },
+  watch: {
+    isOpen() {
+      this.toggleAccordion()
+    }
+  },
   methods: {
     toggleAccordion() {
       if (this.isDisabled) return
