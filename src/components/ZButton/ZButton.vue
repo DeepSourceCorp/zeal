@@ -1,4 +1,5 @@
 <template>
+  <!-- prettier-ignore -->
   <component
     :is="isLink ? 'a' : 'button'"
     :href="to || '#'"
