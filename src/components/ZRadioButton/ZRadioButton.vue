@@ -1,18 +1,15 @@
 <template>
+  <!-- prettier-ignore -->
   <label
-    class="flex items-center z-radio-button text-vanilla-100 border-ink-200 last:border-r"
+    class="flex items-center z-radio-button border-ink-200 last:border-r border border-r-0 first:rounded-l-md last:rounded-r-md"
     :class="`${(isDisabled && 'cursor-not-allowed') || 'cursor-pointer'}`"
     @click="updateInput"
   >
     <span
-      class="box-border relative inline-block text-sm font-medium border border-r-0 border-solid cursor-pointer z-radio--inner border-ink-200"
-      :class="[
-        isChecked ? 'bg-ink-200 text-vanilla-100' : 'bg-transparent text-vanilla-400',
-        spacing
-      ]"
+      class="box-border relative inline-block text-sm font-medium cursor-pointer z-radio--inner "
+      :class="[isChecked ? 'bg-ink-200 text-vanilla-100' : 'bg-transparent text-vanilla-400', spacing]"
     >
-      <slot></slot>
-      <template v-if="!$slots.default">{{ label }}</template>
+      <slot>{{ label }}</slot>
     </span>
     <input
       type="radio"

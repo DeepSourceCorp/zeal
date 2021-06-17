@@ -1128,7 +1128,7 @@ module.exports = {
       'focus-within'
     ],
     borderOpacity: ['responsive', 'hover', 'focus'],
-    borderRadius: ['responsive'],
+    borderRadius: ['responsive', 'last', 'first'],
     borderStyle: ['responsive', 'last', 'first'],
     borderWidth: ['responsive', 'even', 'last', 'first'],
     boxShadow: ['responsive', 'hover', 'focus', 'group-hover', 'focus-within'],
