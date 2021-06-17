@@ -37,9 +37,7 @@ module.exports = {
       },
       dawn: ['98.66deg', `${theme('colors.robin')} 4.42%`, `${theme('colors.lilac')} 96.6%`],
       'dark-dawn': {
-        custom: `linear-gradient(180deg, ${theme(
-          'colors.ink.400'
-        )} 0%, rgba(22, 24, 29, 0.7) 100%), 
+        custom: `linear-gradient(180deg, ${theme('colors.ink.400')} 0%, rgba(22, 24, 29, 0.7) 100%), 
           linear-gradient(98.66deg, ${theme('colors.robin')} 4.42%, ${theme('colors.lilac')} 96.6%)`
       },
       splash: ['98.66deg', `${theme('colors.robin')} 4.42%`, '#3450AF 96.6%'],
@@ -168,8 +166,7 @@ module.exports = {
       z3: '6px 15px 20px 5px #050D21 30%',
       'inner-z1': '2px 2px 6px 2px #050D21 20% inset',
       'inner-z2': '-1px -1px 12px 0px #9A9A9A 10% inset',
-      'double-dark':
-        '0px 18px 51px rgba(0, 0, 0, 0.26), 0px 2.25388px 6.38599px rgba(0, 0, 0, 0.13)'
+      'double-dark': '0px 18px 51px rgba(0, 0, 0, 0.26), 0px 2.25388px 6.38599px rgba(0, 0, 0, 0.13)'
     },
     container: {
       padding: {
@@ -229,15 +226,7 @@ module.exports = {
         '"Noto Color Emoji"'
       ],
       serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
-      mono: [
-        'ui-monospace',
-        'Menlo',
-        'Monaco',
-        'Consolas',
-        '"Liberation Mono"',
-        '"Courier New"',
-        'monospace'
-      ]
+      mono: ['ui-monospace', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace']
     },
     fontSize: {
       xxs: '0.625rem',
@@ -745,8 +734,7 @@ module.exports = {
     transitionProperty: {
       none: 'none',
       all: 'all',
-      DEFAULT:
-        'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
+      DEFAULT: 'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
       colors: 'background-color, border-color, color, fill, stroke',
       opacity: 'opacity',
       shadow: 'box-shadow',
@@ -1103,30 +1091,14 @@ module.exports = {
     appearance: ['responsive'],
     backgroundClip: ['responsive'],
     backgroundAttachment: ['responsive'],
-    backgroundColor: [
-      'responsive',
-      'hover',
-      'focus',
-      'sibling-checked',
-      'group-hover',
-      'dark',
-      'focus-within'
-    ],
+    backgroundColor: ['responsive', 'hover', 'focus', 'sibling-checked', 'group-hover', 'dark', 'focus-within'],
     backgroundImage: ['responsive'],
     backgroundOpacity: ['responsive', 'hover', 'focus', 'group-hover', 'focus-within', 'no-filter'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: ['responsive'],
-    borderColor: [
-      'responsive',
-      'hover',
-      'focus',
-      'group-hover',
-      'sibling-checked',
-      'dark',
-      'focus-within'
-    ],
+    borderColor: ['responsive', 'hover', 'focus', 'group-hover', 'sibling-checked', 'dark', 'focus-within'],
     borderOpacity: ['responsive', 'hover', 'focus'],
     borderRadius: ['responsive', 'last', 'first'],
     borderStyle: ['responsive', 'last', 'first'],
@@ -1193,15 +1165,7 @@ module.exports = {
     strokeWidth: ['responsive'],
     tableLayout: ['responsive'],
     textAlign: ['responsive'],
-    textColor: [
-      'responsive',
-      'group-hover',
-      'hover',
-      'focus',
-      'sibling-checked',
-      'focus-within',
-      'dark'
-    ],
+    textColor: ['responsive', 'group-hover', 'hover', 'focus', 'sibling-checked', 'focus-within', 'dark'],
     textOpacity: ['responsive', 'hover', 'focus', 'group-hover', 'focus-within'],
     textDecoration: ['responsive', 'hover', 'focus', 'group-hover', 'focus-within'],
     textTransform: ['responsive'],
@@ -1327,12 +1291,8 @@ module.exports = {
         if (Object.prototype.hasOwnProperty.call(gradient, 'custom')) {
           background = gradient.custom
         } else {
-          const type = Object.prototype.hasOwnProperty.call(gradient, 'type')
-            ? gradient.type
-            : 'linear'
-          const colors = Object.prototype.hasOwnProperty.call(gradient, 'colors')
-            ? gradient.colors
-            : gradient
+          const type = Object.prototype.hasOwnProperty.call(gradient, 'type') ? gradient.type : 'linear'
+          const colors = Object.prototype.hasOwnProperty.call(gradient, 'colors') ? gradient.colors : gradient
           background = `${type}-gradient(${colors.join(', ')})`
         }
 
