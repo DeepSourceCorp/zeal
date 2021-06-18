@@ -35,7 +35,7 @@
       </div>
     </slot>
     <div
-      class="overflow-scroll transition-max-height duration-300 ease-in-out text-sm leading-6"
+      class="overflow-auto transition-max-height duration-300 ease-in-out text-sm leading-6"
       :class="{
         'max-h-52': this.open,
         'max-h-0': !this.open,
