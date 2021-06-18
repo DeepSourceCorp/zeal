@@ -132,6 +132,11 @@ export default {
       clearInterval(this.autoInterval)
     }
   },
+  watch: {
+    activeIndex() {
+      this.showSlide(this.activeIndex)
+    }
+  },
   mounted() {
     this.slides = this.$children.filter((child) => child.$options.name === 'ZSlide')
     this.slides.map((slide, index) => {
