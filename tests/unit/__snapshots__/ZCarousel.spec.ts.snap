@@ -5,36 +5,10 @@ exports[`ZCarousel renders the Carousel Component with Slides 1`] = `
   <div class="z-carousel__container relative overflow-hidden h-full z-10">
     <div>Some Random Content</div>
   </div>
-  <div class="z-carousel__controls"><button class="
-        z-carousel__control z-carousel__control--left
-        left-0
-        top-50
-        absolute
-        h-12
-        w-12
-        z-20
-        -mt-6
-        flex
-        bg-ink-100 bg-opacity-75
-        justify-center
-        items-center
-      "><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-4 h-4 z-icon--arrow-left text-vanilla-400">
+  <div class="z-carousel__controls"><button class="z-carousel__control z-carousel__control--left left-0 top-50 absolute h-12 w-12 z-20 -mt-6 flex bg-ink-100 bg-opacity-75 justify-center items-center"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-4 h-4 z-icon--arrow-left text-vanilla-400">
         <line x1="19" y1="12" x2="5" y2="12"></line>
         <polyline points="12 19 5 12 12 5"></polyline>
-      </svg></button> <button class="
-        z-carousel__control z-carousel__control--right
-        right-0
-        top-50
-        absolute
-        h-12
-        w-12
-        z-20
-        -mt-6
-        flex
-        bg-ink-100 bg-opacity-75
-        justify-center
-        items-center
-      "><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-4 h-4 z-icon--arrow-right text-vanilla-400">
+      </svg></button> <button class="z-carousel__control z-carousel__control--right right-0 top-50 absolute h-12 w-12 z-20 -mt-6 flex bg-ink-100 bg-opacity-75 justify-center items-center"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-4 h-4 z-icon--arrow-right text-vanilla-400">
         <line x1="5" y1="12" x2="19" y2="12"></line>
         <polyline points="12 5 19 12 12 19"></polyline>
       </svg></button></div>
@@ -45,36 +19,10 @@ exports[`ZCarousel renders the Carousel Component with Slides 1`] = `
 exports[`ZCarousel renders the component 1`] = `
 <div class="z-carousel__wrapper relative h-full">
   <div class="z-carousel__container relative overflow-hidden h-full z-10"></div>
-  <div class="z-carousel__controls"><button class="
-        z-carousel__control z-carousel__control--left
-        left-0
-        top-50
-        absolute
-        h-12
-        w-12
-        z-20
-        -mt-6
-        flex
-        bg-ink-100 bg-opacity-75
-        justify-center
-        items-center
-      "><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-4 h-4 z-icon--arrow-left text-vanilla-400">
+  <div class="z-carousel__controls"><button class="z-carousel__control z-carousel__control--left left-0 top-50 absolute h-12 w-12 z-20 -mt-6 flex bg-ink-100 bg-opacity-75 justify-center items-center"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-4 h-4 z-icon--arrow-left text-vanilla-400">
         <line x1="19" y1="12" x2="5" y2="12"></line>
         <polyline points="12 19 5 12 12 5"></polyline>
-      </svg></button> <button class="
-        z-carousel__control z-carousel__control--right
-        right-0
-        top-50
-        absolute
-        h-12
-        w-12
-        z-20
-        -mt-6
-        flex
-        bg-ink-100 bg-opacity-75
-        justify-center
-        items-center
-      "><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-4 h-4 z-icon--arrow-right text-vanilla-400">
+      </svg></button> <button class="z-carousel__control z-carousel__control--right right-0 top-50 absolute h-12 w-12 z-20 -mt-6 flex bg-ink-100 bg-opacity-75 justify-center items-center"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-4 h-4 z-icon--arrow-right text-vanilla-400">
         <line x1="5" y1="12" x2="19" y2="12"></line>
         <polyline points="12 5 19 12 12 19"></polyline>
       </svg></button></div>
