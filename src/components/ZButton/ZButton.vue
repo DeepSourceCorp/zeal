@@ -1,4 +1,5 @@
 <template>
+  <!-- prettier-ignore -->
   <component
     :is="isLink ? 'a' : 'button'"
     :href="to || '#'"
@@ -45,7 +46,7 @@
   >
     <z-icon
       v-if="icon"
-      :icon="icon"
+      :icon="isLoading ? 'spin-loader' : icon"
       :color="iconColorComputed"
       :size="iconSizeToken"
       :class="{
@@ -53,10 +54,14 @@
         'mr-1.5': size == 'small' && !iconOnly,
         'mr-2': size == 'medium' && !iconOnly,
         'mr-2.5': size == 'large' && !iconOnly,
-        'mr-3': size == 'xlarge' && !iconOnly
+        'mr-3': size == 'xlarge' && !iconOnly,
+        'animate-spin': isLoading
       }"
     ></z-icon>
-    <slot></slot>
+    <slot>
+      <template v-if="isLoading && loadingLabel">{{ loadingLabel }}</template>
+      <template v-else>{{ label }}</template>
+    </slot>
   </component>
 </template>
 
@@ -78,9 +83,21 @@ export default Vue.extend({
       default: '',
       type: String
     },
+    label: {
+      default: '',
+      type: String
+    },
+    loadingLabel: {
+      default: '',
+      type: String
+    },
     as: {
       default: 'button',
       type: String
+    },
+    isLoading: {
+      default: false,
+      type: Boolean
     },
     buttonType: {
       default: 'primary',
@@ -183,7 +200,7 @@ export default Vue.extend({
       return this.iconSize || sizes[this.size]
     },
     iconOnly(): boolean {
-      return Boolean(this.icon && !this.$slots['default'])
+      return Boolean(this.icon && !(this.$slots['default'] || this.label))
     },
     buttonStyle(): string {
       return (this.buttonType || this.color || 'secondary') as string

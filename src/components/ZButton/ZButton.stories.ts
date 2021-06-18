@@ -40,7 +40,7 @@ export const Colors = () => ({
 export const Sizes = () => ({
   components: { ZButton },
   filters: {
-    capitalize: function(value: string) {
+    capitalize: function (value: string) {
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
@@ -67,7 +67,7 @@ export const Sizes = () => ({
 export const States = () => ({
   components: { ZButton },
   filters: {
-    capitalize: function(value: string) {
+    capitalize: function (value: string) {
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
@@ -99,6 +99,12 @@ export const IconButton = () => ({
           <z-button v-for="type in types" :size="size" :key="type" :buttonType="type" icon="plus" iconColor="ink-400"></z-button>
         </div>
     </div>`
+})
+
+export const LoadingButton = () => ({
+  components: { ZButton },
+  template:
+    '<z-button icon="plus" :isLoading="true" label="Hello World" loadingLabel="Sending Email" buttonType="primary"></z-button>'
 })
 
 export const IconButtonWithText = () => ({
