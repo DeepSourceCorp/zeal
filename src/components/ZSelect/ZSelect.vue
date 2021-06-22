@@ -5,8 +5,8 @@
     @blur.stop="open = false"
   >
     <div
-      class="selected h-full relative rounded-md border border-solid text-vanilla-300 cursor-pointer"
-      :class="[(open && 'border-vanilla-400') || borderClass, spacing, backgroundClass]"
+      class="selected h-full relative border border-solid text-vanilla-300 cursor-pointer"
+      :class="[(open && 'border-vanilla-400') || borderClass, spacing, backgroundClass, borderRadius]"
       @click="open = !open"
     >
       <div
@@ -87,6 +87,10 @@ export default Vue.extend({
     borderClass: {
       type: String,
       default: 'border-ink-200'
+    },
+    borderRadius: {
+      type: String,
+      default: 'rounded-md'
     },
     backgroundClass: {
       type: String,
