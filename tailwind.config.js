@@ -125,7 +125,7 @@ module.exports = {
       auto: 'auto',
       cover: 'cover',
       contain: 'contain',
-      'xl': '400% 100%'
+      xl: '400% 100%'
     },
     borderColor: (theme) => ({
       ...theme('colors'),
