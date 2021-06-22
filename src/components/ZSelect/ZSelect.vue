@@ -5,8 +5,8 @@
     @blur.stop="open = false"
   >
     <div
-      class="selected h-full relative rounded-md border border-solid text-vanilla-300 cursor-pointer"
-      :class="[(open && 'border-vanilla-400') || borderClass, spacing, backgroundClass]"
+      class="selected h-full relative border border-solid text-vanilla-300 cursor-pointer"
+      :class="[(open && 'border-vanilla-400') || borderClass, spacing, backgroundClass, borderRadius]"
       @click="open = !open"
     >
       <div
@@ -88,6 +88,10 @@ export default Vue.extend({
       type: String,
       default: 'border-ink-200'
     },
+    borderRadius: {
+      type: String,
+      default: 'rounded-md'
+    },
     backgroundClass: {
       type: String,
       default: 'bg-transparent'
@@ -107,14 +111,14 @@ export default Vue.extend({
     }
   },
   mounted() {
-    this.options = this.$children.filter((child) => child.$options.name === 'ZOption')
+    this.options = this.$children.filter(child => child.$options.name === 'ZOption')
 
     if (this.selected) {
       const selectedOpt = this.options
-        .map((child) => {
+        .map(child => {
           return child.$options.propsData as ZOptionPropsT
         })
-        .filter((childProp) => {
+        .filter(childProp => {
           return childProp.value === this.selected
         })
 
@@ -130,7 +134,7 @@ export default Vue.extend({
     }
   },
   watch: {
-    selectedOpt: function (newValue) {
+    selectedOpt: function(newValue) {
       this.$emit('change', newValue)
     }
   }
