@@ -75,6 +75,20 @@ export const DisabledInput = () => ({
     </div>`
 })
 
+export const ErroredInput = () => ({
+  components: { ZInput },
+  data() {
+    return {
+      name: 'Hello World'
+    }
+  },
+  template: `<div class='padded-container'>
+        <div class="input-container">
+            <z-input v-model="name" :isInvalid="true"></z-input>
+        </div>
+    </div>`
+})
+
 export const InputWithDifferentSizes = () => ({
   components: { ZInput, ZButton },
   data() {
