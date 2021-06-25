@@ -38,7 +38,7 @@
     </div>
     <div class="lg:grid grid-cols-12">
       <z-scroll-spy
-        class="col-span-2 sticky top-6 self-start mr-6 hidden lg:block"
+        class="col-span-2 sticky top-20 self-start mr-6 hidden lg:block"
         root-id="content"
       ></z-scroll-spy>
       <div id="content" class="col-span-10 text-vanilla-100 prose prose-sm sm:prose sm:max-w-none">
