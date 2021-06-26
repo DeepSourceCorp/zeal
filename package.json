@@ -26,10 +26,10 @@
     "@tailwindcss/typography": "^0.4.0",
     "core-js": "^3.11.2",
     "frappe-charts": "^2.0.0-rc19",
-    "postcss": "^7",
+    "postcss": "^7.0.36",
     "postcss-cli": "7.1.2",
     "smoothscroll-polyfill": "^0.4.4",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "tailwindcss": "2.2.0",
     "v-tooltip": "^2.1.3",
     "vue": "^2.6.12"
   },
