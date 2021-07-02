@@ -1,11 +1,18 @@
 <template>
   <footer
-    class="w-full-screen flex flex-col justify-between bg-transparent text-vanilla-100 border-t border-ink-200 min-h-102 pb-10 pt-20"
+    class="
+      w-full-screen
+      flex flex-col
+      justify-between
+      bg-transparent
+      text-vanilla-100
+      border-t border-ink-200
+      min-h-102
+      pb-10
+      pt-20
+    "
   >
-    <div
-      class="md:flex items-start w-screen lg:mx-auto"
-      :class="[`${CONTAINERS[container].classes}`]"
-    >
+    <div class="md:flex items-start w-screen lg:mx-auto" :class="[`${CONTAINERS[container].classes}`]">
       <!-- Brand -->
       <div v-if="$slots.brand" :class="[X_PADDING]">
         <slot name="brand"></slot>
@@ -18,11 +25,7 @@
         >
           <slot name="desktop-menu"></slot>
         </div>
-        <div
-          v-if="$slots['desktop-extras']"
-          class="flex items-start flex-wrap"
-          :class="[X_PADDING]"
-        >
+        <div v-if="$slots['desktop-extras']" class="flex items-start flex-wrap" :class="[X_PADDING]">
           <slot name="desktop-extras"></slot>
         </div>
       </span>
@@ -37,7 +40,15 @@
       </span>
     </div>
     <div
-      class="flex flex-col-reverse md:flex-row items-center justify-between w-screen md:mx-auto text-vanilla-400 text-sm"
+      class="
+        flex flex-col-reverse
+        md:flex-row
+        items-center
+        justify-between
+        w-screen
+        md:mx-auto
+        text-vanilla-400 text-sm
+      "
       :class="[`${CONTAINERS[container].classes}`, X_PADDING]"
     >
       <div v-if="$slots.copyright">

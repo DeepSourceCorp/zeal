@@ -11,10 +11,7 @@
           (isChecked && ((isDisabled && 'border-slate bg-slate') || 'border-juniper bg-juniper')) ||
           'border-slate bg-transparent'
         }`,
-        `${
-          (isDisabled && 'cursor-not-allowed hover:border-slate') ||
-          'cursor-pointer hover:border-juniper'
-        }`
+        `${(isDisabled && 'cursor-not-allowed hover:border-slate') || 'cursor-pointer hover:border-juniper'}`
       ]"
     >
       <span
@@ -32,11 +29,9 @@
       :disabled="isDisabled"
       class="opacity-0 absolute h-0 w-0"
     />
-    <span
-      class="label ml-2"
-      :class="(isDisabled && 'cursor-not-allowed text-slate') || 'cursor-pointer'"
-      >{{ label }}</span
-    >
+    <span class="label ml-2" :class="(isDisabled && 'cursor-not-allowed text-slate') || 'cursor-pointer'">{{
+      label
+    }}</span>
   </label>
 </template>
 

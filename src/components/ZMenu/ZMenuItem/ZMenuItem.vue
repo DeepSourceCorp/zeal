@@ -7,12 +7,7 @@
     }"
     @click="itemClicked"
   >
-    <z-icon
-      v-if="icon"
-      :icon="icon"
-      size="small"
-      color="disabled ? 'vanilla-400' : 'vanilla-100'"
-    ></z-icon>
+    <z-icon v-if="icon" :icon="icon" size="small" color="disabled ? 'vanilla-400' : 'vanilla-100'"></z-icon>
     <slot></slot>
   </div>
 </template>

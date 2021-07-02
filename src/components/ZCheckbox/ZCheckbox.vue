@@ -27,11 +27,7 @@
           disabled
       }"
     ></span>
-    <span
-      v-if="label"
-      class="z-input__checkbox--text"
-      :class="{ [fontSize]: true, 'text-slate': disabled }"
-    >
+    <span v-if="label" class="z-input__checkbox--text" :class="{ [fontSize]: true, 'text-slate': disabled }">
       {{ label }}
     </span>
   </label>

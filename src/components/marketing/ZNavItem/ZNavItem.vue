@@ -5,7 +5,19 @@
     </z-button>
     <span
       v-if="type === TYPES.none"
-      class="flex items-center cursor-pointer px-4 py-3 bg-ink-300 inline-block hover:opacity-75 select-none font-semibold w-full"
+      class="
+        flex
+        items-center
+        cursor-pointer
+        px-4
+        py-3
+        bg-ink-300
+        inline-block
+        hover:opacity-75
+        select-none
+        font-semibold
+        w-full
+      "
     >
       <span class="flex flex-1">
         <slot></slot>

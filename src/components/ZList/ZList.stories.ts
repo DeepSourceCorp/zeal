@@ -72,15 +72,7 @@ export const ListWithItemsFooter = () => ({
   components: { ZList, ZListItem, ZIcon },
   data() {
     return {
-      links: [
-        'About',
-        'Customers',
-        'Jobs',
-        'Privacy Policy',
-        'Terms of Service',
-        'Press Enquiries',
-        'Brand Assets'
-      ]
+      links: ['About', 'Customers', 'Jobs', 'Privacy Policy', 'Terms of Service', 'Press Enquiries', 'Brand Assets']
     }
   },
   template: `<div class='input-container'>

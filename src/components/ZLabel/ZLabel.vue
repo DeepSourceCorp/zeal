@@ -1,7 +1,19 @@
 <template>
   <span
     :class="sizeClass"
-    class="inline-flex items-center uppercase font-semibold border rounded-full bg-ink-400 border-ink-200 text-vanilla-200 tracking-wide leading-none"
+    class="
+      inline-flex
+      items-center
+      uppercase
+      font-semibold
+      border
+      rounded-full
+      bg-ink-400
+      border-ink-200
+      text-vanilla-200
+      tracking-wide
+      leading-none
+    "
   >
     <z-icon v-if="icon" :icon="icon" :size="iconSize" :color="baseColor"></z-icon>
     <span>

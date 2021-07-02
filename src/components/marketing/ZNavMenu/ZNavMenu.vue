@@ -12,7 +12,16 @@
           {{ title }}
         </z-button>
         <span
-          class="absolute -ml-2 mt-1 left-1/2 block w-0 h-0 border-t-0 border-r-8 border-l-8 border-b-8 border-l-transparent border-r-transparent border-b-ink-300"
+          class="
+            absolute
+            -ml-2
+            mt-1
+            left-1/2
+            block
+            w-0
+            h-0
+            border-t-0 border-r-8 border-l-8 border-b-8 border-l-transparent border-r-transparent border-b-ink-300
+          "
           :class="[dropdownAnimations]"
         ></span>
       </div>
@@ -32,7 +41,19 @@
     <template v-if="type === TYPES.accordion">
       <span
         @click="toggleAccordion()"
-        class="flex items-center cursor-pointer px-4 py-3 bg-ink-300 inline-block hover:opacity-75 select-none font-semibold w-full"
+        class="
+          flex
+          items-center
+          cursor-pointer
+          px-4
+          py-3
+          bg-ink-300
+          inline-block
+          hover:opacity-75
+          select-none
+          font-semibold
+          w-full
+        "
       >
         <span class="flex flex-1">{{ title }}</span>
         <z-icon icon="chevron-down" class="transform" :class="[accordionHeaderAnimations]"></z-icon>
