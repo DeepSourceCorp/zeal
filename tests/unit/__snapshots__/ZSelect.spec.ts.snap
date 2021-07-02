@@ -2,7 +2,7 @@
 
 exports[`Select Component renders a select component with custom options template 1`] = `
 <div tabindex="0" class="custom-select relative w-full text-left outline-none h-full leading-8">
-  <div class="selected h-full relative rounded-md border border-solid text-vanilla-300 cursor-pointer border-ink-200 bg-transparent">
+  <div class="selected h-full relative border border-solid text-vanilla-300 cursor-pointer border-ink-200 bg-transparent rounded-md">
     <div class="flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full text-vanilla-400 opacity-70 text-xs">
       Choose a framework
     </div> <span class="absolute top-50 right-3 transform -translate-y-1/2"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transform transition-all duration-300 z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><path d="M18 9.75L12 15.75L6 9.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
@@ -24,7 +24,7 @@ exports[`Select Component renders a select component with custom options templat
 
 exports[`Select Component renders the default select component 1`] = `
 <div tabindex="0" class="custom-select relative w-full text-left outline-none h-full leading-8">
-  <div class="selected h-full relative rounded-md border border-solid text-vanilla-300 cursor-pointer border-ink-200 bg-transparent">
+  <div class="selected h-full relative border border-solid text-vanilla-300 cursor-pointer border-ink-200 bg-transparent rounded-md">
     <div class="flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full text-vanilla-400 opacity-70 text-xs">
       Select an Option
     </div> <span class="absolute top-50 right-3 transform -translate-y-1/2"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transform transition-all duration-300 z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><path d="M18 9.75L12 15.75L6 9.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
@@ -38,7 +38,7 @@ exports[`Select Component renders the default select component 1`] = `
 
 exports[`Select Component renders the select component with clearables 1`] = `
 <div tabindex="0" class="custom-select relative w-full text-left outline-none h-full leading-8">
-  <div class="selected h-full relative rounded-md border border-solid text-vanilla-300 cursor-pointer border-ink-200 bg-transparent">
+  <div class="selected h-full relative border border-solid text-vanilla-300 cursor-pointer border-ink-200 bg-transparent rounded-md">
     <div class="flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full text-vanilla-400 opacity-70 text-xs">
       Choose a framework
     </div> <span class="absolute top-50 right-3 transform -translate-y-1/2"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transform transition-all duration-300 z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><path d="M18 9.75L12 15.75L6 9.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
@@ -52,7 +52,7 @@ exports[`Select Component renders the select component with clearables 1`] = `
 
 exports[`Select Component renders the select with a custom placeholder 1`] = `
 <div tabindex="0" class="custom-select relative w-full text-left outline-none h-full leading-8">
-  <div class="selected h-full relative rounded-md border border-solid text-vanilla-300 cursor-pointer border-ink-200 bg-transparent">
+  <div class="selected h-full relative border border-solid text-vanilla-300 cursor-pointer border-ink-200 bg-transparent rounded-md">
     <div class="flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full text-vanilla-400 opacity-70 text-xs">
       Choose a framework
     </div> <span class="absolute top-50 right-3 transform -translate-y-1/2"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transform transition-all duration-300 z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><path d="M18 9.75L12 15.75L6 9.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>

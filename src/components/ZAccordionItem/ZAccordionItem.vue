@@ -35,7 +35,7 @@
       </div>
     </slot>
     <div
-      class="overflow-scroll transition-max-height duration-300 ease-in-out text-sm leading-6"
+      class="overflow-hidden transition-max-height duration-300 ease-in-out text-sm leading-6"
       :class="{
         'max-h-52': this.open,
         'max-h-0': !this.open,
@@ -78,6 +78,11 @@ export default {
       accordionHeaderAnimations: '',
       isDisabled: this.$parent.disabled,
       showBorders: this.$parent.showBorders
+    }
+  },
+  watch: {
+    isOpen() {
+      this.toggleAccordion()
     }
   },
   methods: {

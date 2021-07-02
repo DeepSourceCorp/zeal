@@ -64,4 +64,21 @@ describe('Input Component', () => {
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.findAll('.z-icon--x').length).toEqual(1)
   })
+  it('renders an invalid input', () => {
+    const wrapper = mountFn({
+      propsData: {
+        isInvalid: true
+      }
+    })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+  it('renders an invalid input with custom color', () => {
+    const wrapper = mountFn({
+      propsData: {
+        isInvalid: true,
+        errorBorderColor: 'lilac'
+      }
+    })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
 })

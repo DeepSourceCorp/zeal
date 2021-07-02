@@ -4,12 +4,14 @@
       <slot></slot>
     </div>
     <div class="z-carousel__controls" v-show="showControls">
+      <!-- prettier-ignore -->
       <button
         class="z-carousel__control z-carousel__control--left left-0 top-50 absolute h-12 w-12 z-20 -mt-6 flex bg-ink-100 bg-opacity-75 justify-center items-center"
         @click="showPrevSlide"
       >
         <z-icon icon="arrow-left" />
       </button>
+      <!-- prettier-ignore -->
       <button
         class="z-carousel__control z-carousel__control--right right-0 top-50 absolute h-12 w-12 z-20 -mt-6 flex bg-ink-100 bg-opacity-75 justify-center items-center"
         @click="showNextSlide"
@@ -130,6 +132,11 @@ export default {
 
     cancelAutoSlide() {
       clearInterval(this.autoInterval)
+    }
+  },
+  watch: {
+    activeIndex() {
+      this.showSlide(this.activeIndex)
     }
   },
   mounted() {

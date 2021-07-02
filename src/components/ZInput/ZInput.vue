@@ -47,14 +47,7 @@
     />
     <!-- Any icon/content to the right renders here -->
     <slot name="right">
-      <z-icon
-        v-if="clearable"
-        icon="x"
-        size="small"
-        class="cursor-pointer"
-        @click.stop="updateSelf('')"
-      >
-      </z-icon>
+      <z-icon v-if="clearable" icon="x" size="small" class="cursor-pointer" @click.stop="updateSelf('')"> </z-icon>
     </slot>
   </div>
 </template>
@@ -134,6 +127,14 @@ export default Vue.extend({
     showBorder: {
       type: Boolean,
       default: true
+    },
+    isInvalid: {
+      type: Boolean,
+      default: false
+    },
+    errorBorderColor: {
+      type: String,
+      default: 'cherry'
     }
   },
   model: {
@@ -142,9 +143,15 @@ export default Vue.extend({
   },
   computed: {
     borderStyles(): string {
-      return this.showBorder
-        ? 'focus-within:border-vanilla-400 border border-solid border-ink-100'
-        : ''
+      if (this.isInvalid) {
+        return `border border-cherry`
+      }
+
+      if (this.showBorder) {
+        return `focus-within:border-vanilla-400 border border-ink-100`
+      }
+
+      return ''
     }
   },
   methods: {
