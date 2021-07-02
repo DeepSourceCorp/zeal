@@ -8,7 +8,7 @@
         @click.stop.prevent
         class="relative py-3 h-full"
       >
-        <z-button class="px-4 py-2" type="link" :class="[`${isDropdownOpen ? 'bg-ink-300' : ''}`]">
+        <z-button class="px-4 py-2" buttonType="secondary" :class="[`${isDropdownOpen ? 'bg-ink-300' : ''}`]">
           {{ title }}
         </z-button>
         <span
@@ -32,7 +32,7 @@
     <template v-if="type === TYPES.accordion">
       <span
         @click="toggleAccordion()"
-        class="flex items-center cursor-pointer px-4 py-3 bg-ink-300 inline-block hover:opacity-75 select-none font-semibold w-full"
+        class="flex items-center cursor-pointer px-4 py-3 bg-ink-300 hover:opacity-75 select-none font-semibold w-full"
       >
         <span class="flex flex-1">{{ title }}</span>
         <z-icon icon="chevron-down" class="transform" :class="[accordionHeaderAnimations]"></z-icon>
