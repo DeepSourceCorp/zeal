@@ -12,7 +12,16 @@
           {{ title }}
         </z-button>
         <span
-          class="absolute -ml-2 mt-1 left-1/2 block w-0 h-0 border-t-0 border-r-8 border-l-8 border-b-8 border-l-transparent border-r-transparent border-b-ink-300"
+          class="
+            absolute
+            -ml-2
+            mt-1
+            left-1/2
+            block
+            w-0
+            h-0
+            border-t-0 border-r-8 border-l-8 border-b-8 border-l-transparent border-r-transparent border-b-ink-300
+          "
           :class="[dropdownAnimations]"
         ></span>
       </div>
