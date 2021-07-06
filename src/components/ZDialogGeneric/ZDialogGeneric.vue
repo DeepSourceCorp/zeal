@@ -1,8 +1,5 @@
 <template>
-  <div
-    @click="close"
-    class="fixed inset-0 flex items-end bg-opacity-70 bg-ink-400 z-dialog-backdrop sm:items-center"
-  >
+  <div @click="close" class="fixed inset-0 flex items-end bg-opacity-70 bg-ink-400 z-dialog-backdrop sm:items-center">
     <transition
       enter-active-class="transition-all duration-100 ease-in-out"
       leave-active-class="transition-all duration-100 ease-in-out"
