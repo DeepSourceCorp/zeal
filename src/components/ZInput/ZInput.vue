@@ -39,6 +39,7 @@
       :min="min"
       :minlength="minLength"
       :multiple="multiple"
+      :required="required"
       :placeholder="placeholder"
       :disabled="disabled"
       :autocomplete="autocomplete"
@@ -148,6 +149,10 @@ export default Vue.extend({
       default: undefined
     },
     multiple: {
+      type: Boolean,
+      default: false
+    },
+    required: {
       type: Boolean,
       default: false
     }
