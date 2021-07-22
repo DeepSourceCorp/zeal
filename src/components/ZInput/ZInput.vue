@@ -35,6 +35,7 @@
       :value="name"
       :type="type"
       :max="max"
+      :maxlength="maxLength"
       :min="min"
       :placeholder="placeholder"
       :disabled="disabled"
@@ -135,6 +136,10 @@ export default Vue.extend({
     errorBorderColor: {
       type: String,
       default: 'cherry'
+    },
+    maxLength: {
+      type: String,
+      default: undefined
     }
   },
   model: {
