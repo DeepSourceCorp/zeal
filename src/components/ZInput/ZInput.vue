@@ -141,11 +141,11 @@ export default Vue.extend({
       default: 'cherry'
     },
     maxLength: {
-      type: String,
+      type: [String, Number],
       default: undefined
     },
     minLength: {
-      type: String,
+      type: [String, Number],
       default: undefined
     },
     multiple: {
