@@ -43,7 +43,7 @@
       :placeholder="placeholder"
       :disabled="disabled"
       :autocomplete="autocomplete"
-      @input="updateSelf($event.target)"
+      @input="updateSelf($event.target.value)"
       @blur="this.blurHandler"
       @focus="this.focusHandler"
       @keydown="this.keydownHandler"
@@ -181,19 +181,20 @@ export default Vue.extend({
     }
   },
   methods: {
-    updateSelf(eventTarget: HTMLInputElement): void {
-      this.$emit('input', eventTarget.value)
-      if (!eventTarget.checkValidity()) {
-        this.invalidSate = true
-      } else {
-        this.invalidSate = false
-      }
+    updateSelf(newValue: string): void {
+      this.$emit('input', newValue)
     },
     updateDebounce(value: unknown): void {
       this.$emit('debounceInput', value)
     },
     blurHandler(e: FocusEvent) {
       this.$emit('blur', e)
+      const eventTarget = e.target as HTMLInputElement
+      if (!eventTarget.checkValidity()) {
+        this.invalidSate = true
+      } else {
+        this.invalidSate = false
+      }
     },
     focusHandler(e: FocusEvent) {
       this.$emit('focus', e)
