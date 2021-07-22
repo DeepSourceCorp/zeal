@@ -37,6 +37,7 @@
       :max="max"
       :maxlength="maxLength"
       :min="min"
+      :minlength="minLength"
       :placeholder="placeholder"
       :disabled="disabled"
       :autocomplete="autocomplete"
@@ -138,6 +139,10 @@ export default Vue.extend({
       default: 'cherry'
     },
     maxLength: {
+      type: String,
+      default: undefined
+    },
+    minLength: {
       type: String,
       default: undefined
     }
