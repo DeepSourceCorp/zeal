@@ -43,11 +43,12 @@
       :placeholder="placeholder"
       :disabled="disabled"
       :autocomplete="autocomplete"
-      @input="updateSelf($event.target.value)"
+      @input="updateSelf($event.target)"
       @blur="this.blurHandler"
       @focus="this.focusHandler"
       @keydown="this.keydownHandler"
       @keyup="this.keyupHandler"
+      @invalid="this.invalidHandler"
     />
     <!-- Any icon/content to the right renders here -->
     <slot name="right">
@@ -161,9 +162,14 @@ export default Vue.extend({
     prop: 'name',
     event: 'input'
   },
+  data() {
+    return {
+      invalidSate: false
+    }
+  },
   computed: {
     borderStyles(): string {
-      if (this.isInvalid) {
+      if (this.isInvalid || this.invalidSate) {
         return `border border-cherry`
       }
 
@@ -175,8 +181,13 @@ export default Vue.extend({
     }
   },
   methods: {
-    updateSelf(name: string): void {
-      this.$emit('input', name)
+    updateSelf(eventTarget: HTMLInputElement): void {
+      this.$emit('input', eventTarget.value)
+      if (!eventTarget.checkValidity()) {
+        this.invalidSate = true
+      } else {
+        this.invalidSate = false
+      }
     },
     updateDebounce(value: unknown): void {
       this.$emit('debounceInput', value)
@@ -192,6 +203,10 @@ export default Vue.extend({
     },
     keydownHandler(e: KeyboardEvent) {
       this.$emit('keydown', e)
+    },
+    invalidHandler(e: Event) {
+      this.invalidSate = true
+      this.$emit('invalid', e)
     }
   }
 })
