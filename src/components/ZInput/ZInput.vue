@@ -38,6 +38,7 @@
       :maxlength="maxLength"
       :min="min"
       :minlength="minLength"
+      :multiple="multiple"
       :placeholder="placeholder"
       :disabled="disabled"
       :autocomplete="autocomplete"
@@ -145,6 +146,10 @@ export default Vue.extend({
     minLength: {
       type: String,
       default: undefined
+    },
+    multiple: {
+      type: Boolean,
+      default: false
     }
   },
   model: {
