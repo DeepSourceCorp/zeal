@@ -180,6 +180,9 @@ const DEFAULT = function(theme) {
 
 const SMALL_SCREEN_CSS = function(theme) {
   return {
+    'ul > li::before': {
+      ...BEFORE_LIST_ITEM(theme)
+    },
     pre: {
       color: theme('colors.vanilla.400'),
       backgroundColor: theme('colors.ink.200'),
@@ -191,6 +194,9 @@ const SMALL_SCREEN_CSS = function(theme) {
 
 const LARGE_SCREEN_CSS = function(theme) {
   return {
+    'ul > li::before': {
+      ...BEFORE_LIST_ITEM(theme)
+    },
     'figure img': {
       borderRadius: `${theme('spacing.1')}`
     }
