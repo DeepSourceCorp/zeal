@@ -1,6 +1,7 @@
-import plugin from 'tailwindcss/plugin'
-import typographyConfig from './src/helpers/tailwind/typography.js'
-import colors from './src/helpers/tailwind/colors.js'
+/* eslint-disable @typescript-eslint/no-var-requires */
+const plugin = require('tailwindcss/plugin')
+const typographyConfig = require('./src/helpers/tailwind/typography.js')
+const colors = require('./src/helpers/tailwind/colors.js')
 
 module.exports = {
   purge: [],
