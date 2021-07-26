@@ -19,7 +19,7 @@ module.exports = {
       xl: '1280px',
       '2xl': '1536px'
     },
-    colors: colors,
+    colors,
     gradients: theme => ({
       ocean: ['98.66deg', `${theme('colors.sea-glass')} 9.7%`, `${theme('colors.aqua')} 96.6%`],
       galaxy: {
@@ -1121,18 +1121,18 @@ module.exports = {
       addUtilities(contentUtilities, ['before', 'after'])
     }),
     plugin(({ addUtilities, e, theme }) => {
-      const colors = theme('colors')
-      const caretColors = Object.keys(colors).reduce((acc, key) => {
-        if (typeof colors[key] === 'string') {
+      const themeColors = theme('colors')
+      const caretColors = Object.keys(themeColors).reduce((acc, key) => {
+        if (typeof themeColors[key] === 'string') {
           return {
             ...acc,
             [`.caret-${e(key)}`]: {
-              'caret-color': colors[key]
+              'caret-color': themeColors[key]
             }
           }
         }
 
-        const variants = Object.keys(colors[key])
+        const variants = Object.keys(themeColors[key])
 
         return {
           ...acc,
@@ -1140,7 +1140,7 @@ module.exports = {
             (a, variant) => ({
               ...a,
               [`.caret-${e(key)}-${variant}`]: {
-                'caret-color': colors[key][variant]
+                'caret-color': themeColors[key][variant]
               }
             }),
             {}
@@ -1157,8 +1157,8 @@ module.exports = {
           background = gradient.custom
         } else {
           const type = Object.prototype.hasOwnProperty.call(gradient, 'type') ? gradient.type : 'linear'
-          const colors = Object.prototype.hasOwnProperty.call(gradient, 'colors') ? gradient.colors : gradient
-          background = `${type}-gradient(${colors.join(', ')})`
+          const gradientColors = Object.prototype.hasOwnProperty.call(gradient, 'colors') ? gradient.colors : gradient
+          background = `${type}-gradient(${gradientColors.join(', ')})`
         }
 
         return {
