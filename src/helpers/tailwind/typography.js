@@ -1,4 +1,4 @@
-const FULL_WIDTH_ACTIVE = function(theme) {
+const FULL_WIDTH_ACTIVE = function (theme) {
   return {
     marginLeft: `-${theme('width.halfScreen')}`,
     marginRight: `-${theme('width.halfScreen')}`,
@@ -10,7 +10,7 @@ const FULL_WIDTH_ACTIVE = function(theme) {
   }
 }
 
-const FULL_WIDTH_INACTIVE = function(theme) {
+const FULL_WIDTH_INACTIVE = function (theme) {
   return {
     marginLeft: 'unset',
     marginRight: 'unset',
@@ -23,7 +23,7 @@ const FULL_WIDTH_INACTIVE = function(theme) {
   }
 }
 
-const BEFORE_LIST_ITEM = function(theme, muted = false) {
+const BEFORE_LIST_ITEM = function (theme, muted = false) {
   return {
     content: '"—"',
     marginRight: theme('spacing.2'),
@@ -36,7 +36,7 @@ const BEFORE_LIST_ITEM = function(theme, muted = false) {
   }
 }
 
-const DEFAULT = function(theme) {
+const DEFAULT = function (theme) {
   return {
     color: theme('colors.vanilla.100'),
     '[class~="lead"]': {
@@ -178,7 +178,7 @@ const DEFAULT = function(theme) {
   }
 }
 
-const SMALL_SCREEN_CSS = function(theme) {
+const SMALL_SCREEN_CSS = function (theme) {
   return {
     'ul > li::before': {
       ...BEFORE_LIST_ITEM(theme)
@@ -192,7 +192,7 @@ const SMALL_SCREEN_CSS = function(theme) {
   }
 }
 
-const LARGE_SCREEN_CSS = function(theme) {
+const LARGE_SCREEN_CSS = function (theme) {
   return {
     'ul > li::before': {
       ...BEFORE_LIST_ITEM(theme)
@@ -203,7 +203,7 @@ const LARGE_SCREEN_CSS = function(theme) {
   }
 }
 
-const MUTED = function(theme) {
+const MUTED = function (theme) {
   return {
     'ul > li::before': {
       ...BEFORE_LIST_ITEM(theme, true)
