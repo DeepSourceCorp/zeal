@@ -1,12 +1,7 @@
-const plugin = require('tailwindcss/plugin')
-const {
-  FULL_WIDTH_ACTIVE,
-  FULL_WIDTH_INACTIVE,
-  BEFORE_LIST_ITEM,
-  SMALL_SCREEN_CSS,
-  LARGE_SCREEN_CSS
-} = require('./src/helpers/tailwind/typography.js')
-const colors = require('./src/helpers/tailwind/colors.js')
+import plugin from 'tailwindcss/plugin'
+import typographyConfig from './src/helpers/tailwind/typography.js'
+import colors from './src/helpers/tailwind/colors.js'
+
 module.exports = {
   purge: [],
   prefix: '',
@@ -24,7 +19,7 @@ module.exports = {
       '2xl': '1536px'
     },
     colors: colors,
-    gradients: (theme) => ({
+    gradients: theme => ({
       ocean: ['98.66deg', `${theme('colors.sea-glass')} 9.7%`, `${theme('colors.aqua')} 96.6%`],
       galaxy: {
         type: 'radial',
@@ -49,7 +44,7 @@ module.exports = {
       ],
       juniper: ['0deg', `${theme('colors.transparent')} 0%`, `${theme('colors.juniper')} 100%`]
     }),
-    backdropFilter: (theme) => ({
+    backdropFilter: theme => ({
       none: 'none',
       blur: `blur(${theme('spacing.2')})`
     }),
@@ -97,7 +92,7 @@ module.exports = {
       96: '24rem',
       102: '32rem'
     },
-    backgroundColor: (theme) => theme('colors'),
+    backgroundColor: theme => theme('colors'),
     backgroundImage: {
       none: 'none',
       'gradient-to-t': 'linear-gradient(to top, var(--tw-gradient-stops))',
@@ -109,7 +104,7 @@ module.exports = {
       'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
       'gradient-to-tl': 'linear-gradient(to top left, var(--tw-gradient-stops))'
     },
-    backgroundOpacity: (theme) => theme('opacity'),
+    backgroundOpacity: theme => theme('opacity'),
     backgroundPosition: {
       bottom: 'bottom',
       center: 'center',
@@ -127,11 +122,11 @@ module.exports = {
       contain: 'contain',
       xl: '400% 100%'
     },
-    borderColor: (theme) => ({
+    borderColor: theme => ({
       ...theme('colors'),
       DEFAULT: theme('colors.slate', 'currentColor')
     }),
-    borderOpacity: (theme) => theme('opacity'),
+    borderOpacity: theme => theme('opacity'),
     borderRadius: {
       none: '0',
       sm: '0.125rem',
@@ -186,10 +181,10 @@ module.exports = {
       move: 'move',
       'not-allowed': 'not-allowed'
     },
-    divideColor: (theme) => theme('borderColor'),
-    divideOpacity: (theme) => theme('borderOpacity'),
-    divideWidth: (theme) => theme('borderWidth'),
-    fill: (theme) => ({
+    divideColor: theme => theme('borderColor'),
+    divideOpacity: theme => theme('borderOpacity'),
+    divideWidth: theme => theme('borderWidth'),
+    fill: theme => ({
       ...theme('colors'),
       current: 'currentColor'
     }),
@@ -253,7 +248,7 @@ module.exports = {
       bold: '700',
       black: '900'
     },
-    height: (theme) => ({
+    height: theme => ({
       auto: 'auto',
       ...theme('spacing'),
       '1/2': '50%',
@@ -333,7 +328,7 @@ module.exports = {
       ...theme('spacing'),
       ...negative(theme('spacing'))
     }),
-    maxHeight: (theme) => ({
+    maxHeight: theme => ({
       ...theme('spacing'),
       full: '100%',
       screen: '100vh'
@@ -357,14 +352,14 @@ module.exports = {
       prose: '65ch',
       ...breakpoints(theme('screens'))
     }),
-    minHeight: (theme) => ({
+    minHeight: theme => ({
       0: '0',
       '1/2': '50%',
       full: '100%',
       screen: '100vh',
       ...theme('spacing')
     }),
-    minWidth: (theme) => ({
+    minWidth: theme => ({
       0: '0',
       '1/2': '50%',
       full: '100%',
@@ -417,7 +412,7 @@ module.exports = {
       11: '11',
       12: '12'
     },
-    outline: (theme) => ({
+    outline: theme => ({
       none: ['2px solid transparent', '2px'],
       white: ['2px dotted white', '2px'],
       black: ['2px dotted black', '2px'],
@@ -426,14 +421,14 @@ module.exports = {
       'ink-300': [`1px solid ${theme('colors.ink.300')}`, '0px'],
       'ink-400': [`1px solid ${theme('colors.ink.400')}`, '0px']
     }),
-    padding: (theme) => theme('spacing'),
-    placeholderColor: (theme) => theme('colors'),
-    placeholderOpacity: (theme) => theme('opacity'),
+    padding: theme => theme('spacing'),
+    placeholderColor: theme => theme('colors'),
+    placeholderOpacity: theme => theme('opacity'),
     space: (theme, { negative }) => ({
       ...theme('spacing'),
       ...negative(theme('spacing'))
     }),
-    stroke: (theme) => ({
+    stroke: theme => ({
       ...theme('colors'),
       current: 'currentColor'
     }),
@@ -443,9 +438,9 @@ module.exports = {
       1.5: '1.5',
       2: '2'
     },
-    textColor: (theme) => theme('colors'),
-    textOpacity: (theme) => theme('opacity'),
-    width: (theme) => ({
+    textColor: theme => theme('colors'),
+    textOpacity: theme => theme('opacity'),
+    width: theme => ({
       auto: 'auto',
       ...theme('spacing'),
       100: '30rem',
@@ -492,8 +487,8 @@ module.exports = {
       50: '50',
       1000: '1000'
     },
-    gap: (theme) => theme('spacing'),
-    gradientColorStops: (theme) => theme('colors'),
+    gap: theme => theme('spacing'),
+    gradientColorStops: theme => theme('colors'),
     gridAutoColumns: {
       auto: 'auto',
       min: 'min-content',
@@ -645,11 +640,11 @@ module.exports = {
       left: 'left',
       'top-left': 'top left'
     },
-    ringColor: (theme) => ({
+    ringColor: theme => ({
       DEFAULT: theme('colors.blue.500', '#3b82f6'),
       ...theme('colors')
     }),
-    ringOffsetColor: (theme) => theme('colors'),
+    ringOffsetColor: theme => theme('colors'),
     ringOffsetWidth: {
       0: '0px',
       1: '1px',
@@ -657,7 +652,7 @@ module.exports = {
       4: '4px',
       8: '8px'
     },
-    ringOpacity: (theme) => ({
+    ringOpacity: theme => ({
       DEFAULT: '0.5',
       ...theme('opacity')
     }),
@@ -902,166 +897,35 @@ module.exports = {
       }
     },
     extend: {
-      typography: (theme) => ({
+      typography: theme => ({
         DEFAULT: {
           css: {
-            color: theme('colors.vanilla.100'),
-            '[class~="lead"]': {
-              color: theme('colors.vanilla.400')
-            },
-            a: {
-              color: theme('colors.juniper'),
-              textDecoration: 'normal',
-              fontWeight: theme('fontWeight.medium')
-            },
-            'a:hover': {
-              textDecoration: 'underline'
-            },
-            strong: {
-              color: theme('colors.vanilla.100'),
-              fontWeight: theme('fontWeight.semibold')
-            },
-            'ol > li': {
-              position: 'relative'
-            },
-            'ol > li::before': {
-              content: 'counter(list-item) "."',
-              position: 'absolute',
-              fontWeight: theme('fontWeight.normal'),
-              color: theme('colors.vanilla.400')
-            },
-            ul: {
-              listStyleType: 'none',
-              listStyle: 'none'
-            },
-            'ul > li': {
-              position: 'relative'
-            },
-            'ul > li::before': {
-              ...BEFORE_LIST_ITEM(theme)
-            },
-            hr: {
-              borderColor: theme('colors.ink.100'),
-              borderTopWidth: 1
-            },
-            blockquote: {
-              fontWeight: theme('fontWeight.medium'),
-              lineHeight: theme('lineHeight.normal'),
-              fontSize: theme('fontSize.lg'),
-              fontStyle: 'normal',
-              color: 'inherit',
-              borderLeftWidth: '0.25rem',
-              borderLeftColor: theme('colors.juniper'),
-              quotes: '"\\201C""\\201D""\\2018""\\2019"'
-            },
-            'blockquote p:first-of-type::before': {
-              content: 'open-quote'
-            },
-            'blockquote p:last-of-type::after': {
-              content: 'close-quote'
-            },
-            'h1, h2, h3, h4, h5': {
-              color: theme('colors.vanilla.100')
-            },
-            'h1::before, h2::before, h3::before, h4::before, h5::before': {
-              content: '"#"',
-              marginRight: theme('spacing.2'),
-              color: theme('colors.slate')
-            },
-            h1: {
-              fontWeight: theme('fontWeight.bold')
-            },
-            h2: {
-              fontWeight: theme('fontWeight.semibold')
-            },
-            'h3, h4, h5': {
-              fontWeight: theme('fontWeight.medium')
-            },
-            'figure figcaption': {
-              color: theme('colors.vanilla.400'),
-              textAlign: 'center',
-              [`@media (min-width: ${theme('screens.sm')})`]: {
-                textAlign: 'left'
-              }
-            },
-            'pre, figure img': {
-              ...FULL_WIDTH_INACTIVE(theme)
-            },
-            'figure img': {
-              borderRadius: `${theme('spacing.1')}`
-            },
-            code: {
-              color: theme('colors.vanilla.300'),
-              fontWeight: theme('fontWeight.semibold')
-            },
-            'code::before, code::after': {
-              content: '"`"'
-            },
-            'a code': {
-              color: theme('colors.juniper')
-            },
-            pre: {
-              color: theme('colors.vanilla.400'),
-              backgroundColor: theme('colors.ink.200'),
-              overflowX: 'auto',
-              borderRadius: `${theme('spacing.1')}`
-            },
-            'pre code': {
-              backgroundColor: 'transparent',
-              borderWidth: '0',
-              borderRadius: '0',
-              padding: '0',
-              fontWeight: theme('fontWeight.normal'),
-              color: 'inherit',
-              fontSize: 'inherit',
-              fontFamily: 'inherit',
-              lineHeight: 'inherit'
-            },
-            'pre code::before, pre code::after': {
-              content: '""'
-            },
-            table: {
-              width: '100%',
-              tableLayout: 'auto',
-              textAlign: 'left'
-            },
-            thead: {
-              color: theme('colors.vanilla.400')
-            },
-            'thead th': {
-              fontWeight: theme('fontWeight.medium'),
-              verticalAlign: 'bottom'
-            },
-            'thead, tbody tr': {
-              borderBottomWidth: theme('spacing.px'),
-              borderBottomColor: theme('colors.ink.100')
-            },
-            'tbody tr:last-child': {
-              borderBottomWidth: '0'
-            },
-            'tbody td': {
-              verticalAlign: 'top'
-            }
+            ...typographyConfig.DEFAULT(theme)
+          }
+        },
+        muted: {
+          css: {
+            ...typographyConfig.MUTED(theme)
           }
         },
         sm: {
           css: {
-            ...SMALL_SCREEN_CSS(theme)
+            ...typographyConfig.SMALL_SCREEN_CSS(theme)
           }
         },
         lg: {
           css: {
-            ...LARGE_SCREEN_CSS(theme)
+            ...typographyConfig.LARGE_SCREEN_CSS(theme)
           }
         },
         xl: {
           css: {
-            ...LARGE_SCREEN_CSS(theme)
+            ...typographyConfig.LARGE_SCREEN_CSS(theme)
           }
         },
         '2xl': {
           css: {
-            ...LARGE_SCREEN_CSS(theme)
+            ...typographyConfig.LARGE_SCREEN_CSS(theme)
           }
         }
       })
@@ -1091,14 +955,14 @@ module.exports = {
     appearance: ['responsive'],
     backgroundClip: ['responsive'],
     backgroundAttachment: ['responsive'],
-    backgroundColor: ['responsive', 'hover', 'focus', 'sibling-checked', 'group-hover', 'dark', 'focus-within'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'sibling-checked', 'group-hover', 'focus-within'],
     backgroundImage: ['responsive'],
     backgroundOpacity: ['responsive', 'hover', 'focus', 'group-hover', 'focus-within', 'no-filter'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: ['responsive'],
-    borderColor: ['responsive', 'hover', 'focus', 'group-hover', 'sibling-checked', 'dark', 'focus-within'],
+    borderColor: ['responsive', 'hover', 'focus', 'group-hover', 'sibling-checked', 'focus-within'],
     borderOpacity: ['responsive', 'hover', 'focus'],
     borderRadius: ['responsive', 'last', 'first'],
     borderStyle: ['responsive', 'last', 'first'],
@@ -1155,8 +1019,8 @@ module.exports = {
     pointerEvents: ['responsive'],
     position: ['responsive'],
     resize: ['responsive'],
-    ringColor: ['responsive', 'dark', 'focus-within', 'focus'],
-    ringOffsetColor: ['responsive', 'dark', 'focus-within', 'focus'],
+    ringColor: ['responsive', 'focus-within', 'focus'],
+    ringOffsetColor: ['responsive', 'focus-within', 'focus'],
     ringOffsetWidth: ['responsive', 'focus-within', 'focus'],
     ringOpacity: ['responsive', 'focus-within', 'focus'],
     ringWidth: ['responsive', 'focus-within', 'focus'],
@@ -1178,7 +1042,7 @@ module.exports = {
     textOverflow: ['responsive'],
     zIndex: ['responsive'],
     gap: ['responsive'],
-    gradientColorStops: ['responsive', 'dark', 'hover', 'focus'],
+    gradientColorStops: ['responsive', 'hover', 'focus'],
     gridAutoColumns: ['responsive'],
     gridAutoFlow: ['responsive'],
     gridAutoRows: ['responsive'],
@@ -1206,7 +1070,7 @@ module.exports = {
   corePlugins: {},
   plugins: [
     require('@tailwindcss/typography'),
-    plugin(function ({ addVariant, e, postcss }) {
+    plugin(function({ addVariant, e, postcss }) {
       addVariant('no-filter', ({ container, separator }) => {
         const supportsRule = postcss.atRule({
           name: 'supports',
@@ -1214,14 +1078,14 @@ module.exports = {
         })
         supportsRule.append(container.nodes)
         container.append(supportsRule)
-        supportsRule.walkRules((rule) => {
+        supportsRule.walkRules(rule => {
           rule.selector = `.${e(`no-filter${separator}${rule.selector.slice(1)}`)}`
         })
       })
     }),
-    plugin(function ({ addVariant }) {
+    plugin(function({ addVariant }) {
       addVariant('sibling-checked', ({ container }) => {
-        container.walkRules((rule) => {
+        container.walkRules(rule => {
           rule.selector = `:checked ~ .sibling-checked\\:${rule.selector.slice(1)}`
         })
       })
@@ -1285,7 +1149,7 @@ module.exports = {
       addUtilities(caretColors)
     }),
     plugin(({ addUtilities, e, theme, variants }) => {
-      const utilities = Object.keys(theme('gradients')).map((name) => {
+      const utilities = Object.keys(theme('gradients')).map(name => {
         const gradient = theme('gradients')[name]
         let background = ''
         if (Object.prototype.hasOwnProperty.call(gradient, 'custom')) {
@@ -1308,17 +1172,17 @@ module.exports = {
     plugin(({ addUtilities, theme }) => {
       const utilities = {
         '.w-full-screen': {
-          ...FULL_WIDTH_ACTIVE(theme)
+          ...typographyConfig.FULL_WIDTH_ACTIVE(theme)
         },
         '.w-full-screen-none': {
-          ...FULL_WIDTH_INACTIVE(theme)
+          ...typographyConfig.FULL_WIDTH_INACTIVE(theme)
         }
       }
 
       addUtilities(utilities, ['responsive'])
     }),
     plugin(({ theme, variants, e, addUtilities }) => {
-      const backdropFilterUtilities = Object.keys(theme('backdropFilter')).map((type) => {
+      const backdropFilterUtilities = Object.keys(theme('backdropFilter')).map(type => {
         const backdropFilter = theme('backdropFilter')[type]
         return {
           [`.backdrop-${e(type)}`]: {
@@ -1332,8 +1196,8 @@ module.exports = {
     plugin(({ addUtilities, theme }) => {
       const individualBorderColors = []
       const traverseObject = (obj, prevKey) => {
-        Object.keys(obj).forEach((key) => {
-          let colorName = `${prevKey}${prevKey && '-'}${key}`
+        Object.keys(obj).forEach(key => {
+          const colorName = `${prevKey}${prevKey && '-'}${key}`
           individualBorderColors.push({
             [`.border-b-${colorName}`]: {
               borderBottomColor: obj[key]
@@ -1358,7 +1222,7 @@ module.exports = {
 
       addUtilities(individualBorderColors, ['responsive', 'before', 'after'])
     }),
-    plugin(function ({ addUtilities }) {
+    plugin(function({ addUtilities }) {
       const newUtilities = {
         '.filter-none': {
           filter: 'none'
