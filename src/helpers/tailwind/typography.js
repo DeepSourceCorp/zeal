@@ -9,6 +9,7 @@ const FULL_WIDTH_ACTIVE = function(theme) {
     width: theme('width.screen')
   }
 }
+
 const FULL_WIDTH_INACTIVE = function(theme) {
   return {
     marginLeft: 'unset',
@@ -21,6 +22,7 @@ const FULL_WIDTH_INACTIVE = function(theme) {
     width: 'unset'
   }
 }
+
 const BEFORE_LIST_ITEM = function(theme, muted = false) {
   return {
     content: '"—"',
@@ -176,38 +178,44 @@ const DEFAULT = function(theme) {
   }
 }
 
+const SMALL_SCREEN_CSS = function(theme) {
+  return {
+    pre: {
+      color: theme('colors.vanilla.400'),
+      backgroundColor: theme('colors.ink.200'),
+      overflowX: 'auto',
+      borderRadius: '0'
+    }
+  }
+}
+
+const LARGE_SCREEN_CSS = function(theme) {
+  return {
+    'figure img': {
+      borderRadius: `${theme('spacing.1')}`
+    }
+  }
+}
+
+const MUTED = function(theme) {
+  return {
+    'ul > li::before': {
+      ...BEFORE_LIST_ITEM(theme, true)
+    },
+    a: {
+      color: theme('colors.vanilla.400'),
+      textDecoration: 'normal',
+      fontWeight: theme('fontWeight.medium')
+    }
+  }
+}
+
 module.exports = {
   FULL_WIDTH_ACTIVE,
   FULL_WIDTH_INACTIVE,
   BEFORE_LIST_ITEM,
-  DEFAULT: DEFAULT,
-  SMALL_SCREEN_CSS: function(theme) {
-    return {
-      pre: {
-        color: theme('colors.vanilla.400'),
-        backgroundColor: theme('colors.ink.200'),
-        overflowX: 'auto',
-        borderRadius: '0'
-      }
-    }
-  },
-  LARGE_SCREEN_CSS: function(theme) {
-    return {
-      'figure img': {
-        borderRadius: `${theme('spacing.1')}`
-      }
-    }
-  },
-  MUTED: function(theme) {
-    return {
-      'ul > li::before': {
-        ...BEFORE_LIST_ITEM(theme, true)
-      },
-      a: {
-        color: theme('colors.vanilla.400'),
-        textDecoration: 'normal',
-        fontWeight: theme('fontWeight.medium')
-      }
-    }
-  }
+  DEFAULT,
+  SMALL_SCREEN_CSS,
+  LARGE_SCREEN_CSS,
+  MUTED
 }
