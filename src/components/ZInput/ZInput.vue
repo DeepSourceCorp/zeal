@@ -169,7 +169,7 @@ export default Vue.extend({
   },
   computed: {
     borderStyles(): string {
-      if (this.isInvalid || this.invalidSate) {
+      if (this.isInvalid || this.invalidState) {
         return `border border-cherry`
       }
 
