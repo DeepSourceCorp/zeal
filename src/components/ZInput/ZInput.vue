@@ -206,7 +206,7 @@ export default Vue.extend({
       this.$emit('keydown', e)
     },
     invalidHandler(e: Event) {
-      this.invalidSate = true
+      this.invalidState = true
       this.$emit('invalid', e)
     }
   }
