@@ -170,11 +170,7 @@ export default Vue.extend({
     },
     addImageUrl(value) {
       if (value) {
-        this.editor
-          ?.chain()
-          .focus()
-          .setImage({ src: value })
-          .run()
+        this.editor?.chain().focus().setImage({ src: value }).run()
       }
     }
   },
