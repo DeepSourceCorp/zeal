@@ -190,11 +190,7 @@ export default Vue.extend({
     blurHandler(e: FocusEvent) {
       this.$emit('blur', e)
       const eventTarget = e.target as HTMLInputElement
-      if (!eventTarget.checkValidity()) {
-        this.invalidSate = true
-      } else {
-        this.invalidSate = false
-      }
+      this.invalidState = !eventTarget.checkValidity()
     },
     focusHandler(e: FocusEvent) {
       this.$emit('focus', e)
