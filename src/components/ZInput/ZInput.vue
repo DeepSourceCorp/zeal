@@ -164,7 +164,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      invalidSate: false
+      invalidState: false
     }
   },
   computed: {
