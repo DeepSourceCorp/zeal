@@ -28,13 +28,13 @@ export const Basic = () => ({
             <z-nav-list class="w-48 border-r border-ink-200">
               <template slot="heading">Integrations</template>
               <z-nav-list-item>
-                <z-icon class="mr-3" icon="coverage"></z-icon>GitHub
+                <z-icon class="mr-3" icon="github"></z-icon>GitHub
               </z-nav-list-item>
               <z-nav-list-item>
-                <z-icon class="mr-3" icon="coverage"></z-icon>GitLab
+                <z-icon class="mr-3" icon="gitlab"></z-icon>GitLab
               </z-nav-list-item>
               <z-nav-list-item>
-                <z-icon class="mr-3" icon="coverage"></z-icon>Bitbucket
+                <z-icon class="mr-3" icon="bitbucket"></z-icon>Bitbucket
               </z-nav-list-item>
             </z-nav-list>
             <z-nav-list arrange="horizontal" class="w-102">
@@ -61,6 +61,12 @@ export const Basic = () => ({
           </z-nav-menu>
           <z-nav-item class="mx-1" to="https://deepsource.io/" type="button">Enterprise</z-nav-item>
           <z-nav-item class="mx-1" to="https://deepsource.io/pricing" type="button">Pricing</z-nav-item>
+          <z-nav-menu class="mx-1" type="dropdown" title="Comapny">
+            <z-nav-list>
+              <z-nav-list-item>About</z-nav-list-item>
+              <z-nav-list-item>Jobs</z-nav-list-item>
+            </z-nav-list>
+          </z-nav-menu>
         </template>
 
         <template slot="desktop-cta">
