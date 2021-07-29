@@ -25,7 +25,7 @@
       <label v-if="enableImageUpload" class="flex">
         <z-icon
           :icon="isImageUploading ? 'spin-loader' : 'image'"
-          size="medium"
+          size="small"
           :class="{ 'animate-spin': isImageUploading }"
         />
         <input type="file" accept="image/png, image/jpeg" class="hidden" @change="uploadImage($event.target.files)" />
