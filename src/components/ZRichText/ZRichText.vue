@@ -1,6 +1,6 @@
 <template>
   <div
-    class="z-rich-text flex flex-col items-center w-full rounded-sm outline-none border border-transparent"
+    class="z-rich-text flex flex-col items-center w-full rounded-md outline-none border border-transparent"
     :class="[
       borderStyles,
       {
