@@ -148,7 +148,7 @@ export default Vue.extend({
       onBlur: () => {
         if (this.minLength) {
           this.invalidState = (this.editor?.getCharacterCount() || 0) < this.minLength
-          this.invalidState && this.$emit('invalid', `Atleast ${this.minLength} characters needed`)
+          if (this.invalidState) this.$emit('invalid', `Atleast ${this.minLength} characters required.`)
         }
         this.isFocused = false
       }
