@@ -22,7 +22,7 @@ export const RichTextWithImage = () => ({
   data() {
     return {}
   },
-  template: `<div><z-rich-text :enable-image-upload="true" class="max-w-2xl"/></div>`
+  template: `<div class="stroke-1.5"><z-rich-text :enable-image-upload="true" class="max-w-2xl"/></div>`
 })
 
 export const RichTextWithMaxCharacterCount = () => ({
@@ -39,4 +39,12 @@ export const RichTextWithMinCharacterCount = () => ({
     return {}
   },
   template: `<div><z-rich-text :min-length="10" placeholder="Minimum 10 characters" class="max-w-2xl"/></div>`
+})
+
+export const FullyFeaturedRichText = () => ({
+  components: { ZRichText },
+  data() {
+    return {}
+  },
+  template: `<div class="stroke-1.5"><z-rich-text class="max-w-2xl" placeholder="Pen your next adventure here... (Min. 50 chars)" :min-length="50" :max-length="1000"  :enable-image-upload="true" /></div>`
 })

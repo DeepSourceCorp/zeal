@@ -12,9 +12,10 @@
   >
     <editor-content :editor="editor" class="w-full outline-none" />
     <div
-      class="flex w-full h-11 justify-between items-center border-t border-transparent p-3"
+      class="flex w-full justify-between items-center border-t p-3 rounded-b-md"
       :class="[
         borderStyles,
+        isFocused ? 'bg-ink-200' : 'bg-ink-300',
         {
           'text-slate cursor-not-allowed': disabled,
           'text-vanilla-300': !disabled,
@@ -22,20 +23,34 @@
         }
       ]"
     >
-      <label v-if="enableImageUpload" class="flex">
+      <label
+        v-if="enableImageUpload"
+        class="flex hover:text-vanilla-400 focus-within:text-vanilla-400 text-slate cursor-pointer"
+      >
         <z-icon
           :icon="isImageUploading ? 'spin-loader' : 'image'"
-          size="base"
+          size="small"
+          color="current"
           :class="{ 'animate-spin': isImageUploading }"
+          aria-label="Upload an image"
         />
-        <input type="file" accept="image/png, image/jpeg" class="hidden" @change="uploadImage($event.target.files)" />
+        <input
+          type="file"
+          accept="image/png, image/jpeg"
+          class="opacity-0 h-1 w-1 absolute"
+          @change="uploadImage($event.target.files)"
+        />
       </label>
       <div></div>
-      <div class="flex items-center">
-        <span v-if="!!maxLength" class="text-vanilla-400 mr-2">
+      <div class="flex items-center space-x-3">
+        <span
+          v-if="!!maxLength"
+          class=" text-xs leading-none"
+          :class="[editor && editor.getCharacterCount() > 0 ? 'text-vanilla-400' : 'text-slate']"
+        >
           {{ editor && editor.getCharacterCount() }} / {{ maxLength }} Characters
         </span>
-        <z-icon icon="z-markdown" size="base" />
+        <z-icon icon="z-markdown" size="base" color="slate" />
       </div>
     </div>
   </div>
@@ -51,6 +66,10 @@ import CharacterCount from '@tiptap/extension-character-count'
 import Image from '@tiptap/extension-image'
 import ZIcon from '../ZIcon'
 
+interface HeadingLevel {
+  Level: (1 | 2 | 3 | 4 | 5 | 6)[]
+}
+
 export default Vue.extend({
   name: 'ZRichText',
   components: {
@@ -59,6 +78,10 @@ export default Vue.extend({
   },
   props: {
     value: {
+      type: String,
+      default: ''
+    },
+    label: {
       type: String,
       default: ''
     },
@@ -101,6 +124,14 @@ export default Vue.extend({
     isImageUploading: {
       type: Boolean,
       default: false
+    },
+    headingLevels: {
+      type: Array,
+      default: () => [1, 2, 3, 4, 5, 6]
+    },
+    validateOnBlur: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
@@ -115,11 +146,8 @@ export default Vue.extend({
       if (this.isInvalid || this.invalidState) {
         return `border-cherry`
       }
-      if (this.showBorder && !this.isFocused) {
-        return `border-ink-100`
-      }
-      if (this.isFocused) {
-        return `border-vanilla-400`
+      if (this.showBorder) {
+        return `border-ink-200 focus-within:border-ink-100`
       }
       return ''
     }
@@ -134,7 +162,11 @@ export default Vue.extend({
         }
       },
       extensions: [
-        StarterKit,
+        StarterKit.configure({
+          heading: {
+            levels: this.headingLevels as HeadingLevel['Level']
+          }
+        }),
         Link,
         Image,
         Placeholder.configure({
@@ -151,10 +183,7 @@ export default Vue.extend({
         this.isFocused = true
       },
       onBlur: () => {
-        if (this.minLength) {
-          this.invalidState = (this.editor?.getCharacterCount() || 0) < this.minLength
-          if (this.invalidState) this.$emit('invalid', `Atleast ${this.minLength} characters required.`)
-        }
+        this.validateInput()
         this.isFocused = false
       }
     })
@@ -175,13 +204,24 @@ export default Vue.extend({
     },
     addImageUrl(value) {
       if (value) {
-        this.editor?.chain().focus().setImage({ src: value }).run()
+        this.editor
+          ?.chain()
+          .focus()
+          .setImage({ src: value })
+          .run()
       }
     }
   },
   methods: {
     uploadImage(files: FileList) {
       if (files) this.$emit('editor-image-upload', files)
+    },
+    validateInput() {
+      //? Separate validateOnBlur and minLength if there are further validations added in the future
+      if (this.validateOnBlur && this.minLength) {
+        this.invalidState = (this.editor?.getCharacterCount() || 0) < this.minLength
+        if (this.invalidState) this.$emit('invalid', `Atleast ${this.minLength} characters required.`)
+      }
     }
   }
 })
