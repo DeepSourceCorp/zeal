@@ -45,7 +45,7 @@
       <div class="flex items-center space-x-3">
         <span
           v-if="!!maxLength"
-          class=" text-xs leading-none"
+          class="text-xs leading-none"
           :class="[editor && editor.getCharacterCount() > 0 ? 'text-vanilla-400' : 'text-slate']"
         >
           {{ editor && editor.getCharacterCount() }} / {{ maxLength }} Characters
@@ -204,11 +204,7 @@ export default Vue.extend({
     },
     addImageUrl(value) {
       if (value) {
-        this.editor
-          ?.chain()
-          .focus()
-          .setImage({ src: value })
-          .run()
+        this.editor?.chain().focus().setImage({ src: value }).run()
       }
     }
   },
