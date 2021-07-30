@@ -156,6 +156,10 @@ export default Vue.extend({
     required: {
       type: Boolean,
       default: false
+    },
+    validateOnBlur: {
+      type: Boolean,
+      default: true
     }
   },
   model: {
@@ -189,8 +193,10 @@ export default Vue.extend({
     },
     blurHandler(e: FocusEvent) {
       this.$emit('blur', e)
-      const eventTarget = e.target as HTMLInputElement
-      this.invalidState = !eventTarget.checkValidity()
+      if (this.validateOnBlur) {
+        const eventTarget = e.target as HTMLInputElement
+        this.invalidState = !eventTarget.checkValidity()
+      }
     },
     focusHandler(e: FocusEvent) {
       this.$emit('focus', e)
