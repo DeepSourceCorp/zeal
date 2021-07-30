@@ -10,9 +10,9 @@
       }
     ]"
   >
-    <editor-content :editor="editor" class="w-full outline-none px-3 py-2" />
+    <editor-content :editor="editor" class="w-full outline-none" />
     <div
-      class="flex w-full min-h-11 justify-between items-center border-t border-transparent px-3 py-2"
+      class="flex w-full h-11 justify-between items-center border-t border-transparent p-3"
       :class="[
         borderStyles,
         {
@@ -128,6 +128,11 @@ export default Vue.extend({
     this.editor = new Editor({
       content: this.value,
       editable: !this.disabled,
+      editorProps: {
+        attributes: {
+          class: 'prose prose-sm focus:outline-none w-full max-w-full min-h-36 max-h-80 overflow-auto p-3'
+        }
+      },
       extensions: [
         StarterKit,
         Link,
@@ -170,7 +175,11 @@ export default Vue.extend({
     },
     addImageUrl(value) {
       if (value) {
-        this.editor?.chain().focus().setImage({ src: value }).run()
+        this.editor
+          ?.chain()
+          .focus()
+          .setImage({ src: value })
+          .run()
       }
     }
   },
@@ -183,15 +192,8 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-.z-rich-text >>> .ProseMirror {
-  @apply prose w-full max-w-full border-none min-h-36;
-}
-.z-rich-text >>> .ProseMirror-focused {
-  @apply border-none outline-none;
-}
 .z-rich-text >>> .ProseMirror p.is-editor-empty:first-child::before {
   content: attr(data-placeholder);
-  color: #a1a1aa;
-  @apply h-0 pointer-events-none float-left;
+  @apply h-0 pointer-events-none float-left text-manatee;
 }
 </style>
