@@ -38,14 +38,14 @@ export default Vue.extend({
       type: String,
       default: 'sm',
       validator(val) {
-        return ['sm', 'md', 'lg'].indexOf(val) > -1
+        return ['sm', 'md', 'lg'].includes(val)
       }
     },
     type: {
       type: String,
       default: 'default',
       validator(val) {
-        return ['default', 'success', 'warning', 'info', 'danger'].indexOf(val) > -1
+        return ['default', 'success', 'warning', 'info', 'danger'].includes(val)
       }
     },
     position: {
