@@ -1,6 +1,6 @@
 <template>
   <div
-    class="z-rich-text flex flex-col items-center w-full rounded-sm outline-none border border-transparent"
+    class="z-rich-text flex flex-col items-center w-full rounded-md outline-none border border-transparent"
     :class="[
       borderStyles,
       {
@@ -25,7 +25,7 @@
       <label v-if="enableImageUpload" class="flex">
         <z-icon
           :icon="isImageUploading ? 'spin-loader' : 'image'"
-          size="medium"
+          size="small"
           :class="{ 'animate-spin': isImageUploading }"
         />
         <input type="file" accept="image/png, image/jpeg" class="hidden" @change="uploadImage($event.target.files)" />
