@@ -6,7 +6,7 @@ import { mount } from '@vue/test-utils'
 
 const DefaultAccordion = {
   template: `<z-accordion class="text-vanilla-100">
-          <z-accordion-item title="Consistency" isOpen="true">
+          <z-accordion-item title="Consistency" :isOpen="true">
             <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
             <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
           </z-accordion-item>
