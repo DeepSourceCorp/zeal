@@ -71,7 +71,7 @@
     "vue-cli-plugin-storybook": "~2.0.0",
     "vue-cli-plugin-tailwind": "~1.4.1",
     "vue-property-decorator": "^9.1.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.14"
   },
   "prettier": {
     "printWidth": 120,
