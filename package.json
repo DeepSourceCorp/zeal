@@ -34,9 +34,9 @@
     "vue": "^2.6.12"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^6.1.21",
-    "@storybook/addon-links": "^6.1.21",
-    "@storybook/vue": "^6.1.21",
+    "@storybook/addon-essentials": "^6.3.6",
+    "@storybook/addon-links": "^6.3.6",
+    "@storybook/vue": "^6.3.6",
     "@types/feather-icons": "^4.7.0",
     "@types/istanbul-lib-instrument": "^1.7.4",
     "@types/jest": "^24.0.19",
@@ -53,6 +53,8 @@
     "@vue/test-utils": "^1.0.3",
     "autoprefixer": "^9",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.2.2",
     "cheerio": "^1.0.0-rc.3",
     "chromatic": "^5.4.0",
     "eslint": "^6.7.2",
@@ -68,7 +70,7 @@
     "sass-loader": "7.1.0",
     "typescript": "~3.9.3",
     "vue-class-component": "^7.2.6",
-    "vue-cli-plugin-storybook": "~2.0.0",
+    "vue-cli-plugin-storybook": "^2.1.0",
     "vue-cli-plugin-tailwind": "~1.4.1",
     "vue-property-decorator": "^9.1.2",
     "vue-template-compiler": "^2.6.11"
