@@ -58,6 +58,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { Editor as EditorCore } from '@tiptap/core'
 import { Editor, EditorContent } from '@tiptap/vue-2'
 import StarterKit from '@tiptap/starter-kit'
 import Link from '@tiptap/extension-link'
@@ -158,7 +159,7 @@ export default Vue.extend({
       editable: !this.disabled,
       editorProps: {
         attributes: {
-          class: 'prose prose-sm focus:outline-none w-full max-w-full min-h-36 max-h-80 overflow-auto p-3'
+          class: 'prose focus:outline-none w-full max-w-full min-h-36 max-h-80 overflow-auto p-3'
         }
       },
       extensions: [
@@ -176,14 +177,19 @@ export default Vue.extend({
           limit: this.maxLength
         })
       ],
-      onUpdate: () => {
-        this.$emit('input', this.editor?.getHTML())
+      onUpdate: ({ editor }) => {
+        let editorHtml = editor.getHTML()
+        if (editor.isEmpty) {
+          editor.commands.clearContent()
+          editorHtml = ''
+        }
+        this.$emit('input', editorHtml)
       },
       onFocus: () => {
         this.isFocused = true
       },
-      onBlur: () => {
-        this.validateInput()
+      onBlur: ({ editor }) => {
+        this.validateInput(editor)
         this.isFocused = false
       }
     })
@@ -212,10 +218,10 @@ export default Vue.extend({
     uploadImage(files: FileList) {
       if (files) this.$emit('editor-image-upload', files)
     },
-    validateInput() {
+    validateInput(editor: EditorCore) {
       //? Separate validateOnBlur and minLength if there are further validations added in the future
       if (this.validateOnBlur && this.minLength) {
-        this.invalidState = (this.editor?.getCharacterCount() || 0) < this.minLength
+        this.invalidState = (editor?.getCharacterCount() || 0) < this.minLength
         if (this.invalidState) this.$emit('invalid', `Atleast ${this.minLength} characters required.`)
       }
     }
