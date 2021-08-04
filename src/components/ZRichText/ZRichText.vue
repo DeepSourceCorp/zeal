@@ -10,6 +10,32 @@
       }
     ]"
   >
+    <bubble-menu v-if="editor" :editor="editor">
+      <div
+        v-if="toggleLinkInput || selectionHasLink"
+        class="flex bg-ink-400 border border-ink-200 focus-within:border-ink-100 rounded-md"
+      >
+        <z-input
+          ref="linkInput"
+          v-model="inputLink"
+          type="url"
+          placeholder="Add a link"
+          size="small"
+          :show-border="false"
+          @keydown="applyLink"
+        />
+        <div class="border-l border-ink-100">
+          <z-button
+            icon="delete"
+            iconSize="small"
+            size="small"
+            button-type="secondary"
+            :disabled="!editor.isActive('link')"
+            @click="editor.chain().focus().extendMarkRange('link').unsetLink().run()"
+          />
+        </div>
+      </div>
+    </bubble-menu>
     <editor-content :editor="editor" class="w-full outline-none" />
     <div
       class="flex w-full justify-between items-center border-t p-3 rounded-b-md"
@@ -58,24 +84,34 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { Mark } from 'prosemirror-model'
 import { Editor as EditorCore } from '@tiptap/core'
-import { Editor, EditorContent } from '@tiptap/vue-2'
+import { Editor, EditorContent, BubbleMenu } from '@tiptap/vue-2'
 import StarterKit from '@tiptap/starter-kit'
 import Link from '@tiptap/extension-link'
 import Placeholder from '@tiptap/extension-placeholder'
 import CharacterCount from '@tiptap/extension-character-count'
 import Image from '@tiptap/extension-image'
 import ZIcon from '../ZIcon'
+import ZInput from '../ZInput/ZInput.vue'
+import ZButton from '../ZButton/ZButton.vue'
 
 interface HeadingLevel {
   Level: (1 | 2 | 3 | 4 | 5 | 6)[]
+}
+
+interface VueHasFocus extends Vue {
+  focus: () => {}
 }
 
 export default Vue.extend({
   name: 'ZRichText',
   components: {
     EditorContent,
-    ZIcon
+    ZIcon,
+    BubbleMenu,
+    ZInput,
+    ZButton
   },
   props: {
     value: {
@@ -139,7 +175,10 @@ export default Vue.extend({
     return {
       editor: null as Editor | null,
       invalidState: false,
-      isFocused: false
+      isFocused: false,
+      inputLink: '',
+      toggleLinkInput: false,
+      lastPos: 0
     }
   },
   computed: {
@@ -151,6 +190,9 @@ export default Vue.extend({
         return `border-ink-200 focus-within:border-ink-100`
       }
       return ''
+    },
+    selectionHasLink(): boolean | undefined {
+      return this.editor?.isActive('link') && !this.editor?.state.selection.empty
     }
   },
   mounted() {
@@ -168,7 +210,20 @@ export default Vue.extend({
             levels: this.headingLevels as HeadingLevel['Level']
           }
         }),
-        Link,
+        Link.extend({
+          addKeyboardShortcuts: () => {
+            return {
+              'Mod-k': () => {
+                this.toggleLinkInput = true
+                this.$nextTick(() => {
+                  const inputTextbox = this.$refs.linkInput as VueHasFocus
+                  inputTextbox.focus()
+                })
+                return true
+              }
+            }
+          }
+        }),
         Image,
         Placeholder.configure({
           placeholder: this.placeholder
@@ -196,6 +251,25 @@ export default Vue.extend({
       onBlur: ({ editor }): void => {
         this.validateInput(editor)
         this.isFocused = false
+      },
+      onSelectionUpdate: ({ editor }): void => {
+        if (editor.state.selection.empty) {
+          this.toggleLinkInput = false
+          this.inputLink = ''
+          return
+        }
+        const {
+          state,
+          state: { selection }
+        } = editor
+        const { from, to } = selection
+        this.lastPos = selection.anchor
+        let marks: Mark[] = []
+        state.doc.nodesBetween(from, to, (node) => {
+          marks = [...marks, ...node.marks]
+        })
+        const mark = marks.find((markItem) => markItem.type.name === 'link')
+        this.inputLink = mark && mark.attrs.href ? mark.attrs.href : ''
       }
     })
   },
@@ -228,6 +302,19 @@ export default Vue.extend({
       if (this.validateOnBlur && this.minLength) {
         this.invalidState = (editor?.getCharacterCount() || 0) < this.minLength
         if (this.invalidState) this.$emit('invalid', `Atleast ${this.minLength} characters required.`)
+      }
+    },
+    applyLink(e: KeyboardEvent) {
+      if (e.code === 'Enter' && this.editor) {
+        this.editor
+          .chain()
+          .extendMarkRange('link')
+          .setLink({ href: this.inputLink })
+          .setTextSelection(this.lastPos)
+          .focus(this.lastPos)
+          .run()
+        this.toggleLinkInput = false
+        this.inputLink = ''
       }
     }
   }

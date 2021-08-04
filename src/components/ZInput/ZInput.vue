@@ -26,6 +26,7 @@
     <!-- Any icon/content to the left renders here -->
     <slot name="left"></slot>
     <input
+      ref="input"
       v-debounce:[debounceDelay]="updateDebounce"
       class="overflow-ellipsis overflow-hidden w-full caret-juniper flex flex-grow outline-none bg-transparent"
       :class="{
@@ -56,6 +57,10 @@
 import Vue from 'vue'
 import ZIcon from '../ZIcon/ZIcon.vue'
 import debounceDirective from '@/directives/debounce'
+
+interface VueHasFocus extends Vue {
+  focus: () => {}
+}
 
 export default Vue.extend({
   name: 'ZInput',
@@ -155,6 +160,9 @@ export default Vue.extend({
     }
   },
   methods: {
+    focus(): void {
+      ;(this.$refs.input as VueHasFocus).focus()
+    },
     updateSelf(name: string): void {
       this.$emit('input', name)
     },
