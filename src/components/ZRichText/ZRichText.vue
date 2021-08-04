@@ -177,7 +177,7 @@ export default Vue.extend({
           limit: this.maxLength
         })
       ],
-      onUpdate: ({ editor }) => {
+      onUpdate: ({ editor }): void => {
         let editorHtml = editor.getHTML()
         /**
          * ! The following if snippet is to prevent a bug with tiptap.
@@ -190,10 +190,10 @@ export default Vue.extend({
         }
         this.$emit('input', editorHtml)
       },
-      onFocus: () => {
+      onFocus: (): void => {
         this.isFocused = true
       },
-      onBlur: ({ editor }) => {
+      onBlur: ({ editor }): void => {
         this.validateInput(editor)
         this.isFocused = false
       }
