@@ -179,6 +179,11 @@ export default Vue.extend({
       ],
       onUpdate: ({ editor }) => {
         let editorHtml = editor.getHTML()
+        /**
+         * ! The following if snippet is to prevent a bug with tiptap.
+         * ! Can be removed once the following is resolved:
+         * ? Refer: https://github.com/ueberdosis/tiptap/issues/1672
+         */
         if (editor.isEmpty) {
           editor.commands.clearContent()
           editorHtml = ''
