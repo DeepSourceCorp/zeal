@@ -22,7 +22,7 @@
           placeholder="Add a link"
           size="small"
           :show-border="false"
-          @keydown="applyLink"
+          @keyup.prevent="applyLink"
         />
         <div class="border-l border-ink-100">
           <z-button
@@ -308,10 +308,10 @@ export default Vue.extend({
       if (e.code === 'Enter' && this.editor) {
         this.editor
           .chain()
+          .focus()
           .extendMarkRange('link')
           .setLink({ href: this.inputLink })
           .setTextSelection(this.lastPos)
-          .focus(this.lastPos)
           .run()
         this.toggleLinkInput = false
         this.inputLink = ''
