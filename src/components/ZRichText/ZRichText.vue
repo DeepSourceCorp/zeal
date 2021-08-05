@@ -1,47 +1,9 @@
 <template>
-  <div
-    class="z-rich-text flex flex-col items-center w-full rounded-md outline-none border border-transparent"
-    :class="[
-      borderStyles,
-      {
-        'text-slate cursor-not-allowed': disabled,
-        'text-vanilla-300': !disabled,
-        [padding]: padding
-      }
-    ]"
-  >
-    <bubble-menu v-if="editor" :editor="editor">
-      <div
-        v-if="toggleLinkInput || selectionHasLink"
-        class="flex bg-ink-400 border border-ink-200 focus-within:border-ink-100 rounded-md"
-      >
-        <z-input
-          ref="linkInput"
-          v-model="inputLink"
-          type="url"
-          placeholder="Add a link"
-          size="small"
-          :show-border="false"
-          @keyup.prevent="applyLink"
-        />
-        <div class="border-l border-ink-100">
-          <z-button
-              icon="trash-2"
-            iconSize="small"
-            size="small"
-            button-type="secondary"
-            :disabled="!editor.isActive('link')"
-            @click="editor.chain().focus().extendMarkRange('link').unsetLink().run()"
-          />
-        </div>
-      </div>
-    </bubble-menu>
-    <editor-content :editor="editor" class="w-full outline-none" />
+  <div>
     <div
-      class="flex w-full justify-between items-center border-t p-3 rounded-b-md"
+      class="z-rich-text flex flex-col items-center w-full rounded-md outline-none border border-transparent"
       :class="[
         borderStyles,
-        isFocused ? 'bg-ink-200' : 'bg-ink-300',
         {
           'text-slate cursor-not-allowed': disabled,
           'text-vanilla-300': !disabled,
@@ -49,34 +11,79 @@
         }
       ]"
     >
-      <label
-        v-if="enableImageUpload"
-        class="flex hover:text-vanilla-400 focus-within:text-vanilla-400 text-slate cursor-pointer"
-      >
-        <z-icon
-          :icon="isImageUploading ? 'spin-loader' : 'image'"
-          size="small"
-          color="current"
-          :class="{ 'animate-spin': isImageUploading }"
-          aria-label="Upload an image"
-        />
-        <input
-          type="file"
-          accept="image/png, image/jpeg"
-          class="opacity-0 h-1 w-1 absolute"
-          @change="uploadImage($event.target.files)"
-        />
-      </label>
-      <div></div>
-      <div class="flex items-center space-x-3">
-        <span
-          v-if="!!maxLength"
-          class="text-xs leading-none"
-          :class="[editor && editor.getCharacterCount() > 0 ? 'text-vanilla-400' : 'text-slate']"
+      <bubble-menu v-if="editor" :editor="editor">
+        <div
+          v-if="toggleLinkInput || selectionHasLink"
+          class="flex bg-ink-400 border border-ink-200 focus-within:border-ink-100 rounded-md"
         >
-          {{ editor && editor.getCharacterCount() }} / {{ maxLength }} Characters
-        </span>
+          <z-input
+            ref="linkInput"
+            v-model="inputLink"
+            type="url"
+            placeholder="Add a link"
+            size="small"
+            :show-border="false"
+            @keyup.prevent="applyLink"
+          />
+          <div class="border-l border-ink-100">
+            <z-button
+              icon="trash-2"
+              iconSize="small"
+              size="small"
+              button-type="secondary"
+              :disabled="!editor.isActive('link')"
+              @click="editor.chain().focus().extendMarkRange('link').unsetLink().run()"
+            />
+          </div>
+        </div>
+      </bubble-menu>
+      <editor-content :editor="editor" class="w-full outline-none" />
+      <div
+        v-if="editor"
+        class="flex w-full items-center border-t px-4 py-2 rounded-b-md"
+        :class="[
+          borderStyles,
+          isFocused ? 'bg-ink-300' : 'bg-ink-400',
+          {
+            'text-slate cursor-not-allowed': disabled,
+            'text-vanilla-300': !disabled,
+            [padding]: padding
+          }
+        ]"
+      >
+        <label
+          v-if="enableImageUpload"
+          class="flex hover:text-vanilla-400 focus-within:text-vanilla-400 text-slate cursor-pointer"
+        >
+          <z-icon
+            :icon="isImageUploading ? 'spin-loader' : 'image'"
+            size="small"
+            color="current"
+            :class="{ 'animate-spin': isImageUploading }"
+            aria-label="Upload an image"
+          />
+          <input
+            type="file"
+            accept="image/png, image/jpeg"
+            class="opacity-0 h-1 w-1 absolute"
+            @change="uploadImage($event.target.files)"
+          />
+        </label>
+        <div class="flex-grow"></div>
         <z-icon icon="z-markdown" size="base" color="slate" />
+      </div>
+    </div>
+    <div class="px-4 py-2">
+      <div
+        v-if="editor && !!maxLength && maxLength === editor.getCharacterCount()"
+        class="leading-none text-xxs text-cherry flex space-x-1 items-center mt"
+      >
+        <z-icon icon="alert-circle" color="currentColor" size="small" />
+        <span> {{ maxLength }} / {{ maxLength }} characters used </span>
+      </div>
+      <div v-else-if="invalidState" class="leading-none text-xxs text-cherry flex space-x-1 items-center">
+        <z-icon icon="alert-circle" color="currentColor" size="small" />
+        <span> {{ invalidStateMessage }}</span>
       </div>
     </div>
   </div>
@@ -164,7 +171,7 @@ export default Vue.extend({
     },
     headingLevels: {
       type: Array,
-      default: () => [1, 2, 3, 4, 5, 6]
+      default: () => [1, 2]
     },
     validateOnBlur: {
       type: Boolean,
@@ -175,6 +182,7 @@ export default Vue.extend({
     return {
       editor: null as Editor | null,
       invalidState: false,
+      invalidStateMessage: '',
       isFocused: false,
       inputLink: '',
       toggleLinkInput: false,
@@ -183,7 +191,7 @@ export default Vue.extend({
   },
   computed: {
     borderStyles(): string {
-      if (this.isInvalid || this.invalidState) {
+      if (this.isInvalid) {
         return `border-cherry`
       }
       if (this.showBorder) {
@@ -202,7 +210,7 @@ export default Vue.extend({
       editable: !this.disabled,
       editorProps: {
         attributes: {
-          class: 'prose focus:outline-none w-full max-w-full min-h-36 max-h-80 overflow-auto p-3'
+          class: 'prose prose-rte focus:outline-none w-full max-w-full max-h-102 min-h-36 overflow-auto p-4'
         }
       },
       extensions: [
@@ -292,9 +300,16 @@ export default Vue.extend({
     },
     validateInput(editor: EditorCore) {
       //? Separate validateOnBlur and minLength if there are further validations added in the future
+      //! Refactor to accept an array of functions that control errored state by returning string or boolean
       if (this.validateOnBlur && this.minLength) {
-        this.invalidState = (editor?.getCharacterCount() || 0) < this.minLength
-        if (this.invalidState) this.$emit('invalid', `Atleast ${this.minLength} characters required.`)
+        if ((editor?.getCharacterCount() || 0) < this.minLength) {
+          this.invalidState = true
+          this.invalidStateMessage = `Atleast ${this.minLength} characters required`
+          this.$emit('invalid', this.invalidStateMessage)
+          return
+        }
+        this.invalidState = false
+        this.invalidStateMessage = ''
       }
     },
     applyLink(e: KeyboardEvent) {

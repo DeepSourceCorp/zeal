@@ -216,6 +216,94 @@ const MUTED = function (theme) {
   }
 }
 
+const RTE = function (theme) {
+  return {
+    p: {
+      fontSize: theme('fontSize.base'),
+      lineHeight: theme('lineHeight.relaxed'),
+      marginBottom: 0,
+      marginTop: 0
+    },
+    '*:not(p)': {
+      marginBottom: 0,
+      marginTop: 0
+    },
+    '*:not(p) + *:not(p), *:not(p) + p': {
+      marginBottom: '10px',
+      marginTop: '8px'
+    },
+    'p + p': {
+      marginBottom: '10px',
+      marginTop: '10px'
+    },
+    'li + li': {
+      marginBottom: 0,
+      marginTop: 0
+    },
+    h1: {
+      fontSize: theme('fontSize.xl'),
+      fontWeight: theme('fontWeight.medium'),
+      lineHeight: theme('lineHeight["9"]')
+    },
+    h2: {
+      fontSize: theme('fontSize.lg'),
+      fontWeight: theme('fontWeight.medium'),
+      lineHeight: theme('lineHeight["7"]')
+    },
+    code: {
+      backgroundColor: theme('colors.ink.200'),
+      fontSize: theme('fontSize.sm'),
+      padding: theme('padding["1"]'),
+      borderRadius: theme('borderRadius.md'),
+      fontWeight: theme('fontWeight.normal')
+    },
+    'code::before, code::after': {
+      content: '""'
+    },
+    a: {
+      fontWeight: theme('fontWeight.normal')
+    },
+    blockquote: {
+      fontWeight: theme('fontWeight.normal'),
+      borderLeftColor: theme('colors.vanilla.400'),
+      paddingLeft: theme('padding["2"]')
+    },
+    'blockquote p:first-of-type::before, blockquote p:last-of-type::after': {
+      content: 'none'
+    },
+    'ol > li > :last-child, ul > li > :last-child': {
+      marginBottom: 0
+    },
+    'ol > li > :first-child, ul > li > :first-child': {
+      marginTop: 0
+    },
+    'ol > li::before': {
+      color: 'inherit'
+    },
+    'ol > li': {
+      paddingLeft: theme('padding["6"]')
+    },
+    'ul > li::before': {
+      color: 'inherit',
+      content: 'none'
+    },
+    'ul > li': {
+      paddingLeft: 0
+    },
+    'ul > li > p': {
+      paddingLeft: theme('padding["2"]'),
+      margin: 0
+    },
+    ul: {
+      listStyleType: 'disc',
+      paddingLeft: theme('padding["4"]')
+    },
+    'ul ul, ul ol, ol ul, ol ol': {
+      margin: 0
+    }
+  }
+}
+
 module.exports = {
   FULL_WIDTH_ACTIVE,
   FULL_WIDTH_INACTIVE,
@@ -223,5 +311,6 @@ module.exports = {
   DEFAULT,
   SMALL_SCREEN_CSS,
   LARGE_SCREEN_CSS,
-  MUTED
+  MUTED,
+  RTE
 }

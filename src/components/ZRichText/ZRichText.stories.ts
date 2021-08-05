@@ -30,7 +30,7 @@ export const RichTextWithMaxCharacterCount = () => ({
   data() {
     return {}
   },
-  template: `<div><z-rich-text :max-length="280" class="max-w-2xl"/></div>`
+  template: `<div><z-rich-text :max-length="280" placeholder="Maximum 280 characters" class="max-w-2xl"/></div>`
 })
 
 export const RichTextWithMinCharacterCount = () => ({

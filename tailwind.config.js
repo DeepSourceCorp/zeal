@@ -909,6 +909,11 @@ module.exports = {
             ...typographyConfig.MUTED(theme)
           }
         },
+        rte: {
+          css: {
+            ...typographyConfig.RTE(theme)
+          }
+        },
         sm: {
           css: {
             ...typographyConfig.SMALL_SCREEN_CSS(theme)
