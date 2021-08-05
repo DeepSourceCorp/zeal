@@ -4,7 +4,10 @@ const typographyConfig = require('./src/helpers/tailwind/typography.js')
 const colors = require('./src/helpers/tailwind/colors.js')
 
 module.exports = {
-  purge: [],
+  purge: {
+    enabled: process.env.NODE_ENV === 'production',
+    content: ['./src/**/*.vue']
+  },
   prefix: '',
   important: false,
   presets: [],
