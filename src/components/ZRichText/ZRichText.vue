@@ -92,7 +92,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import { Mark } from 'prosemirror-model'
-import { Editor as EditorCore } from '@tiptap/core'
+import { Editor as EditorCore, Extensions } from '@tiptap/core'
 import { Editor, EditorContent, BubbleMenu } from '@tiptap/vue-2'
 import StarterKit from '@tiptap/starter-kit'
 import Link from '@tiptap/extension-link'
@@ -176,6 +176,10 @@ export default Vue.extend({
     validateOnBlur: {
       type: Boolean,
       default: true
+    },
+    customExtensions: {
+      type: Array,
+      default: () => []
     }
   },
   data() {
@@ -239,7 +243,8 @@ export default Vue.extend({
         }),
         CharacterCount.configure({
           limit: this.maxLength
-        })
+        }),
+        ...(this.customExtensions as Extensions)
       ],
       onUpdate: ({ editor }): void => {
         let editorHtml = editor.getHTML()
@@ -300,7 +305,7 @@ export default Vue.extend({
     },
     validateInput(editor: EditorCore) {
       //? Separate validateOnBlur and minLength if there are further validations added in the future
-      //! Refactor to accept an array of functions that control errored state by returning string or boolean
+      //! Refactor to accept an array of functions that control errored state by returning string or boolean (Check stash)
       if (this.validateOnBlur && this.minLength) {
         if ((editor?.getCharacterCount() || 0) < this.minLength) {
           this.invalidState = true
