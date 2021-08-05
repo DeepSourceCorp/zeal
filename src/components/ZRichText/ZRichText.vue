@@ -26,7 +26,7 @@
         />
         <div class="border-l border-ink-100">
           <z-button
-            icon="delete"
+              icon="trash-2"
             iconSize="small"
             size="small"
             button-type="secondary"
@@ -192,6 +192,7 @@ export default Vue.extend({
       return ''
     },
     selectionHasLink(): boolean | undefined {
+      if (this.editor) this.fetchLink(this.editor)
       return this.editor?.isActive('link') && !this.editor?.state.selection.empty
     }
   },
@@ -259,17 +260,9 @@ export default Vue.extend({
           return
         }
         const {
-          state,
           state: { selection }
         } = editor
-        const { from, to } = selection
         this.lastPos = selection.anchor
-        let marks: Mark[] = []
-        state.doc.nodesBetween(from, to, (node) => {
-          marks = [...marks, ...node.marks]
-        })
-        const mark = marks.find((markItem) => markItem.type.name === 'link')
-        this.inputLink = mark && mark.attrs.href ? mark.attrs.href : ''
       }
     })
   },
@@ -315,7 +308,24 @@ export default Vue.extend({
           .run()
         this.toggleLinkInput = false
         this.inputLink = ''
+      } else if (e.code === 'Escape' && this.editor) {
+        this.editor.chain().focus().setTextSelection(this.lastPos).run()
+        this.toggleLinkInput = false
+        this.inputLink = ''
       }
+    },
+    fetchLink(editor: EditorCore) {
+      const {
+        state,
+        state: { selection }
+      } = editor
+      const { from, to } = selection
+      let marks: Mark[] = []
+      state.doc.nodesBetween(from, to, (node) => {
+        marks = [...marks, ...node.marks]
+      })
+      const mark = marks.find((markItem) => markItem.type.name === 'link')
+      this.inputLink = mark && mark.attrs.href ? mark.attrs.href : ''
     }
   }
 })
