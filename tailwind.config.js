@@ -784,7 +784,8 @@ module.exports = {
       'slide-right-enter-active': 'slide-right-in 0.5s ease-out',
       'slide-right-leave-active': 'slide-right-out 0.5s ease-out',
       'slide-bottom-enter-active': 'slide-bottom-in 0.2s ease-out',
-      'slide-bottom-leave-active': 'slide-bottom-out 0.2s ease-out'
+      'slide-bottom-leave-active': 'slide-bottom-out 0.2s ease-out',
+      float: 'float 6s ease-in-out infinite'
     },
     keyframes: {
       expand: {
@@ -895,6 +896,17 @@ module.exports = {
         to: {
           transform: 'translateY(100%)'
         }
+      },
+      float: {
+        '0%': {
+          transform: 'translate(0,  0px)',
+        },
+        '50%': {
+          transform: 'translate(0, 15px)',
+        },
+        '100%': {
+          transform: 'translate(0, -0px)',
+        },
       }
     },
     extend: {
