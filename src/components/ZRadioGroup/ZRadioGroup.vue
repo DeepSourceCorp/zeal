@@ -31,7 +31,7 @@ export default {
     event: 'change'
   },
   watch: {
-    value: function(newValue) {
+    value: function (newValue) {
       if (!this.disabled && !this.readOnly) {
         this.$emit('change', newValue)
       }
