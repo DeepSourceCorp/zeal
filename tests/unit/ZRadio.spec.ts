@@ -56,6 +56,22 @@ const DisabledRadioButton = {
   }
 }
 
+const ReadOnlyRadioButton = {
+  template: `<z-radio-group v-model="modelValue" :readOnly="true">
+                <z-radio value="female" label="Female"></z-radio>
+                <z-radio value="male" label="Male"></z-radio>
+              </z-radio-group>`,
+  components: {
+    ZRadioGroup,
+    ZRadio
+  },
+  data() {
+    return {
+      modelValue: 'female'
+    }
+  }
+}
+
 const DisabledCheckedRadioButton = {
   template: `<z-radio-group v-model="modelValue" :disabled="true">
                 <z-radio value="female" label="Female"></z-radio>
@@ -103,6 +119,11 @@ describe('Radio Button Component', () => {
   })
   it('renders the disabled radio component', () => {
     const wrapper = mount(DisabledRadioButton)
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.findAll('input[disabled="disabled"]').length).toEqual(2)
+  })
+  it('renders the readonly radio component', () => {
+    const wrapper = mount(ReadOnlyRadioButton)
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.findAll('input[disabled="disabled"]').length).toEqual(2)
   })
