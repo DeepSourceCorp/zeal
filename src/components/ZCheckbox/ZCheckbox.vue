@@ -2,7 +2,8 @@
   <label
     class="relative flex items-center pl-6 text-base group z-input z-input__checkbox"
     :class="{
-      'cursor-not-allowed is-disabled': disabled
+      'cursor-not-allowed is-disabled': disabled,
+      'cursor-not-allowed is-read-only': readOnly
     }"
   >
     <input
@@ -11,7 +12,7 @@
       :value="value"
       :name="name"
       @change="updateInput"
-      :disabled="this.disabled"
+      :disabled="disabled || readOnly"
       class="absolute w-0 h-0 opacity-0"
     />
     <span
@@ -23,14 +24,16 @@
         'absolute left-0 grid text-center text-transparent bg-transparent border border-solid': true,
         'rounded-sm cursor-pointer place-items-center border-slate before:content-before': true,
         'sibling-checked:text-vanilla-100 sibling-checked:bg-juniper sibling-checked:border-juniper group-hover:border-juniper': true,
-        'cursor-not-allowed group-hover:border-slate sibling-checked:text-ink-300 sibling-checked:border-slate sibling-checked:bg-slate':
-          disabled
+        'cursor-not-allowed group-hover:border-slate sibling-checked:text-ink-300 sibling-checked:border-slate sibling-checked:bg-slate': disabled,
+        'cursor-not-allowed sibling-checked:text-vanilla-200 opacity-80': readOnly,
+        'group-hover:border-juniper': readOnly && isChecked,
+        'group-hover:border-slate': readOnly && !isChecked
       }"
     ></span>
     <span
       v-if="label"
       class="z-input__checkbox--text"
-      :class="{ [fontSize]: true, 'text-slate': disabled }"
+      :class="{ [fontSize]: true, 'text-slate': disabled, 'text-vanilla-300': readOnly }"
     >
       {{ label }}
     </span>
@@ -70,6 +73,10 @@ export default Vue.extend({
       default: false,
       type: Boolean
     },
+    readOnly: {
+      default: false,
+      type: Boolean
+    },
     modelValue: {
       default: false,
       type: Boolean || String
@@ -77,7 +84,7 @@ export default Vue.extend({
     size: {
       default: 'base',
       type: String,
-      validator: (value) => {
+      validator: value => {
         return ['small', 'base', 'large'].includes(value)
       }
     }
