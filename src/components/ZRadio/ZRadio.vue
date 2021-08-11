@@ -89,7 +89,6 @@ export default {
     updateInput() {
       const $parent = this.$parent
       if (!this.isDisabled && !this.isReadOnly) {
-        console.log('CHANGING')
         $parent.value = this.value
       }
     }
