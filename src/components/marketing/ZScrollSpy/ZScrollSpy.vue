@@ -1,8 +1,9 @@
 <template>
-  <ul :class="[`text-${align}`]">
+  <ul class="space-y-6" :class="[`text-${align}`]">
     <li
       v-for="heading in headingsMap"
       :key="heading.id"
+      class="leading-4"
       :class="[
         `${
           isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive
