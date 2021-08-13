@@ -13,7 +13,20 @@
     >
       <div
         v-if="isOpen"
-        class="fixed z-10 flex items-end overflow-hidden sm:overflow-visible h-100 sm:absolute text-vanilla-200 transform-gpu bg-ink-400 bg-opacity-25 sm:bg-transparent sm:bg-opacity-0"
+        class="
+          fixed
+          z-10
+          flex
+          items-end
+          overflow-hidden
+          sm:overflow-visible
+          h-100
+          sm:absolute
+          text-vanilla-200
+          transform-gpu
+          bg-ink-400 bg-opacity-25
+          sm:bg-transparent sm:bg-opacity-0
+        "
         :class="[directionClass, placementClasses]"
       >
         <div
@@ -108,9 +121,7 @@ export default Vue.extend({
   },
   computed: {
     directionClass(): string {
-      return this.direction == 'right'
-        ? 'sm:left-0 sm:origin-top-left'
-        : 'sm:right-0 sm:origin-top-right'
+      return this.direction == 'right' ? 'sm:left-0 sm:origin-top-left' : 'sm:right-0 sm:origin-top-right'
     },
     placementClasses(): string {
       if (this.placement == 'top') {
