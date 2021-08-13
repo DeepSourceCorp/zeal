@@ -73,7 +73,7 @@
         <z-icon icon="z-markdown" size="base" color="slate" />
       </div>
     </div>
-    <div class="px-4 py-2">
+    <div v-if="(editor && !!maxLength && maxLength === editor.getCharacterCount()) || invalidState" class="px-4 py-2">
       <div
         v-if="editor && !!maxLength && maxLength === editor.getCharacterCount()"
         class="leading-none text-xxs text-cherry flex space-x-1 items-center mt"
@@ -351,9 +351,9 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
-.z-rich-text >>> .ProseMirror p.is-editor-empty:first-child::before {
+<style>
+.z-rich-text .ProseMirror p.is-editor-empty:first-child::before {
   content: attr(data-placeholder);
-  @apply h-0 pointer-events-none float-left text-manatee;
+  @apply h-0 pointer-events-none float-left text-manatee opacity-50;
 }
 </style>

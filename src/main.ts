@@ -58,6 +58,7 @@ import ZConfirm from './components/ZConfirm/index'
 import ZDialogGeneric from './components/ZDialogGeneric/index'
 import { default as ZTooltip } from 'v-tooltip'
 import TooltipOptions from './helpers/components/tooltip'
+import ZRichText from './components/ZRichText/index'
 
 // Marketing components
 import ZFooter from './components/marketing/ZFooter'
@@ -153,7 +154,8 @@ const components = [
   ZTimeline,
   ZTimelineItem,
   ZConfirm,
-  ZDialogGeneric
+  ZDialogGeneric,
+  ZRichText
 ]
 
 const install = (Vue: any) => {
@@ -231,7 +233,8 @@ export default {
   ZTimeline,
   ZTimelineItem,
   ZConfirm,
-  ZDialogGeneric
+  ZDialogGeneric,
+  ZRichText
 }
 
 export { default as ZButton } from './components/ZButton/index'
@@ -307,6 +310,7 @@ export { default as ZConfirm } from './components/ZConfirm/index'
 export { default as ZDialogGeneric } from './components/ZDialogGeneric/index'
 export { default as ZTooltip } from 'v-tooltip'
 export { default as TooltipOptions } from './helpers/components/tooltip'
+export { default as ZRichText } from './components/ZRichText/index'
 
 // Directives
 export { default as outsideClickDirective } from './directives/outside-click'

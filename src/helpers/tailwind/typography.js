@@ -219,7 +219,7 @@ const MUTED = function (theme) {
 const RTE = function (theme) {
   return {
     p: {
-      fontSize: theme('fontSize.base'),
+      fontSize: theme('fontSize.sm'),
       lineHeight: theme('lineHeight.relaxed'),
       marginBottom: 0,
       marginTop: 0
@@ -249,6 +249,10 @@ const RTE = function (theme) {
       fontSize: theme('fontSize.lg'),
       fontWeight: theme('fontWeight.medium'),
       lineHeight: theme('lineHeight["7"]')
+    },
+    'h1::before, h2::before, h3::before, h4::before, h5::before': {
+      content: '""',
+      marginRight: theme('spacing.0')
     },
     code: {
       backgroundColor: theme('colors.ink.200'),
