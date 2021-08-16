@@ -12,6 +12,12 @@ exports[`Checkbox Component renders a pre-selected checkbox when the value is pa
   </span></label>
 `;
 
+exports[`Checkbox Component renders a readonly checkbox component when readonly prop is passed 1`] = `
+<label class="relative flex items-center pl-6 text-base group z-input z-input__checkbox cursor-not-allowed is-read-only"><input type="checkbox" name="" disabled="disabled" class="absolute w-0 h-0 opacity-0" value=""> <span data-before="✓" data-content="" class="z-input__checkbox--checkmark h-5 w-5 absolute left-0 grid text-center text-transparent bg-transparent border border-solid rounded-sm cursor-pointer place-items-center border-slate before:content-before sibling-checked:text-vanilla-100 sibling-checked:bg-juniper sibling-checked:border-juniper group-hover:border-juniper cursor-not-allowed sibling-checked:text-vanilla-200 opacity-80 group-hover:border-slate"></span>
+  <!---->
+</label>
+`;
+
 exports[`Checkbox Component renders the checkbox component 1`] = `
 <label class="relative flex items-center pl-6 text-base group z-input z-input__checkbox"><input type="checkbox" name="" class="absolute w-0 h-0 opacity-0" value=""> <span data-before="✓" data-content="" class="z-input__checkbox--checkmark h-5 w-5 absolute left-0 grid text-center text-transparent bg-transparent border border-solid rounded-sm cursor-pointer place-items-center border-slate before:content-before sibling-checked:text-vanilla-100 sibling-checked:bg-juniper sibling-checked:border-juniper group-hover:border-juniper"></span>
   <!---->

@@ -15,6 +15,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    readOnly: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -28,7 +32,9 @@ export default {
   },
   watch: {
     value: function (newValue) {
-      this.$emit('change', newValue)
+      if (!this.disabled && !this.readOnly) {
+        this.$emit('change', newValue)
+      }
     }
   }
 }
