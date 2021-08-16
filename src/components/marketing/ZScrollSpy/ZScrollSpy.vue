@@ -1,5 +1,5 @@
 <template>
-  <ul class="space-y-6" :class="[`text-${align}`]">
+  <ul :class="[`text-${align}`]">
     <li
       v-for="heading in headingsMap"
       :key="heading.id"
