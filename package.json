@@ -19,7 +19,7 @@
     "build-storybook": "yarn storybook:build",
     "chromatic": "npx chromatic --project-token kbbvog2zr9",
     "build_icons": "node bin/build-icons.js",
-    "build:css": "postcss src/assets/css/tailwind.css -o dist/tailwind.css && postcss src/assets/css/typography.css -o dist/typography.css && postcss src/assets/css/layout.css -o dist/layout.css && postcss src/assets/css/chart.css -o dist/chart.css && postcss src/assets/css/tooltip.css -o dist/tooltip.css"
+    "build:css": "NODE_ENV=production postcss src/assets/css/tailwind.css -o dist/tailwind.css && postcss src/assets/css/typography.css -o dist/typography.css && postcss src/assets/css/layout.css -o dist/layout.css && postcss src/assets/css/chart.css -o dist/chart.css && postcss src/assets/css/tooltip.css -o dist/tooltip.css"
   },
   "dependencies": {
     "@tailwindcss/postcss7-compat": "^2.2.7",
@@ -85,9 +85,7 @@
   },
   "files": [
     "dist/*",
-    "src/*",
-    "public/*",
-    "*.json",
-    "*.js"
+    "src/{assets/css/syntax_highlighter.css,helpers/tailwind}",
+    "tailwind.config.js"
   ]
 }
