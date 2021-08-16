@@ -11,22 +11,10 @@
       leave-class="sm:opacity-100 sm:scale-100"
       leave-to-class="sm:opacity-0 sm:scale-75"
     >
+      <!-- prettier-ignore -->
       <div
         v-if="isOpen"
-        class="
-          fixed
-          z-10
-          flex
-          items-end
-          overflow-hidden
-          sm:overflow-visible
-          h-100
-          sm:absolute
-          text-vanilla-200
-          transform-gpu
-          bg-ink-400 bg-opacity-25
-          sm:bg-transparent sm:bg-opacity-0
-        "
+        class="fixed z-10 flex items-end overflow-hidden sm:overflow-visible h-100 sm:absolute text-vanilla-200 transform-gpu bg-ink-400 bg-opacity-25 sm:bg-transparent sm:bg-opacity-0"
         :class="[directionClass, placementClasses]"
       >
         <div

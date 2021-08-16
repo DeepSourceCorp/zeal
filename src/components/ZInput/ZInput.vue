@@ -58,10 +58,6 @@ import Vue from 'vue'
 import ZIcon from '../ZIcon/ZIcon.vue'
 import debounceDirective from '@/directives/debounce'
 
-interface VueHasFocus extends Vue {
-  focus: () => {}
-}
-
 export default Vue.extend({
   name: 'ZInput',
   components: {
@@ -161,7 +157,7 @@ export default Vue.extend({
   },
   methods: {
     focus(): void {
-      ;(this.$refs.input as VueHasFocus).focus()
+      ;(this.$refs.input as HTMLInputElement).focus()
     },
     updateSelf(name: string): void {
       this.$emit('input', name)

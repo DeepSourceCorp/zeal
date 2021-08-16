@@ -107,10 +107,6 @@ interface HeadingLevel {
   Level: (1 | 2 | 3 | 4 | 5 | 6)[]
 }
 
-interface VueHasFocus extends Vue {
-  focus: () => {}
-}
-
 export default Vue.extend({
   name: 'ZRichText',
   components: {
@@ -229,7 +225,7 @@ export default Vue.extend({
               'Mod-k': () => {
                 this.toggleLinkInput = true
                 this.$nextTick(() => {
-                  const inputTextbox = this.$refs.linkInput as VueHasFocus
+                  const inputTextbox = this.$refs.linkInput as HTMLInputElement
                   inputTextbox.focus()
                 })
                 return true
