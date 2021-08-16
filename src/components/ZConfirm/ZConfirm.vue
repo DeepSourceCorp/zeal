@@ -11,7 +11,7 @@
         <slot name="footer" :close="close">
           <div class="mt-6 space-x-4 text-right text-vanilla-100 flex items-center justify-end">
             <z-button
-              v-if="!hideSecondaryButton"
+              v-if="showSecondaryButton"
               buttonType="ghost"
               class="text-vanilla-100"
               size="small"
@@ -69,9 +69,9 @@ export default Vue.extend({
       type: String,
       default: 'primary'
     },
-    hideSecondaryButton: {
+    showSecondaryAction: {
       type: Boolean,
-      default: false
+      default: true
     }
   },
   components: {
