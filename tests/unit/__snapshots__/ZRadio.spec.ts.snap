@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Radio Button Component renders a checked radio button disabled 1`] = `<div role="radiogroup" class="z-radio-group"><label class="z-radio text-vanilla-100 flex items-center cursor-not-allowed"><span class="z-radio--inner rounded-full w-4 h-4 relative cursor-pointer inline-block box-border border-solid border-2 border-slate bg-slate cursor-not-allowed hover:border-slate"><span class="w-2 h-2 rounded-full absolute left-50 top-50 transform -translate-x-1/2 -translate-y-1/2 bg-vanilla-400"></span></span> <input type="radio" disabled="disabled" class="opacity-0 absolute h-0 w-0" value="female"> <span class="label ml-2 cursor-not-allowed text-slate">Female</span></label> <label class="z-radio text-vanilla-100 flex items-center cursor-not-allowed"><span class="z-radio--inner rounded-full w-4 h-4 relative cursor-pointer inline-block box-border border-solid border-2 border-slate bg-transparent cursor-not-allowed hover:border-slate"><!----></span> <input type="radio" disabled="disabled" class="opacity-0 absolute h-0 w-0" value="male"> <span class="label ml-2 cursor-not-allowed text-slate">Male</span></label></div>`;
+exports[`Radio Button Component renders a checked radio button disabled 1`] = `
+<div role="radiogroup" class="z-radio-group"><label class="z-radio text-vanilla-100 flex items-center cursor-not-allowed"><span class="z-radio--inner rounded-full w-4 h-4 relative cursor-pointer inline-block box-border border-solid border-2 border-slate bg-slate cursor-not-allowed hover:border-slate"><span class="w-2 h-2 rounded-full absolute left-50 top-50 transform -translate-x-1/2 -translate-y-1/2 bg-vanilla-400"></span></span> <input type="radio" disabled="disabled" class="opacity-0 absolute h-0 w-0" value="female"> <span class="label ml-2 text-slate cursor-not-allowed">
+    Female
+  </span></label> <label class="z-radio text-vanilla-100 flex items-center cursor-not-allowed"><span class="z-radio--inner rounded-full w-4 h-4 relative cursor-pointer inline-block box-border border-solid border-2 border-slate bg-transparent cursor-not-allowed hover:border-slate"><!----></span> <input type="radio" disabled="disabled" class="opacity-0 absolute h-0 w-0" value="male"> <span class="label ml-2 text-slate cursor-not-allowed">
+    Male
+  </span></label></div>
+`;
 
 exports[`Radio Button Component renders a radio button with button style like switcher 1`] = `
 <div class="padded-container">
@@ -10,8 +16,34 @@ exports[`Radio Button Component renders a radio button with button style like sw
 </div>
 `;
 
-exports[`Radio Button Component renders the checked radio component 1`] = `<div role="radiogroup" class="z-radio-group"><label class="z-radio text-vanilla-100 flex items-center cursor-pointer"><span class="z-radio--inner rounded-full w-4 h-4 relative cursor-pointer inline-block box-border border-solid border-2 border-juniper bg-juniper cursor-pointer hover:border-juniper"><span class="w-2 h-2 rounded-full absolute left-50 top-50 transform -translate-x-1/2 -translate-y-1/2 bg-vanilla-100"></span></span> <input type="radio" class="opacity-0 absolute h-0 w-0" value="female"> <span class="label ml-2 cursor-pointer">Female</span></label> <label class="z-radio text-vanilla-100 flex items-center cursor-pointer"><span class="z-radio--inner rounded-full w-4 h-4 relative cursor-pointer inline-block box-border border-solid border-2 border-slate bg-transparent cursor-pointer hover:border-juniper"><!----></span> <input type="radio" class="opacity-0 absolute h-0 w-0" value="male"> <span class="label ml-2 cursor-pointer">Male</span></label></div>`;
+exports[`Radio Button Component renders the checked radio component 1`] = `
+<div role="radiogroup" class="z-radio-group"><label class="z-radio text-vanilla-100 flex items-center cursor-pointer"><span class="z-radio--inner rounded-full w-4 h-4 relative cursor-pointer inline-block box-border border-solid border-2 border-juniper bg-juniper cursor-pointer hover:border-juniper"><span class="w-2 h-2 rounded-full absolute left-50 top-50 transform -translate-x-1/2 -translate-y-1/2 bg-vanilla-100"></span></span> <input type="radio" class="opacity-0 absolute h-0 w-0" value="female"> <span class="label ml-2 cursor-pointer">
+    Female
+  </span></label> <label class="z-radio text-vanilla-100 flex items-center cursor-pointer"><span class="z-radio--inner rounded-full w-4 h-4 relative cursor-pointer inline-block box-border border-solid border-2 border-slate bg-transparent cursor-pointer hover:border-juniper"><!----></span> <input type="radio" class="opacity-0 absolute h-0 w-0" value="male"> <span class="label ml-2 cursor-pointer">
+    Male
+  </span></label></div>
+`;
 
-exports[`Radio Button Component renders the default radio component 1`] = `<div role="radiogroup" class="z-radio-group"><label class="z-radio text-vanilla-100 flex items-center cursor-pointer"><span class="z-radio--inner rounded-full w-4 h-4 relative cursor-pointer inline-block box-border border-solid border-2 border-slate bg-transparent cursor-pointer hover:border-juniper"><!----></span> <input type="radio" class="opacity-0 absolute h-0 w-0" value="female"> <span class="label ml-2 cursor-pointer">Female</span></label> <label class="z-radio text-vanilla-100 flex items-center cursor-pointer"><span class="z-radio--inner rounded-full w-4 h-4 relative cursor-pointer inline-block box-border border-solid border-2 border-slate bg-transparent cursor-pointer hover:border-juniper"><!----></span> <input type="radio" class="opacity-0 absolute h-0 w-0" value="male"> <span class="label ml-2 cursor-pointer">Male</span></label></div>`;
+exports[`Radio Button Component renders the default radio component 1`] = `
+<div role="radiogroup" class="z-radio-group"><label class="z-radio text-vanilla-100 flex items-center cursor-pointer"><span class="z-radio--inner rounded-full w-4 h-4 relative cursor-pointer inline-block box-border border-solid border-2 border-slate bg-transparent cursor-pointer hover:border-juniper"><!----></span> <input type="radio" class="opacity-0 absolute h-0 w-0" value="female"> <span class="label ml-2 cursor-pointer">
+    Female
+  </span></label> <label class="z-radio text-vanilla-100 flex items-center cursor-pointer"><span class="z-radio--inner rounded-full w-4 h-4 relative cursor-pointer inline-block box-border border-solid border-2 border-slate bg-transparent cursor-pointer hover:border-juniper"><!----></span> <input type="radio" class="opacity-0 absolute h-0 w-0" value="male"> <span class="label ml-2 cursor-pointer">
+    Male
+  </span></label></div>
+`;
 
-exports[`Radio Button Component renders the disabled radio component 1`] = `<div role="radiogroup" class="z-radio-group"><label class="z-radio text-vanilla-100 flex items-center cursor-not-allowed"><span class="z-radio--inner rounded-full w-4 h-4 relative cursor-pointer inline-block box-border border-solid border-2 border-slate bg-transparent cursor-not-allowed hover:border-slate"><!----></span> <input type="radio" disabled="disabled" class="opacity-0 absolute h-0 w-0" value="female"> <span class="label ml-2 cursor-not-allowed text-slate">Female</span></label> <label class="z-radio text-vanilla-100 flex items-center cursor-not-allowed"><span class="z-radio--inner rounded-full w-4 h-4 relative cursor-pointer inline-block box-border border-solid border-2 border-slate bg-transparent cursor-not-allowed hover:border-slate"><!----></span> <input type="radio" disabled="disabled" class="opacity-0 absolute h-0 w-0" value="male"> <span class="label ml-2 cursor-not-allowed text-slate">Male</span></label></div>`;
+exports[`Radio Button Component renders the disabled radio component 1`] = `
+<div role="radiogroup" class="z-radio-group"><label class="z-radio text-vanilla-100 flex items-center cursor-not-allowed"><span class="z-radio--inner rounded-full w-4 h-4 relative cursor-pointer inline-block box-border border-solid border-2 border-slate bg-transparent cursor-not-allowed hover:border-slate"><!----></span> <input type="radio" disabled="disabled" class="opacity-0 absolute h-0 w-0" value="female"> <span class="label ml-2 text-slate cursor-not-allowed">
+    Female
+  </span></label> <label class="z-radio text-vanilla-100 flex items-center cursor-not-allowed"><span class="z-radio--inner rounded-full w-4 h-4 relative cursor-pointer inline-block box-border border-solid border-2 border-slate bg-transparent cursor-not-allowed hover:border-slate"><!----></span> <input type="radio" disabled="disabled" class="opacity-0 absolute h-0 w-0" value="male"> <span class="label ml-2 text-slate cursor-not-allowed">
+    Male
+  </span></label></div>
+`;
+
+exports[`Radio Button Component renders the readonly radio component 1`] = `
+<div role="radiogroup" class="z-radio-group"><label class="z-radio text-vanilla-100 flex items-center cursor-not-allowed"><span class="z-radio--inner rounded-full w-4 h-4 relative cursor-pointer inline-block box-border border-solid border-2 border-juniper bg-juniper cursor-not-allowed hover:border-slate cursor-pointer hover:border-juniper opacity-80"><span class="w-2 h-2 rounded-full absolute left-50 top-50 transform -translate-x-1/2 -translate-y-1/2 bg-vanilla-100"></span></span> <input type="radio" disabled="disabled" class="opacity-0 absolute h-0 w-0" value="female"> <span class="label ml-2 text-vanilla-300 cursor-not-allowed">
+    Female
+  </span></label> <label class="z-radio text-vanilla-100 flex items-center cursor-not-allowed"><span class="z-radio--inner rounded-full w-4 h-4 relative cursor-pointer inline-block box-border border-solid border-2 border-slate bg-transparent cursor-not-allowed hover:border-slate cursor-pointer hover:border-juniper opacity-80"><!----></span> <input type="radio" disabled="disabled" class="opacity-0 absolute h-0 w-0" value="male"> <span class="label ml-2 text-vanilla-300 cursor-not-allowed">
+    Male
+  </span></label></div>
+`;

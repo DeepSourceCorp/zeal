@@ -1,6 +1,6 @@
 {
   "name": "@deepsourcelabs/zeal",
-  "version": "0.5.3",
+  "version": "0.5.7",
   "repository": "https://github.com/deepsourcelabs/bifrost",
   "main": "./dist/zeal.common.js",
   "private": true,
@@ -22,11 +22,11 @@
     "build:css": "NODE_ENV=production postcss src/assets/css/tailwind.css -o dist/tailwind.css && postcss src/assets/css/typography.css -o dist/typography.css && postcss src/assets/css/layout.css -o dist/layout.css && postcss src/assets/css/chart.css -o dist/chart.css && postcss src/assets/css/tooltip.css -o dist/tooltip.css"
   },
   "dependencies": {
-    "@tailwindcss/postcss7-compat": "^2.0.3",
+    "@tailwindcss/postcss7-compat": "^2.2.7",
     "@tailwindcss/typography": "^0.4.1",
     "core-js": "^3.11.2",
     "frappe-charts": "^2.0.0-rc19",
-    "postcss": "^7",
+    "postcss": "^7.0.36",
     "postcss-cli": "7.1.2",
     "smoothscroll-polyfill": "^0.4.4",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
@@ -71,7 +71,7 @@
     "typescript": "~3.9.3",
     "vue-class-component": "^7.2.6",
     "vue-cli-plugin-storybook": "^2.1.0",
-    "vue-cli-plugin-tailwind": "~1.4.1",
+    "vue-cli-plugin-tailwind": "^2.0.6",
     "vue-property-decorator": "^9.1.2",
     "vue-template-compiler": "^2.6.11"
   },
