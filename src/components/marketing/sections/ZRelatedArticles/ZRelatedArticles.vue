@@ -34,9 +34,7 @@ export default Vue.extend({
        * Acquires all the child components that are Related Article components,
        * and stores the first two of them.
        */
-      this.articles = this.$children
-        .filter(({ $options }) => $options.name === 'ZRelatedArticle')
-        .slice(0, 2)
+      this.articles = this.$children.filter(({ $options }) => $options.name === 'ZRelatedArticle').slice(0, 2)
     },
     assignStylesToSecondaryArticles() {
       /**

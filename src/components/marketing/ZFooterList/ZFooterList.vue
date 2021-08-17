@@ -2,6 +2,7 @@
   <ul :class="[X_PADDING]">
     <!-- Accordion -->
     <template v-if="type === TYPES.accordion">
+      <!-- prettier-ignore -->
       <span
         v-if="$slots.heading"
         @click="toggleAccordion()"
@@ -10,12 +11,7 @@
         <span class="flex flex-1">
           <slot name="heading"></slot>
         </span>
-        <z-icon
-          size="medium"
-          icon="chevron-right"
-          class="transform"
-          :class="[accordionHeaderAnimations]"
-        ></z-icon>
+        <z-icon size="medium" icon="chevron-right" class="transform" :class="[accordionHeaderAnimations]"></z-icon>
       </span>
       <span
         class="block overflow-scroll transition-max-height duration-500 ease-in-out"

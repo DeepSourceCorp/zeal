@@ -1,9 +1,6 @@
 <template>
   <span
-    :class="[
-      `${backgroundColor && `bg-${backgroundColor}`}`,
-      `${textColor && `text-${textColor}`}`
-    ]"
+    :class="[`${backgroundColor && `bg-${backgroundColor}`}`, `${textColor && `text-${textColor}`}`]"
     class="inline-block px-2 text-sm uppercase rounded-sm"
   >
     <slot>Page Label</slot>

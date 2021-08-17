@@ -7,7 +7,8 @@ module.exports = {
   purge: {
     //enabled: process.env.NODE_ENV === 'production', // re-enable after refactoring un-purgeable components
     enabled: false,
-    content: ['./src/**/*.vue']
+    content: ['./src/**/*.vue', './**/*.stories.ts'],
+    safelist: ['is-editor-empty']
   },
   prefix: '',
   important: false,
@@ -923,6 +924,11 @@ module.exports = {
         muted: {
           css: {
             ...typographyConfig.MUTED(theme)
+          }
+        },
+        rte: {
+          css: {
+            ...typographyConfig.RTE(theme)
           }
         },
         sm: {

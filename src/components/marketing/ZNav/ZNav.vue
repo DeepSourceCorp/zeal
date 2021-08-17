@@ -6,10 +6,7 @@
       `${isUserOnTop && 'lg:border-0'}`
     ]"
   >
-    <div
-      class="flex items-center w-screen lg:mx-auto px-4"
-      :class="[`${CONTAINERS[container].classes}`]"
-    >
+    <div class="flex items-center w-screen lg:mx-auto px-4" :class="[`${CONTAINERS[container].classes}`]">
       <!-- Brand -->
       <div v-if="$slots.brand" class="flex items-center">
         <slot name="brand"></slot>
@@ -38,6 +35,7 @@
     </div>
 
     <!-- Mobile Drawer Menu -->
+    <!-- prettier-ignore -->
     <aside
       class="fixed lg:hidden bg-ink-300 transform top-0 right-0 w-full h-full overflow-auto ease-in-out transition-all duration-300 z-30"
       :class="[`${isDrawerOpen ? 'translate-x-0' : 'translate-x-full'}`]"

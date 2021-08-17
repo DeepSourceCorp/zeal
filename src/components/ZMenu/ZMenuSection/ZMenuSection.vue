@@ -5,10 +5,7 @@
       'mb-1': !divider
     }"
   >
-    <h6
-      v-if="title"
-      class="px-3 my-1 uppercase text-vanilla-400 tracking-wide text-xs font-semibold"
-    >
+    <h6 v-if="title" class="px-3 my-1 uppercase text-vanilla-400 tracking-wide text-xs font-semibold">
       {{ title }}
     </h6>
     <slot></slot>

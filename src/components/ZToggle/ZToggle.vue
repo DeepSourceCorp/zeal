@@ -10,6 +10,7 @@
       'cursor-not-allowed': this.disabled
     }"
   >
+    <!-- prettier-ignore -->
     <span
       class="inline-block rounded-full h-full w-full transition-DEFAULT duration-300 ease-in-out p-0.5 flex items-center"
       :class="{
@@ -17,6 +18,7 @@
         'bg-ink-100': !this.value || this.disabled
       }"
     >
+      <!-- prettier-ignore -->
       <span
         class="inline-block w-3.5 h-3.5 transform rounded-full transition-transform ease-in-out duration-300 shadow-grey"
         :class="{

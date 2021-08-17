@@ -1,6 +1,6 @@
 <template>
   <span class="relative z-menu">
-    <button v-on:click="toggle" class="outline-none focus:outline-none" ref="menu-trigger">
+    <button type="button" v-on:click="toggle" class="outline-none focus:outline-none" ref="menu-trigger">
       <slot name="trigger" :toggle="toggle" :isOpen="isOpen"></slot>
     </button>
     <transition
@@ -11,6 +11,7 @@
       leave-class="sm:opacity-100 sm:scale-100"
       leave-to-class="sm:opacity-0 sm:scale-75"
     >
+      <!-- prettier-ignore -->
       <div
         v-if="isOpen"
         class="fixed z-10 flex items-end overflow-hidden sm:overflow-visible h-100 sm:absolute text-vanilla-200 transform-gpu bg-ink-400 bg-opacity-25 sm:bg-transparent sm:bg-opacity-0"
@@ -108,9 +109,7 @@ export default Vue.extend({
   },
   computed: {
     directionClass(): string {
-      return this.direction == 'right'
-        ? 'sm:left-0 sm:origin-top-left'
-        : 'sm:right-0 sm:origin-top-right'
+      return this.direction == 'right' ? 'sm:left-0 sm:origin-top-left' : 'sm:right-0 sm:origin-top-right'
     },
     placementClasses(): string {
       if (this.placement == 'top') {

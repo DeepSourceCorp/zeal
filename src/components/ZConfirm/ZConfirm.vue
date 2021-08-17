@@ -10,9 +10,14 @@
         </slot>
         <slot name="footer" :close="close">
           <div class="mt-6 space-x-4 text-right text-vanilla-100 flex items-center justify-end">
-            <z-button buttonType="ghost" class="text-vanilla-100" size="small" @click="close">{{
-              secondaryActionLabel
-            }}</z-button>
+            <z-button
+              v-if="showSecondaryButton"
+              buttonType="ghost"
+              class="text-vanilla-100"
+              size="small"
+              @click="close"
+              >{{ secondaryActionLabel }}</z-button
+            >
             <z-button
               :icon="primaryActionIcon"
               class="modal-primary-action"
@@ -63,6 +68,10 @@ export default Vue.extend({
     primaryActionType: {
       type: String,
       default: 'primary'
+    },
+    showSecondaryAction: {
+      type: Boolean,
+      default: true
     }
   },
   components: {

@@ -1,4 +1,5 @@
 <template>
+  <!-- prettier-ignore -->
   <div
     class="rounded-sm md:rounded-md overflow-hidden transition-all shadow flex flex-col justify-around h-full px-5 py-4 md:px-10 md:py-8"
   >

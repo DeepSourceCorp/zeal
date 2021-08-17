@@ -27,6 +27,7 @@
     <!-- Any icon/content to the left renders here -->
     <slot name="left"></slot>
     <input
+      ref="input"
       v-debounce:[debounceDelay]="updateDebounce"
       class="overflow-ellipsis overflow-hidden w-full caret-juniper flex flex-grow outline-none bg-transparent"
       :class="{
@@ -190,8 +191,11 @@ export default Vue.extend({
     }
   },
   methods: {
-    updateSelf(newValue: string): void {
-      this.$emit('input', newValue)
+    focus(): void {
+      ;(this.$refs.input as HTMLInputElement).focus()
+    },
+    updateSelf(name: string): void {
+      this.$emit('input', name)
     },
     updateDebounce(value: unknown): void {
       this.$emit('debounceInput', value)

@@ -24,6 +24,13 @@
   "dependencies": {
     "@tailwindcss/postcss7-compat": "^2.2.7",
     "@tailwindcss/typography": "^0.4.1",
+    "@tiptap/extension-bubble-menu": "^2.0.0-beta.25",
+    "@tiptap/extension-character-count": "^2.0.0-beta.13",
+    "@tiptap/extension-image": "^2.0.0-beta.15",
+    "@tiptap/extension-link": "^2.0.0-beta.19",
+    "@tiptap/extension-placeholder": "^2.0.0-beta.26",
+    "@tiptap/starter-kit": "^2.0.0-beta.82",
+    "@tiptap/vue-2": "^2.0.0-beta.39",
     "core-js": "^3.15.2",
     "frappe-charts": "^2.0.0-rc19",
     "postcss": "^7.0.36",
