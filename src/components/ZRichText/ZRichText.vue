@@ -315,11 +315,13 @@ export default Vue.extend({
     },
     applyLink(e: KeyboardEvent) {
       if (e.code === 'Enter' && this.editor) {
+        const httpStartCheck = new RegExp(/^https?:\/\//)
+        const hasHttp = httpStartCheck.test(this.inputLink)
         this.editor
           .chain()
           .focus()
           .extendMarkRange('link')
-          .setLink({ href: this.inputLink })
+          .setLink({ href: hasHttp ? this.inputLink : `https://${this.inputLink}` })
           .setTextSelection(this.lastPos)
           .run()
         this.toggleLinkInput = false
@@ -346,10 +348,3 @@ export default Vue.extend({
   }
 })
 </script>
-
-<style>
-.z-rich-text .ProseMirror p.is-editor-empty:first-child::before {
-  content: attr(data-placeholder);
-  @apply h-0 pointer-events-none float-left text-manatee opacity-50;
-}
-</style>
