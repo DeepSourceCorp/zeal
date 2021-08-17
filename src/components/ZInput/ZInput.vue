@@ -159,7 +159,7 @@ export default Vue.extend({
     },
     validateOnBlur: {
       type: Boolean,
-      default: true
+      default: false
     }
   },
   model: {
