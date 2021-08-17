@@ -12,6 +12,12 @@ exports[`Input Component renders a disabled input 1`] = `
 </div>
 `;
 
+exports[`Input Component renders a readonly input 1`] = `
+<div class="flex items-center w-full rounded-sm outline-none space-x-2 p-1 focus-within:border-vanilla-400 border border-ink-100 bg-ink-400 text-vanilla-400 cursor-not-allowed h-10 text-sm space-x-2 leading-8 py-2 px-3"> <input aria-label="" type="text" placeholder="Enter a value" disabled="disabled" class="overflow-ellipsis overflow-hidden w-full caret-juniper flex flex-grow outline-none bg-transparent cursor-not-allowed">
+  <!---->
+</div>
+`;
+
 exports[`Input Component renders an input with clearable 1`] = `
 <div class="flex items-center w-full rounded-sm outline-none space-x-2 p-1 focus-within:border-vanilla-400 border border-ink-100 bg-ink-400 text-vanilla-300 h-10 text-sm space-x-2 leading-8 py-2 px-3"> <input aria-label="" type="text" placeholder="Enter a value" class="overflow-ellipsis overflow-hidden w-full caret-juniper flex flex-grow outline-none bg-transparent"> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="cursor-pointer z-icon w-4 h-4 z-icon--x text-vanilla-400">
     <line x1="18" y1="6" x2="6" y2="18"></line>
