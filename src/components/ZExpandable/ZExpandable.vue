@@ -4,36 +4,17 @@
     @mouseover.stop.prevent="toggleExpandable(true)"
     @mouseleave.stop.prevent="toggleExpandable(false)"
   >
+    <!-- prettier-ignore -->
     <div
-      class="
-        z-expandable__header
-        p-2.5
-        font-semibold
-        text-sm
-        leading-6
-        cursor-pointer
-        transition-all
-        duration-300
-        ease-in-out
-      "
+      class="z-expandable__header p-2.5 font-semibold text-sm leading-6 cursor-pointer transition-all duration-300 ease-in-out"
       :class="openTextStyle"
       v-if="$slots.header"
     >
       <slot name="header"></slot>
     </div>
+    <!-- prettier-ignore -->
     <div
-      class="
-        z-expandable__content
-        bg-ink-400
-        text-vanilla-100
-        overflow-scroll
-        transition-all
-        duration-700
-        ease-in-out
-        text-sm
-        leading-6
-        border border-solid border-ink-300
-      "
+      class="z-expandable__content bg-ink-400 text-vanilla-100 overflow-scroll transition-all duration-700 ease-in-out text-sm leading-6 border border-solid border-ink-300"
       v-if="$slots.content"
       :class="openHeightStyle"
     >

@@ -1,16 +1,7 @@
 <template>
+  <!-- prettier-ignore -->
   <footer
-    class="
-      w-full-screen
-      flex flex-col
-      justify-between
-      bg-transparent
-      text-vanilla-100
-      border-t border-ink-200
-      min-h-102
-      pb-10
-      pt-20
-    "
+    class="w-full-screen flex flex-col justify-between bg-transparent text-vanilla-100 border-t border-ink-200 min-h-102 pb-10 pt-20"
   >
     <div class="md:flex items-start w-screen lg:mx-auto" :class="[`${CONTAINERS[container].classes}`]">
       <!-- Brand -->
@@ -39,16 +30,9 @@
         </div>
       </span>
     </div>
+    <!-- prettier-ignore -->
     <div
-      class="
-        flex flex-col-reverse
-        md:flex-row
-        items-center
-        justify-between
-        w-screen
-        md:mx-auto
-        text-vanilla-400 text-sm
-      "
+      class="flex flex-col-reverse md:flex-row items-center justify-between w-screen md:mx-auto text-vanilla-400 text-sm"
       :class="[`${CONTAINERS[container].classes}`, X_PADDING]"
     >
       <div v-if="$slots.copyright">

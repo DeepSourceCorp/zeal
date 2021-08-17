@@ -2,25 +2,11 @@
   <ul :class="[X_PADDING]">
     <!-- Accordion -->
     <template v-if="type === TYPES.accordion">
+      <!-- prettier-ignore -->
       <span
         v-if="$slots.heading"
         @click="toggleAccordion()"
-        class="
-          flex
-          items-center
-          cursor-pointer
-          inline-block
-          hover:opacity-75
-          select-none
-          font-medium
-          tracking-wider
-          w-full
-          leading-3
-          py-4
-          md:pt-0
-          uppercase
-          text-sm text-vanilla-800
-        "
+        class="flex items-center cursor-pointer inline-block hover:opacity-75 select-none font-medium tracking-wider w-full leading-3 py-4 md:pt-0 uppercase text-sm text-vanilla-800"
       >
         <span class="flex flex-1">
           <slot name="heading"></slot>

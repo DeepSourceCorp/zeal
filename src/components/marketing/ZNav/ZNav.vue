@@ -35,22 +35,9 @@
     </div>
 
     <!-- Mobile Drawer Menu -->
+    <!-- prettier-ignore -->
     <aside
-      class="
-        fixed
-        lg:hidden
-        bg-ink-300
-        transform
-        top-0
-        right-0
-        w-full
-        h-full
-        overflow-auto
-        ease-in-out
-        transition-all
-        duration-300
-        z-30
-      "
+      class="fixed lg:hidden bg-ink-300 transform top-0 right-0 w-full h-full overflow-auto ease-in-out transition-all duration-300 z-30"
       :class="[`${isDrawerOpen ? 'translate-x-0' : 'translate-x-full'}`]"
     >
       <!-- Cross Button -->
