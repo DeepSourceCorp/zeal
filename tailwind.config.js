@@ -5,7 +5,8 @@ const colors = require('./src/helpers/tailwind/colors.js')
 
 module.exports = {
   purge: {
-    enabled: process.env.NODE_ENV === 'production',
+    //enabled: process.env.NODE_ENV === 'production', // re-enable after refactoring un-purgeable components
+    enabled: false,
     content: ['./src/**/*.vue', './**/*.stories.ts'],
     safelist: ['is-editor-empty']
   },
