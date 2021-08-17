@@ -1,6 +1,6 @@
 {
   "name": "@deepsourcelabs/zeal",
-  "version": "0.4.22",
+  "version": "0.5.10",
   "repository": "https://github.com/deepsourcelabs/bifrost",
   "main": "./dist/zeal.common.js",
   "private": true,
@@ -19,14 +19,14 @@
     "build-storybook": "yarn storybook:build",
     "chromatic": "npx chromatic --project-token kbbvog2zr9",
     "build_icons": "node bin/build-icons.js",
-    "build:css": "postcss src/assets/css/tailwind.css -o dist/tailwind.css && postcss src/assets/css/typography.css -o dist/typography.css && postcss src/assets/css/layout.css -o dist/layout.css && postcss src/assets/css/chart.css -o dist/chart.css && postcss src/assets/css/tooltip.css -o dist/tooltip.css"
+    "build:css": "NODE_ENV=production postcss src/assets/css/tailwind.css -o dist/tailwind.css && postcss src/assets/css/typography.css -o dist/typography.css && postcss src/assets/css/layout.css -o dist/layout.css && postcss src/assets/css/chart.css -o dist/chart.css && postcss src/assets/css/tooltip.css -o dist/tooltip.css"
   },
   "dependencies": {
-    "@tailwindcss/postcss7-compat": "^2.0.3",
+    "@tailwindcss/postcss7-compat": "^2.2.7",
     "@tailwindcss/typography": "^0.4.1",
-    "core-js": "^3.11.2",
+    "core-js": "^3.15.2",
     "frappe-charts": "^2.0.0-rc19",
-    "postcss": "^7",
+    "postcss": "^7.0.36",
     "postcss-cli": "7.1.2",
     "smoothscroll-polyfill": "^0.4.4",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
@@ -34,9 +34,10 @@
     "vue": "^2.6.12"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^6.1.21",
-    "@storybook/addon-links": "^6.1.21",
-    "@storybook/vue": "^6.1.21",
+    "@fullhuman/postcss-purgecss": "3.0.0",
+    "@storybook/addon-essentials": "^6.3.6",
+    "@storybook/addon-links": "^6.3.6",
+    "@storybook/vue": "^6.3.6",
     "@types/feather-icons": "^4.7.0",
     "@types/istanbul-lib-instrument": "^1.7.4",
     "@types/jest": "^24.0.19",
@@ -53,6 +54,8 @@
     "@vue/test-utils": "^1.0.3",
     "autoprefixer": "^9",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.2.2",
     "cheerio": "^1.0.0-rc.3",
     "chromatic": "^5.4.0",
     "eslint": "^6.7.2",
@@ -68,8 +71,8 @@
     "sass-loader": "7.1.0",
     "typescript": "~3.9.3",
     "vue-class-component": "^7.2.6",
-    "vue-cli-plugin-storybook": "~2.0.0",
-    "vue-cli-plugin-tailwind": "~1.4.1",
+    "vue-cli-plugin-storybook": "^2.1.0",
+    "vue-cli-plugin-tailwind": "^2.0.6",
     "vue-property-decorator": "^9.1.2",
     "vue-template-compiler": "^2.6.11"
   },
@@ -83,9 +86,7 @@
   },
   "files": [
     "dist/*",
-    "src/*",
-    "public/*",
-    "*.json",
-    "*.js"
+    "src/{assets/css/syntax_highlighter.css,helpers/tailwind}",
+    "tailwind.config.js"
   ]
 }

@@ -55,6 +55,15 @@ describe('Input Component', () => {
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.find('input').attributes('disabled')).toMatch('disabled')
   })
+  it('renders a readonly input', () => {
+    const wrapper = mountFn({
+      propsData: {
+        readOnly: true
+      }
+    })
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.find('input').attributes('disabled')).toMatch('disabled')
+  })
   it('renders an input with clearable', () => {
     const wrapper = mountFn({
       propsData: {

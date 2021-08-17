@@ -75,6 +75,21 @@ export const DisabledInput = () => ({
     </div>`
 })
 
+export const ReadOnly = () => ({
+  components: { ZInput },
+  data() {
+    return {
+      name: 'Hello World'
+    }
+  },
+  template: `<div class='padded-container'>
+        <div class="input-container">
+            <z-input v-model="name" 
+                    :readOnly="true"></z-input>
+        </div>
+    </div>`
+})
+
 export const ErroredInput = () => ({
   components: { ZInput },
   data() {

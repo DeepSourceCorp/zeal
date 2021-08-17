@@ -1,14 +1,13 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const plugin = require('tailwindcss/plugin')
-const {
-  FULL_WIDTH_ACTIVE,
-  FULL_WIDTH_INACTIVE,
-  BEFORE_LIST_ITEM,
-  SMALL_SCREEN_CSS,
-  LARGE_SCREEN_CSS
-} = require('./src/helpers/tailwind/typography.js')
+const typographyConfig = require('./src/helpers/tailwind/typography.js')
 const colors = require('./src/helpers/tailwind/colors.js')
+
 module.exports = {
-  purge: [],
+  purge: {
+    enabled: process.env.NODE_ENV === 'production',
+    content: ['./src/**/*.vue']
+  },
   prefix: '',
   important: false,
   presets: [],
@@ -23,7 +22,7 @@ module.exports = {
       xl: '1280px',
       '2xl': '1536px'
     },
-    colors: colors,
+    colors,
     gradients: (theme) => ({
       ocean: ['98.66deg', `${theme('colors.sea-glass')} 9.7%`, `${theme('colors.aqua')} 96.6%`],
       galaxy: {
@@ -788,7 +787,8 @@ module.exports = {
       'slide-right-enter-active': 'slide-right-in 0.5s ease-out',
       'slide-right-leave-active': 'slide-right-out 0.5s ease-out',
       'slide-bottom-enter-active': 'slide-bottom-in 0.2s ease-out',
-      'slide-bottom-leave-active': 'slide-bottom-out 0.2s ease-out'
+      'slide-bottom-leave-active': 'slide-bottom-out 0.2s ease-out',
+      float: 'float 6s ease-in-out infinite'
     },
     keyframes: {
       expand: {
@@ -899,169 +899,49 @@ module.exports = {
         to: {
           transform: 'translateY(100%)'
         }
+      },
+      float: {
+        '0%': {
+          transform: 'translate(0,  0px)'
+        },
+        '50%': {
+          transform: 'translate(0, 30px)'
+        },
+        '100%': {
+          transform: 'translate(0, -0px)'
+        }
       }
     },
     extend: {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.vanilla.100'),
-            '[class~="lead"]': {
-              color: theme('colors.vanilla.400')
-            },
-            a: {
-              color: theme('colors.juniper'),
-              textDecoration: 'normal',
-              fontWeight: theme('fontWeight.medium')
-            },
-            'a:hover': {
-              textDecoration: 'underline'
-            },
-            strong: {
-              color: theme('colors.vanilla.100'),
-              fontWeight: theme('fontWeight.semibold')
-            },
-            'ol > li': {
-              position: 'relative'
-            },
-            'ol > li::before': {
-              content: 'counter(list-item) "."',
-              position: 'absolute',
-              fontWeight: theme('fontWeight.normal'),
-              color: theme('colors.vanilla.400')
-            },
-            ul: {
-              listStyleType: 'none',
-              listStyle: 'none'
-            },
-            'ul > li': {
-              position: 'relative'
-            },
-            'ul > li::before': {
-              ...BEFORE_LIST_ITEM(theme)
-            },
-            hr: {
-              borderColor: theme('colors.ink.100'),
-              borderTopWidth: 1
-            },
-            blockquote: {
-              fontWeight: theme('fontWeight.medium'),
-              lineHeight: theme('lineHeight.normal'),
-              fontSize: theme('fontSize.lg'),
-              fontStyle: 'normal',
-              color: 'inherit',
-              borderLeftWidth: '0.25rem',
-              borderLeftColor: theme('colors.juniper'),
-              quotes: '"\\201C""\\201D""\\2018""\\2019"'
-            },
-            'blockquote p:first-of-type::before': {
-              content: 'open-quote'
-            },
-            'blockquote p:last-of-type::after': {
-              content: 'close-quote'
-            },
-            'h1, h2, h3, h4, h5': {
-              color: theme('colors.vanilla.100')
-            },
-            'h1::before, h2::before, h3::before, h4::before, h5::before': {
-              content: '"#"',
-              marginRight: theme('spacing.2'),
-              color: theme('colors.slate')
-            },
-            h1: {
-              fontWeight: theme('fontWeight.bold')
-            },
-            h2: {
-              fontWeight: theme('fontWeight.semibold')
-            },
-            'h3, h4, h5': {
-              fontWeight: theme('fontWeight.medium')
-            },
-            'figure figcaption': {
-              color: theme('colors.vanilla.400'),
-              textAlign: 'center',
-              [`@media (min-width: ${theme('screens.sm')})`]: {
-                textAlign: 'left'
-              }
-            },
-            'pre, figure img': {
-              ...FULL_WIDTH_INACTIVE(theme)
-            },
-            'figure img': {
-              borderRadius: `${theme('spacing.1')}`
-            },
-            code: {
-              color: theme('colors.vanilla.300'),
-              fontWeight: theme('fontWeight.semibold')
-            },
-            'code::before, code::after': {
-              content: '"`"'
-            },
-            'a code': {
-              color: theme('colors.juniper')
-            },
-            pre: {
-              color: theme('colors.vanilla.400'),
-              backgroundColor: theme('colors.ink.200'),
-              overflowX: 'auto',
-              borderRadius: `${theme('spacing.1')}`
-            },
-            'pre code': {
-              backgroundColor: 'transparent',
-              borderWidth: '0',
-              borderRadius: '0',
-              padding: '0',
-              fontWeight: theme('fontWeight.normal'),
-              color: 'inherit',
-              fontSize: 'inherit',
-              fontFamily: 'inherit',
-              lineHeight: 'inherit'
-            },
-            'pre code::before, pre code::after': {
-              content: '""'
-            },
-            table: {
-              width: '100%',
-              tableLayout: 'auto',
-              textAlign: 'left'
-            },
-            thead: {
-              color: theme('colors.vanilla.400')
-            },
-            'thead th': {
-              fontWeight: theme('fontWeight.medium'),
-              verticalAlign: 'bottom'
-            },
-            'thead, tbody tr': {
-              borderBottomWidth: theme('spacing.px'),
-              borderBottomColor: theme('colors.ink.100')
-            },
-            'tbody tr:last-child': {
-              borderBottomWidth: '0'
-            },
-            'tbody td': {
-              verticalAlign: 'top'
-            }
+            ...typographyConfig.DEFAULT(theme)
+          }
+        },
+        muted: {
+          css: {
+            ...typographyConfig.MUTED(theme)
           }
         },
         sm: {
           css: {
-            ...SMALL_SCREEN_CSS(theme)
+            ...typographyConfig.SMALL_SCREEN_CSS(theme)
           }
         },
         lg: {
           css: {
-            ...LARGE_SCREEN_CSS(theme)
+            ...typographyConfig.LARGE_SCREEN_CSS(theme)
           }
         },
         xl: {
           css: {
-            ...LARGE_SCREEN_CSS(theme)
+            ...typographyConfig.LARGE_SCREEN_CSS(theme)
           }
         },
         '2xl': {
           css: {
-            ...LARGE_SCREEN_CSS(theme)
+            ...typographyConfig.LARGE_SCREEN_CSS(theme)
           }
         }
       })
@@ -1091,14 +971,14 @@ module.exports = {
     appearance: ['responsive'],
     backgroundClip: ['responsive'],
     backgroundAttachment: ['responsive'],
-    backgroundColor: ['responsive', 'hover', 'focus', 'sibling-checked', 'group-hover', 'dark', 'focus-within'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'sibling-checked', 'group-hover', 'focus-within'],
     backgroundImage: ['responsive'],
     backgroundOpacity: ['responsive', 'hover', 'focus', 'group-hover', 'focus-within', 'no-filter'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: ['responsive'],
-    borderColor: ['responsive', 'hover', 'focus', 'group-hover', 'sibling-checked', 'dark', 'focus-within'],
+    borderColor: ['responsive', 'hover', 'focus', 'group-hover', 'sibling-checked', 'focus-within'],
     borderOpacity: ['responsive', 'hover', 'focus'],
     borderRadius: ['responsive', 'last', 'first'],
     borderStyle: ['responsive', 'last', 'first'],
@@ -1108,7 +988,7 @@ module.exports = {
     container: ['responsive'],
     cursor: ['responsive'],
     display: ['responsive', 'group-hover'],
-    divideColor: ['responsive', 'group-hover', 'dark'],
+    divideColor: ['responsive', 'group-hover'],
     divideOpacity: ['responsive'],
     divideWidth: ['responsive'],
     fill: ['responsive', 'hover'],
@@ -1155,8 +1035,8 @@ module.exports = {
     pointerEvents: ['responsive'],
     position: ['responsive'],
     resize: ['responsive'],
-    ringColor: ['responsive', 'dark', 'focus-within', 'focus'],
-    ringOffsetColor: ['responsive', 'dark', 'focus-within', 'focus'],
+    ringColor: ['responsive', 'focus-within', 'focus'],
+    ringOffsetColor: ['responsive', 'focus-within', 'focus'],
     ringOffsetWidth: ['responsive', 'focus-within', 'focus'],
     ringOpacity: ['responsive', 'focus-within', 'focus'],
     ringWidth: ['responsive', 'focus-within', 'focus'],
@@ -1165,7 +1045,7 @@ module.exports = {
     strokeWidth: ['responsive'],
     tableLayout: ['responsive'],
     textAlign: ['responsive'],
-    textColor: ['responsive', 'group-hover', 'hover', 'focus', 'sibling-checked', 'focus-within', 'dark'],
+    textColor: ['responsive', 'group-hover', 'hover', 'focus', 'sibling-checked', 'focus-within'],
     textOpacity: ['responsive', 'hover', 'focus', 'group-hover', 'focus-within'],
     textDecoration: ['responsive', 'hover', 'focus', 'group-hover', 'focus-within'],
     textTransform: ['responsive'],
@@ -1178,7 +1058,7 @@ module.exports = {
     textOverflow: ['responsive'],
     zIndex: ['responsive'],
     gap: ['responsive'],
-    gradientColorStops: ['responsive', 'dark', 'hover', 'focus'],
+    gradientColorStops: ['responsive', 'hover', 'focus'],
     gridAutoColumns: ['responsive'],
     gridAutoFlow: ['responsive'],
     gridAutoRows: ['responsive'],
@@ -1256,18 +1136,18 @@ module.exports = {
       addUtilities(contentUtilities, ['before', 'after'])
     }),
     plugin(({ addUtilities, e, theme }) => {
-      const colors = theme('colors')
-      const caretColors = Object.keys(colors).reduce((acc, key) => {
-        if (typeof colors[key] === 'string') {
+      const themeColors = theme('colors')
+      const caretColors = Object.keys(themeColors).reduce((acc, key) => {
+        if (typeof themeColors[key] === 'string') {
           return {
             ...acc,
             [`.caret-${e(key)}`]: {
-              'caret-color': colors[key]
+              'caret-color': themeColors[key]
             }
           }
         }
 
-        const variants = Object.keys(colors[key])
+        const variants = Object.keys(themeColors[key])
 
         return {
           ...acc,
@@ -1275,7 +1155,7 @@ module.exports = {
             (a, variant) => ({
               ...a,
               [`.caret-${e(key)}-${variant}`]: {
-                'caret-color': colors[key][variant]
+                'caret-color': themeColors[key][variant]
               }
             }),
             {}
@@ -1292,8 +1172,8 @@ module.exports = {
           background = gradient.custom
         } else {
           const type = Object.prototype.hasOwnProperty.call(gradient, 'type') ? gradient.type : 'linear'
-          const colors = Object.prototype.hasOwnProperty.call(gradient, 'colors') ? gradient.colors : gradient
-          background = `${type}-gradient(${colors.join(', ')})`
+          const gradientColors = Object.prototype.hasOwnProperty.call(gradient, 'colors') ? gradient.colors : gradient
+          background = `${type}-gradient(${gradientColors.join(', ')})`
         }
 
         return {
@@ -1308,10 +1188,10 @@ module.exports = {
     plugin(({ addUtilities, theme }) => {
       const utilities = {
         '.w-full-screen': {
-          ...FULL_WIDTH_ACTIVE(theme)
+          ...typographyConfig.FULL_WIDTH_ACTIVE(theme)
         },
         '.w-full-screen-none': {
-          ...FULL_WIDTH_INACTIVE(theme)
+          ...typographyConfig.FULL_WIDTH_INACTIVE(theme)
         }
       }
 
@@ -1333,7 +1213,7 @@ module.exports = {
       const individualBorderColors = []
       const traverseObject = (obj, prevKey) => {
         Object.keys(obj).forEach((key) => {
-          let colorName = `${prevKey}${prevKey && '-'}${key}`
+          const colorName = `${prevKey}${prevKey && '-'}${key}`
           individualBorderColors.push({
             [`.border-b-${colorName}`]: {
               borderBottomColor: obj[key]
