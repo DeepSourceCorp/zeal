@@ -128,7 +128,7 @@ const DEFAULT = function (theme) {
       fontWeight: theme('fontWeight.semibold')
     },
     'code::before, code::after': {
-      content: '"`"'
+      content: '""'
     },
     'a code': {
       color: theme('colors.juniper')
