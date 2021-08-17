@@ -7,13 +7,7 @@
     >
     </span>
     <template v-else>
-      <img
-        v-if="this.image"
-        :class="[`${SIZES[getSize].classes}`]"
-        class="rounded-full"
-        :src="image"
-        :alt="userName"
-      />
+      <img v-if="this.image" :class="[`${SIZES[getSize].classes}`]" class="rounded-full" :src="image" :alt="userName" />
       <span
         v-if="!this.image && this.userName"
         :class="[`${SIZES[getSize].classes}`]"

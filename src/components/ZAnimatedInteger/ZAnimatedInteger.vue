@@ -33,12 +33,7 @@ export default Vue.extend({
     animate: function (from: number, to: number) {
       const duration = 500
 
-      const easingFunction = (
-        progress: number,
-        from: number,
-        diff: number,
-        duration: number
-      ): number => {
+      const easingFunction = (progress: number, from: number, diff: number, duration: number): number => {
         progress = progress / duration - 1
         return -diff * (Math.pow(progress, 4) - 1) + from
       }

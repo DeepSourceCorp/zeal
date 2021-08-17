@@ -5,17 +5,27 @@
       <span
         v-if="$slots.heading"
         @click="toggleAccordion()"
-        class="flex items-center cursor-pointer inline-block hover:opacity-75 select-none font-medium tracking-wider w-full leading-3 py-4 md:pt-0 uppercase text-sm text-vanilla-800"
+        class="
+          flex
+          items-center
+          cursor-pointer
+          inline-block
+          hover:opacity-75
+          select-none
+          font-medium
+          tracking-wider
+          w-full
+          leading-3
+          py-4
+          md:pt-0
+          uppercase
+          text-sm text-vanilla-800
+        "
       >
         <span class="flex flex-1">
           <slot name="heading"></slot>
         </span>
-        <z-icon
-          size="medium"
-          icon="chevron-right"
-          class="transform"
-          :class="[accordionHeaderAnimations]"
-        ></z-icon>
+        <z-icon size="medium" icon="chevron-right" class="transform" :class="[accordionHeaderAnimations]"></z-icon>
       </span>
       <span
         class="block overflow-scroll transition-max-height duration-500 ease-in-out"
