@@ -3,10 +3,9 @@
     <li
       v-for="heading in headingsMap"
       :key="heading.id"
+      class="leading-4"
       :class="[
-        `${
-          isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive
-        }`,
+        `${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`,
         `${HEADING_ALIGNMENT_CLASSES[align]}-${HEADINGS[heading.tagName].indentSpace}`
       ]"
     >
@@ -65,8 +64,7 @@ export default Vue.extend({
     align: {
       type: String,
       default: 'left',
-      validator: (val: string) =>
-        Object.keys(HEADING_ALIGNMENT_CLASSES).some((alignment) => alignment === val)
+      validator: (val: string) => Object.keys(HEADING_ALIGNMENT_CLASSES).some((alignment) => alignment === val)
     },
     headingOffsetTop: {
       type: Number,
