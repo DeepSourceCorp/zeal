@@ -283,7 +283,8 @@ const RTE = function (theme) {
     },
     'ol > li::before': {
       color: 'inherit',
-      marginTop: theme('margin["-px"]')
+      marginTop: theme('margin["-px"]'),
+      fontSize: theme('fontSize.sm')
     },
     'ol > li': {
       paddingLeft: theme('padding["6"]')
