@@ -63,6 +63,23 @@ export const DisabledRadioButton = () => ({
         </div>`
 })
 
+export const ReadOnlyRadioButton = () => ({
+  components: { ZRadioGroup, ZRadio },
+  data() {
+    return {
+      modelValue: 'female'
+    }
+  },
+  template: `<div class='padded-container'>
+            <div class="input-container">
+                <z-radio-group v-model="modelValue" :readOnly="true" class="flex flex-col gap-2">
+                    <z-radio value="female" label="Female"></z-radio>
+                    <z-radio value="male" label="Male"></z-radio>
+                </z-radio-group>
+            </div>
+        </div>`
+})
+
 export const DisabledCheckedRadioButton = () => ({
   components: { ZRadioGroup, ZRadio },
   data() {

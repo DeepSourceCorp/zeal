@@ -34,6 +34,17 @@ describe('Checkbox Component', () => {
     expect(wrapper.classes().includes('is-disabled')).toBe(true)
   })
 
+  it('renders a readonly checkbox component when readonly prop is passed', () => {
+    const wrapper = mountFn({
+      propsData: {
+        readOnly: true
+      }
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.classes().includes('is-read-only')).toBe(true)
+  })
+
   it('renders a pre-selected checkbox when the value is passed as checked', () => {
     const wrapper = mountFn({
       propsData: {

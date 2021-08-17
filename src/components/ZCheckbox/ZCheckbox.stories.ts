@@ -26,7 +26,21 @@ export const DisabledCheckbox = () => ({
       selectedValue: false
     }
   },
-  template: `<z-checkbox label="I love Pastries" value="pastry" v-model="selectedValue" disabled/>`
+  template: `<z-checkbox label="I love Pastries" value="pastry" v-model="selectedValue" :disabled="true"/>`
+})
+
+export const ReadOnlyCheckbox = () => ({
+  components: { ZCheckbox },
+  data() {
+    return {
+      selectedValue: false,
+      anotherSelectedValue: true
+    }
+  },
+  template: `<div>
+    <z-checkbox label="I love Pastries" value="pastry" v-model="selectedValue" :readOnly="true"/>
+    <z-checkbox label="I love Pastries" value="pastry" v-model="anotherSelectedValue" :readOnly="true"/>
+  </div>`
 })
 
 export const SelectedCheckboxWithDisabledProperty = () => ({

@@ -6,7 +6,8 @@
       `bg-${backgroundColor}`,
       {
         'text-slate cursor-not-allowed': disabled,
-        'text-vanilla-300': !disabled,
+        'text-vanilla-400 cursor-not-allowed': readOnly,
+        'text-vanilla-300': !disabled && !readOnly,
         'h-6 text-xs space-x-1 leading-loose': size === 'x-small',
         'h-8 text-xs space-x-1 leading-loose': size === 'small',
         'h-10 text-sm space-x-2 leading-8': size === 'medium',
@@ -30,7 +31,7 @@
       v-debounce:[debounceDelay]="updateDebounce"
       class="overflow-ellipsis overflow-hidden w-full caret-juniper flex flex-grow outline-none bg-transparent"
       :class="{
-        'cursor-not-allowed': disabled
+        'cursor-not-allowed': disabled || readOnly
       }"
       :aria-label="label"
       :value="name"
@@ -38,7 +39,7 @@
       :max="max"
       :min="min"
       :placeholder="placeholder"
-      :disabled="disabled"
+      :disabled="disabled || readOnly"
       :autocomplete="autocomplete"
       @input="updateSelf($event.target.value)"
       @blur="this.blurHandler"
@@ -96,6 +97,10 @@ export default Vue.extend({
       type: String
     },
     disabled: {
+      default: false,
+      type: Boolean
+    },
+    readOnly: {
       default: false,
       type: Boolean
     },
