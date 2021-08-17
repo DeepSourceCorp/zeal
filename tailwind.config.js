@@ -6,7 +6,7 @@ const colors = require('./src/helpers/tailwind/colors.js')
 module.exports = {
   purge: {
     enabled: process.env.NODE_ENV === 'production',
-    content: ['./src/**/*.vue']
+    content: ['./src/**/*.vue', './**/*.stories.ts']
   },
   prefix: '',
   important: false,
