@@ -304,13 +304,6 @@ const RTE = function (theme) {
     },
     'ul ul, ul ol, ol ul, ol ol': {
       margin: 0
-    },
-    'p.is-editor-empty:first-child::before': {
-      color: theme('colors.slate'),
-      height: 0,
-      content: 'attr(data-placeholder)',
-      float: 'left',
-      pointerEvents: 'none'
     }
   }
 }

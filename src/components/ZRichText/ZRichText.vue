@@ -348,3 +348,12 @@ export default Vue.extend({
   }
 })
 </script>
+<style>
+/* 
+ TODO: migrate the following css to typography.js with support for purging. 
+ */
+.prose-rte p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  @apply h-0 float-left text-slate pointer-events-none;
+}
+</style>
