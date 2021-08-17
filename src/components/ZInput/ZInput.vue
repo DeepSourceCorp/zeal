@@ -36,7 +36,11 @@
       :value="name"
       :type="type"
       :max="max"
+      :maxlength="maxLength"
       :min="min"
+      :minlength="minLength"
+      :multiple="multiple"
+      :required="required"
       :placeholder="placeholder"
       :disabled="disabled || readOnly"
       :autocomplete="autocomplete"
@@ -45,6 +49,7 @@
       @focus="this.focusHandler"
       @keydown="this.keydownHandler"
       @keyup="this.keyupHandler"
+      @invalid="this.invalidHandler"
     />
     <!-- Any icon/content to the right renders here -->
     <slot name="right">
@@ -140,15 +145,40 @@ export default Vue.extend({
     errorBorderColor: {
       type: String,
       default: 'cherry'
+    },
+    maxLength: {
+      type: [String, Number],
+      default: undefined
+    },
+    minLength: {
+      type: [String, Number],
+      default: undefined
+    },
+    multiple: {
+      type: Boolean,
+      default: false
+    },
+    required: {
+      type: Boolean,
+      default: false
+    },
+    validateOnBlur: {
+      type: Boolean,
+      default: false
     }
   },
   model: {
     prop: 'name',
     event: 'input'
   },
+  data() {
+    return {
+      invalidState: false
+    }
+  },
   computed: {
     borderStyles(): string {
-      if (this.isInvalid) {
+      if (this.isInvalid || this.invalidState) {
         return `border border-cherry`
       }
 
@@ -160,14 +190,18 @@ export default Vue.extend({
     }
   },
   methods: {
-    updateSelf(name: string): void {
-      this.$emit('input', name)
+    updateSelf(newValue: string): void {
+      this.$emit('input', newValue)
     },
     updateDebounce(value: unknown): void {
       this.$emit('debounceInput', value)
     },
     blurHandler(e: FocusEvent) {
       this.$emit('blur', e)
+      if (this.validateOnBlur) {
+        const eventTarget = e.target as HTMLInputElement
+        this.invalidState = !eventTarget.checkValidity()
+      }
     },
     focusHandler(e: FocusEvent) {
       this.$emit('focus', e)
@@ -177,6 +211,10 @@ export default Vue.extend({
     },
     keydownHandler(e: KeyboardEvent) {
       this.$emit('keydown', e)
+    },
+    invalidHandler(e: Event) {
+      this.invalidState = true
+      this.$emit('invalid', e)
     }
   }
 })
