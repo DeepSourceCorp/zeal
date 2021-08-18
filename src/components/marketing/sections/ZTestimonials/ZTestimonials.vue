@@ -115,6 +115,9 @@ export default Vue.extend({
   mounted() {
     this.setTestimonialInterval()
   },
+  beforeDestroy() {
+    clearInterval(this.interval)
+  },
   methods: {
     setTestimonialInterval() {
       this.interval = setInterval(() => {
