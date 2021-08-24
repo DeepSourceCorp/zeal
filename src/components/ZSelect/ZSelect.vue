@@ -11,14 +11,16 @@
     >
       <div
         v-if="selectedOpt"
-        class="selected-option flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full text-xs"
+        class="selected-option flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full"
+        :class="[`text-${textSize}`]"
       >
         {{ selectedOptLabel || selectedOpt }}
       </div>
       <!-- prettier-ignore -->
       <div
         v-else
-        class="flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full text-vanilla-400 opacity-70 text-xs"
+        class="flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full text-vanilla-400 opacity-70"
+        :class="[`text-${textSize}`]"
       >
         {{ placeholder }}
       </div>
@@ -95,6 +97,10 @@ export default Vue.extend({
     backgroundClass: {
       type: String,
       default: 'bg-transparent'
+    },
+    textSize: {
+      type: String,
+      default: 'xs'
     }
   },
   model: {
