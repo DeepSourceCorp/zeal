@@ -17,14 +17,6 @@ export const DefaultRichText = () => ({
   template: `<div><z-rich-text class="max-w-2xl"/></div>`
 })
 
-export const RichTextWithImage = () => ({
-  components: { ZRichText },
-  data() {
-    return {}
-  },
-  template: `<div class="stroke-1.5"><z-rich-text :enable-image-upload="true" class="max-w-2xl"/></div>`
-})
-
 export const RichTextWithMaxCharacterCount = () => ({
   components: { ZRichText },
   data() {
