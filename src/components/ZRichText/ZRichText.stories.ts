@@ -38,7 +38,7 @@ export const RichTextWithMinCharacterCount = () => ({
   data() {
     return {}
   },
-  template: `<div><z-rich-text :min-length="10" placeholder="Minimum 10 characters" class="max-w-2xl"/></div>`
+  template: `<div><z-rich-text :min-length="10" placeholder="Minimum 10 characters" min-length-err-msg="Minimum 10 characters." class="max-w-2xl"/></div>`
 })
 
 export const FullyFeaturedRichText = () => ({

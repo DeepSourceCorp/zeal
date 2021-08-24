@@ -23,6 +23,7 @@
             placeholder="Add a link"
             size="small"
             :show-border="false"
+            @keydown.enter.prevent=""
             @keyup.prevent="applyLink"
           />
           <div class="border-l border-ink-100">
@@ -31,6 +32,7 @@
               iconSize="small"
               size="small"
               button-type="secondary"
+              type="button"
               :disabled="!editor.isActive('link')"
               @click="editor.chain().focus().extendMarkRange('link').unsetLink().run()"
             />
@@ -40,7 +42,7 @@
       <editor-content :editor="editor" class="w-full outline-none" />
       <div
         v-if="editor"
-        class="flex w-full items-center border-t px-4 py-2 rounded-b-md"
+        class="flex space-x-1 w-full items-center border-t px-4 py-2 rounded-b-md"
         :class="[
           borderStyles,
           isFocused ? 'bg-ink-300' : 'bg-ink-400',
@@ -79,7 +81,7 @@
         class="leading-none text-xxs text-cherry flex space-x-1 items-center mt"
       >
         <z-icon icon="alert-circle" color="currentColor" size="small" />
-        <span> {{ maxLength }} / {{ maxLength }} characters used </span>
+        <span> {{ maxLength }} / {{ maxLength }} characters used. </span>
       </div>
       <div v-else-if="invalidState" class="leading-none text-xxs text-cherry flex space-x-1 items-center">
         <z-icon icon="alert-circle" color="currentColor" size="small" />
@@ -144,6 +146,10 @@ export default Vue.extend({
     minLength: {
       type: Number,
       default: 0
+    },
+    minLengthErrMsg: {
+      type: String,
+      default: ''
     },
     disabled: {
       default: false,
@@ -305,7 +311,7 @@ export default Vue.extend({
       if (this.validateOnBlur && this.minLength) {
         if ((editor?.getCharacterCount() || 0) < this.minLength) {
           this.invalidState = true
-          this.invalidStateMessage = `Atleast ${this.minLength} characters required`
+          this.invalidStateMessage = this.minLengthErrMsg
           this.$emit('invalid', this.invalidStateMessage)
           return
         }
