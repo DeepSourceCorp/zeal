@@ -48,4 +48,3 @@ export const RichTextWithCustomSlot = () => ({
   },
   template: `<div class="stroke-1.5"><z-rich-text class="max-w-2xl" placeholder="Pen your next adventure here... (Min. 50 chars)" :min-length="50" :max-length="1000"  :enable-image-upload="true"><template #left-toolbar><z-button type="button" size="x-small" button-type="ghost" label="Custom button"/></template></z-rich-text></div>`
 })
-
