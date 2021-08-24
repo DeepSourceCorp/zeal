@@ -11,8 +11,8 @@
     >
       <div
         v-if="selectedOpt"
-        class="selected-option flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full"
-        :class="[`text-${textSize}`]"
+        class="selected-option flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full text-"
+        :class="[getTextSize]"
       >
         {{ selectedOptLabel || selectedOpt }}
       </div>
@@ -20,7 +20,7 @@
       <div
         v-else
         class="flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full text-vanilla-400 opacity-70"
-        :class="[`text-${textSize}`]"
+        :class="[getTextSize]"
       >
         {{ placeholder }}
       </div>
@@ -100,7 +100,7 @@ export default Vue.extend({
     },
     textSize: {
       type: String,
-      default: 'xs'
+      default: 'text-xs'
     }
   },
   model: {
@@ -114,6 +114,15 @@ export default Vue.extend({
       selectedOptHTML: '',
       open: false,
       options: [] as Vue[]
+    }
+  },
+  computed: {
+    getTextSize(): string {
+      const validTextSizes = ['text-xs', 'text-sm', 'text-base', 'text-lg', 'text-xl']
+      if (validTextSizes.includes(this.textSize)) {
+        return this.textSize
+      }
+      return 'text-xs'
     }
   },
   mounted() {
