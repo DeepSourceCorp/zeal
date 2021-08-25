@@ -44,7 +44,7 @@
         v-if="editor"
         class="flex space-x-1 w-full items-center border-t py-2 rounded-b-md"
         :class="[
-		  $slots['left-toolbar'] ? 'pr-4 pl-2' : 'px-4',
+          $slots['left-toolbar'] ? 'pr-4 pl-2' : 'px-4',
           borderStyles,
           isFocused ? 'bg-ink-300' : 'bg-ink-400',
           {
