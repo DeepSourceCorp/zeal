@@ -37,7 +37,7 @@ export default Vue.extend({
       const $parent = this.$parent as ZSelectT
       return this.value === $parent.selectedOpt
     },
-    getTextSize(): string {
+    textSizeClass(): string {
       const validTextSizes = ['text-xs', 'text-sm', 'text-base', 'text-lg', 'text-xl']
       return validTextSizes.includes(this.textSize) ? this.textSize : 'text-xs'
     }
