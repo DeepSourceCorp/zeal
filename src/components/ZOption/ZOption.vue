@@ -1,7 +1,7 @@
 <template>
   <div
     class="z-option p-2 cursor-pointer text-vanilla-300 hover:bg-ink-200"
-    :class="[selected && 'is-selected bg-ink-200', getTextSize]"
+    :class="[selected && 'is-selected bg-ink-200', textSizeClass]"
     @click.stop="selectOption()"
   >
     <slot v-if="$slots.default"></slot>
@@ -29,7 +29,7 @@ export default Vue.extend({
     },
     textSize: {
       type: String,
-      default: 'xs'
+      default: 'text-xs'
     }
   },
   computed: {
@@ -39,10 +39,7 @@ export default Vue.extend({
     },
     getTextSize(): string {
       const validTextSizes = ['text-xs', 'text-sm', 'text-base', 'text-lg', 'text-xl']
-      if (validTextSizes.includes(this.textSize)) {
-        return this.textSize
-      }
-      return 'text-xs'
+      return validTextSizes.includes(this.textSize) ? this.textSize : 'text-xs'
     }
   },
   methods: {
