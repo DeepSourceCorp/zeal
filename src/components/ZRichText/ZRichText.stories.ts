@@ -2,6 +2,7 @@ import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'
 import ZRichText from './ZRichText.vue'
+import ZButton from '../ZButton'
 
 export default {
   title: 'Rich Text',
@@ -17,14 +18,6 @@ export const DefaultRichText = () => ({
   template: `<div><z-rich-text class="max-w-2xl"/></div>`
 })
 
-export const RichTextWithImage = () => ({
-  components: { ZRichText },
-  data() {
-    return {}
-  },
-  template: `<div class="stroke-1.5"><z-rich-text :enable-image-upload="true" class="max-w-2xl"/></div>`
-})
-
 export const RichTextWithMaxCharacterCount = () => ({
   components: { ZRichText },
   data() {
@@ -38,7 +31,7 @@ export const RichTextWithMinCharacterCount = () => ({
   data() {
     return {}
   },
-  template: `<div><z-rich-text :min-length="10" placeholder="Minimum 10 characters" class="max-w-2xl"/></div>`
+  template: `<div><z-rich-text :min-length="10" placeholder="Minimum 10 characters" min-length-err-msg="Minimum 10 characters." class="max-w-2xl"/></div>`
 })
 
 export const FullyFeaturedRichText = () => ({
@@ -47,4 +40,11 @@ export const FullyFeaturedRichText = () => ({
     return {}
   },
   template: `<div class="stroke-1.5"><z-rich-text class="max-w-2xl" placeholder="Pen your next adventure here... (Min. 50 chars)" :min-length="50" :max-length="1000"  :enable-image-upload="true" /></div>`
+})
+export const RichTextWithCustomSlot = () => ({
+  components: { ZRichText, ZButton },
+  data() {
+    return {}
+  },
+  template: `<div class="stroke-1.5"><z-rich-text class="max-w-2xl" placeholder="Pen your next adventure here... (Min. 50 chars)" :min-length="50" :max-length="1000"  :enable-image-upload="true"><template #left-toolbar><z-button type="button" size="x-small" button-type="ghost" label="Custom button"/></template></z-rich-text></div>`
 })

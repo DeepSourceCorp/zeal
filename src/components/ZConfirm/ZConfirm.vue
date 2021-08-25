@@ -3,7 +3,7 @@
     <template v-slot:default="{ close }">
       <div class="p-6 sm:p-8 sm:w-100" @click.stop>
         <slot>
-          <div class="mb-2 text-base leading-relaxed text-vanilla-100">{{ title }}</div>
+          <div class="mb-2 text-base leading-relaxed font-medium text-vanilla-100">{{ title }}</div>
           <div class="text-sm leading-relaxed text-vanilla-400">
             {{ subtitle }}
           </div>

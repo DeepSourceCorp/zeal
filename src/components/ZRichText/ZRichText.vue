@@ -23,6 +23,7 @@
             placeholder="Add a link"
             size="small"
             :show-border="false"
+            @keydown.enter.prevent=""
             @keyup.prevent="applyLink"
           />
           <div class="border-l border-ink-100">
@@ -31,6 +32,7 @@
               iconSize="small"
               size="small"
               button-type="secondary"
+              type="button"
               :disabled="!editor.isActive('link')"
               @click="editor.chain().focus().extendMarkRange('link').unsetLink().run()"
             />
@@ -40,8 +42,9 @@
       <editor-content :editor="editor" class="w-full outline-none" />
       <div
         v-if="editor"
-        class="flex w-full items-center border-t px-4 py-2 rounded-b-md"
+        class="flex space-x-1 w-full items-center border-t py-2 rounded-b-md"
         :class="[
+          $slots['left-toolbar'] ? 'pr-4 pl-2' : 'px-4',
           borderStyles,
           isFocused ? 'bg-ink-300' : 'bg-ink-400',
           {
@@ -51,26 +54,11 @@
           }
         ]"
       >
-        <label
-          v-if="enableImageUpload"
-          class="flex hover:text-vanilla-400 focus-within:text-vanilla-400 text-slate cursor-pointer"
-        >
-          <z-icon
-            :icon="isImageUploading ? 'spin-loader' : 'image'"
-            size="small"
-            color="current"
-            :class="{ 'animate-spin': isImageUploading }"
-            aria-label="Upload an image"
-          />
-          <input
-            type="file"
-            accept="image/png, image/jpeg"
-            class="opacity-0 h-1 w-1 absolute"
-            @change="uploadImage($event.target.files)"
-          />
-        </label>
+        <slot name="left-toolbar"></slot>
         <div class="flex-grow"></div>
-        <z-icon icon="z-markdown" size="base" color="slate" />
+        <slot name="right-toolbar">
+          <z-icon icon="z-markdown" size="base" color="slate" />
+        </slot>
       </div>
     </div>
     <div v-if="(editor && !!maxLength && maxLength === editor.getCharacterCount()) || invalidState" class="px-4 py-2">
@@ -79,7 +67,7 @@
         class="leading-none text-xxs text-cherry flex space-x-1 items-center mt"
       >
         <z-icon icon="alert-circle" color="currentColor" size="small" />
-        <span> {{ maxLength }} / {{ maxLength }} characters used </span>
+        <span> {{ maxLength }} / {{ maxLength }} characters used. </span>
       </div>
       <div v-else-if="invalidState" class="leading-none text-xxs text-cherry flex space-x-1 items-center">
         <z-icon icon="alert-circle" color="currentColor" size="small" />
@@ -145,23 +133,15 @@ export default Vue.extend({
       type: Number,
       default: 0
     },
+    minLengthErrMsg: {
+      type: String,
+      default: ''
+    },
     disabled: {
       default: false,
       type: Boolean
     },
     isInvalid: {
-      type: Boolean,
-      default: false
-    },
-    enableImageUpload: {
-      type: Boolean,
-      default: false
-    },
-    addImageUrl: {
-      type: String,
-      default: ''
-    },
-    isImageUploading: {
       type: Boolean,
       default: false
     },
@@ -288,24 +268,16 @@ export default Vue.extend({
     },
     disabled(value) {
       this.editor?.setOptions({ editable: !value })
-    },
-    addImageUrl(value) {
-      if (value) {
-        this.editor?.chain().focus().setImage({ src: value }).run()
-      }
     }
   },
   methods: {
-    uploadImage(files: FileList) {
-      if (files) this.$emit('editor-image-upload', files)
-    },
-    validateInput(editor: EditorCore) {
+    validateInput(editor: EditorCore): void {
       //? Separate validateOnBlur and minLength if there are further validations added in the future
-      //! Refactor to accept an array of functions that control errored state by returning string or boolean (Check stash)
+      //! Refactor to accept an array of functions that control errored state by returning string or boolean
       if (this.validateOnBlur && this.minLength) {
         if ((editor?.getCharacterCount() || 0) < this.minLength) {
           this.invalidState = true
-          this.invalidStateMessage = `Atleast ${this.minLength} characters required`
+          this.invalidStateMessage = this.minLengthErrMsg
           this.$emit('invalid', this.invalidStateMessage)
           return
         }
@@ -313,7 +285,7 @@ export default Vue.extend({
         this.invalidStateMessage = ''
       }
     },
-    applyLink(e: KeyboardEvent) {
+    applyLink(e: KeyboardEvent): void {
       if (e.code === 'Enter' && this.editor) {
         const httpStartCheck = new RegExp(/^https?:\/\//)
         const hasHttp = httpStartCheck.test(this.inputLink)
@@ -332,7 +304,7 @@ export default Vue.extend({
         this.inputLink = ''
       }
     },
-    fetchLink(editor: EditorCore) {
+    fetchLink(editor: EditorCore): void {
       const {
         state,
         state: { selection }
@@ -344,6 +316,9 @@ export default Vue.extend({
       })
       const mark = marks.find((markItem) => markItem.type.name === 'link')
       this.inputLink = mark && mark.attrs.href ? mark.attrs.href : ''
+    },
+    insertImage(url: string): void {
+      this.editor?.chain().focus().setImage({ src: url }).run()
     }
   }
 })
