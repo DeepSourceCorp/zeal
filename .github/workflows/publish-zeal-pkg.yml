@@ -6,6 +6,7 @@ on:
       - master
     paths-ignore:
       - 'package.json'
+      - 'yarn.lock'
 
 jobs:
   bump-package-version:
