@@ -923,13 +923,13 @@ module.exports = {
         DEFAULT: {
           css: {
             ...typographyConfig.DEFAULT(theme),
-            ...nuxtStyles.DEFAULT(theme)
+            ...nuxtStyles.contentStyles(theme)
           }
         },
         muted: {
           css: {
             ...typographyConfig.MUTED(theme),
-            ...nuxtStyles.DEFAULT(theme)
+            ...nuxtStyles.contentStyles(theme)
           }
         },
         rte: {
