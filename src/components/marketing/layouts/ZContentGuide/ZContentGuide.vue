@@ -2,7 +2,8 @@
   <article class="bg-ink-400">
     <div class="lg:grid grid-cols-12">
       <div class="col-span-2 hidden lg:block">
-        <a class="text-vanilla-400" :href="previousPageLink">&larr; {{ previousPageText }}</a>
+        <a class="text-vanilla-400" v-if="previousPageLink" :href="previousPageLink">&larr; {{ previousPageText }}</a>
+        <slot name="previous-page-link"></slot>
       </div>
       <div class="col-span-10">
         <z-page-label class="mb-2">{{ pageLabel }}</z-page-label>
