@@ -1,4 +1,4 @@
-const DEFAULT = function(theme) {
+const DEFAULT = function (theme) {
   return {
     'h2:hover > a::before, h3:hover > a::before, h4:hover > a::before, h5:hover > a::before': {
       content: '"#"',
@@ -11,5 +11,5 @@ const DEFAULT = function(theme) {
 }
 
 module.exports = {
-  DEFAULT,
+  DEFAULT
 }
