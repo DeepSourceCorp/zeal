@@ -921,12 +921,12 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            ...typographyConfig.DEFAULT(theme),
+            ...typographyConfig.DEFAULT(theme)
           }
         },
         muted: {
           css: {
-            ...typographyConfig.MUTED(theme),
+            ...typographyConfig.MUTED(theme)
           }
         },
         rte: {
