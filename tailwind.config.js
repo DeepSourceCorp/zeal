@@ -2,6 +2,7 @@
 const plugin = require('tailwindcss/plugin')
 const typographyConfig = require('./src/helpers/tailwind/typography.js')
 const colors = require('./src/helpers/tailwind/colors.js')
+const nuxtStyles = require('./src/helpers/tailwind/nuxt-styles.js')
 
 module.exports = {
   purge: {
@@ -921,17 +922,19 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            ...typographyConfig.DEFAULT(theme)
+            ...typographyConfig.DEFAULT(theme),
+            ...nuxtStyles.DEFAULT(theme),
           }
         },
         muted: {
           css: {
-            ...typographyConfig.MUTED(theme)
+            ...typographyConfig.MUTED(theme),
+            ...nuxtStyles.DEFAULT(theme),
           }
         },
         rte: {
           css: {
-            ...typographyConfig.RTE(theme)
+            ...typographyConfig.RTE(theme),
           }
         },
         sm: {
