@@ -7,7 +7,7 @@ const contentStyles = function (theme) {
       color: theme('colors.slate'),
       position: 'absolute'
     },
-    'h2::before, h3::before, h4::before, h5::before' : {
+    'h2::before, h3::before, h4::before, h5::before': {
       content: '" "',
       display: 'block',
       marginTop: '-5rem',
