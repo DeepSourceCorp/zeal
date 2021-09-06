@@ -2,74 +2,77 @@ module.exports = {
   transparent: 'transparent',
   current: 'currentColor',
   black: '#000000',
-  slate: '#52575C',
+  slate: '#52575c',
   github: '#414141',
-  gitlab: '#6753B5',
-  bitbucket: '#1E54C5',
-  lavender: '#7A97FA',
-  lilac: '#C97BD4',
-  'sea-glass': '#49F9CF',
-  pink: '#F977FF',
-  'light-juniper': '#2EB78B', // Legacy
-  'light-cherry': '#D6435B', // Legacy
+  gitlab: '#6753b5',
+  bitbucket: '#1e54c5',
+  lavender: '#7a97fa',
+  lilac: '#c97bd4',
+  'sea-glass': '#49f9cf',
+  pink: '#f977ff',
+  'light-juniper': '#2eb78b', // legacy
+  'light-cherry': '#d6435b', // legacy
   juniper: {
-    DEFAULT: '#33CB9A',
-    600: '#2EB78B',
-    500: '#33CB9A',
-    400: '#53D4AA',
-    300: '#74DCBA',
-    200: '#94E4CA',
-    150: '#A5E8D2',
-    100: '#B5ECDA'
+    DEFAULT: '#33cb9a',
+    600: '#2eb78b',
+    500: '#33cb9a',
+    400: '#53d4aa',
+    300: '#74dcba',
+    200: '#94e4ca',
+    150: '#a5e8d2',
+    100: '#b5ecda'
   },
   robin: {
-    DEFAULT: '#4568DC',
-    500: '#',
-    400: '#6784E2',
-    200: '#ACBCEF',
-    300: '#8AA0E9',
-    150: '#BDCAF3',
-    100: '#CED8F6'
+    DEFAULT: '#4568dc',
+    600: '#2449c1',
+    500: '#4568dc',
+    400: '#6784e2',
+    200: '#acbcef',
+    300: '#8aa0e9',
+    150: '#bdcaf3',
+    100: '#ced8f6'
   },
   cherry: {
-    DEFAULT: '#DA5565',
-    600: '#D6435B',
-    500: '#DA5565',
-    400: '#E17783',
-    300: '#E998A2',
-    200: '#F0BAC0',
-    150: '#F4CACF',
-    100: '#F7DBDE'
+    DEFAULT: '#da5565',
+    600: '#d6435b',
+    500: '#da5565',
+    400: '#e17783',
+    300: '#e998a2',
+    200: '#f0bac0',
+    150: '#f4cacf',
+    100: '#f7dbde'
   },
   honey: {
-    DEFAULT: '#F6D87C',
-    500: '#F6D87C',
-    400: '#F9E3A2',
-    300: '#FBEFC8',
-    200: '#FEFAEF',
-    150: '#FFFFFF',
-    100: '#FFFFFF'
+    DEFAULT: '#f6d87c',
+    600: '#f0bf28',
+    500: '#f6d87c',
+    400: '#f9e3a2',
+    300: '#fbefc8',
+    200: '#fefaef',
+    150: '#ffffff',
+    100: '#ffffff'
   },
   aqua: {
-    DEFAULT: '#23C4F8',
-    500: '#23C4F8',
-    400: '#4BCFF9',
-    300: '#72D9FB',
-    200: '#9AE4FC',
-    150: '#ADE9FC',
-    100: '#C1EEFD'
-  },
-  vanilla: {
-    100: '#FFFFFF',
-    200: '#F5F5F5',
-    300: '#EEEEEE',
-    400: '#C0C1C3'
+    DEFAULT: '#23c4f8',
+    600: '#07aade',
+    500: '#23c4f8',
+    400: '#4bcff9',
+    300: '#72d9fb',
+    200: '#9ae4fc',
+    150: '#ade9fc',
+    100: '#c1eefd'
   },
   ink: {
     50: '#303540',
-    100: '#2A2E37',
-    200: '#23262E',
-    300: '#1A1D23',
-    400: '#16181D'
+    100: '#2a2e37',
+    200: '#23262e',
+    300: '#1a1d23',
+    400: '#16181d'
+  },
+  vanilla: {
+    100: '#ffffff',
+    200: '#f5f5f5',
+    300: '#eeeeee',
+    400: '#c0c1c3'
   }
 }
