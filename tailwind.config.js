@@ -1084,7 +1084,7 @@ module.exports = {
     transformOrigin: ['responsive'],
     scale: ['responsive', 'hover', 'focus'],
     rotate: ['responsive', 'hover', 'focus'],
-    translate: ['responsive', 'hover', 'focus'],
+    translate: ['responsive', 'hover', 'focus', 'group-hover'],
     skew: ['responsive', 'hover', 'focus'],
     transitionProperty: ['responsive'],
     transitionTimingFunction: ['responsive'],
