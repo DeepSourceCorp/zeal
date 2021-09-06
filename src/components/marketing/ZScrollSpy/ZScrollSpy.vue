@@ -1,12 +1,13 @@
 <template>
-  <ul :class="[`text-${align}`]">
+  <ul class="group" :class="[`text-${align}`]">
     <li
       v-for="heading in headingsMap"
       :key="heading.id"
-      class="leading-4"
+      class="leading-4 transform -translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100 ease-in-out transition"
       :class="[
         `${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`,
-        `${HEADING_ALIGNMENT_CLASSES[align]}-${HEADINGS[heading.tagName].indentSpace}`
+        `${HEADING_ALIGNMENT_CLASSES[align]}-${HEADINGS[heading.tagName].indentSpace}`,
+        `${HEADINGS[heading.tagName].delay}`
       ]"
     >
       <a
@@ -42,15 +43,18 @@ enum HEADING_ALIGNMENT_CLASSES {
 const HEADINGS = {
   h1: {
     tag: 'h1',
-    indentSpace: 0
+    indentSpace: 0,
+    delay: ''
   },
   h2: {
     tag: 'h2',
-    indentSpace: 4
+    indentSpace: 4,
+    delay: 'delay-100'
   },
   h3: {
     tag: 'h3',
-    indentSpace: 8
+    indentSpace: 8,
+    delay: 'delay-200'
   }
 }
 
