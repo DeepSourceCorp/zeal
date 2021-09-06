@@ -47,7 +47,7 @@
           />
           <button
             v-else
-            class="p-2 hover:bg-light-cherry hover:bg-opacity-20 rounded-sm disabled:opacity-50"
+            class="p-2 hover:bg-cherry-600 hover:bg-opacity-20 rounded-sm disabled:opacity-50"
             :class="disabled || processing ? 'cursor-not-allowed' : 'cursor-pointer'"
             :disabled="disabled"
             v-tooltip="'Remove files'"

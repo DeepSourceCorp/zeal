@@ -6,7 +6,7 @@ exports[`Badge renders a badge as a dot 1`] = `
 `;
 
 exports[`Badge renders a badge with content 1`] = `
-<div class="relative inline-block z-badge"><button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-ink-400 h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-light-juniper">
+<div class="relative inline-block z-badge"><button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-ink-400 h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-juniper-600">
     <!----> Likes
   </button>
   <div class="text-center transform z-badge-content bg-cherry top-px right-0 h-6 w-6 flex justify-center items-center text-xxs font-bold text-vanilla-100 absolute translate-x-1/2 -translate-y-1/2 leading-4 rounded-full"><span>12</span></div>
