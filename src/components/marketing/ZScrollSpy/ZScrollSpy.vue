@@ -3,7 +3,15 @@
     <li
       v-for="heading in headingsMap"
       :key="heading.id"
-      class="leading-4 transform -translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100 ease-in-out transition"
+      class="
+        leading-4
+        transform
+        -translate-x-full
+        opacity-0
+        group-hover:translate-x-0 group-hover:opacity-100
+        ease-in-out
+        transition
+      "
       :class="[
         `${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`,
         `${HEADING_ALIGNMENT_CLASSES[align]}-${HEADINGS[heading.tagName].indentSpace}`,

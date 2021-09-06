@@ -6,7 +6,7 @@
         <slot name="previous-page-link"></slot>
         <div class="group w-full py-4 sticky top-20 self-start mr-6 hidden lg:block">
           <z-scroll-spy
-            class=" space-y-4 transform -translate-x-96 -left-full group-hover:translate-x-0 ease-in-out transition"
+            class="space-y-4 transform -translate-x-96 -left-full group-hover:translate-x-0 ease-in-out transition"
             root-id="content"
           ></z-scroll-spy>
         </div>
@@ -30,8 +30,8 @@
         </h2>
         <z-divider class="bg-ink-100"></z-divider>
         <div id="content" class="col-span-10 text-vanilla-100 prose prose-sm sm:prose sm:max-w-none">
-        <slot></slot>
-      </div>
+          <slot></slot>
+        </div>
       </div>
     </div>
   </article>
