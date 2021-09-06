@@ -116,6 +116,7 @@ export const Guide = () => ({
     <z-button color="secondary" type="link" to="https://deepsource.io/">Log in</z-button>
   </template>
 </z-nav>
+    <div class="w-full max-w-6xl mx-auto">
       <z-content-guide
         title="Ornare id libero vel leo tincidunt semper."
         subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices consequat id mauris condimentum libero. Ipsum feugiat gravida ultrices proin purus accumsan ac. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices consequat id mauris condimentum libero. Ipsum feugiat gravida ultrices proin purus accumsan ac."
@@ -318,5 +319,6 @@ export const Guide = () => ({
       <p>Let's add a closing paragraph here so things end with a decently sized block of text. I can't explain why I want things to end that way but I have to assume it's because I think things will look weird or unbalanced if there is a heading too close to the end of the document.</p>
       <p>What I've written here is probably long enough, but adding this final sentence can't hurt.</p>
       </z-content-guide>
+      </div>
     </div>`
 })
