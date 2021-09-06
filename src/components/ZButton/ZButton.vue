@@ -34,9 +34,9 @@
 
       // Button Hover Styles
       'hover:underline': buttonStyle === 'link' && !disabled,
-      'hover:bg-light-juniper': buttonStyle === 'primary' && !disabled,
+      'hover:bg-juniper-600': buttonStyle === 'primary' && !disabled,
       'hover:bg-ink-200': ['secondary', 'ghost'].includes(buttonStyle) && !disabled,
-      'hover:bg-light-cherry': buttonStyle === 'danger' && !disabled,
+      'hover:bg-cherry-600': buttonStyle === 'danger' && !disabled,
 
       // Disabled Styles
       'opacity-50 cursor-not-allowed': disabled,

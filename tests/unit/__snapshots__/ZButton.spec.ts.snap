@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button component button should render correct colors 1`] = `
-<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-robin z-btn--robin h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-light-juniper">
+<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-robin z-btn--robin h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-juniper-600">
   <!----> Secondary Button
 </button>
 `;
 
 exports[`Button component renders a button tag when the component is mounted 1`] = `
-<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-ink-400 h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-light-juniper">
+<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-ink-400 h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-juniper-600">
   <!---->
 </button>
 `;
 
 exports[`Button component renders a button tag with the given text 1`] = `
-<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-ink-400 h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-light-juniper">
+<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-ink-400 h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-juniper-600">
   <!----> Hello World
 </button>
 `;
 
 exports[`Button component renders a button with primary type 1`] = `
-<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-ink-400 h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-light-juniper">
+<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-ink-400 h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-juniper-600">
   <!----> Primary Button
 </button>
 `;
@@ -31,7 +31,7 @@ exports[`Button component renders a button with secondary type 1`] = `
 `;
 
 exports[`Button component renders a button with the given size(large) 1`] = `
-<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-ink-400 h-12 px-4 py-2.5 text-lg space-x-2.5 leading-9 bg-juniper hover:bg-light-juniper">
+<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-ink-400 h-12 px-4 py-2.5 text-lg space-x-2.5 leading-9 bg-juniper hover:bg-juniper-600">
   <!----> Large Button
 </button>
 `;
@@ -43,7 +43,7 @@ exports[`Button component renders a disabled button when the disabled attribute 
 `;
 
 exports[`Button component renders a full-width button 1`] = `
-<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-ink-400 w-full h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-light-juniper">
+<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-ink-400 w-full h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-juniper-600">
   <!----> Full Width Button
 </button>
 `;
@@ -55,7 +55,7 @@ exports[`Button component renders a link tag when type is specified as link 1`] 
 `;
 
 exports[`Button component should render loading state 1`] = `
-<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-ink-400 h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-light-juniper">
+<button href="#" type="button" class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap text-ink-400 h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-juniper-600">
   <!----> Secondary Button
 </button>
 `;
