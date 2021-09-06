@@ -32,7 +32,16 @@ export const Colors = () => ({
                 </div>
               </template>
             </div>
-            <h3 class="mt-2 text-base font-bold text-vanilla-100 capitalize">{{ key }}</h3>
+            <div class="rounded-lg overflow-hidden shadow-lg mt-2" v-if="color['DEFAULT']">
+                <div
+                  :class="'bg-' + key"
+                  class="w-full h-12 flex items-center justify-between font-semibold px-4"
+                >
+                  <span>Default</span>
+                  <span class="uppercase">{{ color['DEFAULT'] }}</span>
+                </div>
+            </div>
+            <h3 class="mt-4 text-base font-bold text-vanilla-100 capitalize">{{ key }}</h3>
             <pre class="text-vanilla-400 text-xs">{{ value }}</pre>
           </div>
         </template>
