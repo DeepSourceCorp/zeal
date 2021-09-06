@@ -10,6 +10,8 @@ module.exports = {
   lilac: '#C97BD4',
   'sea-glass': '#49F9CF',
   pink: '#F977FF',
+  'light-juniper': '#2EB78B', // Legacy
+  'light-cherry': '#D6435B', // Legacy
   juniper: {
     DEFAULT: '#33CB9A',
     600: '#2EB78B',
