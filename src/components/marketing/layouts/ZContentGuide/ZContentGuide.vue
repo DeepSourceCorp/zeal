@@ -1,11 +1,17 @@
 <template>
   <article class="bg-ink-400">
     <div class="lg:grid grid-cols-12">
-      <div class="col-span-2 hidden lg:block">
+      <div class="col-span-3 hidden lg:block flex flex-col space-y-12">
         <a class="text-vanilla-400" v-if="previousPageLink" :href="previousPageLink">&larr; {{ previousPageText }}</a>
         <slot name="previous-page-link"></slot>
+        <div class="group w-full py-4 sticky top-20 self-start mr-6 hidden lg:block">
+          <z-scroll-spy
+            class=" space-y-4 transform -translate-x-96 -left-full group-hover:translate-x-0 ease-in-out transition"
+            root-id="content"
+          ></z-scroll-spy>
+        </div>
       </div>
-      <div class="col-span-10">
+      <div class="col-span-9 md:px-4">
         <z-page-label class="mb-2">{{ pageLabel }}</z-page-label>
         <h1 class="text-vanilla-100 mb-4 text-3xl lg:text-4xl leading-11 lg:leading-12 font-bold">
           {{ title }}
@@ -23,15 +29,9 @@
           {{ subtitle }}
         </h2>
         <z-divider class="bg-ink-100"></z-divider>
-      </div>
-    </div>
-    <div class="lg:grid grid-cols-12">
-      <z-scroll-spy
-        class="col-span-2 sticky top-20 self-start mr-6 hidden lg:block space-y-4"
-        root-id="content"
-      ></z-scroll-spy>
-      <div id="content" class="col-span-10 text-vanilla-100 prose prose-sm sm:prose sm:max-w-none">
+        <div id="content" class="col-span-10 text-vanilla-100 prose prose-sm sm:prose sm:max-w-none">
         <slot></slot>
+      </div>
       </div>
     </div>
   </article>
