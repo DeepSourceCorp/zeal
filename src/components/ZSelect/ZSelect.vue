@@ -5,7 +5,7 @@
     @[canBlur]="open = false"
   >
     <div
-      class="selected h-full relative border border-solid "
+      class="selected h-full relative border border-solid"
       :class="[
         (open && 'border-vanilla-400') || borderClass,
         spacing,
@@ -163,14 +163,14 @@ export default Vue.extend({
     }
   },
   mounted() {
-    this.options = this.$children.filter(child => child.$options.name === 'ZOption')
+    this.options = this.$children.filter((child) => child.$options.name === 'ZOption')
 
     if (this.selected) {
       const selectedOpt = this.options
-        .map(child => {
+        .map((child) => {
           return child.$options.propsData as ZOptionPropsT
         })
-        .filter(childProp => {
+        .filter((childProp) => {
           return childProp.value === this.selected
         })
 
@@ -186,7 +186,7 @@ export default Vue.extend({
     }
   },
   watch: {
-    selectedOpt: function(newValue) {
+    selectedOpt: function (newValue) {
       this.$emit('change', newValue)
     }
   }
