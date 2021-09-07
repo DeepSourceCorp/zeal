@@ -2,14 +2,16 @@
   <article class="bg-ink-400">
     <div class="lg:grid grid-cols-12">
       <div class="col-span-3 hidden lg:block flex flex-col">
-        <a class="text-vanilla-400 hover:text-juniper transition-colors" v-if="previousPageLink" :href="previousPageLink">&larr; {{ previousPageText }}</a>
+        <a
+          class="text-vanilla-400 hover:text-juniper transition-colors"
+          v-if="previousPageLink"
+          :href="previousPageLink"
+          >&larr; {{ previousPageText }}</a
+        >
         <slot name="previous-page-link"></slot>
-        
+
         <div class="group w-full py-4 sticky top-20 self-start mr-6 hidden lg:block">
-          <z-scroll-spy
-            class="space-y-4"
-            root-id="content"
-          ></z-scroll-spy>
+          <z-scroll-spy class="space-y-4" root-id="content"></z-scroll-spy>
         </div>
       </div>
       <div class="col-span-9 md:px-4">
@@ -31,8 +33,8 @@
         </h2>
         <z-divider class="bg-ink-100"></z-divider>
         <div id="content" class="col-span-10 text-vanilla-100 prose prose-sm sm:prose sm:max-w-none">
-        <slot></slot>
-      </div>
+          <slot></slot>
+        </div>
       </div>
     </div>
   </article>

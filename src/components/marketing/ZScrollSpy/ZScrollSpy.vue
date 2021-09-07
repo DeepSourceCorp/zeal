@@ -9,20 +9,25 @@
         `${HEADINGS[heading.tagName].slideInDelay}`
       ]"
     >
-    <div class="absolute left-0 -mt-2 group-hover:w-0 group-hover:opacity-0 transition-all ease-in-out" :class="[`w-${HEADINGS[heading.tagName].indicatorSize}`]">
-      <z-divider class="border w-full" :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`]"/>
-    </div>
-    <div class="transform -translate-x-full group-hover:translate-x-0 ease-in-out transition-transform">
-      <a
-        @click.prevent="scrollSmoothlyTo(heading.id)"
-        class="text-sm pl-2 opacity-0 group-hover:opacity-100 transition-colors ease-in-out"
-        :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`]"
-        :href="`#${heading.id}`"
+      <div
+        class="absolute left-0 -mt-2 group-hover:w-0 group-hover:opacity-0 transition-all ease-in-out"
+        :class="[`w-${HEADINGS[heading.tagName].indicatorSize}`]"
       >
-        
-        {{ heading.text }}
-      </a>
-    </div>
+        <z-divider
+          class="border w-full"
+          :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`]"
+        />
+      </div>
+      <div class="transform -translate-x-full group-hover:translate-x-0 ease-in-out transition-transform">
+        <a
+          @click.prevent="scrollSmoothlyTo(heading.id)"
+          class="text-sm pl-2 opacity-0 group-hover:opacity-100 transition-colors ease-in-out"
+          :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`]"
+          :href="`#${heading.id}`"
+        >
+          {{ heading.text }}
+        </a>
+      </div>
     </li>
   </ul>
 </template>
