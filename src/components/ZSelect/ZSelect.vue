@@ -2,17 +2,24 @@
   <div
     class="custom-select relative w-full text-left outline-none h-full leading-8"
     :tabindex="tabIndex"
-    @blur.stop="open = false"
+    @[canBlur]="open = false"
   >
     <div
-      class="selected h-full relative border border-solid text-vanilla-300 cursor-pointer"
-      :class="[(open && 'border-vanilla-400') || borderClass, spacing, backgroundClass, borderRadius]"
-      @click="open = !open"
+      class="selected h-full relative border border-solid "
+      :class="[
+        (open && 'border-vanilla-400') || borderClass,
+        spacing,
+        backgroundClass,
+        borderRadius,
+        getTextColor,
+        getCursorType
+      ]"
+      @[canClick]="open = !open"
     >
       <div
         v-if="selectedOpt"
-        class="selected-option flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full text-"
-        :class="[getTextSize]"
+        class="selected-option flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full"
+        :class="[getTextSize, getCursorType]"
       >
         {{ selectedOptLabel || selectedOpt }}
       </div>
@@ -24,18 +31,19 @@
       >
         {{ placeholder }}
       </div>
-      <span
+      <button
         v-if="selectedOpt && clearable"
         class="absolute right-3 top-50 transform -translate-y-1/2"
         @click.stop="clearSelected()"
       >
-        <z-icon icon="x" size="small"></z-icon>
-      </span>
+        <z-icon icon="x" size="small" :color="getIconColor"></z-icon>
+      </button>
       <span v-else class="absolute top-50 right-3 transform -translate-y-1/2">
         <z-icon
           icon="chevron-down"
           size="small"
           class="transform transition-all duration-300"
+          :color="getIconColor"
           :class="(open && 'rotate-180') || 'rotate-0'"
         ></z-icon>
       </span>
@@ -101,6 +109,14 @@ export default Vue.extend({
     textSize: {
       type: String,
       default: 'text-xs'
+    },
+    disabled: {
+      default: false,
+      type: Boolean
+    },
+    readOnly: {
+      default: false,
+      type: Boolean
     }
   },
   model: {
@@ -117,23 +133,44 @@ export default Vue.extend({
     }
   },
   computed: {
+    canClick(): string {
+      if (!this.disabled && !this.readOnly) return 'click'
+      return ''
+    },
+    canBlur(): string {
+      if (!this.disabled && !this.readOnly) return 'blur.stop'
+      return ''
+    },
     getTextSize(): string {
       const validTextSizes = ['text-xs', 'text-sm', 'text-base', 'text-lg', 'text-xl']
       if (validTextSizes.includes(this.textSize)) {
         return this.textSize
       }
       return 'text-xs'
+    },
+    getTextColor(): string {
+      if (this.disabled) return 'text-slate'
+      if (this.readOnly) return 'text-vanilla-400'
+      return 'text-vanilla-300'
+    },
+    getCursorType(): string {
+      if (this.disabled || this.readOnly) return 'cursor-not-allowed'
+      return 'cursor-pointer'
+    },
+    getIconColor(): string {
+      if (this.disabled) return 'slate'
+      return 'vanilla-400'
     }
   },
   mounted() {
-    this.options = this.$children.filter((child) => child.$options.name === 'ZOption')
+    this.options = this.$children.filter(child => child.$options.name === 'ZOption')
 
     if (this.selected) {
       const selectedOpt = this.options
-        .map((child) => {
+        .map(child => {
           return child.$options.propsData as ZOptionPropsT
         })
-        .filter((childProp) => {
+        .filter(childProp => {
           return childProp.value === this.selected
         })
 
@@ -149,7 +186,7 @@ export default Vue.extend({
     }
   },
   watch: {
-    selectedOpt: function (newValue) {
+    selectedOpt: function(newValue) {
       this.$emit('change', newValue)
     }
   }
