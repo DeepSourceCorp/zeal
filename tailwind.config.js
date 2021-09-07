@@ -1063,7 +1063,7 @@ module.exports = {
     verticalAlign: ['responsive'],
     visibility: ['responsive'],
     whitespace: ['responsive'],
-    width: ['responsive'],
+    width: ['responsive', 'group-hover'],
     wordBreak: ['responsive'],
     textOverflow: ['responsive'],
     zIndex: ['responsive'],
