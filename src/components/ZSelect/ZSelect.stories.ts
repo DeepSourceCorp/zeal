@@ -4,6 +4,7 @@ import '../../assets/css/layout.css'
 import ZSelect from './ZSelect.vue'
 import ZOption from '../ZOption/ZOption.vue'
 import ZIcon from '../ZIcon/ZIcon.vue'
+import ZToggle from '../ZToggle/ZToggle.vue'
 
 export default {
   title: 'Select',
@@ -51,6 +52,98 @@ export const DefaultSelect = () => ({
                     </z-option>
                 </z-select>
                 <div class='text-sm text-vanilla-400'>Selected Value: <span class='text-juniper font-bold'>{{ value }}</span></div>
+              </div>
+        </div>`
+})
+
+export const DisabledSelect = () => ({
+  components: { ZSelect, ZOption, ZIcon, ZToggle },
+  data() {
+    return {
+      value: 7,
+      disabled: true,
+      options: [
+        {
+          value: 7,
+          label: 'Last 7 Days'
+        },
+        {
+          value: 14,
+          label: 'Last 14 Days'
+        },
+        {
+          value: 30,
+          label: 'Last 30 Days'
+        },
+        {
+          value: 45,
+          label: 'Last 45 Days'
+        },
+        {
+          value: 60,
+          label: 'Last 60 Days'
+        }
+      ]
+    }
+  },
+  template: `<div class='padded-container'>
+              <div class="select-container space-y-4">
+                <z-select v-model="value" :disabled="disabled">
+                    <z-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                    </z-option>
+                </z-select>
+                <div class='text-sm text-vanilla-400'>Selected Value: <span class='text-juniper font-bold'>{{ value }}</span></div>
+                <div class='text-sm text-vanilla-400'>Disabled: <z-toggle v-model="disabled"/></div> 
+              </div>
+        </div>`
+})
+
+export const ReadOnlySelect = () => ({
+  components: { ZSelect, ZOption, ZIcon, ZToggle },
+  data() {
+    return {
+      value: 7,
+      readOnly: true,
+      options: [
+        {
+          value: 7,
+          label: 'Last 7 Days'
+        },
+        {
+          value: 14,
+          label: 'Last 14 Days'
+        },
+        {
+          value: 30,
+          label: 'Last 30 Days'
+        },
+        {
+          value: 45,
+          label: 'Last 45 Days'
+        },
+        {
+          value: 60,
+          label: 'Last 60 Days'
+        }
+      ]
+    }
+  },
+  template: `<div class='padded-container'>
+              <div class="select-container space-y-4">
+                <z-select v-model="value" :read-only="readOnly">
+                    <z-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                    </z-option>
+                </z-select>
+                <div class='text-sm text-vanilla-400'>Selected Value: <span class='text-juniper font-bold'>{{ value }}</span></div>
+                <div class='text-sm text-vanilla-400'>Read only: <z-toggle v-model="readOnly"/></div> 
               </div>
         </div>`
 })
