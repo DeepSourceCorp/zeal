@@ -1,31 +1,28 @@
 <template>
-  <ul class="group" :class="[`text-${align}`]">
+  <ul :class="[`text-${align}`]">
     <li
       v-for="heading in headingsMap"
       :key="heading.id"
-      class="
-        leading-4
-        transform
-        -translate-x-full
-        opacity-0
-        group-hover:translate-x-0 group-hover:opacity-100
-        ease-in-out
-        transition
-      "
+      class="leading-4"
       :class="[
-        `${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`,
         `${HEADING_ALIGNMENT_CLASSES[align]}-${HEADINGS[heading.tagName].indentSpace}`,
-        `${HEADINGS[heading.tagName].delay}`
+        `${HEADINGS[heading.tagName].slideInDelay}`
       ]"
     >
+    <div class="absolute left-0 -mt-2 group-hover:w-0 group-hover:opacity-0 transition-all ease-in-out" :class="[`w-${HEADINGS[heading.tagName].indicatorSize}`]">
+      <z-divider class="border w-full" :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`]"/>
+    </div>
+    <div class="transform -translate-x-full group-hover:translate-x-0 ease-in-out transition-transform">
       <a
         @click.prevent="scrollSmoothlyTo(heading.id)"
-        v-if="isHeadingVisible(heading)"
-        class="text-sm"
+        class="text-sm pl-2 opacity-0 group-hover:opacity-100 transition-colors ease-in-out"
+        :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`]"
         :href="`#${heading.id}`"
       >
+        
         {{ heading.text }}
       </a>
+    </div>
     </li>
   </ul>
 </template>
@@ -33,6 +30,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import smoothscroll from 'smoothscroll-polyfill'
+import ZDivider from '../../ZDivider'
 
 interface Heading {
   id: string | null
@@ -41,8 +39,8 @@ interface Heading {
   block: Heading['id']
 }
 enum HEADING_STATE_CLASSES {
-  active = 'text-vanilla-100 font-semibold',
-  inactive = 'text-slate'
+  active = 'text-vanilla-100 border-l border-juniper',
+  inactive = 'text-slate hover:text-vanilla-400'
 }
 enum HEADING_ALIGNMENT_CLASSES {
   left = 'ml',
@@ -52,22 +50,28 @@ const HEADINGS = {
   h1: {
     tag: 'h1',
     indentSpace: 0,
-    delay: ''
+    slideInDelay: '',
+    indicatorSize: 10
   },
   h2: {
     tag: 'h2',
     indentSpace: 4,
-    delay: 'delay-100'
+    slideInDelay: 'delay-100',
+    indicatorSize: 8
   },
   h3: {
     tag: 'h3',
     indentSpace: 8,
-    delay: 'delay-200'
+    slideInDelay: 'delay-200',
+    indicatorSize: 6
   }
 }
 
 export default Vue.extend({
   name: 'ZScrollSpy',
+  components: {
+    ZDivider
+  },
   props: {
     rootId: {
       type: String,
@@ -166,15 +170,6 @@ export default Vue.extend({
        * as the `activeHeading`
        */
       return this.activeHeading.id ? this.activeHeading.id === id : false
-    },
-    isHeadingVisible({ tagName, block }: Heading): boolean {
-      /**
-       * Allows to show headings if their block is currently active.
-       */
-      if (tagName === this.primaryHeadingTagName) {
-        return true
-      }
-      return this.activeHeading.id ? this.headingsMap[this.activeHeading.id].block === block : false
     },
     setPrimaryHeadingTagName() {
       /**
