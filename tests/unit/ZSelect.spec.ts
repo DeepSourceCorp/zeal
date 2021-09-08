@@ -129,6 +129,66 @@ const SelectWithCustomOptionsTemplate = {
   }
 }
 
+const disabledSelect = {
+  template: `<z-select v-model="value" :disabled="true">
+                <z-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                </z-option>
+            </z-select>`,
+  components: {
+    ZSelect,
+    ZOption
+  },
+  data() {
+    return {
+      value: '',
+      options: [
+        {
+          value: 'Option 1',
+          label: 'Option 1'
+        },
+        {
+          value: 'Option 2',
+          label: 'Option 2'
+        }
+      ]
+    }
+  }
+}
+
+const readOnlySelect = {
+  template: `<z-select v-model="value" :read-only="true">
+                <z-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                </z-option>
+            </z-select>`,
+  components: {
+    ZSelect,
+    ZOption
+  },
+  data() {
+    return {
+      value: '',
+      options: [
+        {
+          value: 'Option 1',
+          label: 'Option 1'
+        },
+        {
+          value: 'Option 2',
+          label: 'Option 2'
+        }
+      ]
+    }
+  }
+}
+
 describe('Select Component', () => {
   it('renders the default select component', () => {
     const wrapper = mount(defaultSelect)
@@ -150,5 +210,15 @@ describe('Select Component', () => {
     const wrapper = mount(SelectWithCustomOptionsTemplate)
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.findAll('.z-option svg').length).toEqual(2)
+  })
+  it('renders a disabled select component', () => {
+    const wrapper = mount(disabledSelect)
+    expect(wrapper.classes()).toContain('is-disabled')
+    expect(wrapper.findAll('.z-option').length).toEqual(2)
+  })
+  it('renders a read only select component', () => {
+    const wrapper = mount(readOnlySelect)
+    expect(wrapper.classes()).toContain('is-readonly')
+    expect(wrapper.findAll('.z-option').length).toEqual(2)
   })
 })
