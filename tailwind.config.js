@@ -1044,7 +1044,7 @@ module.exports = {
     placeSelf: ['responsive'],
     placeholderColor: ['responsive', 'focus'],
     placeholderOpacity: ['responsive', 'focus'],
-    pointerEvents: ['responsive'],
+    pointerEvents: ['responsive', 'group-hover'],
     position: ['responsive'],
     resize: ['responsive'],
     ringColor: ['responsive', 'focus-within', 'focus'],
