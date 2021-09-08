@@ -238,7 +238,7 @@ export default Vue.extend({
       if (this.scrollSpeed === 0) {
         this.activeHeading = this.intersectingHeading
       }
-    } 
+    }
   }
 })
 </script>
