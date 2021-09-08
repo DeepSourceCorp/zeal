@@ -1,5 +1,5 @@
 <template>
-  <ul :class="[`text-${align}`]">
+  <ul class="group" :class="[`text-${align}`]">
     <li
       v-for="heading in headingsMap"
       :key="heading.id"
@@ -14,14 +14,14 @@
         :class="[`w-${HEADINGS[heading.tagName].indicatorSize}`]"
       >
         <z-divider
-          class="border w-full transition-colors ease-in-out"
+          class="border w-full transition-colors ease-bounce"
           :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`]"
         />
       </div>
-      <div class="transform -translate-x-full group-hover:translate-x-0 ease-in-out transition-transform">
+      <div class="transform -translate-x-full group-hover:translate-x-0 ease-bounce transition-transform">
         <a
           @click.prevent="scrollSmoothlyTo(heading.id)"
-          class="text-sm pl-2 opacity-0 group-hover:opacity-100 transition-colors ease-in-out"
+          class="text-xs pl-2 opacity-0 group-hover:opacity-100 transition-colors ease-in-out line-clamp-1"
           :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`]"
           :href="`#${heading.id}`"
         >
@@ -60,13 +60,13 @@ const HEADINGS = {
   },
   h2: {
     tag: 'h2',
-    indentSpace: 4,
+    indentSpace: 6,
     slideInDelay: 'delay-100',
     indicatorSize: 8
   },
   h3: {
     tag: 'h3',
-    indentSpace: 8,
+    indentSpace: 12,
     slideInDelay: 'delay-200',
     indicatorSize: 6
   }
