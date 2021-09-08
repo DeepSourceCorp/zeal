@@ -14,7 +14,7 @@
         :class="[`w-${HEADINGS[heading.tagName].indicatorSize}`]"
       >
         <z-divider
-          class="border w-full"
+          class="border w-full transition-colors ease-in-out"
           :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`]"
         />
       </div>
@@ -72,6 +72,8 @@ const HEADINGS = {
   }
 }
 
+const SCROLL_SPEED_SAMPLING_DELAY = 50
+
 export default Vue.extend({
   name: 'ZScrollSpy',
   components: {
@@ -95,12 +97,16 @@ export default Vue.extend({
   data() {
     return {
       observer: {} as IntersectionObserver,
+      intersectingHeading: {} as Heading,
       activeHeading: {} as Heading,
       primaryHeadingTagName: '' as Heading['tagName'],
       headingsMap: {} as Record<string, Heading>,
       HEADINGS,
       HEADING_ALIGNMENT_CLASSES,
-      HEADING_STATE_CLASSES
+      HEADING_STATE_CLASSES,
+      scrollPos: 0,
+      scrollSpeed: 0,
+      scrollSpeedInterval: 0
     }
   },
   computed: {
@@ -122,6 +128,10 @@ export default Vue.extend({
     })
     this.setPrimaryHeadingTagName()
     this.breakDownHeadingsIntoBlocks()
+    this.setScrollMeasurementInterval()
+  },
+  beforeDestroy() {
+    this.clearScrollMeasurementInterval()
   },
   methods: {
     addAsHeadingToHeadingsMap(headingElement: Element) {
@@ -157,7 +167,7 @@ export default Vue.extend({
       entries.forEach(({ target, isIntersecting }: IntersectionObserverEntry) => {
         const { id } = this.getHeading(target)
         if (id && isIntersecting) {
-          this.activeHeading = this.headingsMap[id]
+          this.intersectingHeading = this.headingsMap[id]
         }
       })
     },
@@ -208,7 +218,27 @@ export default Vue.extend({
           behavior: 'smooth'
         })
       }
+    },
+    setScrollSpeed() {
+      const curPos = window.scrollY
+      this.scrollSpeed = Math.abs(this.scrollPos - curPos) / SCROLL_SPEED_SAMPLING_DELAY
+      this.scrollPos = window.scrollY
+    },
+    setScrollMeasurementInterval() {
+      this.scrollSpeedInterval = setInterval(() => {
+        this.setScrollSpeed()
+      }, SCROLL_SPEED_SAMPLING_DELAY)
+    },
+    clearScrollMeasurementInterval() {
+      clearInterval(this.scrollSpeedInterval)
     }
+  },
+  watch: {
+    scrollSpeed() {
+      if (this.scrollSpeed === 0) {
+        this.activeHeading = this.intersectingHeading
+      }
+    } 
   }
 })
 </script>
