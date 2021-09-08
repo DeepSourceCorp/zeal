@@ -1,22 +1,33 @@
 <template>
-  <ul :class="[`text-${align}`]">
+  <ul class="group" :class="[`text-${align}`]">
     <li
       v-for="heading in headingsMap"
       :key="heading.id"
-      class="leading-4"
+      class="leading-4 pointer-events-none group-hover:pointer-events-auto"
       :class="[
-        `${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`,
-        `${HEADING_ALIGNMENT_CLASSES[align]}-${HEADINGS[heading.tagName].indentSpace}`
+        `${HEADING_ALIGNMENT_CLASSES[align]}-${HEADINGS[heading.tagName].indentSpace}`,
+        `${HEADINGS[heading.tagName].slideInDelay}`
       ]"
     >
-      <a
-        @click.prevent="scrollSmoothlyTo(heading.id)"
-        v-if="isHeadingVisible(heading)"
-        class="text-sm"
-        :href="`#${heading.id}`"
+      <div
+        class="absolute left-0 -mt-2 group-hover:w-0 group-hover:opacity-0 transition-all ease-in-out"
+        :class="[`w-${HEADINGS[heading.tagName].indicatorSize}`]"
       >
-        {{ heading.text }}
-      </a>
+        <z-divider
+          class="border w-full transition-colors ease-bounce"
+          :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`]"
+        />
+      </div>
+      <div class="transform -translate-x-full group-hover:translate-x-0 ease-bounce transition-transform">
+        <a
+          @click.prevent="scrollSmoothlyTo(heading.id)"
+          class="text-xs pl-2 opacity-0 group-hover:opacity-100 transition-colors ease-in-out line-clamp-1"
+          :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`]"
+          :href="`#${heading.id}`"
+        >
+          {{ heading.text }}
+        </a>
+      </div>
     </li>
   </ul>
 </template>
@@ -24,6 +35,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import smoothscroll from 'smoothscroll-polyfill'
+import ZDivider from '../../ZDivider'
 
 interface Heading {
   id: string | null
@@ -32,8 +44,8 @@ interface Heading {
   block: Heading['id']
 }
 enum HEADING_STATE_CLASSES {
-  active = 'text-vanilla-100 font-semibold',
-  inactive = 'text-slate'
+  active = 'text-vanilla-100 border-l border-juniper',
+  inactive = 'text-slate hover:text-vanilla-400'
 }
 enum HEADING_ALIGNMENT_CLASSES {
   left = 'ml',
@@ -42,20 +54,31 @@ enum HEADING_ALIGNMENT_CLASSES {
 const HEADINGS = {
   h1: {
     tag: 'h1',
-    indentSpace: 0
+    indentSpace: 0,
+    slideInDelay: '',
+    indicatorSize: 10
   },
   h2: {
     tag: 'h2',
-    indentSpace: 4
+    indentSpace: 6,
+    slideInDelay: 'delay-100',
+    indicatorSize: 8
   },
   h3: {
     tag: 'h3',
-    indentSpace: 8
+    indentSpace: 12,
+    slideInDelay: 'delay-200',
+    indicatorSize: 6
   }
 }
 
+const SCROLL_SPEED_SAMPLING_DELAY = 50
+
 export default Vue.extend({
   name: 'ZScrollSpy',
+  components: {
+    ZDivider
+  },
   props: {
     rootId: {
       type: String,
@@ -74,12 +97,16 @@ export default Vue.extend({
   data() {
     return {
       observer: {} as IntersectionObserver,
+      intersectingHeading: {} as Heading,
       activeHeading: {} as Heading,
       primaryHeadingTagName: '' as Heading['tagName'],
       headingsMap: {} as Record<string, Heading>,
       HEADINGS,
       HEADING_ALIGNMENT_CLASSES,
-      HEADING_STATE_CLASSES
+      HEADING_STATE_CLASSES,
+      scrollPos: 0,
+      scrollSpeed: 0,
+      scrollSpeedInterval: 0
     }
   },
   computed: {
@@ -101,6 +128,10 @@ export default Vue.extend({
     })
     this.setPrimaryHeadingTagName()
     this.breakDownHeadingsIntoBlocks()
+    this.setScrollMeasurementInterval()
+  },
+  beforeDestroy() {
+    this.clearScrollMeasurementInterval()
   },
   methods: {
     addAsHeadingToHeadingsMap(headingElement: Element) {
@@ -136,7 +167,7 @@ export default Vue.extend({
       entries.forEach(({ target, isIntersecting }: IntersectionObserverEntry) => {
         const { id } = this.getHeading(target)
         if (id && isIntersecting) {
-          this.activeHeading = this.headingsMap[id]
+          this.intersectingHeading = this.headingsMap[id]
         }
       })
     },
@@ -154,15 +185,6 @@ export default Vue.extend({
        * as the `activeHeading`
        */
       return this.activeHeading.id ? this.activeHeading.id === id : false
-    },
-    isHeadingVisible({ tagName, block }: Heading): boolean {
-      /**
-       * Allows to show headings if their block is currently active.
-       */
-      if (tagName === this.primaryHeadingTagName) {
-        return true
-      }
-      return this.activeHeading.id ? this.headingsMap[this.activeHeading.id].block === block : false
     },
     setPrimaryHeadingTagName() {
       /**
@@ -195,6 +217,26 @@ export default Vue.extend({
           top: elem.offsetTop - this.headingOffsetTop,
           behavior: 'smooth'
         })
+      }
+    },
+    setScrollSpeed() {
+      const curPos = window.scrollY
+      this.scrollSpeed = Math.abs(this.scrollPos - curPos) / SCROLL_SPEED_SAMPLING_DELAY
+      this.scrollPos = window.scrollY
+    },
+    setScrollMeasurementInterval() {
+      this.scrollSpeedInterval = setInterval(() => {
+        this.setScrollSpeed()
+      }, SCROLL_SPEED_SAMPLING_DELAY)
+    },
+    clearScrollMeasurementInterval() {
+      clearInterval(this.scrollSpeedInterval)
+    }
+  },
+  watch: {
+    scrollSpeed() {
+      if (this.scrollSpeed === 0) {
+        this.activeHeading = this.intersectingHeading
       }
     }
   }

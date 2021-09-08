@@ -22,6 +22,7 @@
     "build:css": "NODE_ENV=production postcss src/assets/css/tailwind.css -o dist/tailwind.css && postcss src/assets/css/typography.css -o dist/typography.css && postcss src/assets/css/layout.css -o dist/layout.css && postcss src/assets/css/chart.css -o dist/chart.css && postcss src/assets/css/tooltip.css -o dist/tooltip.css"
   },
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.2.1",
     "@tailwindcss/postcss7-compat": "^2.2.7",
     "@tailwindcss/typography": "^0.4.1",
     "@tiptap/extension-bubble-menu": "^2.0.0-beta.25",

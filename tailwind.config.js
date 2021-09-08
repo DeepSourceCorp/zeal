@@ -344,6 +344,7 @@ module.exports = {
     }),
     maxWidth: (theme, { breakpoints }) => ({
       none: 'none',
+      '2xs': '16rem',
       xs: '20rem',
       sm: '24rem',
       md: '28rem',
@@ -750,7 +751,8 @@ module.exports = {
       linear: 'linear',
       in: 'cubic-bezier(0.4, 0, 1, 1)',
       out: 'cubic-bezier(0, 0, 0.2, 1)',
-      'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)'
+      'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
+      bounce: 'cubic-bezier(0.175, 0.885, 0.32, 1.05)'
     },
     transitionDuration: {
       DEFAULT: '150ms',
@@ -1042,7 +1044,7 @@ module.exports = {
     placeSelf: ['responsive'],
     placeholderColor: ['responsive', 'focus'],
     placeholderOpacity: ['responsive', 'focus'],
-    pointerEvents: ['responsive'],
+    pointerEvents: ['responsive', 'group-hover'],
     position: ['responsive'],
     resize: ['responsive'],
     ringColor: ['responsive', 'focus-within', 'focus'],
@@ -1063,7 +1065,7 @@ module.exports = {
     verticalAlign: ['responsive'],
     visibility: ['responsive'],
     whitespace: ['responsive'],
-    width: ['responsive'],
+    width: ['responsive', 'group-hover'],
     wordBreak: ['responsive'],
     textOverflow: ['responsive'],
     zIndex: ['responsive'],
@@ -1084,7 +1086,7 @@ module.exports = {
     transformOrigin: ['responsive'],
     scale: ['responsive', 'hover', 'focus'],
     rotate: ['responsive', 'hover', 'focus'],
-    translate: ['responsive', 'hover', 'focus'],
+    translate: ['responsive', 'hover', 'focus', 'group-hover'],
     skew: ['responsive', 'hover', 'focus'],
     transitionProperty: ['responsive'],
     transitionTimingFunction: ['responsive'],
@@ -1096,6 +1098,7 @@ module.exports = {
   corePlugins: {},
   plugins: [
     require('@tailwindcss/typography'),
+    require('@tailwindcss/line-clamp'),
     plugin(function ({ addVariant, e, postcss }) {
       addVariant('no-filter', ({ container, separator }) => {
         const supportsRule = postcss.atRule({
