@@ -13,7 +13,7 @@
           <z-scroll-spy class="space-y-3" root-id="content"></z-scroll-spy>
         </div>
       </div>
-      <div class="col-span-9 md:px-4">
+      <div class="col-span-9 lg:pl-6">
         <z-page-label class="mb-2">{{ pageLabel }}</z-page-label>
         <h1 class="text-vanilla-100 mb-4 text-3xl lg:text-4xl leading-11 lg:leading-12 font-bold">
           {{ title }}
