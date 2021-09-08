@@ -8,6 +8,8 @@ import ZAvatar from '../ZAvatar/ZAvatar.vue'
 import ZMenu from '.'
 import ZMenuItem from './ZMenuItem'
 import ZMenuSection from './ZMenuSection'
+import ZButton from '../ZButton/ZButton.vue'
+
 
 export default {
   title: 'Menu',
@@ -15,14 +17,11 @@ export default {
   excludeStories: /.*Data$/
 }
 
-export const BasicMenu = () => ({
+export const DefaultMenu = () => ({
   components: { ZMenu, ZMenuItem, ZMenuSection, ZDivider },
   template: `
     <div class="container">
         <z-menu>
-          <template slot="trigger">
-            <span class="bg-ink-100 text-vanilla-100 p-2 px-4 rounded-sm shadow-sm outline-none focus:outline-none">Menu</span>
-          </template>
           <template slot="body">
             <z-menu-section title="Logged In As">
               <z-menu-item>evan@deepsource.io</z-menu-item>
@@ -48,12 +47,12 @@ export const BasicMenu = () => ({
 })
 
 export const MultipleSizes = () => ({
-  components: { ZMenu, ZMenuItem, ZMenuSection, ZDivider },
+  components: { ZMenu, ZMenuItem, ZMenuSection, ZDivider, ZButton },
   template: `
     <div class="container flex align-top gap-5">
         <z-menu size="large">
-          <template slot="trigger">
-            <span class="bg-ink-100 text-vanilla-100 p-3 px-5 text-sm rounded-sm shadow-sm outline-none focus:outline-none">Menu</span>
+          <template v-slot:trigger="{ toggle }">
+            <z-button @click="toggle">Menu 1</z-button>
           </template>
           <template slot="body">
             <z-menu-item :action="goToSettings">Account Settings</z-menu-item>
@@ -62,8 +61,8 @@ export const MultipleSizes = () => ({
           </template>
         </z-menu>
         <z-menu size="base">
-          <template slot="trigger">
-            <span class="bg-ink-100 text-vanilla-100 p-2 px-4 text-sm rounded-sm shadow-sm outline-none focus:outline-none">Menu</span>
+          <template v-slot:trigger="{ toggle }">
+            <z-button size="small" @click="toggle">Menu 2</z-button>
           </template>
           <template slot="body">
             <z-menu-item :action="goToSettings">Account Settings</z-menu-item>
@@ -72,8 +71,8 @@ export const MultipleSizes = () => ({
           </template>
         </z-menu>
         <z-menu size="small">
-          <template slot="trigger">
-            <span class="bg-ink-100 text-vanilla-100 p-1 px-2 text-sm rounded-sm shadow-sm outline-none focus:outline-none">Menu</span>
+          <template v-slot:trigger="{ toggle }">
+            <z-button size="x-small" @click="toggle">Menu 3</z-button>
           </template>
           <template slot="body">
             <z-menu-item :action="goToSettings">Account Settings</z-menu-item>
@@ -90,13 +89,10 @@ export const MultipleSizes = () => ({
 })
 
 export const MenuWithIcons = () => ({
-  components: { ZMenu, ZMenuItem, ZMenuSection, ZDivider },
+  components: { ZMenu, ZMenuItem, ZMenuSection, ZDivider, ZButton },
   template: `
     <div class="container">
         <z-menu>
-          <template slot="trigger">
-            <span class="bg-ink-100 text-vanilla-100 p-2 px-4 rounded-sm shadow-sm outline-none focus:outline-none">Menu</span>
-          </template>
           <template slot="body">
             <z-menu-section title="Logged In As">
               <z-menu-item>evan@deepsource.io</z-menu-item>
@@ -125,14 +121,16 @@ export const MenuWithAvatarTrigger = () => ({
   components: { ZMenu, ZMenuItem, ZMenuSection, ZDivider, ZAvatar },
   template: `
     <div class="container">
-        <z-menu>
-          <template slot="trigger">
-          <z-avatar
-            type="span"
-            image="https://randomuser.me/api/portraits/women/24.jpg"
-            user-name="Akshay Paliwal"
-            href="https://example.com"
-          ></z-avatar>
+        <z-menu body-spacing="py-0.5">
+          <template v-slot:trigger="{ toggle }">
+          <button @click="toggle">
+            <z-avatar
+              type="span"
+              image="https://randomuser.me/api/portraits/women/24.jpg"
+              user-name="Akshay Paliwal"
+              href="https://example.com"
+            ></z-avatar>
+          </button>
           </template>
           <template slot="body">
             <z-menu-section title="Logged In As">
@@ -156,10 +154,7 @@ export const MenuWithComplexItems = () => ({
   components: { ZMenu, ZMenuItem, ZMenuSection, ZDivider, ZAvatar },
   template: `
     <div class="container">
-        <z-menu>
-          <template slot="trigger">
-            <span class="bg-ink-100 text-vanilla-100 p-2 px-4 rounded-sm shadow-sm outline-none focus:outline-none">Switch User</span>
-          </template>
+        <z-menu trigger-label="Switch user">
           <template slot="body">
             <z-menu-section title="Switch User">
               <z-menu-item :action="goToSettings">
