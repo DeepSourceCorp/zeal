@@ -1,6 +1,6 @@
 <template>
   <span class="relative z-menu">
-    <div class="leading-none" ref="menu-trigger">
+    <div class="leading-none inline-block" ref="menu-trigger">
       <slot name="trigger" :toggle="toggle" :isOpen="isOpen">
         <z-button :label="triggerLabel" @click="toggle" />
       </slot>
@@ -47,28 +47,28 @@ export default Vue.extend({
     direction: {
       type: String,
       default: 'right',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['left', 'right'].includes(value)
       }
     },
     placement: {
       type: String,
       default: 'bottom',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['top', 'bottom'].includes(value)
       }
     },
     size: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['small', 'base', 'large'].includes(value)
       }
     },
     width: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['x-small', 'small', 'base', 'large', 'x-large', '2x-large'].includes(value)
       }
     },
