@@ -10,7 +10,6 @@ import ZMenuItem from './ZMenuItem'
 import ZMenuSection from './ZMenuSection'
 import ZButton from '../ZButton/ZButton.vue'
 
-
 export default {
   title: 'Menu',
   component: ZMenu,
