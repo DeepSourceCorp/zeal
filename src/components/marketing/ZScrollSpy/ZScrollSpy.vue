@@ -3,7 +3,7 @@
     <li
       v-for="heading in headingsMap"
       :key="heading.id"
-      class="leading-4"
+      class="leading-4 pointer-events-none group-hover:pointer-events-auto"
       :class="[
         `${HEADING_ALIGNMENT_CLASSES[align]}-${HEADINGS[heading.tagName].indentSpace}`,
         `${HEADINGS[heading.tagName].slideInDelay}`
