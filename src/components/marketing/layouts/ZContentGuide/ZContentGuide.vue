@@ -9,7 +9,7 @@
           >&larr; {{ previousPageText }}</a
         >
         <slot name="previous-page-link"></slot>
-        <div class="py-4 max-w-2xs xl:max-w-lg 2xl:max-w-2xl fixed left-0 top-1/3 self-start ml-1 hidden lg:block">
+        <div class="py-4 max-w-2xs xl:max-w-lg 2xl:max-w-2xl sticky top-1/3 self-start ml-1 hidden lg:block">
           <z-scroll-spy class="space-y-3" root-id="content"></z-scroll-spy>
         </div>
       </div>
