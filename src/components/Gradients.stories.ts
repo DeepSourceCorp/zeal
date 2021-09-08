@@ -49,7 +49,7 @@ export const TextGradients = () => ({
         <pre class="text-vanilla-400 opacity-70 text-xxs">text-transparent bg-clip-text</pre>
       </div>
       <div>
-        <h3 class="mt-2 text-3xl font-bold text-vanilla-transparent bg-clip-text-gradient-dark-dawn">Dark Dawn</h3>
+        <h3 class="mt-2 text-3xl font-bold text-transparent bg-clip-text bg-gradient-dark-dawn">Dark Dawn</h3>
         <pre class="text-vanilla-400 text-xs">bg-gradient-dark-dawn</pre>
         <pre class="text-vanilla-400 opacity-70 text-xxs">text-transparent bg-clip-text</pre>
       </div>
@@ -84,7 +84,7 @@ export const TextGradientsOnLightBackground = () => ({
         <pre class="text-vanilla-400 opacity-70 text-xxs">text-transparent bg-clip-text</pre>
       </div>
       <div>
-        <h3 class="mt-2 text-3xl font-bold text-vanilla-transparent bg-clip-text-gradient-dark-dawn">Dark Dawn</h3>
+        <h3 class="mt-2 text-3xl font-bold text-transparent bg-clip-text bg-gradient-dark-dawn">Dark Dawn</h3>
         <pre class="text-vanilla-400 text-xs">bg-gradient-dark-dawn</pre>
         <pre class="text-vanilla-400 opacity-70 text-xxs">text-transparent bg-clip-text</pre>
       </div>
