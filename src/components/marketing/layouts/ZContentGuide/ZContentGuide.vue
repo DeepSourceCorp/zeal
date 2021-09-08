@@ -11,7 +11,7 @@
         <slot name="previous-page-link"></slot>
         <div class="py-4 fixed left-0 top-1/3 self-start ml-1 hidden lg:block">
           <z-scroll-spy class="space-y-3" root-id="content"></z-scroll-spy>
-        </div>        
+        </div>
       </div>
       <div class="col-span-9 md:px-4">
         <z-page-label class="mb-2">{{ pageLabel }}</z-page-label>
