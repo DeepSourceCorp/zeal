@@ -3,7 +3,7 @@
     :tabindex="tabIndex"
     class="custom-select relative w-full text-left outline-none h-full leading-8"
     :class="{ 'is-disabled': disabled, 'is-readonly': readOnly }"
-    @[canBlur]="open = false"
+    @blur.stop="!this.disabled && !this.readOnly && blurEvent()"
   >
     <div
       class="selected h-full relative border border-solid"
@@ -138,10 +138,6 @@ export default Vue.extend({
       if (!this.disabled && !this.readOnly) return 'click'
       return ''
     },
-    canBlur(): string {
-      if (!this.disabled && !this.readOnly) return 'blur.stop'
-      return ''
-    },
     getTextSize(): string {
       const validTextSizes = ['text-xs', 'text-sm', 'text-base', 'text-lg', 'text-xl']
       if (validTextSizes.includes(this.textSize)) {
@@ -164,14 +160,14 @@ export default Vue.extend({
     }
   },
   mounted() {
-    this.options = this.$children.filter((child) => child.$options.name === 'ZOption')
+    this.options = this.$children.filter(child => child.$options.name === 'ZOption')
 
     if (this.selected) {
       const selectedOpt = this.options
-        .map((child) => {
+        .map(child => {
           return child.$options.propsData as ZOptionPropsT
         })
-        .filter((childProp) => {
+        .filter(childProp => {
           return childProp.value === this.selected
         })
 
@@ -184,10 +180,13 @@ export default Vue.extend({
   methods: {
     clearSelected(): void {
       this.selectedOpt = null
+    },
+    blurEvent(): void {
+      this.open = false
     }
   },
   watch: {
-    selectedOpt: function (newValue) {
+    selectedOpt: function(newValue) {
       this.$emit('change', newValue)
     }
   }
