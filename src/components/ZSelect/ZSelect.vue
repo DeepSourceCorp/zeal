@@ -3,7 +3,7 @@
     :tabindex="tabIndex"
     class="custom-select relative w-full text-left outline-none h-full leading-8"
     :class="{ 'is-disabled': disabled, 'is-readonly': readOnly }"
-    @blur.stop="!this.disabled && !this.readOnly && blurEvent()"
+    @blur.stop="!disabled && !readOnly && blurEvent()"
   >
     <div
       class="selected h-full relative border border-solid"
