@@ -26,29 +26,29 @@ module.exports = {
     },
     colors,
     gradients: (theme) => ({
-      ocean: ['98.66deg', `${theme('colors.sea-glass')} 9.7%`, `${theme('colors.aqua')} 96.6%`],
+      ocean: ['98.66deg', `${theme('colors.sea-glass')} 9.7%`, `${theme('colors.aqua.DEFAULT')} 96.6%`],
       galaxy: {
         type: 'radial',
         colors: [
           '60.53% 61.06% at 68.85% 57.59%',
-          `${theme('colors.robin')}75 0%`,
+          `${theme('colors.robin.DEFAULT')}75 0%`,
           `${theme('colors.lilac')}29 55.73%`,
           `${theme('colors.vanilla.100')}00 100%`
         ]
       },
-      dawn: ['98.66deg', `${theme('colors.robin')} 4.42%`, `${theme('colors.lilac')} 96.6%`],
+      dawn: ['98.66deg', `${theme('colors.robin.DEFAULT')} 4.42%`, `${theme('colors.lilac')} 96.6%`],
       'dark-dawn': {
         custom: `linear-gradient(180deg, ${theme('colors.ink.400')} 0%, rgba(22, 24, 29, 0.7) 100%), 
-          linear-gradient(98.66deg, ${theme('colors.robin')} 4.42%, ${theme('colors.lilac')} 96.6%)`
+          linear-gradient(98.66deg, ${theme('colors.robin.DEFAULT')} 4.42%, ${theme('colors.lilac')} 96.6%)`
       },
-      splash: ['98.66deg', `${theme('colors.robin')} 4.42%`, '#3450AF 96.6%'],
+      splash: ['98.66deg', `${theme('colors.robin.DEFAULT')} 4.42%`, '#3450AF 96.6%'],
       skeleton: [
         '104.58deg',
         `${theme('colors.ink.300')} 0%`,
         `${theme('colors.ink.200')} 40.08%`,
         `${theme('colors.ink.300')} 60.32%`
       ],
-      juniper: ['0deg', `${theme('colors.transparent')} 0%`, `${theme('colors.juniper')} 100%`]
+      juniper: ['0deg', `${theme('colors.transparent')} 0%`, `${theme('colors.juniper.DEFAULT')} 100%`]
     }),
     backdropFilter: (theme) => ({
       none: 'none',
