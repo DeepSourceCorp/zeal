@@ -1198,18 +1198,6 @@ module.exports = {
 
       addUtilities(utilities, variants('gradients', []))
     }),
-    plugin(({ addUtilities, theme }) => {
-      const utilities = {
-        '.w-full-screen': {
-          ...typographyConfig.FULL_WIDTH_ACTIVE(theme)
-        },
-        '.w-full-screen-none': {
-          ...typographyConfig.FULL_WIDTH_INACTIVE(theme)
-        }
-      }
-
-      addUtilities(utilities, ['responsive'])
-    }),
     plugin(({ theme, variants, e, addUtilities }) => {
       const backdropFilterUtilities = Object.keys(theme('backdropFilter')).map((type) => {
         const backdropFilter = theme('backdropFilter')[type]
