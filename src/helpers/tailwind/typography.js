@@ -1,28 +1,3 @@
-const FULL_WIDTH_ACTIVE = function (theme) {
-  return {
-    marginLeft: `-${theme('width.halfScreen')}`,
-    marginRight: `-${theme('width.halfScreen')}`,
-    left: theme('width.2/4'),
-    maxWidth: theme('width.screen'),
-    position: 'relative',
-    right: theme('width.2/4'),
-    width: theme('width.screen')
-  }
-}
-
-const FULL_WIDTH_INACTIVE = function (theme) {
-  return {
-    marginLeft: 'unset',
-    marginRight: 'unset',
-    left: 'unset',
-    maxWidth: theme('width.full'),
-    height: 'auto',
-    position: 'unset',
-    right: 'unset',
-    width: 'unset'
-  }
-}
-
 const BEFORE_LIST_ITEM = function (theme, muted = false) {
   return {
     content: '"—"',
@@ -111,9 +86,6 @@ const DEFAULT = function (theme) {
       [`@media (min-width: ${theme('screens.sm')})`]: {
         textAlign: 'left'
       }
-    },
-    'pre, figure img': {
-      ...FULL_WIDTH_INACTIVE(theme)
     },
     'figure img': {
       borderRadius: `${theme('spacing.1')}`
@@ -306,8 +278,6 @@ const RTE = function (theme) {
 }
 
 module.exports = {
-  FULL_WIDTH_ACTIVE,
-  FULL_WIDTH_INACTIVE,
   BEFORE_LIST_ITEM,
   DEFAULT,
   SMALL_SCREEN_CSS,

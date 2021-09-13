@@ -6,7 +6,7 @@
       </span>
       <!-- prettier-ignore -->
       <span
-        class="z-testimonials__logos flex lg:grid grid-cols-3 px-8 sm:px-0 mt-0 md:mt-6 mb-2 overflow-x-hidden flex-nowrap w-full-screen lg:w-full-screen-none"
+        class="z-testimonials__logos flex lg:grid grid-cols-3 px-8 sm:px-0 mt-0 md:mt-6 mb-2 overflow-x-hidden flex-nowrap w-full"
       >
         <span
           v-for="(testimonial, index) in testimonials"
@@ -22,7 +22,7 @@
           />
         </span>
       </span>
-      <span class="flex justify-between -mt-16 w-full-screen lg:w-full-screen-none lg:hidden pointer-events-none">
+      <span class="flex justify-between -mt-16 w-full lg:hidden pointer-events-none">
         <span class="w-20 bg-gradient-to-r from-ink-400 via-transparent to-transparent h-16"></span>
         <span class="w-40 bg-gradient-to-r from-transparent via-transparent to-ink-400 h-16"></span>
       </span>

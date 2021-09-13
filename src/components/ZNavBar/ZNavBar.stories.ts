@@ -128,7 +128,7 @@ export const Horizontal = () => ({
       resources: ['Documentation', 'Discourse forum', 'Learning Center', 'Blog', 'Slack User Group']
     }
   },
-  template: `<div class="bg-ink-400 h-screen w-full-screen">
+  template: `<div class="bg-ink-400 h-screen w-screen">
                 <z-nav-bar class="text-vanilla-100">
                     <template slot="brand">
                         <img class="h-4 sm:h-5 lg:h-7 max-w-none hidden lg:block" src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"/>

@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full-screen">
+  <section class="w-full">
     <div class="text-center text-vanilla-100 text-sm uppercase font-bold tracking-widest mb-8">
       <slot name="heading"></slot>
     </div>

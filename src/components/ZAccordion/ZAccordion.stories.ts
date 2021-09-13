@@ -218,7 +218,7 @@ export const WebNextFooter = () => ({
       return window.innerWidth < 768
     }
   },
-  template: `<div class="h-screen w-full-screen">
+  template: `<div class="h-screen w-full">
         <div class="prose prose-md max-w-none p-20">
         <h1 v-for="i in 8">Some random heading to grab attention</h1>
         </div>
