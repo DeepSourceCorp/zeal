@@ -50,7 +50,7 @@
       @focus="this.focusHandler"
       @keydown="this.keydownHandler"
       @keyup="this.keyupHandler"
-      @invalid.prevent="this.invalidHandler"
+      @invalid="this.invalidHandler"
     />
     <!-- Any icon/content to the right renders here -->
     <slot name="right">
