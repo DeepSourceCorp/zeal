@@ -50,7 +50,7 @@
       @focus="this.focusHandler"
       @keydown="this.keydownHandler"
       @keyup="this.keyupHandler"
-      @invalid="this.invalidHandler"
+      @invalid.prevent="this.invalidHandler"
     />
     <!-- Any icon/content to the right renders here -->
     <slot name="right">
@@ -217,7 +217,9 @@ export default Vue.extend({
       this.$emit('keydown', e)
     },
     invalidHandler(e: Event) {
-      this.invalidState = true
+      if (this.validateOnBlur) {
+        this.invalidState = true
+      }
       this.$emit('invalid', e)
     }
   }
