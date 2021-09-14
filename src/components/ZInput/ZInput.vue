@@ -217,7 +217,9 @@ export default Vue.extend({
       this.$emit('keydown', e)
     },
     invalidHandler(e: Event) {
-      this.invalidState = true
+      if (this.validateOnBlur) {
+        this.invalidState = true
+      }
       this.$emit('invalid', e)
     }
   }
