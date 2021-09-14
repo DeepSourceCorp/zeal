@@ -26,29 +26,29 @@ module.exports = {
     },
     colors,
     gradients: (theme) => ({
-      ocean: ['98.66deg', `${theme('colors.sea-glass')} 9.7%`, `${theme('colors.aqua.DEFAULT')} 96.6%`],
+      ocean: ['98.66deg', `${theme('colors.sea-glass')} 9.7%`, `${theme('colors.aqua.500')} 96.6%`],
       galaxy: {
         type: 'radial',
         colors: [
           '60.53% 61.06% at 68.85% 57.59%',
-          `${theme('colors.robin.DEFAULT')}75 0%`,
+          `${theme('colors.robin.500')}75 0%`,
           `${theme('colors.lilac')}29 55.73%`,
           `${theme('colors.vanilla.100')}00 100%`
         ]
       },
-      dawn: ['98.66deg', `${theme('colors.robin.DEFAULT')} 4.42%`, `${theme('colors.lilac')} 96.6%`],
+      dawn: ['98.66deg', `${theme('colors.robin.500')} 4.42%`, `${theme('colors.lilac')} 96.6%`],
       'dark-dawn': {
         custom: `linear-gradient(180deg, ${theme('colors.ink.400')} 0%, rgba(22, 24, 29, 0.7) 100%), 
-          linear-gradient(98.66deg, ${theme('colors.robin.DEFAULT')} 4.42%, ${theme('colors.lilac')} 96.6%)`
+          linear-gradient(98.66deg, ${theme('colors.robin.500')} 4.42%, ${theme('colors.lilac')} 96.6%)`
       },
-      splash: ['98.66deg', `${theme('colors.robin.DEFAULT')} 4.42%`, '#3450AF 96.6%'],
+      splash: ['98.66deg', `${theme('colors.robin.500')} 4.42%`, '#3450AF 96.6%'],
       skeleton: [
         '104.58deg',
         `${theme('colors.ink.300')} 0%`,
         `${theme('colors.ink.200')} 40.08%`,
         `${theme('colors.ink.300')} 60.32%`
       ],
-      juniper: ['0deg', `${theme('colors.transparent')} 0%`, `${theme('colors.juniper.DEFAULT')} 100%`]
+      juniper: ['0deg', `${theme('colors.transparent')} 0%`, `${theme('colors.juniper.500')} 100%`]
     }),
     backdropFilter: (theme) => ({
       none: 'none',
@@ -344,7 +344,6 @@ module.exports = {
     }),
     maxWidth: (theme, { breakpoints }) => ({
       none: 'none',
-      '2xs': '16rem',
       xs: '20rem',
       sm: '24rem',
       md: '28rem',
@@ -751,8 +750,7 @@ module.exports = {
       linear: 'linear',
       in: 'cubic-bezier(0.4, 0, 1, 1)',
       out: 'cubic-bezier(0, 0, 0.2, 1)',
-      'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
-      bounce: 'cubic-bezier(0.175, 0.885, 0.32, 1.05)'
+      'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)'
     },
     transitionDuration: {
       DEFAULT: '150ms',
@@ -1044,7 +1042,7 @@ module.exports = {
     placeSelf: ['responsive'],
     placeholderColor: ['responsive', 'focus'],
     placeholderOpacity: ['responsive', 'focus'],
-    pointerEvents: ['responsive', 'group-hover'],
+    pointerEvents: ['responsive'],
     position: ['responsive'],
     resize: ['responsive'],
     ringColor: ['responsive', 'focus-within', 'focus'],
@@ -1065,7 +1063,7 @@ module.exports = {
     verticalAlign: ['responsive'],
     visibility: ['responsive'],
     whitespace: ['responsive'],
-    width: ['responsive', 'group-hover'],
+    width: ['responsive'],
     wordBreak: ['responsive'],
     textOverflow: ['responsive'],
     zIndex: ['responsive'],
@@ -1086,7 +1084,7 @@ module.exports = {
     transformOrigin: ['responsive'],
     scale: ['responsive', 'hover', 'focus'],
     rotate: ['responsive', 'hover', 'focus'],
-    translate: ['responsive', 'hover', 'focus', 'group-hover'],
+    translate: ['responsive', 'hover', 'focus'],
     skew: ['responsive', 'hover', 'focus'],
     transitionProperty: ['responsive'],
     transitionTimingFunction: ['responsive'],
@@ -1098,7 +1096,6 @@ module.exports = {
   corePlugins: {},
   plugins: [
     require('@tailwindcss/typography'),
-    require('@tailwindcss/line-clamp'),
     plugin(function ({ addVariant, e, postcss }) {
       addVariant('no-filter', ({ container, separator }) => {
         const supportsRule = postcss.atRule({
@@ -1197,6 +1194,18 @@ module.exports = {
       })
 
       addUtilities(utilities, variants('gradients', []))
+    }),
+    plugin(({ addUtilities, theme }) => {
+      const utilities = {
+        '.w-full-screen': {
+          ...typographyConfig.FULL_WIDTH_ACTIVE(theme)
+        },
+        '.w-full-screen-none': {
+          ...typographyConfig.FULL_WIDTH_INACTIVE(theme)
+        }
+      }
+
+      addUtilities(utilities, ['responsive'])
     }),
     plugin(({ theme, variants, e, addUtilities }) => {
       const backdropFilterUtilities = Object.keys(theme('backdropFilter')).map((type) => {
