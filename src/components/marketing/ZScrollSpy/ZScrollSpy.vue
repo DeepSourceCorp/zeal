@@ -6,19 +6,18 @@
       class="leading-4 pointer-events-none group-hover:pointer-events-auto"
       :class="[
         `${HEADING_ALIGNMENT_CLASSES[align]}-${HEADINGS[heading.tagName].indentSpace}`,
-        `${HEADINGS[heading.tagName].slideInDelay}`
       ]"
     >
       <div
-        class="absolute left-0 -mt-2 group-hover:w-0 group-hover:opacity-0 transition-all ease-in-out"
+        class="absolute left-0 -mt-2 group-hover:w-0 group-hover:opacity-0 transition-all ease-bounce"
         :class="[`w-${HEADINGS[heading.tagName].indicatorSize}`]"
       >
         <z-divider
-          class="border w-full transition-colors ease-bounce"
+          class="border w-full transition-colors ease-in-out"
           :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`]"
         />
       </div>
-      <div class="transform -translate-x-full group-hover:translate-x-0 ease-bounce transition-transform">
+      <div class="transform -translate-x-2.5 group-hover:translate-x-0 ease-bounce transition-transform">
         <a
           @click.prevent="scrollSmoothlyTo(heading.id)"
           class="text-xs pl-2 opacity-0 group-hover:opacity-100 transition-colors ease-in-out line-clamp-1"
@@ -55,19 +54,16 @@ const HEADINGS = {
   h1: {
     tag: 'h1',
     indentSpace: 0,
-    slideInDelay: '',
     indicatorSize: 10
   },
   h2: {
     tag: 'h2',
     indentSpace: 6,
-    slideInDelay: 'delay-100',
     indicatorSize: 8
   },
   h3: {
     tag: 'h3',
     indentSpace: 12,
-    slideInDelay: 'delay-200',
     indicatorSize: 6
   }
 }
