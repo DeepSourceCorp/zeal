@@ -1,8 +1,10 @@
 <template>
   <span class="relative z-menu">
-    <button type="button" v-on:click="toggle" class="outline-none focus:outline-none" ref="menu-trigger">
-      <slot name="trigger" :toggle="toggle" :isOpen="isOpen"></slot>
-    </button>
+    <div class="leading-none inline-block" ref="menu-trigger">
+      <slot name="trigger" :toggle="toggle" :isOpen="isOpen">
+        <z-button :label="triggerLabel" @click="toggle" />
+      </slot>
+    </div>
     <transition
       enter-active-class="animate-slide-bottom-enter-active sm:animate-none sm:transition-all sm:duration-75 sm:ease-out-quad"
       leave-active-class="animate-slide-bottom-leave-active sm:animate-none sm:transition-all sm:duration-150 sm:ease-in-quad"
@@ -34,10 +36,13 @@
 import Vue from 'vue'
 import { containsElement } from '@/helpers/components/utils'
 import outsideClickDirective from '../../directives/outside-click'
+import ZButton from '../ZButton/ZButton.vue'
+
 Vue.directive('outside-click', outsideClickDirective)
 
 export default Vue.extend({
   name: 'ZMenu',
+  components: { ZButton },
   props: {
     direction: {
       type: String,
@@ -74,6 +79,10 @@ export default Vue.extend({
     collapseOnMobile: {
       type: Boolean,
       default: false
+    },
+    triggerLabel: {
+      type: String,
+      default: 'Menu'
     }
   },
   data() {
@@ -95,7 +104,7 @@ export default Vue.extend({
         if (!event) {
           this.isOpen = false
         } else {
-          event.stopImmediatePropagation()
+          event.stopPropagation()
           const target = event.target as HTMLElement
           const menuTrigger = this.$refs['menu-trigger'] as HTMLElement
           const menuBody = this.$refs['menu-body'] as HTMLElement

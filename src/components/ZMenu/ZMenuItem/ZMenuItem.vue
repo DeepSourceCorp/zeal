@@ -1,15 +1,18 @@
 <template>
-  <div
+  <component
+    v-bind="$attrs"
+    :is="as"
     class="z-menu-item flex items-center gap-2 px-3 py-2 leading-none outline-none focus:outline-none"
     :class="{
       'hover:bg-ink-200 cursor-pointer': !disabled,
       'text-vanilla-400 cursor-not-allowed': disabled
     }"
+    v-on="$listeners"
     @click="itemClicked"
   >
     <z-icon v-if="icon" :icon="icon" size="small" color="disabled ? 'vanilla-400' : 'vanilla-100'"></z-icon>
     <slot></slot>
-  </div>
+  </component>
 </template>
 
 <script lang="ts">
@@ -37,6 +40,10 @@ export default Vue.extend({
     closeOnClick: {
       type: Boolean,
       default: true
+    },
+    as: {
+      type: String,
+      default: 'div'
     }
   },
   methods: {
