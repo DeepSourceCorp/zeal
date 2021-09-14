@@ -362,7 +362,7 @@ export const InputWithMultipleEmails = () => ({
     </div>`
 })
 
-export const InputWithMandatoryInput = () => ({
+export const InputWithValidationOnBlur = () => ({
   components: { ZInput },
   data() {
     return {
@@ -373,30 +373,8 @@ export const InputWithMandatoryInput = () => ({
         <div class="input-container">
             <z-input v-model="name"
                     :required="true"
+                    :validate-on-blur="true"
                     placeholder="Invalid when empty">
-            </z-input>
-        </div>
-    </div>`
-})
-
-export const InputWontValidateOnBlur = () => ({
-  components: { ZInput },
-  data() {
-    return {
-      name: ''
-    }
-  },
-  template: `<div class='padded-container'>
-        <div class="input-container">
-            <z-input v-model="name"
-                    type="email"
-                    class="mb-2"
-                    placeholder="Red border on invalid email">
-            </z-input>
-            <z-input v-model="name"
-                    type="email"
-                    :validate-on-blur="false"
-                    placeholder="No red border on invalid email">
             </z-input>
         </div>
     </div>`
