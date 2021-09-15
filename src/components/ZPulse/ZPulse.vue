@@ -1,8 +1,8 @@
 <template>
   <div :class="`flex flex-shrink-0 h-${pulseSize} w-${pulseSize} items-center justify-center`">
     <span
-      class="animate-ping absolute inline-flex rounded-full"
-      :class="`h-${dotSize} w-${dotSize} bg-${color}`"
+      class="absolute inline-flex rounded-full"
+      :class="[`h-${dotSize} w-${dotSize} bg-${color}`, { 'animate-ping': active }]"
     ></span>
     <span :class="`relative inline-flex rounded-full h-${dotSize} w-${dotSize} bg-${color}`"></span>
   </div>
@@ -21,9 +21,13 @@ export default Vue.extend({
     size: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['small', 'base', 'large', 'xlarge'].includes(value)
       }
+    },
+    active: {
+      type: Boolean,
+      default: true
     }
   },
   computed: {
