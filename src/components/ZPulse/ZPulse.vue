@@ -4,7 +4,9 @@
       class="absolute inline-flex rounded-full"
       :class="[`h-${dotSize} w-${dotSize}`, { 'animate-ping': active }, active ? `bg-${color}` : 'bg-ink-200']"
     ></span>
-    <span :class="[`relative inline-flex rounded-full h-${dotSize} w-${dotSize}`, active ? `bg-${color}` : 'bg-ink-200']"></span>
+    <span
+      :class="[`relative inline-flex rounded-full h-${dotSize} w-${dotSize}`, active ? `bg-${color}` : 'bg-ink-200']"
+    ></span>
   </div>
 </template>
 
