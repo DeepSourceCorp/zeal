@@ -18,6 +18,13 @@ const template = `<div class="flex flex-col gap-3">
   <z-pulse color="robin"></z-pulse>
 </div>
 <div class="flex gap-2">
+  <z-pulse :active="false" color="cherry"></z-pulse>
+  <z-pulse :active="false" color="honey"></z-pulse>
+  <z-pulse :active="false" color="aqua"></z-pulse>
+  <z-pulse :active="false" color="slate"></z-pulse>
+  <z-pulse :active="false" color="robin"></z-pulse>
+</div>
+<div class="flex gap-2">
   <z-pulse size="large" color="cherry"></z-pulse>
   <z-pulse size="large" color="honey"></z-pulse>
   <z-pulse size="large" color="aqua"></z-pulse>

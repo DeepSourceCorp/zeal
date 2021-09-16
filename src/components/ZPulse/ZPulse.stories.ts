@@ -16,6 +16,18 @@ export const BasicPulse = () => ({
     </div>`
 })
 
+export const InactivePulse = () => ({
+  components: { ZPulse },
+  template: `<div class="flex gap-2">
+      <z-pulse :active="false"></z-pulse>
+      <z-pulse :active="false" color="cherry"></z-pulse>
+      <z-pulse :active="false" color="honey"></z-pulse>
+      <z-pulse :active="false" color="aqua"></z-pulse>
+      <z-pulse :active="false" color="slate"></z-pulse>
+      <z-pulse :active="false" color="robin"></z-pulse>
+    </div>`
+})
+
 export const PulseWithColor = () => ({
   components: { ZPulse },
   template: `<div class="flex gap-2">
