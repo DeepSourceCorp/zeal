@@ -2,9 +2,9 @@
   <div :class="`flex flex-shrink-0 h-${pulseSize} w-${pulseSize} items-center justify-center`">
     <span
       class="absolute inline-flex rounded-full"
-      :class="[`h-${dotSize} w-${dotSize} bg-${color}`, { 'animate-ping': active }]"
+      :class="[`h-${dotSize} w-${dotSize}`, { 'animate-ping': active }, active ? `bg-${color}` : 'bg-ink-200']"
     ></span>
-    <span :class="`relative inline-flex rounded-full h-${dotSize} w-${dotSize} bg-${color}`"></span>
+    <span :class="[`relative inline-flex rounded-full h-${dotSize} w-${dotSize}`, active ? `bg-${color}` : 'bg-ink-200']"></span>
   </div>
 </template>
 
