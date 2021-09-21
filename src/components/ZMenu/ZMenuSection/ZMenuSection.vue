@@ -22,7 +22,7 @@ interface ZMenuT extends Vue {
 }
 
 export default Vue.extend({
-  name: 'ZMenuItem',
+  name: 'ZMenuSection',
   components: {
     ZDivider
   },

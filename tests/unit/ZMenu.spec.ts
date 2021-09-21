@@ -1,12 +1,13 @@
 import ZMenu from '../../src/components/ZMenu'
 import ZMenuSection from '../../src/components/ZMenu/ZMenuSection'
 import ZMenuItem from '../../src/components/ZMenu/ZMenuItem'
+import ZButton from '../../src/components/ZButton'
 import { mount } from '@vue/test-utils'
 
 const BasicTab = {
   template: `<z-menu>
-              <template slot="trigger">
-                <span id="triggerClick" class="bg-ink-100 text-vanilla-100 p-2 px-4 rounded-lg shadow-sm outline-none focus:outline-none">Menu</span>
+              <template v-slot:trigger="{ toggle }">
+                <z-button id="triggerClick" @click="toggle">Menu</z-button>
               </template>
               <template slot="body">
                 <z-menu-section title="Logged In As">
@@ -27,7 +28,8 @@ const BasicTab = {
   components: {
     ZMenu,
     ZMenuItem,
-    ZMenuSection
+    ZMenuSection,
+    ZButton
   }
 }
 

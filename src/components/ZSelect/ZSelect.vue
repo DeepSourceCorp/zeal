@@ -3,7 +3,7 @@
     :tabindex="tabIndex"
     class="custom-select relative w-full text-left outline-none h-full leading-8"
     :class="{ 'is-disabled': disabled, 'is-readonly': readOnly }"
-    @[canBlur]="open = false"
+    @blur.stop="!disabled && !readOnly && blurEvent()"
   >
     <div
       class="selected h-full relative border border-solid"
@@ -138,10 +138,6 @@ export default Vue.extend({
       if (!this.disabled && !this.readOnly) return 'click'
       return ''
     },
-    canBlur(): string {
-      if (!this.disabled && !this.readOnly) return 'blur.stop'
-      return ''
-    },
     getTextSize(): string {
       const validTextSizes = ['text-xs', 'text-sm', 'text-base', 'text-lg', 'text-xl']
       if (validTextSizes.includes(this.textSize)) {
@@ -184,6 +180,9 @@ export default Vue.extend({
   methods: {
     clearSelected(): void {
       this.selectedOpt = null
+    },
+    blurEvent(): void {
+      this.open = false
     }
   },
   watch: {
