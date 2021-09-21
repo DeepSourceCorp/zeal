@@ -110,10 +110,10 @@ export default Vue.extend({
   },
   mounted() {
     this.observer = new IntersectionObserver(this.onElementObserved, {
-      root: document.querySelector(`#${this.rootId}`),
       threshold: 1.0,
       rootMargin: '10px 0px -50% 0px'
     })
+
     this.headingElements.forEach((headingElement) => {
       this.addAsHeadingToHeadingsMap(headingElement)
       this.observer.observe(headingElement)
