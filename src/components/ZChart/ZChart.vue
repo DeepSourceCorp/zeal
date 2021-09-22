@@ -254,7 +254,9 @@ export default Vue.extend({
   computed: {
     palette(): Array<string> {
       if (this.colors) {
-        return (this.colors as Array<string>).map((token) => this.themeColors[token])
+        return (this.colors as Array<string>).map((token) => {
+          return this.themeColors[token] || token
+        })
       }
       return []
     },

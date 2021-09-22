@@ -108,14 +108,12 @@ export default Vue.extend({
       return document.querySelectorAll(`#${this.rootId} h1, #${this.rootId} h2, #${this.rootId} h3`)
     }
   },
-  created() {
+  mounted() {
     this.observer = new IntersectionObserver(this.onElementObserved, {
-      root: document.querySelector(`#${this.rootId}`),
       threshold: 1.0,
       rootMargin: '10px 0px -50% 0px'
     })
-  },
-  mounted() {
+
     this.headingElements.forEach((headingElement) => {
       this.addAsHeadingToHeadingsMap(headingElement)
       this.observer.observe(headingElement)
