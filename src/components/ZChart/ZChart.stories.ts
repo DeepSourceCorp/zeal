@@ -49,7 +49,7 @@ export const CustomColors = () => ({
     }
   },
   template: `<div class="padding-container">
-    <z-chart :dataSets="dataSets" :labels="labels" :yRegions=yRegions type="line" :colors="['ink-200', 'vanilla-400']"></z-chart>
+    <z-chart :dataSets="dataSets" :labels="labels" :yRegions=yRegions type="line" :colors="['ink-200', '#1F7A5D']"></z-chart>
   </div>`
 })
 
