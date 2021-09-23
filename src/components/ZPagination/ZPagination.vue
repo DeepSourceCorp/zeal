@@ -114,6 +114,7 @@ export default Vue.extend({
     pageCount(): number {
       // if ends are visible, remove two counts from total visible to offset end indicators
       // otherwise totalvisible minus on to offset for active index
+      if (this.totalVisible >= this.totalPages) return this.totalVisible
       return this.showEnds ? this.totalVisible - 2 : this.totalVisible - 1
     },
     showFirst(): boolean {
