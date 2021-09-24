@@ -1,6 +1,6 @@
 {
   "name": "@deepsourcelabs/zeal",
-  "version": "0.7.10",
+  "version": "0.7.11",
   "repository": "https://github.com/deepsourcelabs/zeal",
   "main": "./dist/zeal.common.js",
   "private": true,
