@@ -47,28 +47,28 @@ export default Vue.extend({
     direction: {
       type: String,
       default: 'right',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['left', 'right'].includes(value)
       }
     },
     placement: {
       type: String,
       default: 'bottom',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['top', 'bottom'].includes(value)
       }
     },
     size: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['small', 'base', 'large'].includes(value)
       }
     },
     width: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['x-small', 'small', 'base', 'large', 'x-large', '2x-large'].includes(value)
       }
     },
@@ -155,6 +155,11 @@ export default Vue.extend({
         '2x-large': 'sm:w-96'
       }
       return widths[this.width] || 'sm:w-64'
+    }
+  },
+  watch: {
+    isOpen(newState: boolean): void {
+      this.$emit('menu-toggle', newState)
     }
   }
 })
