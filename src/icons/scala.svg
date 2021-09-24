@@ -1,0 +1,29 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 9.69231C6 9.69231 17.5385 10.8462 17.5385 12.7692V8.15385C17.5385 8.15385 17.5385 6.23077 6 5.07692V9.69231Z" fill="url(#scala_paint0_linear)"/>
+<path d="M6 15.8462C6 15.8462 17.5385 17 17.5385 18.9231V14.3077C17.5385 14.3077 17.5385 12.3846 6 11.2308V15.8462Z" fill="url(#scala_paint1_linear)"/>
+<path d="M17.5385 2V6.61538C17.5385 6.61538 17.5385 8.53846 6 9.69231V5.07692C6 5.07692 17.5385 3.92308 17.5385 2Z" fill="url(#scala_paint2_linear)"/>
+<path d="M6 11.2308C6 11.2308 17.5385 10.0769 17.5385 8.15384V12.7692C17.5385 12.7692 17.5385 14.6923 6 15.8462V11.2308Z" fill="url(#scala_paint3_linear)"/>
+<path d="M6 22V17.3846C6 17.3846 17.5385 16.2308 17.5385 14.3077V18.9231C17.5385 18.9231 17.5385 20.8462 6 22" fill="url(#scala_paint4_linear)"/>
+<defs>
+<linearGradient id="scala_paint0_linear" x1="6.01969" y1="8.896" x2="17.5175" y2="8.896" gradientUnits="userSpaceOnUse">
+<stop stop-color="#656565"/>
+<stop offset="1" stop-color="#010101"/>
+</linearGradient>
+<linearGradient id="scala_paint1_linear" x1="6.01969" y1="15.0631" x2="17.5175" y2="15.0631" gradientUnits="userSpaceOnUse">
+<stop stop-color="#656565"/>
+<stop offset="1" stop-color="#010101"/>
+</linearGradient>
+<linearGradient id="scala_paint2_linear" x1="6.01969" y1="5.85015" x2="17.5175" y2="5.85015" gradientUnits="userSpaceOnUse">
+<stop stop-color="#9F1C20"/>
+<stop offset="1" stop-color="#ED2224"/>
+</linearGradient>
+<linearGradient id="scala_paint3_linear" x1="6.01969" y1="12.02" x2="17.5175" y2="12.02" gradientUnits="userSpaceOnUse">
+<stop stop-color="#9F1C20"/>
+<stop offset="1" stop-color="#ED2224"/>
+</linearGradient>
+<linearGradient id="scala_paint4_linear" x1="6.01969" y1="18.1877" x2="17.5175" y2="18.1877" gradientUnits="userSpaceOnUse">
+<stop stop-color="#9F1C20"/>
+<stop offset="1" stop-color="#ED2224"/>
+</linearGradient>
+</defs>
+</svg>
