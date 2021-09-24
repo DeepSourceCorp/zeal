@@ -156,6 +156,11 @@ export default Vue.extend({
       }
       return widths[this.width] || 'sm:w-64'
     }
+  },
+  watch: {
+    isOpen(newState: boolean): void {
+      this.$emit('menu-toggle', newState)
+    }
   }
 })
 </script>
