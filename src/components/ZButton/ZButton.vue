@@ -1,7 +1,7 @@
 <template>
   <!-- prettier-ignore -->
   <component
-    :is="isLink ? 'a' : 'button'"
+    :is="isLink && !disabled ? 'a' : 'button'"
     :href="to || '#'"
     :disabled="disabled"
     :type="isLink ? 'link' : type"
