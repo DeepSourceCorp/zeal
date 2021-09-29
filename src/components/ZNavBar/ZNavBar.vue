@@ -99,11 +99,9 @@ export default {
               accordionItems = h(
                 'div',
                 {
-                  class: 'flex flex-col space-y-1 text-base my-1'
+                  class: 'flex flex-col text-base text-vanilla-400 my-1'
                 },
-                items.map((item) => {
-                  return item?.componentOptions?.children
-                })
+                items
               )
             return h(ZAccordionItem, {
               ...options.data,
