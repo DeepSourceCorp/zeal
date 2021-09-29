@@ -61,37 +61,49 @@ export const DeepSourceNext = () => ({
     />
   </template>
   <template slot="links">
-    <z-menu :collapseOnMobile="true" title="Product">
-      <template v-slot:trigger="{}">
-        <z-button color="ghost">Product</z-button>
-      </template>
-      <template slot="body">
-        <z-menu-item v-for="item of MENUS.PRODUCT" :key="item.url">
-          <a :href="item.url">{{ item.name }}</a>
-        </z-menu-item>
-      </template>
-    </z-menu>
-    <z-list class="text-vanilla-100 px-4 py-2 border-b border-ink-200 lg:border-0 lg:hidden">
-      <z-list-item as="a" to="/customers" class="flex cursor-pointer items-end space-x-2">
-        Customers
-      </z-list-item>
-    </z-list>
-    <z-list class="text-vanilla-100 px-4 py-2 border-b border-ink-200 lg:border-0 lg:hidden">
-      <z-list-item as="a" to="/pricing" class="flex cursor-pointer items-end space-x-2">
-        Pricing
-      </z-list-item>
-    </z-list>
-    <z-button class="hidden lg:inline-flex" color="ghost" type="link" href="/customers">Customers</z-button>
-    <z-button class="hidden lg:inline-flex" color="ghost" type="link" href="/pricing">Pricing</z-button>
-    <z-menu :collapseOnMobile="true">
-      <template v-slot:trigger="{}">
-        <z-button color="ghost">Resources</z-button>
-      </template>
-      <template slot="body">
-        <z-menu-item v-for="item of MENUS.RESOURCES" :key="item.url">
-          <a :href="item.url">{{ item.name }}</a>
-        </z-menu-item>
-      </template>
+      <z-menu :collapseOnMobile="true" title="Product">
+        <template v-slot:trigger="{ toggle }">
+          <z-button buttonType="ghost" color="vanilla-100" @click="toggle">Product</z-button>
+        </template>
+        <template slot="body">
+          <z-menu-item v-for="item of MENUS.PRODUCT" :key="item.url" as="a" :href="item.url">
+            <span class="py-2">{{ item.name }}</span>
+          </z-menu-item>
+        </template>
+      </z-menu>
+      <z-list class="text-vanilla-100 border-b border-ink-200 lg:border-0 lg:hidden">
+        <z-list-item as="a" to="/customers" class="px-4 py-2 flex font-medium cursor-pointer"> Customers </z-list-item>
+      </z-list>
+      <z-list class="text-vanilla-100 border-b border-ink-200 lg:border-0 lg:hidden">
+        <z-list-item as="a" to="/pricing" class="px-4 py-2 flex font-medium cursor-pointer"> Pricing </z-list-item>
+      </z-list>
+      <z-button class="hidden lg:inline-flex text-vanilla-100" buttonType="ghost" type="link" href="/customers"
+        >Customers</z-button
+      >
+      <z-button class="hidden lg:inline-flex text-vanilla-100" buttonType="ghost" type="link" href="/pricing"
+        >Pricing</z-button
+      >
+      <z-menu :collapseOnMobile="true" title="Resources">
+        <template v-slot:trigger="{ toggle }">
+          <z-button buttonType="ghost" color="vanilla-100" @click="toggle">Resources</z-button>
+        </template>
+        <template slot="body">
+          <z-menu-item v-for="item of MENUS.RESOURCES" :key="item.url" as="a" :href="item.url">
+            <span class="py-2">{{ item.name }}</span>
+          </z-menu-item>
+        </template>
+      </z-menu>
+      <z-menu :collapseOnMobile="true" title="Company">
+        <template v-slot:trigger="{ toggle }">
+          <z-button buttonType="ghost" color="vanilla-100" @click="toggle">Company</z-button>
+        </template>
+        <template slot="body">
+          <z-menu-item v-for="item of MENUS.COMPANY" :key="item.url" as="a" :href="item.url">
+            <span class="py-2">{{ item.name }}</span>
+          </z-menu-item>
+        </template>
+      </z-menu>
+    </template>
     </z-menu>
     <z-menu :collapseOnMobile="true">
       <template v-slot:trigger="{}">
@@ -105,8 +117,8 @@ export const DeepSourceNext = () => ({
     </z-menu>
   </template>
   <template slot="cta">
-    <z-button color="ghost" type="link">Log in</z-button>
-    <z-button color="primary" size="none">Sign up</z-button>
+    <z-button buttonType="ghost" type="link">Log in</z-button>
+    <z-button>Sign up</z-button>
   </template>
 </ZNavBar>`
 })
