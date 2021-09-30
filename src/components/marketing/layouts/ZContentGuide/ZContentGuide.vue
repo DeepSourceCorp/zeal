@@ -70,13 +70,16 @@ export default {
       type: String
     },
     pageLabel: {
-      type: String
+      type: String,
+      required: false,
     },
     previousPageText: {
-      type: String
+      type: String,
+      required: false,
     },
     previousPageLink: {
-      type: String
+      type: String,
+      required: false,
     }
   },
   methods: {
