@@ -4,7 +4,10 @@
       v-for="heading in headingsMap"
       :key="heading.id"
       class="leading-4 pointer-events-none group-hover:pointer-events-auto"
-      :class="[`${HEADING_ALIGNMENT_CLASSES[align]}-${HEADINGS[heading.tagName].indentSpace}`]"
+      :class="[
+        `${HEADING_ALIGNMENT_CLASSES[align]}-${HEADINGS[heading.tagName].indentSpace}`,
+        `${HEADINGS[heading.tagName].extras}`
+      ]"
     >
       <div
         class="absolute left-0 -mt-2 group-hover:w-0 group-hover:opacity-0 transition-all ease-bounce"
@@ -52,7 +55,8 @@ const HEADINGS = {
   h1: {
     tag: 'h1',
     indentSpace: 0,
-    indicatorSize: 10
+    indicatorSize: 10,
+    extras: 'font-semibold text-lg'
   },
   h2: {
     tag: 'h2',
@@ -142,13 +146,16 @@ export default Vue.extend({
        * A block is named after the primary heading's (i.e, if h1 is present then h1 else h2) id.
        */
       let block = '' as Heading['block']
-      this.headingElements.forEach((headingElement: Element) => {
+      this.headingElements.forEach((headingElement: Element, index: number) => {
         const { id, tagName } = this.getHeading(headingElement)
         if (id) {
           if (tagName === this.primaryHeadingTagName) {
             block = id
           }
           this.headingsMap[id].block = block
+          if (index === 0) {
+            this.activeHeading = this.headingsMap[id]
+          }
         }
       })
     },
