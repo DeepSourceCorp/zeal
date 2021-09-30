@@ -35,7 +35,6 @@
           <slot></slot>
           <slot name="extras"></slot>
         </div>
-        
       </div>
     </div>
   </article>
@@ -81,9 +80,8 @@ export default {
     }
   },
   methods: {
-    slugify(s: string){
+    slugify(s: string) {
       return s.toLowerCase().split(' ').join('-')
-      
     }
   }
 }
