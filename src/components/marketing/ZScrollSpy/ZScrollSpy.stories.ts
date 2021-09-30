@@ -27,7 +27,7 @@ export const Basic = () => ({
       </template>
     </z-nav>
 
-    <div class='padded-container flex text-vanilla-100 grid grid-cols-12'>
+    <div class='padded-container text-vanilla-100 grid grid-cols-12'>
       <z-scroll-spy class="col-span-2 sticky top-20 self-start" root-id="content" :heading-offset-top="80"></z-scroll-spy>
       <div id="content" class="col-span-10 ml-8">
         <h1 id="heading1" class="heading2 my-4">Heading 1</h1>

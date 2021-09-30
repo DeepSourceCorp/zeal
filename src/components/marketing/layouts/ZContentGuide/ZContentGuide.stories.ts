@@ -6,6 +6,7 @@ import ZNavList from '../../ZNavList'
 import ZNavListItem from '../../ZNavListItem'
 import ZButton from '../../../ZButton'
 import ZIcon from '../../../ZIcon'
+import ZTag from '../../../ZTag'
 
 export default {
   title: 'Zeal Marketing/Content Layouts',
@@ -14,7 +15,7 @@ export default {
 }
 
 export const Guide = () => ({
-  components: { ZContentGuide, ZNav, ZIcon, ZButton, ZNavMenu, ZNavItem, ZNavList, ZNavListItem },
+  components: { ZContentGuide, ZNav, ZIcon, ZButton, ZNavMenu, ZNavItem, ZNavList, ZNavListItem, ZTag },
   template: `<div class='padded-container bg-dark w-full max-w-6xl mx-auto'>
       <z-content-guide
         title="Ornare id libero vel leo tincidunt semper."
@@ -26,6 +27,7 @@ export const Guide = () => ({
         previous-page-text="Back to all guides"
         previous-page-link="https://google.com"
       >
+      <div>
       <h1 id="this-is-main">Just to show off main heading</h1>
       <p class="lead">Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.</p>
       <p>By default, Tailwind removes all of the default browser styling from paragraphs, headings, lists and more. This ends up being really useful for building application UIs because you spend less time undoing user-agent styles, but when you <em>really are</em> just trying to style some content that came from a rich-text editor in a CMS or a markdown file, it can be surprising and unintuitive.</p>
@@ -217,6 +219,22 @@ export const Guide = () => ({
       <p>Phew, with any luck we have styled the headings above this text and they look pretty good.</p>
       <p>Let's add a closing paragraph here so things end with a decently sized block of text. I can't explain why I want things to end that way but I have to assume it's because I think things will look weird or unbalanced if there is a heading too close to the end of the document.</p>
       <p>What I've written here is probably long enough, but adding this final sentence can't hurt.</p>
+      
+      </div>
+      <template slot="extras">
+        <div class="w-full justify-between flex flex-row">
+          <div class="flex flex-row gap-6">
+            <span class="text-vanilla-100">Tags:</span>
+            <z-tag>Lorem</z-tag>
+            <z-tag>Ipsum</z-tag>
+          </div>
+
+          <div class="flex flex-row gap-6">
+          <z-icon size="large" icon="z-twitter"/>
+          <z-icon size="large" icon="z-facebook"/>
+          </div>
+        </div>
+      </template>
       </z-content-guide>
     </div>`
 })

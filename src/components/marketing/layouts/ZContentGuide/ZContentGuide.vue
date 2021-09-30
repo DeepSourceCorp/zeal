@@ -1,7 +1,7 @@
 <template>
   <article class="bg-ink-400">
     <div class="lg:grid grid-cols-12">
-      <div class="col-span-3 hidden lg:block flex flex-col">
+      <div class="col-span-3 hidden lg:flex flex-col">
         <a
           class="text-vanilla-400 hover:text-juniper transition-colors"
           v-if="previousPageLink"
@@ -9,13 +9,13 @@
           >&larr; {{ previousPageText }}</a
         >
         <slot name="previous-page-link"></slot>
-        <div class="py-4 max-w-2xs xl:max-w-lg 2xl:max-w-2xl sticky top-1/3 self-start ml-1 hidden lg:block">
-          <z-scroll-spy class="space-y-3" root-id="content"></z-scroll-spy>
+        <div class="py-4 max-w-2xs xl:max-w-lg 2xl:max-w-2xl sticky top-1/3 self-start pr-6 hidden lg:block">
+          <z-scroll-spy class="space-y-3" root-id="content" :pageTitle="title"></z-scroll-spy>
         </div>
       </div>
-      <div class="col-span-9 lg:pl-6">
+      <div class="col-span-9 lg:pl-6" id="content">
         <z-page-label class="mb-2">{{ pageLabel }}</z-page-label>
-        <h1 class="text-vanilla-100 mb-4 text-3xl lg:text-4xl leading-11 lg:leading-12 font-bold">
+        <h1 class="text-vanilla-100 mb-4 text-3xl lg:text-4xl leading-11 lg:leading-12 font-bold" :id="slugify(title)">
           {{ title }}
         </h1>
         <div class="flex items-center text-vanilla-200 mb-6">
@@ -31,9 +31,11 @@
           {{ subtitle }}
         </h2>
         <z-divider class="bg-ink-100"></z-divider>
-        <div id="content" class="col-span-10 text-vanilla-100 prose prose-sm sm:prose sm:max-w-none">
+        <div class="col-span-10 text-vanilla-100 prose prose-sm sm:prose sm:max-w-none">
           <slot></slot>
+          <slot name="extras"></slot>
         </div>
+        
       </div>
     </div>
   </article>
@@ -69,16 +71,19 @@ export default {
       type: String
     },
     pageLabel: {
-      required: true,
       type: String
     },
     previousPageText: {
-      default: 'Go back',
       type: String
     },
     previousPageLink: {
-      required: true,
       type: String
+    }
+  },
+  methods: {
+    slugify(s: string){
+      return s.toLowerCase().split(' ').join('-')
+      
     }
   }
 }
