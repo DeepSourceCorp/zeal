@@ -66,7 +66,7 @@ export default {
     pageLabel: {
       type: String,
       required: false
-    },
+    }
   },
   methods: {
     slugify(s: string) {
