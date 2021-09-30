@@ -19,9 +19,9 @@ export const DefaultList = () => ({
             <template slot="title">
                 <div class="font-medium">Heading</div>
             </template>
-            <z-list-item as="a" to="#">First</z-list-item>
-            <z-list-item as="a" to="#">Second</z-list-item>
-            <z-list-item as="a" to="#">Third</z-list-item>
+            <z-list-item as="a" href="#">First</z-list-item>
+            <z-list-item as="a" href="#">Second</z-list-item>
+            <z-list-item as="a" href="#">Third</z-list-item>
         </z-list>
         <z-accordion>
             <z-accordion-item>
@@ -35,9 +35,9 @@ export const ListWithHeadingProvided = () => ({
   components: { ZList, ZListItem },
   template: `<div class='input-container'>
         <z-list class="text-vanilla-100 text-sm space-y-2" title="Heading">
-            <z-list-item as="a" to="#">First</z-list-item>
-            <z-list-item as="a" to="#">Second</z-list-item>
-            <z-list-item as="a" to="#">Third</z-list-item>
+            <z-list-item as="a" href="#">First</z-list-item>
+            <z-list-item as="a" href="#">Second</z-list-item>
+            <z-list-item as="a" href="#">Third</z-list-item>
         </z-list>
     </div>`
 })
@@ -78,7 +78,7 @@ export const ListWithItemsFooter = () => ({
   template: `<div class='input-container'>
         <z-list class="text-vanilla-400 tracking-wide space-y-3" title="Company">
             <div class="flex flex-col text-vanilla-300 space-y-2 text-sm">
-                <z-list-item v-for="link in links" :key="link" as="a" to="#">{{link}}</z-list-item>
+                <z-list-item v-for="link in links" :key="link" as="a" href="#">{{link}}</z-list-item>
             </div>
         </z-list>
     </div>`
