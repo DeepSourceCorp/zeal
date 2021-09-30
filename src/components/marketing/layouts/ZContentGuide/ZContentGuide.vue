@@ -71,15 +71,15 @@ export default {
     },
     pageLabel: {
       type: String,
-      required: false,
+      required: false
     },
     previousPageText: {
       type: String,
-      required: false,
+      required: false
     },
     previousPageLink: {
       type: String,
-      required: false,
+      required: false
     }
   },
   methods: {
