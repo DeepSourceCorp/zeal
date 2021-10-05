@@ -227,8 +227,8 @@
   background-color: #582c27;
 }
 
-.highlight pre {
-  background-color: #23262e !important;
+.highlight :not(.prose) pre {
+  background-color: #16181d !important;
   font-size: 13px;
   padding-top: 0.75rem;
   padding-bottom: 0.5rem;
