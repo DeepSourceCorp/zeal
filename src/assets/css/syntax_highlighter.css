@@ -227,14 +227,17 @@
   background-color: #582c27;
 }
 
-.highlight :not(.prose) pre {
-  background-color: #16181d !important;
+.highlight pre {
   font-size: 13px;
   padding-top: 0.75rem;
   padding-bottom: 0.5rem;
   color: #ccc;
   overflow-x: auto;
   position: relative;
+}
+
+.highlight :not(.prose) pre {
+  background-color: #16181d !important;
 }
 
 .highlighttable {
