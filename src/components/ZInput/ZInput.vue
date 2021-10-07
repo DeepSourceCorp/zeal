@@ -34,7 +34,7 @@
         'cursor-not-allowed': disabled || readOnly
       }"
       :aria-label="label"
-      :value="name"
+      :value="value"
       :name="name"
       :type="type"
       :max="max"
@@ -76,6 +76,10 @@ export default Vue.extend({
   props: {
     name: {
       default: '',
+      type: String
+    },
+    value: {
+      default: undefined,
       type: String
     },
     label: {
@@ -195,8 +199,8 @@ export default Vue.extend({
     focus(): void {
       ;(this.$refs.input as HTMLInputElement).focus()
     },
-    updateSelf(name: string): void {
-      this.$emit('input', name)
+    updateSelf(value: string): void {
+      this.$emit('input', value)
     },
     updateDebounce(value: unknown): void {
       this.$emit('debounceInput', value)
