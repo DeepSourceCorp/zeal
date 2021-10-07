@@ -35,6 +35,7 @@
       }"
       :aria-label="label"
       :value="name"
+      :name="name"
       :type="type"
       :max="max"
       :maxlength="maxLength"
