@@ -79,7 +79,7 @@ export default Vue.extend({
       type: String
     },
     value: {
-      default: undefined,
+      default: '',
       type: String
     },
     label: {
@@ -172,10 +172,6 @@ export default Vue.extend({
       type: Boolean,
       default: false
     }
-  },
-  model: {
-    prop: 'name',
-    event: 'input'
   },
   data() {
     return {
