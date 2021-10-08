@@ -22,7 +22,7 @@
             <span v-if="readingTime">
               <span class="text-slate mx-2 lg:mx-4">&bull;</span>
               <span>{{ `${readingTime} read` }}</span>
-              <z-icon icon="clock" color="juniper" size="small" class="inline stroke-2 ml-2 mb-px"/>
+              <z-icon icon="clock" color="juniper" size="small" class="inline stroke-2 ml-2 mb-px" />
             </span>
           </span>
         </div>
