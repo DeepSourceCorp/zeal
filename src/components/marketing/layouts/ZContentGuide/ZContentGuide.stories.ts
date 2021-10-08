@@ -26,6 +26,7 @@ export const Guide = () => ({
         date="February 29, 2020"
         previous-page-text="Back to all guides"
         previous-page-link="https://google.com"
+        reading-time="10 min"
       >
       <div>
       <h1 id="this-is-main">Just to show off main heading</h1>

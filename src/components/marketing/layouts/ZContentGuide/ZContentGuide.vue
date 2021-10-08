@@ -19,6 +19,11 @@
             <span>{{ author }}</span>
             <span class="text-slate mx-2 lg:mx-4">&bull;</span>
             <span>{{ date }}</span>
+            <span v-if="readingTime">
+              <span class="text-slate mx-2 lg:mx-4">&bull;</span>
+              <span>{{ `${readingTime} read` }}</span>
+              <z-icon icon="clock" color="juniper" size="small" class="inline stroke-2 ml-2 mb-px"/>
+            </span>
           </span>
         </div>
         <h2 v-if="subtitle" class="text-lg lg:text-xl leading-9 lg:leading-normal font-normal text-vanilla-400 mb-6">
@@ -39,6 +44,7 @@ import ZDivider from '@/components/ZDivider'
 import ZPageLabel from '@/components/marketing/ZPageLabel'
 import ZScrollSpy from '@/components/marketing/ZScrollSpy'
 import ZAvatar from '@/components/ZAvatar'
+import ZIcon from '@/components/ZIcon'
 
 export default {
   name: 'ZContentGuide',
@@ -46,7 +52,8 @@ export default {
     ZDivider,
     ZPageLabel,
     ZScrollSpy,
-    ZAvatar
+    ZAvatar,
+    ZIcon
   },
   props: {
     title: {
@@ -66,6 +73,11 @@ export default {
     pageLabel: {
       type: String,
       required: false
+    },
+    readingTime: {
+      type: String,
+      required: false,
+      default: undefined
     }
   },
   methods: {
