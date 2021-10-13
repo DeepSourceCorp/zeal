@@ -8,6 +8,7 @@
     }"
   >
     <textarea
+      :maxlength="maxLength"
       class="w-full h-full p-1 bg-transparent resize-none outline-none"
       :class="[
         `text-${textSize}`,
@@ -54,6 +55,11 @@ export default Vue.extend({
     resizable: {
       type: Boolean,
       default: false
+    },
+    maxLength: {
+      type: Number,
+      default: null,
+      required: false
     }
   },
   model: {

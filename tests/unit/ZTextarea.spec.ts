@@ -48,4 +48,14 @@ describe('Textarea Component', () => {
     })
     expect(wrapper.html()).toMatchSnapshot()
   })
+
+  it('renders a textarea with maxLength of 60', () => {
+    const wrapper = mountFn({
+      propsData: {
+        maxLength: 60
+      }
+    })
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.find('textarea').attributes('maxlength')).toMatch('60')
+  })
 })
