@@ -18,7 +18,7 @@ const DEFAULT = function (theme) {
       color: theme('colors.vanilla.400')
     },
     a: {
-      color: theme('colors.juniper'),
+      color: theme('colors.juniper.DEFAULT'),
       textDecoration: 'normal',
       fontWeight: theme('fontWeight.medium')
     },
