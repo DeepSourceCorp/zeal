@@ -38,7 +38,7 @@ export default Vue.extend({
   name: 'ZNumberInput',
   components: { ZButton },
   props: {
-    value: { type: [Number, String] },
+    value: { type: [Number, String], default: NaN },
     min: { type: [Number, String], default: NaN },
     max: { type: [Number, String], default: NaN },
     step: { type: Number, default: 1 },
