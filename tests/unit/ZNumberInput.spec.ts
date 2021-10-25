@@ -20,7 +20,7 @@ const BasicTab = {
 }
 
 describe('ZNumberInput', () => {
-  it('renders a number input and two buttons', async () => {
+  it('renders a number input and two buttons', () => {
     const wrapper = mount(BasicTab)
 
     expect(wrapper.html()).toMatchSnapshot()

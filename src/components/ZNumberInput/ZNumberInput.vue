@@ -39,8 +39,8 @@ export default Vue.extend({
   components: { ZButton },
   props: {
     value: { type: [Number, String] },
-    min: { type: [Number, String] },
-    max: { type: [Number, String] },
+    min: { type: [Number, String], default: NaN },
+    max: { type: [Number, String], default: NaN },
     step: { type: Number, default: 1 },
     jump: { type: Number, default: 5 },
     placeholder: { type: String, default: 'Enter a number' }
@@ -65,7 +65,6 @@ export default Vue.extend({
         input: ({ target }: InputEvent) => {
           if (target) {
             const a = this.minMaxNum((target as HTMLInputElement).valueAsNumber)
-            debugger
             this.localVal = a
             this.$emit('input', this.localValNumber)
           }
