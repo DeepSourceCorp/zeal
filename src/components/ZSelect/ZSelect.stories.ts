@@ -37,6 +37,10 @@ export const DefaultSelect = () => ({
         {
           value: 60,
           label: 'Last 60 Days'
+        },
+        {
+          value: null,
+          label: 'All Days'
         }
       ]
     }
@@ -51,7 +55,7 @@ export const DefaultSelect = () => ({
                         :value="item.value">
                     </z-option>
                 </z-select>
-                <div class='text-sm text-vanilla-400'>Selected Value: <span class='text-juniper font-bold'>{{ value }}</span></div>
+                <div class='text-sm text-vanilla-400'>Selected Value: <span class='text-juniper font-bold'>{{ value || 'null' }}</span></div>
               </div>
         </div>`
 })

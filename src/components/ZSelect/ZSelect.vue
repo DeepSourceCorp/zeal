@@ -18,7 +18,7 @@
       @[canClick]="open = !open"
     >
       <div
-        v-if="selectedOpt"
+        v-if="selectedOpt !== undefined"
         class="selected-option flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full"
         :class="[getTextSize, getCursorType]"
       >
