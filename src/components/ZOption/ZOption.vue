@@ -1,6 +1,6 @@
 <template>
   <div
-    class="z-option p-2 cursor-pointer text-vanilla-300 hover:bg-ink-200"
+    class="p-2 cursor-pointer z-option text-vanilla-300 hover:bg-ink-200"
     :class="[selected && 'is-selected bg-ink-200', textSizeClass]"
     @click.stop="selectOption()"
   >
@@ -25,7 +25,7 @@ export default Vue.extend({
       type: String
     },
     value: {
-      type: String || Number
+      type: [String, Number]
     },
     textSize: {
       type: String,

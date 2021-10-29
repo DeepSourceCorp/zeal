@@ -68,7 +68,7 @@ export default Vue.extend({
   },
   props: {
     selected: {
-      type: String || Number || null,
+      type: [String, Number],
       default: null
     },
     tabIndex: {
