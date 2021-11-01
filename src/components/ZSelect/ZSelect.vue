@@ -29,7 +29,7 @@
           {{ placeholder }}
         </template>
       </div>
-      <button v-if="selectedOpt && clearable" class="flex items-center justify-between" @click.stop="clearSelected()">
+      <button v-if="selectedOpt && clearable" class="flex items-center justify-between" @click.stop="clearSelected">
         <z-icon icon="x" size="small" :color="getIconColor"></z-icon>
       </button>
       <span v-else>
