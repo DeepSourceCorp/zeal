@@ -228,14 +228,14 @@ export const SelectWithIcon = () => ({
             <div class="select-container">
                 <z-select v-model="value" placeholder="Choose a framework">
                     <template #icon>
-                      <z-icon icon="duration"></z-icon>
+                      <z-icon icon="duration" />
                     </template>
                     <z-option
                         v-for="item in options"
                         :key="item.value"
                         :label="item.label"
-                        :value="item.value">
-                    </z-option>
+                        :value="item.value"
+                    />
                 </z-select>
             </div>
         </div>`
@@ -322,7 +322,7 @@ export const SelectWithCustomOptionsTemplate = () => ({
                         :label="item.label"
                         :value="item.value">
                         <div class="flex items-center">
-                            <z-icon icon="github" size="small" class="mr-2"></z-icon>
+                            <z-icon icon="github" size="small" class="mr-2" />
                             <span class="flex-1">{{item.label}}</span>
                         </div>
                     </z-option>
@@ -369,7 +369,7 @@ export const SelectWithPreselectedOption = () => ({
                         :label="item.label"
                         :value="item.value">
                         <div class="flex items-center">
-                            <z-icon icon="github" size="small" class="mr-2"></z-icon>
+                            <z-icon icon="github" size="small" class="mr-2" />
                             <span class="flex-1">{{item.label}}</span>
                         </div>
                     </z-option>
