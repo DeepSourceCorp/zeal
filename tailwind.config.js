@@ -844,7 +844,7 @@ module.exports = {
       ping: {
         '0%, 100%': { transform: 'scale(1.1)', opacity: '0.4' },
         '50%': { transform: 'scale(1.4)', opacity: '0.5' },
-        '75%': { transform: 'scale(1.2)'  },
+        '75%': { transform: 'scale(1.2)' }
       },
       pulse: {
         '0%, 100%': { opacity: '1' },
