@@ -786,7 +786,7 @@ module.exports = {
       'first-quarter-spin': 'first-quarter-spin 0.5s',
       'reverse-quarter-spin': 'reverse-quarter-spin 0.5s',
       gradient: 'gradient 30s ease infinite',
-      ping: 'ping 2s linear infinite',
+      ping: 'ping 2.5s linear infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
       'slide-left-enter-active': 'slide-left-in 0.5s ease-out',
@@ -842,9 +842,9 @@ module.exports = {
         to: { transform: 'rotate(0deg)' }
       },
       ping: {
-        '0%': { transform: 'scale(1)', opacity: '1' },
-        '50%': { transform: 'scale(1.5)', opacity: '0.5' },
-        '100%': { transform: 'scale(1)', opacity: '0' }
+        '0%, 100%': { transform: 'scale(1.1)', opacity: '0.4' },
+        '50%': { transform: 'scale(1.4)', opacity: '0.5' },
+        '75%': { transform: 'scale(1.2)'  },
       },
       pulse: {
         '0%, 100%': { opacity: '1' },
