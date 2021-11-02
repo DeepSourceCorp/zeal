@@ -46,7 +46,7 @@ export const ZealIcons = () => ({
       v-for="icon in customIcons"
       :key="icon"
       @click="copyToClipboard(icon)"
-      class="rounded-lg border-ink-200 border flex flex-col space-y-2 text-center items-center justify-center px-2 py-4 h-22 hover:bg-ink-300 cursor-pointer"
+      class="rounded-lg border-ink-200 border flex flex-col space-y-2 text-center items-center justify-center px-2 py-4 h-28 hover:bg-ink-300 cursor-pointer"
     >
       <z-icon :icon="icon" size="medium"></z-icon>
       <span class="text-xs text-vanilla-300">{{ icon }}</span>

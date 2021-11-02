@@ -1,12 +1,12 @@
 <template>
   <div
     :tabindex="tabIndex"
-    class="custom-select relative w-full text-left outline-none h-full leading-8"
+    class="relative w-full h-full leading-8 text-left outline-none custom-select"
     :class="{ 'is-disabled': disabled, 'is-readonly': readOnly }"
     @blur.stop="!disabled && !readOnly && blurEvent()"
   >
     <div
-      class="selected h-full relative border border-solid"
+      class="flex items-center justify-between h-full px-2 py-3 space-x-2 border border-solid selected"
       :class="[
         (open && 'border-vanilla-400') || borderClass,
         spacing,
@@ -17,33 +17,26 @@
       ]"
       @[canClick]="open = !open"
     >
+      <slot name="icon"></slot>
       <div
-        v-if="selectedOpt"
-        class="selected-option flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full"
-        :class="[getTextSize, getCursorType]"
+        class="flex items-center flex-grow h-full outline-none cursor-pointer"
+        :class="[getTextSize, getCursorType, selectedOpt === undefined ? 'text-vanilla-400 opacity-70' : '']"
       >
-        {{ selectedOptLabel || selectedOpt }}
+        <template v-if="selectedOpt">
+          {{ selectedOptLabel || selectedOpt }}
+        </template>
+        <template v-else>
+          {{ placeholder }}
+        </template>
       </div>
-      <!-- prettier-ignore -->
-      <div
-        v-else
-        class="flex items-center bg-transparent w-10/12 pl-3 outline-none cursor-pointer h-full text-vanilla-400 opacity-70"
-        :class="[getTextSize]"
-      >
-        {{ placeholder }}
-      </div>
-      <button
-        v-if="selectedOpt && clearable"
-        class="absolute right-3 top-50 transform -translate-y-1/2"
-        @click.stop="clearSelected()"
-      >
+      <button v-if="selectedOpt && clearable" class="flex items-center justify-between" @click.stop="clearSelected">
         <z-icon icon="x" size="small" :color="getIconColor"></z-icon>
       </button>
-      <span v-else class="absolute top-50 right-3 transform -translate-y-1/2">
+      <span v-else>
         <z-icon
           icon="chevron-down"
           size="small"
-          class="transform transition-all duration-300"
+          class="transition-all duration-300 transform"
           :color="getIconColor"
           :class="(open && 'rotate-180') || 'rotate-0'"
         ></z-icon>
@@ -51,7 +44,7 @@
     </div>
     <!-- prettier-ignore -->
     <div
-      class="options shadow-black border border-solid border-ink-100 text-vanilla-300 rounded-md overflow-hidden absolute bg-ink-300 left-0 right-0 z-10 transition-all duration-300 mt-1"
+      class="absolute left-0 right-0 z-10 mt-1 overflow-hidden transition-all duration-300 border border-solid rounded-md options shadow-black border-ink-100 text-vanilla-300 bg-ink-300"
       :class="!open && 'hidden'"
     >
       <slot></slot>
@@ -75,7 +68,7 @@ export default Vue.extend({
   },
   props: {
     selected: {
-      type: String || Number || null,
+      type: [String, Number],
       default: null
     },
     tabIndex: {

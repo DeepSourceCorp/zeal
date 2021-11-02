@@ -37,6 +37,10 @@ export const DefaultSelect = () => ({
         {
           value: 60,
           label: 'Last 60 Days'
+        },
+        {
+          value: null,
+          label: 'All Days'
         }
       ]
     }
@@ -51,7 +55,7 @@ export const DefaultSelect = () => ({
                         :value="item.value">
                     </z-option>
                 </z-select>
-                <div class='text-sm text-vanilla-400'>Selected Value: <span class='text-juniper font-bold'>{{ value }}</span></div>
+                <div class='text-sm text-vanilla-400'>Selected Value: <span class='text-juniper font-bold'>{{ value || 'null' }}</span></div>
               </div>
         </div>`
 })
@@ -191,6 +195,52 @@ export const SelectWithCustomPlaceholder = () => ({
         </div>`
 })
 
+export const SelectWithIcon = () => ({
+  components: { ZSelect, ZOption, ZIcon },
+  data() {
+    return {
+      value: '',
+      options: [
+        {
+          value: 'Option 1',
+          label: 'Option 1'
+        },
+        {
+          value: 'Option 2',
+          label: 'Option 2'
+        },
+        {
+          value: 'Option 3',
+          label: 'Option 3'
+        },
+        {
+          value: 'Option 4',
+          label: 'Option 4'
+        },
+        {
+          value: 'Option 5',
+          label: 'Option 5'
+        }
+      ]
+    }
+  },
+  template: `<div class='padded-container'>
+            <div class="select-container">
+                <z-select v-model="value" placeholder="Choose a framework">
+                    <template #icon>
+                      <z-icon icon="duration" />
+                    </template>
+                    <z-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value"
+                    />
+                </z-select>
+            </div>
+        </div>`
+})
+
 export const SelectWithClearables = () => ({
   components: { ZSelect, ZOption, ZIcon },
   data() {
@@ -272,7 +322,7 @@ export const SelectWithCustomOptionsTemplate = () => ({
                         :label="item.label"
                         :value="item.value">
                         <div class="flex items-center">
-                            <z-icon icon="github" size="small" class="-mt-1 mr-2"></z-icon>
+                            <z-icon icon="github" size="small" class="mr-2" />
                             <span class="flex-1">{{item.label}}</span>
                         </div>
                     </z-option>
@@ -319,7 +369,7 @@ export const SelectWithPreselectedOption = () => ({
                         :label="item.label"
                         :value="item.value">
                         <div class="flex items-center">
-                            <z-icon icon="github" size="small" class="-mt-1 mr-2"></z-icon>
+                            <z-icon icon="github" size="small" class="mr-2" />
                             <span class="flex-1">{{item.label}}</span>
                         </div>
                     </z-option>

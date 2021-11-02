@@ -80,7 +80,7 @@ export default Vue.extend({
     },
     modelValue: {
       default: false,
-      type: Boolean || String
+      type: [Boolean, String]
     },
     size: {
       default: 'base',
