@@ -33,7 +33,13 @@ export default {
     }
   },
   mounted() {
-    this.separator = this.$parent.separator
+    if (this.$parent?.$options.name === 'ZBreadcrumb') {
+      this.separator = this.$parent.separator
+      this.$parent.length += 1
+    }
+  },
+  beforeDestroy() {
+    if (this.$parent?.$options.name === 'ZBreadcrumb') this.$parent.length -= 1
   }
 }
 </script>
