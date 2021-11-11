@@ -9,4 +9,8 @@
     margin: 0;
     opacity: 0;
   }
+
+  input[type='number'].hide-input-spinners {
+    -moz-appearance: textfield;/*For FireFox*/
+  }
 }
