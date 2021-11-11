@@ -15,6 +15,7 @@ import ZExpandable from './components/ZExpandable/index'
 import ZInput from './components/ZInput/index'
 import ZInputGroup from './components/ZInputGroup/index'
 import ZInputAddon from './components/ZInputAddon/index'
+import ZNumberInput from './components/ZNumberInput/index'
 import ZRadio from './components/ZRadio/index'
 import ZRadioGroup from './components/ZRadioGroup/index'
 import ZRadioButton from './components/ZRadioButton/index'
@@ -102,6 +103,7 @@ const components = [
   ZInput,
   ZInputGroup,
   ZInputAddon,
+  ZNumberInput,
   ZSelect,
   ZOption,
   ZLabel,
@@ -187,6 +189,7 @@ export default {
   ZInput,
   ZInputGroup,
   ZInputAddon,
+  ZNumberInput,
   ZSelect,
   ZOption,
   ZTab,
@@ -253,6 +256,7 @@ export { default as ZExpandable } from './components/ZExpandable/index'
 export { default as ZInput } from './components/ZInput/index'
 export { default as ZInputGroup } from './components/ZInputGroup/index'
 export { default as ZInputAddon } from './components/ZInputAddon/index'
+export { default as ZNumberInput } from './components/ZNumberInput/index'
 export { default as ZRadio } from './components/ZRadio/index'
 export { default as ZRadioGroup } from './components/ZRadioGroup/index'
 export { default as ZRadioButton } from './components/ZRadioButton/index'
