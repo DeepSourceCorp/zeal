@@ -1,5 +1,5 @@
 <template>
-  <component v-if="isVisible" :is="TYPES[type]" class="inline-block bg-ink-300 p-0.5 rounded-full">
+  <component v-if="isVisible" :is="TYPES[type]" class="inline-block rounded-full" :class="stroke">
     <span
       v-if="isLoading"
       :class="[`${SIZES[getSize].classes}`]"
@@ -56,6 +56,11 @@ export default Vue.extend({
       type: String,
       default: SIZES.md.text,
       validator: (size) => Object.keys(SIZES).includes(size)
+    },
+    stroke: {
+      type: String,
+      required: false,
+      default: 'bg-ink-300 p-0.5'
     }
   },
   data() {
