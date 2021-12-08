@@ -59,3 +59,9 @@ exports[`Button component should render loading state 1`] = `
   <!----> Secondary Button
 </button>
 `;
+
+exports[`Button component should render with left justify 1`] = `
+<button href="#" type="button" class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap text-ink-400 justify-start h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-juniper-600">
+  <!----> Secondary Button
+</button>
+`;

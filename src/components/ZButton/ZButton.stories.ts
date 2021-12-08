@@ -40,7 +40,7 @@ export const Colors = () => ({
 export const Sizes = () => ({
   components: { ZButton },
   filters: {
-    capitalize: function (value: string) {
+    capitalize: function(value: string) {
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
@@ -67,7 +67,7 @@ export const Sizes = () => ({
 export const States = () => ({
   components: { ZButton },
   filters: {
-    capitalize: function (value: string) {
+    capitalize: function(value: string) {
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
@@ -123,5 +123,14 @@ export const FullWidthButton = () => ({
   components: { ZButton },
   template: `<div>
         <z-button buttonType="primary" full-width>Full Width Button</z-button>
+    </div>`
+})
+
+export const JustifyOptions = () => ({
+  components: { ZButton },
+  template: `<div class="max-w-xs space-y-4">
+        <z-button buttonType="primary" justify="left" full-width>Left Aligned Button</z-button>
+        <z-button buttonType="primary" full-width>Center Aligned Button</z-button>
+        <z-button buttonType="primary" justify="right" full-width>Right Aligned Button</z-button>
     </div>`
 })

@@ -219,8 +219,8 @@ export default Vue.extend({
     justifyClass(): string {
       const classMap = {
         center: 'justify-center',
-        left: 'justify-left',
-        right: 'justify-right'
+        left: 'justify-start',
+        right: 'justify-end'
       }
       return classMap[this.justify] || 'justify-center'
     }

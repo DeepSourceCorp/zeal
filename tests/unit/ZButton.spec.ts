@@ -138,4 +138,16 @@ describe('Button component', () => {
       }).html()
     ).toMatchSnapshot()
   })
+  it('should render with left justify', () => {
+    expect(
+      mountFunction({
+        propsData: {
+          justify: 'left'
+        },
+        slots: {
+          default: 'Secondary Button'
+        }
+      }).html()
+    ).toMatchSnapshot()
+  })
 })
