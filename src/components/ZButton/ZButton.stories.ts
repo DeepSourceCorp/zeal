@@ -125,3 +125,12 @@ export const FullWidthButton = () => ({
         <z-button buttonType="primary" full-width>Full Width Button</z-button>
     </div>`
 })
+
+export const JustifyOptions = () => ({
+  components: { ZButton },
+  template: `<div class="max-w-xs space-y-4">
+        <z-button buttonType="primary" justify="left" full-width>Left Aligned Button</z-button>
+        <z-button buttonType="primary" full-width>Center Aligned Button</z-button>
+        <z-button buttonType="primary" justify="right" full-width>Right Aligned Button</z-button>
+    </div>`
+})

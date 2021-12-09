@@ -7,19 +7,19 @@ exports[`Avatar Group component renders an avatar group when the component is mo
 `;
 
 exports[`Avatar Group component renders avatar group 1`] = `
-<div class="flex items-center"><a class="inline-block bg-ink-300 p-0.5 rounded-full">
+<div class="flex items-center"><a class="inline-block rounded-full bg-ink-300 p-0.5">
     <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-8 w-8 text-sm">
       AP
     </span>
-  </a><a class="inline-block bg-ink-300 p-0.5 rounded-full -ml-3">
+  </a><a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
     <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-8 w-8 text-sm">
       AP
     </span>
-  </a><a class="inline-block bg-ink-300 p-0.5 rounded-full -ml-3">
+  </a><a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
     <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-8 w-8 text-sm">
       AP
     </span>
-  </a><a class="inline-block bg-ink-300 p-0.5 rounded-full -ml-3">
+  </a><a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
     <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-8 w-8 text-sm">
       AP
     </span>
@@ -29,23 +29,23 @@ exports[`Avatar Group component renders avatar group 1`] = `
 `;
 
 exports[`Avatar Group component renders avatar group with size 1`] = `
-<div class="flex items-center"><a class="inline-block bg-ink-300 p-0.5 rounded-full">
+<div class="flex items-center"><a class="inline-block rounded-full bg-ink-300 p-0.5">
     <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-6 w-6 text-xs">
       AP
     </span>
-  </a> <a class="inline-block bg-ink-300 p-0.5 rounded-full -ml-3">
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
     <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-6 w-6 text-xs">
       SD
     </span>
-  </a> <a class="inline-block bg-ink-300 p-0.5 rounded-full -ml-3">
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
     <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-6 w-6 text-xs">
       AP
     </span>
-  </a> <a class="inline-block bg-ink-300 p-0.5 rounded-full -ml-3">
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
     <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-6 w-6 text-xs">
       AP
     </span>
-  </a> <a class="inline-block bg-ink-300 p-0.5 rounded-full -ml-3">
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
     <!----> <span class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full leading-none h-6 w-6 text-xs">
       AP
     </span>
