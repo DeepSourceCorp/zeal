@@ -5,9 +5,10 @@
     :href="to || '#'"
     :disabled="disabled"
     :type="isLink ? 'link' : type"
-    class="z-btn inline-flex items-center justify-center font-medium transition-colors duration-300 ease-in-out rounded-sm focus:outline-none whitespace-nowrap"
+    class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap"
     :class="{
       [textColor]: textColor,
+      [justifyClass]: justifyClass,
       [`z-btn--${color}`]: color,
       'w-full': fullWidth,
 
@@ -94,6 +95,13 @@ export default Vue.extend({
     as: {
       default: 'button',
       type: String
+    },
+    justify: {
+      default: 'center',
+      type: String,
+      validator(val) {
+        return ['center', 'left', 'right'].includes(val)
+      }
     },
     isLoading: {
       default: false,
@@ -207,6 +215,14 @@ export default Vue.extend({
     },
     isLink(): boolean {
       return Boolean(this.as === 'link' || this.type === 'link' || this.to)
+    },
+    justifyClass(): string {
+      const classMap = {
+        center: 'justify-center',
+        left: 'justify-start',
+        right: 'justify-end'
+      }
+      return classMap[this.justify] || 'justify-center'
     }
   }
 })
