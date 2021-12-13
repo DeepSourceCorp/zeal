@@ -20,7 +20,6 @@
       </div>
       <div class="transform -translate-x-2.5 group-hover:translate-x-0 ease-bounce transition-transform duration-300">
         <a
-          @click.prevent="scrollSmoothlyTo(heading.id)"
           class="text-xs pl-2 opacity-0 group-hover:opacity-100 transition-colors duration-300 ease-in-out line-clamp-1"
           :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`]"
           :href="`#${heading.id}`"
@@ -34,7 +33,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import smoothscroll from 'smoothscroll-polyfill'
 import ZDivider from '../../ZDivider'
 
 interface Heading {
@@ -207,16 +205,6 @@ export default Vue.extend({
         }
       })
       return tagNameFound
-    },
-    scrollSmoothlyTo(headingId: Heading['id']) {
-      const elem = headingId && document.getElementById(headingId)
-      smoothscroll.polyfill()
-      if (elem) {
-        window.scrollTo({
-          top: elem.offsetTop - this.headingOffsetTop,
-          behavior: 'smooth'
-        })
-      }
     },
     setScrollSpeed() {
       const curPos = window.scrollY
