@@ -78,7 +78,7 @@ export default {
   render(h) {
     const mWidth = (this.maxWidth && `max-w-${this.maxWidth}`) || '',
       headerStyle = `${mWidth}
-        w-full flex items-center px-6 md:px-0 space-x-3`,
+        w-full flex items-center px-6 space-x-3`,
       header = (
         <nav class={headerStyle}>
           <div class="first flex items-center flex-1">{this.$slots.brand}</div>
