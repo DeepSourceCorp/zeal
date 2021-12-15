@@ -1,5 +1,5 @@
 <template>
-  <ul class="group" :class="[`text-${align}`]">
+  <ul class="group list-inside" :class="[`text-${align}`]">
     <li
       v-for="heading in headingsMap"
       :key="heading.id"
@@ -19,12 +19,13 @@
         />
       </div>
       <div class="transform -translate-x-2.5 group-hover:translate-x-0 ease-bounce transition-transform duration-300">
-        <a
-          class="text-xs pl-2 opacity-0 group-hover:opacity-100 transition-colors duration-300 ease-in-out line-clamp-1"
-          :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`]"
-          :href="`#${heading.id}`"
-        >
-          {{ heading.text }}
+        <a :href="`#${heading.id}`">
+          <div
+            class="text-xs pl-2 h-full opacity-0 group-hover:opacity-100 transition-colors duration-300 ease-in-out"
+            :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`]"
+          >
+            {{ heading.text }}
+          </div>
         </a>
       </div>
     </li>
@@ -43,7 +44,7 @@ interface Heading {
 }
 enum HEADING_STATE_CLASSES {
   active = 'text-vanilla-100 border-l border-juniper',
-  inactive = 'text-slate hover:text-vanilla-400'
+  inactive = 'text-vanilla-400'
 }
 enum HEADING_ALIGNMENT_CLASSES {
   left = 'ml',
