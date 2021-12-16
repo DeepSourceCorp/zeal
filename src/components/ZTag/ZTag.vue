@@ -3,9 +3,9 @@
     class="inline-flex items-center space-x-2 rounded-full justify-evenly text-vanilla-100"
     :class="[spacing, `text-${textSize}`, getBaseColor, `bg-${bgColor}`]"
   >
-    <z-icon v-if="iconLeft" :icon="iconLeft" :size="size"></z-icon>
+    <z-icon v-if="iconLeft" :icon="iconLeft" :color="iconColor" :size="size"></z-icon>
     <slot></slot>
-    <z-icon v-if="iconRight" :icon="iconRight" :size="size"></z-icon>
+    <z-icon v-if="iconRight" :icon="iconRight" :color="iconColor" :size="size"></z-icon>
   </div>
 </template>
 
@@ -50,6 +50,10 @@ export default Vue.extend({
     spacing: {
       type: String,
       default: 'py-1 px-4'
+    },
+    iconColor: {
+      type: String,
+      default: 'current'
     }
   },
   computed: {

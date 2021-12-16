@@ -5,7 +5,7 @@ exports[`Select Component renders a select component with custom options templat
   <div class="flex items-center justify-between h-full px-2 py-3 space-x-2 border border-solid selected border-ink-200 bg-transparent rounded-md text-vanilla-300 cursor-pointer">
     <div class="flex items-center flex-grow h-full outline-none cursor-pointer text-xs cursor-pointer">
       Choose a framework
-    </div> <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transition-all duration-300 transform z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><path d="M18 9.75L12 15.75L6 9.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+    </div> <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transition-all duration-300 transform z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
   </div>
   <div class="absolute left-0 right-0 z-10 mt-1 overflow-hidden transition-all duration-300 border border-solid rounded-md options shadow-black border-ink-100 text-vanilla-300 bg-ink-300 hidden">
     <div class="p-2 cursor-pointer z-option text-vanilla-300 hover:bg-ink-200 text-xs">
@@ -27,7 +27,7 @@ exports[`Select Component renders the default select component 1`] = `
   <div class="flex items-center justify-between h-full px-2 py-3 space-x-2 border border-solid selected border-ink-200 bg-transparent rounded-md text-vanilla-300 cursor-pointer">
     <div class="flex items-center flex-grow h-full outline-none cursor-pointer text-xs cursor-pointer">
       Select an Option
-    </div> <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transition-all duration-300 transform z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><path d="M18 9.75L12 15.75L6 9.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+    </div> <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transition-all duration-300 transform z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
   </div>
   <div class="absolute left-0 right-0 z-10 mt-1 overflow-hidden transition-all duration-300 border border-solid rounded-md options shadow-black border-ink-100 text-vanilla-300 bg-ink-300 hidden">
     <div class="p-2 cursor-pointer z-option text-vanilla-300 hover:bg-ink-200 text-xs">Option 1</div>
@@ -41,7 +41,7 @@ exports[`Select Component renders the select component with clearables 1`] = `
   <div class="flex items-center justify-between h-full px-2 py-3 space-x-2 border border-solid selected border-ink-200 bg-transparent rounded-md text-vanilla-300 cursor-pointer">
     <div class="flex items-center flex-grow h-full outline-none cursor-pointer text-xs cursor-pointer">
       Choose a framework
-    </div> <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transition-all duration-300 transform z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><path d="M18 9.75L12 15.75L6 9.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+    </div> <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transition-all duration-300 transform z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
   </div>
   <div class="absolute left-0 right-0 z-10 mt-1 overflow-hidden transition-all duration-300 border border-solid rounded-md options shadow-black border-ink-100 text-vanilla-300 bg-ink-300 hidden">
     <div class="p-2 cursor-pointer z-option text-vanilla-300 hover:bg-ink-200 text-xs">Option 1</div>
@@ -55,7 +55,7 @@ exports[`Select Component renders the select with a custom placeholder 1`] = `
   <div class="flex items-center justify-between h-full px-2 py-3 space-x-2 border border-solid selected border-ink-200 bg-transparent rounded-md text-vanilla-300 cursor-pointer">
     <div class="flex items-center flex-grow h-full outline-none cursor-pointer text-xs cursor-pointer">
       Choose a framework
-    </div> <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transition-all duration-300 transform z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><path d="M18 9.75L12 15.75L6 9.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+    </div> <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transition-all duration-300 transform z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
   </div>
   <div class="absolute left-0 right-0 z-10 mt-1 overflow-hidden transition-all duration-300 border border-solid rounded-md options shadow-black border-ink-100 text-vanilla-300 bg-ink-300 hidden">
     <div class="p-2 cursor-pointer z-option text-vanilla-300 hover:bg-ink-200 text-xs">Option 1</div>
