@@ -49,7 +49,8 @@ export default Vue.extend({
       required: false,
       validator(val) {
         return ['top', 'right', 'bottom', 'left'].includes(val)
-      }
+      },
+      default: undefined
     }
   },
   data: function () {

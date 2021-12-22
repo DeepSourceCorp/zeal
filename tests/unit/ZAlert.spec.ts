@@ -1,22 +1,15 @@
-import { createLocalVue, mount, Wrapper } from '@vue/test-utils'
-import Vue from 'vue'
-
+import { createLocalVue, mount } from '@vue/test-utils'
 import ZAlert from '../../src/components/ZAlert'
 import ZButton from '../../src/components/ZButton'
 
 describe('Alert component', () => {
-  let mountFunction: (options?: Record<string, unknown>) => Wrapper<Vue>
-  let localVue: typeof Vue
-
-  beforeEach(() => {
-    localVue = createLocalVue()
-    mountFunction = (options = {}) => {
-      return mount(ZAlert, {
-        localVue,
-        ...options
-      })
-    }
-  })
+  const localVue = createLocalVue()
+  const mountFunction = (options = {}) => {
+    return mount(ZAlert, {
+      localVue,
+      ...options
+    })
+  }
 
   it('renders an alert widget with the given text', () => {
     expect(
