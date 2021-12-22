@@ -10,7 +10,7 @@ export default {
 export const AlertTypes = () => {
   return Vue.extend({
     components: { ZAlert },
-    data: function() {
+    data: function () {
       return {
         types: ['info', 'warning', 'danger']
       }
@@ -30,7 +30,7 @@ export const AlertTypes = () => {
 export const DismissibleAlert = () => {
   return Vue.extend({
     components: { ZAlert },
-    data: function() {
+    data: function () {
       return {
         types: ['info', 'warning', 'danger']
       }
@@ -50,7 +50,7 @@ export const DismissibleAlert = () => {
 export const AlertWithDismissAndControls = () => {
   return Vue.extend({
     components: { ZAlert, ZButton },
-    data: function() {
+    data: function () {
       return {
         colors: {
           info: 'bg-robin',
@@ -80,7 +80,7 @@ export const AlertWithDismissAndControls = () => {
 export const AlertWithBorders = () => {
   return Vue.extend({
     components: { ZAlert },
-    data: function() {
+    data: function () {
       return {
         types: ['info', 'warning', 'danger']
       }

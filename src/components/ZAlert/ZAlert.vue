@@ -1,14 +1,7 @@
 <template>
   <div
     v-if="isVisible"
-    class="
-              flex
-              items-center
-              justify-between
-              rounded-md
-              px-4 py-2
-              bg-opacity-10
-            "
+    class="flex items-center justify-between rounded-md px-4 py-2 bg-opacity-10"
     :class="[bgColor, borderClass]"
     style="min-height: 49px"
   >
@@ -59,7 +52,7 @@ export default Vue.extend({
       }
     }
   },
-  data: function() {
+  data: function () {
     return {
       isVisible: true,
       colors: {
