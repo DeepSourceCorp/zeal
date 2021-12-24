@@ -90,7 +90,9 @@ export default Vue.extend({
       default: undefined
     },
     sourceCodeMarkup: {
-      type: String
+      type: String,
+      required: false,
+      default: undefined
     }
   },
   data: function () {
