@@ -49,10 +49,28 @@ describe('Alert component', () => {
           dismissible: true
         },
         slots: {
-          default: 'Alert of the type danger which is dismissible',
+          default: 'Alert of the type danger with controls',
           controls: `<z-button button-type="ghost" color="vanilla-100" size="small" class="bg-cherry bg-opacity-40">
               Default button
             </z-button>`
+        }
+      }).html()
+    ).toMatchSnapshot()
+  })
+
+  it('renders a dismissible alert widget with code snippets', () => {
+    expect(
+      mountFunction({
+        components: {
+          ZButton
+        },
+        propsData: {
+          type: 'danger',
+          dismissible: true,
+          sourceCodeMarkup: `<div class="highlight"><pre><span class="ln">2</span>\n<span class="ln">3</span>\n<span class="ln">4</span><span class="nd">@dramatiq.actor</span>\n<span class="hl"><span class="ln">5</span><span class="k">def</span> <span class="nf">example</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></span><span class="ln">6</span>    <span class="k">pass</span>\n</pre></div>`
+        },
+        slots: {
+          default: 'Alert of the type danger with code snippets'
         }
       }).html()
     ).toMatchSnapshot()
