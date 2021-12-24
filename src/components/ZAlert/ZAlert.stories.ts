@@ -10,7 +10,7 @@ export default {
 export const AlertTypes = () => {
   return Vue.extend({
     components: { ZAlert },
-    data: function () {
+    data: function() {
       return {
         types: ['info', 'warning', 'danger']
       }
@@ -30,7 +30,7 @@ export const AlertTypes = () => {
 export const DismissibleAlert = () => {
   return Vue.extend({
     components: { ZAlert },
-    data: function () {
+    data: function() {
       return {
         types: ['info', 'warning', 'danger']
       }
@@ -47,10 +47,10 @@ export const DismissibleAlert = () => {
   })
 }
 
-export const AlertWithDismissAndControls = () => {
+export const DismissibleAlertWithControls = () => {
   return Vue.extend({
     components: { ZAlert, ZButton },
-    data: function () {
+    data: function() {
       return {
         colors: {
           info: 'bg-robin',
@@ -77,10 +77,10 @@ export const AlertWithDismissAndControls = () => {
   })
 }
 
-export const AlertWithCodeSnippets = () => {
+export const DismissibleAlertWithCodeSnippet = () => {
   return Vue.extend({
     components: { ZAlert, ZButton },
-    data: function () {
+    data: function() {
       return {
         colors: {
           info: 'bg-robin',
@@ -108,19 +108,21 @@ export const AlertWithCodeSnippets = () => {
   })
 }
 
-export const AlertWithBorders = () => {
+export const DismissibleAlertWithBorders = () => {
   return Vue.extend({
     components: { ZAlert },
-    data: function () {
+    data: function() {
       return {
-        types: ['info', 'warning', 'danger']
+        borderTypes: ['top', 'right', 'bottom', 'left']
       }
     },
     template: `
-    <div class='text-vanilla-100'>
-      <z-alert type="danger" border="bottom">
-        Alert of the type danger with border-bottom
-      </z-alert>
+    <div class='text-vanilla-100 space-y-4'>
+      <div v-for="type in borderTypes" :key="type">
+        <z-alert type="danger" :dismissible="true" :border="type">
+          Alert of the type danger with border-{{ type }}
+        </z-alert>
+      </div>
     </div>
     `
   })
