@@ -2,7 +2,7 @@
 
 exports[`Alert component renders a dismissible alert widget 1`] = `
 <div>
-  <div class="flex md:hidden flex-row justify-between rounded-md bg-opacity-10 px-4 py-2 bg-cherry">
+  <div class="flex flex-row justify-between px-4 py-2 rounded-md md:hidden bg-opacity-10 bg-cherry">
     <div class="">
       <p class="text-sm text-cherry-400">Alert of the type danger which is dismissible</p>
       <!---->
@@ -13,7 +13,7 @@ exports[`Alert component renders a dismissible alert widget 1`] = `
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg></div>
   </div>
-  <div class="hidden md:block rounded-md bg-opacity-10 bg-cherry">
+  <div class="hidden rounded-md md:block bg-opacity-10 bg-cherry">
     <div class="flex items-center justify-between px-4 py-2" style="min-height: 49px;">
       <p class="text-sm text-cherry-400">Alert of the type danger which is dismissible</p>
       <div class="flex items-center space-x-2">
@@ -31,7 +31,7 @@ exports[`Alert component renders a dismissible alert widget 1`] = `
 
 exports[`Alert component renders a dismissible alert widget with code snippets 1`] = `
 <div>
-  <div class="flex md:hidden flex-row justify-between rounded-md bg-opacity-10 px-4 py-2 bg-cherry">
+  <div class="flex flex-row justify-between px-4 py-2 rounded-md md:hidden bg-opacity-10 bg-cherry">
     <div class="space-y-3">
       <p class="text-sm text-cherry-400">Alert of the type danger with code snippets</p>
       <div>
@@ -51,7 +51,7 @@ exports[`Alert component renders a dismissible alert widget with code snippets 1
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg></div>
   </div>
-  <div class="hidden md:block rounded-md bg-opacity-10 bg-cherry px-4 py-2">
+  <div class="hidden rounded-md md:block bg-opacity-10 bg-cherry px-4 py-2">
     <div class="flex items-center justify-between">
       <p class="text-sm text-cherry-400">Alert of the type danger with code snippets</p>
       <div class="flex items-center space-x-2">
@@ -78,7 +78,7 @@ exports[`Alert component renders a dismissible alert widget with code snippets 1
 
 exports[`Alert component renders a dismissible alert widget with controls 1`] = `
 <div>
-  <div class="flex md:hidden flex-row justify-between rounded-md bg-opacity-10 px-4 py-2 bg-cherry">
+  <div class="flex flex-row justify-between px-4 py-2 rounded-md md:hidden bg-opacity-10 bg-cherry">
     <div class="space-y-3">
       <p class="text-sm text-cherry-400">Alert of the type danger with controls</p>
       <!---->
@@ -92,7 +92,7 @@ exports[`Alert component renders a dismissible alert widget with controls 1`] = 
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg></div>
   </div>
-  <div class="hidden md:block rounded-md bg-opacity-10 bg-cherry">
+  <div class="hidden rounded-md md:block bg-opacity-10 bg-cherry">
     <div class="flex items-center justify-between px-4 py-2" style="min-height: 49px;">
       <p class="text-sm text-cherry-400">Alert of the type danger with controls</p>
       <div class="flex items-center space-x-2">
@@ -113,7 +113,7 @@ exports[`Alert component renders a dismissible alert widget with controls 1`] = 
 
 exports[`Alert component renders an alert widget with border-bottom 1`] = `
 <div>
-  <div class="flex md:hidden flex-row justify-between rounded-md bg-opacity-10 px-4 py-2 bg-cherry border-b border-cherry border-opacity-20">
+  <div class="flex flex-row justify-between px-4 py-2 rounded-md md:hidden bg-opacity-10 bg-cherry border-b border-cherry border-opacity-20">
     <div class="">
       <p class="text-sm text-cherry-400">Alert of the type danger with border-bottom</p>
       <!---->
@@ -121,7 +121,7 @@ exports[`Alert component renders an alert widget with border-bottom 1`] = `
     </div>
     <!---->
   </div>
-  <div class="hidden md:block rounded-md bg-opacity-10 bg-cherry border-b border-cherry border-opacity-20">
+  <div class="hidden rounded-md md:block bg-opacity-10 bg-cherry border-b border-cherry border-opacity-20">
     <div class="flex items-center justify-between px-4 py-2" style="min-height: 49px;">
       <p class="text-sm text-cherry-400">Alert of the type danger with border-bottom</p>
       <div class="flex items-center space-x-2">
@@ -136,7 +136,7 @@ exports[`Alert component renders an alert widget with border-bottom 1`] = `
 
 exports[`Alert component renders an alert widget with the given text 1`] = `
 <div>
-  <div class="flex md:hidden flex-row justify-between rounded-md bg-opacity-10 px-4 py-2 bg-cherry">
+  <div class="flex flex-row justify-between px-4 py-2 rounded-md md:hidden bg-opacity-10 bg-cherry">
     <div class="">
       <p class="text-sm text-cherry-400">Alert of the type danger</p>
       <!---->
@@ -144,7 +144,7 @@ exports[`Alert component renders an alert widget with the given text 1`] = `
     </div>
     <!---->
   </div>
-  <div class="hidden md:block rounded-md bg-opacity-10 bg-cherry">
+  <div class="hidden rounded-md md:block bg-opacity-10 bg-cherry">
     <div class="flex items-center justify-between px-4 py-2" style="min-height: 49px;">
       <p class="text-sm text-cherry-400">Alert of the type danger</p>
       <div class="flex items-center space-x-2">
