@@ -1,49 +1,110 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Alert component renders a dismissible alert widget 1`] = `
-<div class="flex items-center justify-between rounded-md px-4 py-2 bg-opacity-10 bg-cherry" style="min-height: 49px;">
-  <div class="text-sm text-cherry-400">Alert of the type danger which is dismissible</div>
-  <div class="flex items-center space-x-2">
-    <div class="flex space-x-2"></div>
+<div>
+  <div class="flex md:hidden flex-row justify-between rounded-md bg-opacity-10 px-4 py-2 bg-cherry">
+    <div class="">
+      <p class="text-sm text-cherry-400">Alert of the type danger which is dismissible</p>
+      <!---->
+      <div></div>
+    </div>
     <div><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="cursor-pointer z-icon w-4 h-4 z-icon--x text-cherry">
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg></div>
+  </div>
+  <div class="hidden md:block rounded-md bg-opacity-10 bg-cherry">
+    <div class="flex items-center justify-between px-4 py-2" style="min-height: 49px;">
+      <p class="text-sm text-cherry-400">Alert of the type danger which is dismissible</p>
+      <div class="flex items-center space-x-2">
+        <div class="inline-flex space-x-2"></div>
+        <div><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="cursor-pointer z-icon w-4 h-4 z-icon--x text-cherry">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg></div>
+      </div>
+    </div>
+    <!---->
   </div>
 </div>
 `;
 
 exports[`Alert component renders a dismissible alert widget with controls 1`] = `
-<div class="flex items-center justify-between rounded-md px-4 py-2 bg-opacity-10 bg-cherry" style="min-height: 49px;">
-  <div class="text-sm text-cherry-400">Alert of the type danger which is dismissible</div>
-  <div class="flex items-center space-x-2">
-    <div class="flex space-x-2"><button href="#" type="button" class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap bg-cherry bg-opacity-40 text-vanilla-100 justify-center z-btn--vanilla-100 h-8 px-4 py-1 text-xs space-x-1 leading-loose font-normal hover:bg-ink-200">
-        <!---->
-        Default button
-      </button></div>
+<div>
+  <div class="flex md:hidden flex-row justify-between rounded-md bg-opacity-10 px-4 py-2 bg-cherry">
+    <div class="space-y-3">
+      <p class="text-sm text-cherry-400">Alert of the type danger which is dismissible</p>
+      <!---->
+      <div><button href="#" type="button" class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap bg-cherry bg-opacity-40 text-vanilla-100 justify-center z-btn--vanilla-100 h-8 px-4 py-1 text-xs space-x-1 leading-loose font-normal hover:bg-ink-200">
+          <!---->
+          Default button
+        </button></div>
+    </div>
     <div><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="cursor-pointer z-icon w-4 h-4 z-icon--x text-cherry">
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg></div>
   </div>
+  <div class="hidden md:block rounded-md bg-opacity-10 bg-cherry">
+    <div class="flex items-center justify-between px-4 py-2" style="min-height: 49px;">
+      <p class="text-sm text-cherry-400">Alert of the type danger which is dismissible</p>
+      <div class="flex items-center space-x-2">
+        <div class="inline-flex space-x-2"><button href="#" type="button" class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap bg-cherry bg-opacity-40 text-vanilla-100 justify-center z-btn--vanilla-100 h-8 px-4 py-1 text-xs space-x-1 leading-loose font-normal hover:bg-ink-200">
+            <!---->
+            Default button
+          </button></div>
+        <div><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="cursor-pointer z-icon w-4 h-4 z-icon--x text-cherry">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg></div>
+      </div>
+    </div>
+    <!---->
+  </div>
 </div>
 `;
 
 exports[`Alert component renders an alert widget with border-bottom 1`] = `
-<div class="flex items-center justify-between rounded-md px-4 py-2 bg-opacity-10 bg-cherry border-b border-cherry border-opacity-20" style="min-height: 49px;">
-  <div class="text-sm text-cherry-400">Alert of the type danger with border-bottom</div>
-  <div class="flex items-center space-x-2">
-    <div class="flex space-x-2"></div>
+<div>
+  <div class="flex md:hidden flex-row justify-between rounded-md bg-opacity-10 px-4 py-2 bg-cherry border-b border-cherry border-opacity-20">
+    <div class="">
+      <p class="text-sm text-cherry-400">Alert of the type danger with border-bottom</p>
+      <!---->
+      <div></div>
+    </div>
+    <!---->
+  </div>
+  <div class="hidden md:block rounded-md bg-opacity-10 bg-cherry border-b border-cherry border-opacity-20">
+    <div class="flex items-center justify-between px-4 py-2" style="min-height: 49px;">
+      <p class="text-sm text-cherry-400">Alert of the type danger with border-bottom</p>
+      <div class="flex items-center space-x-2">
+        <div class="inline-flex space-x-2"></div>
+        <!---->
+      </div>
+    </div>
     <!---->
   </div>
 </div>
 `;
 
 exports[`Alert component renders an alert widget with the given text 1`] = `
-<div class="flex items-center justify-between rounded-md px-4 py-2 bg-opacity-10 bg-cherry" style="min-height: 49px;">
-  <div class="text-sm text-cherry-400">Alert of the type danger</div>
-  <div class="flex items-center space-x-2">
-    <div class="flex space-x-2"></div>
+<div>
+  <div class="flex md:hidden flex-row justify-between rounded-md bg-opacity-10 px-4 py-2 bg-cherry">
+    <div class="">
+      <p class="text-sm text-cherry-400">Alert of the type danger</p>
+      <!---->
+      <div></div>
+    </div>
+    <!---->
+  </div>
+  <div class="hidden md:block rounded-md bg-opacity-10 bg-cherry">
+    <div class="flex items-center justify-between px-4 py-2" style="min-height: 49px;">
+      <p class="text-sm text-cherry-400">Alert of the type danger</p>
+      <div class="flex items-center space-x-2">
+        <div class="inline-flex space-x-2"></div>
+        <!---->
+      </div>
+    </div>
     <!---->
   </div>
 </div>
