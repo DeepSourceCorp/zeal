@@ -93,7 +93,7 @@ export default Vue.extend({
       type: String
     }
   },
-  data: function() {
+  data: function () {
     return {
       isVisible: true,
       colors: {
