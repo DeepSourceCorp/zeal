@@ -1,22 +1,31 @@
 <template>
   <div
     v-if="isVisible"
-    class="flex items-center justify-between rounded-md px-4 py-2 bg-opacity-10"
-    :class="[bgColor, borderClass]"
-    style="min-height: 49px"
+    class="rounded-md bg-opacity-10"
+    :class="[bgColor, borderClass, sourceCodeMarkup ? 'px-4 py-2' : '']"
   >
-    <div class="text-sm" :class="textColor">
-      <slot />
+    <div
+      class="flex items-center justify-between"
+      :class="[sourceCodeMarkup ? '' : 'px-4 py-2']"
+      :style="!sourceCodeMarkup && 'min-height: 49px'"
+    >
+      <p class="text-sm" :class="textColor">
+        <slot />
+      </p>
+
+      <div class="flex items-center space-x-2">
+        <div class="inline-flex space-x-2">
+          <slot name="controls" />
+        </div>
+
+        <div v-if="dismissible">
+          <z-icon icon="x" :color="colors[type]" size="small" class="cursor-pointer" @click="isVisible = false" />
+        </div>
+      </div>
     </div>
 
-    <div class="flex items-center space-x-2">
-      <div class="flex space-x-2">
-        <slot name="controls" />
-      </div>
-
-      <div v-if="dismissible">
-        <z-icon icon="x" :color="colors[type]" size="small" class="cursor-pointer" @click="isVisible = false" />
-      </div>
+    <div v-if="sourceCodeMarkup">
+      <z-code :content="sourceCodeMarkup" />
     </div>
   </div>
 </template>
@@ -25,11 +34,13 @@
 import Vue from 'vue'
 
 import ZIcon from '../ZIcon/ZIcon.vue'
+import ZCode from '../ZCode/ZCode.vue'
 
 export default Vue.extend({
   name: 'ZAlert',
   components: {
-    ZIcon
+    ZIcon,
+    ZCode
   },
   props: {
     type: {
@@ -51,9 +62,12 @@ export default Vue.extend({
         return ['top', 'right', 'bottom', 'left'].includes(val)
       },
       default: undefined
+    },
+    sourceCodeMarkup: {
+      type: String
     }
   },
-  data: function () {
+  data: function() {
     return {
       isVisible: true,
       colors: {

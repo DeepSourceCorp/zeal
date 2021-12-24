@@ -10,7 +10,7 @@ export default {
 export const AlertTypes = () => {
   return Vue.extend({
     components: { ZAlert },
-    data: function () {
+    data: function() {
       return {
         types: ['info', 'warning', 'danger']
       }
@@ -30,7 +30,7 @@ export const AlertTypes = () => {
 export const DismissibleAlert = () => {
   return Vue.extend({
     components: { ZAlert },
-    data: function () {
+    data: function() {
       return {
         types: ['info', 'warning', 'danger']
       }
@@ -50,7 +50,7 @@ export const DismissibleAlert = () => {
 export const AlertWithDismissAndControls = () => {
   return Vue.extend({
     components: { ZAlert, ZButton },
-    data: function () {
+    data: function() {
       return {
         colors: {
           info: 'bg-robin',
@@ -77,10 +77,41 @@ export const AlertWithDismissAndControls = () => {
   })
 }
 
+export const AlertWithCodeSnippets = () => {
+  return Vue.extend({
+    components: { ZAlert, ZButton },
+    data: function() {
+      return {
+        colors: {
+          info: 'bg-robin',
+          warning: 'bg-honey',
+          danger: 'bg-cherry'
+        },
+        content: `<div class="highlight"><pre><span class="ln">2</span>\n<span class="ln">3</span>\n<span class="ln">4</span><span class="nd">@dramatiq.actor</span>\n<span class="hl"><span class="ln">5</span><span class="k">def</span> <span class="nf">example</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></span><span class="ln">6</span>    <span class="k">pass</span>\n</pre></div>`,
+        types: ['info', 'warning', 'danger']
+      }
+    },
+    template: `
+    <div class='text-vanilla-100 space-y-4'>
+      <div v-for="type in types" :key="type">
+        <z-alert :type="type" :dismissible="true" :source-code-markup="content">
+          Alert of the type {{ type }}
+          <template #controls>
+            <z-button button-type="ghost" color="vanilla-100" size="small" :class="[colors[type], 'bg-opacity-40']">
+              Default button
+            </z-button>
+          </template>
+        </z-alert>
+      </div>
+    </div>
+    `
+  })
+}
+
 export const AlertWithBorders = () => {
   return Vue.extend({
     components: { ZAlert },
-    data: function () {
+    data: function() {
       return {
         types: ['info', 'warning', 'danger']
       }
