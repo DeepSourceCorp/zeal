@@ -3,9 +3,9 @@
     <!-- Mobile layout -->
     <div
       class="flex flex-row justify-between px-4 py-2 rounded-md md:hidden bg-opacity-10"
-      :class="[bgColor, borderClass]"
+      :class="[bgColor, borderClass, { 'min-h-13 items-center': !hasMultipleElements }]"
     >
-      <div :class="{ 'space-y-3': $slots.controls || sourceCodeMarkup }">
+      <div :class="{ 'space-y-3': hasMultipleElements }">
         <p class="text-sm" :class="textColor">
           <slot />
         </p>
@@ -29,11 +29,7 @@
       class="hidden rounded-md md:block bg-opacity-10"
       :class="[bgColor, borderClass, sourceCodeMarkup ? 'px-4 py-2' : '']"
     >
-      <div
-        class="flex items-center justify-between"
-        :class="[sourceCodeMarkup ? '' : 'px-4 py-2']"
-        :style="!sourceCodeMarkup && 'min-height: 49px'"
-      >
+      <div class="flex items-center justify-between" :class="{ 'px-4 py-2 min-h-13': !sourceCodeMarkup }">
         <p class="text-sm" :class="textColor">
           <slot />
         </p>
@@ -95,7 +91,7 @@ export default Vue.extend({
       default: undefined
     }
   },
-  data: function () {
+  data: function() {
     return {
       isVisible: true,
       colors: {
@@ -138,6 +134,10 @@ export default Vue.extend({
         danger: 'text-cherry-400'
       }
       return textColors[this.type]
+    },
+    // Apply classes conditionally based on the existence of multiple elements on smaller screens
+    hasMultipleElements(): boolean {
+      return Boolean(this.$slots.controls || this.sourceCodeMarkup)
     }
   }
 })
