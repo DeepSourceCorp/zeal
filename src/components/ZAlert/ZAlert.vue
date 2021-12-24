@@ -107,13 +107,37 @@ export default Vue.extend({
   },
   computed: {
     bgColor(): string {
-      return `bg-${this.colors[this.type]}`
+      const bgColors = {
+        info: 'bg-robin',
+        warning: 'bg-honey',
+        danger: 'bg-cherry'
+      }
+      return bgColors[this.type]
     },
     borderClass(): string | string[] {
-      return this.border ? [`border-${this.border[0]}`, `border-${this.colors[this.type]}`, 'border-opacity-20'] : ''
+      if (!this.border) {
+        return ''
+      }
+      const borderTypes = {
+        top: 'border-t',
+        right: 'border-r',
+        bottom: 'border-b',
+        left: 'border-l',
+      }
+      const borderColors = {
+        info: 'border-robin',
+        warning: 'border-honey',
+        danger: 'border-cherry'
+      }
+      return [borderTypes[this.border], borderColors[this.type], 'border-opacity-20']
     },
     textColor(): string {
-      return `text-${this.colors[this.type]}-400`
+      const textColors = {
+        info: 'text-robin-400',
+        warning: 'text-honey-400',
+        danger: 'text-cherry-400'
+      }
+      return textColors[this.type]
     }
   }
 })
