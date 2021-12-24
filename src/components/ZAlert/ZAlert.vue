@@ -2,7 +2,7 @@
   <div v-if="isVisible">
     <!-- Mobile layout -->
     <div
-      class="flex md:hidden flex-row justify-between rounded-md bg-opacity-10 px-4 py-2"
+      class="flex flex-row justify-between px-4 py-2 rounded-md md:hidden bg-opacity-10"
       :class="[bgColor, borderClass]"
     >
       <div :class="{ 'space-y-3': $slots.controls || sourceCodeMarkup }">
@@ -26,7 +26,7 @@
 
     <!-- Medium screens and above -->
     <div
-      class="hidden md:block rounded-md bg-opacity-10"
+      class="hidden rounded-md md:block bg-opacity-10"
       :class="[bgColor, borderClass, sourceCodeMarkup ? 'px-4 py-2' : '']"
     >
       <div
@@ -95,7 +95,7 @@ export default Vue.extend({
       default: undefined
     }
   },
-  data: function () {
+  data: function() {
     return {
       isVisible: true,
       colors: {
@@ -122,7 +122,7 @@ export default Vue.extend({
         top: 'border-t',
         right: 'border-r',
         bottom: 'border-b',
-        left: 'border-l',
+        left: 'border-l'
       }
       const borderColors = {
         info: 'border-robin',
