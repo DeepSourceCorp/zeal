@@ -5,23 +5,20 @@ test_patterns = ["**/tests/**"]
 exclude_patterns = ["config/**"]
 
 [[analyzers]]
+name = "test-coverage"
+enabled = true
+
+[[analyzers]]
 name = "javascript"
 enabled = true
 
   [analyzers.meta]
-  module_system = "es-modules"
-  environment = [
-    "browser",
-    "nodejs",
-    "jest"
-  ]
   plugins = ["vue"]
-  dialect = "typescript"
-
-[[transformers]]
-name = "prettier"
-enabled = true
 
 [[analyzers]]
 name = "secrets"
+enabled = true
+
+[[transformers]]
+name = "prettier"
 enabled = true
