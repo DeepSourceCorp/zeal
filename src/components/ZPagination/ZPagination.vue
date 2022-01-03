@@ -5,17 +5,7 @@
         <button
           @click="previous()"
           :disabled="atFirst"
-          class="
-            z-pagination-previous
-            outline-none
-            focus:outline-none
-            flex
-            items-center
-            justify-center
-            w-6
-            h-6
-            rounded-sm
-          "
+          class="z-pagination-previous outline-none focus:outline-none flex items-center justify-center w-6 h-6 rounded-sm"
           :class="{ 'hover:bg-ink-300': !atFirst }"
         >
           <z-icon icon="chevron-left" size="small" :color="`${atFirst ? 'slate' : 'vanilla-200'}`"></z-icon>
