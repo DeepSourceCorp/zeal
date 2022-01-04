@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import ZAlert from '../ZAlert/ZAlert.vue'
 import ZButton from '../ZButton/ZButton.vue'
+import ZCode from '../ZCode/ZCode.vue'
 
 export default {
   title: 'Alert',
@@ -10,7 +11,7 @@ export default {
 export const AlertTypes = () => {
   return Vue.extend({
     components: { ZAlert },
-    data: function () {
+    data: function() {
       return {
         types: ['info', 'warning', 'danger']
       }
@@ -19,7 +20,9 @@ export const AlertTypes = () => {
     <div class='text-vanilla-100 space-y-4'>
       <div v-for="type in types" :key="type">
         <z-alert :type="type">
-          Alert of the type {{ type }} 
+          <p class="flex items-center h-8">
+            Alert of the type {{ type }}
+          </p>
         </z-alert>
       </div>
     </div>
@@ -30,7 +33,7 @@ export const AlertTypes = () => {
 export const DismissibleAlert = () => {
   return Vue.extend({
     components: { ZAlert },
-    data: function () {
+    data: function() {
       return {
         types: ['info', 'warning', 'danger']
       }
@@ -39,7 +42,9 @@ export const DismissibleAlert = () => {
     <div class='text-vanilla-100 space-y-4'>
       <div v-for="type in types" :key="type">
         <z-alert :type="type" :dismissible="true">
-          Alert of the type {{ type }}
+          <p class="flex items-center h-8">
+            Alert of the type {{ type }}
+          </p>
         </z-alert>
       </div>
     </div>
@@ -50,7 +55,7 @@ export const DismissibleAlert = () => {
 export const DismissibleAlertWithControls = () => {
   return Vue.extend({
     components: { ZAlert, ZButton },
-    data: function () {
+    data: function() {
       return {
         colors: {
           info: 'bg-robin',
@@ -64,12 +69,12 @@ export const DismissibleAlertWithControls = () => {
     <div class='text-vanilla-100 space-y-4'>
       <div v-for="type in types" :key="type">
         <z-alert :type="type" :dismissible="true">
-          Alert of the type {{ type }}
-          <template #controls>
+          <div class="flex items-center justify-between mr-2">
+            Alert of the type {{ type }}
             <z-button button-type="ghost" color="vanilla-100" size="small" :class="[colors[type], 'bg-opacity-40']">
               Default button
             </z-button>
-          </template>
+          </div>
         </z-alert>
       </div>
     </div>
@@ -79,8 +84,8 @@ export const DismissibleAlertWithControls = () => {
 
 export const DismissibleAlertWithCodeSnippet = () => {
   return Vue.extend({
-    components: { ZAlert, ZButton },
-    data: function () {
+    components: { ZAlert, ZButton, ZCode },
+    data: function() {
       return {
         colors: {
           info: 'bg-robin',
@@ -94,12 +99,16 @@ export const DismissibleAlertWithCodeSnippet = () => {
     template: `
     <div class='text-vanilla-100 space-y-4'>
       <div v-for="type in types" :key="type">
-        <z-alert :type="type" :dismissible="true" :source-code-markup="content">
-          Alert of the type {{ type }}
-          <template #controls>
+        <z-alert :type="type" :dismissible="true">
+          <div class="flex items-center justify-between mr-2">
+            Alert of the type {{ type }}
             <z-button button-type="ghost" color="vanilla-100" size="small" :class="[colors[type], 'bg-opacity-40']">
               Default button
             </z-button>
+          </div>
+
+          <template #code-snippet>
+            <z-code :content="content" />
           </template>
         </z-alert>
       </div>
@@ -111,7 +120,7 @@ export const DismissibleAlertWithCodeSnippet = () => {
 export const DismissibleAlertWithBorders = () => {
   return Vue.extend({
     components: { ZAlert },
-    data: function () {
+    data: function() {
       return {
         borderTypes: ['top', 'right', 'bottom', 'left']
       }
@@ -120,7 +129,9 @@ export const DismissibleAlertWithBorders = () => {
     <div class='text-vanilla-100 space-y-4'>
       <div v-for="type in borderTypes" :key="type">
         <z-alert type="danger" :dismissible="true" :border="type">
-          Alert of the type danger with border-{{ type }}
+          <p class="flex items-center h-8">
+            Alert of the type danger with border-{{ type }}
+          </p>
         </z-alert>
       </div>
     </div>

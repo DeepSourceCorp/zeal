@@ -1,53 +1,26 @@
 <template>
-  <div v-if="isVisible">
-    <!-- Mobile layout -->
-    <div
-      class="flex flex-row justify-between px-4 py-2 rounded-md md:hidden bg-opacity-10"
-      :class="[bgColor, borderClass, { 'min-h-13 items-center': !hasMultipleElements }]"
-    >
-      <div :class="{ 'space-y-3': hasMultipleElements }">
-        <p class="text-sm" :class="textColor">
-          <slot />
-        </p>
-
-        <div v-if="sourceCodeMarkup">
-          <z-code :content="sourceCodeMarkup" />
-        </div>
-
-        <div>
-          <slot name="controls" />
-        </div>
+  <div
+    v-if="isVisible"
+    class="flex flex-col px-4 py-2 rounded-md min-h-13 bg-opacity-10"
+    :class="[bgColor, borderClass]"
+  >
+    <div class="inline-flex items-center justify-between">
+      <div class="flex-grow text-sm min-h-8" :class="textColor">
+        <slot />
       </div>
 
-      <div v-if="dismissible">
-        <z-icon icon="x" :color="colors[type]" size="small" class="cursor-pointer" @click="isVisible = false" />
-      </div>
+      <z-icon
+        v-if="dismissible"
+        icon="x"
+        :color="colors[type]"
+        size="small"
+        class="cursor-pointer"
+        @click="isVisible = false"
+      />
     </div>
 
-    <!-- Medium screens and above -->
-    <div
-      class="hidden rounded-md md:block bg-opacity-10"
-      :class="[bgColor, borderClass, sourceCodeMarkup ? 'px-4 py-2' : '']"
-    >
-      <div class="flex items-center justify-between" :class="{ 'px-4 py-2 min-h-13': !sourceCodeMarkup }">
-        <p class="text-sm" :class="textColor">
-          <slot />
-        </p>
-
-        <div class="flex items-center space-x-2">
-          <div class="inline-flex space-x-2">
-            <slot name="controls" />
-          </div>
-
-          <div v-if="dismissible">
-            <z-icon icon="x" :color="colors[type]" size="small" class="cursor-pointer" @click="isVisible = false" />
-          </div>
-        </div>
-      </div>
-
-      <div v-if="sourceCodeMarkup">
-        <z-code :content="sourceCodeMarkup" />
-      </div>
+    <div>
+      <slot name="code-snippet" />
     </div>
   </div>
 </template>
@@ -56,13 +29,11 @@
 import Vue from 'vue'
 
 import ZIcon from '../ZIcon/ZIcon.vue'
-import ZCode from '../ZCode/ZCode.vue'
 
 export default Vue.extend({
   name: 'ZAlert',
   components: {
-    ZIcon,
-    ZCode
+    ZIcon
   },
   props: {
     type: {
@@ -84,14 +55,9 @@ export default Vue.extend({
         return ['top', 'right', 'bottom', 'left'].includes(val)
       },
       default: undefined
-    },
-    sourceCodeMarkup: {
-      type: String,
-      required: false,
-      default: undefined
     }
   },
-  data: function () {
+  data: function() {
     return {
       isVisible: true,
       colors: {
@@ -134,10 +100,6 @@ export default Vue.extend({
         danger: 'text-cherry-400'
       }
       return textColors[this.type]
-    },
-    // Apply classes conditionally based on the existence of multiple elements on smaller screens
-    hasMultipleElements(): boolean {
-      return Boolean(this.$slots.controls || this.sourceCodeMarkup)
     }
   }
 })
