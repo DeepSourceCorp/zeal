@@ -8,10 +8,15 @@ export default {
   component: ZAlert
 }
 
+/**
+ * UI states representing the various Alert component types
+ *
+ * @returns {ExtendedVue}
+ */
 export const AlertTypes = () => {
   return Vue.extend({
     components: { ZAlert },
-    data: function () {
+    data: function() {
       return {
         types: ['info', 'warning', 'danger']
       }
@@ -30,10 +35,15 @@ export const AlertTypes = () => {
   })
 }
 
+/**
+ * UI states representing dismissible Alert component
+ *
+ * @returns {ExtendedVue}
+ */
 export const DismissibleAlert = () => {
   return Vue.extend({
     components: { ZAlert },
-    data: function () {
+    data: function() {
       return {
         types: ['info', 'warning', 'danger']
       }
@@ -52,10 +62,15 @@ export const DismissibleAlert = () => {
   })
 }
 
+/**
+ * UI states representing dismissible Alert component with controls
+ *
+ * @returns {ExtendedVue}
+ */
 export const DismissibleAlertWithControls = () => {
   return Vue.extend({
     components: { ZAlert, ZButton },
-    data: function () {
+    data: function() {
       return {
         colors: {
           info: 'bg-robin',
@@ -94,10 +109,15 @@ export const DismissibleAlertWithControls = () => {
   })
 }
 
+/**
+ * UI states representing dismissible Alert component with controls and code snippet
+ *
+ * @returns {ExtendedVue}
+ */
 export const DismissibleAlertWithCodeSnippet = () => {
   return Vue.extend({
     components: { ZAlert, ZButton, ZCode },
-    data: function () {
+    data: function() {
       return {
         colors: {
           info: 'bg-robin',
@@ -141,10 +161,15 @@ export const DismissibleAlertWithCodeSnippet = () => {
   })
 }
 
+/**
+ * UI states representing dismissible Alert component with borders
+ *
+ * @returns {ExtendedVue}
+ */
 export const DismissibleAlertWithBorders = () => {
   return Vue.extend({
     components: { ZAlert },
-    data: function () {
+    data: function() {
       return {
         borderTypes: ['top', 'right', 'bottom', 'left']
       }
