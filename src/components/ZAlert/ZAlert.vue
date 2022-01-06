@@ -4,8 +4,8 @@
     class="flex flex-col px-4 py-2 rounded-md min-h-13 bg-opacity-10"
     :class="[bgColor, borderClass]"
   >
-    <div class="inline-flex items-center justify-between">
-      <div class="flex-grow text-sm min-h-8" :class="textColor">
+    <div class="flex justify-between md:items-center">
+      <div class="flex-grow-0 text-sm md:flex-grow min-h-8" :class="textColor">
         <slot />
       </div>
 
@@ -57,7 +57,7 @@ export default Vue.extend({
       default: undefined
     }
   },
-  data: function () {
+  data: function() {
     return {
       isVisible: true,
       colors: {
