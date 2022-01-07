@@ -1,5 +1,9 @@
 <template>
-  <div v-if="isVisible" class="px-4 rounded-md bg-opacity-10" :class="[bgColor, borderClass, dismissible ? 'py-1':  'py-3.5']">
+  <div
+    v-if="isVisible"
+    class="px-4 rounded-md bg-opacity-10"
+    :class="[bgColor, borderClass, dismissible ? 'py-1' : 'py-3.5']"
+  >
     <div class="flex items-center py-1">
       <div class="flex-grow text-sm text-container" :class="textColor">
         <slot />
