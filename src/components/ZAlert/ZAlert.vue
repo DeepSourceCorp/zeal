@@ -1,7 +1,7 @@
 <template>
-  <div v-if="isVisible" class="px-4 py-2 rounded-md bg-opacity-10" :class="[bgColor, borderClass]">
-    <div class="flex md:items-center">
-      <div class="flex-grow py-1 text-sm" :class="textColor">
+  <div v-if="isVisible" class="px-4 rounded-md bg-opacity-10" :class="[bgColor, borderClass, dismissible ? 'py-1':  'py-3.5']">
+    <div class="flex items-center py-1">
+      <div class="flex-grow text-sm text-container" :class="textColor">
         <slot />
       </div>
 
@@ -11,7 +11,7 @@
         icon="x"
         :color="colors[type]"
         size="small"
-        class="flex-shrink-0 hover:bg-opacity-0"
+        class="flex-shrink-0 hover:bg-opacity-0 place-self-start"
         @click="isVisible = false"
       />
     </div>
@@ -99,3 +99,9 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style scoped>
+.text-container::first-line {
+  line-height: 1;
+}
+</style>
