@@ -1,39 +1,34 @@
 <template>
-  <div
-    v-if="isVisible"
-    class="flex flex-col px-4 py-2 rounded-md min-h-13 bg-opacity-10"
-    :class="[bgColor, borderClass]"
-  >
-    <div class="flex justify-between md:items-center">
-      <div class="flex-grow-0 text-sm md:flex-grow min-h-8" :class="textColor">
+  <div v-if="isVisible" class="px-4 py-2 rounded-md bg-opacity-10" :class="[bgColor, borderClass]">
+    <div class="flex md:items-center">
+      <div class="flex-grow py-1 text-sm" :class="textColor">
         <slot />
       </div>
 
-      <z-icon
+      <z-button
         v-if="dismissible"
+        button-type="ghost"
         icon="x"
         :color="colors[type]"
         size="small"
-        class="cursor-pointer"
+        class="flex-shrink-0 hover:bg-opacity-0"
         @click="isVisible = false"
       />
     </div>
 
-    <div>
-      <slot name="code-snippet" />
-    </div>
+    <slot name="code-snippet" />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
-import ZIcon from '../ZIcon/ZIcon.vue'
+import ZButton from '../ZButton/ZButton.vue'
 
 export default Vue.extend({
   name: 'ZAlert',
   components: {
-    ZIcon
+    ZButton
   },
   props: {
     type: {
@@ -52,7 +47,7 @@ export default Vue.extend({
       type: String,
       required: false,
       validator(val) {
-        return ['top', 'right', 'bottom', 'left'].includes(val)
+        return ['top', 'right', 'bottom', 'left', undefined].includes(val)
       },
       default: undefined
     }

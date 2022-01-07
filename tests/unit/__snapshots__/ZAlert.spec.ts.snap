@@ -1,61 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Alert component renders a dismissible alert widget 1`] = `
-<div class="flex flex-col px-4 py-2 rounded-md min-h-13 bg-opacity-10 bg-cherry">
-  <div class="flex justify-between md:items-center">
-    <div class="flex-grow-0 text-sm md:flex-grow min-h-8 text-cherry-400">Alert of the type danger which is dismissible</div> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="cursor-pointer z-icon w-4 h-4 z-icon--x text-cherry">
-      <line x1="18" y1="6" x2="6" y2="18"></line>
-      <line x1="6" y1="6" x2="18" y2="18"></line>
-    </svg>
+<div class="px-4 py-2 rounded-md bg-opacity-10 bg-cherry">
+  <div class="flex md:items-center">
+    <div class="flex-grow py-1 text-sm text-cherry-400">Alert of the type danger which is dismissible</div> <button href="#" type="button" class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap flex-shrink-0 hover:bg-opacity-0 text-cherry justify-center z-btn--cherry p-0 h-8 w-8 font-normal hover:bg-ink-200"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-4 h-4 z-icon--x text-cherry">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg> </button>
   </div>
-  <div></div>
 </div>
 `;
 
 exports[`Alert component renders a dismissible alert widget with code snippets 1`] = `
-<div class="flex flex-col px-4 py-2 rounded-md min-h-13 bg-opacity-10 bg-cherry" sourcecodemarkup="<div class=&quot;highlight&quot;><pre><span class=&quot;ln&quot;>2</span>
+<div class="px-4 py-2 rounded-md bg-opacity-10 bg-cherry" sourcecodemarkup="<div class=&quot;highlight&quot;><pre><span class=&quot;ln&quot;>2</span>
 <span class=&quot;ln&quot;>3</span>
 <span class=&quot;ln&quot;>4</span><span class=&quot;nd&quot;>@dramatiq.actor</span>
 <span class=&quot;hl&quot;><span class=&quot;ln&quot;>5</span><span class=&quot;k&quot;>def</span> <span class=&quot;nf&quot;>example</span><span class=&quot;p&quot;>(</span><span class=&quot;p&quot;>)</span><span class=&quot;p&quot;>:</span></span><span class=&quot;ln&quot;>6</span>    <span class=&quot;k&quot;>pass</span>
 </pre></div>">
-  <div class="flex justify-between md:items-center">
-    <div class="flex-grow-0 text-sm md:flex-grow min-h-8 text-cherry-400">Alert of the type danger with code snippets</div> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="cursor-pointer z-icon w-4 h-4 z-icon--x text-cherry">
-      <line x1="18" y1="6" x2="6" y2="18"></line>
-      <line x1="6" y1="6" x2="18" y2="18"></line>
-    </svg>
+  <div class="flex md:items-center">
+    <div class="flex-grow py-1 text-sm text-cherry-400">Alert of the type danger with code snippets</div> <button href="#" type="button" class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap flex-shrink-0 hover:bg-opacity-0 text-cherry justify-center z-btn--cherry p-0 h-8 w-8 font-normal hover:bg-ink-200"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-4 h-4 z-icon--x text-cherry">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg> </button>
   </div>
-  <div></div>
 </div>
 `;
 
 exports[`Alert component renders a dismissible alert widget with controls 1`] = `
-<div class="flex flex-col px-4 py-2 rounded-md min-h-13 bg-opacity-10 bg-cherry">
-  <div class="flex justify-between md:items-center">
-    <div class="flex-grow-0 text-sm md:flex-grow min-h-8 text-cherry-400">Alert of the type danger with controls</div> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="cursor-pointer z-icon w-4 h-4 z-icon--x text-cherry">
-      <line x1="18" y1="6" x2="6" y2="18"></line>
-      <line x1="6" y1="6" x2="18" y2="18"></line>
-    </svg>
+<div class="px-4 py-2 rounded-md bg-opacity-10 bg-cherry">
+  <div class="flex md:items-center">
+    <div class="flex-grow py-1 text-sm text-cherry-400">Alert of the type danger with controls</div> <button href="#" type="button" class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap flex-shrink-0 hover:bg-opacity-0 text-cherry justify-center z-btn--cherry p-0 h-8 w-8 font-normal hover:bg-ink-200"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-4 h-4 z-icon--x text-cherry">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg> </button>
   </div>
-  <div></div>
 </div>
 `;
 
 exports[`Alert component renders an alert widget with border-bottom 1`] = `
-<div class="flex flex-col px-4 py-2 rounded-md min-h-13 bg-opacity-10 bg-cherry border-b border-cherry border-opacity-20">
-  <div class="flex justify-between md:items-center">
-    <div class="flex-grow-0 text-sm md:flex-grow min-h-8 text-cherry-400">Alert of the type danger with border-bottom</div>
+<div class="px-4 py-2 rounded-md bg-opacity-10 bg-cherry border-b border-cherry border-opacity-20">
+  <div class="flex md:items-center">
+    <div class="flex-grow py-1 text-sm text-cherry-400">Alert of the type danger with border-bottom</div>
     <!---->
   </div>
-  <div></div>
 </div>
 `;
 
 exports[`Alert component renders an alert widget with the given text 1`] = `
-<div class="flex flex-col px-4 py-2 rounded-md min-h-13 bg-opacity-10 bg-cherry">
-  <div class="flex justify-between md:items-center">
-    <div class="flex-grow-0 text-sm md:flex-grow min-h-8 text-cherry-400">Alert of the type danger</div>
+<div class="px-4 py-2 rounded-md bg-opacity-10 bg-cherry">
+  <div class="flex md:items-center">
+    <div class="flex-grow py-1 text-sm text-cherry-400">Alert of the type danger</div>
     <!---->
   </div>
-  <div></div>
 </div>
 `;

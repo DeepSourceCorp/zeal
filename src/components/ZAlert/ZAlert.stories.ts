@@ -25,7 +25,7 @@ export const AlertTypes = () => {
       <div class='text-vanilla-100 space-y-4'>
         <div v-for="type in types" :key="type">
           <z-alert :type="type">
-            <p class="flex items-center h-8">
+            <p>
               Alert of the type {{ type }}
             </p>
           </z-alert>
@@ -52,7 +52,7 @@ export const DismissibleAlert = () => {
       <div class='text-vanilla-100 space-y-4'>
         <div v-for="type in types" :key="type">
           <z-alert :type="type" :dismissible="true">
-            <p class="flex items-center h-8">
+            <p>
               Alert of the type {{ type }}
             </p>
           </z-alert>
@@ -84,7 +84,7 @@ export const DismissibleAlertWithControls = () => {
       <div class='text-vanilla-100 space-y-4'>
         <div v-for="type in types" :key="type">
           <z-alert :type="type" :dismissible="true">
-            <div class="md:hidden flex flex-col space-y-4 mr-2">
+            <div class="md:hidden space-y-4 mr-2">
               <p>Alert of the type {{ type }}</p>
               <div class="inline-flex space-x-2">
               <z-button button-type="ghost" color="vanilla-100" size="small" :class="[colors[type], 'bg-opacity-40']">
@@ -155,7 +155,8 @@ export const DismissibleAlertWithCodeSnippet = () => {
                 </z-button>
               </div>
             </template>
-        </z-alert>
+          </z-alert>
+        </div>
       </div>
     `
   })
@@ -178,7 +179,7 @@ export const DismissibleAlertWithBorders = () => {
       <div class='text-vanilla-100 space-y-4'>
         <div v-for="type in borderTypes" :key="type">
           <z-alert type="danger" :dismissible="true" :border="type">
-            <p class="flex items-center h-8">
+            <p>
               Alert of the type danger with border-{{ type }}
             </p>
           </z-alert>
