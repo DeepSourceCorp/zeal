@@ -2,9 +2,9 @@
   <div
     v-if="isVisible"
     class="px-4 rounded-md bg-opacity-10"
-    :class="[bgColor, borderClass, dismissible ? 'py-1' : 'py-3.5']"
+    :class="[bgColor, borderClass, dismissible ? 'py-2' : 'py-4']"
   >
-    <div class="flex items-center py-1">
+    <div class="flex items-center" :class="{ 'py-px': !dismissible }">
       <div class="flex-grow text-sm text-container" :class="textColor">
         <slot />
       </div>
