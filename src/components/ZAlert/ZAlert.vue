@@ -1,9 +1,5 @@
 <template>
-  <div
-    v-if="isVisible"
-    class="px-4 rounded-md bg-opacity-10"
-    :class="[bgColor, borderClass, dismissible ? 'py-2' : 'py-3.5']"
-  >
+  <div v-if="isVisible" class="px-4 rounded-md bg-opacity-10" :class="[bgColor, dismissible ? 'py-2' : 'py-3.5']">
     <div class="flex items-center">
       <div
         ref="text-container"
@@ -51,14 +47,6 @@ export default Vue.extend({
       type: Boolean,
       required: false,
       default: false
-    },
-    border: {
-      type: String,
-      required: false,
-      validator(val) {
-        return ['top', 'right', 'bottom', 'left', undefined].includes(val)
-      },
-      default: undefined
     }
   },
   data: function() {
@@ -124,23 +112,6 @@ export default Vue.extend({
         danger: 'bg-cherry'
       }
       return bgColors[this.type]
-    },
-    borderClass(): string | string[] {
-      if (!this.border) {
-        return ''
-      }
-      const borderTypes = {
-        top: 'border-t',
-        right: 'border-r',
-        bottom: 'border-b',
-        left: 'border-l'
-      }
-      const borderColors = {
-        info: 'border-robin',
-        warning: 'border-honey',
-        danger: 'border-cherry'
-      }
-      return [borderTypes[this.border], borderColors[this.type], 'border-opacity-20']
     },
     textColor(): string {
       const textColors = {
