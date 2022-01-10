@@ -49,7 +49,7 @@ export default Vue.extend({
       default: false
     }
   },
-  data: function() {
+  data: function () {
     return {
       isVisible: true,
       textContainerHeight: 0,
