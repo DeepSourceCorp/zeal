@@ -5,7 +5,11 @@
     :class="[bgColor, borderClass, dismissible ? 'py-2' : 'py-4']"
   >
     <div class="flex items-center" :class="{ 'py-px': !dismissible }">
-      <div class="flex-grow text-sm text-container" :class="textColor">
+      <div
+        ref="text-container"
+        class="flex-grow text-sm text-container"
+        :class="[textColor, height > 32 ? 'py-2' : 'py-0']"
+      >
         <slot />
       </div>
 
@@ -56,14 +60,59 @@ export default Vue.extend({
       default: undefined
     }
   },
-  data: function () {
+  data: function() {
     return {
       isVisible: true,
+      height: 0,
       colors: {
         info: 'robin',
         warning: 'honey',
         danger: 'cherry'
-      }
+      },
+      observer: {} as ResizeObserver
+    }
+  },
+
+  /**
+   * Mouted hook for Vue component
+   *
+   * @returns {void}
+   */
+  mounted() {
+    // Initialize the observer on mount
+    this.initObserver()
+  },
+
+  /**
+   * beforeDestroy hook for Vue component
+   *
+   * @returns {void}
+   */
+  beforeDestroy() {
+    // Unobserve before destroy
+    if (this.observer) {
+      this.observer.unobserve(this.$refs['text-container'] as HTMLElement)
+    }
+  },
+  methods: {
+    /**
+     * Callback function passed to ResizeObserver instance
+     *
+     * @returns {void}
+     */
+    onResize() {
+      this.height = (this.$refs['text-container'] as HTMLElement).offsetHeight
+    },
+
+    /**
+     * Initialize observer
+     *
+     * @returns {void}
+     */
+    initObserver() {
+      const observer = new ResizeObserver(this.onResize)
+      observer.observe(this.$refs['text-container'] as HTMLElement)
+      this.observer = observer
     }
   },
   computed: {
