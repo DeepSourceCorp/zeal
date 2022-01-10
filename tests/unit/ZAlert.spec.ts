@@ -95,18 +95,4 @@ describe('Alert component', () => {
       }).html()
     ).toMatchSnapshot()
   })
-
-  it('renders an alert widget with border-bottom', () => {
-    expect(
-      mountFunction({
-        propsData: {
-          type: 'danger',
-          border: 'bottom'
-        },
-        slots: {
-          default: 'Alert of the type danger with border-bottom'
-        }
-      }).html()
-    ).toMatchSnapshot()
-  })
 })
