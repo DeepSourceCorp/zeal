@@ -20,10 +20,18 @@
     /* Experimental Options */
     "experimentalDecorators": true /* Enables experimental support for ES7 decorators. */,
     "emitDecoratorMetadata": true /* Enables experimental support for emitting type metadata for decorators. */,
-    "types": ["webpack-env", "jest"],
+    "types": [
+      "webpack-env",
+      "jest",
+      "@types/resize-observer-browser"
+    ],
     "paths": {
-      "@/*": ["src/*"],
-      "@/test/*": ["test/*"]
+      "@/*": [
+        "src/*"
+      ],
+      "@/test/*": [
+        "test/*"
+      ]
     },
     "lib": [
       /* Specify library files to be included in the compilation */ "es2015",
@@ -48,5 +56,9 @@
     "src/helpers/components/icon.ts"
   ],
   // "include": ["src/*"],
-  "exclude": ["**/*.spec.ts", "**/*.spec.js", "node_modules"]
+  "exclude": [
+    "**/*.spec.ts",
+    "**/*.spec.js",
+    "node_modules"
+  ]
 }

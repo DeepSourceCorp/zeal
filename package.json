@@ -48,6 +48,7 @@
     "@types/feather-icons": "^4.7.0",
     "@types/istanbul-lib-instrument": "^1.7.4",
     "@types/jest": "^24.0.19",
+    "@types/resize-observer-browser": "^0.1.6",
     "@types/smoothscroll-polyfill": "^0.3.1",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
