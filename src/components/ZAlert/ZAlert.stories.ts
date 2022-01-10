@@ -16,7 +16,7 @@ export default {
 export const AlertTypes = () => {
   return Vue.extend({
     components: { ZAlert },
-    data: function () {
+    data: function() {
       return {
         types: ['info', 'warning', 'danger']
       }
@@ -43,7 +43,7 @@ export const AlertTypes = () => {
 export const DismissibleAlert = () => {
   return Vue.extend({
     components: { ZAlert },
-    data: function () {
+    data: function() {
       return {
         types: ['info', 'warning', 'danger']
       }
@@ -70,7 +70,7 @@ export const DismissibleAlert = () => {
 export const DismissibleAlertWithControls = () => {
   return Vue.extend({
     components: { ZAlert, ZButton },
-    data: function () {
+    data: function() {
       return {
         colors: {
           info: 'bg-robin',
@@ -97,7 +97,7 @@ export const DismissibleAlertWithControls = () => {
             </div>
     
             <div class="hidden md:flex items-center justify-between mr-2">
-              Alert of the type {{ type }}
+            <span>Alert of the type {{ type }}</span>
               <z-button button-type="ghost" color="vanilla-100" size="small" :class="[colors[type], 'bg-opacity-40']">
                 Default button
               </z-button>
@@ -117,7 +117,7 @@ export const DismissibleAlertWithControls = () => {
 export const DismissibleAlertWithCodeSnippet = () => {
   return Vue.extend({
     components: { ZAlert, ZButton, ZCode },
-    data: function () {
+    data: function() {
       return {
         colors: {
           info: 'bg-robin',
@@ -133,7 +133,7 @@ export const DismissibleAlertWithCodeSnippet = () => {
         <div v-for="type in types" :key="type">
           <z-alert :type="type" :dismissible="true">
             <div class="md:hidden mr-2">
-              Alert of the type {{ type }}
+            <span>Alert of the type {{ type }}</span>
             </div>
 
             <div class="hidden md:flex items-center justify-between mr-2">
@@ -170,7 +170,7 @@ export const DismissibleAlertWithCodeSnippet = () => {
 export const DismissibleAlertWithBorders = () => {
   return Vue.extend({
     components: { ZAlert },
-    data: function () {
+    data: function() {
       return {
         borderTypes: ['top', 'right', 'bottom', 'left']
       }

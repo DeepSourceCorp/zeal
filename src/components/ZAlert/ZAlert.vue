@@ -2,13 +2,13 @@
   <div
     v-if="isVisible"
     class="px-4 rounded-md bg-opacity-10"
-    :class="[bgColor, borderClass, dismissible ? 'py-2' : 'py-4']"
+    :class="[bgColor, borderClass, dismissible ? 'py-2' : 'py-3.5']"
   >
-    <div class="flex items-center" :class="{ 'py-px': !dismissible }">
+    <div class="flex items-center">
       <div
         ref="text-container"
-        class="flex-grow text-sm text-container"
-        :class="[textColor, height > 32 ? 'py-2' : 'py-0']"
+        class="flex-grow text-sm"
+        :class="[textColor, dismissible && textContainerHeight > 32 ? 'my-1.5' : '-mb-px']"
       >
         <slot />
       </div>
@@ -60,10 +60,10 @@ export default Vue.extend({
       default: undefined
     }
   },
-  data: function () {
+  data: function() {
     return {
       isVisible: true,
-      height: 0,
+      textContainerHeight: 0,
       colors: {
         info: 'robin',
         warning: 'honey',
@@ -101,7 +101,7 @@ export default Vue.extend({
      * @returns {void}
      */
     onResize() {
-      this.height = (this.$refs['text-container'] as HTMLElement).offsetHeight
+      this.textContainerHeight = (this.$refs['text-container'] as HTMLElement).offsetHeight
     },
 
     /**
@@ -152,9 +152,3 @@ export default Vue.extend({
   }
 })
 </script>
-
-<style scoped>
-.text-container::first-line {
-  line-height: 1;
-}
-</style>
