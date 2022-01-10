@@ -60,7 +60,7 @@ export default Vue.extend({
       default: undefined
     }
   },
-  data: function() {
+  data: function () {
     return {
       isVisible: true,
       textContainerHeight: 0,
