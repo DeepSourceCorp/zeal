@@ -1,6 +1,7 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import ZAlert from '../../src/components/ZAlert'
 import ZButton from '../../src/components/ZButton'
+import ZCode from '../../src/components/ZCode'
 
 /**
  * Helper to mount the component
@@ -55,28 +56,41 @@ describe('Alert component', () => {
           dismissible: true
         },
         slots: {
-          default: 'Alert of the type danger with controls',
-          controls: `<z-button button-type="ghost" color="vanilla-100" size="small" class="bg-cherry bg-opacity-40">
-              Default button
-            </z-button>`
+          default: `<div class="hidden md:flex items-center justify-between mr-2">
+          Alert of the type danger with controls
+          <z-button button-type="ghost" color="vanilla-100" size="small" class="bg-cherry bg-opacity-40">
+            Default button
+          </z-button>
+        </div>`
         }
       }).html()
     ).toMatchSnapshot()
   })
 
-  it('renders a dismissible alert widget with code snippets', () => {
+  it('renders a dismissible alert widget with code snippet', () => {
     expect(
-      mountFunction({
+      mount({
+        template: `<z-alert type="danger" :dismissible="true">
+            <div>
+              <p> Alert of the type danger with code snippet </p>
+              <z-button button-type="ghost" color="vanilla-100" size="small" class="bg-cherry bg-opacity-40">
+                Default button
+              </z-button>
+            </div>
+
+            <template #code-snippet>
+              <z-code :content="content" />
+            </template>
+          </z-alert>`,
         components: {
-          ZButton
+          ZAlert,
+          ZButton,
+          ZCode
         },
-        propsData: {
-          type: 'danger',
-          dismissible: true,
-          sourceCodeMarkup: `<div class="highlight"><pre><span class="ln">2</span>\n<span class="ln">3</span>\n<span class="ln">4</span><span class="nd">@dramatiq.actor</span>\n<span class="hl"><span class="ln">5</span><span class="k">def</span> <span class="nf">example</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></span><span class="ln">6</span>    <span class="k">pass</span>\n</pre></div>`
-        },
-        slots: {
-          default: 'Alert of the type danger with code snippets'
+        data() {
+          return {
+            content: `<z-code content="<div class="highlight"><pre><span class="ln">2</span>\n<span class="ln">3</span>\n<span class="ln">4</span><span class="nd">@dramatiq.actor</span>\n<span class="hl"><span class="ln">5</span><span class="k">def</span> <span class="nf">example</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></span><span class="ln">6</span>    <span class="k">pass</span>\n</pre></div>" />`
+          }
         }
       }).html()
     ).toMatchSnapshot()
