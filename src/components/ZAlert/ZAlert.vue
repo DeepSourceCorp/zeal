@@ -29,6 +29,7 @@
 </template>
 
 <script lang="ts">
+import ResizeObserver from 'resize-observer-polyfill'
 import Vue from 'vue'
 
 import ZButton from '../ZButton/ZButton.vue'
@@ -60,7 +61,7 @@ export default Vue.extend({
       default: undefined
     }
   },
-  data: function () {
+  data: function() {
     return {
       isVisible: true,
       textContainerHeight: 0,
@@ -74,7 +75,7 @@ export default Vue.extend({
   },
 
   /**
-   * Mouted hook for Vue component
+   * Mounted hook for Vue component
    *
    * @returns {void}
    */
