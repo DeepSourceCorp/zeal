@@ -16,7 +16,7 @@
         :color="colors[type]"
         size="small"
         class="flex-shrink-0 hover:bg-opacity-0 place-self-start"
-        @click="isVisible = false"
+        @click="hideAlert"
       />
     </div>
 
@@ -102,6 +102,16 @@ export default Vue.extend({
       const observer = new ResizeObserver(this.onResize)
       observer.observe(this.$refs['text-container'] as HTMLElement)
       this.observer = observer
+    },
+
+    /**
+     * Hide Alert
+     *
+     * @returns {void}
+     */
+    hideAlert() {
+      this.isVisible = false
+      this.$emit('dismiss')
     }
   },
   computed: {
