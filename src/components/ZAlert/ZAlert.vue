@@ -79,8 +79,8 @@ export default Vue.extend({
    */
   beforeDestroy() {
     // Unobserve before destroy
-    if (this.observer.unobserve) {
-      this.observer.unobserve(this.$refs['text-container'] as HTMLElement)
+    if (this.observer.unobserve && this.$refs['text-container']) {
+      this.observer.unobserve(this.$refs['text-container'] as Element)
     }
   },
   methods: {
@@ -90,7 +90,9 @@ export default Vue.extend({
      * @returns {void}
      */
     onResize() {
-      this.textContainerHeight = (this.$refs['text-container'] as HTMLElement).offsetHeight
+      if (this.$refs['text-container']) {
+        this.textContainerHeight = (this.$refs['text-container'] as HTMLElement).offsetHeight
+      }
     },
 
     /**
@@ -100,7 +102,7 @@ export default Vue.extend({
      */
     initObserver() {
       const observer = new ResizeObserver(this.onResize)
-      observer.observe(this.$refs['text-container'] as HTMLElement)
+      observer.observe(this.$refs['text-container'] as Element)
       this.observer = observer
     },
 
