@@ -73,7 +73,7 @@ export default Vue.extend({
   },
 
   /**
-   * beforeDestroy hook for Vue component
+   * BeforeDestroy hook for Vue component
    *
    * @returns {void}
    */
@@ -85,7 +85,7 @@ export default Vue.extend({
   },
   methods: {
     /**
-     * Callback function passed to ResizeObserver instance
+     * Callback function passed to ResizeObserver constructor
      *
      * @returns {void}
      */
