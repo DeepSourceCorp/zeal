@@ -79,7 +79,7 @@ export default Vue.extend({
    */
   beforeDestroy() {
     // Unobserve before destroy
-    if (this.observer) {
+    if (this.observer.unobserve) {
       this.observer.unobserve(this.$refs['text-container'] as HTMLElement)
     }
   },
