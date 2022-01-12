@@ -2,6 +2,7 @@ import './assets/css/tailwind.css'
 import './assets/css/typography.css'
 import './assets/css/layout.css'
 
+import ZAlert from './components/ZAlert/index'
 import ZButton from './components/ZButton/index'
 import ZIcon from './components/ZIcon/index'
 import ZDivider from './components/ZDivider/index'
@@ -86,6 +87,7 @@ import ZHero from './components/marketing/sections/ZHero'
 import ZContentGuide from './components/marketing/layouts/ZContentGuide/index'
 
 const components = [
+  ZAlert,
   ZButton,
   ZIcon,
   ZDivider,
@@ -175,6 +177,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
   install,
+  ZAlert,
   ZButton,
   ZIcon,
   ZDivider,
@@ -243,6 +246,7 @@ export default {
   ZFileInput
 }
 
+export { default as ZAlert } from './components/ZAlert/index'
 export { default as ZButton } from './components/ZButton/index'
 export { default as ZIcon } from './components/ZIcon/index'
 export { default as ZDivider } from './components/ZDivider/index'
