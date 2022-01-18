@@ -1,7 +1,11 @@
 <template>
-  <span class="relative z-menu" @mouseenter="triggerOnHover ? toggle() : {}" @mouseleave="triggerOnHover ? toggle() : {}">
+  <span
+    class="relative z-menu"
+    @mouseenter="triggerOnHover ? toggle() : {}"
+    @mouseleave="triggerOnHover ? toggle() : {}"
+  >
     <div class="leading-none inline-block" ref="menu-trigger">
-      <slot name="trigger" :toggle="toggle" :isOpen="isOpen" >
+      <slot name="trigger" :toggle="toggle" :isOpen="isOpen">
         <z-button :label="triggerLabel" @click="toggle" />
       </slot>
     </div>
