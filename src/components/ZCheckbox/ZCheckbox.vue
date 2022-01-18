@@ -99,8 +99,8 @@ export default Vue.extend({
     checkBoxSize() {
       const sizes = {
         small: 'h-4 w-4',
-        base: 'h-5 w-5',
-        large: 'h-6 w-6'
+        base: 'h-5 w-5 font-medium',
+        large: 'h-6 w-6 font-semibold'
       }
       return sizes[this.size] || 'h-5 w-5'
     },
