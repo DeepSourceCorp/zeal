@@ -83,7 +83,6 @@ export default Vue.extend({
       return calc
     },
     getScaleValue(scrollY: number): number {
-      
       const MAX_SCALE = this.isLargeScreen ? MAX_SCALE_FOR_LARGE_SCREEN : MAX_SCALE_FOR_SMALL_SCREEN
       const SPEED_CONTROLLER = this.isLargeScreen ? 0.015 : 0.08
       const calc = MIN_SCALE + (scrollY * SPEED_CONTROLLER) / 100
