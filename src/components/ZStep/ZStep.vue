@@ -38,7 +38,7 @@
         }}</span>
         <span
           v-else-if="currentStatus == 'completed'"
-          class="flex items-center justify-center h-full text-base font-bold text-vanilla-100"
+          class="flex items-center justify-center h-full text-base font-bold text-ink-400"
           >✓</span
         >
       </div>
