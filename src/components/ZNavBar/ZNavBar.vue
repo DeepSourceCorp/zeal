@@ -65,7 +65,7 @@ export default {
       this.hideOnScroll = window.scrollY > 50 && this.hideLinksOnScroll ? 'lg:opacity-0' : 'lg:opacity-1'
     },
     getComponent(parent, name, list = []) {
-      parent.forEach((child) => {
+      parent?.forEach((child) => {
         if (child && child?.componentOptions && toPascal(child.componentOptions.tag || '') === name) {
           list.push(child)
         } else if (child?.children) {
