@@ -61,7 +61,7 @@ export const DeepSourceNext = () => ({
     />
   </template>
   <template slot="links">
-      <z-menu :collapseOnMobile="true" title="Product">
+      <z-menu triggerOnHover :collapseOnMobile="true" title="Product">
         <template v-slot:trigger="{ toggle }">
           <z-button buttonType="ghost" color="vanilla-100" @click="toggle">Product</z-button>
         </template>
@@ -83,7 +83,7 @@ export const DeepSourceNext = () => ({
       <z-button class="hidden lg:inline-flex text-vanilla-100" buttonType="ghost" type="link" href="/pricing"
         >Pricing</z-button
       >
-      <z-menu :collapseOnMobile="true" title="Resources">
+      <z-menu triggerOnHover :collapseOnMobile="true" title="Resources">
         <template v-slot:trigger="{ toggle }">
           <z-button buttonType="ghost" color="vanilla-100" @click="toggle">Resources</z-button>
         </template>
@@ -93,7 +93,7 @@ export const DeepSourceNext = () => ({
           </z-menu-item>
         </template>
       </z-menu>
-      <z-menu :collapseOnMobile="true" title="Company">
+      <z-menu triggerOnHover :collapseOnMobile="true" title="Company">
         <template v-slot:trigger="{ toggle }">
           <z-button buttonType="ghost" color="vanilla-100" @click="toggle">Company</z-button>
         </template>
