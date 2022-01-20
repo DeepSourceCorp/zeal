@@ -38,7 +38,7 @@
         }}</span>
         <span
           v-else-if="currentStatus == 'completed'"
-          class="flex items-center justify-center h-full text-base font-bold text-vanilla-100"
+          class="flex items-center justify-center h-full text-base font-bold text-ink-400"
           >✓</span
         >
       </div>
@@ -53,7 +53,7 @@
     </div>
     <div class="z-step__main" :class="{ 'mt-4': align === 'horizontal', 'mb-4 ml-4 w-full': align === 'vertical' }">
       <slot name="title">
-        <div class="mt-1 text-xs font-medium leading-snug tracking-wider uppercase z-step__title text-slate">
+        <div class="mt-1 text-xs font-medium leading-snug tracking-widest uppercase z-step__title text-vanilla-400">
           {{ title }}
         </div>
       </slot>
