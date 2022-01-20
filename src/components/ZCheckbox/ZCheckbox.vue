@@ -24,7 +24,8 @@
         'absolute left-0 grid text-center text-transparent bg-transparent border border-solid': true,
         'rounded-sm cursor-pointer place-items-center border-slate before:content-before': true,
         'sibling-checked:text-ink-100 sibling-checked:bg-juniper sibling-checked:border-juniper group-hover:border-juniper': true,
-        'cursor-not-allowed group-hover:border-slate sibling-checked:text-ink-300 sibling-checked:border-slate sibling-checked:bg-slate': disabled,
+        'cursor-not-allowed group-hover:border-slate sibling-checked:text-ink-300 sibling-checked:border-slate sibling-checked:bg-slate':
+          disabled,
         'cursor-not-allowed sibling-checked:text-ink-200 opacity-80': readOnly,
         'group-hover:border-juniper': readOnly && isChecked,
         'group-hover:border-slate': readOnly && !isChecked
@@ -84,7 +85,7 @@ export default Vue.extend({
     size: {
       default: 'base',
       type: String,
-      validator: value => {
+      validator: (value) => {
         return ['small', 'base', 'large'].includes(value)
       }
     }

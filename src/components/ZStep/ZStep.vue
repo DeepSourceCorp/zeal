@@ -88,7 +88,7 @@ export default {
       required: false,
       type: String,
       default: 'default',
-      validator: value => {
+      validator: (value) => {
         return ['default', 'active', 'completed'].includes(value)
       }
     }
