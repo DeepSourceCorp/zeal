@@ -1,6 +1,6 @@
 <template>
   <div
-    class="inline-block cursor-pointer w-8 h-5 rounded-full focus:outline-none"
+    class="inline-block w-8 h-5 rounded-full cursor-pointer focus:outline-none"
     role="checkbox"
     :aria-checked="value.toString()"
     tabindex="0"
@@ -12,18 +12,19 @@
   >
     <!-- prettier-ignore -->
     <span
-      class="inline-block rounded-full h-full w-full transition-DEFAULT duration-300 ease-in-out p-0.5 flex items-center"
+      class="inline-flex rounded-full h-full w-full transition-DEFAULT duration-300 ease-in-out p-0.5 items-center"
       :class="{
+        'bg-ink-100': !this.value && this.disabled,
         'bg-juniper': this.value,
-        'bg-ink-100': !this.value || this.disabled
+        'bg-opacity-50': this.value && this.disabled
       }"
     >
       <!-- prettier-ignore -->
       <span
         class="inline-block w-3.5 h-3.5 transform rounded-full transition-transform ease-in-out duration-300 shadow-grey"
         :class="{
-          'bg-vanilla-400': !this.disabled,
-          'bg-vanilla-400 opacity-20': this.disabled,
+          'bg-vanilla-100': !this.disabled,
+          'bg-vanilla-400': this.disabled,
           'translate-x-full': this.value,
           'translate-x-0': !this.value
         }"
