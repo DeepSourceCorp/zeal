@@ -94,7 +94,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      isOpen: false,
+      isOpen: false
     }
   },
   methods: {
@@ -111,7 +111,7 @@ export default Vue.extend({
       this.open()
     },
     handleMouseLeave(): void {
-      this.close();
+      this.close()
     },
     triggerClose(event?: Event): void {
       // Trigger only if open
