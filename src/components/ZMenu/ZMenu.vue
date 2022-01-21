@@ -1,8 +1,7 @@
 <template>
   <span
     class="relative z-menu"
-    @mouseenter="triggerOnHover ? toggle() : {}"
-    @mouseleave="triggerOnHover ? toggle() : {}"
+    v-on="triggerOnHover ? { mouseenter: handleMouseEnter, mouseleave: handleMouseLeave } : {}"
   >
     <div class="leading-none inline-block" ref="menu-trigger">
       <slot name="trigger" :toggle="toggle" :isOpen="isOpen">
@@ -95,7 +94,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      isOpen: false
+      isOpen: false,
     }
   },
   methods: {
@@ -104,6 +103,15 @@ export default Vue.extend({
     },
     close(): void {
       this.isOpen = false
+    },
+    open(): void {
+      this.isOpen = true
+    },
+    handleMouseEnter(): void {
+      this.open()
+    },
+    handleMouseLeave(): void {
+      this.close();
     },
     triggerClose(event?: Event): void {
       // Trigger only if open
@@ -160,7 +168,8 @@ export default Vue.extend({
         base: 'sm:w-64',
         large: 'sm:w-72',
         'x-large': 'sm:w-80',
-        '2x-large': 'sm:w-96'
+        '2x-large': 'sm:w-96',
+        '3x-large': 'sm:w-102'
       }
       return widths[this.width] || 'sm:w-64'
     }
