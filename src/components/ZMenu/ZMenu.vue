@@ -5,7 +5,7 @@
   >
     <div class="leading-none inline-block" ref="menu-trigger">
       <slot name="trigger" :toggle="toggle" :isOpen="isOpen">
-        <z-button :label="triggerLabel" @click="this.toggle" />
+        <z-button :label="triggerLabel" @click="toggle" />
       </slot>
     </div>
     <transition
