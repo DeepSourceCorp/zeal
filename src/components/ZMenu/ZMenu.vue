@@ -5,7 +5,7 @@
   >
     <div class="leading-none inline-block" ref="menu-trigger">
       <slot name="trigger" :toggle="toggle" :isOpen="isOpen">
-        <z-button :label="triggerLabel" @click="toggle" />
+        <z-button :label="triggerLabel" @click="this.handleClick" />
       </slot>
     </div>
     <transition
@@ -94,7 +94,8 @@ export default Vue.extend({
   },
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      enableHover: this.triggerOnHover
     }
   },
   methods: {
@@ -108,10 +109,14 @@ export default Vue.extend({
       this.isOpen = true
     },
     handleMouseEnter(): void {
-      this.open()
+      if (this.enableHover) this.open()
     },
     handleMouseLeave(): void {
-      this.close()
+      if (this.enableHover) this.close()
+    },
+    handleClick(): void {
+      if (this.enableHover) this.enableHover = false
+      else this.toggle()
     },
     triggerClose(event?: Event): void {
       // Trigger only if open
