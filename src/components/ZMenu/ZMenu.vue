@@ -1,7 +1,7 @@
 <template>
   <span
     class="relative z-menu"
-    v-on="triggerOnHover ? { mouseenter: handleMouseEnter, mouseleave: handleMouseLeave } : {}"
+    v-on="enableHover ? { mouseenter: handleMouseEnter, mouseleave: handleMouseLeave } : {}"
   >
     <div class="leading-none inline-block" ref="menu-trigger">
       <slot name="trigger" :toggle="toggle" :isOpen="isOpen">
