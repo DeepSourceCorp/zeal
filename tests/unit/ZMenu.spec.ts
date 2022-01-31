@@ -46,14 +46,14 @@ describe('ZMenu', () => {
     await wrapper.vm.$nextTick()
     expect(wrapper.findAll('.z-menu-section').length).toEqual(0)
   })
-  
+
   it('triggers on hover', async () => {
     const wrapper = mount(ZMenu, {
       propsData: {
         triggerOnHover: true
       }
     })
-    
+
     wrapper.trigger('mouseenter')
     await wrapper.vm.$nextTick()
     expect(wrapper.emitted('menu-toggle')).toBeTruthy()
@@ -62,5 +62,4 @@ describe('ZMenu', () => {
     await wrapper.vm.$nextTick()
     expect(wrapper.emitted('menu-toggle')).toEqual([[true], [false]])
   })
-
 })
