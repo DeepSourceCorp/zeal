@@ -26,7 +26,7 @@ export default Vue.extend({
     size: {
       type: String,
       default: 'base',
-      validator: function(value: string): boolean {
+      validator: function (value: string): boolean {
         return ['small', 'base', 'large', 'xlarge'].includes(value)
       }
     },
