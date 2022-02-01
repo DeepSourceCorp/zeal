@@ -39,8 +39,9 @@
         <span
           v-else-if="currentStatus == 'completed'"
           class="flex items-center justify-center h-full text-base font-bold text-ink-400"
-          >✓</span
         >
+          <z-icon icon="check" color="ink-400" class="stroke-2" />
+        </span>
       </div>
       <div
         v-if="align == 'vertical' && !isLast"
@@ -71,8 +72,13 @@
 </template>
 
 <script>
+import ZIcon from '@/components/ZIcon'
+
 export default {
   name: 'ZStep',
+  components: {
+    ZIcon
+  },
   props: {
     title: {
       required: false,
@@ -88,7 +94,7 @@ export default {
       required: false,
       type: String,
       default: 'default',
-      validator: (value) => {
+      validator: value => {
         return ['default', 'active', 'completed'].includes(value)
       }
     }
