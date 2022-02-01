@@ -1,5 +1,8 @@
 <template>
-  <span class="relative z-menu">
+  <span
+    class="relative z-menu"
+    v-on="enableHover ? { mouseenter: handleMouseEnter, mouseleave: handleMouseLeave } : {}"
+  >
     <div class="leading-none inline-block" ref="menu-trigger">
       <slot name="trigger" :toggle="toggle" :isOpen="isOpen">
         <z-button :label="triggerLabel" @click="toggle" />
@@ -83,19 +86,34 @@ export default Vue.extend({
     triggerLabel: {
       type: String,
       default: 'Menu'
+    },
+    triggerOnHover: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      enableHover: this.triggerOnHover
     }
   },
   methods: {
     toggle(): void {
-      this.isOpen = !this.isOpen
+      if (this.enableHover) this.enableHover = false
+      else this.isOpen = !this.isOpen
     },
     close(): void {
       this.isOpen = false
+    },
+    open(): void {
+      this.isOpen = true
+    },
+    handleMouseEnter(): void {
+      if (this.enableHover) this.open()
+    },
+    handleMouseLeave(): void {
+      if (this.enableHover) this.close()
     },
     triggerClose(event?: Event): void {
       // Trigger only if open
@@ -152,7 +170,8 @@ export default Vue.extend({
         base: 'sm:w-64',
         large: 'sm:w-72',
         'x-large': 'sm:w-80',
-        '2x-large': 'sm:w-96'
+        '2x-large': 'sm:w-96',
+        '3x-large': 'sm:w-102'
       }
       return widths[this.width] || 'sm:w-64'
     }
@@ -160,6 +179,7 @@ export default Vue.extend({
   watch: {
     isOpen(newState: boolean): void {
       this.$emit('menu-toggle', newState)
+      this.enableHover = this.triggerOnHover
     }
   }
 })
