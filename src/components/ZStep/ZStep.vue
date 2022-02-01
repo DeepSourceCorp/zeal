@@ -3,7 +3,7 @@
     class="mr-0 z-step"
     :class="{
       'w-1/3 flex-shrink-0 flex-grow-0': align === 'horizontal' && isLast,
-      'w-1/2': align == 'horizontal' && !isLast,
+      'w-1/2': align === 'horizontal' && !isLast,
       'flex flex-row': align === 'vertical'
     }"
   >
@@ -16,7 +16,7 @@
       }"
     >
       <div
-        v-if="align == 'horizontal' && !isLast"
+        v-if="align === 'horizontal' && !isLast"
         class="z-step__line absolute h-0.5 top-2.5 rounded-sm w-auto left-7 right-1"
         :class="{
           'bg-juniper': currentStatus === 'completed',
@@ -26,25 +26,28 @@
       <div
         class="w-6 h-6 rounded-full z-step__icon"
         :class="{
-          'bg-juniper': currentStatus == 'completed',
-          'bg-robin': currentStatus == 'active',
-          'bg-ink-200': !showNumbers && currentStatus == 'default',
-          'border border-vanilla-200': showNumbers && currentStatus == 'default',
+          'bg-juniper': currentStatus === 'completed',
+          'bg-robin': currentStatus === 'active',
+          'bg-ink-200': !showNumbers && currentStatus === 'default',
+          'bg-ink-100': showNumbers && currentStatus === 'default',
           'flex-shrink-0': align === 'vertical'
         }"
       >
-        <span v-if="showNumbers" class="flex items-center justify-center h-full text-base font-bold text-vanilla-100">
+        <span
+          v-if="showNumbers"
+          class="flex items-center justify-center h-full text-xs font-medium leading-none text-vanilla-100"
+        >
           {{ index + 1 }}
         </span>
-        <span v-else-if="currentStatus == 'active'" class="flex items-center justify-center h-full">
+        <span v-else-if="currentStatus === 'active'" class="flex items-center justify-center h-full">
           <z-icon icon="circle-dashed" color="vanilla-100" class="stroke-2" />
         </span>
-        <span v-else-if="currentStatus == 'completed'" class="flex items-center justify-center h-full">
+        <span v-else-if="currentStatus === 'completed'" class="flex items-center justify-center h-full">
           <z-icon icon="check" color="ink-400" class="stroke-2" />
         </span>
       </div>
       <div
-        v-if="align == 'vertical' && !isLast"
+        v-if="align === 'vertical' && !isLast"
         class="z-step__line h-full w-0.5 my-1 rounded-sm mx-auto"
         :class="{
           'bg-juniper': currentStatus === 'completed',
@@ -62,7 +65,7 @@
         class="mt-1 text-sm font-bold leading-6 z-step__description"
         :class="{
           'text-vanilla-200': currentStatus,
-          'text-vanilla-400': currentStatus == 'default'
+          'text-vanilla-400': currentStatus === 'default'
         }"
       >
         <slot name="description" v-bind:status="currentStatus">{{ description }}</slot>
