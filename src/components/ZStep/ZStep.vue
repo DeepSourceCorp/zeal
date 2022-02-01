@@ -33,13 +33,13 @@
           'flex-shrink-0': align === 'vertical'
         }"
       >
-        <span v-if="showNumbers" class="flex items-center justify-center h-full text-base font-bold text-vanilla-100">{{
-          index + 1
-        }}</span>
-        <span
-          v-else-if="currentStatus == 'completed'"
-          class="flex items-center justify-center h-full text-base font-bold text-ink-400"
-        >
+        <span v-if="showNumbers" class="flex items-center justify-center h-full text-base font-bold text-vanilla-100">
+          {{ index + 1 }}
+        </span>
+        <span v-else-if="currentStatus == 'active'" class="flex items-center justify-center h-full">
+          <z-icon icon="circle-dashed" color="vanilla-100" class="stroke-2" />
+        </span>
+        <span v-else-if="currentStatus == 'completed'" class="flex items-center justify-center h-full">
           <z-icon icon="check" color="ink-400" class="stroke-2" />
         </span>
       </div>
