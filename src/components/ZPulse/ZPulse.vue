@@ -2,10 +2,13 @@
   <div :class="`flex flex-shrink-0 h-${pulseSize} w-${pulseSize} items-center justify-center`">
     <span
       class="absolute inline-flex rounded-full"
-      :class="[`h-${pulseSize} w-${pulseSize}`, { 'animate-ping': active }, active ? `bg-${color}` : 'bg-ink-200']"
+      :class="[`h-${pulseSize} w-${pulseSize} `, { 'animate-ping': active }, active ? `bg-${color}` : 'bg-ink-200']"
     ></span>
     <span
-      :class="[`relative inline-flex rounded-full h-${dotSize} w-${dotSize}`, active ? `bg-${color}` : 'bg-ink-200']"
+      :class="[
+        `relative inline-flex rounded-full h-${dotSize} w-${dotSize} transform scale-125`,
+        active ? `bg-${color}` : 'bg-ink-200'
+      ]"
     ></span>
   </div>
 </template>
@@ -23,7 +26,7 @@ export default Vue.extend({
     size: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['small', 'base', 'large', 'xlarge'].includes(value)
       }
     },
@@ -38,19 +41,17 @@ export default Vue.extend({
         small: 3,
         base: 4,
         large: 5,
-        xlarge: 6,
-        xxlarge: 7
+        xlarge: 6
       }
 
       return sizes[this.size || 'base']
     },
     dotSize(): number {
       const sizes: Record<string, number> = {
-        small: 2,
-        base: 3,
-        large: 4,
-        xlarge: 5,
-        xxlarge: 6
+        small: 1.5,
+        base: 2,
+        large: 2.5,
+        xlarge: 4
       }
 
       return sizes[this.size || 'base']
