@@ -2,7 +2,7 @@
   <component
     v-bind="$attrs"
     :is="as"
-    class="z-menu-item flex items-center gap-2 px-3 py-2 leading-none outline-none focus:outline-none"
+    class="flex items-center gap-2 p-3 leading-none outline-none z-menu-item focus:outline-none"
     :class="{
       'hover:bg-ink-200 cursor-pointer': !disabled,
       'text-vanilla-400 cursor-not-allowed': disabled
