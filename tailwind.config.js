@@ -446,7 +446,9 @@ module.exports = {
       0: '0',
       1: '1',
       1.5: '1.5',
-      2: '2'
+      2: '2',
+      2.5: '2.5',
+      3: '3'
     },
     textColor: (theme) => theme('colors'),
     textOpacity: (theme) => theme('opacity'),
