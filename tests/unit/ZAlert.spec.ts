@@ -17,8 +17,10 @@ const mountFunction = (options = {}) => {
   })
 }
 
+const types = ['info', 'warning', 'danger', 'neutral']
+
 describe('Alert component', () => {
-  it('renders an alert widget with the given text', () => {
+  it.each(types)('renders an alert widget of the type %s with the given text', () => {
     expect(
       mountFunction({
         propsData: {
