@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pulse default rendering 1`] = `<div class="flex flex-shrink-0 h-4 w-4 items-center justify-center"><span class="absolute inline-flex rounded-full h-4 w-4 animate-ping bg-juniper"></span> <span class="relative inline-flex rounded-full h-3 w-3 bg-juniper"></span></div>`;
+exports[`Pulse default rendering 1`] = `<div class="flex flex-shrink-0 h-4 w-4 items-center justify-center"><span class="absolute inline-flex rounded-full h-4 w-4 animate-ping bg-juniper"></span> <span class="relative inline-flex rounded-full h-2 w-2 transform scale-125 bg-juniper"></span></div>`;
 
-exports[`Pulse renders with options 1`] = `<div class="flex flex-shrink-0 h-4 w-4 items-center justify-center"><span class="absolute inline-flex rounded-full h-4 w-4 animate-ping bg-juniper"></span> <span class="relative inline-flex rounded-full h-3 w-3 bg-juniper"></span></div>`;
+exports[`Pulse renders with options 1`] = `<div class="flex flex-shrink-0 h-4 w-4 items-center justify-center"><span class="absolute inline-flex rounded-full h-4 w-4 animate-ping bg-juniper"></span> <span class="relative inline-flex rounded-full h-2 w-2 transform scale-125 bg-juniper"></span></div>`;
