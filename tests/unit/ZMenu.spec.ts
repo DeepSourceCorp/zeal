@@ -4,7 +4,7 @@ import ZMenuItem from '../../src/components/ZMenu/ZMenuItem'
 import ZButton from '../../src/components/ZButton'
 import { mount } from '@vue/test-utils'
 
-const BasicTab = {
+const BasicMenu = {
   template: `<z-menu>
               <template v-slot:trigger="{ toggle }">
                 <z-button id="triggerClick" @click="toggle">Menu</z-button>
@@ -35,7 +35,7 @@ const BasicTab = {
 
 describe('ZMenu', () => {
   it('triggers on click', async () => {
-    const wrapper = mount(BasicTab)
+    const wrapper = mount(BasicMenu)
 
     wrapper.find('#triggerClick').trigger('click')
     await wrapper.vm.$nextTick()
@@ -45,5 +45,21 @@ describe('ZMenu', () => {
     wrapper.find('#triggerClick').trigger('click')
     await wrapper.vm.$nextTick()
     expect(wrapper.findAll('.z-menu-section').length).toEqual(0)
+  })
+
+  it('triggers on hover', async () => {
+    const wrapper = mount(ZMenu, {
+      propsData: {
+        triggerOnHover: true
+      }
+    })
+
+    wrapper.trigger('mouseenter')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.emitted('menu-toggle')).toBeTruthy()
+
+    wrapper.trigger('mouseleave')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.emitted('menu-toggle')).toEqual([[true], [false]])
   })
 })

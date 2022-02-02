@@ -1,5 +1,9 @@
 <template>
-  <div v-if="isVisible" class="px-4 rounded-md bg-opacity-10" :class="[bgColor, dismissible ? 'py-2' : 'py-3.5']">
+  <div
+    v-if="isVisible"
+    class="px-4 rounded-md"
+    :class="[bgColor, dismissible ? 'py-2' : 'py-3.5', { 'bg-opacity-10': type !== 'neutral' }]"
+  >
     <div class="flex items-center">
       <div
         ref="text-container"
@@ -40,7 +44,7 @@ export default Vue.extend({
       type: String,
       required: true,
       validator(val) {
-        return ['info', 'warning', 'danger'].includes(val)
+        return ['info', 'warning', 'danger', 'neutral'].includes(val)
       }
     },
     dismissible: {
@@ -56,7 +60,8 @@ export default Vue.extend({
       colors: {
         info: 'robin',
         warning: 'honey',
-        danger: 'cherry'
+        danger: 'cherry',
+        neutral: 'vanilla-100'
       },
       observer: {} as ResizeObserver
     }
@@ -121,7 +126,8 @@ export default Vue.extend({
       const bgColors = {
         info: 'bg-robin',
         warning: 'bg-honey',
-        danger: 'bg-cherry'
+        danger: 'bg-cherry',
+        neutral: 'bg-ink-300'
       }
       return bgColors[this.type]
     },
@@ -129,7 +135,8 @@ export default Vue.extend({
       const textColors = {
         info: 'text-robin-400',
         warning: 'text-honey-400',
-        danger: 'text-cherry-400'
+        danger: 'text-cherry-400',
+        neutral: 'text-vanilla-100'
       }
       return textColors[this.type]
     }
