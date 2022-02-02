@@ -24,7 +24,7 @@
       >
         <div
           class="overflow-hidden rounded-t-lg bg-ink-300 sm:rounded-md shadow-double-dark"
-          :class="[sizeClass]"
+          :class="[sizeClass, bodySpacing]"
           ref="menu-body"
           v-outside-click="triggerClose"
         >

@@ -4,7 +4,7 @@
       {{ title }}
     </h6>
     <slot></slot>
-    <z-divider v-if="divider" color="ink-100" margin="0"></z-divider>
+    <z-divider v-if="divider" color="ink-100" margin="m-0"></z-divider>
   </div>
 </template>
 
