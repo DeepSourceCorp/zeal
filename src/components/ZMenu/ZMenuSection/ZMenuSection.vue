@@ -1,6 +1,6 @@
 <template>
   <div class="z-menu-section">
-    <h6 v-if="title" class="px-3 mt-2 mb-0.5 text-xs font-semibold tracking-wide uppercase text-vanilla-400">
+    <h6 v-if="title" class="px-3 mt-2 mb-0.5 text-xs font-semibold tracking-wider uppercase text-vanilla-400">
       {{ title }}
     </h6>
     <slot></slot>
