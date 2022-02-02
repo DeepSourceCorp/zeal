@@ -3,7 +3,7 @@
     class="relative z-menu"
     v-on="enableHover ? { mouseenter: handleMouseEnter, mouseleave: handleMouseLeave } : {}"
   >
-    <div class="leading-none inline-block" ref="menu-trigger">
+    <div class="inline-block leading-none" ref="menu-trigger">
       <slot name="trigger" :toggle="toggle" :isOpen="isOpen">
         <z-button :label="triggerLabel" @click="toggle" />
       </slot>
@@ -19,12 +19,12 @@
       <!-- prettier-ignore -->
       <div
         v-if="isOpen"
-        class="fixed z-10 flex items-end overflow-hidden sm:overflow-visible h-100 sm:absolute text-vanilla-200 transform-gpu bg-ink-400 bg-opacity-25 sm:bg-transparent sm:bg-opacity-0"
+        class="fixed z-10 flex items-end overflow-hidden bg-opacity-25 sm:overflow-visible h-100 sm:absolute text-vanilla-200 transform-gpu bg-ink-400 sm:bg-transparent sm:bg-opacity-0"
         :class="[directionClass, placementClasses]"
       >
         <div
-          class="rounded-t-lg bg-ink-300 sm:rounded-sm shadow-double-dark"
-          :class="[sizeClass, spacingClass]"
+          class="overflow-hidden rounded-t-lg bg-ink-300 sm:rounded-md shadow-double-dark"
+          :class="[sizeClass]"
           ref="menu-body"
           v-outside-click="triggerClose"
         >
@@ -50,28 +50,28 @@ export default Vue.extend({
     direction: {
       type: String,
       default: 'right',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['left', 'right'].includes(value)
       }
     },
     placement: {
       type: String,
       default: 'bottom',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['top', 'bottom'].includes(value)
       }
     },
     size: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['small', 'base', 'large'].includes(value)
       }
     },
     width: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['x-small', 'small', 'base', 'large', 'x-large', '2x-large'].includes(value)
       }
     },
@@ -149,17 +149,6 @@ export default Vue.extend({
         small: `text-xs w-full ${this.widthClass} mt-5 sm:mt-2`,
         base: `text-sm w-full ${this.widthClass} mt-5 sm:mt-2`,
         large: `text-base w-full ${this.widthClass} mt-5 sm:mt-4`
-      }
-      return sizes[this.size || 'base']
-    },
-    spacingClass(): string {
-      if (this.bodySpacing) {
-        return this.bodySpacing
-      }
-      const sizes: Record<string, string> = {
-        small: `py-1`,
-        base: `py-1`,
-        large: `py-2`
       }
       return sizes[this.size || 'base']
     },
