@@ -18,7 +18,7 @@ export const AlertTypes = () => {
     components: { ZAlert },
     data: function () {
       return {
-        types: ['info', 'warning', 'danger']
+        types: ['info', 'warning', 'danger', 'neutral']
       }
     },
     template: `
@@ -45,7 +45,7 @@ export const DismissibleAlert = () => {
     components: { ZAlert },
     data: function () {
       return {
-        types: ['info', 'warning', 'danger']
+        types: ['info', 'warning', 'danger', 'neutral']
       }
     },
     template: `
@@ -75,9 +75,10 @@ export const DismissibleAlertWithControls = () => {
         colors: {
           info: 'bg-robin',
           warning: 'bg-honey',
-          danger: 'bg-cherry'
+          danger: 'bg-cherry',
+          neutral: 'bg-juniper'
         },
-        types: ['info', 'warning', 'danger']
+        types: ['info', 'warning', 'danger', 'neutral']
       }
     },
     template: `
@@ -122,10 +123,11 @@ export const DismissibleAlertWithCodeSnippet = () => {
         colors: {
           info: 'bg-robin',
           warning: 'bg-honey',
-          danger: 'bg-cherry'
+          danger: 'bg-cherry',
+          neutral: 'bg-juniper'
         },
         content: `<div class="highlight"><pre><span class="ln">2</span>\n<span class="ln">3</span>\n<span class="ln">4</span><span class="nd">@dramatiq.actor</span>\n<span class="hl"><span class="ln">5</span><span class="k">def</span> <span class="nf">example</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></span><span class="ln">6</span>    <span class="k">pass</span>\n</pre></div>`,
-        types: ['info', 'warning', 'danger']
+        types: ['info', 'warning', 'danger', 'neutral']
       }
     },
     template: `
