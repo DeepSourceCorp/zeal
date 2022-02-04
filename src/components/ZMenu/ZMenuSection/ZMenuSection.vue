@@ -1,15 +1,10 @@
 <template>
-  <div
-    class="z-menu-section"
-    :class="{
-      'mb-1': !divider
-    }"
-  >
-    <h6 v-if="title" class="px-3 my-1 uppercase text-vanilla-400 tracking-wide text-xs font-semibold">
+  <div class="z-menu-section">
+    <h6 v-if="title" class="px-3 mt-2 mb-0.5 text-xs font-semibold tracking-wider uppercase text-vanilla-400">
       {{ title }}
     </h6>
     <slot></slot>
-    <z-divider v-if="divider" color="ink-100" margin="my-2 mx-0"></z-divider>
+    <z-divider v-if="divider" color="ink-100" margin="m-0"></z-divider>
   </div>
 </template>
 
