@@ -13,6 +13,16 @@ describe('Toggle', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
+  it('renders a default toggle in the off state', () => {
+    const wrapper = shallowMount(ZToggle, {
+      propsData: {
+        value: false
+      }
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
   it('renders a disabled toggle', () => {
     const wrapper = shallowMount(ZToggle, {
       propsData: {
