@@ -7,27 +7,18 @@
     @click="toggle(!value)"
     @keydown.space.prevent="toggle"
     :class="{
-      'cursor-not-allowed': this.disabled
+      'cursor-not-allowed': disabled
     }"
   >
     <!-- prettier-ignore -->
     <span
       class="inline-flex rounded-full h-full w-full transition-DEFAULT duration-300 ease-in-out p-0.5 items-center"
-      :class="{
-        'bg-ink-100': !this.value && this.disabled,
-        'bg-juniper': this.value,
-        'bg-opacity-50': this.value && this.disabled
-      }"
+      :class="[value ? 'bg-juniper' : 'bg-ink-100', {'bg-opacity-50' : value && disabled}]"
     >
       <!-- prettier-ignore -->
       <span
         class="inline-block w-3.5 h-3.5 transform rounded-full transition-transform ease-in-out duration-300 shadow-grey"
-        :class="{
-          'bg-vanilla-100': !this.disabled,
-          'bg-vanilla-400': this.disabled,
-          'translate-x-full': this.value,
-          'translate-x-0': !this.value
-        }"
+        :class="[disabled ? 'bg-vanilla-400' : 'bg-vanilla-100', value ? 'translate-x-full' : 'translate-x-0']"
       />
     </span>
   </div>
