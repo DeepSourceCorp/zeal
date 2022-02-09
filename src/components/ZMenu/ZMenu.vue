@@ -136,10 +136,14 @@ export default Vue.extend({
   },
   computed: {
     directionClass(): string {
-      return this.direction == 'right' ? 'sm:left-0 sm:origin-top-left' : 'sm:right-0 sm:origin-top-right'
+      if (this.direction === 'right') {
+        return this.placement === 'top' ? `sm:left-0 sm:origin-bottom-left` : `sm:left-0 sm:origin-top-left`
+      }
+
+      return this.placement === 'top' ? `sm:right-0 sm:origin-bottom-right` : `sm:right-0 sm:origin-top-right`
     },
     placementClasses(): string {
-      if (this.placement == 'top') {
+      if (this.placement === 'top') {
         return 'inset-0 sm:inset-auto sm:bottom-10'
       }
       return 'inset-0 sm:inset-auto'
