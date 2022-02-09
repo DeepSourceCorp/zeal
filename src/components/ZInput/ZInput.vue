@@ -80,7 +80,7 @@ export default Vue.extend({
     },
     value: {
       default: '',
-      type: String
+      type: [String, Number]
     },
     label: {
       default: '',
