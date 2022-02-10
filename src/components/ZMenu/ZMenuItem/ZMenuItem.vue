@@ -47,9 +47,7 @@ export default Vue.extend({
     }
   },
   methods: {
-    itemClicked(event: Event): void {
-      this.$emit('click', event)
-
+    itemClicked(): void {
       if (this.closeOnClick) {
         const parent = this.$parent as ZMenuParentT
         parent.close()
