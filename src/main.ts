@@ -53,7 +53,6 @@ import ZBreadcrumb from './components/ZBreadcrumb/index'
 import ZBreadcrumbItem from './components/ZBreadcrumb/ZBreadcrumbItem/index'
 import ZTextarea from './components/ZTextarea/index'
 import ZModal from './components/ZModal/index'
-import ZAnimatedInteger from './components/ZAnimatedInteger/index'
 import ZTimeline from './components/ZTimeline/index'
 import ZTimelineItem from './components/ZTimeline/ZTimelineItem/index'
 import ZConfirm from './components/ZConfirm/index'
@@ -155,7 +154,6 @@ const components = [
   ZTableRow,
   ZTableCell,
   ZModal,
-  ZAnimatedInteger,
   ZTimeline,
   ZTimelineItem,
   ZConfirm,
@@ -237,7 +235,6 @@ export default {
   ZTableCell,
   ZToggle,
   ZModal,
-  ZAnimatedInteger,
   ZTimeline,
   ZTimelineItem,
   ZConfirm,
@@ -314,7 +311,6 @@ export { default as ZTableRow } from './components/ZTable/ZTableRow/index'
 export { default as ZTableCell } from './components/ZTable/ZTableCell/index'
 export { default as ZToggle } from './components/ZToggle/index'
 export { default as ZModal } from './components/ZModal/index'
-export { default as ZAnimatedInteger } from './components/ZAnimatedInteger/index'
 export { default as ZTimeline } from './components/ZTimeline/index'
 export { default as ZTimelineItem } from './components/ZTimeline/ZTimelineItem/index'
 export { default as ZConfirm } from './components/ZConfirm/index'
