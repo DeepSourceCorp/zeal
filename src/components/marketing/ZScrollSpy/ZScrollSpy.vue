@@ -1,17 +1,17 @@
 <template>
-  <ul class="group list-inside" :class="[`text-${align}`]">
+  <ul class="group list-inside text-left">
     <li
       v-for="heading in headingsMap"
       :key="heading.id"
       class="leading-4 pointer-events-none group-hover:pointer-events-auto"
       :class="[
-        `${HEADING_ALIGNMENT_CLASSES[align]}-${HEADINGS[heading.tagName].indentSpace}`,
+        `${HEADINGS[heading.tagName].indentClass}`,
         `${HEADINGS[heading.tagName].extras}`
       ]"
     >
       <div
         class="absolute left-0 -mt-2 group-hover:w-0 group-hover:opacity-0 transition-all ease-bounce"
-        :class="[`w-${HEADINGS[heading.tagName].indicatorSize}`]"
+        :class="[`${HEADINGS[heading.tagName].indicatorSize}`]"
       >
         <z-divider
           class="border w-full transition-colors ease-in-out"
@@ -46,26 +46,23 @@ enum HEADING_STATE_CLASSES {
   active = 'text-vanilla-100 border-l border-juniper',
   inactive = 'text-vanilla-400'
 }
-enum HEADING_ALIGNMENT_CLASSES {
-  left = 'ml',
-  right = 'mr'
-}
+
 const HEADINGS = {
   h1: {
     tag: 'h1',
-    indentSpace: 0,
-    indicatorSize: 10,
+    indentClass: 'ml-0',
+    indicatorSize: 'w-10',
     extras: 'font-semibold text-lg'
   },
   h2: {
     tag: 'h2',
-    indentSpace: 6,
-    indicatorSize: 8
+    indentClass: 'ml-6',
+    indicatorSize: 'w-8'
   },
   h3: {
     tag: 'h3',
-    indentSpace: 12,
-    indicatorSize: 6
+    indentClass: 'ml-12',
+    indicatorSize: 'w-6'
   }
 }
 
@@ -81,11 +78,6 @@ export default Vue.extend({
       type: String,
       required: true
     },
-    align: {
-      type: String,
-      default: 'left',
-      validator: (val: string) => Object.keys(HEADING_ALIGNMENT_CLASSES).some((alignment) => alignment === val)
-    },
     headingOffsetTop: {
       type: Number,
       default: 0
@@ -99,7 +91,6 @@ export default Vue.extend({
       primaryHeadingTagName: '' as Heading['tagName'],
       headingsMap: {} as Record<string, Heading>,
       HEADINGS,
-      HEADING_ALIGNMENT_CLASSES,
       HEADING_STATE_CLASSES,
       scrollPos: 0,
       scrollSpeed: 0,
