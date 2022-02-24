@@ -4,10 +4,7 @@
       v-for="heading in headingsMap"
       :key="heading.id"
       class="leading-4 pointer-events-none group-hover:pointer-events-auto"
-      :class="[
-        `${HEADINGS[heading.tagName].indentClass}`,
-        `${HEADINGS[heading.tagName].extras}`
-      ]"
+      :class="[`${HEADINGS[heading.tagName].indentClass}`, `${HEADINGS[heading.tagName].extras}`]"
     >
       <div
         class="absolute left-0 -mt-2 group-hover:w-0 group-hover:opacity-0 transition-all ease-bounce"
