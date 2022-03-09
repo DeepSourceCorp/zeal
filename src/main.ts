@@ -74,7 +74,6 @@ import ZNavMenu from './components/marketing/ZNavMenu'
 import ZRelatedArticle from './components/marketing/ZRelatedArticle'
 import ZScrollSpy from './components/marketing/ZScrollSpy'
 import ZTestimonial from './components/marketing/ZTestimonial'
-import ZPageLabel from './components/marketing/ZPageLabel/index'
 
 // Marketing sections
 import ZCustomers from './components/marketing/sections/ZCustomers'
@@ -82,19 +81,14 @@ import ZTestimonials from './components/marketing/sections/ZTestimonials'
 import ZRelatedArticles from './components/marketing/sections/ZRelatedArticles'
 import ZHero from './components/marketing/sections/ZHero'
 
-// Marketing layouts
-import ZContentGuide from './components/marketing/layouts/ZContentGuide/index'
-
 const components = [
   ZAlert,
   ZButton,
   ZIcon,
   ZDivider,
-  ZContentGuide,
   ZCarousel,
   ZSlide,
   ZCard,
-  ZPageLabel,
   ZCheckbox,
   ZStepper,
   ZStep,
@@ -293,8 +287,6 @@ export { default as ZCustomers } from './components/marketing/sections/ZCustomer
 export { default as ZTestimonials } from './components/marketing/sections/ZTestimonials/index'
 export { default as ZRelatedArticles } from './components/marketing/sections/ZRelatedArticles/index'
 export { default as ZHero } from './components/marketing/sections/ZHero/index'
-export { default as ZContentGuide } from './components/marketing/layouts/ZContentGuide/index'
-export { default as ZPageLabel } from './components/marketing/ZPageLabel/index'
 export { default as ZList } from './components/ZList/index'
 export { default as ZListItem } from './components/ZListItem/index'
 export { default as ZAccordion } from './components/ZAccordion/index'
