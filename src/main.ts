@@ -71,14 +71,12 @@ import ZNavItem from './components/marketing/ZNavItem'
 import ZNavList from './components/marketing/ZNavList'
 import ZNavListItem from './components/marketing/ZNavListItem'
 import ZNavMenu from './components/marketing/ZNavMenu'
-import ZRelatedArticle from './components/marketing/ZRelatedArticle'
 import ZScrollSpy from './components/marketing/ZScrollSpy'
 import ZTestimonial from './components/marketing/ZTestimonial'
 
 // Marketing sections
 import ZCustomers from './components/marketing/sections/ZCustomers'
 import ZTestimonials from './components/marketing/sections/ZTestimonials'
-import ZRelatedArticles from './components/marketing/sections/ZRelatedArticles'
 import ZHero from './components/marketing/sections/ZHero'
 
 const components = [
@@ -125,12 +123,10 @@ const components = [
   ZNavList,
   ZNavListItem,
   ZNavMenu,
-  ZRelatedArticle,
   ZScrollSpy,
   ZTestimonial,
   ZCustomers,
   ZTestimonials,
-  ZRelatedArticles,
   ZHero,
   ZListItem,
   ZList,
@@ -209,12 +205,10 @@ export default {
   ZNavList,
   ZNavListItem,
   ZNavMenu,
-  ZRelatedArticle,
   ZScrollSpy,
   ZTestimonial,
   ZCustomers,
   ZTestimonials,
-  ZRelatedArticles,
   ZHero,
   ZListItem,
   ZList,
@@ -280,12 +274,10 @@ export { default as ZNavItem } from './components/marketing/ZNavItem/index'
 export { default as ZNavList } from './components/marketing/ZNavList/index'
 export { default as ZNavListItem } from './components/marketing/ZNavListItem/index'
 export { default as ZNavMenu } from './components/marketing/ZNavMenu/index'
-export { default as ZRelatedArticle } from './components/marketing/ZRelatedArticle/index'
 export { default as ZScrollSpy } from './components/marketing/ZScrollSpy/index'
 export { default as ZTestimonial } from './components/marketing/ZTestimonial/index'
 export { default as ZCustomers } from './components/marketing/sections/ZCustomers/index'
 export { default as ZTestimonials } from './components/marketing/sections/ZTestimonials/index'
-export { default as ZRelatedArticles } from './components/marketing/sections/ZRelatedArticles/index'
 export { default as ZHero } from './components/marketing/sections/ZHero/index'
 export { default as ZList } from './components/ZList/index'
 export { default as ZListItem } from './components/ZListItem/index'
