@@ -6,7 +6,7 @@
     @blur.stop="!disabled && !readOnly && blurEvent()"
   >
     <div
-      class="flex items-center justify-between h-full px-2 py-3 space-x-2 border border-solid selected"
+      class="flex items-center justify-between h-full space-x-2 border border-solid selected"
       :class="[
         (open && 'border-vanilla-400') || borderClass,
         spacing,
@@ -86,7 +86,7 @@ export default Vue.extend({
     },
     spacing: {
       type: String,
-      default: ''
+      default: 'px-2 py-3'
     },
     borderClass: {
       type: String,
