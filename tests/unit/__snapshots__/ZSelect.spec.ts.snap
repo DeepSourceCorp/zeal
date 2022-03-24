@@ -2,7 +2,7 @@
 
 exports[`Select Component renders a select component with custom options template 1`] = `
 <div tabindex="0" class="relative w-full h-full leading-8 text-left outline-none custom-select">
-  <div class="flex items-center justify-between h-full px-2 py-3 space-x-2 border border-solid selected border-ink-200 bg-transparent rounded-md text-vanilla-300 cursor-pointer">
+  <div class="flex items-center justify-between h-full space-x-2 border border-solid selected border-ink-200 px-2 py-3 bg-transparent rounded-md text-vanilla-300 cursor-pointer">
     <div class="flex items-center flex-grow h-full outline-none cursor-pointer text-xs cursor-pointer">
       Choose a framework
     </div> <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transition-all duration-300 transform z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
@@ -24,7 +24,7 @@ exports[`Select Component renders a select component with custom options templat
 
 exports[`Select Component renders the default select component 1`] = `
 <div tabindex="0" class="relative w-full h-full leading-8 text-left outline-none custom-select">
-  <div class="flex items-center justify-between h-full px-2 py-3 space-x-2 border border-solid selected border-ink-200 bg-transparent rounded-md text-vanilla-300 cursor-pointer">
+  <div class="flex items-center justify-between h-full space-x-2 border border-solid selected border-ink-200 px-2 py-3 bg-transparent rounded-md text-vanilla-300 cursor-pointer">
     <div class="flex items-center flex-grow h-full outline-none cursor-pointer text-xs cursor-pointer">
       Select an Option
     </div> <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transition-all duration-300 transform z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
@@ -38,7 +38,7 @@ exports[`Select Component renders the default select component 1`] = `
 
 exports[`Select Component renders the select component with clearables 1`] = `
 <div tabindex="0" class="relative w-full h-full leading-8 text-left outline-none custom-select">
-  <div class="flex items-center justify-between h-full px-2 py-3 space-x-2 border border-solid selected border-ink-200 bg-transparent rounded-md text-vanilla-300 cursor-pointer">
+  <div class="flex items-center justify-between h-full space-x-2 border border-solid selected border-ink-200 px-2 py-3 bg-transparent rounded-md text-vanilla-300 cursor-pointer">
     <div class="flex items-center flex-grow h-full outline-none cursor-pointer text-xs cursor-pointer">
       Choose a framework
     </div> <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transition-all duration-300 transform z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
@@ -52,7 +52,7 @@ exports[`Select Component renders the select component with clearables 1`] = `
 
 exports[`Select Component renders the select with a custom placeholder 1`] = `
 <div tabindex="0" class="relative w-full h-full leading-8 text-left outline-none custom-select">
-  <div class="flex items-center justify-between h-full px-2 py-3 space-x-2 border border-solid selected border-ink-200 bg-transparent rounded-md text-vanilla-300 cursor-pointer">
+  <div class="flex items-center justify-between h-full space-x-2 border border-solid selected border-ink-200 px-2 py-3 bg-transparent rounded-md text-vanilla-300 cursor-pointer">
     <div class="flex items-center flex-grow h-full outline-none cursor-pointer text-xs cursor-pointer">
       Choose a framework
     </div> <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transition-all duration-300 transform z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400 rotate-0"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
