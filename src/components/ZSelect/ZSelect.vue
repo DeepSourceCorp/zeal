@@ -6,7 +6,7 @@
     @blur.stop="!disabled && !readOnly && blurEvent()"
   >
     <div
-      class="flex items-center justify-between h-full px-2 py-3 space-x-2 border border-solid selected"
+      class="flex items-center justify-between h-full space-x-2 border border-solid selected"
       :class="[
         (open && 'border-vanilla-400') || borderClass,
         spacing,
@@ -86,7 +86,7 @@ export default Vue.extend({
     },
     spacing: {
       type: String,
-      default: ''
+      default: 'px-2 py-3'
     },
     borderClass: {
       type: String,
@@ -153,14 +153,14 @@ export default Vue.extend({
     }
   },
   mounted() {
-    this.options = this.$children.filter((child) => child.$options.name === 'ZOption')
+    this.options = this.$children.filter(child => child.$options.name === 'ZOption')
 
     if (this.selected) {
       const selectedOpt = this.options
-        .map((child) => {
+        .map(child => {
           return child.$options.propsData as ZOptionPropsT
         })
-        .filter((childProp) => {
+        .filter(childProp => {
           return childProp.value === this.selected
         })
 
@@ -179,7 +179,7 @@ export default Vue.extend({
     }
   },
   watch: {
-    selectedOpt: function (newValue) {
+    selectedOpt: function(newValue) {
       this.$emit('change', newValue)
     }
   }
