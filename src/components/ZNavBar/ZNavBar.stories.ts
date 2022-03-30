@@ -335,3 +335,34 @@ export const Horizontal = () => ({
     </div>
     </div>`
 })
+
+export const WithoutLinks = () => ({
+  components: {
+    ZNavBar,
+    ZButton,
+    ZMenuItem,
+    ZMenu,
+    ZList,
+    ZListItem,
+    ZMenuSection,
+    ZIcon,
+    ZDivider
+  },
+  template: `<ZNavBar class="text-vanilla-100" max-width="6xl">
+  <template slot="brand">
+    <img
+      class="h-4 sm:h-5 lg:h-7 max-w-none hidden lg:block"
+      src="https://assets.deepsource.io/fc583c0/images/logo-wordmark-white.svg"
+    />
+    <img
+      class="h-6 max-w-none lg:hidden"
+      src="https://assets.deepsource.io/fc583c0/images/logo-white.svg"
+    />
+  </template>
+  
+  <template slot="cta">
+    <z-button buttonType="ghost" type="link">Log in</z-button>
+    <z-button>Sign up</z-button>
+  </template>
+</ZNavBar>`
+})

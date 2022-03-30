@@ -53,6 +53,9 @@ export default {
     linkSlotStyle() {
       return `${this.hideOnScroll}
               second hidden lg:flex flex-1 items-center justify-center space-x-4 w-full transition-all duration-200 ease-in-out`
+    },
+    showMenuButton() {
+      return this.$slots.links?.length > 0
     }
   },
   methods: {
@@ -84,9 +87,11 @@ export default {
           <div class="first flex items-center flex-1">{this.$slots.brand}</div>
           <div class={this.linkSlotStyle}>{this.$slots.links}</div>
           <div class="third flex flex-1 items-center space-x-3 justify-end">{this.$slots.cta}</div>
-          <div class="flex cursor-pointer lg:hidden" on-click={this.toggleModal}>
-            <z-icon icon="menu" size="medium"></z-icon>
-          </div>
+          {this.showMenuButton && (
+            <div class="flex cursor-pointer lg:hidden" on-click={this.toggleModal}>
+              <z-icon icon="menu" size="medium"></z-icon>
+            </div>
+          )}
         </nav>
       ),
       menuItems = this.$slots.links?.map((child) => {
