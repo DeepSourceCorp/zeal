@@ -23,7 +23,7 @@ export default {
       isOpen: false,
       isScrolling: false,
       isUserOnTop: true,
-      hideOnScroll: '',
+      hideOnScroll: ''
     }
   },
   mounted() {
