@@ -23,11 +23,14 @@ export default {
       isOpen: false,
       isScrolling: false,
       isUserOnTop: true,
-      hideOnScroll: ''
+      hideOnScroll: '',
+      showMenuButton: false
     }
   },
   mounted() {
     document.addEventListener('scroll', this.handleScroll)
+    this.showMenuButton = this.$slots.links?.length > 0
+    console.log(this.$slots.links)
   },
   beforeDestroy() {
     document.removeEventListener('scroll', this.handleScroll)
@@ -84,9 +87,9 @@ export default {
           <div class="first flex items-center flex-1">{this.$slots.brand}</div>
           <div class={this.linkSlotStyle}>{this.$slots.links}</div>
           <div class="third flex flex-1 items-center space-x-3 justify-end">{this.$slots.cta}</div>
-          <div class="flex cursor-pointer lg:hidden" on-click={this.toggleModal}>
+          {this.showMenuButton && <div class="flex cursor-pointer lg:hidden" on-click={this.toggleModal}>
             <z-icon icon="menu" size="medium"></z-icon>
-          </div>
+          </div>}
         </nav>
       ),
       menuItems = this.$slots.links?.map((child) => {
