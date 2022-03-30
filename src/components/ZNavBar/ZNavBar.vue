@@ -30,7 +30,6 @@ export default {
   mounted() {
     document.addEventListener('scroll', this.handleScroll)
     this.showMenuButton = this.$slots.links?.length > 0
-    console.log(this.$slots.links)
   },
   beforeDestroy() {
     document.removeEventListener('scroll', this.handleScroll)
