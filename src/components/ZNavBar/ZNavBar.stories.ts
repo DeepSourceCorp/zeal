@@ -336,7 +336,6 @@ export const Horizontal = () => ({
     </div>`
 })
 
-
 export const WithoutLinks = () => ({
   components: {
     ZNavBar,
