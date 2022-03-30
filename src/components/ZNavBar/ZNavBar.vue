@@ -24,12 +24,10 @@ export default {
       isScrolling: false,
       isUserOnTop: true,
       hideOnScroll: '',
-      showMenuButton: false
     }
   },
   mounted() {
     document.addEventListener('scroll', this.handleScroll)
-    this.showMenuButton = this.$slots.links?.length > 0
   },
   beforeDestroy() {
     document.removeEventListener('scroll', this.handleScroll)
@@ -55,6 +53,9 @@ export default {
     linkSlotStyle() {
       return `${this.hideOnScroll}
               second hidden lg:flex flex-1 items-center justify-center space-x-4 w-full transition-all duration-200 ease-in-out`
+    },
+    showMenuButton() {
+      return this.$slots.links?.length > 0
     }
   },
   methods: {
