@@ -98,7 +98,7 @@ const DEFAULT = function (theme) {
       content: '""'
     },
     'a code': {
-      color: theme('colors.juniper')
+      color: theme('colors.juniper.DEFAULT')
     },
     pre: {
       color: theme('colors.vanilla.400'),
@@ -232,7 +232,8 @@ const RTE = function (theme) {
       content: '""'
     },
     a: {
-      fontWeight: theme('fontWeight.normal')
+      fontWeight: theme('fontWeight.normal'),
+      color: theme('colors.juniper.DEFAULT')
     },
     blockquote: {
       fontWeight: theme('fontWeight.normal'),
