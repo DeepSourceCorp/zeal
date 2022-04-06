@@ -128,7 +128,7 @@ export default {
     }
   },
   mounted() {
-    this.slides = this.$children.filter(child => child.$options.name === 'ZSlide')
+    this.slides = this.$children.filter((child) => child.$options.name === 'ZSlide')
     this.slides.map((slide, index) => {
       slide.index = index
     })
