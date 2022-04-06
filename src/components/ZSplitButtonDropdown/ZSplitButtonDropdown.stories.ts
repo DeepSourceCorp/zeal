@@ -14,6 +14,11 @@ export default {
   excludeStories: /.*Data$/
 }
 
+/**
+ * UI state representing Split Button Dropdown behavior
+ *
+ * @returns {ExtendedVue}
+ */
 export const DefaultSplitButtonDropdown = () =>
   Vue.extend({
     components: { ZButton, ZMenu, ZMenuItem, ZSplitButtonDropdown },
