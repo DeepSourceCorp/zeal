@@ -22,7 +22,7 @@ export default {
 export const DefaultSplitButtonDropdown = () =>
   Vue.extend({
     components: { ZButton, ZMenu, ZMenuItem, ZSplitButtonDropdown },
-    data: function() {
+    data: function () {
       return {
         icon: 'github',
         label: 'Create an issue on GitHub',
