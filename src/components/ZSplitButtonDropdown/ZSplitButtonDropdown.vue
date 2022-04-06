@@ -1,23 +1,34 @@
 <template>
   <div class="flex">
-    <z-button :icon="icon" :to="to" button-type="secondary" rel="noopener noreferrer" size="small" target="_blank">
+    <z-button
+      :icon="icon"
+      :to="to"
+      button-type="secondary"
+      rel="noopener noreferrer"
+      size="small"
+      target="_blank"
+      class="-mr-0.5"
+    >
       {{ label }}
     </z-button>
 
-    <div class="border-l">
-      <slot />
-    </div>
+    <z-divider direction="vertical" margin="mt-2" color="slate" />
+
+    <slot />
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
+
 import ZButton from '../ZButton/ZButton.vue'
+import ZDivider from '../ZDivider/ZDivider.vue'
 
 export default Vue.extend({
   name: 'ZSplitButtonDropdown',
   components: {
-    ZButton
+    ZButton,
+    ZDivider
   },
   props: {
     icon: {

@@ -1,6 +1,7 @@
 import { mount } from '@vue/test-utils'
 
 import ZButton from '../../src/components/ZButton'
+import ZIcon from '../../src/components/ZIcon'
 import ZMenu from '../../src/components/ZMenu'
 import ZMenuItem from '../../src/components/ZMenu/ZMenuItem'
 import ZSplitButtonDropdown from '../../src/components/ZSplitButtonDropdown'
@@ -12,7 +13,9 @@ describe('Split Button Dropdown component', () => {
       <z-split-button-dropdown :icon="icon" :label="label" :to="to">
         <z-menu size="small">
           <template v-slot:trigger="{ toggle }">
-            <z-button button-type="secondary" icon="chevron-down" size="small" @click="toggle" />
+            <z-button button-type="secondary" size="small" @click="toggle">
+              <z-icon icon="chevron-down" />
+            </z-button>
           </template>
 
           <template #body>
@@ -24,6 +27,7 @@ describe('Split Button Dropdown component', () => {
     `,
       components: {
         ZButton,
+        ZIcon,
         ZMenu,
         ZMenuItem,
         ZSplitButtonDropdown

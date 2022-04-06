@@ -3,7 +3,9 @@ import Vue from 'vue'
 import '../../assets/css/layout.css'
 import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
+
 import ZButton from '../ZButton/ZButton.vue'
+import ZIcon from '../ZIcon/ZIcon.vue'
 import ZMenu from '../ZMenu/ZMenu.vue'
 import ZMenuItem from '../ZMenu/ZMenuItem'
 import ZSplitButtonDropdown from './ZSplitButtonDropdown.vue'
@@ -21,8 +23,8 @@ export default {
  */
 export const DefaultSplitButtonDropdown = () =>
   Vue.extend({
-    components: { ZButton, ZMenu, ZMenuItem, ZSplitButtonDropdown },
-    data: function () {
+    components: { ZButton, ZIcon, ZMenu, ZMenuItem, ZSplitButtonDropdown },
+    data: function() {
       return {
         icon: 'github',
         label: 'Create an issue on GitHub',
@@ -51,7 +53,9 @@ export const DefaultSplitButtonDropdown = () =>
         <z-split-button-dropdown :icon="icon" :label="label" :to="to">
           <z-menu size="small">
             <template v-slot:trigger="{ toggle }">
-              <z-button button-type="secondary" icon="chevron-down" size="small" @click="toggle" />
+              <z-button button-type="secondary" size="small" @click="toggle">
+                <z-icon icon="chevron-down" />
+              </z-button>
             </template>
 
             <template #body>
