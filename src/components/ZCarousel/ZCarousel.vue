@@ -74,7 +74,6 @@ export default {
   data() {
     return {
       currentIndex: this.activeIndex || 0,
-      autoInterval: null,
       slides: [],
       slideDirection: ''
     }
@@ -96,17 +95,17 @@ export default {
     }
   },
   methods: {
-    resetAutoSlide() {
-      this.cancelAutoSlide()
-      this.setSlideInterval()
-    },
-
     showNextSlide() {
       this.currentIndex++
       if (this.currentIndex >= this.slidesLength) {
         this.currentIndex = 0
       }
       this.slideDirection = 'slide-right'
+      if (this.autoSlide) {
+        setTimeout(() => {
+          this.showNextSlide()
+        }, parseInt(this.autoTiming))
+      }
     },
 
     showPrevSlide() {
@@ -121,17 +120,6 @@ export default {
       if (slideIndex > this.currentIndex) this.slideDirection = 'slide-right'
       else this.slideDirection = 'slide-left'
       this.currentIndex = slideIndex
-      if (this.autoSlide) this.resetAutoSlide()
-    },
-
-    setSlideInterval() {
-      this.autoInterval = setInterval(() => {
-        this.showNextSlide()
-      }, parseInt(this.autoTiming))
-    },
-
-    cancelAutoSlide() {
-      clearInterval(this.autoInterval)
     }
   },
   watch: {
@@ -140,16 +128,15 @@ export default {
     }
   },
   mounted() {
-    this.slides = this.$children.filter((child) => child.$options.name === 'ZSlide')
+    this.slides = this.$children.filter(child => child.$options.name === 'ZSlide')
     this.slides.map((slide, index) => {
       slide.index = index
     })
     if (this.autoSlide) {
-      this.setSlideInterval()
+      setTimeout(() => {
+        this.showNextSlide()
+      }, parseInt(this.autoTiming))
     }
-  },
-  beforeDestroy() {
-    this.cancelAutoSlide()
   }
 }
 </script>
