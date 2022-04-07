@@ -5,14 +5,14 @@
       :to="to"
       button-type="secondary"
       rel="noopener noreferrer"
-      size="small"
+      :size="size"
       target="_blank"
       class="-mr-0.5"
     >
       {{ label }}
     </z-button>
 
-    <z-divider direction="vertical" margin="mx-0" color="slate" />
+    <z-divider direction="vertical" margin="mx-0" color="slate" :class="dividerHeights[size]" />
 
     <slot />
   </div>
@@ -39,9 +39,26 @@ export default Vue.extend({
       required: true,
       type: String
     },
+    size: {
+      default: 'small',
+      type: String,
+      validator(val) {
+        return ['small', 'medium', 'large', 'xlarge'].includes(val)
+      }
+    },
     to: {
       required: true,
       type: String
+    }
+  },
+  data: function() {
+    return {
+      dividerHeights: {
+        small: '',
+        medium: 'h-6',
+        large: 'h-8',
+        xlarge: 'h-10'
+      }
     }
   }
 })

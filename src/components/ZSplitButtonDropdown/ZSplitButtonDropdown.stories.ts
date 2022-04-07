@@ -17,14 +17,14 @@ export default {
 }
 
 /**
- * UI state representing Split Button Dropdown behavior
+ * UI states representing Split Button Dropdown default behavior
  *
  * @returns {ExtendedVue}
  */
-export const DefaultSplitButtonDropdown = () =>
+export const Default = () =>
   Vue.extend({
     components: { ZButton, ZIcon, ZMenu, ZMenuItem, ZSplitButtonDropdown },
-    data: function () {
+    data: function() {
       return {
         icon: 'github',
         label: 'Create an issue on GitHub',
@@ -49,7 +49,8 @@ export const DefaultSplitButtonDropdown = () =>
         }
       }
     },
-    template: `<div class="container">
+    template: `
+      <div class="container">
         <z-split-button-dropdown :icon="icon" :label="label" :to="to">
           <z-menu size="small">
             <template v-slot:trigger="{ toggle }">
@@ -64,5 +65,67 @@ export const DefaultSplitButtonDropdown = () =>
             </template>
           </z-menu>
         </z-split-button-dropdown>
-    </div>`
+      </div>`
+  })
+
+/**
+ * UI states representing Split Button Dropdown of various sizes
+ *
+ * @returns {ExtendedVue}
+ */
+export const Sizes = () =>
+  Vue.extend({
+    components: { ZButton, ZIcon, ZMenu, ZMenuItem, ZSplitButtonDropdown },
+    data: function() {
+      return {
+        icon: 'github',
+        label: 'Create an issue on GitHub',
+        to: 'https://github.com',
+        sizes: ['small', 'medium', 'large', 'xlarge'],
+        iconSizes: {
+          small: 'small',
+          medium: 'base',
+          large: 'medium',
+          xlarge: 'large'
+        }
+      }
+    },
+    methods: {
+      createIssue(vcsProvider: string) {
+        switch (vcsProvider) {
+          case 'github':
+            this.icon = 'github'
+            this.label = 'Create an issue on GitHub'
+            this.to = 'https://github.com'
+            window.open(this.to, '_blank')
+            break
+          case 'gitlab':
+            this.icon = 'gitlab'
+            this.label = 'Create an issue on GitLab'
+            this.to = 'https://gitlab.com'
+            window.open(this.to, '_blank')
+            break
+        }
+      }
+    },
+    template: `
+      <div class="container space-y-12">
+        <div v-for="size in sizes" :key="size" class="space-y-4">
+          <h3 class="text-vanilla-100 text-base font-semibold">Size: {{ size }}</h3>
+          <z-split-button-dropdown :icon="icon" :label="label" :to="to" :size="size">
+            <z-menu size="small">
+              <template v-slot:trigger="{ toggle }">
+                <z-button button-type="secondary" :size="size" @click="toggle">
+                  <z-icon :size="iconSizes[size]" icon="chevron-down" />
+                </z-button>
+              </template>
+
+              <template #body>
+                <z-menu-item as="button" icon="github" @click="createIssue('github')">Create an issue on GitHub</z-menu-item>
+                <z-menu-item as="button" icon="gitlab" @click="createIssue('gitlab')">Create an issue on GitLab</z-menu-item>
+              </template>
+            </z-menu>
+          </z-split-button-dropdown>
+        </div>
+      </div>`
   })
