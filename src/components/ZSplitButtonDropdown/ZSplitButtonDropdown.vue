@@ -1,5 +1,5 @@
 <template>
-  <div class="flex">
+  <div class="flex items-center">
     <z-button
       :icon="icon"
       :to="to"
@@ -12,7 +12,7 @@
       {{ label }}
     </z-button>
 
-    <z-divider direction="vertical" margin="mt-2" color="slate" />
+    <z-divider direction="vertical" margin="mx-0" color="slate" />
 
     <slot />
   </div>
