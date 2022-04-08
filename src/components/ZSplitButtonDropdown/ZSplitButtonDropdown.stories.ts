@@ -52,7 +52,7 @@ export const Default = () =>
     template: `
       <div class="container">
         <z-split-button-dropdown :icon="icon" :label="label" :to="to">
-          <z-menu size="small">
+          <z-menu direction="left" size="small" width="small">
             <template v-slot:trigger="{ toggle }">
               <z-button button-type="secondary" size="small" @click="toggle">
                 <z-icon icon="chevron-down" />
@@ -87,6 +87,18 @@ export const Sizes = () =>
           medium: 'base',
           large: 'medium',
           xlarge: 'large'
+        },
+        menuSizes: {
+          small: 'small',
+          medium: 'base',
+          large: 'large',
+          xlarge: 'large'
+        },
+        menuWidths: {
+          small: 'small',
+          medium: 'base',
+          large: 'large',
+          xlarge: 'x-large'
         }
       }
     },
@@ -109,11 +121,11 @@ export const Sizes = () =>
       }
     },
     template: `
-      <div class="container space-y-12">
+      <div class="container space-y-24">
         <div v-for="size in sizes" :key="size" class="space-y-4">
           <h3 class="text-vanilla-100 text-base font-semibold">Size: {{ size }}</h3>
           <z-split-button-dropdown :icon="icon" :label="label" :to="to" :size="size">
-            <z-menu size="small">
+            <z-menu :size="menuSizes[size]" :width="menuWidths[size]" direction="left">
               <template v-slot:trigger="{ toggle }">
                 <z-button button-type="secondary" :size="size" @click="toggle">
                   <z-icon :size="iconSizes[size]" icon="chevron-down" />
