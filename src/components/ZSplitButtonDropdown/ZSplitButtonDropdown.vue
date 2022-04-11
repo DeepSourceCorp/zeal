@@ -12,7 +12,7 @@
       {{ label }}
     </z-button>
 
-    <z-divider direction="vertical" margin="mx-0" color="slate" :class="dividerHeights[size]" />
+    <z-divider direction="vertical" margin="mx-0" color="ink-100" :class="dividerHeights[size]" />
 
     <slot />
   </div>
@@ -54,10 +54,10 @@ export default Vue.extend({
   data: function() {
     return {
       dividerHeights: {
-        small: '',
-        medium: 'h-6',
-        large: 'h-8',
-        xlarge: 'h-10'
+        small: 'h-8',
+        medium: 'h-10',
+        large: 'h-12',
+        xlarge: 'h-13'
       }
     }
   }

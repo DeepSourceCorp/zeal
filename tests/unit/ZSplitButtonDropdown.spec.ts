@@ -11,7 +11,7 @@ describe('Split Button Dropdown component', () => {
     const wrapper = mount({
       template: `
       <z-split-button-dropdown :icon="icon" :label="label" :to="to">
-        <z-menu size="small">
+        <z-menu direction="left" size="small" width="small">
           <template v-slot:trigger="{ toggle }">
             <z-button button-type="secondary" size="small" @click="toggle">
               <z-icon icon="chevron-down" />
@@ -50,7 +50,7 @@ describe('Split Button Dropdown component', () => {
       template: `
       <div>
         <z-split-button-dropdown v-for="size in sizes" :key="size" :icon="icon" :label="label" :to="to" :size="size">
-          <z-menu size="small">
+          <z-menu :size="menuSizes[size]" :width="menuWidths[size]" direction="left">
             <template v-slot:trigger="{ toggle }">
               <z-button button-type="secondary" :size="size" @click="toggle">
                 <z-icon :size="iconSizes[size]" icon="chevron-down" />
@@ -84,6 +84,18 @@ describe('Split Button Dropdown component', () => {
             medium: 'base',
             large: 'medium',
             xlarge: 'large'
+          },
+          menuSizes: {
+            small: 'small',
+            medium: 'base',
+            large: 'large',
+            xlarge: 'large'
+          },
+          menuWidths: {
+            small: 'small',
+            medium: 'base',
+            large: 'large',
+            xlarge: 'x-large'
           }
         }
       }

@@ -49,7 +49,7 @@ export const Default = () =>
           case 'bitbucket':
             this.icon = 'bitbucket'
             this.label = 'Create issue on Bitbucket'
-            this.to = 'https://bitbucket.com'
+            this.to = 'https://bitbucket.org'
             window.open(this.to, '_blank')
             break
         }
@@ -127,7 +127,7 @@ export const Sizes = () =>
           case 'bitbucket':
             this.icon = 'bitbucket'
             this.label = 'Create issue on Bitbucket'
-            this.to = 'https://bitbucket.com'
+            this.to = 'https://bitbucket.org'
             window.open(this.to, '_blank')
             break
         }
