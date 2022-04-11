@@ -46,6 +46,12 @@ export const Default = () =>
             this.to = 'https://gitlab.com'
             window.open(this.to, '_blank')
             break
+          case 'bitbucket':
+            this.icon = 'bitbucket'
+            this.label = 'Create issue on Bitbucket'
+            this.to = 'https://bitbucket.com'
+            window.open(this.to, '_blank')
+            break
         }
       }
     },
@@ -62,6 +68,7 @@ export const Default = () =>
             <template #body>
               <z-menu-item as="button" icon="github" @click="createIssue('github')" class="w-full">Create issue on GitHub</z-menu-item>
               <z-menu-item as="button" icon="gitlab" @click="createIssue('gitlab')" class="w-full">Create issue on GitLab</z-menu-item>
+              <z-menu-item as="button" icon="bitbucket" @click="createIssue('bitbucket')" class="w-full">Create issue on Bitbucket</z-menu-item>
             </template>
           </z-menu>
         </z-split-button-dropdown>
@@ -117,6 +124,12 @@ export const Sizes = () =>
             this.to = 'https://gitlab.com'
             window.open(this.to, '_blank')
             break
+          case 'bitbucket':
+            this.icon = 'bitbucket'
+            this.label = 'Create issue on Bitbucket'
+            this.to = 'https://bitbucket.com'
+            window.open(this.to, '_blank')
+            break
         }
       }
     },
@@ -135,6 +148,7 @@ export const Sizes = () =>
               <template #body>
                 <z-menu-item as="button" icon="github" @click="createIssue('github')" class="w-full">Create issue on GitHub</z-menu-item>
                 <z-menu-item as="button" icon="gitlab" @click="createIssue('gitlab')" class="w-full">Create issue on GitLab</z-menu-item>
+                <z-menu-item as="button" icon="bitbucket" @click="createIssue('bitbucket')" class="w-full">Create issue on Bitbucket</z-menu-item>
               </template>
             </z-menu>
           </z-split-button-dropdown>

@@ -19,8 +19,9 @@ describe('Split Button Dropdown component', () => {
           </template>
 
           <template #body>
-            <z-menu-item as="button" icon="github">Create an issue on GitHub</z-menu-item>
-            <z-menu-item as="button" icon="gitlab">Create an issue on GitLab</z-menu-item>
+            <z-menu-item as="button" icon="github">Create issue on GitHub</z-menu-item>
+            <z-menu-item as="button" icon="gitlab">Create issue on GitLab</z-menu-item>
+            <z-menu-item as="button" icon="bitbucket">Create issue on Bitbucket</z-menu-item>
           </template>
         </z-menu>
     </z-split-button-dropdown>
@@ -57,8 +58,9 @@ describe('Split Button Dropdown component', () => {
             </template>
 
             <template #body>
-              <z-menu-item as="button" icon="github" @click="createIssue('github')">Create an issue on GitHub</z-menu-item>
-              <z-menu-item as="button" icon="gitlab" @click="createIssue('gitlab')">Create an issue on GitLab</z-menu-item>
+              <z-menu-item as="button" icon="github">Create issue on GitHub</z-menu-item>
+              <z-menu-item as="button" icon="gitlab">Create issue on GitLab</z-menu-item>
+              <z-menu-item as="button" icon="bitbucket">Create issue on Bitbucket</z-menu-item>
             </template>
           </z-menu>
       </z-split-button-dropdown>
