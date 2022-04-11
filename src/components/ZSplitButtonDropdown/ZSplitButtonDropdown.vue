@@ -12,7 +12,7 @@
       {{ label }}
     </z-button>
 
-    <z-divider direction="vertical" margin="mx-0" color="ink-100" :class="dividerHeights[size]" />
+    <z-divider direction="vertical" margin="mx-0" color="ink-100" :class="['flex-shrink-0', dividerHeights[size]]" />
 
     <slot />
   </div>

@@ -6,7 +6,7 @@ exports[`Split Button Dropdown component renders a top-level button and a menu w
     </svg>
     GitHub
   </a>
-  <div class="relative z-divider inline-block w-px h-4 mx-0 align-middle bg-ink-100 h-8">
+  <div class="relative z-divider inline-block w-px h-4 mx-0 align-middle bg-ink-100 flex-shrink-0 h-8">
     <!---->
   </div> <span class="relative z-menu"><div class="leading-none"><button href="#" type="button" class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap text-vanilla-100 justify-center h-8 px-4 py-1 text-xs space-x-1 leading-loose bg-ink-300 hover:bg-ink-200"><!----> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400"><polyline points="6 9 12 15 18 9"></polyline></svg></button></div> <transition-stub enterclass="sm:opacity-0 sm:scale-75" leaveclass="sm:opacity-100 sm:scale-100" entertoclass="sm:opacity-100 sm:scale-100" leavetoclass="sm:opacity-0 sm:scale-75" enteractiveclass="animate-slide-bottom-enter-active sm:animate-none sm:transition-all sm:duration-75 sm:ease-out-quad" leaveactiveclass="animate-slide-bottom-leave-active sm:animate-none sm:transition-all sm:duration-150 sm:ease-in-quad"><!----></transition-stub></span>
 </div>
@@ -19,7 +19,7 @@ exports[`Split Button Dropdown component renders split button dropdown of variou
       </svg>
       GitHub
     </a>
-    <div class="relative z-divider inline-block w-px h-4 mx-0 align-middle bg-ink-100 h-8">
+    <div class="relative z-divider inline-block w-px h-4 mx-0 align-middle bg-ink-100 flex-shrink-0 h-8">
       <!---->
     </div> <span class="relative z-menu"><div class="leading-none"><button href="#" type="button" class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap text-vanilla-100 justify-center h-8 px-4 py-1 text-xs space-x-1 leading-loose bg-ink-300 hover:bg-ink-200"><!----> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-4 h-4 z-icon--chevron-down text-vanilla-400"><polyline points="6 9 12 15 18 9"></polyline></svg></button></div> <transition-stub enterclass="sm:opacity-0 sm:scale-75" leaveclass="sm:opacity-100 sm:scale-100" entertoclass="sm:opacity-100 sm:scale-100" leavetoclass="sm:opacity-0 sm:scale-75" enteractiveclass="animate-slide-bottom-enter-active sm:animate-none sm:transition-all sm:duration-75 sm:ease-out-quad" leaveactiveclass="animate-slide-bottom-leave-active sm:animate-none sm:transition-all sm:duration-150 sm:ease-in-quad"><!----></transition-stub></span>
   </div>
@@ -28,7 +28,7 @@ exports[`Split Button Dropdown component renders split button dropdown of variou
       </svg>
       GitHub
     </a>
-    <div class="relative z-divider inline-block w-px h-4 mx-0 align-middle bg-ink-100 h-10">
+    <div class="relative z-divider inline-block w-px h-4 mx-0 align-middle bg-ink-100 flex-shrink-0 h-10">
       <!---->
     </div> <span class="relative z-menu"><div class="leading-none"><button href="#" type="button" class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap text-vanilla-100 justify-center h-10 px-4 py-2 text-base space-x-2 leading-8 bg-ink-300 hover:bg-ink-200"><!----> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-5 h-5 z-icon--chevron-down text-vanilla-400"><polyline points="6 9 12 15 18 9"></polyline></svg></button></div> <transition-stub enterclass="sm:opacity-0 sm:scale-75" leaveclass="sm:opacity-100 sm:scale-100" entertoclass="sm:opacity-100 sm:scale-100" leavetoclass="sm:opacity-0 sm:scale-75" enteractiveclass="animate-slide-bottom-enter-active sm:animate-none sm:transition-all sm:duration-75 sm:ease-out-quad" leaveactiveclass="animate-slide-bottom-leave-active sm:animate-none sm:transition-all sm:duration-150 sm:ease-in-quad"><!----></transition-stub></span>
   </div>
@@ -37,7 +37,7 @@ exports[`Split Button Dropdown component renders split button dropdown of variou
       </svg>
       GitHub
     </a>
-    <div class="relative z-divider inline-block w-px h-4 mx-0 align-middle bg-ink-100 h-12">
+    <div class="relative z-divider inline-block w-px h-4 mx-0 align-middle bg-ink-100 flex-shrink-0 h-12">
       <!---->
     </div> <span class="relative z-menu"><div class="leading-none"><button href="#" type="button" class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap text-vanilla-100 justify-center h-12 px-4 py-2.5 text-lg space-x-2.5 leading-9 bg-ink-300 hover:bg-ink-200"><!----> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-6 h-6 z-icon--chevron-down text-vanilla-400"><polyline points="6 9 12 15 18 9"></polyline></svg></button></div> <transition-stub enterclass="sm:opacity-0 sm:scale-75" leaveclass="sm:opacity-100 sm:scale-100" entertoclass="sm:opacity-100 sm:scale-100" leavetoclass="sm:opacity-0 sm:scale-75" enteractiveclass="animate-slide-bottom-enter-active sm:animate-none sm:transition-all sm:duration-75 sm:ease-out-quad" leaveactiveclass="animate-slide-bottom-leave-active sm:animate-none sm:transition-all sm:duration-150 sm:ease-in-quad"><!----></transition-stub></span>
   </div>
@@ -46,7 +46,7 @@ exports[`Split Button Dropdown component renders split button dropdown of variou
       </svg>
       GitHub
     </a>
-    <div class="relative z-divider inline-block w-px h-4 mx-0 align-middle bg-ink-100 h-13">
+    <div class="relative z-divider inline-block w-px h-4 mx-0 align-middle bg-ink-100 flex-shrink-0 h-13">
       <!---->
     </div> <span class="relative z-menu"><div class="leading-none"><button href="#" type="button" class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap text-vanilla-100 justify-center h-13 px-4 py-3 text-lg space-x-3 leading-9 bg-ink-300 hover:bg-ink-200"><!----> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-8 h-8 z-icon--chevron-down text-vanilla-400"><polyline points="6 9 12 15 18 9"></polyline></svg></button></div> <transition-stub enterclass="sm:opacity-0 sm:scale-75" leaveclass="sm:opacity-100 sm:scale-100" entertoclass="sm:opacity-100 sm:scale-100" leavetoclass="sm:opacity-0 sm:scale-75" enteractiveclass="animate-slide-bottom-enter-active sm:animate-none sm:transition-all sm:duration-75 sm:ease-out-quad" leaveactiveclass="animate-slide-bottom-leave-active sm:animate-none sm:transition-all sm:duration-150 sm:ease-in-quad"><!----></transition-stub></span>
   </div>
