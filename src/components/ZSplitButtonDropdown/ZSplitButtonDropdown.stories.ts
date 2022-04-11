@@ -27,7 +27,7 @@ export const Default = () =>
     data: function() {
       return {
         icon: 'github',
-        label: 'Create an issue on GitHub',
+        label: 'Create issue on GitHub',
         to: 'https://github.com'
       }
     },
@@ -36,13 +36,13 @@ export const Default = () =>
         switch (vcsProvider) {
           case 'github':
             this.icon = 'github'
-            this.label = 'Create an issue on GitHub'
+            this.label = 'Create issue on GitHub'
             this.to = 'https://github.com'
             window.open(this.to, '_blank')
             break
           case 'gitlab':
             this.icon = 'gitlab'
-            this.label = 'Create an issue on GitLab'
+            this.label = 'Create issue on GitLab'
             this.to = 'https://gitlab.com'
             window.open(this.to, '_blank')
             break
@@ -54,14 +54,14 @@ export const Default = () =>
         <z-split-button-dropdown :icon="icon" :label="label" :to="to">
           <z-menu direction="left" size="small" width="small">
             <template v-slot:trigger="{ toggle }">
-              <z-button button-type="secondary" size="small" @click="toggle">
+              <z-button button-type="secondary" size="small" @click="toggle" class="rounded-tl-none rounded-bl-none rounded-tr-sm rounded-br-sm">
                 <z-icon icon="chevron-down" />
               </z-button>
             </template>
 
             <template #body>
-              <z-menu-item as="button" icon="github" @click="createIssue('github')">Create an issue on GitHub</z-menu-item>
-              <z-menu-item as="button" icon="gitlab" @click="createIssue('gitlab')">Create an issue on GitLab</z-menu-item>
+              <z-menu-item as="button" icon="github" @click="createIssue('github')" class="w-full">Create issue on GitHub</z-menu-item>
+              <z-menu-item as="button" icon="gitlab" @click="createIssue('gitlab')" class="w-full">Create issue on GitLab</z-menu-item>
             </template>
           </z-menu>
         </z-split-button-dropdown>
@@ -79,7 +79,7 @@ export const Sizes = () =>
     data: function() {
       return {
         icon: 'github',
-        label: 'Create an issue on GitHub',
+        label: 'Create issue on GitHub',
         to: 'https://github.com',
         sizes: ['small', 'medium', 'large', 'xlarge'],
         iconSizes: {
@@ -107,13 +107,13 @@ export const Sizes = () =>
         switch (vcsProvider) {
           case 'github':
             this.icon = 'github'
-            this.label = 'Create an issue on GitHub'
+            this.label = 'Create issue on GitHub'
             this.to = 'https://github.com'
             window.open(this.to, '_blank')
             break
           case 'gitlab':
             this.icon = 'gitlab'
-            this.label = 'Create an issue on GitLab'
+            this.label = 'Create issue on GitLab'
             this.to = 'https://gitlab.com'
             window.open(this.to, '_blank')
             break
@@ -127,14 +127,14 @@ export const Sizes = () =>
           <z-split-button-dropdown :icon="icon" :label="label" :to="to" :size="size">
             <z-menu :size="menuSizes[size]" :width="menuWidths[size]" direction="left">
               <template v-slot:trigger="{ toggle }">
-                <z-button button-type="secondary" :size="size" @click="toggle">
+                <z-button button-type="secondary" :size="size" @click="toggle" class="rounded-tl-none rounded-bl-none rounded-tr-sm rounded-br-sm">
                   <z-icon :size="iconSizes[size]" icon="chevron-down" />
                 </z-button>
               </template>
 
               <template #body>
-                <z-menu-item as="button" icon="github" @click="createIssue('github')">Create an issue on GitHub</z-menu-item>
-                <z-menu-item as="button" icon="gitlab" @click="createIssue('gitlab')">Create an issue on GitLab</z-menu-item>
+                <z-menu-item as="button" icon="github" @click="createIssue('github')" class="w-full">Create issue on GitHub</z-menu-item>
+                <z-menu-item as="button" icon="gitlab" @click="createIssue('gitlab')" class="w-full">Create issue on GitLab</z-menu-item>
               </template>
             </z-menu>
           </z-split-button-dropdown>
