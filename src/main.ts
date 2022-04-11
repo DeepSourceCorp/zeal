@@ -61,6 +61,7 @@ import { default as ZTooltip } from 'v-tooltip'
 import TooltipOptions from './helpers/components/tooltip'
 import ZRichText from './components/ZRichText/index'
 import ZFileInput from './components/ZFileInput'
+import ZSplitButtonDropdown from './components/ZSplitButtonDropdown'
 
 // Marketing components
 import ZFooter from './components/marketing/ZFooter'
@@ -149,7 +150,8 @@ const components = [
   ZConfirm,
   ZDialogGeneric,
   ZRichText,
-  ZFileInput
+  ZFileInput,
+  ZSplitButtonDropdown
 ]
 
 const install = (Vue: any) => {
@@ -228,7 +230,8 @@ export default {
   ZConfirm,
   ZDialogGeneric,
   ZRichText,
-  ZFileInput
+  ZFileInput,
+  ZSplitButtonDropdown
 }
 
 export { default as ZAlert } from './components/ZAlert/index'
@@ -303,6 +306,7 @@ export { default as ZTooltip } from 'v-tooltip'
 export { default as TooltipOptions } from './helpers/components/tooltip'
 export { default as ZRichText } from './components/ZRichText/index'
 export { default as ZFileInput } from './components/ZFileInput/index'
+export { default as ZSplitButtonDropdown } from './components/ZSplitButtonDropdown'
 
 // Directives
 export { default as outsideClickDirective } from './directives/outside-click'
