@@ -1,6 +1,6 @@
 <template>
   <div class="z-carousel__wrapper relative h-full">
-    <div class="z-carousel__container relative overflow-hidden h-full z-10">
+    <div class="z-carousel__container relative overflow-hidden h-full z-10" v-show="componentMounted">
       <slot></slot>
     </div>
     <div class="z-carousel__controls" v-show="showControls">
@@ -75,7 +75,8 @@ export default {
     return {
       currentIndex: this.activeIndex || 0,
       slides: [],
-      slideDirection: ''
+      slideDirection: '',
+      componentMounted: false
     }
   },
   computed: {
@@ -137,6 +138,7 @@ export default {
         this.showNextSlide()
       }, parseInt(this.autoTiming))
     }
+    this.componentMounted = true
   }
 }
 </script>
