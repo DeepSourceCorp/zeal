@@ -74,6 +74,7 @@ export default {
   data() {
     return {
       currentIndex: this.activeIndex || 0,
+      autoTimeout: null,
       slides: [],
       slideDirection: '',
       componentMounted: false
@@ -102,11 +103,7 @@ export default {
         this.currentIndex = 0
       }
       this.slideDirection = 'slide-right'
-      if (this.autoSlide) {
-        setTimeout(() => {
-          this.showNextSlide()
-        }, parseInt(this.autoTiming))
-      }
+      if (this.autoSlide) this.resetAutoSlide()
     },
 
     showPrevSlide() {
@@ -115,12 +112,28 @@ export default {
         this.currentIndex = this.slidesLength - 1
       }
       this.slideDirection = 'slide-left'
+      if (this.autoSlide) this.resetAutoSlide()
     },
 
     showSlide(slideIndex) {
       if (slideIndex > this.currentIndex) this.slideDirection = 'slide-right'
       else this.slideDirection = 'slide-left'
       this.currentIndex = slideIndex
+    },
+
+    triggerAutoSlide() {
+      this.autoTimeout = setTimeout(() => {
+        this.showNextSlide()
+      }, parseInt(this.autoTiming))
+    },
+
+    cancelAutoSlide() {
+      clearTimeout(this.autoTimeout)
+    },
+
+    resetAutoSlide() {
+      this.cancelAutoSlide()
+      this.triggerAutoSlide()
     }
   },
   watch: {
@@ -133,12 +146,11 @@ export default {
     this.slides.map((slide, index) => {
       slide.index = index
     })
-    if (this.autoSlide) {
-      setTimeout(() => {
-        this.showNextSlide()
-      }, parseInt(this.autoTiming))
-    }
+    if (this.autoSlide) this.triggerAutoSlide()
     this.componentMounted = true
+  },
+  beforeDestroy() {
+    this.cancelAutoSlide()
   }
 }
 </script>
