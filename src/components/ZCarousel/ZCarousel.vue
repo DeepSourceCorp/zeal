@@ -1,6 +1,6 @@
 <template>
   <div class="z-carousel__wrapper relative h-full">
-    <div class="z-carousel__container relative overflow-hidden h-full z-10">
+    <div class="z-carousel__container relative overflow-hidden h-full z-10" v-show="componentMounted">
       <slot></slot>
     </div>
     <div class="z-carousel__controls" v-show="showControls">
@@ -74,9 +74,10 @@ export default {
   data() {
     return {
       currentIndex: this.activeIndex || 0,
-      autoInterval: null,
+      autoTimeout: null,
       slides: [],
-      slideDirection: ''
+      slideDirection: '',
+      componentMounted: false
     }
   },
   computed: {
@@ -96,17 +97,13 @@ export default {
     }
   },
   methods: {
-    resetAutoSlide() {
-      this.cancelAutoSlide()
-      this.setSlideInterval()
-    },
-
     showNextSlide() {
       this.currentIndex++
       if (this.currentIndex >= this.slidesLength) {
         this.currentIndex = 0
       }
       this.slideDirection = 'slide-right'
+      if (this.autoSlide) this.resetAutoSlide()
     },
 
     showPrevSlide() {
@@ -115,23 +112,28 @@ export default {
         this.currentIndex = this.slidesLength - 1
       }
       this.slideDirection = 'slide-left'
+      if (this.autoSlide) this.resetAutoSlide()
     },
 
     showSlide(slideIndex) {
       if (slideIndex > this.currentIndex) this.slideDirection = 'slide-right'
       else this.slideDirection = 'slide-left'
       this.currentIndex = slideIndex
-      if (this.autoSlide) this.resetAutoSlide()
     },
 
-    setSlideInterval() {
-      this.autoInterval = setInterval(() => {
+    triggerAutoSlide() {
+      this.autoTimeout = setTimeout(() => {
         this.showNextSlide()
       }, parseInt(this.autoTiming))
     },
 
     cancelAutoSlide() {
-      clearInterval(this.autoInterval)
+      clearTimeout(this.autoTimeout)
+    },
+
+    resetAutoSlide() {
+      this.cancelAutoSlide()
+      this.triggerAutoSlide()
     }
   },
   watch: {
@@ -144,9 +146,8 @@ export default {
     this.slides.map((slide, index) => {
       slide.index = index
     })
-    if (this.autoSlide) {
-      this.setSlideInterval()
-    }
+    if (this.autoSlide) this.triggerAutoSlide()
+    this.componentMounted = true
   },
   beforeDestroy() {
     this.cancelAutoSlide()
