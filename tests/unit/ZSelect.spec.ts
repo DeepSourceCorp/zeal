@@ -189,6 +189,38 @@ const readOnlySelect = {
   }
 }
 
+export const truncatedSelect = {
+  template: `<div class='padded-container'>
+              <div class="select-container">
+                <z-select v-model="value" :truncate="true" spacing="px-4 py-3" class="text-sm">
+                  <z-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value"
+                    class="px-4 overflow-x-scroll"
+                  />
+                </z-select>
+              </div>
+            </div>`,
+  components: { ZIcon, ZOption, ZSelect },
+  data() {
+    return {
+      value: 7,
+      options: [
+        {
+          value: 'Option 1',
+          label: 'Option 1'
+        },
+        {
+          value: 'Adipisicing fugiat minim consectetur labore nulla quis sunt quis amet anim',
+          label: 'Adipisicing fugiat minim consectetur labore nulla quis sunt quis amet anim'
+        }
+      ]
+    }
+  }
+}
+
 describe('Select Component', () => {
   it('renders the default select component', () => {
     const wrapper = mount(defaultSelect)
@@ -219,6 +251,11 @@ describe('Select Component', () => {
   it('renders a read only select component', () => {
     const wrapper = mount(readOnlySelect)
     expect(wrapper.classes()).toContain('is-readonly')
+    expect(wrapper.findAll('.z-option').length).toEqual(2)
+  })
+  it('renders a truncated select component', () => {
+    const wrapper = mount(truncatedSelect)
+    expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.findAll('.z-option').length).toEqual(2)
   })
 })
