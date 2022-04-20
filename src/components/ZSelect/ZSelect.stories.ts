@@ -469,3 +469,39 @@ export const SelectWithCustomTextSize = () => ({
               </div>
         </div>`
 })
+
+export const TruncatedSelect = () => ({
+  components: { ZIcon, ZOption, ZSelect },
+  data() {
+    return {
+      value: 7,
+      options: [
+        {
+          value: 'Option 1',
+          label: 'Option 1'
+        },
+        {
+          value: 'Option 2',
+          label: 'Option 2'
+        },
+        {
+          value: 'Adipisicing fugiat minim consectetur labore nulla quis sunt quis amet anim',
+          label: 'Adipisicing fugiat minim consectetur labore nulla quis sunt quis amet anim'
+        }
+      ]
+    }
+  },
+  template: `<div class='padded-container'>
+              <div class="select-container">
+                <z-select v-model="value" :truncate="true" spacing="px-4 py-3" class="text-sm">
+                  <z-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value"
+                    class="px-4"
+                  />
+                </z-select>
+              </div>
+            </div>`
+})

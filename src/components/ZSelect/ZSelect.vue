@@ -20,7 +20,12 @@
       <slot name="icon"></slot>
       <div
         class="flex items-center flex-grow h-full outline-none cursor-pointer"
-        :class="[getTextSize, getCursorType, selectedOpt === undefined ? 'text-vanilla-400 opacity-70' : '']"
+        :class="[
+          getTextSize,
+          getCursorType,
+          selectedOpt === undefined ? 'text-vanilla-400 opacity-70' : '',
+          { truncate }
+        ]"
       >
         <template v-if="selectedOpt">
           {{ selectedOptLabel || selectedOpt }}
@@ -111,6 +116,10 @@ export default Vue.extend({
     readOnly: {
       default: false,
       type: Boolean
+    },
+    truncate: {
+      default: false,
+      type: Boolean
     }
   },
   model: {
@@ -153,14 +162,14 @@ export default Vue.extend({
     }
   },
   mounted() {
-    this.options = this.$children.filter((child) => child.$options.name === 'ZOption')
+    this.options = this.$children.filter(child => child.$options.name === 'ZOption')
 
     if (this.selected) {
       const selectedOpt = this.options
-        .map((child) => {
+        .map(child => {
           return child.$options.propsData as ZOptionPropsT
         })
-        .filter((childProp) => {
+        .filter(childProp => {
           return childProp.value === this.selected
         })
 
@@ -179,7 +188,7 @@ export default Vue.extend({
     }
   },
   watch: {
-    selectedOpt: function (newValue) {
+    selectedOpt: function(newValue) {
       this.$emit('change', newValue)
     }
   }
