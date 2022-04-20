@@ -12,6 +12,11 @@ export default {
   excludeStories: /.*Data$/
 }
 
+/**
+ * UI state representing the default Select behavior
+ *
+ * @returns {ExtendedVue}
+ */
 export const DefaultSelect = () => ({
   components: { ZSelect, ZOption, ZIcon },
   data() {
@@ -60,6 +65,11 @@ export const DefaultSelect = () => ({
         </div>`
 })
 
+/**
+ * UI state representing disabled Select component
+ *
+ * @returns {ExtendedVue}
+ */
 export const DisabledSelect = () => ({
   components: { ZSelect, ZOption, ZIcon, ZToggle },
   data() {
@@ -106,6 +116,11 @@ export const DisabledSelect = () => ({
         </div>`
 })
 
+/**
+ * UI state representing Select component which is read only
+ *
+ * @returns {ExtendedVue}
+ */
 export const ReadOnlySelect = () => ({
   components: { ZSelect, ZOption, ZIcon, ZToggle },
   data() {
@@ -152,6 +167,11 @@ export const ReadOnlySelect = () => ({
         </div>`
 })
 
+/**
+ * UI state representing Select component with custom placeholder
+ *
+ * @returns {ExtendedVue}
+ */
 export const SelectWithCustomPlaceholder = () => ({
   components: { ZSelect, ZOption, ZIcon },
   data() {
@@ -195,6 +215,11 @@ export const SelectWithCustomPlaceholder = () => ({
         </div>`
 })
 
+/**
+ * UI state representing Select component with icon
+ *
+ * @returns {ExtendedVue}
+ */
 export const SelectWithIcon = () => ({
   components: { ZSelect, ZOption, ZIcon },
   data() {
@@ -241,6 +266,11 @@ export const SelectWithIcon = () => ({
         </div>`
 })
 
+/**
+ * UI state representing Select component that is clearable
+ *
+ * @returns {ExtendedVue}
+ */
 export const SelectWithClearables = () => ({
   components: { ZSelect, ZOption, ZIcon },
   data() {
@@ -284,6 +314,11 @@ export const SelectWithClearables = () => ({
         </div>`
 })
 
+/**
+ * UI state representing Select component with custom options template
+ *
+ * @returns {ExtendedVue}
+ */
 export const SelectWithCustomOptionsTemplate = () => ({
   components: { ZSelect, ZOption, ZIcon },
   data() {
@@ -331,6 +366,11 @@ export const SelectWithCustomOptionsTemplate = () => ({
         </div>`
 })
 
+/**
+ * UI state representing Select component with pre selected option
+ *
+ * @returns {ExtendedVue}
+ */
 export const SelectWithPreselectedOption = () => ({
   components: { ZSelect, ZOption, ZIcon },
   data() {
@@ -378,6 +418,11 @@ export const SelectWithPreselectedOption = () => ({
         </div>`
 })
 
+/**
+ * UI state representing Select component with custom style
+ *
+ * @returns {ExtendedVue}
+ */
 export const SelectWithCustomStyle = () => ({
   components: { ZSelect, ZOption, ZIcon },
   data() {
@@ -425,6 +470,11 @@ export const SelectWithCustomStyle = () => ({
         </div>`
 })
 
+/**
+ * UI state representing Select component with custom text size
+ *
+ * @returns {ExtendedVue}
+ */
 export const SelectWithCustomTextSize = () => ({
   components: { ZSelect, ZOption, ZIcon },
   data() {
@@ -470,6 +520,11 @@ export const SelectWithCustomTextSize = () => ({
         </div>`
 })
 
+/**
+ * UI state representing truncated Select component
+ *
+ * @returns {ExtendedVue}
+ */
 export const TruncatedSelect = () => ({
   components: { ZIcon, ZOption, ZSelect },
   data() {
