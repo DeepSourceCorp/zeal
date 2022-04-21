@@ -37,7 +37,7 @@
     <div
       class="overflow-hidden text-sm leading-6 duration-300 ease-in-out transition-max-height"
       :class="[
-        this.open ? (this.spanFullHeight ? 'max-h-full' : 'max-h-52') : 'max-h-0',
+        this.open ? (this.spanFullHeight ? 'max-h-screen' : 'max-h-52') : 'max-h-0',
         { 'max-h-full': this.isList }
       ]"
     >
