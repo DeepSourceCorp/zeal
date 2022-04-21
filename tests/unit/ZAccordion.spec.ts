@@ -57,14 +57,42 @@ const CustomizedAccordion = {
   }
 }
 
+const AccordionSpanningFullHeight = {
+  template: `<div class='padded-container input-container'>
+  <z-accordion class="text-vanilla-100">
+    <z-accordion-item :span-full-height="true" title="Span full height" class="p-4">
+      <p>Anim aliqua duis anim dolor ea deserunt. Consectetur aliqua labore aliquip fugiat laborum culpa adipisicing irure. Et ipsum deserunt incididunt pariatur ullamco fugiat deserunt eiusmod sit labore irure. Excepteur sint Lorem occaecat pariatur culpa fugiat eiusmod Lorem quis voluptate dolore eiusmod cupidatat est. Et quis aute eu et tempor culpa duis amet ea elit sunt. Culpa incididunt consectetur anim voluptate et.</p>
+      <br />
+      
+      <p>Lorem irure esse reprehenderit tempor. Nisi enim commodo Lorem qui commodo officia ad ex ex. Voluptate deserunt sit et et. Irure eiusmod minim Lorem ex. Consectetur sint dolore in ullamco ad.</p>
+      <br/>
+      
+      <p>Sint voluptate in amet id. Consequat sit aute nostrud qui velit elit sunt reprehenderit elit enim non tempor aliqua occaecat. Aute quis amet nostrud dolore sunt. Commodo proident sit aliqua dolor exercitation officia anim consequat culpa exercitation dolore amet laborum. Dolor est minim do do Lorem consectetur occaecat eu officia commodo nostrud. Exercitation irure dolore deserunt laborum consectetur ad duis sunt consectetur magna elit adipisicing.</p>
+      <br />
+      
+      <p>Velit sit voluptate tempor esse magna sint duis esse tempor. Non enim cillum incididunt irure do nisi veniam ut proident in cupidatat. Minim proident occaecat ad elit. Tempor commodo excepteur amet ad anim consectetur. Eu velit exercitation ex incididunt deserunt nisi labore consequat incididunt nostrud qui elit tempor. Pariatur aute reprehenderit dolor tempor excepteur adipisicing in. Eu culpa non est voluptate duis id.</p>
+      <br />
+      
+      <p>Commodo incididunt aliquip duis anim id et nisi consequat. Labore ipsum do non aliqua culpa culpa laboris sint sunt laborum ad est ea. Consequat dolor nisi ut est proident veniam voluptate.</p>
+    </z-accordion-item>
+  </z-accordion>
+  </div>`,
+  components: { ZAccordion, ZAccordionItem }
+}
+
 describe('Accordions', () => {
   it('renders a default accordion', () => {
-    let wrapper = mount(DefaultAccordion)
+    const wrapper = mount(DefaultAccordion)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('renders a customized accordion', () => {
-    let wrapper = mount(CustomizedAccordion)
+    const wrapper = mount(CustomizedAccordion)
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('renders an accordion spanning full height', () => {
+    const wrapper = mount(AccordionSpanningFullHeight)
     expect(wrapper.html()).toMatchSnapshot()
   })
 })
