@@ -13,6 +13,11 @@ export default {
   component: ZAccordion
 }
 
+/**
+ * UI state representing default Accordion behavior
+ *
+ * @returns {ExtendedVue}
+ */
 export const DefaultAccordion = () => ({
   components: { ZAccordion, ZAccordionItem },
   template: `<div class='padded-container input-container'>
@@ -33,6 +38,11 @@ export const DefaultAccordion = () => ({
     </div>`
 })
 
+/**
+ * UI state representing Accordion with base style
+ *
+ * @returns {ExtendedVue}
+ */
 export const AccordionWithBaseStyle = () => ({
   components: { ZAccordion, ZAccordionItem },
   template: `<div class='padded-container input-container'>
@@ -53,6 +63,11 @@ export const AccordionWithBaseStyle = () => ({
     </div>`
 })
 
+/**
+ * UI state representing Accordion with controlled cards
+ *
+ * @returns {ExtendedVue}
+ */
 export const AccordionWithControlledCards = () => {
   return Vue.extend({
     components: { ZAccordion, ZAccordionItem, ZButton },
@@ -116,6 +131,11 @@ export const AccordionWithControlledCards = () => {
   })
 }
 
+/**
+ * UI state representing Accordion with disabled state
+ *
+ * @returns {ExtendedVue}
+ */
 export const AccordionWithDisabledState = () => ({
   components: { ZAccordion, ZAccordionItem },
   template: `<div class='padded-container input-container'>
@@ -136,6 +156,11 @@ export const AccordionWithDisabledState = () => ({
     </div>`
 })
 
+/**
+ * UI state representing Accordion used in navbar
+ *
+ * @returns {ExtendedVue}
+ */
 export const AccordionUsedInNavBar = () => ({
   components: { ZAccordion, ZAccordionItem },
   data() {
@@ -154,6 +179,11 @@ export const AccordionUsedInNavBar = () => ({
     </div>`
 })
 
+/**
+ * UI state representing Accordion used in header
+ *
+ * @returns {ExtendedVue}
+ */
 export const AccordionUsedInHeader = () => ({
   components: { ZAccordion, ZAccordionItem, ZIcon },
   data() {
@@ -182,6 +212,11 @@ export const AccordionUsedInHeader = () => ({
     </div>`
 })
 
+/**
+ * UI state representing list like Accordion items
+ *
+ * @returns {ExtendedVue}
+ */
 export const ListLikeAccordion = () => ({
   components: { ZAccordion, ZAccordionItem, ZIcon },
   data() {
@@ -201,6 +236,11 @@ export const ListLikeAccordion = () => ({
     </div>`
 })
 
+/**
+ * UI state representing Accordion items as footer list
+ *
+ * @returns {ExtendedVue}
+ */
 export const WebNextFooter = () => ({
   components: { ZAccordion, ZAccordionItem, ZIcon, ZButton, ZInput },
   data() {
@@ -296,6 +336,11 @@ export const WebNextFooter = () => ({
     </div>`
 })
 
+/**
+ * UI state representing Accordion item spanning full height
+ *
+ * @returns {ExtendedVue}
+ */
 export const AccordionSpanningFullHeight = () => ({
   components: { ZAccordion, ZAccordionItem },
   template: `<div class='padded-container input-container'>
