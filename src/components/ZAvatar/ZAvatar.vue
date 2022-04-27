@@ -3,15 +3,22 @@
     <span
       v-if="isLoading"
       :class="[`${SIZES[getSize].classes}`]"
-      class="flex items-center justify-center bg-gradient-skeleton text-vanilla-300 text-center rounded-full"
+      class="flex items-center justify-center text-center rounded-full bg-gradient-skeleton text-vanilla-300"
     >
     </span>
     <template v-else>
-      <img v-if="this.image" :class="[`${SIZES[getSize].classes}`]" class="rounded-full" :src="image" :alt="userName" />
+      <img
+        v-if="this.image"
+        @error="setFallbackImage"
+        :class="[`${SIZES[getSize].classes}`]"
+        class="rounded-full"
+        :src="image"
+        :alt="userName"
+      />
       <span
         v-if="!this.image && this.userName"
         :class="[`${SIZES[getSize].classes}`]"
-        class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full"
+        class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300"
       >
         {{ getUserInitials }}
       </span>
@@ -41,13 +48,17 @@ export default Vue.extend({
     type: {
       type: String,
       default: 'link',
-      validator: (type) => Object.keys(TYPES).includes(type)
+      validator: type => Object.keys(TYPES).includes(type)
     },
     loading: {
       type: Boolean,
       default: false
     },
     image: String,
+    fallbackImage: {
+      type: String,
+      required: false
+    },
     userName: {
       type: String,
       required: true
@@ -55,7 +66,7 @@ export default Vue.extend({
     size: {
       type: String,
       default: SIZES.md.text,
-      validator: (size) => Object.keys(SIZES).includes(size)
+      validator: size => Object.keys(SIZES).includes(size)
     },
     stroke: {
       type: String,
@@ -91,11 +102,19 @@ export default Vue.extend({
       return this.userName
         ? this.userName
             .split(' ')
-            .map((elem) => elem.charAt(0))
+            .map(elem => elem.charAt(0))
             .slice(0, 2)
             .join('')
             .toUpperCase()
         : ''
+    }
+  },
+  methods: {
+    setFallbackImage(event: ErrorEvent): void {
+      const el = event.target as HTMLImageElement
+      if (el.src !== this.fallbackImage) {
+        el.src = this.fallbackImage
+      }
     }
   }
 })
