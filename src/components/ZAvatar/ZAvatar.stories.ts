@@ -28,10 +28,10 @@ export const BrokenAvatarWithFallback = (): Component => ({
       <z-avatar
         type="span"
         image="https://deepsource.io/broken-image"
-        fallbackImage="https://pbs.twimg.com/media/BXhh-sfIAAArh4S.jpg"
+        fallback-image="https://pbs.twimg.com/media/BXhh-sfIAAArh4S.jpg"
         user-name="Akshay Paliwal"
         href="https://example.com"
-      ></z-avatar>
+      />
     </div>
     `
 })

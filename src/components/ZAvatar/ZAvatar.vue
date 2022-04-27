@@ -9,11 +9,11 @@
     <template v-else>
       <img
         v-if="this.image"
-        @error="setFallbackImage"
-        :class="[`${SIZES[getSize].classes}`]"
-        class="rounded-full"
         :src="image"
         :alt="userName"
+        class="rounded-full"
+        :class="[`${SIZES[getSize].classes}`]"
+        @error="setFallbackImage"
       />
       <span
         v-if="!this.image && this.userName"

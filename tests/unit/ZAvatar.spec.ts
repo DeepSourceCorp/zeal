@@ -84,7 +84,7 @@ describe('Avatar component', () => {
   })
 
   it('renders fallback image', () => {
-    let mountedInstance = mountFunction({
+    const mountedInstance = mountFunction({
       propsData: {
         userName: 'John Doe',
         image: 'https://example.com/some.jpg',
