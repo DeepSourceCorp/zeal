@@ -51,10 +51,10 @@ exports[`Accordions renders an accordion spanning full height 1`] = `
 <div class="padded-container input-container">
   <div class="text-vanilla-100">
     <div class="z-accordion-item p-4 text-vanilla-200">
-      <div class="flex items-center transition-all duration-700 ease-in-out group cursor-pointer"><span class="flex-1 font-medium">Span full height</span> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transform transition-all duration-DEFAULT ease-in-out group stroke-1.5 z-icon w-6 h-6 z-icon--chevron-right text-slate group-hover:text-vanilla-200">
+      <div class="flex items-center transition-all duration-700 ease-in-out group cursor-pointer"><span class="flex-1 font-medium">Span full height</span> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transform transition-all duration-DEFAULT ease-in-out group stroke-1.5 z-icon w-6 h-6 z-icon--chevron-right text-slate text-vanilla-200 rotate-90 group-hover:text-vanilla-200">
           <polyline points="9 18 15 12 9 6"></polyline>
         </svg></div>
-      <div class="overflow-hidden text-sm leading-6 duration-300 ease-in-out transition-max-height max-h-0">
+      <div class="overflow-hidden text-sm leading-6 duration-300 ease-in-out transition-max-height max-h-item">
         <p>Anim aliqua duis anim dolor ea deserunt. Consectetur aliqua labore aliquip fugiat laborum culpa adipisicing irure. Et ipsum deserunt incididunt pariatur ullamco fugiat deserunt eiusmod sit labore irure. Excepteur sint Lorem occaecat pariatur culpa fugiat eiusmod Lorem quis voluptate dolore eiusmod cupidatat est. Et quis aute eu et tempor culpa duis amet ea elit sunt. Culpa incididunt consectetur anim voluptate et.</p> <br>
         <p>Lorem irure esse reprehenderit tempor. Nisi enim commodo Lorem qui commodo officia ad ex ex. Voluptate deserunt sit et et. Irure eiusmod minim Lorem ex. Consectetur sint dolore in ullamco ad.</p> <br>
         <p>Sint voluptate in amet id. Consequat sit aute nostrud qui velit elit sunt reprehenderit elit enim non tempor aliqua occaecat. Aute quis amet nostrud dolore sunt. Commodo proident sit aliqua dolor exercitation officia anim consequat culpa exercitation dolore amet laborum. Dolor est minim do do Lorem consectetur occaecat eu officia commodo nostrud. Exercitation irure dolore deserunt laborum consectetur ad duis sunt consectetur magna elit adipisicing.</p> <br>
