@@ -57,7 +57,8 @@ export default Vue.extend({
     image: String,
     fallbackImage: {
       type: String,
-      required: false
+      required: false,
+      default: ''
     },
     userName: {
       type: String,
@@ -111,6 +112,8 @@ export default Vue.extend({
   },
   methods: {
     setFallbackImage(event: ErrorEvent): void {
+      if (!this.fallbackImage) return
+
       const el = event.target as HTMLImageElement
       if (el.src !== this.fallbackImage) {
         el.src = this.fallbackImage
