@@ -36,7 +36,10 @@
     </slot>
     <div
       class="overflow-hidden text-sm leading-6 duration-300 ease-in-out transition-max-height"
-      :class="[this.open ? (this.spanFullHeight ? maxHeight : 'max-h-52') : 'max-h-0', { 'max-h-full': this.isList }]"
+      :class="[
+        this.open ? (this.spanCustomHeight ? customMaxHeight : 'max-h-52') : 'max-h-0',
+        { 'max-h-full': this.isList }
+      ]"
     >
       <slot></slot>
     </div>
@@ -67,11 +70,11 @@ export default {
       type: Boolean,
       default: false
     },
-    spanFullHeight: {
+    spanCustomHeight: {
       type: Boolean,
       default: false
     },
-    maxHeight: {
+    customMaxHeight: {
       type: String,
       default: 'max-h-screen'
     }

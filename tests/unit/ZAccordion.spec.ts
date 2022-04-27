@@ -62,7 +62,7 @@ const CustomizedAccordion = {
 const AccordionSpanningFullHeight = {
   template: `<div class='padded-container input-container'>
   <z-accordion class="text-vanilla-100">
-    <z-accordion-item :is-open="true" :span-full-height="true" max-height="max-h-item" title="Span full height" class="p-4">
+    <z-accordion-item :is-open="true" :span-custom-height="true" custom-max-height="max-h-item" title="Span full height" class="p-4">
       <p>Anim aliqua duis anim dolor ea deserunt. Consectetur aliqua labore aliquip fugiat laborum culpa adipisicing irure. Et ipsum deserunt incididunt pariatur ullamco fugiat deserunt eiusmod sit labore irure. Excepteur sint Lorem occaecat pariatur culpa fugiat eiusmod Lorem quis voluptate dolore eiusmod cupidatat est. Et quis aute eu et tempor culpa duis amet ea elit sunt. Culpa incididunt consectetur anim voluptate et.</p>
       <br />
       
