@@ -35,12 +35,11 @@
       </div>
     </slot>
     <div
-      class="overflow-hidden transition-max-height duration-300 ease-in-out text-sm leading-6"
-      :class="{
-        'max-h-52': this.open,
-        'max-h-0': !this.open,
-        'max-h-full': this.isList
-      }"
+      class="overflow-hidden text-sm leading-6 duration-300 ease-in-out transition-max-height"
+      :class="[
+        this.open ? (this.spanCustomHeight ? customMaxHeight : 'max-h-52') : 'max-h-0',
+        { 'max-h-full': this.isList }
+      ]"
     >
       <slot></slot>
     </div>
@@ -70,6 +69,14 @@ export default {
     isList: {
       type: Boolean,
       default: false
+    },
+    spanCustomHeight: {
+      type: Boolean,
+      default: false
+    },
+    customMaxHeight: {
+      type: String,
+      default: 'max-h-screen'
     }
   },
   data() {
