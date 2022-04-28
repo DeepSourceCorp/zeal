@@ -21,6 +21,21 @@ export const AsASpan = (): Component => ({
     `
 })
 
+export const BrokenAvatarWithFallback = (): Component => ({
+  components: { ZAvatar },
+  template: `
+    <div class='padded-container'>
+      <z-avatar
+        type="span"
+        image="https://deepsource.io/broken-image"
+        fallback-image="https://pbs.twimg.com/media/BXhh-sfIAAArh4S.jpg"
+        user-name="Akshay Paliwal"
+        href="https://example.com"
+      />
+    </div>
+    `
+})
+
 export const InLoadingState = (): Component => ({
   components: { ZAvatar },
   template: `
