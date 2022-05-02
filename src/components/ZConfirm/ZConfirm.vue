@@ -11,7 +11,7 @@
         <slot name="footer" :close="close">
           <div class="mt-6 space-x-4 text-right text-vanilla-100 flex items-center justify-end">
             <z-button
-              v-if="showSecondaryButton"
+              v-if="showSecondaryAction"
               buttonType="ghost"
               class="text-vanilla-100"
               size="small"
