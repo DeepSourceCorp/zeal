@@ -208,7 +208,7 @@ export default Vue.extend({
         maxSlices: this.maxSlices,
         showLegend: this.showLegend,
         animate: this.animate,
-        disableEntryAnimation: this.animate,
+        disableEntryAnimation: !this.animate,
         maxLegendPoints: this.maxLegendPoints
       }
       this.chart = new Chart(this.$refs[this.wrapperName], {
