@@ -20,21 +20,16 @@
       <slot name="icon"></slot>
       <div
         class="flex items-center flex-grow h-full outline-none cursor-pointer"
-        :class="[
-          getTextSize,
-          getCursorType,
-          selectedOpt === undefined ? 'text-vanilla-400 opacity-70' : '',
-          { truncate }
-        ]"
+        :class="[getTextSize, getCursorType, !selected ? 'text-vanilla-400 opacity-70' : '', { truncate }]"
       >
-        <template v-if="selectedOpt">
+        <template v-if="selected">
           {{ selectedOption.label || selectedOption.value }}
         </template>
         <template v-else>
           {{ placeholder }}
         </template>
       </div>
-      <button v-if="selectedOpt && clearable" class="flex items-center justify-between" @click.stop="clearSelected">
+      <button v-if="selected && clearable" class="flex items-center justify-between" @click.stop="clearSelected">
         <z-icon icon="x" size="small" :color="getIconColor"></z-icon>
       </button>
       <span v-else>
@@ -64,6 +59,11 @@ import ZIcon from '@/components/ZIcon/ZIcon.vue'
 interface ZOptionPropsT extends Vue {
   value: string | number | null
   label: string
+}
+
+export type ZSelectOption = {
+  label?: string
+  value?: string | number
 }
 
 export default Vue.extend({
@@ -128,9 +128,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      selectedOpt: '' as string | number | null,
-      selectedOptLabel: '' as string | number | null,
-      selectedOptHTML: '',
+      selectedOption: {},
       open: false
     }
   },
@@ -158,67 +156,48 @@ export default Vue.extend({
     getIconColor(): string {
       if (this.disabled) return 'slate'
       return 'vanilla-400'
-    },
-    selectedOption: {
-      get(): Record<string, unknown> | null | undefined {
-        const options = this.$children.filter(child => child.$options.name === 'ZOption')
-
-        if (!this.selected) {
-          return undefined
-        }
-
-        const selectedOpt = options
-          .map(child => {
-            return child.$options.propsData as ZOptionPropsT
-          })
-          .filter(childProp => {
-            return childProp.value === this.selected
-          })
-
-        const option = {} as Record<string, unknown>
-
-        if (selectedOpt[0]) {
-          option.value = selectedOpt[0].value
-          option.label = selectedOpt[0].label || selectedOpt[0].value
-
-          return option
-        }
-        return undefined
-      },
-
-      set(newVal: Record<string, unknown> | null | undefined) {
-        this.selectedOption = newVal
-      }
     }
   },
   mounted() {
-    const options = this.$children.filter(child => child.$options.name === 'ZOption')
-
-    if (this.selected) {
-      const selectedOpt = options
-        .map(child => {
-          return child.$options.propsData as ZOptionPropsT
-        })
-        .filter(childProp => {
-          return childProp.value === this.selected
-        })
-
-      if (selectedOpt[0]) {
-        this.selectedOption = { value: selectedOpt[0].value, label: selectedOpt[0].label || selectedOpt[0].value }
-      }
-    }
+    this.setValueForSelectedOption()
   },
   methods: {
     clearSelected(): void {
-      this.selectedOption = null
+      this.selectedOption = {}
     },
     blurEvent(): void {
       this.open = false
+    },
+    setValueForSelectedOption(): void {
+      const options = this.$children.filter(child => child.$options.name === 'ZOption')
+
+      if (!this.selected) {
+        this.selectedOption = {}
+        return
+      }
+
+      const optionFromSearch = options
+        .map(child => {
+          return child.$options.propsData as ZOptionPropsT
+        })
+        .find(childProp => {
+          return childProp.value === this.selected
+        })
+
+      this.selectedOption = optionFromSearch
+        ? {
+            label: optionFromSearch.label,
+            value: optionFromSearch.value
+          }
+        : {}
+    },
+    emitChange({ value }: ZSelectOption): void {
+      this.$emit('change', value)
     }
   },
   watch: {
-    selectedOption: function(newValue) {
-      this.$emit('change', newValue)
+    selectedOption: function(option: ZSelectOption) {
+      this.emitChange(option)
     }
   }
 })
