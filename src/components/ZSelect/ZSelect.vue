@@ -159,13 +159,14 @@ export default Vue.extend({
       if (this.disabled) return 'slate'
       return 'vanilla-400'
     },
-    // get options(): Vue[] {
-    //   return this.$children.filter(child => child.$options.name === 'ZOption')
-    // },
-    selectedOption() {
-      const options = this.$children.filter(child => child.$options.name === 'ZOption')
+    selectedOption: {
+      get(): Record<string, unknown> | null | undefined {
+        const options = this.$children.filter(child => child.$options.name === 'ZOption')
 
-      if (this.selected) {
+        if (!this.selected) {
+          return undefined
+        }
+
         const selectedOpt = options
           .map(child => {
             return child.$options.propsData as ZOptionPropsT
@@ -182,8 +183,12 @@ export default Vue.extend({
 
           return option
         }
+        return undefined
+      },
+
+      set(newVal: Record<string, unknown> | null | undefined) {
+        this.selectedOption = newVal
       }
-      return undefined
     }
   },
   mounted() {
@@ -205,14 +210,14 @@ export default Vue.extend({
   },
   methods: {
     clearSelected(): void {
-      this.selectedOpt = null
+      this.selectedOption = null
     },
     blurEvent(): void {
       this.open = false
     }
   },
   watch: {
-    selectedOpt: function(newValue) {
+    selectedOption: function(newValue) {
       this.$emit('change', newValue)
     }
   }
