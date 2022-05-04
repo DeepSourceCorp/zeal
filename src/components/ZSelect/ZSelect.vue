@@ -28,7 +28,7 @@
         ]"
       >
         <template v-if="selectedOpt">
-          {{ selectedOptLabel || selectedOpt }}
+          {{ selectedOption.label || selectedOption.value }}
         </template>
         <template v-else>
           {{ placeholder }}
@@ -131,8 +131,7 @@ export default Vue.extend({
       selectedOpt: '' as string | number | null,
       selectedOptLabel: '' as string | number | null,
       selectedOptHTML: '',
-      open: false,
-      options: [] as Vue[]
+      open: false
     }
   },
   computed: {
@@ -159,23 +158,48 @@ export default Vue.extend({
     getIconColor(): string {
       if (this.disabled) return 'slate'
       return 'vanilla-400'
+    },
+    // get options(): Vue[] {
+    //   return this.$children.filter(child => child.$options.name === 'ZOption')
+    // },
+    selectedOption() {
+      const options = this.$children.filter(child => child.$options.name === 'ZOption')
+
+      if (this.selected) {
+        const selectedOpt = options
+          .map(child => {
+            return child.$options.propsData as ZOptionPropsT
+          })
+          .filter(childProp => {
+            return childProp.value === this.selected
+          })
+
+        const option = {} as Record<string, unknown>
+
+        if (selectedOpt[0]) {
+          option.value = selectedOpt[0].value
+          option.label = selectedOpt[0].label || selectedOpt[0].value
+
+          return option
+        }
+      }
+      return undefined
     }
   },
   mounted() {
-    this.options = this.$children.filter((child) => child.$options.name === 'ZOption')
+    const options = this.$children.filter(child => child.$options.name === 'ZOption')
 
     if (this.selected) {
-      const selectedOpt = this.options
-        .map((child) => {
+      const selectedOpt = options
+        .map(child => {
           return child.$options.propsData as ZOptionPropsT
         })
-        .filter((childProp) => {
+        .filter(childProp => {
           return childProp.value === this.selected
         })
 
       if (selectedOpt[0]) {
-        this.selectedOpt = selectedOpt[0].value
-        this.selectedOptLabel = selectedOpt[0].label || selectedOpt[0].value
+        this.selectedOption = { value: selectedOpt[0].value, label: selectedOpt[0].label || selectedOpt[0].value }
       }
     }
   },
@@ -188,7 +212,7 @@ export default Vue.extend({
     }
   },
   watch: {
-    selectedOpt: function (newValue) {
+    selectedOpt: function(newValue) {
       this.$emit('change', newValue)
     }
   }
