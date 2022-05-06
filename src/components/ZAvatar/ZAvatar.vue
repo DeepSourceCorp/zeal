@@ -13,7 +13,7 @@
         :alt="userName"
         class="rounded-full"
         :class="[`${SIZES[getSize].classes}`]"
-        @error="setFallbackImage"
+        @error.once="setFallbackImage"
       />
       <span
         v-if="!this.image && this.userName"
