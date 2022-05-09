@@ -9,7 +9,7 @@
       <div
         v-if="showInternal"
         class="mx-auto sm:mb-12 rounded-t-lg sm:rounded-md bg-ink-300 transform-gpu w-full sm:w-auto"
-        :class="[transparent ? 'bg-opacity-0': 'shadow-md']"
+        :class="[transparent ? 'bg-opacity-0' : 'shadow-md']"
       >
         <slot :showInternal="showInternal" :close="close"></slot>
       </div>
