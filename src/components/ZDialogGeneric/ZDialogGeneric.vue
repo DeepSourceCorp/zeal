@@ -8,7 +8,8 @@
     >
       <div
         v-if="showInternal"
-        class="mx-auto shadow-md sm:mb-12 rounded-t-lg sm:rounded-md bg-ink-300 transform-gpu w-full sm:w-auto"
+        class="mx-auto sm:mb-12 rounded-t-lg sm:rounded-md bg-ink-300 transform-gpu w-full sm:w-auto"
+        :class="[transparent ? 'bg-opacity-0' : 'shadow-md']"
       >
         <slot :showInternal="showInternal" :close="close"></slot>
       </div>
@@ -44,6 +45,12 @@ export default Vue.extend({
       if (e.key === 'Escape') {
         this.close()
       }
+    }
+  },
+  props: {
+    transparent: {
+      type: Boolean,
+      default: false
     }
   }
 })
