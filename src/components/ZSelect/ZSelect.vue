@@ -49,7 +49,7 @@
     </div>
     <!-- prettier-ignore -->
     <div
-      class="absolute left-0 right-0 z-10 mt-1 overflow-hidden transition-all duration-300 border border-solid rounded-md options shadow-black border-ink-100 text-vanilla-300 bg-ink-300"
+      class="absolute left-0 right-0 z-10 mt-1 overflow-y-auto transition-all duration-300 border border-solid rounded-md max-h-64 options shadow-black border-ink-100 text-vanilla-300 bg-ink-300"
       :class="!open && 'hidden'"
     >
       <slot></slot>
