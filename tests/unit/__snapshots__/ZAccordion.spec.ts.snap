@@ -7,7 +7,7 @@ exports[`Accordions renders a customized accordion 1`] = `
       <div class="flex items-center cursor-pointer w-full"><span class="flex-1 font-medium text-slate">Resources</span> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transform z-icon w-4 h-4 z-icon--chevron-right text-slate animate-reverse-quarter-spin rotate-0">
           <polyline points="9 18 15 12 9 6"></polyline>
         </svg></div>
-      <div class="overflow-hidden transition-max-height duration-300 ease-in-out text-sm leading-6 max-h-0">
+      <div class="overflow-hidden text-sm leading-6 duration-300 ease-in-out transition-max-height max-h-0">
         <div class="flex flex-col text-sm space-y-4 py-3"><a href="#" class="hover:text-juniper transition-all duration-75 ease-in-out">Documentation</a><a href="#" class="hover:text-juniper transition-all duration-75 ease-in-out">Discourse Form</a><a href="#" class="hover:text-juniper transition-all duration-75 ease-in-out">Learning Center</a><a href="#" class="hover:text-juniper transition-all duration-75 ease-in-out">Blog</a><a href="#" class="hover:text-juniper transition-all duration-75 ease-in-out">Slack User Group</a></div>
       </div>
     </div>
@@ -21,7 +21,7 @@ exports[`Accordions renders a default accordion 1`] = `
     <div class="flex items-center transition-all duration-700 ease-in-out group cursor-pointer"><span class="flex-1 font-medium">Consistency</span> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transform transition-all duration-DEFAULT ease-in-out group stroke-1.5 z-icon w-6 h-6 z-icon--chevron-right text-slate group-hover:text-vanilla-200">
         <polyline points="9 18 15 12 9 6"></polyline>
       </svg></div>
-    <div class="overflow-hidden transition-max-height duration-300 ease-in-out text-sm leading-6 max-h-0">
+    <div class="overflow-hidden text-sm leading-6 duration-300 ease-in-out transition-max-height max-h-0">
       <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
       <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
     </div>
@@ -30,7 +30,7 @@ exports[`Accordions renders a default accordion 1`] = `
     <div class="flex items-center transition-all duration-700 ease-in-out group cursor-pointer"><span class="flex-1 font-medium">Feedback</span> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transform transition-all duration-DEFAULT ease-in-out group stroke-1.5 z-icon w-6 h-6 z-icon--chevron-right text-slate group-hover:text-vanilla-200">
         <polyline points="9 18 15 12 9 6"></polyline>
       </svg></div>
-    <div class="overflow-hidden transition-max-height duration-300 ease-in-out text-sm leading-6 max-h-0">
+    <div class="overflow-hidden text-sm leading-6 duration-300 ease-in-out transition-max-height max-h-0">
       <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
       <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
     </div>
@@ -39,9 +39,28 @@ exports[`Accordions renders a default accordion 1`] = `
     <div class="flex items-center transition-all duration-700 ease-in-out group cursor-pointer"><span class="flex-1 font-medium">Efficiency</span> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transform transition-all duration-DEFAULT ease-in-out group stroke-1.5 z-icon w-6 h-6 z-icon--chevron-right text-slate group-hover:text-vanilla-200">
         <polyline points="9 18 15 12 9 6"></polyline>
       </svg></div>
-    <div class="overflow-hidden transition-max-height duration-300 ease-in-out text-sm leading-6 max-h-0">
+    <div class="overflow-hidden text-sm leading-6 duration-300 ease-in-out transition-max-height max-h-0">
       <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
       <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordions renders an accordion spanning full height 1`] = `
+<div class="padded-container input-container">
+  <div class="text-vanilla-100">
+    <div class="z-accordion-item p-4 text-vanilla-200">
+      <div class="flex items-center transition-all duration-700 ease-in-out group cursor-pointer"><span class="flex-1 font-medium">Span full height</span> <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="transform transition-all duration-DEFAULT ease-in-out group stroke-1.5 z-icon w-6 h-6 z-icon--chevron-right text-slate text-vanilla-200 rotate-90 group-hover:text-vanilla-200">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg></div>
+      <div class="overflow-hidden text-sm leading-6 duration-300 ease-in-out transition-max-height max-h-item">
+        <p>Anim aliqua duis anim dolor ea deserunt. Consectetur aliqua labore aliquip fugiat laborum culpa adipisicing irure. Et ipsum deserunt incididunt pariatur ullamco fugiat deserunt eiusmod sit labore irure. Excepteur sint Lorem occaecat pariatur culpa fugiat eiusmod Lorem quis voluptate dolore eiusmod cupidatat est. Et quis aute eu et tempor culpa duis amet ea elit sunt. Culpa incididunt consectetur anim voluptate et.</p> <br>
+        <p>Lorem irure esse reprehenderit tempor. Nisi enim commodo Lorem qui commodo officia ad ex ex. Voluptate deserunt sit et et. Irure eiusmod minim Lorem ex. Consectetur sint dolore in ullamco ad.</p> <br>
+        <p>Sint voluptate in amet id. Consequat sit aute nostrud qui velit elit sunt reprehenderit elit enim non tempor aliqua occaecat. Aute quis amet nostrud dolore sunt. Commodo proident sit aliqua dolor exercitation officia anim consequat culpa exercitation dolore amet laborum. Dolor est minim do do Lorem consectetur occaecat eu officia commodo nostrud. Exercitation irure dolore deserunt laborum consectetur ad duis sunt consectetur magna elit adipisicing.</p> <br>
+        <p>Velit sit voluptate tempor esse magna sint duis esse tempor. Non enim cillum incididunt irure do nisi veniam ut proident in cupidatat. Minim proident occaecat ad elit. Tempor commodo excepteur amet ad anim consectetur. Eu velit exercitation ex incididunt deserunt nisi labore consequat incididunt nostrud qui elit tempor. Pariatur aute reprehenderit dolor tempor excepteur adipisicing in. Eu culpa non est voluptate duis id.</p> <br>
+        <p>Commodo incididunt aliquip duis anim id et nisi consequat. Labore ipsum do non aliqua culpa culpa laboris sint sunt laborum ad est ea. Consequat dolor nisi ut est proident veniam voluptate.</p>
+      </div>
     </div>
   </div>
 </div>

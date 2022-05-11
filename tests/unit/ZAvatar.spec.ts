@@ -83,6 +83,22 @@ describe('Avatar component', () => {
     expect(imageElement.attributes().alt).toEqual('John Doe')
   })
 
+  it('renders fallback image', () => {
+    const mountedInstance = mountFunction({
+      propsData: {
+        userName: 'John Doe',
+        image: 'https://example.com/some.jpg',
+        fallbackImage: 'https://example.com/fallback.jpg'
+      }
+    })
+    expect(mountedInstance.html()).toMatchSnapshot()
+    const imageElement = mountedInstance.find('img.rounded-full')
+    imageElement.trigger('error')
+    expect(imageElement.exists()).toBe(true)
+    expect(imageElement.attributes().src).toEqual('https://example.com/fallback.jpg')
+    expect(imageElement.attributes().alt).toEqual('John Doe')
+  })
+
   it('renders avatar correctly, when size is given', () => {
     let mountedInstance = mountFunction({
       propsData: {

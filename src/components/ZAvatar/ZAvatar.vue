@@ -3,15 +3,22 @@
     <span
       v-if="isLoading"
       :class="[`${SIZES[getSize].classes}`]"
-      class="flex items-center justify-center bg-gradient-skeleton text-vanilla-300 text-center rounded-full"
+      class="flex items-center justify-center text-center rounded-full bg-gradient-skeleton text-vanilla-300"
     >
     </span>
     <template v-else>
-      <img v-if="this.image" :class="[`${SIZES[getSize].classes}`]" class="rounded-full" :src="image" :alt="userName" />
+      <img
+        v-if="this.image"
+        :src="image"
+        :alt="userName"
+        class="rounded-full"
+        :class="[`${SIZES[getSize].classes}`]"
+        @error.once="setFallbackImage"
+      />
       <span
         v-if="!this.image && this.userName"
         :class="[`${SIZES[getSize].classes}`]"
-        class="flex items-center justify-center bg-ink-200 text-vanilla-300 text-center rounded-full"
+        class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300"
       >
         {{ getUserInitials }}
       </span>
@@ -48,6 +55,11 @@ export default Vue.extend({
       default: false
     },
     image: String,
+    fallbackImage: {
+      type: String,
+      required: false,
+      default: ''
+    },
     userName: {
       type: String,
       required: true
@@ -96,6 +108,16 @@ export default Vue.extend({
             .join('')
             .toUpperCase()
         : ''
+    }
+  },
+  methods: {
+    setFallbackImage(event: ErrorEvent): void {
+      if (!this.fallbackImage) return
+
+      const el = event.target as HTMLImageElement
+      if (el.src !== this.fallbackImage) {
+        el.src = this.fallbackImage
+      }
     }
   }
 })

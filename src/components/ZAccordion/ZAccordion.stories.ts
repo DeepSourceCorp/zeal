@@ -1,6 +1,8 @@
 import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'
+import './ZAccordionItemMaxHeightStyle.css'
+
 import ZAccordion from './ZAccordion.vue'
 import ZAccordionItem from '@/components/ZAccordionItem/ZAccordionItem.vue'
 import ZIcon from '@/components/ZIcon/ZIcon.vue'
@@ -13,6 +15,11 @@ export default {
   component: ZAccordion
 }
 
+/**
+ * UI state representing default Accordion behavior
+ *
+ * @returns {ExtendedVue}
+ */
 export const DefaultAccordion = () => ({
   components: { ZAccordion, ZAccordionItem },
   template: `<div class='padded-container input-container'>
@@ -33,6 +40,11 @@ export const DefaultAccordion = () => ({
     </div>`
 })
 
+/**
+ * UI state representing Accordion with base style
+ *
+ * @returns {ExtendedVue}
+ */
 export const AccordionWithBaseStyle = () => ({
   components: { ZAccordion, ZAccordionItem },
   template: `<div class='padded-container input-container'>
@@ -53,6 +65,11 @@ export const AccordionWithBaseStyle = () => ({
     </div>`
 })
 
+/**
+ * UI state representing Accordion with controlled cards
+ *
+ * @returns {ExtendedVue}
+ */
 export const AccordionWithControlledCards = () => {
   return Vue.extend({
     components: { ZAccordion, ZAccordionItem, ZButton },
@@ -116,6 +133,11 @@ export const AccordionWithControlledCards = () => {
   })
 }
 
+/**
+ * UI state representing Accordion with disabled state
+ *
+ * @returns {ExtendedVue}
+ */
 export const AccordionWithDisabledState = () => ({
   components: { ZAccordion, ZAccordionItem },
   template: `<div class='padded-container input-container'>
@@ -136,6 +158,11 @@ export const AccordionWithDisabledState = () => ({
     </div>`
 })
 
+/**
+ * UI state representing Accordion used in navbar
+ *
+ * @returns {ExtendedVue}
+ */
 export const AccordionUsedInNavBar = () => ({
   components: { ZAccordion, ZAccordionItem },
   data() {
@@ -154,6 +181,11 @@ export const AccordionUsedInNavBar = () => ({
     </div>`
 })
 
+/**
+ * UI state representing Accordion used in header
+ *
+ * @returns {ExtendedVue}
+ */
 export const AccordionUsedInHeader = () => ({
   components: { ZAccordion, ZAccordionItem, ZIcon },
   data() {
@@ -182,6 +214,11 @@ export const AccordionUsedInHeader = () => ({
     </div>`
 })
 
+/**
+ * UI state representing list like Accordion items
+ *
+ * @returns {ExtendedVue}
+ */
 export const ListLikeAccordion = () => ({
   components: { ZAccordion, ZAccordionItem, ZIcon },
   data() {
@@ -201,6 +238,11 @@ export const ListLikeAccordion = () => ({
     </div>`
 })
 
+/**
+ * UI state representing Accordion items as footer list
+ *
+ * @returns {ExtendedVue}
+ */
 export const WebNextFooter = () => ({
   components: { ZAccordion, ZAccordionItem, ZIcon, ZButton, ZInput },
   data() {
@@ -293,5 +335,44 @@ export const WebNextFooter = () => ({
                 <img class="ml-3 max-w-none" src="https://i.imgur.com/lnlRvjx.png"/>
             </span>
         </footer>
+    </div>`
+})
+
+/**
+ * UI state representing Accordion item spanning full height
+ *
+ * @returns {ExtendedVue}
+ */
+export const AccordionSpanningFullHeight = () => ({
+  data() {
+    return {
+      maxHeight: 'max-h-screen'
+    }
+  },
+  components: { ZAccordion, ZAccordionItem },
+  template: `<div class='padded-container input-container'>
+        <z-accordion class="text-vanilla-100">
+        <z-accordion-item :span-custom-height="true" custom-max-height="max-h-item" title="Span full height" class="p-4">
+            <p>Anim aliqua duis anim dolor ea deserunt. Consectetur aliqua labore aliquip fugiat laborum culpa adipisicing irure. Et ipsum deserunt incididunt pariatur ullamco fugiat deserunt eiusmod sit labore irure. Excepteur sint Lorem occaecat pariatur culpa fugiat eiusmod Lorem quis voluptate dolore eiusmod cupidatat est. Et quis aute eu et tempor culpa duis amet ea elit sunt. Culpa incididunt consectetur anim voluptate et.</p>
+            <br />
+            
+            <p>Lorem irure esse reprehenderit tempor. Nisi enim commodo Lorem qui commodo officia ad ex ex. Voluptate deserunt sit et et. Irure eiusmod minim Lorem ex. Consectetur sint dolore in ullamco ad.</p>
+            <br/>
+            
+            <p>Sint voluptate in amet id. Consequat sit aute nostrud qui velit elit sunt reprehenderit elit enim non tempor aliqua occaecat. Aute quis amet nostrud dolore sunt. Commodo proident sit aliqua dolor exercitation officia anim consequat culpa exercitation dolore amet laborum. Dolor est minim do do Lorem consectetur occaecat eu officia commodo nostrud. Exercitation irure dolore deserunt laborum consectetur ad duis sunt consectetur magna elit adipisicing.</p>
+            <br />
+            
+            <p>Velit sit voluptate tempor esse magna sint duis esse tempor. Non enim cillum incididunt irure do nisi veniam ut proident in cupidatat. Minim proident occaecat ad elit. Tempor commodo excepteur amet ad anim consectetur. Eu velit exercitation ex incididunt deserunt nisi labore consequat incididunt nostrud qui elit tempor. Pariatur aute reprehenderit dolor tempor excepteur adipisicing in. Eu culpa non est voluptate duis id.</p>
+            <br />
+            
+            <p>Commodo incididunt aliquip duis anim id et nisi consequat. Labore ipsum do non aliqua culpa culpa laboris sint sunt laborum ad est ea. Consequat dolor nisi ut est proident veniam voluptate.</p>
+          </z-accordion-item>
+
+          <z-accordion-item title="Default height" class="p-4">
+            <p>Laborum qui nostrud sunt exercitation anim laboris sit eu ut irure aliquip pariatur.</p>
+
+            <p>Consequat enim laborum eiusmod nulla culpa magna elit aliquip dolor.</p>
+          </z-accordion-item>
+        </z-accordion>
     </div>`
 })
