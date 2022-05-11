@@ -42,7 +42,8 @@ export const DefaultSelect = () => ({
         {
           value: 60,
           label: 'Last 60 Days'
-        },{
+        },
+        {
           value: 7,
           label: 'Last 7 Days'
         },
@@ -61,7 +62,8 @@ export const DefaultSelect = () => ({
         {
           value: 60,
           label: 'Last 60 Days'
-        },{
+        },
+        {
           value: 7,
           label: 'Last 7 Days'
         },
@@ -80,7 +82,8 @@ export const DefaultSelect = () => ({
         {
           value: 60,
           label: 'Last 60 Days'
-        },{
+        },
+        {
           value: 7,
           label: 'Last 7 Days'
         },
@@ -99,7 +102,8 @@ export const DefaultSelect = () => ({
         {
           value: 60,
           label: 'Last 60 Days'
-        },{
+        },
+        {
           value: 7,
           label: 'Last 7 Days'
         },
@@ -118,7 +122,8 @@ export const DefaultSelect = () => ({
         {
           value: 60,
           label: 'Last 60 Days'
-        },{
+        },
+        {
           value: 7,
           label: 'Last 7 Days'
         },
@@ -137,7 +142,8 @@ export const DefaultSelect = () => ({
         {
           value: 60,
           label: 'Last 60 Days'
-        },{
+        },
+        {
           value: 7,
           label: 'Last 7 Days'
         },
@@ -156,7 +162,8 @@ export const DefaultSelect = () => ({
         {
           value: 60,
           label: 'Last 60 Days'
-        },{
+        },
+        {
           value: 7,
           label: 'Last 7 Days'
         },
@@ -175,7 +182,8 @@ export const DefaultSelect = () => ({
         {
           value: 60,
           label: 'Last 60 Days'
-        },{
+        },
+        {
           value: 7,
           label: 'Last 7 Days'
         },
@@ -194,7 +202,8 @@ export const DefaultSelect = () => ({
         {
           value: 60,
           label: 'Last 60 Days'
-        },{
+        },
+        {
           value: 7,
           label: 'Last 7 Days'
         },
@@ -213,7 +222,8 @@ export const DefaultSelect = () => ({
         {
           value: 60,
           label: 'Last 60 Days'
-        },{
+        },
+        {
           value: 7,
           label: 'Last 7 Days'
         },
@@ -232,7 +242,8 @@ export const DefaultSelect = () => ({
         {
           value: 60,
           label: 'Last 60 Days'
-        },{
+        },
+        {
           value: 7,
           label: 'Last 7 Days'
         },
@@ -251,7 +262,8 @@ export const DefaultSelect = () => ({
         {
           value: 60,
           label: 'Last 60 Days'
-        },{
+        },
+        {
           value: 7,
           label: 'Last 7 Days'
         },
