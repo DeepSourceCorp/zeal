@@ -14,7 +14,7 @@ module.exports = {
   'light-cherry': '#d6435b', // legacy
   juniper: {
     DEFAULT: '#33cb9a',
-    600: '#2eb78b',
+    600: '#2aa67e',
     500: '#33cb9a',
     400: '#53d4aa',
     300: '#74dcba',
@@ -24,7 +24,7 @@ module.exports = {
   },
   robin: {
     DEFAULT: '#4568dc',
-    600: '#2449c1',
+    600: '#264dcd',
     500: '#4568dc',
     400: '#6784e2',
     200: '#acbcef',
@@ -66,8 +66,8 @@ module.exports = {
     50: '#303540',
     100: '#2a2e37',
     200: '#23262e',
-    300: '#1a1d23',
-    400: '#16181d'
+    300: '#16181d',
+    400: '#121317'
   },
   vanilla: {
     100: '#ffffff',
