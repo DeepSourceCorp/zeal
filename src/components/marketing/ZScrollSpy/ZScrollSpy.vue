@@ -1,5 +1,5 @@
 <template>
-  <ul class="group list-inside text-left">
+  <ul class="group list-inside text-left" v-show="showHeadings">
     <li
       v-for="heading in headingsMap"
       :key="heading.id"
@@ -97,6 +97,9 @@ export default Vue.extend({
   computed: {
     headingElements(): NodeListOf<Element> {
       return document.querySelectorAll(`#${this.rootId} h1, #${this.rootId} h2, #${this.rootId} h3`)
+    },
+    showHeadings(): boolean {
+      return Object.keys(this.headingsMap).length > 1
     }
   },
   mounted() {
