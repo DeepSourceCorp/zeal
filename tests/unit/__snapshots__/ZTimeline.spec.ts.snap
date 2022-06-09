@@ -2,18 +2,45 @@
 
 exports[`ZTimeline renders a default timeline component 1`] = `
 <div class="timeline flex flex-col gap-y-2">
-  <div class="timeline__item flex relative gap-x-2 h-32">
-    <div class="flex flex-col justify-center items-center gap-y-2">
-      <div class="w-6 h-6 flex justify-center items-center"><span class="inline-block h-full w-full rounded-full bg-juniper"></span></div> <span class="h-full border-l border-2 rounded-sm left-4 border-ink-100"></span>
+  <div class="relative flex timeline__item gap-x-2 h-32">
+    <div class="flex flex-col items-center justify-center gap-y-2">
+      <div class="flex items-center justify-center w-6 h-6"><span class="inline-block w-full h-full rounded-full bg-juniper"></span></div> <span class="h-full border-l rounded-sm left-4 border-ink-100 border-2"></span>
     </div>
     <div class="flex flex-col space-y-2 text-xs">
       <div class="text-vanilla-100">Carter Workman</div>
       <div class="text-vanilla-400">Friday, 4:24PM</div>
     </div>
   </div>
-  <div class="timeline__item flex relative gap-x-2 h-32">
-    <div class="flex flex-col justify-center items-center gap-y-2">
-      <div class="w-6 h-6 flex justify-center items-center"><span class="inline-block h-full w-full rounded-full bg-juniper"></span></div> <span class="h-full border-l border-2 rounded-sm left-4 border-ink-100"></span>
+  <div class="relative flex timeline__item gap-x-2 h-32">
+    <div class="flex flex-col items-center justify-center gap-y-2">
+      <div class="flex items-center justify-center w-6 h-6"><span class="inline-block w-full h-full rounded-full bg-juniper"></span></div> <span class="h-full border-l rounded-sm left-4 border-ink-100 border-2"></span>
+    </div>
+    <div class="flex flex-col space-y-2 text-xs">
+      <div class="text-vanilla-100">Carter Workman</div>
+      <div class="text-vanilla-400">Friday, 4:24PM</div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ZTimeline renders a timeline component with custom border width 1`] = `
+<div class="timeline flex flex-col gap-y-2">
+  <div class="relative flex timeline__item gap-x-2 h-32">
+    <div class="flex flex-col items-center justify-center gap-y-2">
+      <div class="flex items-center justify-center w-6 h-6"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
+          <!---->
+        </a></div> <span class="h-full border-l rounded-sm left-4 border-ink-100"></span>
+    </div>
+    <div class="flex flex-col space-y-2 text-xs">
+      <div class="text-vanilla-100">Carter Workman</div>
+      <div class="text-vanilla-400">Friday, 4:24PM</div>
+    </div>
+  </div>
+  <div class="relative flex timeline__item gap-x-2 h-32">
+    <div class="flex flex-col items-center justify-center gap-y-2">
+      <div class="flex items-center justify-center w-6 h-6"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
+          <!---->
+        </a></div> <span class="h-full border-l rounded-sm left-4 border-ink-100"></span>
     </div>
     <div class="flex flex-col space-y-2 text-xs">
       <div class="text-vanilla-100">Carter Workman</div>
@@ -25,22 +52,22 @@ exports[`ZTimeline renders a default timeline component 1`] = `
 
 exports[`ZTimeline renders a timeline component with custom icon 1`] = `
 <div class="timeline flex flex-col gap-y-2">
-  <div class="timeline__item flex relative gap-x-2 h-32">
-    <div class="flex flex-col justify-center items-center gap-y-2">
-      <div class="w-6 h-6 flex justify-center items-center"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
+  <div class="relative flex timeline__item gap-x-2 h-32">
+    <div class="flex flex-col items-center justify-center gap-y-2">
+      <div class="flex items-center justify-center w-6 h-6"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
           <!---->
-        </a></div> <span class="h-full border-l border-2 rounded-sm left-4 border-ink-100"></span>
+        </a></div> <span class="h-full border-l rounded-sm left-4 border-ink-100 border-2"></span>
     </div>
     <div class="flex flex-col space-y-2 text-xs">
       <div class="text-vanilla-100">Carter Workman</div>
       <div class="text-vanilla-400">Friday, 4:24PM</div>
     </div>
   </div>
-  <div class="timeline__item flex relative gap-x-2 h-32">
-    <div class="flex flex-col justify-center items-center gap-y-2">
-      <div class="w-6 h-6 flex justify-center items-center"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
+  <div class="relative flex timeline__item gap-x-2 h-32">
+    <div class="flex flex-col items-center justify-center gap-y-2">
+      <div class="flex items-center justify-center w-6 h-6"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
           <!---->
-        </a></div> <span class="h-full border-l border-2 rounded-sm left-4 border-ink-100"></span>
+        </a></div> <span class="h-full border-l rounded-sm left-4 border-ink-100 border-2"></span>
     </div>
     <div class="flex flex-col space-y-2 text-xs">
       <div class="text-vanilla-100">Carter Workman</div>

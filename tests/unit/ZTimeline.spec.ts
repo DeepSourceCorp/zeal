@@ -41,6 +41,32 @@ const TimelineWithCustomIcon = {
   }
 }
 
+const TimelineWithCustomBorderWidth = {
+  template: `<z-timeline>
+      <z-timeline-item content="Carter Workman" timestamp="Friday, 4:24PM" border-width-class="" class="h-32">
+        <template slot="icon">
+        <z-avatar
+          image="https://randomuser.me/api/portraits/women/24.jpg"
+          user-name="Akshay Paliwal"
+          size="sm"
+        /></template>
+      </z-timeline-item>
+      <z-timeline-item content="Carter Workman" timestamp="Friday, 4:24PM" border-width-class="" class="h-32">
+        <template slot="icon">
+        <z-avatar
+          image="https://randomuser.me/api/portraits/women/24.jpg"
+          user-name="Akshay Paliwal"
+          size="sm"
+        /></template>
+      </z-timeline-item>
+      </z-timeline>`,
+  components: {
+    ZTimeline,
+    ZTimelineItem,
+    ZAvatar
+  }
+}
+
 describe('ZTimeline', () => {
   it('renders a default timeline component', () => {
     let wrapper = mount(BasicTimeline)
@@ -48,6 +74,10 @@ describe('ZTimeline', () => {
   })
   it('renders a timeline component with custom icon', () => {
     let wrapper = mount(TimelineWithCustomIcon)
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+  it('renders a timeline component with custom border width', () => {
+    let wrapper = mount(TimelineWithCustomBorderWidth)
     expect(wrapper.html()).toMatchSnapshot()
   })
 })
