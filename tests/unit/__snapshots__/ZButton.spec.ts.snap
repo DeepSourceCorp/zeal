@@ -30,9 +30,45 @@ exports[`Button component renders a button with secondary type 1`] = `
 </button>
 `;
 
+exports[`Button component renders a button with the danger type 1`] = `
+<button href="#" type="button" class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap text-ink-400 justify-center h-10 px-4 py-2 text-base space-x-2 leading-8 bg-cherry hover:bg-cherry-600">
+  <!----> Danger Button
+</button>
+`;
+
+exports[`Button component renders a button with the ghost type 1`] = `
+<button href="#" type="button" class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap text-juniper justify-center h-10 px-4 py-2 text-base space-x-2 leading-8 font-normal hover:bg-ink-200">
+  <!----> Ghost Buton
+</button>
+`;
+
 exports[`Button component renders a button with the given size(large) 1`] = `
 <button href="#" type="button" class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap text-ink-400 justify-center h-12 px-4 py-2.5 text-lg space-x-2.5 leading-9 bg-juniper hover:bg-juniper-600">
   <!----> Large Button
+</button>
+`;
+
+exports[`Button component renders a button with the link type 1`] = `
+<button href="#" type="button" class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap text-juniper justify-center h-10 px-4 py-2 text-base space-x-2 leading-8 font-normal hover:underline">
+  <!----> Link Button
+</button>
+`;
+
+exports[`Button component renders a button with the primary type 1`] = `
+<button href="#" type="button" class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap text-ink-400 justify-center h-10 px-4 py-2 text-base space-x-2 leading-8 bg-juniper hover:bg-juniper-600">
+  <!----> Primary Button
+</button>
+`;
+
+exports[`Button component renders a button with the secondary type 1`] = `
+<button href="#" type="button" class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap text-vanilla-100 justify-center h-10 px-4 py-2 text-base space-x-2 leading-8 bg-ink-300 hover:bg-ink-200">
+  <!----> Secondary Button
+</button>
+`;
+
+exports[`Button component renders a button with the warning type 1`] = `
+<button href="#" type="button" class="inline-flex items-center font-medium transition-colors duration-300 ease-in-out rounded-sm z-btn focus:outline-none whitespace-nowrap text-ink-400 justify-center h-10 px-4 py-2 text-base space-x-2 leading-8 bg-honey hover:bg-honey-600">
+  <!----> Warning Button
 </button>
 `;
 
