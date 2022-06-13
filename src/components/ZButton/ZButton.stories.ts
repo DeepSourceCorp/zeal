@@ -27,7 +27,7 @@ export const ButtonWithClickAction = () => ({
 
 export const Colors = () => ({
   components: { ZButton },
-  template: `<div class="stroke-2">
+  template: `<div class="stroke-2 space-y-4">
         <z-button button-type="primary">Primary Button</z-button>
         <z-button button-type="secondary">Secondary Button</z-button>
         <z-button button-type="danger">Danger Button</z-button>
