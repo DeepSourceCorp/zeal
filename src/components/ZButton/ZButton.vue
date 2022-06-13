@@ -39,7 +39,7 @@
       'hover:bg-juniper-600': buttonStyle === 'primary' && !disabled,
       'hover:bg-ink-200': ['secondary', 'ghost'].includes(buttonStyle) && !disabled,
       'hover:bg-cherry-600': buttonStyle === 'danger' && !disabled,
-      'hover:bg-honey-600': buttonStyle === 'warning' && !disabled,
+      'hover:bg-honey-400': buttonStyle === 'warning' && !disabled,
 
       // Disabled Styles
       'opacity-50 cursor-not-allowed': disabled,
