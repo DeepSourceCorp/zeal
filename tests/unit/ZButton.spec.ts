@@ -15,6 +15,16 @@ describe('Button component', () => {
       })
     }
   })
+
+  const types = [
+    ['primary', 'Primary Button'],
+    ['secondary', 'Secondary Button'],
+    ['danger', 'Danger Button'],
+    ['ghost', 'Ghost Buton'],
+    ['link', 'Link Button'],
+    ['warning', 'Warning Button']
+  ]
+
   it('renders a button tag when the component is mounted', () => {
     expect(mountFunction().html()).toMatchSnapshot()
   })
@@ -24,6 +34,19 @@ describe('Button component', () => {
       mountFunction({
         slots: {
           default: 'Hello World'
+        }
+      }).html()
+    ).toMatchSnapshot()
+  })
+
+  test.each(types)('renders a button with the %s type', (buttonType, slotContent) => {
+    expect(
+      mountFunction({
+        propsData: {
+          buttonType
+        },
+        slots: {
+          default: slotContent
         }
       }).html()
     ).toMatchSnapshot()
