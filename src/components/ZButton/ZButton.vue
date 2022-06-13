@@ -32,12 +32,14 @@
       'bg-juniper': buttonStyle === 'primary',
       'bg-ink-300': buttonStyle === 'secondary',
       'bg-cherry': buttonStyle === 'danger',
+      'bg-honey': buttonStyle === 'warning',
 
       // Button Hover Styles
       'hover:underline': buttonStyle === 'link' && !disabled,
       'hover:bg-juniper-600': buttonStyle === 'primary' && !disabled,
       'hover:bg-ink-200': ['secondary', 'ghost'].includes(buttonStyle) && !disabled,
       'hover:bg-cherry-600': buttonStyle === 'danger' && !disabled,
+      'hover:bg-honey-400': buttonStyle === 'warning' && !disabled,
 
       // Disabled Styles
       'opacity-50 cursor-not-allowed': disabled,
@@ -111,7 +113,7 @@ export default Vue.extend({
       default: 'primary',
       type: String,
       validator(val) {
-        return ['primary', 'secondary', 'link', 'ghost', 'danger'].includes(val)
+        return ['primary', 'secondary', 'link', 'ghost', 'danger', 'warning'].includes(val)
       }
     },
     type: {
@@ -167,7 +169,8 @@ export default Vue.extend({
         ghost: 'juniper',
         primary: 'ink-400',
         secondary: 'vanilla-100',
-        danger: 'ink-400'
+        danger: 'ink-400',
+        warning: 'ink-400'
       }
 
       if (this.iconColor) {
@@ -187,7 +190,8 @@ export default Vue.extend({
         ghost: 'text-juniper',
         primary: 'text-ink-400',
         secondary: 'text-vanilla-100',
-        danger: 'text-ink-400'
+        danger: 'text-ink-400',
+        warning: 'text-ink-400'
       }
 
       if (this.color) {
