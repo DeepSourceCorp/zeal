@@ -1,6 +1,6 @@
 <template>
   <div class="flex">
-    <div class="relative flex items-center p-2 rounded-tl-sm rounded-bl-sm outline-none " :class="addonBgColor">
+    <div class="relative flex items-center p-2 rounded-tl-sm rounded-bl-sm outline-none" :class="addonBgColor">
       <slot name="addon">
         {{ prefix }}
       </slot>
