@@ -21,7 +21,8 @@ export default Vue.extend({
   },
   props: {
     prefix: {
-      type: String
+      type: String,
+      default: ''
     },
     addonBgColor: {
       type: String,
