@@ -1,9 +1,11 @@
 <template>
   <div class="flex">
-    <div class="relative flex items-center p-2 rounded-tl-sm rounded-bl-sm outline-none" :class="addonBgColor">
-      <slot name="addon">
-        {{ prefix }}
-      </slot>
+    <div class="flex items-center p-2 rounded-tl-sm rounded-bl-sm outline-none" :class="[addonBgColor, addonHeight]">
+      <span class="whitespace-nowrap">
+        <slot name="addon">
+          {{ prefix }}
+        </slot>
+      </span>
     </div>
     <z-input v-bind="$attrs" class="rounded-tl-none rounded-bl-none" @on="$listeners" />
   </div>
@@ -27,6 +29,20 @@ export default Vue.extend({
     addonBgColor: {
       type: String,
       default: 'bg-ink-200'
+    }
+  },
+  computed: {
+    addonHeight(): string {
+      const map = {
+        'x-small': 'h-6',
+        small: 'h-8',
+        medium: 'h-10',
+        large: 'h-12',
+        'x-large': 'h-13',
+        xlarge: 'h-13'
+      }
+
+      return map[this.$attrs.size || 'medium']
     }
   }
 })

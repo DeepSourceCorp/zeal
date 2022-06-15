@@ -1,20 +1,20 @@
-import { mount, Wrapper } from '@vue/test-utils'
+import { createLocalVue, mount, Wrapper } from '@vue/test-utils'
 import Vue from 'vue'
 
 import ZInputGroup from '../../src/components/ZInputGroup'
 
 describe('InputGroup Component', () => {
-  let mountFn: (options?: Record<string, unknown>) => Wrapper<Vue>
-  let localVue: typeof Vue
+  const localVue = createLocalVue()
 
-  beforeEach(() => {
-    mountFn = (options = {}) => {
-      return mount(ZInputGroup, {
-        localVue,
-        ...options
-      })
-    }
-  })
+  const mountFn = (options = {}) => {
+    return mount(ZInputGroup, {
+      localVue,
+      stubs: {
+        ZInput: true
+      },
+      ...options
+    })
+  }
 
   it('renders an input element with addon', () => {
     const wrapper = mountFn({
@@ -24,7 +24,6 @@ describe('InputGroup Component', () => {
     })
 
     expect(wrapper.html()).toMatchSnapshot()
-    expect(wrapper.findAll('input').length).toEqual(1)
   })
 
   it('renders an input element with addon having a different background color', () => {
@@ -36,6 +35,16 @@ describe('InputGroup Component', () => {
     })
 
     expect(wrapper.html()).toMatchSnapshot()
-    expect(wrapper.findAll('input').length).toEqual(1)
+  })
+
+  it('accepts fallthrough attributes', () => {
+    const wrapper = mountFn({
+      propsData: {
+        prefix: 'text-prefix',
+        size: 'small'
+      }
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
   })
 })

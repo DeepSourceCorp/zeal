@@ -1,23 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`InputGroup Component accepts fallthrough attributes 1`] = `
+<div class="flex" size="small">
+  <div class="flex items-center p-2 rounded-tl-sm rounded-bl-sm outline-none bg-ink-200 h-8"><span class="whitespace-nowrap">
+        text-prefix
+      </span></div>
+  <zinput-stub name="" value="" label="" type="text" placeholder="Enter a value" debouncedelay="350" size="small" backgroundcolor="ink-400" showborder="true" errorbordercolor="cherry" class="rounded-tl-none rounded-bl-none"></zinput-stub>
+</div>
+`;
+
 exports[`InputGroup Component renders an input element with addon 1`] = `
 <div class="flex">
-  <div class="relative flex items-center p-2 rounded-tl-sm rounded-bl-sm outline-none bg-ink-200">
-    text-prefix
-  </div>
-  <div class="flex items-center w-full rounded-sm outline-none space-x-2 p-1 rounded-tl-none rounded-bl-none focus-within:border-vanilla-400 border border-ink-100 bg-ink-400 text-vanilla-300 h-10 text-sm space-x-2 leading-8 py-2 px-3"> <input aria-label="" name="" type="text" placeholder="Enter a value" class="overflow-ellipsis overflow-hidden w-full caret-juniper flex flex-grow outline-none bg-transparent">
-    <!---->
-  </div>
+  <div class="flex items-center p-2 rounded-tl-sm rounded-bl-sm outline-none bg-ink-200 h-10"><span class="whitespace-nowrap">
+        text-prefix
+      </span></div>
+  <zinput-stub name="" value="" label="" type="text" placeholder="Enter a value" debouncedelay="350" size="medium" backgroundcolor="ink-400" showborder="true" errorbordercolor="cherry" class="rounded-tl-none rounded-bl-none"></zinput-stub>
 </div>
 `;
 
 exports[`InputGroup Component renders an input element with addon having a different background color 1`] = `
 <div class="flex">
-  <div class="relative flex items-center p-2 rounded-tl-sm rounded-bl-sm outline-none bg-juniper">
-    text-prefix
-  </div>
-  <div class="flex items-center w-full rounded-sm outline-none space-x-2 p-1 rounded-tl-none rounded-bl-none focus-within:border-vanilla-400 border border-ink-100 bg-ink-400 text-vanilla-300 h-10 text-sm space-x-2 leading-8 py-2 px-3"> <input aria-label="" name="" type="text" placeholder="Enter a value" class="overflow-ellipsis overflow-hidden w-full caret-juniper flex flex-grow outline-none bg-transparent">
-    <!---->
-  </div>
+  <div class="flex items-center p-2 rounded-tl-sm rounded-bl-sm outline-none bg-juniper h-10"><span class="whitespace-nowrap">
+        text-prefix
+      </span></div>
+  <zinput-stub name="" value="" label="" type="text" placeholder="Enter a value" debouncedelay="350" size="medium" backgroundcolor="ink-400" showborder="true" errorbordercolor="cherry" class="rounded-tl-none rounded-bl-none"></zinput-stub>
 </div>
 `;
