@@ -111,4 +111,17 @@ describe('Avatar component', () => {
     expect(spanElement.exists()).toBe(true)
     expect(spanElement.attributes().class).toContain('leading-none h-6 w-6 text-xs')
   })
+
+  it('renders a single alphabet corresponding to the first name for `2xs` size variant', () => {
+    let mountedInstance = mountFunction({
+      propsData: {
+        userName: 'John Doe',
+        size: '2xs'
+      }
+    })
+    expect(mountedInstance.html()).toMatchSnapshot()
+    const spanElement = mountedInstance.find('span.rounded-full')
+    expect(spanElement.exists()).toBe(true)
+    expect(spanElement.attributes().class).toContain('leading-none h-3 w-3 text-xxs')
+  })
 })

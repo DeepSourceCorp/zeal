@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Avatar component renders a single alphabet corresponding to the first name for \`2xs\` size variant 1`] = `
+<a class="inline-block rounded-full bg-ink-300 p-0.5">
+  <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-3 w-3 text-xxs">
+      J
+    </span>
+</a>
+`;
+
 exports[`Avatar component renders an avatar when the component is mounted 1`] = `
 <a class="inline-block rounded-full bg-ink-300 p-0.5">
   <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-8 w-8 text-sm">
