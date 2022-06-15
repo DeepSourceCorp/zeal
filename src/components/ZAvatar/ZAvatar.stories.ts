@@ -77,6 +77,11 @@ export const WithSizes = (): Component => ({
   template: `
     <div class='bg-dark padded-container'>
       <div class='padded-container'>
+      <z-avatar
+          image="https://randomuser.me/api/portraits/women/24.jpg"
+          user-name="Akshay Paliwal"
+          size="2xs"
+        ></z-avatar>
         <z-avatar
           image="https://randomuser.me/api/portraits/women/24.jpg"
           user-name="Akshay Paliwal"
@@ -104,6 +109,11 @@ export const WithSizes = (): Component => ({
         ></z-avatar>
       </div>
       <div class='padded-container bg-vanilla-100'>
+      <z-avatar
+          image="https://randomuser.me/api/portraits/women/24.jpg"
+          user-name="Akshay Paliwal"
+          size="2xs"
+        ></z-avatar>
         <z-avatar
           image="https://randomuser.me/api/portraits/women/24.jpg"
           user-name="Akshay Paliwal"
@@ -133,6 +143,10 @@ export const WithSizes = (): Component => ({
       <div class='padded-container'>
         <z-avatar
           user-name="Akshay Paliwal"
+          size="2xs"
+        ></z-avatar>
+        <z-avatar
+          user-name="Akshay Paliwal"
           size="xs"
         ></z-avatar>
         <z-avatar
@@ -153,6 +167,10 @@ export const WithSizes = (): Component => ({
         ></z-avatar>
       </div>
       <div class='bg-vanilla-100 padded-container'>
+        <z-avatar
+          user-name="Akshay Paliwal"
+          size="2xs"
+        ></z-avatar>
         <z-avatar
           user-name="Akshay Paliwal"
           size="xs"

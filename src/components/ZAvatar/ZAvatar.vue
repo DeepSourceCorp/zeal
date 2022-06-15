@@ -29,6 +29,7 @@
 <script lang="ts">
 import Vue from 'vue'
 const SIZES = {
+  '2xs': { classes: 'leading-none h-3 w-3 text-xxs', text: '2xs' },
   xs: { classes: 'leading-none h-4 w-4 text-xxs', text: 'xs' },
   sm: { classes: 'leading-none h-6 w-6 text-xs', text: 'sm' },
   md: { classes: 'leading-none h-8 w-8 text-sm', text: 'md' },
@@ -48,7 +49,7 @@ export default Vue.extend({
     type: {
       type: String,
       default: 'link',
-      validator: (type) => Object.keys(TYPES).includes(type)
+      validator: type => Object.keys(TYPES).includes(type)
     },
     loading: {
       type: Boolean,
@@ -67,7 +68,7 @@ export default Vue.extend({
     size: {
       type: String,
       default: SIZES.md.text,
-      validator: (size) => Object.keys(SIZES).includes(size)
+      validator: size => Object.keys(SIZES).includes(size)
     },
     stroke: {
       type: String,
@@ -103,7 +104,7 @@ export default Vue.extend({
       return this.userName
         ? this.userName
             .split(' ')
-            .map((elem) => elem.charAt(0))
+            .map(elem => elem.charAt(0))
             .slice(0, 2)
             .join('')
             .toUpperCase()
