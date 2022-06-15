@@ -1,11 +1,16 @@
-import { createLocalVue, mount, Wrapper } from '@vue/test-utils'
-import Vue from 'vue'
+import { createLocalVue, mount } from '@vue/test-utils'
 
 import ZInputGroup from '../../src/components/ZInputGroup'
 
 describe('InputGroup Component', () => {
   const localVue = createLocalVue()
 
+  /**
+   * Returns a Wrapper that contains the rendered Vue component
+   *
+   * @param options {Record<string, unknown>}
+   * @returns {Wrapper<Vue>}
+   */
   const mountFn = (options = {}) => {
     return mount(ZInputGroup, {
       localVue,
