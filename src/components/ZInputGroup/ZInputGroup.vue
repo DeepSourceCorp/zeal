@@ -8,7 +8,7 @@
         {{ prefix }}
       </slot>
     </span>
-    <z-input v-bind="$attrs" class="border-l-0 rounded-tl-none rounded-bl-none " @on="$listeners" />
+    <z-input v-bind="$attrs" class="border-l-0 rounded-tl-none rounded-bl-none" @on="$listeners" />
   </div>
 </template>
 
