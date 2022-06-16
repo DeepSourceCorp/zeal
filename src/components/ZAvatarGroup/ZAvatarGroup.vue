@@ -8,6 +8,7 @@
 <script lang="ts">
 import Vue from 'vue'
 const SIZES = {
+  '2xs': { text: 'xs', margins: '-ml-3' },
   xs: { text: 'xs', margins: '-ml-3' },
   sm: { text: 'sm', margins: '-ml-3' },
   md: { text: 'md', margins: '-ml-3' },
@@ -21,7 +22,7 @@ export default Vue.extend({
     size: {
       type: String,
       default: SIZES.md.text,
-      validator: (size) => Object.keys(SIZES).includes(size)
+      validator: size => Object.keys(SIZES).includes(size)
     },
     loading: {
       type: Boolean,
