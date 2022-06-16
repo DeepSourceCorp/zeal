@@ -60,25 +60,50 @@ export const InLoadingState = (): Component => ({
 
 export const WithSize = (): Component => ({
   components: { ZAvatarGroup, ZAvatar },
-  template: `<div class='padded-container'>
-      <z-avatar-group size="xl">
-        <z-avatar
-          image="https://randomuser.me/api/portraits/women/24.jpg"
-          user-name="Akshay Paliwal"
-        ></z-avatar>
-        <z-avatar
-          image="https://randomuser.me/api/portraits/women/24.jpg"
-          user-name="Akshay Paliwal"
-        ></z-avatar>
-        <z-avatar
-          image="https://randomuser.me/api/portraits/women/24.jpg"
-          user-name="Akshay Paliwal"
-        ></z-avatar>
-        <z-avatar
-          image="https://randomuser.me/api/portraits/women/24.jpg"
-          user-name="Akshay Paliwal"
-        ></z-avatar>
-      </z-avatar-group>
+  template: `<div class='padded-container space-y-4'>
+    <div class="space-y-2">
+      <h3 class="text-vanilla-100 text-xl font-semibold">XL variant</h3>
+        <z-avatar-group size="xl">
+          <z-avatar
+            image="https://randomuser.me/api/portraits/women/24.jpg"
+            user-name="Akshay Paliwal"
+          />
+          <z-avatar
+            image="https://randomuser.me/api/portraits/women/24.jpg"
+            user-name="Akshay Paliwal"
+          />
+          <z-avatar
+            image="https://randomuser.me/api/portraits/women/24.jpg"
+            user-name="Akshay Paliwal"
+          />
+          <z-avatar
+            image="https://randomuser.me/api/portraits/women/24.jpg"
+            user-name="Akshay Paliwal"
+          />
+        </z-avatar-group>
+      </div>
+
+      <div class="space-y-2">
+        <h3 class="text-vanilla-100 text-xl font-semibold">2XS variant</h3>
+        <z-avatar-group size="2xs">
+          <z-avatar
+            image="https://randomuser.me/api/portraits/women/24.jpg"
+            user-name="Akshay Paliwal"
+          />
+          <z-avatar
+            image="https://randomuser.me/api/portraits/women/24.jpg"
+            user-name="Akshay Paliwal"
+          />
+          <z-avatar
+            image="https://randomuser.me/api/portraits/women/24.jpg"
+            user-name="Akshay Paliwal"
+          />
+          <z-avatar
+            image="https://randomuser.me/api/portraits/women/24.jpg"
+            user-name="Akshay Paliwal"
+          />
+        </z-avatar-group>
+      </div>
     </div>`
 })
 
