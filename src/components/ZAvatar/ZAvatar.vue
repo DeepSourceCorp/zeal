@@ -29,6 +29,7 @@
 <script lang="ts">
 import Vue from 'vue'
 const SIZES = {
+  '2xs': { classes: 'leading-none h-3 w-3 text-xxs', text: '2xs' },
   xs: { classes: 'leading-none h-4 w-4 text-xxs', text: 'xs' },
   sm: { classes: 'leading-none h-6 w-6 text-xs', text: 'sm' },
   md: { classes: 'leading-none h-8 w-8 text-sm', text: 'md' },
@@ -104,7 +105,7 @@ export default Vue.extend({
         ? this.userName
             .split(' ')
             .map((elem) => elem.charAt(0))
-            .slice(0, 2)
+            .slice(0, this.size === '2xs' ? 1 : 2) // Make it a single alphabet for the `2xs` size variant
             .join('')
             .toUpperCase()
         : ''
