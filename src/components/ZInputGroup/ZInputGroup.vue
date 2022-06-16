@@ -1,14 +1,14 @@
 <template>
   <div class="flex">
-    <div
-      class="flex items-center p-2 rounded-tl-sm rounded-bl-sm outline-none whitespace-nowrap"
+    <span
+      class="flex items-center px-2 rounded-tl-sm rounded-bl-sm outline-none whitespace-nowrap"
       :class="[addonBgColor, addonClasses]"
     >
       <slot name="addon">
         {{ prefix }}
       </slot>
-    </div>
-    <z-input v-bind="$attrs" class="border-l-0 rounded-tl-none rounded-bl-none" @on="$listeners" />
+    </span>
+    <z-input v-bind="$attrs" class="border-l-0 rounded-tl-none rounded-bl-none " @on="$listeners" />
   </div>
 </template>
 
