@@ -1,28 +1,27 @@
-import Vue from 'vue'
 import { createLocalVue, mount, Wrapper } from '@vue/test-utils'
+import Vue from 'vue'
+import { VueConstructor } from 'vue/types/umd'
 
-import ZAvatarGroup from '../../src/components/ZAvatarGroup'
 import ZAvatar from '../../src/components/ZAvatar'
+import ZAvatarGroup from '../../src/components/ZAvatarGroup'
 
 describe('Avatar Group component', () => {
-  let mountFunction: (options?: Record<string, unknown>) => Wrapper<Vue>
-  let localVue: typeof Vue
-  beforeEach(() => {
-    localVue = createLocalVue()
-    mountFunction = (options = {}) => {
-      return mount(ZAvatarGroup, {
-        localVue,
-        ...options
-      })
-    }
-  })
+  const sizes = ['2xs', 'xs', 'sm', 'md', 'lg', 'xl']
+
+  const localVue: VueConstructor<Vue> = createLocalVue()
+  const mountFunction: (options?: Record<string, unknown>) => Wrapper<Vue> = (options = {}) => {
+    return mount(ZAvatarGroup, {
+      localVue,
+      ...options
+    })
+  }
 
   it('renders an avatar group when the component is mounted', () => {
     expect(mountFunction({}).html()).toMatchSnapshot()
   })
 
   it('renders avatar group', () => {
-    let mountedInstance = mountFunction({
+    const mountedInstance = mountFunction({
       components: {
         ZAvatar
       },
@@ -47,13 +46,13 @@ describe('Avatar Group component', () => {
     expect(mountedInstance.findAll('span.rounded-full').length).toEqual(4)
   })
 
-  it('renders avatar group with size', () => {
-    let mountedInstance = mountFunction({
+  it.each(sizes)('renders avatar group with the size `%s`', size => {
+    const mountedInstance = mountFunction({
       components: {
         ZAvatar
       },
       propsData: {
-        size: 'sm'
+        size
       },
       slots: {
         default: [
@@ -78,6 +77,5 @@ describe('Avatar Group component', () => {
       }
     })
     expect(mountedInstance.html()).toMatchSnapshot()
-    expect(mountedInstance.findAll('.leading-none.h-6.w-6.text-xs').length).toEqual(5)
   })
 })
