@@ -3,6 +3,7 @@
     <z-button
       :icon="icon"
       :to="to"
+      @click="clicked"
       button-type="secondary"
       rel="noopener noreferrer"
       :size="size"
@@ -51,7 +52,7 @@ export default Vue.extend({
       type: String
     }
   },
-  data: function () {
+  data: function() {
     return {
       dividerHeights: {
         small: 'h-8',
@@ -59,6 +60,11 @@ export default Vue.extend({
         large: 'h-12',
         xlarge: 'h-13'
       }
+    }
+  },
+  methods: {
+    clicked(event) {
+      this.$emit('click', event)
     }
   }
 })
