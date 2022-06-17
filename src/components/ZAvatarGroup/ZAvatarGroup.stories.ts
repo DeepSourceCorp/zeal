@@ -58,34 +58,17 @@ export const InLoadingState = (): Component => ({
     `
 })
 
-export const WithSize = (): Component => ({
+export const WithSizes = (): Component => ({
   components: { ZAvatarGroup, ZAvatar },
+  data: function() {
+    return {
+      sizes: ['2xs', 'xs', 'sm', 'md', 'lg', 'xl']
+    }
+  },
   template: `<div class='padded-container space-y-4'>
-    <div class="space-y-2">
-      <h3 class="text-vanilla-100 text-xl font-semibold">XL variant</h3>
-        <z-avatar-group size="xl">
-          <z-avatar
-            image="https://randomuser.me/api/portraits/women/24.jpg"
-            user-name="Akshay Paliwal"
-          />
-          <z-avatar
-            image="https://randomuser.me/api/portraits/women/24.jpg"
-            user-name="Akshay Paliwal"
-          />
-          <z-avatar
-            image="https://randomuser.me/api/portraits/women/24.jpg"
-            user-name="Akshay Paliwal"
-          />
-          <z-avatar
-            image="https://randomuser.me/api/portraits/women/24.jpg"
-            user-name="Akshay Paliwal"
-          />
-        </z-avatar-group>
-      </div>
-
-      <div class="space-y-2">
-        <h3 class="text-vanilla-100 text-xl font-semibold">2XS variant</h3>
-        <z-avatar-group size="2xs">
+    <div v-for="size in sizes" :key="size" class="space-y-2">
+      <h3 class="text-vanilla-100 text-xl font-semibold">{{ size }}</h3>
+        <z-avatar-group :size="size">
           <z-avatar
             image="https://randomuser.me/api/portraits/women/24.jpg"
             user-name="Akshay Paliwal"
