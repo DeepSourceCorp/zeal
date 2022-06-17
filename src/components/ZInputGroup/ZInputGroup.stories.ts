@@ -52,3 +52,21 @@ export const Sizes = () => ({
           </div>
     </div>`
 })
+
+export const TextBeingTyped = () => ({
+  components: { ZInputGroup },
+  data() {
+    return {
+      name: '',
+      sizes: ['x-small', 'small', 'medium', 'large', 'xlarge']
+    }
+  },
+  template: `
+    <div class='padded-container'>
+      <div class="input-container space-y-2">
+        <p class="text-vanilla-400">You typed: <span class="text-vanilla-100">{{ name }}</span></p>
+        <z-input-group v-model="name" prefix="www." addon-bg-color="bg-juniper" />
+      </div>
+    </div>
+      `
+})
