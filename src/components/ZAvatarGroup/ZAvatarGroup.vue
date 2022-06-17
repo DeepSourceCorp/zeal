@@ -8,6 +8,7 @@
 <script lang="ts">
 import Vue from 'vue'
 const SIZES = {
+  '2xs': { text: 'xs', margins: '-ml-3' },
   xs: { text: 'xs', margins: '-ml-3' },
   sm: { text: 'sm', margins: '-ml-3' },
   md: { text: 'md', margins: '-ml-3' },

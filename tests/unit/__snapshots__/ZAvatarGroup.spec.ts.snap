@@ -28,7 +28,85 @@ exports[`Avatar Group component renders avatar group 1`] = `
 </div>
 `;
 
-exports[`Avatar Group component renders avatar group with size 1`] = `
+exports[`Avatar Group component renders avatar group with the size \`2xs\` 1`] = `
+<div class="flex items-center"><a class="inline-block rounded-full bg-ink-300 p-0.5">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-3 w-3 text-xxs">
+      AP
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-3 w-3 text-xxs">
+      SD
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-3 w-3 text-xxs">
+      AP
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-3 w-3 text-xxs">
+      AP
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-3 w-3 text-xxs">
+      AP
+    </span>
+  </a>
+  <!---->
+</div>
+`;
+
+exports[`Avatar Group component renders avatar group with the size \`lg\` 1`] = `
+<div class="flex items-center"><a class="inline-block rounded-full bg-ink-300 p-0.5">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-12 w-12 text-lg">
+      AP
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-12 w-12 text-lg">
+      SD
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-12 w-12 text-lg">
+      AP
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-12 w-12 text-lg">
+      AP
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-12 w-12 text-lg">
+      AP
+    </span>
+  </a>
+  <!---->
+</div>
+`;
+
+exports[`Avatar Group component renders avatar group with the size \`md\` 1`] = `
+<div class="flex items-center"><a class="inline-block rounded-full bg-ink-300 p-0.5">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-8 w-8 text-sm">
+      AP
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-8 w-8 text-sm">
+      SD
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-8 w-8 text-sm">
+      AP
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-8 w-8 text-sm">
+      AP
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-8 w-8 text-sm">
+      AP
+    </span>
+  </a>
+  <!---->
+</div>
+`;
+
+exports[`Avatar Group component renders avatar group with the size \`sm\` 1`] = `
 <div class="flex items-center"><a class="inline-block rounded-full bg-ink-300 p-0.5">
     <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-6 w-6 text-xs">
       AP
@@ -47,6 +125,58 @@ exports[`Avatar Group component renders avatar group with size 1`] = `
     </span>
   </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
     <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-6 w-6 text-xs">
+      AP
+    </span>
+  </a>
+  <!---->
+</div>
+`;
+
+exports[`Avatar Group component renders avatar group with the size \`xl\` 1`] = `
+<div class="flex items-center"><a class="inline-block rounded-full bg-ink-300 p-0.5">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-16 w-16 text-2xl">
+      AP
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-16 w-16 text-2xl">
+      SD
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-16 w-16 text-2xl">
+      AP
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-16 w-16 text-2xl">
+      AP
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-16 w-16 text-2xl">
+      AP
+    </span>
+  </a>
+  <!---->
+</div>
+`;
+
+exports[`Avatar Group component renders avatar group with the size \`xs\` 1`] = `
+<div class="flex items-center"><a class="inline-block rounded-full bg-ink-300 p-0.5">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-4 w-4 text-xxs">
+      AP
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-4 w-4 text-xxs">
+      SD
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-4 w-4 text-xxs">
+      AP
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-4 w-4 text-xxs">
+      AP
+    </span>
+  </a> <a class="inline-block rounded-full bg-ink-300 p-0.5 -ml-3">
+    <!----> <span class="flex items-center justify-center text-center rounded-full bg-ink-200 text-vanilla-300 leading-none h-4 w-4 text-xxs">
       AP
     </span>
   </a>

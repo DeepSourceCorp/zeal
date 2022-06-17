@@ -58,27 +58,35 @@ export const InLoadingState = (): Component => ({
     `
 })
 
-export const WithSize = (): Component => ({
+export const WithSizes = (): Component => ({
   components: { ZAvatarGroup, ZAvatar },
-  template: `<div class='padded-container'>
-      <z-avatar-group size="xl">
-        <z-avatar
-          image="https://randomuser.me/api/portraits/women/24.jpg"
-          user-name="Akshay Paliwal"
-        ></z-avatar>
-        <z-avatar
-          image="https://randomuser.me/api/portraits/women/24.jpg"
-          user-name="Akshay Paliwal"
-        ></z-avatar>
-        <z-avatar
-          image="https://randomuser.me/api/portraits/women/24.jpg"
-          user-name="Akshay Paliwal"
-        ></z-avatar>
-        <z-avatar
-          image="https://randomuser.me/api/portraits/women/24.jpg"
-          user-name="Akshay Paliwal"
-        ></z-avatar>
-      </z-avatar-group>
+  data: function () {
+    return {
+      sizes: ['2xs', 'xs', 'sm', 'md', 'lg', 'xl']
+    }
+  },
+  template: `<div class='padded-container space-y-4'>
+    <div v-for="size in sizes" :key="size" class="space-y-2">
+      <h3 class="text-vanilla-100 text-xl font-semibold">{{ size }}</h3>
+        <z-avatar-group :size="size">
+          <z-avatar
+            image="https://randomuser.me/api/portraits/women/24.jpg"
+            user-name="Akshay Paliwal"
+          />
+          <z-avatar
+            image="https://randomuser.me/api/portraits/women/24.jpg"
+            user-name="Akshay Paliwal"
+          />
+          <z-avatar
+            image="https://randomuser.me/api/portraits/women/24.jpg"
+            user-name="Akshay Paliwal"
+          />
+          <z-avatar
+            image="https://randomuser.me/api/portraits/women/24.jpg"
+            user-name="Akshay Paliwal"
+          />
+        </z-avatar-group>
+      </div>
     </div>`
 })
 
