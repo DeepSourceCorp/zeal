@@ -60,7 +60,7 @@ export const InLoadingState = (): Component => ({
 
 export const WithSizes = (): Component => ({
   components: { ZAvatarGroup, ZAvatar },
-  data: function() {
+  data: function () {
     return {
       sizes: ['2xs', 'xs', 'sm', 'md', 'lg', 'xl']
     }

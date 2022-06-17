@@ -9,6 +9,13 @@ describe('Avatar Group component', () => {
   const sizes = ['2xs', 'xs', 'sm', 'md', 'lg', 'xl']
 
   const localVue: VueConstructor<Vue> = createLocalVue()
+
+  /**
+   * Returns a Wrapper that contains the rendered Vue component
+   *
+   * @param options {Record<string, unknown>}
+   * @returns {Wrapper<Vue>}
+   */
   const mountFunction: (options?: Record<string, unknown>) => Wrapper<Vue> = (options = {}) => {
     return mount(ZAvatarGroup, {
       localVue,
@@ -46,7 +53,7 @@ describe('Avatar Group component', () => {
     expect(mountedInstance.findAll('span.rounded-full').length).toEqual(4)
   })
 
-  it.each(sizes)('renders avatar group with the size `%s`', size => {
+  it.each(sizes)('renders avatar group with the size `%s`', (size) => {
     const mountedInstance = mountFunction({
       components: {
         ZAvatar
