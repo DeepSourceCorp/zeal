@@ -1,12 +1,12 @@
 import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'
+
+import Vue from 'vue'
+
 import ZInput from './ZInput.vue'
-import ZInputGroup from '@/components/ZInputGroup/ZInputGroup.vue'
-import ZInputAddon from '@/components/ZInputAddon/ZInputAddon.vue'
 import ZIcon from '@/components/ZIcon/ZIcon.vue'
 import ZButton from '@/components/ZButton/ZButton.vue'
-import Vue from 'vue'
 
 export default {
   title: 'Input',
@@ -161,7 +161,7 @@ export const StandAloneInput = () => ({
 })
 
 export const InputWithLeftIcon = () => ({
-  components: { ZInput, ZInputGroup, ZIcon },
+  components: { ZInput, ZIcon },
   data() {
     return {
       name: ''
@@ -179,7 +179,7 @@ export const InputWithLeftIcon = () => ({
 })
 
 export const InputWithRightIcon = () => ({
-  components: { ZInput, ZInputGroup, ZIcon },
+  components: { ZInput, ZIcon },
   data() {
     return {
       name: ''
@@ -197,7 +197,7 @@ export const InputWithRightIcon = () => ({
 })
 
 export const InputWithIconsOnEitherSides = () => ({
-  components: { ZInput, ZInputGroup, ZIcon },
+  components: { ZInput, ZIcon },
   data() {
     return {
       name: ''
@@ -218,7 +218,7 @@ export const InputWithIconsOnEitherSides = () => ({
 })
 
 export const InputWithLeftButton = () => ({
-  components: { ZInput, ZInputGroup, ZButton },
+  components: { ZInput, ZButton },
   data() {
     return {
       name: ''
@@ -236,7 +236,7 @@ export const InputWithLeftButton = () => ({
 })
 
 export const InputWithRightButton = () => ({
-  components: { ZInput, ZInputGroup, ZButton },
+  components: { ZInput, ZButton },
   data() {
     return {
       name: ''
@@ -254,7 +254,7 @@ export const InputWithRightButton = () => ({
 })
 
 export const InputWithClearables = () => ({
-  components: { ZInput, ZInputGroup, ZIcon },
+  components: { ZInput, ZIcon },
   data() {
     return {
       name: 'Hello World'
@@ -264,44 +264,6 @@ export const InputWithClearables = () => ({
         <div class="input-container">
           <z-input v-model="name" :clearable="true">
           </z-input>
-        </div>
-    </div>`
-})
-
-export const InputWithLeftAddon = () => ({
-  components: { ZInput, ZInputGroup, ZInputAddon, ZIcon },
-  data() {
-    return {
-      name: 'Hello World'
-    }
-  },
-  template: `<div class='padded-container'>
-        <div class="input-container">
-          <z-input-group>
-            <z-input-addon class="bg-juniper px-2 rounded-sm -mr-0.5">
-              www.
-            </z-input-addon>
-            <z-input v-model="name"></z-input>
-          </z-input-group>
-        </div>
-    </div>`
-})
-
-export const InputWithRightAddon = () => ({
-  components: { ZInput, ZInputGroup, ZInputAddon, ZIcon },
-  data() {
-    return {
-      name: 'Hello World'
-    }
-  },
-  template: `<div class='padded-container'>
-        <div class="input-container">
-          <z-input-group>
-            <z-input v-model="name"></z-input>
-            <z-input-addon class="bg-juniper px-2 rounded-sm -ml-0.5">
-              www.
-            </z-input-addon>
-          </z-input-group>
         </div>
     </div>`
 })
