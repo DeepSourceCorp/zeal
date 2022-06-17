@@ -52,7 +52,7 @@ export default Vue.extend({
       type: String
     }
   },
-  data: function() {
+  data: function () {
     return {
       dividerHeights: {
         small: 'h-8',
