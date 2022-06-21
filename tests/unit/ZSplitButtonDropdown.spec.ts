@@ -11,19 +11,11 @@ describe('Split Button Dropdown component', () => {
     const wrapper = mount({
       template: `
       <z-split-button-dropdown :icon="icon" :label="label" :to="to">
-        <z-menu direction="left" size="small" width="small">
-          <template v-slot:trigger="{ toggle }">
-            <z-button button-type="secondary" size="small" @click="toggle">
-              <z-icon icon="chevron-down" />
-            </z-button>
-          </template>
-
-          <template #body>
-            <z-menu-item as="button" icon="github">Create issue on GitHub</z-menu-item>
-            <z-menu-item as="button" icon="gitlab">Create issue on GitLab</z-menu-item>
-            <z-menu-item as="button" icon="bitbucket">Create issue on Bitbucket</z-menu-item>
-          </template>
-        </z-menu>
+        <template #menu-body>
+          <z-menu-item as="button" icon="github">Create issue on GitHub</z-menu-item>
+          <z-menu-item as="button" icon="gitlab">Create issue on GitLab</z-menu-item>
+          <z-menu-item as="button" icon="bitbucket">Create issue on Bitbucket</z-menu-item>
+        </template>
     </z-split-button-dropdown>
     `,
       components: {
@@ -50,19 +42,11 @@ describe('Split Button Dropdown component', () => {
       template: `
       <div>
         <z-split-button-dropdown v-for="size in sizes" :key="size" :icon="icon" :label="label" :to="to" :size="size">
-          <z-menu :size="menuSizes[size]" :width="menuWidths[size]" direction="left">
-            <template v-slot:trigger="{ toggle }">
-              <z-button button-type="secondary" :size="size" @click="toggle">
-                <z-icon :size="iconSizes[size]" icon="chevron-down" />
-              </z-button>
-            </template>
-
-            <template #body>
+            <template #menu-body>
               <z-menu-item as="button" icon="github">Create issue on GitHub</z-menu-item>
               <z-menu-item as="button" icon="gitlab">Create issue on GitLab</z-menu-item>
               <z-menu-item as="button" icon="bitbucket">Create issue on Bitbucket</z-menu-item>
             </template>
-          </z-menu>
       </z-split-button-dropdown>
     </div>
     `,
