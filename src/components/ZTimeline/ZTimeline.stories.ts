@@ -4,6 +4,7 @@ import '../../assets/css/layout.css'
 import ZTimeline from './ZTimeline.vue'
 import ZTimelineItem from './ZTimelineItem/ZTimelineItem.vue'
 import ZAvatar from '../ZAvatar/ZAvatar.vue'
+import ZIcon from '../ZIcon/ZIcon.vue'
 
 export default {
   title: 'Timeline',
@@ -100,5 +101,26 @@ export const TimelineWithCustomBorderWidth = () => ({
         ></z-avatar></template>
       </z-timeline-item>
     </z-timeline>
+    </div>`
+})
+
+export const TimelineWithAvatar = () => ({
+  components: { ZTimeline, ZTimelineItem, ZAvatar, ZIcon },
+  template: `<div class='padded-container'>
+    <z-timeline>
+      <z-timeline-item v-for="ii in 4" :key="ii" content="Carter Workman" timestamp="Friday, 4:24PM" border-width-class="" class="h-32">
+        <template #avatar>
+          <z-avatar
+            image="https://randomuser.me/api/portraits/women/24.jpg"
+            user-name="Akshay Paliwal"
+            size="sm"
+            stroke=""
+          />
+        </template>
+
+        <template #icon>
+          <z-icon icon="focus" size="small" />
+        </template>
+      </z-timeline-item>
     </div>`
 })

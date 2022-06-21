@@ -1,17 +1,22 @@
 <template>
   <div class="relative flex timeline__item gap-x-2">
     <div class="flex flex-col items-center justify-center gap-y-2">
-      <div class="flex items-center justify-center w-6 h-6">
-        <slot name="icon">
-          <span class="inline-block w-full h-full rounded-full bg-juniper"></span>
-        </slot>
+      <div class="flex items-center gap-x-4">
+        <slot name="avatar" />
+        <div class="flex items-center justify-center w-6 h-6">
+          <slot name="icon">
+            <span class="inline-block w-full h-full rounded-full bg-juniper"></span>
+          </slot>
+        </div>
       </div>
+
       <span
-        class="h-full border-l rounded-sm left-4"
+        class="h-full border-l rounded-sm"
         :class="[
           {
             'border-transparent': index === lastIndex,
-            'border-ink-100': index !== lastIndex
+            'border-ink-100': index !== lastIndex,
+            'ml-10': $slots.avatar
           },
           borderWidthClass
         ]"
