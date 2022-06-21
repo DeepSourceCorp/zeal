@@ -113,7 +113,7 @@ export const TimelineWithAvatar = () => ({
           <z-avatar
             image="https://randomuser.me/api/portraits/women/24.jpg"
             user-name="Akshay Paliwal"
-            size="sm"
+            size="xs"
             stroke=""
           />
         </template>

@@ -23,7 +23,7 @@ export default {
   computed: {
     getDirectionClasses() {
       return this.direction === 'vertical'
-        ? `inline-block w-px h-4 ${this.margin || 'my-0 mx-2'} align-middle`
+        ? `inline-block w-px h-full ${this.margin || 'my-0 mx-2'} align-middle`
         : `block h-px w-full ${this.margin || 'my-6 mx-0'}`
     }
   }
