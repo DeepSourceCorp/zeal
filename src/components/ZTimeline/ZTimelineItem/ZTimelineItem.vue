@@ -2,8 +2,8 @@
   <div class="relative flex timeline__item gap-x-2">
     <div class="flex items-start gap-x-4">
       <slot name="avatar" />
-      <div class="grid h-full justify-items-center ">
-        <div class="flex items-center self-start justify-center w-6 h-6 ">
+      <div class="grid h-full justify-items-center">
+        <div class="flex items-center self-start justify-center w-6 h-6">
           <slot name="icon">
             <span class="inline-block w-full h-full rounded-full bg-juniper"></span>
           </slot>
