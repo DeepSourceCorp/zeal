@@ -2,7 +2,6 @@ module.exports = {
   transparent: 'transparent',
   current: 'currentColor',
   black: '#000000',
-  slate: '#52575c',
   github: '#414141',
   gitlab: '#6753b5',
   bitbucket: '#1e54c5',
@@ -66,13 +65,17 @@ module.exports = {
     50: '#303540',
     100: '#2a2e37',
     200: '#23262e',
-    300: '#1a1d23',
-    400: '#16181d'
+    300: '#16181d',
+    400: '#121317'
   },
   vanilla: {
     100: '#ffffff',
     200: '#f5f5f5',
     300: '#eeeeee',
     400: '#c0c1c3'
+  },
+  slate: {
+    DEFAULT: '#52575C',
+    400: '#1d2023'
   }
 }
