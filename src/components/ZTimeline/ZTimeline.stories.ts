@@ -107,7 +107,7 @@ export const TimelineWithCustomBorderWidth = () => ({
 
 export const AuditLogEventsAsTimelineItems = () => ({
   components: { ZTimeline, ZTimelineItem, ZIcon },
-  data: function() {
+  data: function () {
     return {
       auditLogs: [
         {
