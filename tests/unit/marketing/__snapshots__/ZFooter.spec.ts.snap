@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ZFooterList component renders a ZFooter when the component is mounted 1`] = `
-<footer class="w-full flex flex-col justify-between bg-transparent text-vanilla-100 border-t border-ink-200 min-h-102 pb-10 pt-20">
+<footer class="w-full flex flex-col justify-between bg-transparent text-vanilla-100 border-t border-slate-400 min-h-102 pb-10 pt-20">
   <div class="md:flex items-start w-full lg:mx-auto lg:max-w-6xl">
     <!----> <span class="hidden md:flex items-start w-full"><!----> <!----></span> <span class="block md:hidden w-full"><!----> <!----></span>
   </div>
@@ -13,7 +13,7 @@ exports[`ZFooterList component renders a ZFooter when the component is mounted 1
 `;
 
 exports[`ZFooterList component renders a ZFooter with proper container size 1`] = `
-<footer class="w-full flex flex-col justify-between bg-transparent text-vanilla-100 border-t border-ink-200 min-h-102 pb-10 pt-20">
+<footer class="w-full flex flex-col justify-between bg-transparent text-vanilla-100 border-t border-slate-400 min-h-102 pb-10 pt-20">
   <div class="md:flex items-start w-full lg:mx-auto lg:max-w-6xl">
     <!----> <span class="hidden md:flex items-start w-full"><!----> <!----></span> <span class="block md:hidden w-full"><!----> <!----></span>
   </div>
