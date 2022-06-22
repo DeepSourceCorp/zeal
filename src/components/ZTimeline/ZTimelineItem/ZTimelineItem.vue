@@ -1,7 +1,7 @@
 <template>
   <div class="relative flex timeline__item gap-x-2">
     <div class="flex flex-col items-center justify-center gap-y-2">
-      <div class="flex items-center justify-center w-6 h-6">
+      <div class="flex justify-center flex-shrink-0 w-6 h-6" :class="iconAlignItemsClass">
         <slot name="icon">
           <span class="inline-block w-full h-full rounded-full bg-juniper"></span>
         </slot>
@@ -41,6 +41,10 @@ export default {
     borderWidthClass: {
       type: String,
       default: 'border-2'
+    },
+    iconAlignItemsClass: {
+      type: String,
+      default: 'items-center'
     }
   },
   data() {
