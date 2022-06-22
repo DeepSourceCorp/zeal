@@ -83,12 +83,12 @@ export default Vue.extend({
     container: {
       type: String,
       default: CONTAINERS.md.text,
-      validator: size => Object.keys(CONTAINERS).includes(size)
+      validator: (size) => Object.keys(CONTAINERS).includes(size)
     },
     menuAlign: {
       type: String,
       default: MENU_ALIGNMENT.center.text,
-      validator: alignment => Object.keys(MENU_ALIGNMENT).includes(alignment)
+      validator: (alignment) => Object.keys(MENU_ALIGNMENT).includes(alignment)
     },
     hideMenuOnScroll: {
       type: Boolean,

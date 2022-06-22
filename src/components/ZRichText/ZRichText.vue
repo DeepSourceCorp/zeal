@@ -34,14 +34,7 @@
               button-type="secondary"
               type="button"
               :disabled="!editor.isActive('link')"
-              @click="
-                editor
-                  .chain()
-                  .focus()
-                  .extendMarkRange('link')
-                  .unsetLink()
-                  .run()
-              "
+              @click="editor.chain().focus().extendMarkRange('link').unsetLink().run()"
             />
           </div>
         </div>
@@ -306,11 +299,7 @@ export default Vue.extend({
         this.toggleLinkInput = false
         this.inputLink = ''
       } else if (e.code === 'Escape' && this.editor) {
-        this.editor
-          .chain()
-          .focus()
-          .setTextSelection(this.lastPos)
-          .run()
+        this.editor.chain().focus().setTextSelection(this.lastPos).run()
         this.toggleLinkInput = false
         this.inputLink = ''
       }
@@ -322,18 +311,14 @@ export default Vue.extend({
       } = editor
       const { from, to } = selection
       let marks: Mark[] = []
-      state.doc.nodesBetween(from, to, node => {
+      state.doc.nodesBetween(from, to, (node) => {
         marks = [...marks, ...node.marks]
       })
-      const mark = marks.find(markItem => markItem.type.name === 'link')
+      const mark = marks.find((markItem) => markItem.type.name === 'link')
       this.inputLink = mark && mark.attrs.href ? mark.attrs.href : ''
     },
     insertImage(url: string): void {
-      this.editor
-        ?.chain()
-        .focus()
-        .setImage({ src: url })
-        .run()
+      this.editor?.chain().focus().setImage({ src: url }).run()
     }
   }
 })

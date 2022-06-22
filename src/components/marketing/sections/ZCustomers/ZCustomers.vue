@@ -32,7 +32,7 @@ export default Vue.extend({
     customers: {
       type: Array,
       required: true,
-      validator: arr => arr.length <= MAX_CUSTOMERS
+      validator: (arr) => arr.length <= MAX_CUSTOMERS
     }
   },
   data() {

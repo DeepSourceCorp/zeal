@@ -47,7 +47,7 @@ export default {
     }
   },
   methods: {
-    toggleExpandable: function(open) {
+    toggleExpandable: function (open) {
       this.isOpen = open
     }
   }

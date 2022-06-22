@@ -61,7 +61,7 @@ export default Vue.extend({
     width: {
       type: String,
       default: 'base',
-      validator: function(value: string): boolean {
+      validator: function (value: string): boolean {
         return ['narrow', 'base', 'wide'].includes(value)
       }
     },
