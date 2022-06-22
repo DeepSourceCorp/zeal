@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-full overflow-scroll p-1 border border-ink-200 flex items-start focus-within:shadow-white rounded-sm"
+    class="h-full overflow-scroll p-1 border border-slate-400 flex items-start focus-within:shadow-white rounded-sm"
     :class="{
       'cursor-not-allowed': disabled,
       'resize-none': !resizable,

@@ -1,5 +1,5 @@
 <template>
-  <tr class="z-table-row border-b border-ink-300 flex w-full">
+  <tr class="z-table-row border-b border-slate-400 flex w-full">
     <slot></slot>
   </tr>
 </template>

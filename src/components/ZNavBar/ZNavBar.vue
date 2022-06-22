@@ -68,7 +68,7 @@ export default {
       this.hideOnScroll = window.scrollY > 50 && this.hideLinksOnScroll ? 'lg:opacity-0' : 'lg:opacity-1'
     },
     getComponent(parent, name, list = []) {
-      parent?.forEach((child) => {
+      parent?.forEach(child => {
         if (child && child?.componentOptions && toPascal(child.componentOptions.tag || '') === name) {
           list.push(child)
         } else if (child?.children) {
@@ -94,7 +94,7 @@ export default {
           )}
         </nav>
       ),
-      menuItems = this.$slots.links?.map((child) => {
+      menuItems = this.$slots.links?.map(child => {
         const options = child.componentOptions
         if (options && toPascal(options.tag || '') === 'ZMenu') {
           if (options.propsData?.collapseOnMobile) {
@@ -115,7 +115,7 @@ export default {
                 ...options.propsData
               },
               class: {
-                'px-4 py-2 border-b border-ink-200 lg:border-0': true
+                'px-4 py-2 border-b border-slate-400 lg:border-0': true
               },
               scopedSlots: {
                 default: () => accordionItems
@@ -133,7 +133,7 @@ export default {
       mobileHeader = (
         // Mobile Header Section
         <div class={this.mobHeaderStyle}>
-          <div class="flex cursor-pointer justify-end p-4 border-b border-ink-200" on-click={this.toggleModal}>
+          <div class="flex cursor-pointer justify-end p-4 border-b border-slate-400" on-click={this.toggleModal}>
             <z-icon icon="x" size="medium" color="vanilla-100"></z-icon>
           </div>
           {menuItems}

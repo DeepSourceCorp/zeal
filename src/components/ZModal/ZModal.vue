@@ -11,7 +11,7 @@
         @click.stop
       >
         <div
-          class="flex items-center justify-between p-4 space-x-2 border-ink-200"
+          class="flex items-center justify-between p-4 space-x-2 border-slate-400"
           :class="{ 'border-b': showHeaderBorder }"
         >
           <slot name="title">
@@ -26,7 +26,7 @@
           </div>
         </slot>
         <slot name="footer" :close="close">
-          <div v-if="primaryActionLabel" class="p-4 space-x-4 text-right text-vanilla-100 border-ink-200">
+          <div v-if="primaryActionLabel" class="p-4 space-x-4 text-right text-vanilla-100 border-slate-400">
             <z-button
               :icon="primaryActionIcon"
               class="modal-primary-action"
@@ -61,7 +61,7 @@ export default Vue.extend({
     width: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['narrow', 'base', 'wide'].includes(value)
       }
     },

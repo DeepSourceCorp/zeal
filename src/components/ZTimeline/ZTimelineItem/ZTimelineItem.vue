@@ -11,7 +11,7 @@
         :class="[
           {
             'border-transparent': index === lastIndex,
-            'border-ink-100': index !== lastIndex
+            'border-slate-400': index !== lastIndex
           },
           borderWidthClass
         ]"

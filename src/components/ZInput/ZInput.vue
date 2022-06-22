@@ -185,7 +185,7 @@ export default Vue.extend({
       }
 
       if (this.showBorder) {
-        return `focus-within:border-vanilla-400 border border-ink-100`
+        return `focus-within:border-vanilla-400 border border-slate-400`
       }
 
       return ''

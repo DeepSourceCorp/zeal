@@ -1,5 +1,5 @@
 <template>
-  <table class="z-table p-8 border border-ink-200 border-collapse w-full">
+  <table class="z-table p-8 border border-slate-400 border-collapse w-full">
     <thead class="w-full">
       <slot name="head"></slot>
     </thead>

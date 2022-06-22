@@ -10,7 +10,7 @@
       'text-vanilla-100': isActive && !disabled,
       [borderActive]: isActive && !disabled && !removeIndicatorStyles,
       'text-vanilla-400': !isActive && !disabled,
-      'border-transparent hover:border-ink-100': !isActive && !disabled && !removeIndicatorStyles,
+      'border-transparent hover:border-slate-400': !isActive && !disabled && !removeIndicatorStyles,
       'text-slate cursor-not-allowed border-transparent': disabled
     }"
   >

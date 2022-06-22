@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center border rounded-md border-ink-100 focus-within:border-vanilla-400">
+  <div class="flex items-center border rounded-md border-slate-400 focus-within:border-vanilla-400">
     <z-button
       size="x-small"
       icon="minus"

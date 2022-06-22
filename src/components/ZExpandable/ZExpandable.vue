@@ -14,7 +14,7 @@
     </div>
     <!-- prettier-ignore -->
     <div
-      class="z-expandable__content bg-ink-400 text-vanilla-100 overflow-scroll transition-all duration-700 ease-in-out text-sm leading-6 border border-solid border-ink-300"
+      class="z-expandable__content bg-ink-400 text-vanilla-100 overflow-scroll transition-all duration-700 ease-in-out text-sm leading-6 border border-solid border-slate-400"
       v-if="$slots.content"
       :class="openHeightStyle"
     >
@@ -42,12 +42,12 @@ export default {
     },
     openTextStyle() {
       return this.isOpen
-        ? 'text-vanilla-100 bg-ink-400 border-b-0 border border-solid border-ink-300'
+        ? 'text-vanilla-100 bg-ink-400 border-b-0 border border-solid border-slate-400'
         : 'text-vanilla-400 bg-ink-300 border border-solid border-transparent'
     }
   },
   methods: {
-    toggleExpandable: function (open) {
+    toggleExpandable: function(open) {
       this.isOpen = open
     }
   }

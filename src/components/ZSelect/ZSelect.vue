@@ -49,7 +49,7 @@
     </div>
     <!-- prettier-ignore -->
     <div
-      class="absolute left-0 right-0 z-10 mt-1 overflow-y-auto transition-all duration-300 border border-solid rounded-md max-h-64 options shadow-black border-ink-100 text-vanilla-300 bg-ink-300"
+      class="absolute left-0 right-0 z-10 mt-1 overflow-y-auto transition-all duration-300 border border-solid rounded-md max-h-64 options shadow-black border-slate-400 text-vanilla-300 bg-ink-300"
       :class="!open && 'hidden'"
     >
       <slot></slot>
@@ -95,7 +95,7 @@ export default Vue.extend({
     },
     borderClass: {
       type: String,
-      default: 'border-ink-200'
+      default: 'border-slate-400'
     },
     borderRadius: {
       type: String,
@@ -162,14 +162,14 @@ export default Vue.extend({
     }
   },
   mounted() {
-    this.options = this.$children.filter((child) => child.$options.name === 'ZOption')
+    this.options = this.$children.filter(child => child.$options.name === 'ZOption')
 
     if (this.selected) {
       const selectedOpt = this.options
-        .map((child) => {
+        .map(child => {
           return child.$options.propsData as ZOptionPropsT
         })
-        .filter((childProp) => {
+        .filter(childProp => {
           return childProp.value === this.selected
         })
 
@@ -188,7 +188,7 @@ export default Vue.extend({
     }
   },
   watch: {
-    selectedOpt: function (newValue) {
+    selectedOpt: function(newValue) {
       this.$emit('change', newValue)
     }
   }

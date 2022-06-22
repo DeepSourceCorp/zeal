@@ -3,11 +3,11 @@
     <div class="text-center text-vanilla-100 text-sm uppercase font-bold tracking-widest mb-8">
       <slot name="heading"></slot>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 grid-row-4 md:grid-rows-2 border-t border-ink-200">
+    <div class="grid grid-cols-2 md:grid-cols-4 grid-row-4 md:grid-rows-2 border-t border-slate-400">
       <span
         v-for="(customer, index) in customers"
         :key="customer.slug"
-        class="flex items-center border-b border-ink-200 h-20 md:h-40"
+        class="flex items-center border-b border-slate-400 h-20 md:h-40"
         :class="[`${!isFourthElement(index) ? 'border-r even:border-r-0 md:even:border-r' : ''}`]"
       >
         <img
@@ -32,7 +32,7 @@ export default Vue.extend({
     customers: {
       type: Array,
       required: true,
-      validator: (arr) => arr.length <= MAX_CUSTOMERS
+      validator: arr => arr.length <= MAX_CUSTOMERS
     }
   },
   data() {

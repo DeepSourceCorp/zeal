@@ -17,7 +17,7 @@
       v-on="fileInputListeners"
     />
     <slot name="activator" :open="openFilePicker" :empty="filesEmptied" :file-names="uploadedFileNames">
-      <div class="inline-flex items-center space-x-1 border border-ink-200 rounded-sm pr-1">
+      <div class="inline-flex items-center space-x-1 border border-slate-400 rounded-sm pr-1">
         <z-input
           v-model="uploadedFileNames"
           :read-only="true"

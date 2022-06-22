@@ -1,7 +1,7 @@
 <template>
   <!-- prettier-ignore -->
   <footer
-    class="w-full flex flex-col justify-between bg-transparent text-vanilla-100 border-t border-ink-200 min-h-102 pb-10 pt-20"
+    class="w-full flex flex-col justify-between bg-transparent text-vanilla-100 border-t border-slate-400 min-h-102 pb-10 pt-20"
   >
     <div class="md:flex items-start w-full lg:mx-auto" :class="[`${CONTAINERS[container].classes}`]">
       <!-- Brand -->
@@ -62,7 +62,7 @@ export default Vue.extend({
     container: {
       type: String,
       default: CONTAINERS.md.text,
-      validator: (size) => Object.keys(CONTAINERS).includes(size)
+      validator: size => Object.keys(CONTAINERS).includes(size)
     }
   },
   data() {
