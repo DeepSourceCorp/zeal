@@ -1,10 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ZTimeline renders Audit log events as timeline items 1`] = `
+<div class="padded-container">
+  <div class="timeline flex flex-col gap-y-2">
+    <div class="relative flex timeline__item gap-x-2 w-full h-24 md:h-20">
+      <div class="flex flex-col items-center justify-center gap-y-2">
+        <div class="flex justify-center flex-shrink-0 w-6 h-6 items-baseline"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-4 h-4 z-icon--bot text-vanilla-400">
+            <g clip-path="url(#clip0_664_1567)">
+              <path d="M19 11H5C3.89543 11 3 11.8954 3 13V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V13C21 11.8954 20.1046 11 19 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M12 7C13.1046 7 14 6.10457 14 5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5C10 6.10457 10.8954 7 12 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M12 7V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+            <defs>
+              <clipPath id="clip0_664_1567">
+                <rect width="24" height="24" fill="white"></rect>
+              </clipPath>
+            </defs>
+          </svg></div> <span class="h-full border-l rounded-sm left-4 border-ink-100"></span>
+      </div>
+      <div class="flex flex-col w-full text-xs md:justify-between gap-y-1 md:gap-y-0 md:flex-row text-vanilla-400">
+        <p class="text-xs leading-5 prose"><strong>John Doe's brother</strong> updated name of the namespace to <strong>@deepsourcelabs</strong>.</p> <span class="leading-5">1 month ago</span>
+      </div>
+    </div>
+    <div class="relative flex timeline__item gap-x-2 w-full h-24 md:h-20">
+      <div class="flex flex-col items-center justify-center gap-y-2">
+        <div class="flex justify-center flex-shrink-0 w-6 h-6 items-baseline"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-4 h-4 z-icon--focus text-vanilla-400">
+            <circle cx="12" cy="12" r="3" stroke="currentColor"></circle>
+            <path d="M3 7V5a2 2 0 0 1 2-2h2" stroke="currentColor"></path>
+            <path d="M17 3h2a2 2 0 0 1 2 2v2" stroke="currentColor"></path>
+            <path d="M21 17v2a2 2 0 0 1-2 2h-2" stroke="currentColor"></path>
+            <path d="M7 21H5a2 2 0 0 1-2-2v-2" stroke="currentColor"></path>
+          </svg></div> <span class="h-full border-l rounded-sm left-4 border-ink-100"></span>
+      </div>
+      <div class="flex flex-col w-full text-xs md:justify-between gap-y-1 md:gap-y-0 md:flex-row text-vanilla-400">
+        <p class="text-xs leading-5 prose"><strong>John Doe</strong> updated publish access to the namespace <strong>@deepsource</strong>. Members can now push to <strong>@deepsource/armory</strong>.</p> <span class="leading-5">2 months ago</span>
+      </div>
+    </div>
+    <div class="relative flex timeline__item gap-x-2 w-full h-24 md:h-20">
+      <div class="flex flex-col items-center justify-center gap-y-2">
+        <div class="flex justify-center flex-shrink-0 w-6 h-6 items-baseline"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" fill="none" class="z-icon w-4 h-4 z-icon--bot text-vanilla-400">
+            <g clip-path="url(#clip0_664_1567)">
+              <path d="M19 11H5C3.89543 11 3 11.8954 3 13V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V13C21 11.8954 20.1046 11 19 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M12 7C13.1046 7 14 6.10457 14 5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5C10 6.10457 10.8954 7 12 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M12 7V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+            <defs>
+              <clipPath id="clip0_664_1567">
+                <rect width="24" height="24" fill="white"></rect>
+              </clipPath>
+            </defs>
+          </svg></div> <span class="h-full border-l rounded-sm left-4 border-ink-100"></span>
+      </div>
+      <div class="flex flex-col w-full text-xs md:justify-between gap-y-1 md:gap-y-0 md:flex-row text-vanilla-400">
+        <p class="text-xs leading-5 prose"><strong>John Doe</strong> created the namespace <strong>@deepsource</strong>.</p> <span class="leading-5">3 months ago</span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ZTimeline renders a default timeline component 1`] = `
 <div class="timeline flex flex-col gap-y-2">
   <div class="relative flex timeline__item gap-x-2 h-32">
     <div class="flex flex-col items-center justify-center gap-y-2">
-      <div class="flex items-center justify-center w-6 h-6"><span class="inline-block w-full h-full rounded-full bg-juniper"></span></div> <span class="h-full border-l rounded-sm left-4 border-ink-100 border-2"></span>
+      <div class="flex justify-center flex-shrink-0 w-6 h-6 items-center"><span class="inline-block w-full h-full rounded-full bg-juniper"></span></div> <span class="h-full border-l rounded-sm left-4 border-ink-100 border-2"></span>
     </div>
     <div class="flex flex-col space-y-2 text-xs">
       <div class="text-vanilla-100">Carter Workman</div>
@@ -13,7 +72,7 @@ exports[`ZTimeline renders a default timeline component 1`] = `
   </div>
   <div class="relative flex timeline__item gap-x-2 h-32">
     <div class="flex flex-col items-center justify-center gap-y-2">
-      <div class="flex items-center justify-center w-6 h-6"><span class="inline-block w-full h-full rounded-full bg-juniper"></span></div> <span class="h-full border-l rounded-sm left-4 border-ink-100 border-2"></span>
+      <div class="flex justify-center flex-shrink-0 w-6 h-6 items-center"><span class="inline-block w-full h-full rounded-full bg-juniper"></span></div> <span class="h-full border-l rounded-sm left-4 border-ink-100 border-2"></span>
     </div>
     <div class="flex flex-col space-y-2 text-xs">
       <div class="text-vanilla-100">Carter Workman</div>
@@ -27,7 +86,7 @@ exports[`ZTimeline renders a timeline component with custom border width 1`] = `
 <div class="timeline flex flex-col gap-y-2">
   <div class="relative flex timeline__item gap-x-2 h-32">
     <div class="flex flex-col items-center justify-center gap-y-2">
-      <div class="flex items-center justify-center w-6 h-6"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
+      <div class="flex justify-center flex-shrink-0 w-6 h-6 items-center"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
           <!---->
         </a></div> <span class="h-full border-l rounded-sm left-4 border-ink-100"></span>
     </div>
@@ -38,7 +97,7 @@ exports[`ZTimeline renders a timeline component with custom border width 1`] = `
   </div>
   <div class="relative flex timeline__item gap-x-2 h-32">
     <div class="flex flex-col items-center justify-center gap-y-2">
-      <div class="flex items-center justify-center w-6 h-6"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
+      <div class="flex justify-center flex-shrink-0 w-6 h-6 items-center"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
           <!---->
         </a></div> <span class="h-full border-l rounded-sm left-4 border-ink-100"></span>
     </div>
@@ -54,7 +113,7 @@ exports[`ZTimeline renders a timeline component with custom icon 1`] = `
 <div class="timeline flex flex-col gap-y-2">
   <div class="relative flex timeline__item gap-x-2 h-32">
     <div class="flex flex-col items-center justify-center gap-y-2">
-      <div class="flex items-center justify-center w-6 h-6"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
+      <div class="flex justify-center flex-shrink-0 w-6 h-6 items-center"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
           <!---->
         </a></div> <span class="h-full border-l rounded-sm left-4 border-ink-100 border-2"></span>
     </div>
@@ -65,7 +124,7 @@ exports[`ZTimeline renders a timeline component with custom icon 1`] = `
   </div>
   <div class="relative flex timeline__item gap-x-2 h-32">
     <div class="flex flex-col items-center justify-center gap-y-2">
-      <div class="flex items-center justify-center w-6 h-6"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
+      <div class="flex justify-center flex-shrink-0 w-6 h-6 items-center"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
           <!---->
         </a></div> <span class="h-full border-l rounded-sm left-4 border-ink-100 border-2"></span>
     </div>
