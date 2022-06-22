@@ -130,7 +130,7 @@ describe('ZTimeline', () => {
     let wrapper = mount(TimelineWithCustomBorderWidth)
     expect(wrapper.html()).toMatchSnapshot()
   })
-  it('renders audit log events as timeline items', () => {
+  it('renders Audit log events as timeline items', () => {
     let wrapper = mount(AuditLogEventsAsTimelineItems)
     expect(wrapper.html()).toMatchSnapshot()
   })
