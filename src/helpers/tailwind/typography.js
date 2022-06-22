@@ -49,7 +49,7 @@ const DEFAULT = function (theme) {
       ...BEFORE_LIST_ITEM(theme)
     },
     hr: {
-      borderColor: theme('colors.ink.100'),
+      borderColor: theme('colors.slate.400'),
       borderTopWidth: 1
     },
     blockquote: {

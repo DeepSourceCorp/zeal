@@ -133,7 +133,7 @@ module.exports = {
     },
     borderColor: (theme) => ({
       ...theme('colors'),
-      DEFAULT: theme('colors.slate', 'currentColor')
+      DEFAULT: theme('colors.slate.400', 'currentColor')
     }),
     borderOpacity: (theme) => theme('opacity'),
     borderRadius: {
@@ -429,7 +429,8 @@ module.exports = {
       'ink-100': [`1px solid ${theme('colors.ink.100')}`, '0px'],
       'ink-200': [`1px solid ${theme('colors.ink.200')}`, '0px'],
       'ink-300': [`1px solid ${theme('colors.ink.300')}`, '0px'],
-      'ink-400': [`1px solid ${theme('colors.ink.400')}`, '0px']
+      'ink-400': [`1px solid ${theme('colors.ink.400')}`, '0px'],
+      'slate-400': [`1px solid ${theme('colors.slate.400')}`, '0px']
     }),
     padding: (theme) => theme('spacing'),
     placeholderColor: (theme) => theme('colors'),
