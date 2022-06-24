@@ -265,7 +265,7 @@ export default Vue.extend({
         if (!marker.options) {
           marker.options = {}
         }
-        marker.options.lineType = 'solid'
+        marker.options.lineType = marker.options.lineType ?? 'solid'
         if (marker.options.stroke && marker.options.stroke in this.themeColors) {
           marker.options.stroke = this.themeColors[marker.options.stroke]
         }

@@ -16,7 +16,8 @@ const issueData = {
       values: Array.from({ length: 12 }, () => Math.floor(10 + Math.random() * 75))
     }
   ],
-  yRegions: [{ label: 'Threshold', start: 0, end: 35, options: { fill: 'ink-300' } }]
+  yRegions: [{ label: 'Threshold', start: 0, end: 35, options: { fill: 'ink-300' } }],
+  yMarkers: [{ label: 'Another Threshold', value: 45, options: { stroke: 'vanilla-400', lineType: 'dashed' } }]
 }
 
 export default {
@@ -31,11 +32,12 @@ export const LineChart = () => ({
     return {
       dataSets: issueData.datasets,
       labels: issueData.labels,
-      yRegions: issueData.yRegions
+      yRegions: issueData.yRegions,
+      yMarkers: issueData.yMarkers
     }
   },
   template: `<div class="padding-container">
-    <z-chart :dataSets="dataSets" :labels="labels" :yRegions=yRegions type="line" :yAxisMax="100" :yAxisMin="0"></z-chart>
+    <z-chart :dataSets="dataSets" :labels="labels" :yRegions=yRegions :yMarkers=yMarkers type="line" :yAxisMax="100" :yAxisMin="0"></z-chart>
   </div>`
 })
 
@@ -45,11 +47,12 @@ export const CustomColors = () => ({
     return {
       dataSets: issueData.datasets,
       labels: issueData.labels,
-      yRegions: issueData.yRegions
+      yRegions: issueData.yRegions,
+      yMarkers: issueData.yMarkers
     }
   },
   template: `<div class="padding-container">
-    <z-chart :dataSets="dataSets" :labels="labels" :yRegions=yRegions type="line" :colors="['ink-200', '#1F7A5D']"></z-chart>
+    <z-chart :dataSets="dataSets" :labels="labels" :yRegions=yRegions :yMarkers=yMarkers type="line" :colors="['ink-200', '#1F7A5D']"></z-chart>
   </div>`
 })
 
@@ -59,11 +62,12 @@ export const BarChart = () => ({
     return {
       dataSets: issueData.datasets,
       labels: issueData.labels,
-      yRegions: issueData.yRegions
+      yRegions: issueData.yRegions,
+      yMarkers: issueData.yMarkers
     }
   },
   template: `<div class="padding-container">
-    <z-chart :dataSets="dataSets" :labels="labels" :yRegions=yRegions type="bar"></z-chart>
+    <z-chart :dataSets="dataSets" :labels="labels" :yRegions=yRegions :yMarkers=yMarkers type="bar"></z-chart>
   </div>`
 })
 
