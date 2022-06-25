@@ -20,7 +20,7 @@
           <!--This icon is too small, we can increase it a point-->
           <z-button icon="x" buttonType="secondary" size="x-small" class="z-modal-close-x" @click="close"></z-button>
         </div>
-        <slot>
+        <slot :close="close">
           <div class="p-4 text-sm text-vanilla-100 min-h-20">
             {{ body }}
           </div>
