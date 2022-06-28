@@ -38,7 +38,7 @@ export default Vue.extend({
       default: 'bg-ink-200'
     }
   },
-  data: function() {
+  data: function () {
     return {
       inputInFocus: false
     }
