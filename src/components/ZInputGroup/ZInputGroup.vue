@@ -1,14 +1,20 @@
 <template>
   <div class="flex">
     <span
-      class="flex items-center px-2 rounded-tl-sm rounded-bl-sm outline-none whitespace-nowrap"
-      :class="[addonBgColor, addonClasses]"
+      class="flex items-center px-2 border border-r-0 rounded-tl-sm rounded-bl-sm outline-none border-ink-100 whitespace-nowrap"
+      :class="[addonBgColor, addonClasses, { 'border-vanilla-400': inputInFocus }]"
     >
       <slot name="addon">
         {{ prefix }}
       </slot>
     </span>
-    <z-input v-bind="$attrs" class="border-l-0 rounded-tl-none rounded-bl-none" v-on="$listeners" />
+    <z-input
+      v-bind="$attrs"
+      class="border-l-0 rounded-tl-none rounded-bl-none"
+      @focus="inputInFocus = true"
+      @blur="inputInFocus = false"
+      v-on="$listeners"
+    />
   </div>
 </template>
 
@@ -30,6 +36,11 @@ export default Vue.extend({
     addonBgColor: {
       type: String,
       default: 'bg-ink-200'
+    }
+  },
+  data: function() {
+    return {
+      inputInFocus: false
     }
   },
   computed: {

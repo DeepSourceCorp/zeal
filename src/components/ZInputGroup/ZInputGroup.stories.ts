@@ -2,6 +2,7 @@ import '../../assets/css/tailwind.css'
 import '../../assets/css/typography.css'
 import '../../assets/css/layout.css'
 
+import ZIcon from '@/components/ZIcon/ZIcon.vue'
 import ZInputGroup from '@/components/ZInputGroup/ZInputGroup.vue'
 
 export default {
@@ -27,14 +28,40 @@ export const BasicInputGroupWithAddon = () => ({
       `
 })
 
+export const InputGroupWithAddonAsIcon = () => ({
+  components: { ZInputGroup, ZIcon },
+  data() {
+    return {
+      name: 'Hello World',
+      sizes: ['x-small', 'small', 'medium', 'large', 'xlarge']
+    }
+  },
+  template: `
+    <div class='padded-container'>
+      <div class="input-container">
+        <z-input-group v-model="name" addon-bg-color="bg-ink-200">
+          <template #addon>
+            <z-icon icon="at-sign" class="stroke-2 mx-1" color="vanilla-400">
+          </template
+        </z-input-group>
+      </div>
+    </div>
+      `
+})
+
 export const Sizes = () => ({
   components: { ZInputGroup },
   filters: {
-    capitalize: function (value: string) {
+    capitalize: function(value: string) {
       if (!value) {
         return ''
       }
-      return value.toString().charAt(0).toUpperCase() + value.slice(1)
+      return (
+        value
+          .toString()
+          .charAt(0)
+          .toUpperCase() + value.slice(1)
+      )
     }
   },
   data() {
