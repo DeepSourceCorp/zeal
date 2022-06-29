@@ -50,11 +50,11 @@ export const DebounceInput = () =>
     },
     template: `<div class='padded-container space-y-6'>
         <div class="input-container space-y-2">
-            <z-input @debounceInput="debounce" v-model="name" :showBorder="false" backgroundColor="ink-200"></z-input>
+            <z-input @debounceInput="debounce" v-model="name" :clearable="true" :showBorder="false" backgroundColor="ink-200"></z-input>
             <p class="text-vanilla-100 text-sm">Debounced Value: {{debouncedValue}}</p>
         </div>
         <div class="input-container space-y-2">
-            <z-input :debounceDelay="1200" @debounceInput="delayDebounce" v-model="delayname" :showBorder="false" backgroundColor="ink-200"></z-input>
+            <z-input :debounceDelay="1200" @debounceInput="delayDebounce" v-model="delayname" :clearable="true" :showBorder="false" backgroundColor="ink-200"></z-input>
             <p class="text-vanilla-100 text-sm">Delayed Debounced Value: {{delayDebouncedValue}}</p>
         </div>
     </div>`
