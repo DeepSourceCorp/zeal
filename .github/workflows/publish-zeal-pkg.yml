@@ -75,11 +75,11 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.DEEPSOURCE_BOT_TOKEN }}
         
-      - name: Notify Release
-        uses: act10ns/slack@v1
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        with: 
-         status: ${{ job.status }}
-         channel: '#github-linear-notif'
-        if: always()
+#       - name: Notify Release
+#         uses: act10ns/slack@v1
+#         env:
+#           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+#         with: 
+#          status: ${{ job.status }}
+#          channel: '#github-linear-notif'
+#         if: always()
