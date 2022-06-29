@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center w-full rounded-sm outline-none space-x-2 p-1"
+    class="flex items-center w-full p-1 space-x-2 rounded-sm outline-none"
     :class="[
       borderStyles,
       `bg-${backgroundColor}`,
@@ -29,7 +29,7 @@
     <input
       ref="input"
       v-debounce:[debounceDelay]="updateDebounce"
-      class="overflow-ellipsis overflow-hidden w-full caret-juniper flex flex-grow outline-none bg-transparent"
+      class="flex flex-grow w-full overflow-hidden bg-transparent outline-none overflow-ellipsis caret-juniper"
       :class="{
         'cursor-not-allowed': disabled || readOnly
       }"
@@ -55,7 +55,7 @@
     />
     <!-- Any icon/content to the right renders here -->
     <slot name="right">
-      <z-icon v-if="clearable" icon="x" size="small" class="cursor-pointer" @click.stop="updateSelf('')"> </z-icon>
+      <z-icon v-if="clearable" icon="x" size="small" class="cursor-pointer" @click.stop="clearInput" />
     </slot>
   </div>
 </template>
@@ -200,6 +200,10 @@ export default Vue.extend({
     },
     updateDebounce(value: unknown): void {
       this.$emit('debounceInput', value)
+    },
+    clearInput() {
+      this.updateSelf('')
+      this.updateDebounce('')
     },
     blurHandler(e: FocusEvent) {
       this.$emit('blur', e)
