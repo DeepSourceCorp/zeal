@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`InputGroup Component accepts fallthrough attributes 1`] = `
-<div class="flex" size="small"><span class="flex items-center px-2 rounded-tl-sm rounded-bl-sm outline-none whitespace-nowrap bg-ink-200 h-8 text-xs leading-loose">
+<div class="flex" size="small"><span class="flex items-center px-2 border border-r-0 rounded-tl-sm rounded-bl-sm outline-none border-ink-100 whitespace-nowrap bg-ink-200 h-8 text-xs leading-loose">
       text-prefix
     </span>
   <zinput-stub name="" value="" label="" type="text" placeholder="Enter a value" debouncedelay="350" size="small" backgroundcolor="ink-400" showborder="true" errorbordercolor="cherry" class="border-l-0 rounded-tl-none rounded-bl-none"></zinput-stub>
@@ -9,7 +9,7 @@ exports[`InputGroup Component accepts fallthrough attributes 1`] = `
 `;
 
 exports[`InputGroup Component renders an input element with addon 1`] = `
-<div class="flex"><span class="flex items-center px-2 rounded-tl-sm rounded-bl-sm outline-none whitespace-nowrap bg-ink-200 h-10 text-sm leading-8">
+<div class="flex"><span class="flex items-center px-2 border border-r-0 rounded-tl-sm rounded-bl-sm outline-none border-ink-100 whitespace-nowrap bg-ink-200 h-10 text-sm leading-8">
       text-prefix
     </span>
   <zinput-stub name="" value="" label="" type="text" placeholder="Enter a value" debouncedelay="350" size="medium" backgroundcolor="ink-400" showborder="true" errorbordercolor="cherry" class="border-l-0 rounded-tl-none rounded-bl-none"></zinput-stub>
@@ -17,7 +17,7 @@ exports[`InputGroup Component renders an input element with addon 1`] = `
 `;
 
 exports[`InputGroup Component renders an input element with addon having a different background color 1`] = `
-<div class="flex"><span class="flex items-center px-2 rounded-tl-sm rounded-bl-sm outline-none whitespace-nowrap bg-juniper h-10 text-sm leading-8">
+<div class="flex"><span class="flex items-center px-2 border border-r-0 rounded-tl-sm rounded-bl-sm outline-none border-ink-100 whitespace-nowrap bg-juniper h-10 text-sm leading-8">
       text-prefix
     </span>
   <zinput-stub name="" value="" label="" type="text" placeholder="Enter a value" debouncedelay="350" size="medium" backgroundcolor="ink-400" showborder="true" errorbordercolor="cherry" class="border-l-0 rounded-tl-none rounded-bl-none"></zinput-stub>
