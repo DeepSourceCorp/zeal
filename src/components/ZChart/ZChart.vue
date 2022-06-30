@@ -179,8 +179,11 @@ export default Vue.extend({
     labels() {
       this.updateChart()
     },
-    dataSets() {
-      this.updateChart()
+    dataSets: {
+      handler: function() {
+        this.updateChart()
+      },
+      deep: true
     },
     yMarkers() {
       this.updateChart()
