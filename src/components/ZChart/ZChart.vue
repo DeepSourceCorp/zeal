@@ -180,7 +180,7 @@ export default Vue.extend({
       this.updateChart()
     },
     dataSets: {
-      handler: function() {
+      handler: function () {
         this.updateChart()
       },
       deep: true
