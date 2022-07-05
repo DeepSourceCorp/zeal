@@ -1,6 +1,10 @@
+:root {
+  --chart-axis-color: theme('colors.ink.300');
+}
+
 .z-chart-wrapper .axis line,
 .z-chart-wrapper .chart-label line {
-  @apply stroke-ink-300 !important;
+  stroke: var(--chart-axis-color) !important;
 }
 
 .z-chart-wrapper .legend-dataset-label,
