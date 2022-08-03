@@ -5,7 +5,7 @@
         <button
           @click="previous()"
           :disabled="atFirst"
-          class="z-pagination-previous outline-none focus:outline-none flex items-center justify-center w-6 h-6 rounded-sm"
+          class="z-pagination-previous outline-none focus:outline-none flex items-center justify-center w-7 h-7 rounded-sm"
           :class="{ 'hover:bg-ink-300': !atFirst }"
         >
           <z-icon icon="chevron-left" size="small" :color="`${atFirst ? 'slate' : 'vanilla-200'}`"></z-icon>
@@ -31,13 +31,15 @@
         >
           {{ page.name }}
         </button>
-        <span v-else class="z-pagination-divider w-6 h-6 items-center text-center select-none">…</span>
+        <span v-else class="z-pagination-divider h-6 items-center text-center select-none"
+          ><hr class="w-10 border-vanilla-400 rounded-full"
+        /></span>
       </li>
       <li>
         <button
           @click="next()"
           :disabled="atLast"
-          class="z-pagination-next outline-none focus:outline-none flex items-center justify-center w-6 h-6 rounded-sm"
+          class="z-pagination-next outline-none focus:outline-none flex items-center justify-center w-7 h-7 rounded-sm"
           :class="{ 'hover:bg-ink-300': !atLast }"
         >
           <z-icon icon="chevron-right" size="small" :color="`${atLast ? 'slate' : 'vanilla-200'}`"></z-icon>
