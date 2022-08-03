@@ -15,7 +15,7 @@ export const BasicPages = () => ({
   template: `
     <div class="container space-y-5">
       <z-pagination
-        :totalPages="12"
+        :totalPages="999"
         :totalVisible="5"
       ></z-pagination>
     </div>`

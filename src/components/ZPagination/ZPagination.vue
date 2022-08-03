@@ -25,7 +25,7 @@
         <button
           :class="[
             'z-pagination-pager',
-            'w-6 h-6',
+            'px-2.5 py-0.5',
             'items-center',
             'text-center',
             'rounded-sm',
