@@ -194,8 +194,8 @@ export default Vue.extend({
     }
   },
   watch: {
-    page() {
-      this.updateActiveIndex(this.page)
+    page(newPage) {
+      this.updateActiveIndex(newPage)
     }
   }
 })
