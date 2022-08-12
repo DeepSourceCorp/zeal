@@ -192,6 +192,11 @@ export default Vue.extend({
       if (this.atFirst) return
       this.updateActiveIndex(this.activeIndex - 1)
     }
+  },
+  watch: {
+    page(newPage) {
+      this.updateActiveIndex(newPage)
+    }
   }
 })
 </script>
