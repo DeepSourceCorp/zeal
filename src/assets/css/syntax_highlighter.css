@@ -255,3 +255,7 @@
 .highlighttable .linenos pre {
   font-size: 13px;
 }
+
+.highlight *[data-code-marker] {
+  min-width: max-content;
+}
