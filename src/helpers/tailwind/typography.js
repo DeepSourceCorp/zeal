@@ -154,7 +154,7 @@ const SMALL_SCREEN_CSS = function (theme) {
       color: theme('colors.vanilla.400'),
       backgroundColor: theme('colors.ink.200'),
       overflowX: 'auto',
-      borderRadius: '0'
+      borderRadius: `${theme('spacing.1')}`
     }
   }
 }
