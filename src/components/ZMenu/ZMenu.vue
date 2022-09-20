@@ -19,8 +19,8 @@
       <!-- prettier-ignore -->
       <div
         v-if="isOpen"
-        class="fixed z-10 flex items-end overflow-hidden bg-opacity-25 sm:overflow-visible h-100 sm:absolute text-vanilla-200 transform-gpu bg-ink-400 sm:bg-transparent sm:bg-opacity-0"
-        :class="[directionClass, placementClasses]"
+        class="fixed flex items-end overflow-hidden bg-opacity-25 sm:overflow-visible h-100 sm:absolute text-vanilla-200 transform-gpu bg-ink-400 sm:bg-transparent sm:bg-opacity-0"
+        :class="[directionClass, placementClasses, itemsZClass]"
       >
         <div
           class="overflow-hidden rounded-t-lg bg-ink-300 sm:rounded-md shadow-double-dark"
@@ -90,6 +90,10 @@ export default Vue.extend({
     triggerOnHover: {
       type: Boolean,
       default: false
+    },
+    itemsZClass: {
+      type: String,
+      default: 'z-10'
     }
   },
   data() {

@@ -126,10 +126,10 @@ export const MenuWithIcons = () => ({
               <z-menu-item>evan@deepsource.io</z-menu-item>
             </z-menu-section>
             <z-menu-section title="Actions">
-              <z-menu-item :action="goToSettings" icon="settings">Account Settings</z-menu-item>
-              <z-menu-item :action="goToSettings" :disabled="true" icon="cpu">Autofix (Coming Soon)</z-menu-item>
-              <z-menu-item :action="goToSettings" icon="headphones">Contact Support</z-menu-item>
-              <z-menu-item :action="goToSettings" icon="message-square">Give Feedback</z-menu-item>
+              <z-menu-item :action="goToSettings" icon="settings" icon-color="juniper">Account Settings</z-menu-item>
+              <z-menu-item :action="goToSettings" :disabled="true" icon="cpu" icon-color="juniper">Autofix (Coming Soon)</z-menu-item>
+              <z-menu-item :action="goToSettings" icon="headphones" icon-color="juniper">Contact Support</z-menu-item>
+              <z-menu-item :action="goToSettings" icon="message-square" icon-color="juniper">Give Feedback</z-menu-item>
             </z-menu-section>
             <z-menu-section :divider="false">
               <z-menu-item :action="goToSettings" icon="users">Switch User</z-menu-item>
