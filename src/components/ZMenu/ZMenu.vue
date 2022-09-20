@@ -19,8 +19,8 @@
       <!-- prettier-ignore -->
       <div
         v-if="isOpen"
-        class="fixed z-10 flex items-end overflow-hidden bg-opacity-25 sm:overflow-visible h-100 sm:absolute text-vanilla-200 transform-gpu bg-ink-400 sm:bg-transparent sm:bg-opacity-0"
-        :class="[directionClass, placementClasses]"
+        class="fixed flex items-end overflow-hidden bg-opacity-25 sm:overflow-visible h-100 sm:absolute text-vanilla-200 transform-gpu bg-ink-400 sm:bg-transparent sm:bg-opacity-0"
+        :class="[directionClass, placementClasses, itemsZClass]"
       >
         <div
           class="overflow-hidden rounded-t-lg bg-ink-300 sm:rounded-md shadow-double-dark"
@@ -50,28 +50,28 @@ export default Vue.extend({
     direction: {
       type: String,
       default: 'right',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['left', 'right'].includes(value)
       }
     },
     placement: {
       type: String,
       default: 'bottom',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['top', 'bottom'].includes(value)
       }
     },
     size: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['small', 'base', 'large'].includes(value)
       }
     },
     width: {
       type: String,
       default: 'base',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['x-small', 'small', 'base', 'large', 'x-large', '2x-large'].includes(value)
       }
     },
@@ -90,6 +90,10 @@ export default Vue.extend({
     triggerOnHover: {
       type: Boolean,
       default: false
+    },
+    itemsZClass: {
+      type: String,
+      default: 'z-10'
     }
   },
   data() {
