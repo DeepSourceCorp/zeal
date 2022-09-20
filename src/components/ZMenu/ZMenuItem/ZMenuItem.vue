@@ -10,7 +10,7 @@
     v-on="$listeners"
     @click="itemClicked"
   >
-    <z-icon v-if="icon" :icon="icon" size="small" color="disabled ? 'vanilla-400' : 'vanilla-100'"></z-icon>
+    <z-icon v-if="icon" :icon="icon" size="small" :color="computedIconColor" />
     <slot></slot>
   </component>
 </template>
@@ -29,9 +29,17 @@ export default Vue.extend({
     ZIcon
   },
   props: {
+    as: {
+      type: String,
+      default: 'div'
+    },
     icon: {
       type: String,
       default: undefined
+    },
+    iconColor: {
+      type: String,
+      default: null
     },
     disabled: {
       type: Boolean,
@@ -40,18 +48,22 @@ export default Vue.extend({
     closeOnClick: {
       type: Boolean,
       default: true
-    },
-    as: {
-      type: String,
-      default: 'div'
     }
   },
   methods: {
-    itemClicked(): void {
+    itemClicked() {
       if (this.closeOnClick) {
         const parent = this.$parent as ZMenuParentT
         parent.close()
       }
+    }
+  },
+  computed: {
+    computedIconColor(): string {
+      if (this.iconColor) {
+        return this.iconColor
+      }
+      return this.disabled ? 'vanilla-400' : 'vanilla-100'
     }
   }
 })
