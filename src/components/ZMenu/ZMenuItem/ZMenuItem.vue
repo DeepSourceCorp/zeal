@@ -63,7 +63,7 @@ export default Vue.extend({
       if (this.iconColor) {
         return this.iconColor
       }
-      return this.disabled ? 'vanilla-400' : 'vanilla-100'
+      return 'current'
     }
   }
 })
