@@ -106,6 +106,9 @@ export default {
                 {
                   class: 'flex flex-col text-base text-vanilla-400 my-1'
                 },
+                on: {
+                  click: () => this.toggleModal()
+                },
                 items
               )
             return h(ZAccordionItem, {
