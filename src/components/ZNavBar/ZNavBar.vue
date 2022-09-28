@@ -68,7 +68,7 @@ export default {
       this.hideOnScroll = window.scrollY > 50 && this.hideLinksOnScroll ? 'lg:opacity-0' : 'lg:opacity-1'
     },
     getComponent(parent, name, list = []) {
-      parent?.forEach((child) => {
+      parent?.forEach(child => {
         if (child && child?.componentOptions && toPascal(child.componentOptions.tag || '') === name) {
           list.push(child)
         } else if (child?.children) {
@@ -94,7 +94,7 @@ export default {
           )}
         </nav>
       ),
-      menuItems = this.$slots.links?.map((child) => {
+      menuItems = this.$slots.links?.map(child => {
         const options = child.componentOptions
         if (options && toPascal(options.tag || '') === 'ZMenu') {
           if (options.propsData?.collapseOnMobile) {
@@ -104,10 +104,10 @@ export default {
               accordionItems = h(
                 'div',
                 {
-                  class: 'flex flex-col text-base text-vanilla-400 my-1'
-                },
-                on: {
-                  click: () => this.toggleModal()
+                  class: 'flex flex-col text-base text-vanilla-400 my-1',
+                  on: {
+                    click: () => this.toggleModal()
+                  }
                 },
                 items
               )
