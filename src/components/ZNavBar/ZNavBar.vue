@@ -104,7 +104,10 @@ export default {
               accordionItems = h(
                 'div',
                 {
-                  class: 'flex flex-col text-base text-vanilla-400 my-1'
+                  class: 'flex flex-col text-base text-vanilla-400 my-1',
+                  on: {
+                    click: () => this.toggleModal()
+                  }
                 },
                 items
               )
