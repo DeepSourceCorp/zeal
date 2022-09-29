@@ -1,8 +1,8 @@
 <template>
   <ul class="group list-inside text-left" v-show="showHeadings">
-    <div class="flex w-full justify-end absolute z-10" :class="{'hidden group-hover:flex' : !isLocked}">
+    <div class="flex w-full justify-end absolute z-10" :class="{ 'hidden group-hover:flex': !isLocked }">
       <z-button button-type="secondary" size="small" @click="toggleLock">
-        <z-icon :icon="isLocked ? 'unlock': 'lock'" />
+        <z-icon :icon="isLocked ? 'unlock' : 'lock'" />
       </z-button>
     </div>
     <li
@@ -20,11 +20,17 @@
           :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`]"
         />
       </div>
-      <div class="transform  group-hover:translate-x-0 ease-bounce transition-transform duration-300" :class="{'-translate-x-2.5': !isLocked}">
+      <div
+        class="transform group-hover:translate-x-0 ease-bounce transition-transform duration-300"
+        :class="{ '-translate-x-2.5': !isLocked }"
+      >
         <a :href="`#${heading.id}`">
           <div
-            class="text-xs pl-2 h-full  group-hover:opacity-100 transition-colors duration-300 ease-in-out"
-            :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`, !isLocked && 'opacity-0']"
+            class="text-xs pl-2 h-full group-hover:opacity-100 transition-colors duration-300 ease-in-out"
+            :class="[
+              `${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`,
+              !isLocked && 'opacity-0'
+            ]"
           >
             {{ heading.text }}
           </div>
@@ -118,7 +124,7 @@ export default Vue.extend({
       rootMargin: '10px 0px -50% 0px'
     })
 
-    this.headingElements.forEach(headingElement => {
+    this.headingElements.forEach((headingElement) => {
       this.addAsHeadingToHeadingsMap(headingElement)
       this.observer.observe(headingElement)
     })
