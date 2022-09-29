@@ -1,5 +1,10 @@
 <template>
   <ul class="group list-inside text-left" v-show="showHeadings">
+    <div class="flex w-full justify-end absolute z-10" :class="{'hidden group-hover:flex' : !isLocked}">
+      <z-button button-type="secondary" size="small" @click="toggleLock">
+        <z-icon :icon="isLocked ? 'unlock': 'lock'" />
+      </z-button>
+    </div>
     <li
       v-for="heading in headingsMap"
       :key="heading.id"
@@ -7,19 +12,19 @@
       :class="[`${HEADINGS[heading.tagName].indentClass}`, `${HEADINGS[heading.tagName].extras}`]"
     >
       <div
-        class="absolute left-0 -mt-2 group-hover:w-0 group-hover:opacity-0 transition-all ease-bounce"
-        :class="[`${HEADINGS[heading.tagName].indicatorSize}`]"
+        class="absolute flex items-center left-0 -mt-2 group-hover:w-0 group-hover:opacity-0 transition-all ease-bounce"
+        :class="[`${HEADINGS[heading.tagName].indicatorSize}`, isLocked && 'opacity-0']"
       >
         <z-divider
           class="border w-full transition-colors ease-in-out"
           :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`]"
         />
       </div>
-      <div class="transform -translate-x-2.5 group-hover:translate-x-0 ease-bounce transition-transform duration-300">
+      <div class="transform  group-hover:translate-x-0 ease-bounce transition-transform duration-300" :class="{'-translate-x-2.5': !isLocked}">
         <a :href="`#${heading.id}`">
           <div
-            class="text-xs pl-2 h-full opacity-0 group-hover:opacity-100 transition-colors duration-300 ease-in-out"
-            :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`]"
+            class="text-xs pl-2 h-full  group-hover:opacity-100 transition-colors duration-300 ease-in-out"
+            :class="[`${isHeadingActive(heading) ? HEADING_STATE_CLASSES.active : HEADING_STATE_CLASSES.inactive}`, !isLocked && 'opacity-0']"
           >
             {{ heading.text }}
           </div>
@@ -32,6 +37,8 @@
 <script lang="ts">
 import Vue from 'vue'
 import ZDivider from '../../ZDivider'
+import ZButton from '../../ZButton'
+import ZIcon from '../../ZIcon'
 
 interface Heading {
   id: string | null
@@ -68,7 +75,9 @@ const SCROLL_SPEED_SAMPLING_DELAY = 50
 export default Vue.extend({
   name: 'ZScrollSpy',
   components: {
-    ZDivider
+    ZDivider,
+    ZButton,
+    ZIcon
   },
   props: {
     rootId: {
@@ -91,7 +100,8 @@ export default Vue.extend({
       HEADING_STATE_CLASSES,
       scrollPos: 0,
       scrollSpeed: 0,
-      scrollSpeedInterval: 0
+      scrollSpeedInterval: 0,
+      isLocked: false
     }
   },
   computed: {
@@ -108,7 +118,7 @@ export default Vue.extend({
       rootMargin: '10px 0px -50% 0px'
     })
 
-    this.headingElements.forEach((headingElement) => {
+    this.headingElements.forEach(headingElement => {
       this.addAsHeadingToHeadingsMap(headingElement)
       this.observer.observe(headingElement)
     })
@@ -210,6 +220,9 @@ export default Vue.extend({
     },
     clearScrollMeasurementInterval() {
       clearInterval(this.scrollSpeedInterval)
+    },
+    toggleLock() {
+      this.isLocked = !this.isLocked
     }
   },
   watch: {

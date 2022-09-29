@@ -28,7 +28,7 @@ export const Basic = () => ({
     </z-nav>
 
     <div class='padded-container text-vanilla-100 grid grid-cols-12'>
-      <z-scroll-spy class="col-span-2 sticky top-20 self-start" root-id="content" :heading-offset-top="80"></z-scroll-spy>
+      <z-scroll-spy class="col-span-2 sticky top-20 self-start space-y-3" root-id="content" :heading-offset-top="80"></z-scroll-spy>
       <div id="content" class="col-span-10 ml-8">
         <h1 id="heading1" class="heading2 my-4">Heading 1</h1>
         "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
