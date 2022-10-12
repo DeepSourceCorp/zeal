@@ -1,8 +1,8 @@
 <template>
   <ul class="group list-inside text-left" v-show="showHeadings">
     <div class="flex w-full justify-end absolute z-10" :class="{ 'hidden group-hover:flex': !isLocked }">
-      <z-button button-type="secondary" size="small" @click="toggleLock">
-        <z-icon :icon="isLocked ? 'unlock' : 'lock'" />
+      <z-button button-type="ghost" size="small" @click="toggleLock">
+        <z-icon icon="pin" :color="isLocked ? 'juniper' : 'slate'" />
       </z-button>
     </div>
     <li
