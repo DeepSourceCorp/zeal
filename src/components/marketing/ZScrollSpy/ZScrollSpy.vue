@@ -126,7 +126,7 @@ export default Vue.extend({
       rootMargin: '10px 0px -50% 0px'
     })
 
-    this.headingElements.forEach(headingElement => {
+    this.headingElements.forEach((headingElement) => {
       this.addAsHeadingToHeadingsMap(headingElement)
       this.observer.observe(headingElement)
     })
