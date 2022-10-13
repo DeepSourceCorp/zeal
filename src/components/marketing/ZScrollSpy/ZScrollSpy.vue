@@ -1,9 +1,13 @@
 <template>
   <ul class="group list-inside text-left" v-show="showHeadings">
-    <div class="flex w-full justify-end absolute z-10" :class="{ 'hidden group-hover:flex': !isLocked }">
-      <z-button button-type="ghost" size="small" @click="toggleLock">
-        <z-icon icon="pin" :color="isLocked ? 'juniper' : 'slate'" />
-      </z-button>
+    <div class="flex w-full justify-end absolute top-1 z-10" :class="{ 'hidden group-hover:flex': !isLocked }">
+      <z-button
+        button-type="ghost"
+        size="small"
+        icon="pin"
+        :color="isLocked ? 'juniper' : 'slate'"
+        @click="toggleLock"
+      />
     </div>
     <li
       v-for="heading in headingsMap"
@@ -44,7 +48,6 @@
 import Vue from 'vue'
 import ZDivider from '../../ZDivider'
 import ZButton from '../../ZButton'
-import ZIcon from '../../ZIcon'
 
 interface Heading {
   id: string | null
@@ -82,8 +85,7 @@ export default Vue.extend({
   name: 'ZScrollSpy',
   components: {
     ZDivider,
-    ZButton,
-    ZIcon
+    ZButton
   },
   props: {
     rootId: {
@@ -124,7 +126,7 @@ export default Vue.extend({
       rootMargin: '10px 0px -50% 0px'
     })
 
-    this.headingElements.forEach((headingElement) => {
+    this.headingElements.forEach(headingElement => {
       this.addAsHeadingToHeadingsMap(headingElement)
       this.observer.observe(headingElement)
     })
