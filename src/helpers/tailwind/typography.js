@@ -1,4 +1,4 @@
-const BEFORE_LIST_ITEM = function(theme, muted = false) {
+const BEFORE_LIST_ITEM = function (theme, muted = false) {
   return {
     content: '"—"',
     marginRight: theme('spacing.2'),
@@ -11,7 +11,7 @@ const BEFORE_LIST_ITEM = function(theme, muted = false) {
   }
 }
 
-const DEFAULT = function(theme) {
+const DEFAULT = function (theme) {
   return {
     color: theme('colors.vanilla.100'),
     '[class~="lead"]': {
@@ -144,7 +144,7 @@ const DEFAULT = function(theme) {
   }
 }
 
-const SMALL_SCREEN_CSS = function(theme) {
+const SMALL_SCREEN_CSS = function (theme) {
   return {
     'ul > li::before': {
       ...BEFORE_LIST_ITEM(theme)
@@ -158,7 +158,7 @@ const SMALL_SCREEN_CSS = function(theme) {
   }
 }
 
-const LARGE_SCREEN_CSS = function(theme) {
+const LARGE_SCREEN_CSS = function (theme) {
   return {
     'ul > li::before': {
       ...BEFORE_LIST_ITEM(theme)
@@ -169,7 +169,7 @@ const LARGE_SCREEN_CSS = function(theme) {
   }
 }
 
-const MUTED = function(theme) {
+const MUTED = function (theme) {
   return {
     'ul > li::before': {
       ...BEFORE_LIST_ITEM(theme, true)
@@ -182,7 +182,7 @@ const MUTED = function(theme) {
   }
 }
 
-const RTE = function(theme) {
+const RTE = function (theme) {
   return {
     p: {
       fontSize: theme('fontSize.sm'),
@@ -277,7 +277,7 @@ const RTE = function(theme) {
   }
 }
 
-const ISSUE_DESCRIPTION = function(theme) {
+const ISSUE_DESCRIPTION = function (theme) {
   return {
     fontSize: theme('fontSize.sm'),
     lineHeight: theme('lineHeight.normal'),
