@@ -25,7 +25,7 @@ module.exports = {
       '2xl': '1536px'
     },
     colors,
-    gradients: (theme) => ({
+    gradients: theme => ({
       ocean: ['98.66deg', `${theme('colors.sea-glass')} 9.7%`, `${theme('colors.aqua.DEFAULT')} 96.6%`],
       galaxy: {
         type: 'radial',
@@ -50,7 +50,7 @@ module.exports = {
       ],
       juniper: ['0deg', `${theme('colors.transparent')} 0%`, `${theme('colors.juniper.DEFAULT')} 100%`]
     }),
-    backdropFilter: (theme) => ({
+    backdropFilter: theme => ({
       none: 'none',
       blur: `blur(${theme('spacing.2')})`,
       'blur-md': `blur(${theme('spacing.3')})`,
@@ -101,7 +101,7 @@ module.exports = {
       96: '24rem',
       102: '32rem'
     },
-    backgroundColor: (theme) => theme('colors'),
+    backgroundColor: theme => theme('colors'),
     backgroundImage: {
       none: 'none',
       'gradient-to-t': 'linear-gradient(to top, var(--tw-gradient-stops))',
@@ -113,7 +113,7 @@ module.exports = {
       'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
       'gradient-to-tl': 'linear-gradient(to top left, var(--tw-gradient-stops))'
     },
-    backgroundOpacity: (theme) => theme('opacity'),
+    backgroundOpacity: theme => theme('opacity'),
     backgroundPosition: {
       bottom: 'bottom',
       center: 'center',
@@ -131,11 +131,11 @@ module.exports = {
       contain: 'contain',
       xl: '400% 100%'
     },
-    borderColor: (theme) => ({
+    borderColor: theme => ({
       ...theme('colors'),
       DEFAULT: theme('colors.slate', 'currentColor')
     }),
-    borderOpacity: (theme) => theme('opacity'),
+    borderOpacity: theme => theme('opacity'),
     borderRadius: {
       none: '0',
       sm: '0.125rem',
@@ -190,10 +190,10 @@ module.exports = {
       move: 'move',
       'not-allowed': 'not-allowed'
     },
-    divideColor: (theme) => theme('borderColor'),
-    divideOpacity: (theme) => theme('borderOpacity'),
-    divideWidth: (theme) => theme('borderWidth'),
-    fill: (theme) => ({
+    divideColor: theme => theme('borderColor'),
+    divideOpacity: theme => theme('borderOpacity'),
+    divideWidth: theme => theme('borderWidth'),
+    fill: theme => ({
       ...theme('colors'),
       current: 'currentColor'
     }),
@@ -257,7 +257,7 @@ module.exports = {
       bold: '700',
       black: '900'
     },
-    height: (theme) => ({
+    height: theme => ({
       auto: 'auto',
       ...theme('spacing'),
       '1/2': '50%',
@@ -337,7 +337,7 @@ module.exports = {
       ...theme('spacing'),
       ...negative(theme('spacing'))
     }),
-    maxHeight: (theme) => ({
+    maxHeight: theme => ({
       ...theme('spacing'),
       full: '100%',
       screen: '100vh'
@@ -362,14 +362,14 @@ module.exports = {
       prose: '65ch',
       ...breakpoints(theme('screens'))
     }),
-    minHeight: (theme) => ({
+    minHeight: theme => ({
       0: '0',
       '1/2': '50%',
       full: '100%',
       screen: '100vh',
       ...theme('spacing')
     }),
-    minWidth: (theme) => ({
+    minWidth: theme => ({
       0: '0',
       '1/2': '50%',
       full: '100%',
@@ -422,7 +422,7 @@ module.exports = {
       11: '11',
       12: '12'
     },
-    outline: (theme) => ({
+    outline: theme => ({
       none: ['2px solid transparent', '2px'],
       white: ['2px dotted white', '2px'],
       black: ['2px dotted black', '2px'],
@@ -431,14 +431,14 @@ module.exports = {
       'ink-300': [`1px solid ${theme('colors.ink.300')}`, '0px'],
       'ink-400': [`1px solid ${theme('colors.ink.400')}`, '0px']
     }),
-    padding: (theme) => theme('spacing'),
-    placeholderColor: (theme) => theme('colors'),
-    placeholderOpacity: (theme) => theme('opacity'),
+    padding: theme => theme('spacing'),
+    placeholderColor: theme => theme('colors'),
+    placeholderOpacity: theme => theme('opacity'),
     space: (theme, { negative }) => ({
       ...theme('spacing'),
       ...negative(theme('spacing'))
     }),
-    stroke: (theme) => ({
+    stroke: theme => ({
       ...theme('colors'),
       current: 'currentColor'
     }),
@@ -450,9 +450,9 @@ module.exports = {
       2.5: '2.5',
       3: '3'
     },
-    textColor: (theme) => theme('colors'),
-    textOpacity: (theme) => theme('opacity'),
-    width: (theme) => ({
+    textColor: theme => theme('colors'),
+    textOpacity: theme => theme('opacity'),
+    width: theme => ({
       auto: 'auto',
       ...theme('spacing'),
       100: '30rem',
@@ -499,8 +499,8 @@ module.exports = {
       50: '50',
       1000: '1000'
     },
-    gap: (theme) => theme('spacing'),
-    gradientColorStops: (theme) => theme('colors'),
+    gap: theme => theme('spacing'),
+    gradientColorStops: theme => theme('colors'),
     gridAutoColumns: {
       auto: 'auto',
       min: 'min-content',
@@ -652,11 +652,11 @@ module.exports = {
       left: 'left',
       'top-left': 'top left'
     },
-    ringColor: (theme) => ({
+    ringColor: theme => ({
       DEFAULT: theme('colors.blue.500', '#3b82f6'),
       ...theme('colors')
     }),
-    ringOffsetColor: (theme) => theme('colors'),
+    ringOffsetColor: theme => theme('colors'),
     ringOffsetWidth: {
       0: '0px',
       1: '1px',
@@ -664,7 +664,7 @@ module.exports = {
       4: '4px',
       8: '8px'
     },
-    ringOpacity: (theme) => ({
+    ringOpacity: theme => ({
       DEFAULT: '0.5',
       ...theme('opacity')
     }),
@@ -923,7 +923,7 @@ module.exports = {
       }
     },
     extend: {
-      typography: (theme) => ({
+      typography: theme => ({
         DEFAULT: {
           css: {
             ...typographyConfig.DEFAULT(theme)
@@ -957,6 +957,11 @@ module.exports = {
         '2xl': {
           css: {
             ...typographyConfig.LARGE_SCREEN_CSS(theme)
+          }
+        },
+        'issue-description': {
+          css: {
+            ...typographyConfig.ISSUE_DESCRIPTION(theme)
           }
         }
       })
@@ -1102,7 +1107,7 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
     require('@tailwindcss/line-clamp'),
-    plugin(function ({ addVariant, e, postcss }) {
+    plugin(function({ addVariant, e, postcss }) {
       addVariant('no-filter', ({ container, separator }) => {
         const supportsRule = postcss.atRule({
           name: 'supports',
@@ -1110,14 +1115,14 @@ module.exports = {
         })
         supportsRule.append(container.nodes)
         container.append(supportsRule)
-        supportsRule.walkRules((rule) => {
+        supportsRule.walkRules(rule => {
           rule.selector = `.${e(`no-filter${separator}${rule.selector.slice(1)}`)}`
         })
       })
     }),
-    plugin(function ({ addVariant }) {
+    plugin(function({ addVariant }) {
       addVariant('sibling-checked', ({ container }) => {
-        container.walkRules((rule) => {
+        container.walkRules(rule => {
           rule.selector = `:checked ~ .sibling-checked\\:${rule.selector.slice(1)}`
         })
       })
@@ -1181,7 +1186,7 @@ module.exports = {
       addUtilities(caretColors)
     }),
     plugin(({ addUtilities, e, theme, variants }) => {
-      const utilities = Object.keys(theme('gradients')).map((name) => {
+      const utilities = Object.keys(theme('gradients')).map(name => {
         const gradient = theme('gradients')[name]
         let background = ''
         if (Object.prototype.hasOwnProperty.call(gradient, 'custom')) {
@@ -1202,7 +1207,7 @@ module.exports = {
       addUtilities(utilities, variants('gradients', []))
     }),
     plugin(({ theme, variants, e, addUtilities }) => {
-      const backdropFilterUtilities = Object.keys(theme('backdropFilter')).map((type) => {
+      const backdropFilterUtilities = Object.keys(theme('backdropFilter')).map(type => {
         const backdropFilter = theme('backdropFilter')[type]
         return {
           [`.backdrop-${e(type)}`]: {
@@ -1216,7 +1221,7 @@ module.exports = {
     plugin(({ addUtilities, theme }) => {
       const individualBorderColors = []
       const traverseObject = (obj, prevKey) => {
-        Object.keys(obj).forEach((key) => {
+        Object.keys(obj).forEach(key => {
           const colorName = `${prevKey}${prevKey && '-'}${key}`
           individualBorderColors.push({
             [`.border-b-${colorName}`]: {
@@ -1242,7 +1247,7 @@ module.exports = {
 
       addUtilities(individualBorderColors, ['responsive', 'before', 'after'])
     }),
-    plugin(function ({ addUtilities }) {
+    plugin(function({ addUtilities }) {
       const newUtilities = {
         '.filter-none': {
           filter: 'none'

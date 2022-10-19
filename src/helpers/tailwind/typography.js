@@ -1,4 +1,4 @@
-const BEFORE_LIST_ITEM = function (theme, muted = false) {
+const BEFORE_LIST_ITEM = function(theme, muted = false) {
   return {
     content: '"—"',
     marginRight: theme('spacing.2'),
@@ -11,7 +11,7 @@ const BEFORE_LIST_ITEM = function (theme, muted = false) {
   }
 }
 
-const DEFAULT = function (theme) {
+const DEFAULT = function(theme) {
   return {
     color: theme('colors.vanilla.100'),
     '[class~="lead"]': {
@@ -26,7 +26,6 @@ const DEFAULT = function (theme) {
       textDecoration: 'underline'
     },
     strong: {
-      color: theme('colors.vanilla.100'),
       fontWeight: theme('fontWeight.semibold')
     },
     'ol > li': {
@@ -145,7 +144,7 @@ const DEFAULT = function (theme) {
   }
 }
 
-const SMALL_SCREEN_CSS = function (theme) {
+const SMALL_SCREEN_CSS = function(theme) {
   return {
     'ul > li::before': {
       ...BEFORE_LIST_ITEM(theme)
@@ -159,7 +158,7 @@ const SMALL_SCREEN_CSS = function (theme) {
   }
 }
 
-const LARGE_SCREEN_CSS = function (theme) {
+const LARGE_SCREEN_CSS = function(theme) {
   return {
     'ul > li::before': {
       ...BEFORE_LIST_ITEM(theme)
@@ -170,7 +169,7 @@ const LARGE_SCREEN_CSS = function (theme) {
   }
 }
 
-const MUTED = function (theme) {
+const MUTED = function(theme) {
   return {
     'ul > li::before': {
       ...BEFORE_LIST_ITEM(theme, true)
@@ -183,7 +182,7 @@ const MUTED = function (theme) {
   }
 }
 
-const RTE = function (theme) {
+const RTE = function(theme) {
   return {
     p: {
       fontSize: theme('fontSize.sm'),
@@ -278,11 +277,130 @@ const RTE = function (theme) {
   }
 }
 
+const ISSUE_DESCRIPTION = function(theme) {
+  return {
+    fontSize: theme('fontSize.sm'),
+    lineHeight: theme('lineHeight.normal'),
+    color: theme('colors.vanilla.400'),
+    '* + *': {
+      marginTop: theme('spacing[2.5]')
+    },
+    '* + :is(h1, h2, h3, h4, h5, h6)': {
+      marginTop: theme('spacing.8')
+    },
+    ':is(pre, figure) + :is(h1, h2, h3, h4, h5, h6)': {
+      marginTop: theme('spacing.5')
+    },
+    ':is(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6)': {
+      marginTop: theme('spacing[2.5]')
+    },
+    '* + figure, figure + *': {
+      marginTop: theme('spacing.3')
+    },
+    '[class~="lead"]': {
+      color: theme('colors.vanilla.400')
+    },
+    hr: {
+      borderColor: theme('colors.ink.100'),
+      borderTopWidth: 1
+    },
+    a: {
+      textDecoration: 'underline dashed',
+      fontWeight: 'inherit'
+    },
+    'a:hover': {
+      color: theme('colors.vanilla.100')
+    },
+    'a:focus': {
+      color: theme('colors.vanilla.100')
+    },
+    strong: {
+      fontWeight: theme('fontWeight.semibold')
+    },
+    'h1, h2, h3, h4, h5, h6': {
+      fontSize: theme('fontSize.xs'),
+      lineHeight: '1.75',
+      fontWeight: theme('fontWeight.medium'),
+      textTransform: 'uppercase',
+      letterSpacing: '0.05em',
+      color: theme('colors.vanilla.200')
+    },
+    'ul, ol': {
+      listStylePosition: 'outside',
+      listStyleImage: 'initial',
+      listStyleType: 'none'
+    },
+    'ul li, ol li': {
+      listStylePosition: 'outside',
+      listStyleImage: 'initial',
+      listStyleType: 'none'
+    },
+    'ul li::before': {
+      content: '"•"',
+      paddingLeft: '10px',
+      paddingRight: '6px'
+    },
+    ol: {
+      counterReset: 'steps'
+    },
+    'ol li': {
+      counterIncrement: 'steps'
+    },
+    'ol li::before': {
+      content: 'counter(steps) "."',
+      paddingLeft: '10px',
+      paddingRight: '6px'
+    },
+    'ul li + li, ol li + li': {
+      marginTop: theme('spacing.3')
+    },
+    code: {
+      color: theme('colors.vanilla.300'),
+      fontSize: theme('fontSize.xs'),
+      lineHeight: '1.5',
+      padding: theme('spacing[0.5]'),
+      backgroundColor: theme('colors.ink.300'),
+      borderRadius: theme('spacing[0.5]')
+    },
+    pre: {
+      backgroundColor: theme('colors.ink.300'),
+      padding: theme('spacing.3'),
+      fontSize: theme('fontSize.xs'),
+      overflowX: 'auto'
+    },
+    'pre code': {
+      backgroundColor: 'transparent',
+      borderWidth: '0',
+      borderRadius: '0',
+      padding: '0',
+      fontWeight: theme('fontWeight.normal'),
+      color: 'inherit',
+      fontSize: 'inherit',
+      fontFamily: 'inherit',
+      lineHeight: 'inherit'
+    },
+    'figure figcaption': {
+      marginTop: theme('spacing.0'),
+      fontSize: theme('fontSize.xxs'),
+      lineHeight: '2.1',
+      color: theme('colors.vanilla.400'),
+      textAlign: 'center',
+      [`@media (min-width: ${theme('screens.sm')})`]: {
+        textAlign: 'left'
+      }
+    },
+    'figure img': {
+      borderRadius: theme('spacing[0.5]')
+    }
+  }
+}
+
 module.exports = {
   BEFORE_LIST_ITEM,
   DEFAULT,
   SMALL_SCREEN_CSS,
   LARGE_SCREEN_CSS,
   MUTED,
-  RTE
+  RTE,
+  ISSUE_DESCRIPTION
 }
