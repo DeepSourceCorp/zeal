@@ -1,4 +1,11 @@
-const BEFORE_LIST_ITEM = function (theme, muted = false) {
+/**
+ * Factory function to generate CSS config for `<ul>` list items
+ *
+ * @param {Function} theme - Tailwind's theme function
+ * @param {boolean} muted - whether to generate css for muted color scheme or default color scheme
+ * @returns CSS config for `<ul>` list items
+ */
+const BEFORE_LIST_ITEM = function(theme, muted = false) {
   return {
     content: '"—"',
     marginRight: theme('spacing.2'),
@@ -11,7 +18,13 @@ const BEFORE_LIST_ITEM = function (theme, muted = false) {
   }
 }
 
-const DEFAULT = function (theme) {
+/**
+ * Factory function to generate default typography
+ *
+ * @param {Function} theme - Tailwind's theme function
+ * @returns CSS config for default typography
+ */
+const DEFAULT = function(theme) {
   return {
     color: theme('colors.vanilla.100'),
     '[class~="lead"]': {
@@ -144,7 +157,13 @@ const DEFAULT = function (theme) {
   }
 }
 
-const SMALL_SCREEN_CSS = function (theme) {
+/**
+ * Factory function to generate typography for smaller screens
+ *
+ * @param {Function} theme - Tailwind's theme function
+ * @returns CSS config for typography for smaller screens
+ */
+const SMALL_SCREEN_CSS = function(theme) {
   return {
     'ul > li::before': {
       ...BEFORE_LIST_ITEM(theme)
@@ -158,7 +177,13 @@ const SMALL_SCREEN_CSS = function (theme) {
   }
 }
 
-const LARGE_SCREEN_CSS = function (theme) {
+/**
+ * Factory function to generate typography for larger screens
+ *
+ * @param {Function} theme - Tailwind's theme function
+ * @returns CSS config for typography for larger screens
+ */
+const LARGE_SCREEN_CSS = function(theme) {
   return {
     'ul > li::before': {
       ...BEFORE_LIST_ITEM(theme)
@@ -169,7 +194,13 @@ const LARGE_SCREEN_CSS = function (theme) {
   }
 }
 
-const MUTED = function (theme) {
+/**
+ * Factory function to generate muted (only neutral colors) typography
+ *
+ * @param {Function} theme - Tailwind's theme function
+ * @returns CSS config for muted (only neutral colors) typography
+ */
+const MUTED = function(theme) {
   return {
     'ul > li::before': {
       ...BEFORE_LIST_ITEM(theme, true)
@@ -182,7 +213,13 @@ const MUTED = function (theme) {
   }
 }
 
-const RTE = function (theme) {
+/**
+ * Factory function to generate rich text editor typography
+ *
+ * @param {Function} theme - Tailwind's theme function
+ * @returns CSS config for rich text editor typography
+ */
+const RTE = function(theme) {
   return {
     p: {
       fontSize: theme('fontSize.sm'),
@@ -277,7 +314,13 @@ const RTE = function (theme) {
   }
 }
 
-const ISSUE_DESCRIPTION = function (theme) {
+/**
+ * Factory function to generate issue description typography
+ *
+ * @param {Function} theme - Tailwind's theme function
+ * @returns CSS config for issue description typography
+ */
+const ISSUE_DESCRIPTION = function(theme) {
   return {
     fontSize: theme('fontSize.sm'),
     lineHeight: theme('lineHeight.normal'),
