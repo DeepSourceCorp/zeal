@@ -23,18 +23,18 @@
         :class="[
           getTextSize,
           getCursorType,
-          selectedOpt === undefined ? 'text-vanilla-400 opacity-70' : '',
+          selectedValue === undefined ? 'text-vanilla-400 opacity-70' : '',
           { truncate }
         ]"
       >
-        <template v-if="selectedOpt">
-          {{ selectedOptLabel || selectedOpt }}
+        <template v-if="selectedLabel || selectedValue">
+          {{ selectedLabel || selectedValue }}
         </template>
         <template v-else>
           {{ placeholder }}
         </template>
       </div>
-      <button v-if="selectedOpt && clearable" class="flex items-center justify-between" @click.stop="clearSelected">
+      <button v-if="selectedValue && clearable" class="flex items-center justify-between" @click.stop="clearSelected">
         <z-icon icon="x" size="small" :color="getIconColor"></z-icon>
       </button>
       <span v-else>
@@ -122,19 +122,19 @@ export default Vue.extend({
       type: Boolean
     }
   },
+
   model: {
     prop: 'selected',
     event: 'change'
   },
+
   data() {
     return {
-      selectedOpt: '' as string | number | null,
-      selectedOptLabel: '' as string | number | null,
-      selectedOptHTML: '',
       open: false,
-      options: [] as Vue[]
+      options: [] as Array<Vue>
     }
   },
+
   computed: {
     canClick(): string {
       if (!this.disabled && !this.readOnly) return 'click'
@@ -159,37 +159,55 @@ export default Vue.extend({
     getIconColor(): string {
       if (this.disabled) return 'slate'
       return 'vanilla-400'
-    }
-  },
-  mounted() {
-    this.options = this.$children.filter((child) => child.$options.name === 'ZOption')
-
-    if (this.selected) {
-      const selectedOpt = this.options
-        .map((child) => {
-          return child.$options.propsData as ZOptionPropsT
-        })
-        .filter((childProp) => {
-          return childProp.value === this.selected
-        })
-
-      if (selectedOpt[0]) {
-        this.selectedOpt = selectedOpt[0].value
-        this.selectedOptLabel = selectedOpt[0].label || selectedOpt[0].value
-      }
-    }
-  },
-  methods: {
-    clearSelected(): void {
-      this.selectedOpt = null
     },
+    selectedLabel(): string | number | null {
+      const selectedOption = this.getSelectedOption()
+
+      if (selectedOption) {
+        return selectedOption.label
+      }
+      return null
+    },
+    selectedValue(): string | number | null {
+      const selectedOption = this.getSelectedOption()
+
+      if (selectedOption) {
+        return selectedOption.value
+      }
+      return null
+    }
+  },
+
+  mounted(): void {
+    this.options = this.$children.filter(child => child.$options.name === 'ZOption')
+  },
+
+  methods: {
     blurEvent(): void {
       this.open = false
-    }
-  },
-  watch: {
-    selectedOpt: function (newValue) {
-      this.$emit('change', newValue)
+    },
+    clearSelected(): void {
+      this.$emit('change', null)
+    },
+    getSelectedOption(): ZOptionPropsT | null {
+      if (this.selected) {
+        const selectedOption = this.options
+          .map(child => {
+            return child.$options.propsData as ZOptionPropsT
+          })
+          .find(childProp => {
+            return childProp.value === this.selected
+          })
+
+        if (selectedOption) {
+          return selectedOption
+        }
+      }
+
+      return null
+    },
+    onChange(val: string): void {
+      this.$emit('change', val)
     }
   }
 })
