@@ -411,7 +411,8 @@ const ISSUE_DESCRIPTION = function (theme) {
       backgroundColor: theme('colors.ink.300'),
       padding: theme('spacing.3'),
       fontSize: theme('fontSize.xs'),
-      overflowX: 'auto'
+      overflowX: 'auto',
+      borderRadius: theme('spacing[0.5]')
     },
     'pre code': {
       backgroundColor: 'transparent',
