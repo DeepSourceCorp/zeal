@@ -5,7 +5,7 @@
  * @param {boolean} muted - whether to generate css for muted color scheme or default color scheme
  * @returns CSS config for `<ul>` list items
  */
-const BEFORE_LIST_ITEM = function (theme, muted = false) {
+const BEFORE_LIST_ITEM = function(theme, muted = false) {
   return {
     content: '"—"',
     marginRight: theme('spacing.2'),
@@ -24,7 +24,7 @@ const BEFORE_LIST_ITEM = function (theme, muted = false) {
  * @param {Function} theme - Tailwind's theme function
  * @returns CSS config for default typography
  */
-const DEFAULT = function (theme) {
+const DEFAULT = function(theme) {
   return {
     color: theme('colors.vanilla.100'),
     '[class~="lead"]': {
@@ -163,7 +163,7 @@ const DEFAULT = function (theme) {
  * @param {Function} theme - Tailwind's theme function
  * @returns CSS config for typography for smaller screens
  */
-const SMALL_SCREEN_CSS = function (theme) {
+const SMALL_SCREEN_CSS = function(theme) {
   return {
     'ul > li::before': {
       ...BEFORE_LIST_ITEM(theme)
@@ -183,7 +183,7 @@ const SMALL_SCREEN_CSS = function (theme) {
  * @param {Function} theme - Tailwind's theme function
  * @returns CSS config for typography for larger screens
  */
-const LARGE_SCREEN_CSS = function (theme) {
+const LARGE_SCREEN_CSS = function(theme) {
   return {
     'ul > li::before': {
       ...BEFORE_LIST_ITEM(theme)
@@ -200,7 +200,7 @@ const LARGE_SCREEN_CSS = function (theme) {
  * @param {Function} theme - Tailwind's theme function
  * @returns CSS config for muted (only neutral colors) typography
  */
-const MUTED = function (theme) {
+const MUTED = function(theme) {
   return {
     'ul > li::before': {
       ...BEFORE_LIST_ITEM(theme, true)
@@ -219,7 +219,7 @@ const MUTED = function (theme) {
  * @param {Function} theme - Tailwind's theme function
  * @returns CSS config for rich text editor typography
  */
-const RTE = function (theme) {
+const RTE = function(theme) {
   return {
     p: {
       fontSize: theme('fontSize.sm'),
@@ -320,7 +320,7 @@ const RTE = function (theme) {
  * @param {Function} theme - Tailwind's theme function
  * @returns CSS config for issue description typography
  */
-const ISSUE_DESCRIPTION = function (theme) {
+const ISSUE_DESCRIPTION = function(theme) {
   return {
     fontSize: theme('fontSize.sm'),
     lineHeight: theme('lineHeight.normal'),
@@ -382,8 +382,8 @@ const ISSUE_DESCRIPTION = function (theme) {
     },
     'ul li::before': {
       content: '"•"',
-      paddingLeft: '10px',
-      paddingRight: '6px'
+      paddingLeft: '11.5px',
+      paddingRight: '10.25px'
     },
     ol: {
       counterReset: 'steps'
