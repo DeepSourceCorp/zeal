@@ -348,8 +348,10 @@ const ISSUE_DESCRIPTION = function (theme) {
       borderTopWidth: 1
     },
     a: {
+      fontWeight: 'inherit',
       textDecoration: 'underline dashed',
-      fontWeight: 'inherit'
+      textUnderlineOffset: '4px',
+      textDecorationThickness: '1px'
     },
     'a:hover': {
       color: theme('colors.vanilla.100')
