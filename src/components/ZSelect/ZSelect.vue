@@ -161,10 +161,10 @@ export default Vue.extend({
     selectedOption(): ZOptionPropsT | null {
       if (this.selected) {
         const selectedOption = this.options
-          .map(child => {
+          .map((child) => {
             return child.$options.propsData as ZOptionPropsT
           })
-          .find(childProp => {
+          .find((childProp) => {
             return childProp.value === this.selected
           })
 
@@ -181,7 +181,7 @@ export default Vue.extend({
   },
 
   mounted(): void {
-    this.options = this.$children.filter(child => child.$options.name === 'ZOption')
+    this.options = this.$children.filter((child) => child.$options.name === 'ZOption')
   },
 
   methods: {
