@@ -20,12 +20,7 @@
       <slot name="icon"></slot>
       <div
         class="flex items-center flex-grow h-full outline-none cursor-pointer"
-        :class="[
-          getTextSize,
-          getCursorType,
-          selectedValue === undefined ? 'text-vanilla-400 opacity-70' : '',
-          { truncate }
-        ]"
+        :class="[getTextSize, getCursorType, { 'text-vanilla-400 opacity-70': selectedValue === null }, { truncate }]"
       >
         <template v-if="selectedLabel || selectedValue">
           {{ selectedLabel || selectedValue }}
@@ -160,42 +155,16 @@ export default Vue.extend({
       if (this.disabled) return 'slate'
       return 'vanilla-400'
     },
-    selectedLabel(): string | number | null {
-      const selectedOption = this.getSelectedOption()
-
-      if (selectedOption) {
-        return selectedOption.label
-      }
-      return null
+    selectedLabel(): string | null {
+      return this.selectedOption?.label ?? null
     },
-    selectedValue(): string | number | null {
-      const selectedOption = this.getSelectedOption()
-
-      if (selectedOption) {
-        return selectedOption.value
-      }
-      return null
-    }
-  },
-
-  mounted(): void {
-    this.options = this.$children.filter((child) => child.$options.name === 'ZOption')
-  },
-
-  methods: {
-    blurEvent(): void {
-      this.open = false
-    },
-    clearSelected(): void {
-      this.$emit('change', null)
-    },
-    getSelectedOption(): ZOptionPropsT | null {
+    selectedOption(): ZOptionPropsT | null {
       if (this.selected) {
         const selectedOption = this.options
-          .map((child) => {
+          .map(child => {
             return child.$options.propsData as ZOptionPropsT
           })
-          .find((childProp) => {
+          .find(childProp => {
             return childProp.value === this.selected
           })
 
@@ -205,6 +174,22 @@ export default Vue.extend({
       }
 
       return null
+    },
+    selectedValue(): string | number | null {
+      return this.selectedOption?.value ?? null
+    }
+  },
+
+  mounted(): void {
+    this.options = this.$children.filter(child => child.$options.name === 'ZOption')
+  },
+
+  methods: {
+    blurEvent(): void {
+      this.open = false
+    },
+    clearSelected(): void {
+      this.$emit('change', null)
     },
     onChange(val: string): void {
       this.$emit('change', val)
