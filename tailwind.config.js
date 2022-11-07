@@ -958,6 +958,11 @@ module.exports = {
           css: {
             ...typographyConfig.LARGE_SCREEN_CSS(theme)
           }
+        },
+        'issue-description': {
+          css: {
+            ...typographyConfig.ISSUE_DESCRIPTION(theme)
+          }
         }
       })
     }
