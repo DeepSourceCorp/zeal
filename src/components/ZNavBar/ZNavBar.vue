@@ -115,6 +115,8 @@ export default {
               ...options.data,
               props: {
                 title: child.data.attrs.title,
+                spanCustomHeight: child.data.attrs.spanCustomHeight,
+                customMaxHeight: child.data.attrs.customMaxHeight,
                 ...options.propsData
               },
               class: {

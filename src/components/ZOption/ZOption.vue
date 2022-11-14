@@ -13,8 +13,8 @@
 import Vue from 'vue'
 
 interface ZSelectT extends Vue {
-  selectedOpt: string | number
-  selectedOptLabel: string | number
+  selected: string | number
+  onChange: (val: string | number) => void
   open: boolean
 }
 
@@ -32,21 +32,22 @@ export default Vue.extend({
       default: 'text-xs'
     }
   },
+
   computed: {
     selected(): boolean {
       const $parent = this.$parent as ZSelectT
-      return this.value === $parent.selectedOpt
+      return this.value === $parent.selected
     },
     textSizeClass(): string {
       const validTextSizes = ['text-xs', 'text-sm', 'text-base', 'text-lg', 'text-xl']
       return validTextSizes.includes(this.textSize) ? this.textSize : 'text-xs'
     }
   },
+
   methods: {
     selectOption(): void {
       const $parent = this.$parent as ZSelectT
-      $parent.selectedOpt = this.value
-      $parent.selectedOptLabel = this.label || this.value
+      $parent.onChange(this.value)
       $parent.open = false
     }
   }

@@ -1,3 +1,10 @@
+/**
+ * Factory function to generate CSS config for `<ul>` list items
+ *
+ * @param {Function} theme - Tailwind's theme function
+ * @param {boolean} muted - whether to generate css for muted color scheme or default color scheme
+ * @returns CSS config for `<ul>` list items
+ */
 const BEFORE_LIST_ITEM = function (theme, muted = false) {
   return {
     content: '"—"',
@@ -11,6 +18,12 @@ const BEFORE_LIST_ITEM = function (theme, muted = false) {
   }
 }
 
+/**
+ * Factory function to generate default typography
+ *
+ * @param {Function} theme - Tailwind's theme function
+ * @returns CSS config for default typography
+ */
 const DEFAULT = function (theme) {
   return {
     color: theme('colors.vanilla.100'),
@@ -26,7 +39,6 @@ const DEFAULT = function (theme) {
       textDecoration: 'underline'
     },
     strong: {
-      color: theme('colors.vanilla.100'),
       fontWeight: theme('fontWeight.semibold')
     },
     'ol > li': {
@@ -145,6 +157,12 @@ const DEFAULT = function (theme) {
   }
 }
 
+/**
+ * Factory function to generate typography for smaller screens
+ *
+ * @param {Function} theme - Tailwind's theme function
+ * @returns CSS config for typography for smaller screens
+ */
 const SMALL_SCREEN_CSS = function (theme) {
   return {
     'ul > li::before': {
@@ -159,6 +177,12 @@ const SMALL_SCREEN_CSS = function (theme) {
   }
 }
 
+/**
+ * Factory function to generate typography for larger screens
+ *
+ * @param {Function} theme - Tailwind's theme function
+ * @returns CSS config for typography for larger screens
+ */
 const LARGE_SCREEN_CSS = function (theme) {
   return {
     'ul > li::before': {
@@ -170,6 +194,12 @@ const LARGE_SCREEN_CSS = function (theme) {
   }
 }
 
+/**
+ * Factory function to generate muted (only neutral colors) typography
+ *
+ * @param {Function} theme - Tailwind's theme function
+ * @returns CSS config for muted (only neutral colors) typography
+ */
 const MUTED = function (theme) {
   return {
     'ul > li::before': {
@@ -183,6 +213,12 @@ const MUTED = function (theme) {
   }
 }
 
+/**
+ * Factory function to generate rich text editor typography
+ *
+ * @param {Function} theme - Tailwind's theme function
+ * @returns CSS config for rich text editor typography
+ */
 const RTE = function (theme) {
   return {
     p: {
@@ -278,11 +314,123 @@ const RTE = function (theme) {
   }
 }
 
+/**
+ * Factory function to generate issue description typography
+ *
+ * @param {Function} theme - Tailwind's theme function
+ * @returns CSS config for issue description typography
+ */
+const ISSUE_DESCRIPTION = function (theme) {
+  return {
+    fontSize: theme('fontSize.sm'),
+    lineHeight: theme('lineHeight.normal'),
+    color: theme('colors.vanilla.400'),
+    '* + *': {
+      marginTop: theme('spacing[2.5]')
+    },
+    '* + :is(h1, h2, h3, h4, h5, h6)': {
+      marginTop: theme('spacing.8')
+    },
+    ':is(pre, figure) + :is(h1, h2, h3, h4, h5, h6)': {
+      marginTop: theme('spacing.5')
+    },
+    ':is(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6)': {
+      marginTop: theme('spacing[2.5]')
+    },
+    '* + figure, figure + *': {
+      marginTop: theme('spacing.3')
+    },
+    '[class~="lead"]': {
+      color: theme('colors.vanilla.400')
+    },
+    hr: {
+      borderColor: theme('colors.ink.100'),
+      borderTopWidth: 1
+    },
+    a: {
+      fontWeight: 'inherit',
+      textDecoration: 'underline dashed',
+      textUnderlineOffset: '4px',
+      textDecorationThickness: '1px'
+    },
+    'a:hover': {
+      color: theme('colors.vanilla.100')
+    },
+    'a:focus': {
+      color: theme('colors.vanilla.100')
+    },
+    strong: {
+      fontWeight: theme('fontWeight.semibold')
+    },
+    'h1, h2, h3, h4, h5, h6': {
+      fontSize: theme('fontSize.xs'),
+      lineHeight: '1.75',
+      fontWeight: theme('fontWeight.medium'),
+      textTransform: 'uppercase',
+      letterSpacing: '0.05em',
+      color: theme('colors.vanilla.200')
+    },
+    'ul, ol': {
+      listStylePosition: 'outside',
+      paddingLeft: '24px'
+    },
+    ul: {
+      listStyle: 'disc'
+    },
+    ol: {
+      listStyle: 'decimal'
+    },
+    'ul li + li, ol li + li': {
+      marginTop: theme('spacing.3')
+    },
+    code: {
+      color: theme('colors.vanilla.300'),
+      fontSize: theme('fontSize.xs'),
+      lineHeight: '1.5',
+      padding: theme('spacing[0.5]'),
+      backgroundColor: theme('colors.ink.300'),
+      borderRadius: theme('spacing[0.5]')
+    },
+    pre: {
+      backgroundColor: theme('colors.ink.300'),
+      padding: theme('spacing.3'),
+      fontSize: theme('fontSize.xs'),
+      overflowX: 'auto',
+      borderRadius: theme('spacing[0.5]')
+    },
+    'pre code': {
+      backgroundColor: 'transparent',
+      borderWidth: '0',
+      borderRadius: '0',
+      padding: '0',
+      fontWeight: theme('fontWeight.normal'),
+      color: 'inherit',
+      fontSize: 'inherit',
+      fontFamily: 'inherit',
+      lineHeight: 'inherit'
+    },
+    'figure figcaption': {
+      marginTop: theme('spacing.0'),
+      fontSize: theme('fontSize.xxs'),
+      lineHeight: '1.6',
+      color: theme('colors.vanilla.400'),
+      textAlign: 'center',
+      [`@media (min-width: ${theme('screens.sm')})`]: {
+        textAlign: 'left'
+      }
+    },
+    'figure img': {
+      borderRadius: theme('spacing[0.5]')
+    }
+  }
+}
+
 module.exports = {
   BEFORE_LIST_ITEM,
   DEFAULT,
   SMALL_SCREEN_CSS,
   LARGE_SCREEN_CSS,
   MUTED,
-  RTE
+  RTE,
+  ISSUE_DESCRIPTION
 }
