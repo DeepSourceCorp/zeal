@@ -132,7 +132,7 @@ export const AxisMixedChart = () => ({
       tooltipOptions: {
         formatTooltipY: (d: number, set: ChartDatasetSet) => {
           const formattedValue = set.index === 1 ? Math.abs(d) : d
-          
+
           if (set.index === 2) {
             return `<span style="color: ${formattedValue > 0 ? '#33CB9A' : '#E17783'}">${formattedValue}</span>`
           }
