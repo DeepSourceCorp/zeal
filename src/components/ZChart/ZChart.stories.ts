@@ -129,6 +129,9 @@ export const AxisMixedChart = () => ({
         { name: 'NET NEW ISSUES', chartType: 'line', values: [0, 4, -7, -2, 2, 5, 1, 2] }
       ],
       labels: issueData.labels,
+      barOptions: {
+        stacked: true
+      },
       tooltipOptions: {
         formatTooltipY: (d: number, set: ChartDatasetSet) => {
           const formattedValue = set.index === 1 ? Math.abs(d) : d
@@ -145,6 +148,6 @@ export const AxisMixedChart = () => ({
     }
   },
   template: `<div class="padding-container py-20">
-    <z-chart :dataSets="dataSets" :labels="labels" :tooltipOptions="tooltipOptions" type="axis-mixed"></z-chart>
+    <z-chart :dataSets="dataSets" :labels="labels" :tooltipOptions="tooltipOptions" :barOptions="barOptions" type="axis-mixed"></z-chart>
   </div>`
 })

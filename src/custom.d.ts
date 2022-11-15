@@ -3,7 +3,7 @@ declare module '*.svg' {
   export default content
 }
 
-declare module 'frappe-charts/dist/frappe-charts.esm.js' {
+declare module '@deepsource/charts/dist/frappe-charts.esm.js' {
   const Chart
   export { Chart }
 }
