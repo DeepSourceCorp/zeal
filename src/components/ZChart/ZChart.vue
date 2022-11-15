@@ -6,7 +6,7 @@ import Vue from 'vue'
 import baseColors from '@/helpers/tailwind/colors'
 
 // https://frappe.io/charts/docs
-import { Chart } from 'frappe-charts/dist/frappe-charts.esm.js'
+import { Chart } from '@deepsource/charts/dist/frappe-charts.esm.js'
 
 let updateTimer: ReturnType<typeof setTimeout>
 

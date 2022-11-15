@@ -1893,6 +1893,11 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@deepsource/charts@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@deepsource/charts/-/charts-1.0.0.tgz#82d4c1cef79b8bcd5d8ef69d14e55d30b9052e2d"
+  integrity sha512-5WFWUCtlsCsMLdnQUZAwVsx/lg0IBYVMtpK5eEqGjwT+caWkbCugdtql/no38dgNVusf1V5PHn9CVJalVje2fA==
+
 "@emotion/cache@^10.0.27":
   version "10.0.29"
   resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-10.0.29.tgz#87e7e64f412c060102d589fe7c6dc042e6f9d1e0"
@@ -8598,11 +8603,6 @@ fragment-cache@^0.2.1:
   integrity sha1-QpD60n8T6Jvn8zeZxrxaCr//DRk=
   dependencies:
     map-cache "^0.2.2"
-
-frappe-charts@^2.0.0-rc23:
-  version "2.0.0-rc23"
-  resolved "https://registry.yarnpkg.com/frappe-charts/-/frappe-charts-2.0.0-rc23.tgz#12cc4d92cf726926599d579efb8c60eadd3393c3"
-  integrity sha512-TZ1VOdgCkeeQp8HFgbFIU1btWB3QjveEw6rxNolzaw0PKs4v+Oq4KVdYw6jCgPIii7kdWyRAyCsz9VKNcUB8wA==
 
 fresh@0.5.2:
   version "0.5.2"
