@@ -93,7 +93,7 @@ export default Vue.extend({
     type: {
       type: String,
       default: 'axis-mixed',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['bar', 'line', 'percentage', 'heatmap', 'donut', 'pie', 'axis-mixed'].includes(value)
       }
     },
@@ -254,14 +254,14 @@ export default Vue.extend({
   computed: {
     palette(): Array<string> {
       if (this.colors) {
-        return (this.colors as Array<string>).map((token) => {
+        return (this.colors as Array<string>).map(token => {
           return this.themeColors[token] || token
         })
       }
       return []
     },
     markers(): Array<Marker> {
-      return (this.yMarkers as Array<Marker>).map((marker) => {
+      return (this.yMarkers as Array<Marker>).map(marker => {
         if (!marker.options) {
           marker.options = {}
         }
@@ -273,7 +273,7 @@ export default Vue.extend({
       })
     },
     regions(): Array<Region> {
-      return (this.yRegions as Array<Region>).map((region) => {
+      return (this.yRegions as Array<Region>).map(region => {
         if (!region.options) {
           region.options = {}
         }
