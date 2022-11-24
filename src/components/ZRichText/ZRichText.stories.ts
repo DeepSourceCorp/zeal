@@ -13,9 +13,9 @@ export default {
 export const DefaultRichText = () => ({
   components: { ZRichText },
   data() {
-    return {}
+    return { content: '' }
   },
-  template: `<div><z-rich-text class="max-w-2xl"/></div>`
+  template: `<div><z-rich-text v-model="content" class="max-w-2xl"/></div>`
 })
 
 export const RichTextWithMaxCharacterCount = () => ({
