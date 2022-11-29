@@ -213,7 +213,7 @@ export default Vue.extend({
             }
           }
         }),
-        Image,
+        Image.configure({ allowBase64: false }),
         Placeholder.configure({
           placeholder: this.placeholder
         }),
@@ -316,16 +316,13 @@ export default Vue.extend({
       })
       const mark = marks.find((markItem) => markItem.type.name === 'link')
       this.inputLink = mark && mark.attrs.href ? mark.attrs.href : ''
-    },
-    insertImage(url: string): void {
-      this.editor?.chain().focus().setImage({ src: url }).run()
     }
   }
 })
 </script>
-<style>
-/* 
- TODO: migrate the following css to typography.js with support for purging. 
+<style lang="postcss">
+/*
+ TODO: migrate the following css to typography.js with support for purging.
  */
 .prose-rte p.is-editor-empty:first-child::before {
   content: attr(data-placeholder);
