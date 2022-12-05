@@ -3,10 +3,7 @@
     v-bind="$attrs"
     :is="as"
     class="flex items-center gap-2 leading-none outline-none z-menu-item focus:outline-none"
-    :class="[
-      spacing,
-      disabled ? 'text-vanilla-400 cursor-not-allowed' : 'hover:bg-ink-200 cursor-pointer'
-    ]"
+    :class="[spacing, disabled ? 'text-vanilla-400 cursor-not-allowed' : 'hover:bg-ink-200 cursor-pointer']"
     v-on="$listeners"
     @click="itemClicked"
   >
