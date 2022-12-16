@@ -1,5 +1,5 @@
 {
-  "name": "@deepsourcelabs/zeal",
+  "name": "@deepsource/zeal",
   "version": "0.12.9",
   "repository": "https://github.com/deepsourcelabs/zeal",
   "main": "./dist/zeal.common.js",
