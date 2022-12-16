@@ -20,7 +20,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.DEEPSOURCE_BOT_TOKEN }}
           
       - name: Import GPG key
         id: import_gpg_sign_commits
@@ -72,4 +72,4 @@ jobs:
           registry-url: https://registry.npmjs.org
       - run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.DEEPSOURCE_BOT_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
