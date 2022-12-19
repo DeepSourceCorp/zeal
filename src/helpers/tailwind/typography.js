@@ -39,6 +39,7 @@ const DEFAULT = function (theme) {
       textDecoration: 'underline'
     },
     strong: {
+      color: theme('colors.vanilla.100'),
       fontWeight: theme('fontWeight.semibold')
     },
     'ol > li': {
