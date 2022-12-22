@@ -33,6 +33,7 @@ const SIZES = {
   xs: { classes: 'leading-none h-4 w-4 text-xxs', text: 'xs' },
   sm: { classes: 'leading-none h-6 w-6 text-xs', text: 'sm' },
   md: { classes: 'leading-none h-8 w-8 text-sm', text: 'md' },
+  base: { classes: 'leading-none h-9 w-9 text-base', text: 'md' },
   lg: { classes: 'leading-none h-12 w-12 text-lg', text: 'lg' },
   xl: { classes: 'leading-none h-16 w-16 text-2xl', text: 'xl' }
 }
