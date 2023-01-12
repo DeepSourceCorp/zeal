@@ -27,7 +27,7 @@ exports[`ZTimeline renders a timeline component with custom border width 1`] = `
 <div class="timeline flex flex-col gap-y-2">
   <div class="relative flex timeline__item gap-x-2 h-32">
     <div class="flex flex-col items-center justify-center gap-y-2">
-      <div class="flex items-center justify-center w-6 h-6"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
+      <div class="flex items-center justify-center w-6 h-6"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full object-cover leading-none h-6 w-6 text-xs">
           <!---->
         </a></div> <span class="h-full border-l rounded-sm left-4 border-ink-100"></span>
     </div>
@@ -38,7 +38,7 @@ exports[`ZTimeline renders a timeline component with custom border width 1`] = `
   </div>
   <div class="relative flex timeline__item gap-x-2 h-32">
     <div class="flex flex-col items-center justify-center gap-y-2">
-      <div class="flex items-center justify-center w-6 h-6"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
+      <div class="flex items-center justify-center w-6 h-6"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full object-cover leading-none h-6 w-6 text-xs">
           <!---->
         </a></div> <span class="h-full border-l rounded-sm left-4 border-ink-100"></span>
     </div>
@@ -54,7 +54,7 @@ exports[`ZTimeline renders a timeline component with custom icon 1`] = `
 <div class="timeline flex flex-col gap-y-2">
   <div class="relative flex timeline__item gap-x-2 h-32">
     <div class="flex flex-col items-center justify-center gap-y-2">
-      <div class="flex items-center justify-center w-6 h-6"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
+      <div class="flex items-center justify-center w-6 h-6"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full object-cover leading-none h-6 w-6 text-xs">
           <!---->
         </a></div> <span class="h-full border-l rounded-sm left-4 border-ink-100 border-2"></span>
     </div>
@@ -65,7 +65,7 @@ exports[`ZTimeline renders a timeline component with custom icon 1`] = `
   </div>
   <div class="relative flex timeline__item gap-x-2 h-32">
     <div class="flex flex-col items-center justify-center gap-y-2">
-      <div class="flex items-center justify-center w-6 h-6"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full leading-none h-6 w-6 text-xs">
+      <div class="flex items-center justify-center w-6 h-6"><a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Akshay Paliwal" class="rounded-full object-cover leading-none h-6 w-6 text-xs">
           <!---->
         </a></div> <span class="h-full border-l rounded-sm left-4 border-ink-100 border-2"></span>
     </div>
