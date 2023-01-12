@@ -17,7 +17,7 @@ exports[`Avatar component renders an avatar when the component is mounted 1`] = 
 `;
 
 exports[`Avatar component renders avatar correctly, when image is given 1`] = `
-<a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://example.com/some.jpg" alt="John Doe" class="rounded-full leading-none h-8 w-8 text-sm">
+<a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://example.com/some.jpg" alt="John Doe" class="rounded-full object-cover leading-none h-8 w-8 text-sm">
   <!---->
 </a>
 `;
@@ -41,7 +41,7 @@ exports[`Avatar component renders avatar correctly, when size is given 1`] = `
 exports[`Avatar component renders avatar with skeleton gradient background when loading is true 1`] = `<a class="inline-block rounded-full bg-ink-300 p-0.5"><span class="flex items-center justify-center text-center rounded-full bg-gradient-skeleton text-vanilla-300 leading-none h-8 w-8 text-sm"></span></a>`;
 
 exports[`Avatar component renders fallback image 1`] = `
-<a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://example.com/some.jpg" alt="John Doe" class="rounded-full leading-none h-8 w-8 text-sm">
+<a class="inline-block rounded-full bg-ink-300 p-0.5"><img src="https://example.com/some.jpg" alt="John Doe" class="rounded-full object-cover leading-none h-8 w-8 text-sm">
   <!---->
 </a>
 `;
