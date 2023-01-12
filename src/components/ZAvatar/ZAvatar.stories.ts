@@ -195,3 +195,19 @@ export const WithSizes = (): Component => ({
     </div>
     `
 })
+
+export const WithRectangularImages = (): Component => ({
+  components: { ZAvatar },
+  template: `<div class='padded-container'>
+      <z-avatar
+        image="https://picsum.photos/id/237/200/400"
+        user-name="Doggy McDogFace"
+        size="xl"
+      ></z-avatar>
+      <z-avatar
+        image="https://picsum.photos/id/237/400/200"
+        user-name="Doggy McDogFace"
+        size="xl"
+      ></z-avatar>
+    </div>`
+})
