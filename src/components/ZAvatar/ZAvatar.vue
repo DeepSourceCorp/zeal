@@ -11,7 +11,7 @@
         v-if="this.image"
         :src="image"
         :alt="userName"
-        class="rounded-full"
+        class="rounded-full object-cover"
         :class="[`${SIZES[getSize].classes}`]"
         @error.once="setFallbackImage"
       />
