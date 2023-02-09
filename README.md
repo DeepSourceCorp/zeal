@@ -34,7 +34,7 @@ module.exports = {
 1. Node: v14@latest
 2. yarn: v1
 
-### Local setup steps
+### Local setup instructions
 
 1. Clone the Repo using `git clone https://github.com/deepsourcelabs/zeal`
 2. Run `yarn` to install all dependencies
