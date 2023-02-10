@@ -1,6 +1,6 @@
 {
   "name": "@deepsource/zeal",
-  "version": "0.12.14",
+  "version": "0.12.15",
   "repository": "https://github.com/deepsourcelabs/zeal",
   "license": "BSD-2-Clause",
   "main": "./dist/zeal.common.js",
