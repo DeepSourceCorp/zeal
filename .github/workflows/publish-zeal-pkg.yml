@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.DEEPSOURCE_BOT_TOKEN }}
-          
+
       - name: Import GPG key
         id: import_gpg_sign_commits
         uses: crazy-max/ghaction-import-gpg@v3
@@ -37,7 +37,11 @@ jobs:
           git config --global user.name "deepsourcebot"
           npm version patch
           git push
-          
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+
       - name: Install Yarn
         run: yarn
 
@@ -56,20 +60,18 @@ jobs:
         uses: actions/checkout@v2
       - run: git pull origin master
 
-      - name: Temp disable "private"
-        run: sed '/private/ s/true/false/' -i package.json
-        
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+          registry-url: https://registry.npmjs.org
+
       - name: Install Packages
         run: yarn
-        
+
       - name: Build Library Icons
         run: yarn build-lib-icons
-        
+
       - name: Publish Zeal Package
-        uses: actions/setup-node@v2
-        with:
-          node-version: '12.x'
-          registry-url: https://registry.npmjs.org
-      - run: npm publish --access public
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
