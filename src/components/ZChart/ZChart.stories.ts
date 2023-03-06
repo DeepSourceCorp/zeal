@@ -4,9 +4,8 @@ import '../../assets/css/layout.css'
 import '../../assets/css/chart.css'
 import ZChart from './ZChart.vue'
 
-const issueData = {
-  labels: ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
-  datasets: [
+function getRandomDatasets() {
+  return [
     {
       name: 'Active Issues',
       values: Array.from({ length: 12 }, () => Math.floor(10 + Math.random() * 80))
@@ -15,9 +14,24 @@ const issueData = {
       name: 'Resolved Issues',
       values: Array.from({ length: 12 }, () => Math.floor(10 + Math.random() * 75))
     }
-  ],
+  ]
+}
+
+function getRandomMarkers() {
+  return [
+    {
+      label: 'Another Threshold',
+      value: Math.floor(10 + Math.random() * 80),
+      options: { stroke: 'vanilla-400', lineType: 'dashed' }
+    }
+  ]
+}
+
+const issueData = {
+  labels: ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+  datasets: getRandomDatasets(),
   yRegions: [{ label: 'Threshold', start: 0, end: 35, options: { fill: 'ink-300' } }],
-  yMarkers: [{ label: 'Another Threshold', value: 45, options: { stroke: 'vanilla-400', lineType: 'dashed' } }]
+  yMarkers: getRandomMarkers()
 }
 
 export default {
@@ -36,9 +50,20 @@ export const LineChart = () => ({
       yMarkers: issueData.yMarkers
     }
   },
-  template: `<div class="padding-container">
-    <z-chart :dataSets="dataSets" :labels="labels" :yRegions=yRegions :yMarkers=yMarkers type="line" :yAxisMax="100" :yAxisMin="0"></z-chart>
-  </div>`
+  methods: {
+    changeData() {
+      // @ts-ignore ref https://github.com/vuejs/vetur/issues/1707#issuecomment-686851677
+      this.dataSets = getRandomDatasets()
+      // @ts-ignore ref https://github.com/vuejs/vetur/issues/1707#issuecomment-686851677
+      this.yMarkers = getRandomMarkers()
+    }
+  },
+  template: `
+    <div class="padding-container">
+      <z-chart :dataSets="dataSets" :labels="labels" :yRegions=yRegions :yMarkers=yMarkers type="line" :yAxisMax="100" :yAxisMin="0" />
+      <button class="text-vanilla-100 bg-ink-200 rounded-md px-2 py-1" @click="changeData">Change data</button>
+    </div>
+  `
 })
 
 export const CustomColors = () => ({
