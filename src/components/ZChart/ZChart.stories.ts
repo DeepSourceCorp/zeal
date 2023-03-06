@@ -52,8 +52,10 @@ export const LineChart = () => ({
   },
   methods: {
     changeData() {
+      // skipcq JS-0295
       // @ts-ignore ref https://github.com/vuejs/vetur/issues/1707#issuecomment-686851677
       this.dataSets = getRandomDatasets()
+      // skipcq JS-0295
       // @ts-ignore ref https://github.com/vuejs/vetur/issues/1707#issuecomment-686851677
       this.yMarkers = getRandomMarkers()
     }
