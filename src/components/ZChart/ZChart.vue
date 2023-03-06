@@ -93,7 +93,7 @@ export default Vue.extend({
     type: {
       type: String,
       default: 'axis-mixed',
-      validator: function (value: string): boolean {
+      validator: function(value: string): boolean {
         return ['bar', 'line', 'percentage', 'heatmap', 'donut', 'pie', 'axis-mixed'].includes(value)
       }
     },
@@ -173,50 +173,17 @@ export default Vue.extend({
     this.themeColors = this.getThemeColors(baseColors)
   },
   watch: {
-    chartType() {
-      this.initChart()
-    },
-    labels() {
-      this.updateChart()
-    },
-    dataSets() {
-      this.updateChart()
-    },
-    yMarkers() {
-      this.updateChart()
+    chartData: {
+      handler: function() {
+        this.updateChart()
+      }
+      // deep: true
     }
   },
   methods: {
     initChart() {
-      const chartOptions = {
-        data: {
-          labels: this.labels,
-          datasets: this.dataSets,
-          yMarkers: this.yMarkers ? this.markers : undefined,
-          yRegions: this.yRegions ? this.regions : undefined
-        },
-        tooltipOptions: this.tooltipOptions,
-        barOptions: this.barOptions,
-        lineOptions: Object.assign(DEFAULT_LINE_OPTIONS, this.lineOptions),
-        axisOptions: {
-          ...Object.assign(DEFAULT_AXIS_OPTIONS, this.axisOptions),
-          yAxisRange: {
-            min: this.yAxisMin,
-            max: this.yAxisMax
-          }
-        },
-        maxSlices: this.maxSlices,
-        showLegend: this.showLegend,
-        animate: this.animate,
-        disableEntryAnimation: !this.animate,
-        maxLegendPoints: this.maxLegendPoints
-      }
       this.chart = new Chart(this.$refs[this.wrapperName], {
-        type: this.chartType,
-        colors: this.palette,
-        height: this.height,
-        title: this.title,
-        ...chartOptions
+        ...this.chartData
       }) as ChartInterface
     },
     updateChart() {
@@ -254,14 +221,15 @@ export default Vue.extend({
   computed: {
     palette(): Array<string> {
       if (this.colors) {
-        return (this.colors as Array<string>).map((token) => {
+        return (this.colors as Array<string>).map(token => {
           return this.themeColors[token] || token
         })
       }
       return []
     },
+    /** @return {Array<Marker>} */
     markers(): Array<Marker> {
-      return (this.yMarkers as Array<Marker>).map((marker) => {
+      return (this.yMarkers as Array<Marker>).map(marker => {
         if (!marker.options) {
           marker.options = {}
         }
@@ -273,7 +241,7 @@ export default Vue.extend({
       })
     },
     regions(): Array<Region> {
-      return (this.yRegions as Array<Region>).map((region) => {
+      return (this.yRegions as Array<Region>).map(region => {
         if (!region.options) {
           region.options = {}
         }
@@ -288,6 +256,39 @@ export default Vue.extend({
     },
     chartType(): string {
       return this.type
+    },
+    chartData() {
+      return {
+        // @ts-ignore ref https://github.com/vuejs/vetur/issues/1707#issuecomment-686851677
+        type: this.chartType,
+        // @ts-ignore ref https://github.com/vuejs/vetur/issues/1707#issuecomment-686851677
+        colors: this.palette,
+        height: this.height,
+        title: this.title,
+        data: {
+          labels: this.labels,
+          datasets: this.dataSets,
+          // @ts-ignore ref https://github.com/vuejs/vetur/issues/1707#issuecomment-686851677
+          yMarkers: this.yMarkers ? this.markers : undefined,
+          // @ts-ignore ref https://github.com/vuejs/vetur/issues/1707#issuecomment-686851677
+          yRegions: this.yRegions ? this.regions : undefined
+        },
+        tooltipOptions: this.tooltipOptions,
+        barOptions: this.barOptions,
+        lineOptions: Object.assign(DEFAULT_LINE_OPTIONS, this.lineOptions),
+        axisOptions: {
+          ...Object.assign(DEFAULT_AXIS_OPTIONS, this.axisOptions),
+          yAxisRange: {
+            min: this.yAxisMin,
+            max: this.yAxisMax
+          }
+        },
+        maxSlices: this.maxSlices,
+        showLegend: this.showLegend,
+        animate: this.animate,
+        disableEntryAnimation: !this.animate,
+        maxLegendPoints: this.maxLegendPoints
+      }
     }
   },
   mounted() {
