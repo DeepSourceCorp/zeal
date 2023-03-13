@@ -23,7 +23,9 @@ module.exports = {
           requireLast: false
         }
       }
-    ]
+    ],
+    // ? Need to use @ts-ignore for working around https://github.com/vuejs/vetur/issues/1707#issuecomment-686851677
+    '@typescript-eslint/ban-ts-ignore': 'off'
   },
 
   overrides: [
