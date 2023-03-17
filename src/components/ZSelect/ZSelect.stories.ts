@@ -836,7 +836,5 @@ export const SelectWithCustomMaxHeight = () => ({
                 </z-select>
 </div>
         </div>`,
-  StyleSheet: {
-
-  }
+  StyleSheet: {}
 })

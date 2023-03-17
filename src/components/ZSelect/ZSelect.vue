@@ -119,7 +119,7 @@ export default Vue.extend({
     maxHeight: {
       type: String,
       default: 'max-h-64'
-    },
+    }
   },
 
   model: {
