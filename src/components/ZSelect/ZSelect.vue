@@ -118,7 +118,8 @@ export default Vue.extend({
     },
     maxHeight: {
       type: String,
-      default: 'max-h-64'
+      default: 'max-h-64',
+      validator: (value) => value.startsWith('max-h')
     }
   },
 
