@@ -800,3 +800,41 @@ export const TruncatedSelect = () => ({
               </div>
             </div>`
 })
+
+/**
+ * UI state representing Select component with custom max height
+ *
+ * @returns {ExtendedVue}
+ */
+export const SelectWithCustomMaxHeight = () => ({
+  components: { ZSelect, ZOption, ZIcon, ZToggle },
+  data() {
+    return {
+      value: '',
+      disabled: true,
+      options: [
+        { label: 'Below 50', value: 'BLW_50' },
+        { label: '50-99', value: 'BTW_50_99' },
+        { label: '100-249', value: 'BTW_100_249' },
+        { label: '250-499', value: 'BTW_250_499' },
+        { label: '500-999', value: 'BTW_500_999' },
+        { label: '1000-2499', value: 'BTW_1000_2499' },
+        { label: '2500-4999', value: 'BTW_2500_4999' },
+        { label: '5000+', value: 'ABV_5000' }
+      ]
+    }
+  },
+  template: `<div class='padded-container'>
+              <div class="select-container space-y-4">
+                <z-select v-model="value" max-height="max-h-72" placeholder="Select no. of developers">
+                    <z-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                    </z-option>
+                </z-select>
+</div>
+        </div>`,
+  StyleSheet: {}
+})
