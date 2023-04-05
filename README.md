@@ -68,4 +68,4 @@ Before you begin, ensure you have the `.npmrc` file setup.
 3. Create a new SVG file unde the `src/icons` folder and paste the optimized SVG into it
 4. Run `yarn build_icons` to update the `icons.json` file
 5. Verify the icons look alright by starting the storybook locally using `yarn storybook:serve`
-6. Make a pull request for it with the screenshots of the  icon preview in storybook
+6. Make a pull request for it with the screenshots of the icon preview in storybook
