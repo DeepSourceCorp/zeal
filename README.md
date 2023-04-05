@@ -60,3 +60,12 @@ Before you begin, ensure you have the `.npmrc` file setup.
 4. On successful test and build run `npm publish`
 
 > Note: Add `private: true` back after publishing. In CI, don't forget to run yarn before step 3
+
+## Adding icons
+
+1. For generic icons, replace all custom colors added to the SVG file with `currentColor`
+2. Optimize the SVG using [SVGOMG](https://jakearchibald.github.io/svgomg/)
+3. Create a new SVG file unde the `src/icons` folder and paste the optimized SVG into it
+4. Run `yarn build_icons` to update the `icons.json` file
+5. Verify the icons look alright by starting the storybook locally using `yarn storybook:serve`
+6. Make a pull request for it with the screenshots of the icon preview in storybook
