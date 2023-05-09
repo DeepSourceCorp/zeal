@@ -24,9 +24,9 @@ export default {
 export const Default = () =>
   Vue.extend({
     components: { ZButton, ZIcon, ZMenu, ZMenuItem, ZSplitButtonDropdown },
-    data: function () {
+    data: function() {
       return {
-        icon: 'github',
+        icon: 'fast-forward',
         label: 'Create issue on GitHub',
         to: 'https://github.com'
       }
@@ -57,7 +57,7 @@ export const Default = () =>
     },
     template: `
       <div class="container">
-        <z-split-button-dropdown :icon="icon" :label="label" :to="to">
+        <z-split-button-dropdown :icon="icon" iconColor="current" button-type="danger" divider-color="ink-400" :label="label" :to="to">
           <template #menu-body>
             <z-menu-item as="button" icon="github" @click="createIssue('github')" class="w-full">Create issue on GitHub</z-menu-item>
             <z-menu-item as="button" icon="gitlab" @click="createIssue('gitlab')" class="w-full">Create issue on GitLab</z-menu-item>
@@ -75,7 +75,7 @@ export const Default = () =>
 export const Sizes = () =>
   Vue.extend({
     components: { ZButton, ZIcon, ZMenu, ZMenuItem, ZSplitButtonDropdown },
-    data: function () {
+    data: function() {
       return {
         icon: 'github',
         label: 'Create issue on GitHub',

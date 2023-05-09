@@ -1,16 +1,21 @@
 <template>
   <div class="flex items-center">
-    <z-button v-bind="$attrs" v-on="$listeners" :size="size" button-type="secondary" class="-mr-0.5">
+    <z-button v-bind="$attrs" v-on="$listeners" :size="size" :button-type="buttonType" class="-mr-0.5">
       <slot name="button-label"></slot>
     </z-button>
 
-    <z-divider direction="vertical" margin="mx-0" color="ink-100" :class="['flex-shrink-0', dividerHeights[size]]" />
+    <z-divider
+      direction="vertical"
+      margin="mx-0"
+      :color="dividerColor"
+      :class="['flex-shrink-0', dividerHeights[size]]"
+    />
     <slot>
       <z-menu direction="left" size="small" width="small">
         <template v-slot:trigger="{ toggle }">
           <slot name="menu-trigger">
             <z-button
-              button-type="secondary"
+              :button-type="buttonType"
               :size="size"
               @click="toggle"
               icon="chevron-down"
@@ -42,15 +47,26 @@ export default Vue.extend({
     ZMenu
   },
   props: {
+    buttonType: {
+      default: 'primary',
+      type: String,
+      validator(val) {
+        return ['primary', 'secondary', 'link', 'ghost', 'danger', 'warning'].includes(val)
+      }
+    },
     size: {
       default: 'small',
       type: String,
       validator(val) {
         return ['small', 'medium', 'large', 'xlarge'].includes(val)
       }
+    },
+    dividerColor: {
+      default: 'ink-100',
+      type: String
     }
   },
-  data: function () {
+  data: function() {
     return {
       dividerHeights: {
         small: 'h-8',
