@@ -35,13 +35,14 @@ export const Colors = () => ({
         <z-button button-type="link">Link Button</z-button>
         <z-button button-type="ghost" icon="zap" color="vanilla-400">Custom Color Button</z-button>
         <z-button button-type="warning">Warning Button</z-button>
+        <z-button button-type="runs">Run Button</z-button>
     </div>`
 })
 
 export const Sizes = () => ({
   components: { ZButton },
   filters: {
-    capitalize: function (value: string) {
+    capitalize: function(value: string) {
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
@@ -68,7 +69,7 @@ export const Sizes = () => ({
 export const States = () => ({
   components: { ZButton },
   filters: {
-    capitalize: function (value: string) {
+    capitalize: function(value: string) {
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
