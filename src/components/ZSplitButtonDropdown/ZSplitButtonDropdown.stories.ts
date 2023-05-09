@@ -24,7 +24,7 @@ export default {
 export const Default = () =>
   Vue.extend({
     components: { ZButton, ZIcon, ZMenu, ZMenuItem, ZSplitButtonDropdown },
-    data: function () {
+    data() {
       return {
         icon: 'fast-forward',
         label: 'Create issue on GitHub',
@@ -75,7 +75,7 @@ export const Default = () =>
 export const Sizes = () =>
   Vue.extend({
     components: { ZButton, ZIcon, ZMenu, ZMenuItem, ZSplitButtonDropdown },
-    data: function () {
+    data() {
       return {
         icon: 'github',
         label: 'Create issue on GitHub',
