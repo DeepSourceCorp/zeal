@@ -13,7 +13,7 @@ exports[`Input Component renders a disabled input 1`] = `
 `;
 
 exports[`Input Component renders a readonly input 1`] = `
-<div class="flex items-center w-full p-1 space-x-2 rounded-sm outline-none focus-within:border-vanilla-400 border border-ink-100 bg-ink-400 text-vanilla-400 cursor-not-allowed h-10 text-sm space-x-2 leading-8 py-2 px-3"> <input aria-label="" name="" type="text" placeholder="Enter a value" disabled="disabled" class="flex flex-grow w-full overflow-hidden bg-transparent outline-none overflow-ellipsis caret-juniper cursor-not-allowed">
+<div class="flex items-center w-full p-1 space-x-2 rounded-sm outline-none focus-within:border-vanilla-400 border border-ink-100 bg-ink-400 text-vanilla-400 cursor-not-allowed h-10 text-sm space-x-2 leading-8 py-2 px-3"> <input aria-label="" name="" type="text" placeholder="Enter a value" readonly="readonly" class="flex flex-grow w-full overflow-hidden bg-transparent outline-none overflow-ellipsis caret-juniper cursor-not-allowed">
   <!---->
 </div>
 `;
