@@ -62,7 +62,7 @@ describe('Input Component', () => {
       }
     })
     expect(wrapper.html()).toMatchSnapshot()
-    expect(wrapper.find('input').attributes('disabled')).toMatch('disabled')
+    expect(wrapper.find('input').attributes('readonly')).toMatch('readonly')
   })
   it('renders an input with clearable', () => {
     const wrapper = mountFn({
