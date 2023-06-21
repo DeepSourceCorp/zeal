@@ -8,11 +8,11 @@ function getRandomDatasets() {
   return [
     {
       name: 'Active Issues',
-      values: Array.from({ length: 12 }, () => Math.floor(10 + Math.random() * 80))
+      values: Array.from({ length: 12 }, () => Math.floor(10 + Math.random() * 8000))
     },
     {
       name: 'Resolved Issues',
-      values: Array.from({ length: 12 }, () => Math.floor(10 + Math.random() * 75))
+      values: Array.from({ length: 12 }, () => Math.floor(10 + Math.random() * 7500))
     }
   ]
 }

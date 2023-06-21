@@ -7,6 +7,7 @@ import baseColors from '@/helpers/tailwind/colors'
 
 // https://frappe.io/charts/docs
 import { Chart } from '@deepsource/charts/dist/frappe-charts.esm.js'
+import { shortenLargeNumber } from '@/helpers/components/utils'
 
 let updateTimer: ReturnType<typeof setTimeout>
 
@@ -160,6 +161,10 @@ export default Vue.extend({
       required: false,
       default: false,
       type: Boolean
+    },
+    humanizeTooltips: {
+      default: true,
+      type: Boolean
     }
   },
   data() {
@@ -257,27 +262,47 @@ export default Vue.extend({
     chartType(): string {
       return this.type
     },
+    humanizedTooltips() {
+      if (!this.humanizeTooltips) {
+        return this.tooltipOptions
+      }
+      const tooltipFunctions = ['formatTooltipX', 'formatTooltipY']
+      const shortenIfNumber = (value: string | number) =>
+        Number.isNaN(Number(value)) ? value : shortenLargeNumber(value)
+      const humanizedTooltipOptions = {}
+
+      tooltipFunctions.forEach((key) => {
+        // ? Check if `tooltipOptions` is an truthy and functions exist within
+        this.tooltipOptions && typeof this.tooltipOptions[key] === 'function'
+          ? (humanizedTooltipOptions[key] = (d: string | number) => {
+              // ? If a tooltip method is already provided, run it and then shorten if possible
+              const value = this.tooltipOptions[key](d) as string | number
+              return shortenIfNumber(value)
+            })
+          : // ? If a tooltip method is not provided, shorten if possible
+            (humanizedTooltipOptions[key] = (d: string | number) => shortenIfNumber(d))
+      })
+
+      return humanizedTooltipOptions
+    },
     chartData() {
       return {
-        // skipcq JS-0295
-        // @ts-ignore ref https://github.com/vuejs/vetur/issues/1707#issuecomment-686851677
+        // @ts-expect-error - ref https://github.com/vuejs/vetur/issues/1707#issuecomment-686851677
         type: this.chartType,
-        // skipcq JS-0295
-        // @ts-ignore ref https://github.com/vuejs/vetur/issues/1707#issuecomment-686851677
+        // @ts-expect-error - ref https://github.com/vuejs/vetur/issues/1707#issuecomment-686851677
         colors: this.palette,
         height: this.height,
         title: this.title,
         data: {
           labels: this.labels,
           datasets: this.dataSets,
-          // skipcq JS-0295
-          // @ts-ignore ref https://github.com/vuejs/vetur/issues/1707#issuecomment-686851677
+          // @ts-expect-error - ref https://github.com/vuejs/vetur/issues/1707#issuecomment-686851677
           yMarkers: this.yMarkers ? this.markers : undefined,
-          // skipcq JS-0295
-          // @ts-ignore ref https://github.com/vuejs/vetur/issues/1707#issuecomment-686851677
+          // @ts-expect-error - ref https://github.com/vuejs/vetur/issues/1707#issuecomment-686851677
           yRegions: this.yRegions ? this.regions : undefined
         },
-        tooltipOptions: this.tooltipOptions,
+        // @ts-expect-error - ref https://github.com/vuejs/vetur/issues/1707#issuecomment-686851677
+        tooltipOptions: this.humanizedTooltips,
         barOptions: this.barOptions,
         lineOptions: Object.assign(DEFAULT_LINE_OPTIONS, this.lineOptions),
         axisOptions: {
