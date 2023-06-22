@@ -283,7 +283,7 @@ export default Vue.extend({
             (humanizedTooltipOptions[key] = (d: string | number) => shortenIfNumber(d))
       })
 
-      return humanizedTooltipOptions
+      return this.tooltipOptions ? { ...this.tooltipOptions, ...humanizedTooltipOptions } : humanizedTooltipOptions
     },
     chartData() {
       return {
