@@ -274,16 +274,16 @@ export default Vue.extend({
       tooltipFunctions.forEach((key) => {
         // ? Check if `tooltipOptions` is an truthy and functions exist within
         this.tooltipOptions && typeof this.tooltipOptions[key] === 'function'
-          ? (humanizedTooltipOptions[key] = (d: string | number) => {
+          ? (humanizedTooltipOptions[key] = (d: string | number, ...args: unknown[]) => {
               // ? If a tooltip method is already provided, run it and then shorten if possible
-              const value = this.tooltipOptions[key](d) as string | number
+              const value = this.tooltipOptions[key](d, ...args) as string | number
               return shortenIfNumber(value)
             })
           : // ? If a tooltip method is not provided, shorten if possible
             (humanizedTooltipOptions[key] = (d: string | number) => shortenIfNumber(d))
       })
 
-      return humanizedTooltipOptions
+      return this.tooltipOptions ? { ...this.tooltipOptions, ...humanizedTooltipOptions } : humanizedTooltipOptions
     },
     chartData() {
       return {
