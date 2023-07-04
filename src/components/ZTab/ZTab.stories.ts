@@ -50,9 +50,9 @@ export const TabWithLinks = () => ({
   template: `<div class='padded-container'>
                 <div class="gap-5 overflow-auto flex flex-nowrap">
                   <z-tab :isActive="true"><a href="https://deepsource.io">DeepSource</a></z-tab>
-                  <z-tab><a target="blank" href="https://github.com/deepsourcelabs">Github</a></z-tab>
-                  <z-tab><a target="blank" href="https://github.com/deepsourcelabs/zeal">Zeal</a></z-tab>
-                  <z-tab><a target="blank" href="https://github.com/deepsourcelabs/bifrost">Bifrost</a></z-tab>
+                  <z-tab><a target="blank" href="https://github.com/DeepSourceCorp">Github</a></z-tab>
+                  <z-tab><a target="blank" href="https://github.com/DeepSourceCorp/zeal">Zeal</a></z-tab>
+                  <z-tab><a target="blank" href="https://github.com/DeepSourceCorp/bifrost">Bifrost</a></z-tab>
                   <z-tab :disabled="true">Bad Code</z-tab>
                 </div>
       </div>`
