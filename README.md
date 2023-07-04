@@ -2,7 +2,7 @@
 
 # Zeal
 
-[![DeepSource](https://deepsource.io/gh/deepsourcelabs/zeal.svg/?label=active+issues&show_trend=true&token=JIW55GPf1_QuPsjkJSkhKBct)](https://deepsource.io/gh/deepsourcelabs/zeal/?ref=repository-badge) [![DeepSource](https://deepsource.io/gh/deepsourcelabs/zeal.svg/?label=resolved+issues&show_trend=true&token=JIW55GPf1_QuPsjkJSkhKBct)](https://deepsource.io/gh/deepsourcelabs/zeal/?ref=repository-badge)
+[![DeepSource](https://app.deepsource.com/gh/DeepSourceCorp/zeal.svg/?label=active+issues&show_trend=true&token=omkRhJZzuS3w0dBXsP_rrwNH)](https://app.deepsource.com/gh/DeepSourceCorp/zeal/?ref=repository-badge)[![DeepSource](https://app.deepsource.com/gh/DeepSourceCorp/zeal.svg/?label=resolved+issues&show_trend=true&token=omkRhJZzuS3w0dBXsP_rrwNH)](https://app.deepsource.com/gh/DeepSourceCorp/zeal/?ref=repository-badge)
 
   <p>Zeal is the component system used across DeepSource Assets</p>
 
@@ -36,7 +36,7 @@ module.exports = {
 
 ### Local setup instructions
 
-1. Clone the Repo using `git clone https://github.com/deepsourcelabs/zeal`
+1. Clone the Repo using `git clone https://github.com/DeepSourceCorp/zeal`
 2. Run `yarn` to install all dependencies
 3. Run `yarn storybook:serve` to run the dev server and storybook for development
 
